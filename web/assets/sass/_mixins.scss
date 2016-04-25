@@ -1,0 +1,80 @@
+@import 'variables';
+
+.image-replacement {
+    overflow: hidden;
+    text-indent: -1000%;
+    white-space: nowrap;
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin unstyled-list() {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin inline-list() {
+  li {
+    display: inline-block;
+    margin-left: 1em;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+
+
+.centered {
+    text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $giant_screen;
+  padding: 0 1em;
+  width: 100%;
+}

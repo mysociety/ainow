@@ -1,0 +1,35 @@
+
+$fira: "fira sans", "Helvetica Neue", Arial, Helvetica, serif;
+
+$body_typeface: $fira;
+$body_typeface_semibold: 500;
+$body_typeface_bold: 700;
+$heading_typeface: $fira;
+$heading_typeface_bold: 700;
+
+$colour_mint: #4CCDA7;
+$colour_dark_mint: #4C907C;
+$colour_coral: #EB6E93;
+$colour_dark_coral: #B14C6A;
+$colour_off_white: #E9EAE1;
+$colour_light_grey: #C3C4B9;
+$colour_grey: #9B9C90;
+$colour_mid_grey: #707168;
+$colour_dark_grey: #6A6A69;
+$colour_black: #484846;
+$colour_white: #ffffff;
+
+$colour_background: $colour_white;
+$colour_links: darken($colour_mint, 20%);
+$colour_borders: $colour_light_grey;
+
+$border_radius: 0;
+
+$size_font-base: 18px;
+
+$giant_screen: 69em;
+$large_screen: 56em;
+$medium_screen: 44em;
+$high_dpi_screen: '-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi';
+
+$animation-short: 0.2s ease-out;
