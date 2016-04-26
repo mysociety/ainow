@@ -610,26 +610,61 @@ tfoot {
   background-position: center;
   padding: 2em 0;
   color: #ffffff; }
+  @media (min-width: 44em) {
+    .homepage-hero {
+      padding: 4em 0; } }
 
 .homepage-hero__details {
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 2px solid #ffffff;
   padding-bottom: 0.5em; }
+  @media (min-width: 44em) {
+    .homepage-hero__details {
+      display: inline-block; } }
 
 .homepage-hero__title {
   font-size: 1em;
   margin-top: 2em; }
+  @media (min-width: 44em) {
+    .homepage-hero__title {
+      font-size: 1.277777778em;
+      margin-top: 1em; } }
 
 .homepage-hero__subtitle {
   font-size: 1.777777778em;
   line-height: 1.333em; }
+  @media (min-width: 44em) {
+    .homepage-hero__subtitle {
+      font-size: 2.333333333em;
+      font-weight: bold;
+      max-width: 18em; } }
 
 .homepage-description {
   margin-top: 3em; }
 
+@media (min-width: 44em) {
+  .two-columns-of-text {
+    -webkit-column-count: 2;
+    -ms-column-count: 2;
+    -moz-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 2em;
+    -ms-column-gap: 2em;
+    -moz-column-gap: 2em;
+    -o-column-gap: 2em;
+    column-gap: 2em; } }
+
 .homepage-description__partners {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center; }
 
 .homepage-description__partners__column {
   display: inline-block; }
@@ -638,14 +673,11 @@ tfoot {
     display: inline-block; }
 
 .homepage-description__partners__column--one {
-  width: 35%; }
+  width: 6em;
+  margin-right: 2em; }
 
 .homepage-description__partners__column--two {
-  width: 65%; }
-
-.partner-logo--nyu {
-  position: relative;
-  top: -1.5em; }
+  width: 14em; }
 
 .callout-box {
   background-color: #4CCDA7;
@@ -657,9 +689,20 @@ tfoot {
 
 .homepage-people {
   padding-top: 3em; }
+  .homepage-people h3 {
+    font-size: 1.277777778em; }
 
 .collection-of-people {
   margin-top: 1.5em; }
+  @media (min-width: 44em) {
+    .collection-of-people {
+      margin-bottom: 2em;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: row wrap; } }
 
 .collection-of-people__person {
   margin-bottom: 1.5em; }
@@ -670,21 +713,40 @@ tfoot {
     /* 2 */ }
   .collection-of-people__person:after {
     clear: both; }
+  @media (min-width: 44em) {
+    .collection-of-people__person {
+      width: 11.5em;
+      margin-right: 1.5em; } }
 
 .person__photo {
   width: 20%;
   float: left;
   padding-right: 1em; }
+  @media (min-width: 44em) {
+    .person__photo {
+      float: none;
+      padding: 0;
+      width: 100%; } }
 
 .person__name {
   font-weight: bold;
   margin-bottom: 0;
   margin-left: 20%; }
+  @media (min-width: 44em) {
+    .person__name {
+      margin-left: 0;
+      font-size: 1.166666667em;
+      margin-bottom: 0.25em; } }
 
 .person__job-title {
   font-size: .722222222em;
   line-height: 1.5em;
-  margin: 0 0 0 20%; }
+  margin: 0 0 0 20%;
+  color: #707168; }
+  @media (min-width: 44em) {
+    .person__job-title {
+      margin-left: 0;
+      font-size: 0.833333333em; } }
 
 .site-footer {
   background-color: #E9EAE1;
@@ -704,11 +766,19 @@ tfoot {
       margin-left: 0; }
 
 .site-footer__partner-logos {
-  text-align: center; }
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center; }
   .site-footer__partner-logos .partner-logo {
-    margin-bottom: 1em;
-    width: 50%;
-    max-width: 8em;
-    display: inline-block; }
+    margin-bottom: 1em; }
+
+.site-footer__partner-logos__logoset {
+  width: 8em;
+  margin-right: 1em; }
 
 /*# sourceMappingURL=main.css.map */

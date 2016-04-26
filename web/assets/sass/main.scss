@@ -288,6 +288,9 @@ tfoot {
   background-position: center;
   padding: 2em 0;
   color: $colour_white;
+  @media (min-width:$medium_screen) {
+    padding: 4em 0;
+  }
 }
 
 .homepage-hero__details {
@@ -295,44 +298,64 @@ tfoot {
   font-weight: bold;
   border-bottom: 2px solid $colour_white;
   padding-bottom: 0.5em;
+  @media (min-width:$medium_screen) {
+    display: inline-block;
+  }
 }
 
 .homepage-hero__title {
   font-size: 1em;
   margin-top: 2em;
+  @media (min-width:$medium_screen) {
+    font-size: 1.277777778em;
+    margin-top: 1em;
+  }
 }
 
 .homepage-hero__subtitle {
   font-size:  1.777777778em;
   line-height: 1.333em;
+  @media (min-width:$medium_screen) {
+    font-size: 2.333333333em;
+    font-weight: bold;
+    max-width: 18em;
+  }
 }
 
 .homepage-description {
   margin-top: 3em;
 }
 
+.two-columns-of-text {
+  @media (min-width:$medium_screen) {
+    @include vendor-prefix(column-count, 2);
+    @include vendor-prefix(column-gap, 2em);
+  }
+}
+
 .homepage-description__partners {
   margin-bottom: 2em;
+  @include flexbox();
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 .homepage-description__partners__column {
   display: inline-block;
+
   img {
     text-align: center;
     display: inline-block;
   }
 }
+
 .homepage-description__partners__column--one {
-  width: 35%;
+  width: 6em;
+  margin-right: 2em;
 }
 
 .homepage-description__partners__column--two {
-  width: 65%;
-}
-
-.partner-logo--nyu {
-  position: relative;
-  top: -1.5em;
+  width: 14em;
 }
 
 .callout-box {
@@ -347,33 +370,60 @@ tfoot {
 
 .homepage-people {
   padding-top: 3em;
+  h3 {
+    font-size: 1.277777778em;
+  }
 }
 
 .collection-of-people {
   margin-top: 1.5em;
+  @media (min-width:$medium_screen) {
+    margin-bottom: 2em;
+    @include flexbox();
+    flex-flow: row wrap;
+  }
 }
 
 .collection-of-people__person {
   @include clearfix;
   margin-bottom: 1.5em;
+  @media (min-width:$medium_screen) {
+    width: 11.5em;
+    margin-right: 1.5em;
+  }
 }
 
 .person__photo {
-    width: 20%;
-    float: left;
-    padding-right: 1em;
+  width: 20%;
+  float: left;
+  padding-right: 1em;
+  @media (min-width:$medium_screen) {
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 .person__name {
   font-weight: bold;
   margin-bottom: 0;
   margin-left: 20%;
+  @media (min-width:$medium_screen) {
+    margin-left: 0;
+    font-size: 1.166666667em;
+    margin-bottom: 0.25em;
+  }
 }
 
 .person__job-title {
   font-size: .722222222em;
   line-height: 1.5em;
   margin: 0 0 0 20%;
+  color: $colour_mid_grey;
+  @media (min-width:$medium_screen) {
+    margin-left: 0;
+    font-size: 0.833333333em;
+  }
 }
 
 .site-footer {
@@ -392,10 +442,16 @@ tfoot {
 
 .site-footer__partner-logos {
   text-align: center;
+  @include flexbox();
+  flex-flow: row wrap;
+  align-items: center;
   .partner-logo {
     margin-bottom: 1em;
-    width: 50%;
-    max-width: 8em;
-    display: inline-block;
+
   }
+}
+
+.site-footer__partner-logos__logoset {
+  width: 8em;
+  margin-right: 1em;
 }
