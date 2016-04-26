@@ -588,4 +588,127 @@ tfoot {
 .js .hide-if-no-javascript {
   display: block; }
 
+.site-header {
+  background-color: #ffffff;
+  padding: 1em 0; }
+
+.site-header__title {
+  line-height: 1em;
+  font-size: 1em;
+  margin: 0;
+  padding: 0.5em 0;
+  display: inline-block; }
+
+.site-header__details {
+  display: none; }
+
+.homepage-hero {
+  background-color: #4CCDA7;
+  background-image: url("../img/hero-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em 0;
+  color: #ffffff; }
+
+.homepage-hero__details {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 0.5em; }
+
+.homepage-hero__title {
+  font-size: 1em;
+  margin-top: 2em; }
+
+.homepage-hero__subtitle {
+  font-size: 1.777777778em;
+  line-height: 1.333em; }
+
+.homepage-description {
+  margin-top: 3em; }
+
+.homepage-description__partners {
+  margin-bottom: 2em; }
+
+.homepage-description__partners__column {
+  display: inline-block; }
+  .homepage-description__partners__column img {
+    text-align: center;
+    display: inline-block; }
+
+.homepage-description__partners__column--one {
+  width: 35%; }
+
+.homepage-description__partners__column--two {
+  width: 65%; }
+
+.partner-logo--nyu {
+  position: relative;
+  top: -1.5em; }
+
+.callout-box {
+  background-color: #4CCDA7;
+  color: #ffffff;
+  padding: 2em;
+  margin-top: 2em; }
+  .callout-box p:last-child {
+    margin-bottom: 0; }
+
+.homepage-people {
+  padding-top: 3em; }
+
+.collection-of-people {
+  margin-top: 1.5em; }
+
+.collection-of-people__person {
+  margin-bottom: 1.5em; }
+  .collection-of-people__person:before, .collection-of-people__person:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .collection-of-people__person:after {
+    clear: both; }
+
+.person__photo {
+  width: 20%;
+  float: left;
+  padding-right: 1em; }
+
+.person__name {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 20%; }
+
+.person__job-title {
+  font-size: .722222222em;
+  line-height: 1.5em;
+  margin: 0 0 0 20%; }
+
+.site-footer {
+  background-color: #E9EAE1;
+  padding: 2em 0; }
+
+.site-footer__utility-links {
+  margin-bottom: 2em; }
+
+.utility-links__list {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0; }
+  .utility-links__list li {
+    display: inline-block;
+    margin-left: 1em; }
+    .utility-links__list li:first-child {
+      margin-left: 0; }
+
+.site-footer__partner-logos {
+  text-align: center; }
+  .site-footer__partner-logos .partner-logo {
+    margin-bottom: 1em;
+    width: 50%;
+    max-width: 8em;
+    display: inline-block; }
+
 /*# sourceMappingURL=main.css.map */

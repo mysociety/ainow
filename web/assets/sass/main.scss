@@ -261,3 +261,141 @@ tfoot {
 .js .hide-if-no-javascript {
   display: block;
 }
+
+
+.site-header {
+  background-color: $colour_white;
+  padding: 1em 0;
+}
+
+.site-header__title {
+  line-height: 1em;
+  font-size: 1em;
+  margin: 0;
+  padding: 0.5em 0;
+  display: inline-block;
+}
+
+.site-header__details {
+  display: none;
+}
+
+.homepage-hero {
+  background-color: $colour_mint;
+  background-image: url('../img/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em 0;
+  color: $colour_white;
+}
+
+.homepage-hero__details {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px solid $colour_white;
+  padding-bottom: 0.5em;
+}
+
+.homepage-hero__title {
+  font-size: 1em;
+  margin-top: 2em;
+}
+
+.homepage-hero__subtitle {
+  font-size:  1.777777778em;
+  line-height: 1.333em;
+}
+
+.homepage-description {
+  margin-top: 3em;
+}
+
+.homepage-description__partners {
+  margin-bottom: 2em;
+}
+
+.homepage-description__partners__column {
+  display: inline-block;
+  img {
+    text-align: center;
+    display: inline-block;
+  }
+}
+.homepage-description__partners__column--one {
+  width: 35%;
+}
+
+.homepage-description__partners__column--two {
+  width: 65%;
+}
+
+.partner-logo--nyu {
+  position: relative;
+  top: -1.5em;
+}
+
+.callout-box {
+  background-color: $colour_mint;
+  color: $colour_white;
+  padding: 2em;
+  margin-top: 2em;
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.homepage-people {
+  padding-top: 3em;
+}
+
+.collection-of-people {
+  margin-top: 1.5em;
+}
+
+.collection-of-people__person {
+  @include clearfix;
+  margin-bottom: 1.5em;
+}
+
+.person__photo {
+    width: 20%;
+    float: left;
+    padding-right: 1em;
+}
+
+.person__name {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 20%;
+}
+
+.person__job-title {
+  font-size: .722222222em;
+  line-height: 1.5em;
+  margin: 0 0 0 20%;
+}
+
+.site-footer {
+  background-color: $colour_off_white;
+  padding: 2em 0;
+}
+
+.site-footer__utility-links {
+  margin-bottom: 2em;
+}
+
+.utility-links__list {
+  @include unstyled-list;
+  @include inline-list;
+}
+
+.site-footer__partner-logos {
+  text-align: center;
+  .partner-logo {
+    margin-bottom: 1em;
+    width: 50%;
+    max-width: 8em;
+    display: inline-block;
+  }
+}
