@@ -840,4 +840,7 @@ tfoot {
   .site-footer__partner-logos__logoset img {
     max-height: 4.5em; }
 
+.site-footer__partner-logos__logoset--wide {
+  width: 10em; }
+
 /*# sourceMappingURL=main.css.map */
