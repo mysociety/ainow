@@ -723,7 +723,8 @@ tfoot {
   float: left; }
   @media (min-width: 56em) {
     .callout-box {
-      width: 75%; } }
+      width: 75%;
+      font-size: 1.166666667em; } }
   .callout-box p:last-child {
     margin-bottom: 0; }
 

@@ -395,6 +395,7 @@ tfoot {
   float: left;
   @media (min-width:$large_screen) {
     width: 75%;
+    font-size: 1.166666667em;
   }
   p:last-child {
     margin-bottom: 0;
