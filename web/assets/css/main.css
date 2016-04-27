@@ -594,12 +594,19 @@ tfoot {
   .site-header .container {
     position: relative; }
 
+.standard-page .site-header {
+  border-bottom: 1px solid #E9EAE1; }
+
 .site-header__title {
   line-height: 1em;
   font-size: 1em;
   margin: 0;
   padding: 0.5em 0;
   display: inline-block; }
+  .site-header__title a {
+    color: #484846; }
+    .site-header__title a:hover, .site-header__title a:active, .site-header__title a:focus {
+      color: #4C907C; }
 
 .site-header__details {
   display: none; }
@@ -847,5 +854,14 @@ tfoot {
 
 .site-footer__partner-logos__logoset--wide {
   width: 10em; }
+
+.general-content {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
+.general-content__page {
+  max-width: 36em; }
+  .general-content__page a {
+    text-decoration: underline; }
 
 /*# sourceMappingURL=main.css.map */

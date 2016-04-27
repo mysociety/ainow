@@ -271,12 +271,26 @@ tfoot {
   }
 }
 
+.standard-page {
+  .site-header {
+    border-bottom: 1px solid $colour_off_white;
+  }
+}
+
 .site-header__title {
   line-height: 1em;
   font-size: 1em;
   margin: 0;
   padding: 0.5em 0;
   display: inline-block;
+  a {
+    color: $colour_black;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $colour_dark_mint;
+    }
+  }
 }
 
 .site-header__details {
@@ -510,4 +524,16 @@ tfoot {
 
 .site-footer__partner-logos__logoset--wide {
   width: 10em;
+}
+
+.general-content {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.general-content__page {
+  max-width: 36em;
+  a {
+    text-decoration: underline;
+  }
 }
