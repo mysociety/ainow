@@ -475,7 +475,7 @@ strong, b {
   font-weight: 700; }
 
 mark {
-  background-color: #f7c8d6; }
+  background-color: #f7d9c8; }
 
 blockquote {
   -webkit-border-radius: 0;
@@ -636,7 +636,7 @@ tfoot {
 .homepage-hero__title {
   font-size: 1em;
   margin-top: 2em;
-  background-color: #EB6E93;
+  background-color: #EB9C6E;
   display: inline-block;
   padding: 0.33em 0.5em; }
   @media (min-width: 44em) {
