@@ -503,27 +503,41 @@ tfoot {
   @include flexbox();
   flex-flow: row wrap;
   align-items: center;
-
   .partner-logo {
     margin-bottom: 1em;
+  }
+  @media (min-width:$medium_screen) {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
   }
   @media (min-width:$large_screen) {
     width: 65%;
     float: right;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
   }
 }
 
 .site-footer__partner-logos__logoset {
-  width: 8em;
-  margin-right: 1em;
-  text-align: right;
+  width: 48.5%;
+  margin-right: 1.5%;
+  text-align: center;
+  @media (min-width:$medium_screen) {
+    width: 8em;
+    margin-right: 1em;
+  }
+  @media (min-width:$large_screen) {
+    text-align: right;
+  }
   img {
     max-height: 4.5em;
   }
 }
 
 .site-footer__partner-logos__logoset--wide {
-  width: 10em;
+  @media (min-width:$medium_screen) {
+    width: 10em;
+  }
 }
 
 .general-content {

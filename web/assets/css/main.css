@@ -840,20 +840,34 @@ tfoot {
   align-items: center; }
   .site-footer__partner-logos .partner-logo {
     margin-bottom: 1em; }
+  @media (min-width: 44em) {
+    .site-footer__partner-logos {
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start; } }
   @media (min-width: 56em) {
     .site-footer__partner-logos {
       width: 65%;
-      float: right; } }
+      float: right;
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end; } }
 
 .site-footer__partner-logos__logoset {
-  width: 8em;
-  margin-right: 1em;
-  text-align: right; }
+  width: 48.5%;
+  margin-right: 1.5%;
+  text-align: center; }
+  @media (min-width: 44em) {
+    .site-footer__partner-logos__logoset {
+      width: 8em;
+      margin-right: 1em; } }
+  @media (min-width: 56em) {
+    .site-footer__partner-logos__logoset {
+      text-align: right; } }
   .site-footer__partner-logos__logoset img {
     max-height: 4.5em; }
 
-.site-footer__partner-logos__logoset--wide {
-  width: 10em; }
+@media (min-width: 44em) {
+  .site-footer__partner-logos__logoset--wide {
+    width: 10em; } }
 
 .general-content {
   margin-top: 2em;
