@@ -716,15 +716,15 @@ tfoot {
       text-align: center; } }
 
 .homepage-description__partners__column--one {
-  width: 6em;
-  margin-right: 2em; }
+  width: 30%;
+  margin-right: 3%; }
   @media (min-width: 56em) {
     .homepage-description__partners__column--one {
       margin-bottom: 1em;
       margin-top: -1em; } }
 
 .homepage-description__partners__column--two {
-  width: 14em; }
+  width: 67%; }
 
 .callout-box {
   background-color: #4CCDA7;
