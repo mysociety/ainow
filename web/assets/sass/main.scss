@@ -398,11 +398,16 @@ tfoot {
   @media (min-width:$large_screen) {
     margin-bottom: 1em;
     margin-top: -1em;
+    margin-right: 0;
+    width: 100%;
   }
 }
 
 .homepage-description__partners__column--two {
   width: 67%;
+  @media (min-width:$large_screen) {
+    width: 100%;
+  }
 }
 
 .callout-box {

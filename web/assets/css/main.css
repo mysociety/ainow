@@ -721,10 +721,15 @@ tfoot {
   @media (min-width: 56em) {
     .homepage-description__partners__column--one {
       margin-bottom: 1em;
-      margin-top: -1em; } }
+      margin-top: -1em;
+      margin-right: 0;
+      width: 100%; } }
 
 .homepage-description__partners__column--two {
   width: 67%; }
+  @media (min-width: 56em) {
+    .homepage-description__partners__column--two {
+      width: 100%; } }
 
 .callout-box {
   background-color: #4CCDA7;
