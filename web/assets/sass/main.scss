@@ -434,7 +434,7 @@ tfoot {
 }
 
 .collection-of-people {
-  margin-top: 1.5em;
+  margin: 1.5em -1em 0 -1em;
   @media (min-width:$medium_screen) {
     margin-bottom: 2em;
     @include flexbox();
@@ -445,9 +445,9 @@ tfoot {
 .collection-of-people__person {
   @include clearfix;
   margin-bottom: 1.5em;
+  padding: 0 1em;
   @media (min-width:$medium_screen) {
-    width: 12.5em;
-    margin-right: 1.5em;
+    width: 9.5em;
   }
 }
 
@@ -474,13 +474,12 @@ tfoot {
 }
 
 .person__job-title {
-  font-size: .722222222em;
+  font-size: 0.833333333em;
   line-height: 1.5em;
   margin: 0 0 0 20%;
   color: $colour_mid_grey;
   @media (min-width:$medium_screen) {
     margin-left: 0;
-    font-size: 0.833333333em;
   }
 }
 
