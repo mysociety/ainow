@@ -262,6 +262,22 @@ tfoot {
   display: block;
 }
 
+.button {
+  background-color: darken($colour_mint, 10%);
+  @include vendor-prefix(border-radius, $border_radius);
+  border: 0;
+  color: $colour_white;
+  display: inline-block;
+  font-weight: $body_typeface_bold;
+  padding: 0.75em 1.25em;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($colour_mint, 15%);
+    color: $colour_white;
+  }
+}
+
 
 .site-header {
   background-color: $colour_white;
@@ -298,11 +314,20 @@ tfoot {
   @media (min-width:$medium_screen) {
     display: block;
     position: absolute;
-    right: 1em;
+    right: 9em;
     top: 0.2em;
     font-size: .888888889em;
     color: $colour_mid_grey;
   }
+}
+
+.site-header__tickets {
+  display: block;
+  position: absolute;
+  right: 1em;
+  top: -0.5em;
+  font-size: .888888889em;
+  text-transform: uppercase;
 }
 
 .homepage-hero {
@@ -352,6 +377,25 @@ tfoot {
   @media (min-width:$large_screen) {
     font-size: 2.666666667em;
     margin-bottom: 0.5em;
+  }
+}
+
+.homepage-hero__tickets {
+
+}
+
+.button--tickets {
+  font-size: 1.235294118em;
+  width: 100%;
+  padding-right: 1.5em;
+  @media (min-width:$medium_screen) {
+    width: auto;
+  }
+  span {
+    display: block;
+    font-weight: normal;
+    font-size: 0.6667em;
+    line-height: 1.5em;
   }
 }
 
@@ -416,6 +460,11 @@ tfoot {
   padding: 2em;
   margin-top: 1em;
   float: left;
+  a {
+    color: $colour_white;
+    text-decoration: underline;
+    font-weight: $body_typeface_bold;
+  }
   @media (min-width:$large_screen) {
     width: 75%;
     font-size: 1.166666667em;
