@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background-color: $colour_background;
+  background-color: $colour_off_white;
   color: $colour_black;
   font-family: $body_typeface;
   font-size: 1.0625em; //17px
@@ -394,9 +394,9 @@ tfoot {
 .homepage-hero__subtitle {
   font-size:  1.777777778em;
   line-height: 1.333em;
+  font-weight: bold;
   @media (min-width:$medium_screen) {
     font-size: 2.333333333em;
-    font-weight: bold;
     max-width: 18em;
   }
   @media (min-width:$large_screen) {
@@ -406,7 +406,7 @@ tfoot {
 }
 
 .homepage-hero__tickets {
-
+  margin-top: 2em;
 }
 
 .button--tickets {
@@ -425,8 +425,9 @@ tfoot {
 }
 
 .homepage-description {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  background-color: $colour_background;
+  padding-top: 3em;
+  padding-bottom: 3em;
   @include clearfix;
 }
 
@@ -502,6 +503,7 @@ tfoot {
 .homepage-people {
   padding-top: 3em;
   border-top: 1px solid $colour_off_white;
+  background-color: $colour_background;
   h3 {
     font-size: 1.277777778em;
   }
@@ -619,8 +621,9 @@ tfoot {
 }
 
 .general-content {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: $colour_background;
 }
 
 .general-content__page {
