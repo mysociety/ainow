@@ -636,11 +636,13 @@ tfoot {
 .mailchimp-form {
   //much of this will be deleted when the form is added
   background-color: $colour_off_white;
-  padding: 2em;
+  padding: 1.5em;
   margin-bottom: 2em;
-  min-height: 300px;
   border: 1px solid $colour_light_grey;
   width: 100%;
+  @media (min-width:$medium_screen) {
+    padding: 2em;
+  }
 }
 
 //forms
@@ -654,4 +656,20 @@ tfoot {
   textarea {
     width: 100%;
   }
+}
+
+.form__radio-list {
+  @include unstyled-list;
+}
+
+.form__radio-list__item {
+  margin: 0.3em 0;
+  label {
+    margin-left: 0.5em;
+  }
+}
+
+.asterisk {
+  color: $colour_orange;
+  font-weight: $body_typeface_bold;
 }
