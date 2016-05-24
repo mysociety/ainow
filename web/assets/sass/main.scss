@@ -262,6 +262,14 @@ tfoot {
   display: block;
 }
 
+.title-sub {
+  //utility class to make long page headings more aesthetically pleasing
+  display: block;
+  color: $colour_dark_grey;
+  font-size: 0.5em;
+  line-height: 1.5em;
+}
+
 .button {
   background-color: darken($colour_mint, 10%);
   @include vendor-prefix(border-radius, $border_radius);
@@ -651,6 +659,7 @@ tfoot {
   display: block;
   width: 100%;
   margin-bottom: 1.5em;
+  position: relative;
   input[type=text],
   input[type=email],
   textarea {
@@ -669,7 +678,17 @@ tfoot {
   }
 }
 
-.asterisk {
-  color: $colour_orange;
-  font-weight: $body_typeface_bold;
+.required-field {
+  color: darken($colour_orange, 10%);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.form-help {
+  font-size: 0.823529412em;
+  margin-top: 0.5em;
+  color: $colour_dark_grey;
 }
