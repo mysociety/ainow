@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'pipeline',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -139,6 +140,44 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, 'web'),
 )
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+
+# Django-Pipeline configuration
+# https://django-pipeline.readthedocs.io/en/latest/configuration.html
+PIPELINE = {
+    'STYLESHEETS': {
+        'main': {
+            'source_filenames': (
+                'sass/main.scss',
+            ),
+            'output_filename': 'css/main.css',
+        },
+    },
+    'JAVASCRIPT': {
+        'modernizr': {
+            'source_filenames': (
+                'js/modernizr.min.js',
+            ),
+            'output_filename': 'js/modernizr.js',
+        },
+    },
+    'CSS_COMPRESSOR': 'django_pipeline_csscompressor.CssCompressor',
+    'JS_COMPRESSOR': 'pipeline.compressors.slimit.SlimItCompressor',
+    'DISABLE_WRAPPER': True,
+    'COMPILERS': (
+        'pipeline.compilers.sass.SASSCompiler',
+    ),
+    # Use the libsass commandline tool (that's bundled with libsass) as our
+    # sass compiler, so there's no need to install anything else.
+    'SASS_BINARY': 'sassc'
+}
 
 
 # Uploaded files

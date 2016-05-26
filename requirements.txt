@@ -1,10 +1,12 @@
-# List all Python package requirements this project has.
-#
-# more details: http://www.pip-installer.org/en/latest/requirements.html
-
-### General useful bits
-PyYAML
-psycopg2
-
-### Django related
-Django
+Django==1.9.6
+PyYAML==3.11
+argparse==1.2.1
+csscompressor==0.9.4
+django-pipeline==1.6.8
+-e git+https://github.com/mysociety/django-pipeline-csscompressor@6a88fde5045d68746f1c7ee816deda86615c5581#egg=django_pipeline_csscompressor-master
+libsass==0.11.1
+ply==3.4
+psycopg2==2.6.1
+six==1.10.0
+slimit==0.8.1
+wsgiref==0.1.2
