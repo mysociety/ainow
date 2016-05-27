@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
     # Install the packages from conf/packages
     xargs sudo apt-get install -qq -y < conf/packages
     # Install some of the other things we need that are just for dev
-    sudo apt-get install -qq -y ruby-dev libsqlite3-dev build-essential
+    sudo apt-get install -qq -y git ruby-dev libsqlite3-dev build-essential
 
     # Create a postgresql user
     sudo -u postgres psql -c "CREATE USER ainow SUPERUSER CREATEDB PASSWORD 'ainow'"
