@@ -14,7 +14,15 @@ admin.site.register(
     inlines = [SlotInline, ]
 )
 
-admin.site.register(models.Speaker)
-admin.site.register(models.Slot)
+admin.site.register(models.Speaker, list_display=("name", "twitter_username"))
+admin.site.register(
+    models.Slot,
+    list_display=("name", "kind", "start", "end", "room"),
+    ordering=("start",)
+)
 admin.site.register(models.Room)
-admin.site.register(models.Presentation)
+admin.site.register(
+    models.Presentation,
+    list_display=("title", "primary_speaker", "slot"),
+    ordering=("slot__start",)
+)
