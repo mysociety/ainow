@@ -3,3 +3,5 @@ python-pip
 python-virtualenv
 postgresql
 libpq-dev
+libjpeg8-dev
+zlib1g-dev
