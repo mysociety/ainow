@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ schedule.name }}{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>{{ schedule.name }} Schedule</h1>
+      <ul>
+        {% for slot in slots %}
+          <li>
+            {% if slot.is_presentation_slot %}
+              {% if slot.presentation %}
+                {% with presentation=slot.presentation %}
+                  <h2>{{ presentation.title }}</h2>
+                  {{ presentation.short_description }}
+                  <p>by {{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
+                  </p>
+                {% endwith %}
+              {% else %}
+                <h2>{{ slot.get_kind_display }}: TBC</h2>
+              {% endif %}
+            {% else %}
+              <h2>{{ slot.get_kind_display }}</h2>
+            {% endif %}
+            <p>{{ slot.start }} - {{ slot.end }}</p>
+            <p>{{ slot.room.name }}</p>
+          </li>
+        {% empty %}
+          <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

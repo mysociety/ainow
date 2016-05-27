@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'pipeline',
+
+    'conference'
 ]
 
 MIDDLEWARE_CLASSES = [
