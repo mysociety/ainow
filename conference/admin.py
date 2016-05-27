@@ -15,6 +15,7 @@ admin.site.register(
 )
 
 admin.site.register(models.Speaker, list_display=("name", "twitter_username"))
+admin.site.register(models.Attendee, list_display=("name", "twitter_username"))
 admin.site.register(
     models.Slot,
     list_display=("name", "kind", "start", "end", "room"),
