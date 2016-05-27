@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from sorl.thumbnail import ImageField
+
 
 class TimestampedModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -33,7 +35,7 @@ class Person(SluggedModel):
     )
     name = models.CharField(max_length=1024)
     biography = models.TextField(blank=True)
-    photo = models.ImageField(upload_to=person_photo_upload_to, blank=True)
+    photo = ImageField(upload_to=person_photo_upload_to, blank=True)
     twitter_username = models.CharField(max_length=15, blank=True)
     website = models.URLField(max_length=1024, blank=True)
     facebook = models.URLField(max_length=1024, blank=True)

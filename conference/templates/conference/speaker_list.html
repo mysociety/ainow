@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load thumbnail %}
 
 {% block title %}Speakers{% endblock %}
 
@@ -14,9 +15,11 @@
         {% for speaker in speakers %}
           <li>
             <h2>{{ speaker.name }}</h2>
-            <p>{{ speaker.photo }}</h2>
-            <p>{{ speaker.biography }}</h2>
-            <p>@{{ speaker.twitter_username }}</h2>
+            {% thumbnail speaker.photo "250x250" crop="center" as im %}
+              <img src="{{ im.url }}">
+            {% endthumbnail %}
+            <p>{{ speaker.biography }}</p>
+            <p>@{{ speaker.twitter_username }}</p>
           </li>
         {% empty %}
           <li>There aren't any speakers yet. Add some in the admin.</li>
