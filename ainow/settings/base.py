@@ -248,8 +248,37 @@ if DEBUG:
     EMAIL_USE_TLS = False
 
 # MarkItUp settings
-MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': True})
+MARKITUP_FILTER = ('conference.utils.bleached_markdown', {})
 MARKITUP_SET = 'markitup/sets/markdown/'
+
+
+# Bleach settings (used by conference.utils.bleached_markdown)
+BLEACH_ALLOWED_TAGS = [
+    u'a',
+    u'abbr',
+    u'acronym',
+    u'b',
+    u'blockquote',
+    u'code',
+    u'em',
+    u'i',
+    u'li',
+    u'ol',
+    u'strong',
+    u'ul',
+    # We've added these:
+    u'p',
+    u'img',
+    u'pre',
+]
+
+BLEACH_ALLOWED_ATTRIBUTES = {
+    u'a': [u'href', u'title'],
+    u'acronym': [u'title'],
+    u'abbr': [u'title'],
+    # We've added these:
+    u'img':  [u'src', u'alt', u'title'],
+}
 
 
 # mySociety-specific settings

@@ -35,7 +35,7 @@ class Person(SluggedModel):
         related_name="%(app_label)s_%(class)s_profile"
     )
     name = models.CharField(max_length=1024)
-    biography = models.TextField(blank=True)
+    biography = MarkupField(blank=True)
     photo = ImageField(upload_to=person_photo_upload_to, blank=True)
     twitter_username = models.CharField(max_length=15, blank=True)
     website = models.URLField(max_length=1024, blank=True)
