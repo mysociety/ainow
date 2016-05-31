@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'pipeline',
     'sorl.thumbnail',
+    'markitup',
 
     'conference'
 ]
@@ -230,7 +231,7 @@ LOGGING = {
 # Cookies
 
 SESSION_COOKIE_HTTPONLY = True
-CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = False  # We need this for the markdown ajax preview
 
 
 # Allowed hosts
@@ -245,6 +246,10 @@ if DEBUG:
     EMAIL_HOST_PASSWORD = ''
     EMAIL_PORT = 1025
     EMAIL_USE_TLS = False
+
+# MarkItUp settings
+MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': True})
+MARKITUP_SET = 'markitup/sets/markdown/'
 
 
 # mySociety-specific settings

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from sorl.thumbnail import ImageField
+from markitup.fields import MarkupField
 
 
 class TimestampedModel(models.Model):
@@ -130,7 +131,7 @@ class Presentation(SluggedModel):
         related_name="additional_presentations",
         blank=True
     )
-    long_description = models.TextField()
+    long_description = MarkupField()
     short_description = models.TextField()
     slot = models.OneToOneField(
         'Slot',
