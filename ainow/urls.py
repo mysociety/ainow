@@ -18,7 +18,14 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from .views import HomeView, RSVPView, PrivacyView
+from .views import (
+    HomeView,
+    RSVPView,
+    PrivacyView,
+    SignupView,
+    LoginView,
+    ConfirmEmailView
+)
 from conference.views import (
     ScheduleView,
     SpeakerListView,
@@ -38,4 +45,12 @@ urlpatterns = [
     url(r'^attendees$', AttendeeListView.as_view(), name='attendees'),
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),
+    # Override the login and signup views from the account app, so we can use
+    # our versions which use an email address instead of a username.
+    url(r"^account/signup/$", SignupView.as_view(), name="account_signup"),
+    url(r"^account/login/$", LoginView.as_view(), name="account_login"),
+    # Override the confirm_email view from the account app, so we can sign
+    # people in immediately after they confirm.
+    url(r"^account/confirm_email/(?P<key>\w+)/$", ConfirmEmailView.as_view(), name="account_confirm_email"),
+    url(r"^account/", include("account.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -42,6 +42,7 @@ MANAGERS = ADMINS
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -51,7 +52,9 @@ INSTALLED_APPS = [
     'pipeline',
     'sorl.thumbnail',
     'markitup',
+    'account',
 
+    'ainow',  # Base app has management commands so has to be in here
     'conference'
 ]
 
@@ -64,6 +67,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'account.middleware.LocaleMiddleware',
+    'account.middleware.TimezoneMiddleware'
 ]
 
 ROOT_URLCONF = 'ainow.urls'
@@ -81,7 +86,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "ainow.context_processors.add_settings",
+                'account.context_processors.account',
+                'ainow.context_processors.add_settings',
             ],
             'debug': DEBUG,
         },
@@ -107,6 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+# Enable email-based login rather than username-based
+AUTHENTICATION_BACKENDS = [
+    'account.auth_backends.EmailAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 
@@ -239,6 +251,12 @@ CSRF_COOKIE_HTTPONLY = False  # We need this for the markdown ajax preview
 ALLOWED_HOSTS = config.get('ALLOWED_HOSTS', [])
 
 
+# Django sites
+SITE_ID = 1
+SITE_BASE_URL = config.get('SITE_BASE_URL', '')
+SITE_NAME = config.get('SITE_NAME', 'MapIt')
+
+
 # Use mailcatcher in development
 if DEBUG:
     EMAIL_HOST = '127.0.0.1'
@@ -279,6 +297,15 @@ BLEACH_ALLOWED_ATTRIBUTES = {
     # We've added these:
     u'img':  [u'src', u'alt', u'title'],
 }
+
+
+# Django user accounts settings
+ACCOUNT_EMAIL_UNIQUE = True
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
+CONTACT_EMAIL = config.get('CONTACT_EMAIL', '')
+DEFAULT_FROM_EMAIL = CONTACT_EMAIL
+ACCOUNT_USER_DISPLAY = lambda user: user.email
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 
 
 # mySociety-specific settings

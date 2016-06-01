@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load pipeline %}
+{% load account_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,6 +41,23 @@
         &nbsp;&nbsp;
         <a href="{% url 'attendees' %}">Attendees</a>
         <p class="site-header__details">July 7th, Skirball Center for the Performing Arts, New York City</p>
+      </div>
+    </header>
+
+    <header class="sub-header">
+      {% if messages %}
+        <div class="container">
+          {% include '_messages.html' %}
+        </div>
+      {% endif %}
+      <div class="container">
+        {% if request.user.is_authenticated %}
+          <a href="{% url 'account_settings' %}">
+            {% user_display request.user %}
+          </a>
+        {% else %}
+          {% include 'account/_signup_nav.html' %}
+        {% endif %}
       </div>
     </header>
 

@@ -36,3 +36,6 @@ find . -name '*.pyc' -delete
 # gather all the static files in one place
 ./manage.py collectstatic --noinput
 
+# Configure the default site's base url, so that link-building using the sites
+# framework works.
+./manage.py create_default_site

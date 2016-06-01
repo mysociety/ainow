@@ -1,0 +1,30 @@
+{% if form.non_field_errors %}
+<div class="account-form__errors">
+  {{ form.non_field_errors }}
+</div>
+{% endif %}
+{% comment %}
+This template is used for several different forms, and we want to specify the
+ordering of the fields, so we list each field separately
+{% endcomment %}
+{% if form.email %}
+  {% include 'account/_form_field.html' with field=form.email %}
+  {% include 'account/_form_field.html' with field=form.password %}
+  {% include 'account/_form_field.html' with field=form.password_confirm %}
+{% elif form.password_new %}
+  {% include 'account/_form_field.html' with field=form.password_current %}
+  {% include 'account/_form_field.html' with field=form.password_new %}
+  {% include 'account/_form_field.html' with field=form.password_new_confirm %}
+{% else %}
+  {% for field in form %}
+    {% include 'account/_form_field.html' with field=field %}
+  {% endfor %}
+{% endif %}
+{% for field in form %}
+  {% if field.is_hidden %}
+    {{ field }}
+  {% endif %}
+{% endfor %}
+{% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+{% endif %}

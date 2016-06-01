@@ -27,3 +27,7 @@ GOOGLE_ANALYTICS_ACCOUNT: ''
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS:
   - 'localhost'
+
+SITE_BASE_URL: 'http://localhost:8000'
+SITE_NAME: 'AINow Conference'
+CONTACT_EMAIL: 'info@artificialintelligencenow.com'
