@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}{{ presentation.title }}{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>{{ presentation.title }}</h1>
+      <p>
+        {% thumbnail speaker.photo "250x250" crop="center" as im %}
+          <img src="{{ im.url }}">
+        {% endthumbnail %}
+      </p>
+      <p>{{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}</p>
+      <p>{{ presentation.long_description }}</p>
+      <p>{{ presentation.slot.start }} - {{ presentation.slot.end }}</p>
+      <p>{{ presentation.slot.room.name }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

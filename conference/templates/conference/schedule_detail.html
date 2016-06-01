@@ -16,7 +16,11 @@
             {% if slot.is_presentation_slot %}
               {% if slot.presentation %}
                 {% with presentation=slot.presentation %}
-                  <h2>{{ presentation.title }}</h2>
+                  <h2>
+                    <a href="{% url 'presentation' presentation.slug %}">
+                      {{ presentation.title }}
+                    </a>
+                  </h2>
                   {{ presentation.short_description }}
                   <p>by {{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
                   </p>
