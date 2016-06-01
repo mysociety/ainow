@@ -1,6 +1,6 @@
 from django.views.generic import DetailView, ListView
 
-from .models import Schedule, Speaker, Presentation
+from .models import Schedule, Speaker, Presentation, Attendee
 
 
 class ScheduleView(DetailView):
@@ -21,3 +21,8 @@ class SpeakerListView(ListView):
 class PresentationView(DetailView):
     model = Presentation
     context_object_name = 'presentation'
+
+
+class AttendeeListView(ListView):
+    model = Attendee
+    context_object_name = 'attendees'

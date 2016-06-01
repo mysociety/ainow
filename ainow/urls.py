@@ -19,7 +19,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from .views import HomeView, RSVPView, PrivacyView
-from conference.views import ScheduleView, SpeakerListView, PresentationView
+from conference.views import (
+    ScheduleView,
+    SpeakerListView,
+    PresentationView,
+    AttendeeListView
+)
 
 admin.autodiscover()
 
@@ -30,6 +35,7 @@ urlpatterns = [
     url(r'^schedule/(?P<slug>[-\w]+)$', ScheduleView.as_view(), name='schedule'),
     url(r'^presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
     url(r'^speakers$', SpeakerListView.as_view(), name='speakers'),
+    url(r'^attendees$', AttendeeListView.as_view(), name='attendees'),
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

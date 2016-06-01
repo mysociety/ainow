@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Attendees{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Attendees</h1>
+      <ul>
+        {% for attendee in attendees %}
+          <li>
+            <h2>{{ attendee.name }}</h2>
+            {% thumbnail attendee.photo "100x100" crop="center" as im %}
+              <img src="{{ im.url }}">
+            {% endthumbnail %}
+          </li>
+        {% empty %}
+          <li>There aren't any attendees yet. Add some in the admin.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
