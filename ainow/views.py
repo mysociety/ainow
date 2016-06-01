@@ -10,4 +10,4 @@ class RSVPView(TemplateView):
 
 
 class PrivacyView(TemplateView):
-    template_name = 'rsvp.html'
+    template_name = 'privacy.html'
