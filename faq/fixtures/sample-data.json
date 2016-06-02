@@ -1,0 +1,64 @@
+[
+{
+    "model": "faq.faqpage",
+    "pk": 1,
+    "fields": {
+        "slug": "conference",
+        "name": "Conference FAQ",
+        "title": "FAQ",
+        "introduction": "Test",
+        "_introduction_rendered": "<p>Test</p>"
+    }
+},
+{
+    "model": "faq.faqpage",
+    "pk": 2,
+    "fields": {
+        "slug": "workshop",
+        "name": "Workshop FAQ",
+        "title": "FAQ",
+        "introduction": "This is the private workshop FAQ",
+        "_introduction_rendered": "<p>This is the private workshop FAQ</p>"
+    }
+},
+{
+    "model": "faq.faqquestion",
+    "pk": 1,
+    "fields": {
+        "slug": "shared",
+        "question": "A shared question",
+        "answer": "The answer is shared between both FAQ pages.",
+        "_answer_rendered": "<p>The answer is shared between both FAQ pages.</p>",
+        "pages": [
+            2,
+            1
+        ]
+    }
+},
+{
+    "model": "faq.faqquestion",
+    "pk": 2,
+    "fields": {
+        "slug": "public",
+        "question": "A public FAQ question",
+        "answer": "The answer is only on the public far page",
+        "_answer_rendered": "<p>The answer is only on the public far page</p>",
+        "pages": [
+            1
+        ]
+    }
+},
+{
+    "model": "faq.faqquestion",
+    "pk": 3,
+    "fields": {
+        "slug": "private",
+        "question": "A private FAQ question",
+        "answer": "This is only on the Workshop FAQ page",
+        "_answer_rendered": "<p>This is only on the Workshop FAQ page</p>",
+        "pages": [
+            2
+        ]
+    }
+}
+]
