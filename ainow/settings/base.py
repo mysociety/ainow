@@ -257,8 +257,9 @@ SITE_BASE_URL = config.get('SITE_BASE_URL', '')
 SITE_NAME = config.get('SITE_NAME', 'MapIt')
 
 
-# Use mailcatcher in development
-if DEBUG:
+# Use mailcatcher in development?
+USE_MAILCATCHER = config.get('USE_MAILCATCHER', False)
+if USE_MAILCATCHER:
     EMAIL_HOST = '127.0.0.1'
     EMAIL_HOST_USER = ''
     EMAIL_HOST_PASSWORD = ''

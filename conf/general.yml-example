@@ -31,3 +31,6 @@ ALLOWED_HOSTS:
 SITE_BASE_URL: 'http://localhost:8000'
 SITE_NAME: 'AINow Conference'
 CONTACT_EMAIL: 'info@artificialintelligencenow.com'
+
+# Use MAILCATCHER (requires different SMTP settings)
+USE_MAILCATCHER: True
