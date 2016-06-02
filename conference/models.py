@@ -21,7 +21,7 @@ class SluggedModel(models.Model):
 
 
 def person_photo_upload_to(instance, filename):
-    return "conference_{}_photos".format(instance.__class__.__name__.lower)
+    return "conference_{}_photos/{}".format(instance.__class__.__name__.lower(), filename)
 
 
 # This is abstract because we have two very similar types of people (speakers
