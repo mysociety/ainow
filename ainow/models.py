@@ -7,10 +7,3 @@ class TimestampedModel(models.Model):
 
     class Meta:
         abstract = True
-
-
-class SluggedModel(models.Model):
-    slug = models.SlugField(help_text="Used to make a nice url for the page that displays this.")
-
-    class Meta:
-        abstract = True

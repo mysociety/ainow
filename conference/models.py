@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 
 from sorl.thumbnail import ImageField
 from markitup.fields import MarkupField
+from autoslug import AutoSlugField
 
-from ainow.models import TimestampedModel, SluggedModel
+from ainow.models import TimestampedModel
 
 
 def person_photo_upload_to(instance, filename):
@@ -14,7 +15,7 @@ def person_photo_upload_to(instance, filename):
 # This is abstract because we have two very similar types of people (speakers
 # and attendees) who we want to use the same set of fields for but keep
 # separate in the database
-class Person(SluggedModel):
+class Person(TimestampedModel):
     user = models.OneToOneField(
         User,
         blank=True,
@@ -22,6 +23,13 @@ class Person(SluggedModel):
         related_name="%(app_label)s_%(class)s_profile"
     )
     name = models.CharField(max_length=1024)
+    slug = AutoSlugField(
+        db_index=True,
+        unique=True,
+        editable=True,
+        populate_from='name',
+        help_text="Used to make a nice url for the page that displays this person."
+    )
     biography = MarkupField(blank=True)
     photo = ImageField(upload_to=person_photo_upload_to, blank=True)
     twitter_username = models.CharField(max_length=15, blank=True)
@@ -44,8 +52,15 @@ class Attendee(Person):
     pass
 
 
-class Schedule(SluggedModel):
+class Schedule(TimestampedModel):
     name = models.CharField(max_length=1024)
+    slug = AutoSlugField(
+        db_index=True,
+        unique=True,
+        editable=True,
+        populate_from='name',
+        help_text="Used to make a nice url for the page that displays this schedule."
+    )
 
     def __str__(self):
         return self.name
@@ -107,8 +122,15 @@ class Slot(TimestampedModel):
         return self.kind in self.PRESENTATION_KINDS
 
 
-class Presentation(SluggedModel):
+class Presentation(TimestampedModel):
     title = models.CharField(max_length=1024)
+    slug = AutoSlugField(
+        db_index=True,
+        unique=True,
+        editable=True,
+        populate_from='title',
+        help_text="Used to make a nice url for the page that displays this presentation."
+    )
     primary_speaker = models.ForeignKey(
         'Speaker',
         related_name="presentations"
@@ -130,3 +152,6 @@ class Presentation(SluggedModel):
 
     def __str__(self):
         return self.title
+
+    def slug_field(self):
+        return 'title'

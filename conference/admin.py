@@ -19,12 +19,14 @@ admin.site.register(
 
 class SpeakerAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ("name", "twitter_username")
+    prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(models.Speaker, SpeakerAdmin)
 
 
 class AttendeeAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ("name", "twitter_username")
+    prepopulated_fields = {"slug": ("name",)}
 
 
 admin.site.register(models.Attendee, AttendeeAdmin)
@@ -43,5 +45,6 @@ admin.site.register(models.Room)
 admin.site.register(
     models.Presentation,
     list_display=("title", "primary_speaker", "slot"),
+    prepopulated_fields = {"slug": ("title",)},
     ordering=("slot__start",)
 )
