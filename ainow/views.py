@@ -65,7 +65,7 @@ class ConfirmEmailView(account.views.ConfirmEmailView):
                     "email": confirmation.email_address.email
                 })
             )
-        return redirect('account_settings')
+        return redirect('profile')
 
     def login_user(self, user):
         """

@@ -30,7 +30,8 @@ from conference.views import (
     ScheduleView,
     SpeakerListView,
     PresentationView,
-    AttendeeListView
+    AttendeeListView,
+    SpeakerCreateUpdateView
 )
 
 admin.autodiscover()
@@ -43,6 +44,7 @@ urlpatterns = [
     url(r'^presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
     url(r'^speakers$', SpeakerListView.as_view(), name='speakers'),
     url(r'^attendees$', AttendeeListView.as_view(), name='attendees'),
+    url(r"^profile/$", SpeakerCreateUpdateView.as_view(), name="profile"),
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),
     # Override the login and signup views from the account app, so we can use

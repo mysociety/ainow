@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load account_tags %}
+
+{% block title %}Your Account - Profile{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      {% include 'account/_logged_in_nav.html' %}
+      <h1>Your Account - Profile</h1>
+      <h2>About you</h2>
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+        <div class="account-form__errors">
+          {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+        {# Purposely not including the user here because we force it to #}
+        {# request.user in the view #}
+        {% include 'account/_form_field.html' with field=form.name %}
+        {% include 'account/_form_field.html' with field=form.biography %}
+        <div class="account-form__field">
+        <div class="account-form__label">{{ form.photo.label_tag }}</div>
+        {% thumbnail speaker.photo "250x250" crop="center" as im %}
+            <img src="{{ im.url }}">
+        {% endthumbnail %}
+        <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %}">{{ form.photo }}</div>
+        {% if form.photo.errors %}
+          <div class="account-form__errors">{{ form.photo.errors }}</div>
+        {% endif %}
+      </div>
+        {% include 'account/_form_field.html' with field=form.twitter_username %}
+        {% include 'account/_form_field.html' with field=form.website %}
+        {% include 'account/_form_field.html' with field=form.facebook %}
+        <div class="account-form__field account-form__field--submit">
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

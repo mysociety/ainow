@@ -52,7 +52,7 @@
       {% endif %}
       <div class="container">
         {% if request.user.is_authenticated %}
-          <a href="{% url 'account_settings' %}">
+          <a href="{% url 'profile' %}">
             {% user_display request.user %}
           </a>
         {% else %}
