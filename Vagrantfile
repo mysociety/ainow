@@ -54,6 +54,9 @@ Vagrant.configure(2) do |config|
     sudo gem install --no-rdoc --no-ri --version "< 3" mime-types
     sudo gem install --no-rdoc --no-ri --conservative mailcatcher
 
+    # Copy the general.yml file in place
+    cp conf/general.yml-example conf/general.yml
+
     # Run post-deploy actions script to update the virtualenv, install the
     # python packages we need, migrate the db and generate the sass etc
     conf/post_deploy_actions.bash
