@@ -58,7 +58,8 @@ INSTALLED_APPS = [
 
     'ainow',  # Base app has management commands so has to be in here
     'conference',
-    'faq'
+    'faq',
+    'pages',
 ]
 
 MIDDLEWARE_CLASSES = [

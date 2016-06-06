@@ -34,6 +34,7 @@ from conference.views import (
     SpeakerCreateUpdateView
 )
 from faq.views import FAQPageView
+from pages.views import PageView
 
 admin.autodiscover()
 
@@ -47,6 +48,7 @@ urlpatterns = [
     url(r'^attendees$', AttendeeListView.as_view(), name='attendees'),
     url(r"^profile/$", SpeakerCreateUpdateView.as_view(), name="profile"),
     url(r"^faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
+    url(r"^page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),
     # Override the login and signup views from the account app, so we can use
