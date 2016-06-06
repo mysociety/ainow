@@ -33,7 +33,14 @@
   <body class="{% block bodyclasses %}{% endblock %}">
     <header class="site-header" role="banner">
       <div class="container">
-        <h1 class="site-header__title">AI Now</h1>
+        <h1 class="site-header__title">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'img/ainow-header-logo.png' %}" 
+                 srcset="{% static 'img/ainow-header-logo.svg' %} 1x" 
+                 alt="Artificial Intelligence Now" 
+                 height="21" width="69">
+          </a>
+        </h1>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="{% url 'speakers' %}">Speakers</a>
         &nbsp;&nbsp;

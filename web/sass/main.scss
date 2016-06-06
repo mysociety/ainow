@@ -330,15 +330,19 @@ tfoot {
   line-height: 1em;
   font-size: 1em;
   margin: 0;
-  padding: 0.5em 0;
+  padding: 0.3em 0;
   display: inline-block;
   a {
     color: $colour_black;
+    display: inline-block;
     &:hover,
     &:active,
     &:focus {
       color: $colour_dark_mint;
     }
+  }
+  img {
+    display: inline-block;
   }
 }
 
@@ -391,9 +395,8 @@ tfoot {
   margin-top: 2em;
   background-color: $colour_orange;
   display: inline-block;
-  padding: 0.33em 0.5em;
+  padding: 0.4em 0.35em 0.2em;
   @media (min-width:$medium_screen) {
-    font-size: 1.5em;
     margin-top: 1em;
     margin-bottom: 0.75em;
   }
