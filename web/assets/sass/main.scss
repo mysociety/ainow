@@ -330,15 +330,19 @@ tfoot {
   line-height: 1em;
   font-size: 1em;
   margin: 0;
-  padding: 0.5em 0;
+  padding: 0.3em 0;
   display: inline-block;
   a {
     color: $colour_black;
+    display: inline-block;
     &:hover,
     &:active,
     &:focus {
       color: $colour_dark_mint;
     }
+  }
+  img {
+    display: inline-block;
   }
 }
 
