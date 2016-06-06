@@ -9,5 +9,5 @@ class FAQPageView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(FAQPageView, self).get_context_data(**kwargs)
-        context['questions'] = context['page'].questions.all()
+        context['questions'] = context['page'].questions.all().order_by('link_to_page')
         return context

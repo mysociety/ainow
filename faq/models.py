@@ -38,9 +38,24 @@ class FAQQuestion(TimestampedModel):
     answer = MarkupField()
     pages = models.ManyToManyField(
         'FAQPage',
+        through='FAQQuestionPage',
         blank=True,
         related_name='questions'
     )
 
     def __str__(self):
         return self.question
+
+
+class FAQQuestionPage(models.Model):
+    """Explicit through-model for assigning pages to questions with ordering"""
+    faqpage = models.ForeignKey('FAQPage', verbose_name='page')
+    faqquestion = models.ForeignKey('FAQQuestion', verbose_name='question', related_name='link_to_page')
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        db_table = 'faq_faqquestion_pages'
+        ordering = ['order']
+
+    def __str__(self):
+        return "{} - {}".format(self.faqquestion, self.faqpage)

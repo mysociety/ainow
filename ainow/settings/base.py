@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'markitup',
     'account',
     'autoslug',
+    'adminsortable2',
 
     'ainow',  # Base app has management commands so has to be in here
     'conference',

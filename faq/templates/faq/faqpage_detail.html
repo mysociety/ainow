@@ -16,11 +16,10 @@
         {% endfor %}
       </ul>
       {% for question in questions %}
-        <div class="faq__question">
-          <h2 id="{{ question.slug }}">{{ question.question }}</h2>
-          {{ question.answer }}
-        </div>
-        </div>
+      <div class="faq__question">
+        <h2 id="{{ question.slug }}">{{ question.question }}</h2>
+        {{ question.answer }}
+      </div>
       {% empty %}
         <li>This page doesn't have any questions yet. Add some in the admin.</li>
       {% endfor %}
