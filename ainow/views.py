@@ -13,7 +13,7 @@ from forms import SignupForm
 
 
 class HomeView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'ainow/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
@@ -23,7 +23,7 @@ class HomeView(TemplateView):
 
 
 class RSVPView(TemplateView):
-    template_name = 'rsvp.html'
+    template_name = 'ainow/rsvp.html'
 
     def get_context_data(self, **kwargs):
         context = super(RSVPView, self).get_context_data(**kwargs)
