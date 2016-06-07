@@ -41,7 +41,4 @@ find . -name '*.pyc' -delete
 ./manage.py create_default_site
 
 # Install some content we always want to exist
-python manage.py loaddata conference/fixtures/initial-data.json
-python manage.py loaddata blocks/fixtures/initial-data.json
-python manage.py loaddata faq/fixtures/initial-data.json
-python manage.py loaddata pages/fixtures/initial-data.json
+python manage.py loaddata conference/fixtures/initial-data.json blocks/fixtures/initial-data.json faq/fixtures/initial-data.json pages/fixtures/initial-data.json
