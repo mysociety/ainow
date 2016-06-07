@@ -7,19 +7,23 @@ from django.http import Http404
 import account.forms
 import account.views
 
+from blocks.models import Block
+
 from forms import SignupForm
 
 
 class HomeView(TemplateView):
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
+        context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        return context
+
 
 class RSVPView(TemplateView):
     template_name = 'rsvp.html'
-
-
-class PrivacyView(TemplateView):
-    template_name = 'privacy.html'
 
 
 class LoginView(account.views.LoginView):

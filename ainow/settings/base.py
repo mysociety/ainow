@@ -293,6 +293,11 @@ BLEACH_ALLOWED_TAGS = [
     u'p',
     u'img',
     u'pre',
+    u'h2',
+    u'h3',
+    u'h4',
+    u'h5',
+    u'h6',
 ]
 
 BLEACH_ALLOWED_ATTRIBUTES = {
