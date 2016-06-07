@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'conference',
     'faq',
     'pages',
+    'blocks'
 ]
 
 MIDDLEWARE_CLASSES = [

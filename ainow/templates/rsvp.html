@@ -14,8 +14,7 @@
       <div class="column column--primary">
 
           <div class="mailchimp-form">
-            <p>If you are here, you followed a link in an email invitation requesting your presence and expertise at the invite-only convening for AI Now. We look forward to your contribution at the event, and very much hope that you will be able to attend. </p>
-            <p>For more information on the event format, please refer to your invitation email, and please don’t hesitate to contact the Co-Chairs directly with any questions. </p>
+            {{ intro_block }}
             <!-- Begin MailChimp Signup Form -->
             <div id="mc_embed_signup">
             <form action="//artificialintelligencenow.us13.list-manage.com/subscribe/post?u=0bd8a46e36d978d1373134f77&amp;id=bff4afdbe4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -66,9 +65,7 @@
         </div>
       </div>
       <div class="column column--secondary">
-        <h2 class="quarternary-heading">Privacy</h2>
-        <p>Please note that we are using <a href="http://www.mailchimp.com/">MailChimp</a> to collect and organize attendee RSVPs. We have confirmed with MailChimp’s <a href="http://mailchimp.com/legal/terms/">terms of service</a> that your information will not be used, sold, repurposed, or shared by MailChimp. For our part, the Co-Chairs, Program Committee, and host organizations for AI Now are committed to protecting your personal information. No one outside of those directly collaborating will have access to the information you transmit through this form.</p>
-        <p>If for any reason you are uncomfortable entering your information, please RSVP via <a href="mailto:rsvp@artificialintelligencenow.com"> our email address</a></p>
+        {{ privacy_block }}
       </div>
     </div>
   </div>

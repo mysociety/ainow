@@ -16,5 +16,10 @@ class PageAdmin(admin.ModelAdmin):
     inlines = (SubPageInline,)
     prepopulated_fields = {"slug": ("title",)}
 
+    def formfield_for_db_field(self, db_field, **kwargs):
+	    if db_field.name == 'content':
+	        kwargs['widget'] = AdminMarkItUpWidget()
+	    return super(PageAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+
 
 admin.site.register(Page, PageAdmin)

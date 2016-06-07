@@ -25,6 +25,12 @@ class HomeView(TemplateView):
 class RSVPView(TemplateView):
     template_name = 'rsvp.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(RSVPView, self).get_context_data(**kwargs)
+        context['intro_block'] = Block.objects.get(slug='rsvp-introduction').content
+        context['privacy_block'] = Block.objects.get(slug='rsvp-privacy').content
+        return context
+
 
 class LoginView(account.views.LoginView):
     """ Override account.views.LoginView to use the email-only version """

@@ -1,0 +1,50 @@
+[
+{
+    "model": "blocks.block",
+    "pk": 1,
+    "fields": {
+        "created": "2016-06-07T08:28:07.290Z",
+        "updated": "2016-06-07T08:28:07.290Z",
+        "name": "Homepage introduction",
+        "slug": "homepage-introduction",
+        "content": "The White House and New York University\u2019s Information Law Institute, with support from Google Open Research and Microsoft Research, will host a major public symposium to address the near-term impacts of AI technologies across social and economic systems.\r\n\r\nThe focus will be the challenges of the next 5-10 years, specifically addressing five themes: social inequality, labor, financial markets, healthcare, and ethics. Leaders from industry, academia, and civil society will share ideas for technical design, research and policy directions.",
+        "_content_rendered": "<p>The White House and New York University\u2019s Information Law Institute, with support from Google Open Research and Microsoft Research, will host a major public symposium to address the near-term impacts of AI technologies across social and economic systems.</p>\n<p>The focus will be the challenges of the next 5-10 years, specifically addressing five themes: social inequality, labor, financial markets, healthcare, and ethics. Leaders from industry, academia, and civil society will share ideas for technical design, research and policy directions.</p>"
+    }
+},
+{
+    "model": "blocks.block",
+    "pk": 2,
+    "fields": {
+        "created": "2016-06-07T08:56:38.988Z",
+        "updated": "2016-06-07T08:56:38.988Z",
+        "name": "Homepage tickets",
+        "slug": "homepage-tickets",
+        "content": "Admission is free, but tickets will be required.\r\n\r\nPlease check back soon for more information, including an opportunity to reserve your ticket.",
+        "_content_rendered": "<p>Admission is free, but tickets will be required.</p>\n<p>Please check back soon for more information, including an opportunity to reserve your ticket.</p>"
+    }
+},
+{
+    "model": "blocks.block",
+    "pk": 3,
+    "fields": {
+        "created": "2016-06-07T10:58:18.967Z",
+        "updated": "2016-06-07T10:58:18.967Z",
+        "name": "RSVP introduction",
+        "slug": "rsvp-introduction",
+        "content": "If you are here, you followed a link in an email invitation requesting your presence and expertise at the invite-only convening for AI Now. We look forward to your contribution at the event, and very much hope that you will be able to attend.\r\n\r\nFor more information on the event format, please refer to your invitation email, and please don\u2019t hesitate to contact the Co-Chairs directly with any questions.",
+        "_content_rendered": "<p>If you are here, you followed a link in an email invitation requesting your presence and expertise at the invite-only convening for AI Now. We look forward to your contribution at the event, and very much hope that you will be able to attend.</p>\n<p>For more information on the event format, please refer to your invitation email, and please don\u2019t hesitate to contact the Co-Chairs directly with any questions.</p>"
+    }
+},
+{
+    "model": "blocks.block",
+    "pk": 4,
+    "fields": {
+        "created": "2016-06-07T11:00:33.382Z",
+        "updated": "2016-06-07T11:00:33.383Z",
+        "name": "RSVP privacy",
+        "slug": "rsvp-privacy",
+        "content": "## Privacy\r\n\r\nPlease note that we are using [MailChimp](http://www.mailchimp.com/) to collect and organize attendee RSVPs. We have confirmed with MailChimp\u2019s [terms of service](http://mailchimp.com/legal/terms/) that your information will not be used, sold, repurposed, or shared by MailChimp. For our part, the Co-Chairs, Program Committee, and host organizations for AI Now are committed to protecting your personal information. No one outside of those directly collaborating will have access to the information you transmit through this form.\r\n\r\nIf for any reason you are uncomfortable entering your information, please RSVP via [our email address](mailto:rsvp@artificialintelligencenow.com)",
+        "_content_rendered": "<h2>Privacy</h2>\n<p>Please note that we are using <a href=\"http://www.mailchimp.com/\">MailChimp</a> to collect and organize attendee RSVPs. We have confirmed with MailChimp\u2019s <a href=\"http://mailchimp.com/legal/terms/\">terms of service</a> that your information will not be used, sold, repurposed, or shared by MailChimp. For our part, the Co-Chairs, Program Committee, and host organizations for AI Now are committed to protecting your personal information. No one outside of those directly collaborating will have access to the information you transmit through this form.</p>\n<p>If for any reason you are uncomfortable entering your information, please RSVP via <a href=\"mailto:rsvp@artificialintelligencenow.com\">our email address</a></p>"
+    }
+}
+]
