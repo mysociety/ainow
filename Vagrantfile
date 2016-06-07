@@ -60,6 +60,13 @@ Vagrant.configure(2) do |config|
     # Run post-deploy actions script to update the virtualenv, install the
     # python packages we need, migrate the db and generate the sass etc
     conf/post_deploy_actions.bash
+
+    # Install sample data, we only want this in development, hence why it's
+    # not in post_deploy_actions.
+    python manage.py loaddata conference/fixtures/sample-data.json
+    python manage.py loaddata faq/fixtures/sample-data.json
+    python manage.py loaddata pages/fixtures/sample-data.json
+
   SHELL
 
   # Start mailcatcher every time we start the VM
