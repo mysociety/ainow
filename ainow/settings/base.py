@@ -93,6 +93,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'account.context_processors.account',
                 'ainow.context_processors.add_settings',
+                'ainow.context_processors.add_schedule',
             ],
             'debug': DEBUG,
         },
