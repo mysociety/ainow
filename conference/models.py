@@ -61,6 +61,12 @@ class Schedule(TimestampedModel):
         populate_from='name',
         help_text="Used to make a nice url for the page that displays this schedule."
     )
+    private = models.BooleanField(
+        default=False,
+        help_text="Is this schedule for a private event?"
+                  "<br>If this box is checked, this schedule and"
+                  " anything connected to it will force you to log"
+                  " in to view it.")
 
     def __str__(self):
         return self.name
