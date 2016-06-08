@@ -49,7 +49,7 @@ class Speaker(Person):
 
 
 class Attendee(Person):
-    pass
+    schedule = models.ForeignKey('Schedule', blank=True, null=True)
 
 
 class Schedule(TimestampedModel):
