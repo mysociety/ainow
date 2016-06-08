@@ -9,12 +9,14 @@ from django.core.urlresolvers import reverse
 from django.core.files import File
 from django.conf import settings
 
-from .models import Speaker
+from .models import Speaker, Schedule
 
 
-@override_settings(MEDIA_ROOT=tempfile.mkdtemp())
+@override_settings(MEDIA_ROOT=tempfile.mkdtemp(),
+                                STATICFILES_STORAGE = 'pipeline.storage.NonPackagingPipelineStorage')
 class SpeakerProfileTest(TestCase):
     def setUp(self):
+        Schedule.objects.create(slug='workshop', name='Workshop', private=True)
         self.user = User.objects.create_user('test_speaker', 'speaker@example.com', 'password')
         self.client.login(username='test_speaker', password='password')
         self.filename = os.path.join(settings.PROJECT_ROOT, 'conference', 'fixtures', 'speaker.jpg')
