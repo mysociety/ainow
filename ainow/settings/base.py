@@ -184,9 +184,9 @@ PIPELINE = {
     'JAVASCRIPT': {
         'jquery': {
             'source_filenames': (
-                'javascripts/jquery.min.js',
+                'javascripts/jquery.js',
             ),
-            'output_filename': 'javascripts/jquery.min.js',
+            'output_filename': 'javascripts/jquery.js',
         },
         'bootstrap': {
             'source_filenames': (
