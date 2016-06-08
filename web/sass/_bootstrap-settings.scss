@@ -33,7 +33,7 @@ $brand-info: $color_blue;
 $brand-warning: $color_orange;
 $brand-danger: $color_pink;
 
-// $body-bg: use Bootstrap's default
+$body-bg: $gray-lighter;
 $text-color: $gray-darker;
 $link-color: darken($brand-primary, 20%);
 
@@ -47,6 +47,8 @@ $link-color: darken($brand-primary, 20%);
  $body_typeface_bold: 700;
  $heading_typeface: $fira;
  $heading_typeface_bold: 700;
+
+ $font-size-base: 16px;
 
 /*
  * Components
@@ -71,3 +73,6 @@ $link-color: darken($brand-primary, 20%);
 /*
  * Navbar
  */
+
+$navbar-border-radius: 0;
+$navbar-default-bg: $color_white;

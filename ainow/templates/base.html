@@ -13,7 +13,8 @@
     <meta name="viewport" content="width=device-width">
 
     {% stylesheet 'main' %}
-    {% javascript 'modernizr' %}
+    {% javascript 'jquery' %}
+    {% javascript 'bootstrap' %}
 
     <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
@@ -31,29 +32,44 @@
 
   </head>
   <body class="{% block bodyclasses %}{% endblock %}">
-    <header class="site-header" role="banner">
-      <div class="container">
-        <h1 class="site-header__title">
-          <a href="{% url 'home' %}">
-            <img src="{% static 'img/ainow-header-logo.png' %}" 
-                 srcset="{% static 'img/ainow-header-logo.svg' %} 1x" 
-                 alt="Artificial Intelligence Now" 
+    <nav class="site-header navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="{% url 'home' %} navbar-brand" href="#">
+            <img src="{% static 'img/ainow-header-logo.png' %}"
+                 srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
+                 alt="Artificial Intelligence Now"
                  height="21" width="69">
           </a>
-        </h1>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="{% url 'speakers' %}">Speakers</a>
-        &nbsp;&nbsp;
-        <a href="{% url 'schedule' 'conference' %}">Schedule</a>
-        &nbsp;&nbsp;
-        <a href="{% url 'attendees' %}">Attendees</a>
-        &nbsp;&nbsp;
-        <a href="{% url 'faq' 'workshop'%}">FAQ</a>
-        &nbsp;&nbsp;
-        <a href="{% url 'page' 'workshop-resources'%}">Resources</a>
-        <p class="site-header__details">July 7th, Skirball Center for the Performing Arts, New York City</p>
-      </div>
-    </header>
+        </div>
+        <!-- navbar-header -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" role="navigation">
+            <li><a href="{% url 'speakers' %}">Speakers</a></li>
+            <li><a href="{% url 'schedule' 'conference' %}">Schedule</a></li>
+            <li><a href="{% url 'attendees' %}">Attendees</a></li>
+            <li><a href="{% url 'faq' 'workshop'%}">FAQ</a></li>
+            <li><a href="{% url 'page' 'workshop-resources'%}">Resources</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>{% if request.user.is_authenticated %}
+              <a href="{% url 'profile' %}">
+                {% user_display request.user %}
+              </a>
+            {% else %}
+              {% include 'account/_signup_nav.html' %}
+            {% endif %}</li>
+          </ul>
+        </div>
+    </nav>
+
 
     <header class="sub-header">
       {% if messages %}
@@ -61,15 +77,6 @@
           {% include '_messages.html' %}
         </div>
       {% endif %}
-      <div class="container">
-        {% if request.user.is_authenticated %}
-          <a href="{% url 'profile' %}">
-            {% user_display request.user %}
-          </a>
-        {% else %}
-          {% include 'account/_signup_nav.html' %}
-        {% endif %}
-      </div>
     </header>
 
     {% block content %}
@@ -97,4 +104,3 @@
     </footer>
   </body>
 </html>
-

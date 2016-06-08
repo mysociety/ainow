@@ -15,6 +15,7 @@ html {
 }
 
 body {
+  background: $body-bg;
   font-family: $body_typeface;
 }
 
@@ -23,4 +24,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $heading_typeface;
   font-weight: $heading_typeface_bold;
   text-rendering: optimizeLegibility;
+}
+
+.site-header {
+  // built with Bootstrap's navbar component
+  border: 0;
 }
