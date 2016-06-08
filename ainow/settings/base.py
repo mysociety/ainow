@@ -182,12 +182,19 @@ PIPELINE = {
         },
     },
     'JAVASCRIPT': {
-        'modernizr': {
+        'jquery': {
             'source_filenames': (
-                'js/modernizr.min.js',
+                'javascripts/jquery.min.js',
             ),
-            'output_filename': 'js/modernizr.js',
+            'output_filename': 'javascripts/jquery.min.js',
         },
+        'bootstrap': {
+            'source_filenames': (
+                'javascripts/bootstrap.js',
+            ),
+            'output_filename': 'javascripts/bootstrap.js',
+        },
+
     },
     'CSS_COMPRESSOR': 'django_pipeline_csscompressor.CssCompressor',
     'JS_COMPRESSOR': 'pipeline.compressors.slimit.SlimItCompressor',
