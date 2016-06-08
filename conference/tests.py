@@ -9,18 +9,18 @@ from django.core.urlresolvers import reverse
 from django.core.files import File
 from django.conf import settings
 
-from .models import Speaker, Schedule
+from .models import Attendee, Schedule
 
 
 @override_settings(MEDIA_ROOT=tempfile.mkdtemp(),
                                 STATICFILES_STORAGE = 'pipeline.storage.NonPackagingPipelineStorage')
-class SpeakerProfileTest(TestCase):
+class AttendeeProfileTest(TestCase):
     def setUp(self):
-        Schedule.objects.create(slug='workshop', name='Workshop', private=True)
-        self.user = User.objects.create_user('test_speaker', 'speaker@example.com', 'password')
-        self.client.login(username='test_speaker', password='password')
-        self.filename = os.path.join(settings.PROJECT_ROOT, 'conference', 'fixtures', 'speaker.jpg')
-        self.filename2 = os.path.join(settings.PROJECT_ROOT, 'conference', 'fixtures', 'speaker2.jpg')
+        self.schedule = Schedule.objects.create(slug='workshop', name='Workshop', private=True)
+        self.user = User.objects.create_user('test_attendee', 'attendee@example.com', 'password')
+        self.client.login(username='test_attendee', password='password')
+        self.filename = os.path.join(settings.PROJECT_ROOT, 'conference', 'fixtures', 'attendee.jpg')
+        self.filename2 = os.path.join(settings.PROJECT_ROOT, 'conference', 'fixtures', 'attendee2.jpg')
 
     @classmethod
     def tearDownClass(cls):
@@ -29,38 +29,38 @@ class SpeakerProfileTest(TestCase):
     def test_creating_new_profile(self):
         response = self.client.get(reverse('profile'))
         self.assertEqual(response.status_code, 200)
-        with open(self.filename) as speaker_photo:
+        with open(self.filename) as attendee_photo:
             response = self.client.post(
                 reverse('profile'),
                 {
-                    'name': 'Test Speaker',
+                    'name': 'Test Attendee',
                     'biography': 'This is a **test** _biography_',
-                    'photo': speaker_photo,
+                    'photo': attendee_photo,
                     'twitter_username': 'test',
                     'website': 'http://www.example.com',
-                    'facebook': 'http://facebook.com/test_speaker'
+                    'facebook': 'http://facebook.com/test_attendee'
                 }
             )
             self.assertRedirects(response, reverse('profile'))
-        profile = Speaker.objects.get(user=self.user)
-        self.assertEqual(profile.name, 'Test Speaker')
+        profile = Attendee.objects.get(user=self.user)
+        self.assertEqual(profile.name, 'Test Attendee')
         self.assertEqual(profile.biography.raw, 'This is a **test** _biography_')
         self.assertNotEqual(profile.photo, None)
         self.assertEqual(profile.twitter_username, 'test')
         self.assertEqual(profile.website, 'http://www.example.com')
-        self.assertEqual(profile.facebook, 'http://facebook.com/test_speaker')
+        self.assertEqual(profile.facebook, 'http://facebook.com/test_attendee')
 
     def test_updating_profile(self):
-        with open(self.filename) as speaker_photo:
-            wrapped_speaker_photo = File(speaker_photo)
-            profile = Speaker.objects.create(
+        with open(self.filename) as attendee_photo:
+            wrapped_attendee_photo = File(attendee_photo)
+            profile = Attendee.objects.create(
                 user=self.user,
-                name='Test Speaker',
+                name='Test Attendee',
                 biography='This is a **test** _biography_',
-                photo=wrapped_speaker_photo,
+                photo=wrapped_attendee_photo,
                 twitter_username='test',
                 website='http://www.example.com',
-                facebook='http://facebook.com/test_speaker'
+                facebook='http://facebook.com/test_attendee'
             )
         response = self.client.get(reverse('profile'))
         self.assertEqual(response.status_code, 200)
@@ -68,23 +68,23 @@ class SpeakerProfileTest(TestCase):
         # So that we can check it's changed later
         original_photo_path = profile.photo.path
 
-        with open(self.filename2) as speaker_photo2:
+        with open(self.filename2) as attendee_photo2:
             response = self.client.post(
                 reverse('profile'),
                 {
-                    'name': 'Test Speaker Updated',
+                    'name': 'Test Attendee Updated',
                     'biography': 'This is a **test** _biography_ updated',
-                    'photo': speaker_photo2,
+                    'photo': attendee_photo2,
                     'twitter_username': 'test_updated',
                     'website': 'http://www.example.com/updated',
-                    'facebook': 'http://facebook.com/test_speaker_updated'
+                    'facebook': 'http://facebook.com/test_attendee_updated'
                 }
             )
         self.assertRedirects(response, reverse('profile'))
-        profile = Speaker.objects.get(user=self.user)
-        self.assertEqual(profile.name, 'Test Speaker Updated')
+        profile = Attendee.objects.get(user=self.user)
+        self.assertEqual(profile.name, 'Test Attendee Updated')
         self.assertEqual(profile.biography.raw, 'This is a **test** _biography_ updated')
         self.assertNotEqual(profile.photo.path, original_photo_path)
         self.assertEqual(profile.twitter_username, 'test_updated')
         self.assertEqual(profile.website, 'http://www.example.com/updated')
-        self.assertEqual(profile.facebook, 'http://facebook.com/test_speaker_updated')
+        self.assertEqual(profile.facebook, 'http://facebook.com/test_attendee_updated')

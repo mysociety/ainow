@@ -21,7 +21,7 @@ from .views import (
     SpeakerListView,
     PresentationView,
     AttendeeListView,
-    SpeakerCreateUpdateView
+    AttendeeCreateUpdateView
 )
 
 urlpatterns = [
@@ -29,5 +29,5 @@ urlpatterns = [
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/speakers$', SpeakerListView.as_view(), name='speakers'),
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendees$', AttendeeListView.as_view(), name='attendees'),
-    url(r"^profile/$", SpeakerCreateUpdateView.as_view(), name="profile"),
+    url(r"^profile/$", AttendeeCreateUpdateView.as_view(), name="profile"),
 ]

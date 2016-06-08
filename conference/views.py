@@ -86,45 +86,52 @@ class AttendeeListView(ScheduleMixin, ListView):
     context_object_name = 'attendees'
 
 
-class SpeakerCreateUpdateView(LoginRequiredMixin,
-                                                     SingleObjectTemplateResponseMixin,
-                                                     ModelFormMixin,
-                                                     ProcessFormView):
-    """A combined create and update view for Speakers"""
+class AttendeeCreateUpdateView(LoginRequiredMixin,
+                                                       SingleObjectTemplateResponseMixin,
+                                                       ModelFormMixin,
+                                                       ProcessFormView):
+    """A combined create and update view for Attendees"""
     # Taken from http://stackoverflow.com/a/30948175
-    model = Speaker
-    context_object_name = 'speaker'
-    template_name = 'conference/speaker_profile_form.html'
-    fields = ['user', 'name', 'biography', 'photo', 'twitter_username', 'website', 'facebook']
+    model = Attendee
+    context_object_name = 'attendee'
+    template_name = 'conference/attendee_profile_form.html'
+    fields = ['user', 'name', 'biography', 'photo', 'twitter_username', 'website', 'facebook', 'schedule']
     success_url = '/profile/'  # Come back to this page
+
+    def dispatch(self, request, *args, **kwargs):
+        self.schedule = Schedule.objects.get(slug='workshop')
+        return super(AttendeeCreateUpdateView, self).dispatch(request, *args, **kwargs)
 
     def get_object(self, queryset=None):
         try:
-            return self.request.user.conference_speaker_profile
+            return self.request.user.conference_attendee_profile
         except AttributeError:
             return None
 
     def get_initial(self):
-        initial = super(SpeakerCreateUpdateView, self).get_initial()
+        initial = super(AttendeeCreateUpdateView, self).get_initial()
         initial['user'] = self.request.user
+        initial['schedule'] = self.schedule
         return initial
 
     def get_form_kwargs(self):
-        # Force the submitted user to be request.user
-        kwargs = super(SpeakerCreateUpdateView, self).get_form_kwargs()
+        # Force the submitted user to be request.user and the schedule to be
+        # our chosen Schedule
+        kwargs = super(AttendeeCreateUpdateView, self).get_form_kwargs()
         if self.request.method in ('POST', 'PUT'):
             kwargs['data']['user'] = self.request.user.id
+            kwargs['data']['schedule'] = self.schedule.id
         return kwargs
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
-        return super(SpeakerCreateUpdateView, self).get(request, *args, **kwargs)
+        return super(AttendeeCreateUpdateView, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
-        return super(SpeakerCreateUpdateView, self).post(request, *args, **kwargs)
+        return super(AttendeeCreateUpdateView, self).post(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        context = super(SpeakerCreateUpdateView, self).get_context_data(*kwargs)
-        context['schedule'] = Schedule.objects.get(slug='workshop')
+        context = super(AttendeeCreateUpdateView, self).get_context_data(*kwargs)
+        context['schedule'] = self.schedule
         return context
