@@ -22,6 +22,11 @@ class SpeakerListView(ListView):
     context_object_name = 'speakers'
 
 
+class WorkshopSpeakerListView(ListView):
+    model = Speaker
+    context_object_name = 'speakers'
+
+
 class PresentationView(DetailView):
     model = Presentation
     context_object_name = 'presentation'

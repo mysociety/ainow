@@ -12,11 +12,29 @@ from blocks.models import Block
 from forms import SignupForm
 
 
+class WorkshopMixin(object):
+
+    def get_context_data(self, **kwargs):
+        context = super(WorkshopMixin, self).get_context_data(**kwargs)
+        context['workshop'] = True
+        return context
+
+
 class HomeView(TemplateView):
     template_name = 'ainow/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
+        context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
+        context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        return context
+
+
+class WorkshopHomeView(WorkshopMixin, TemplateView):
+    template_name = 'ainow/workshop_index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(WorkshopHomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         return context
