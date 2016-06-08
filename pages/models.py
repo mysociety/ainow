@@ -13,8 +13,8 @@ class Page(TimestampedModel):
         blank=True
     )
     title = models.CharField(
-    	max_length=1024, 
-    	help_text='The page title that will be shown to the user.'
+        max_length=1024,
+        help_text='The page title that will be shown to the user.'
     )
     slug = AutoSlugField(
         db_index=True,
@@ -25,11 +25,11 @@ class Page(TimestampedModel):
     )
     content = MarkupField(blank=True)
     parent_page = models.ForeignKey(
-    	"self", 
-    	help_text="If this page belongs in a section underneath another, choose that parent page here.",
-    	related_name='sub_pages',
-    	blank=True,
-    	null=True
+        "self",
+        help_text="If this page belongs in a section underneath another, choose that parent page here.",
+        related_name='sub_pages',
+        blank=True,
+        null=True
     )
     order = models.PositiveIntegerField(default=0)
     schedule = models.ForeignKey(
