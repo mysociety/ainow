@@ -21,6 +21,12 @@ class FAQPage(TimestampedModel):
         help_text="Used to make a nice url for this FAQ page."
     )
     introduction = MarkupField(blank=True)
+    schedule = models.ForeignKey(
+        'conference.Schedule',
+        blank=True,
+        null=True,
+        help_text="Which schedule is this related to? If the schedule is private, this page will be kept private too."
+    )
 
     def __str__(self):
         return self.name
