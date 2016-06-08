@@ -32,6 +32,12 @@ class Page(TimestampedModel):
     	null=True
     )
     order = models.PositiveIntegerField(default=0)
+    schedule = models.ForeignKey(
+        'conference.Schedule',
+        blank=True,
+        null=True,
+        help_text="Which schedule is this related to? If the schedule is private, this page will be kept private too."
+    )
 
     class Meta:
         ordering = ['order']
