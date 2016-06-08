@@ -1,10 +1,52 @@
 from django.views.generic import DetailView, ListView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
+from django.shortcuts import get_object_or_404, redirect
 
 from account.mixins import LoginRequiredMixin
 
 from .models import Schedule, Speaker, Presentation, Attendee
+
+
+class ScheduleMixin(object):
+    """
+    A view mixin to retrieve the related schedule for other views,
+    force logins for private schedules and objects related to
+    private schedules, and automatically filter objects to those
+    related to the given schedule.
+    """
+
+    # Override this if your url uses a different kwarg name for
+    # the schedule's slug
+    schedule_slug_kwarg = 'schedule_slug'
+
+    def dispatch(self, request, *args, **kwargs):
+        """
+        Overridden dispatch so that self.schedule is available
+        throughout the whole method chain of any view.
+        """
+        self.schedule = get_object_or_404(
+            Schedule,
+            slug=kwargs.get(self.schedule_slug_kwarg)
+        )
+        self.check_schedule_access()
+        return super(ScheduleMixin, self).dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        """
+        Overridden get_queryset to filter the models down to those
+        that are related to this schedule.
+        """
+        return super(ScheduleMixin, self).get_queryset().filter(schedule=self.schedule)
+
+    def get_context_data(self, **kwargs):
+        context = super(ScheduleMixin, self).get_context_data(**kwargs)
+        context['schedule'] = self.schedule
+        return context
+
+    def check_schedule_access(self):
+        if self.schedule.private and not request.user.is_authenticated():
+            return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
 
 
 class ScheduleView(DetailView):
@@ -17,30 +59,37 @@ class ScheduleView(DetailView):
         return context
 
 
-class SpeakerListView(ListView):
+class SpeakerListView(ScheduleMixin, ListView):
     model = Speaker
     context_object_name = 'speakers'
 
+    def get_queryset(self):
+        """
+        Speakers are linked to a schedule by their presentation's slot.
+        """
+        return Speaker.objects.filter(presentations__slot__schedule=self.schedule)
 
-class WorkshopSpeakerListView(ListView):
-    model = Speaker
-    context_object_name = 'speakers'
 
-
-class PresentationView(DetailView):
+class PresentationView(ScheduleMixin, DetailView):
     model = Presentation
     context_object_name = 'presentation'
 
+    def get_queryset(self):
+        """
+        Presentations are linked to a schedule by their slot.
+        """
+        return Presentation.objects.filter(slot__schedule=self.schedule)
 
-class AttendeeListView(ListView):
+
+class AttendeeListView(ScheduleMixin, ListView):
     model = Attendee
     context_object_name = 'attendees'
 
 
 class SpeakerCreateUpdateView(LoginRequiredMixin,
-                              SingleObjectTemplateResponseMixin,
-                              ModelFormMixin,
-                              ProcessFormView):
+                                                     SingleObjectTemplateResponseMixin,
+                                                     ModelFormMixin,
+                                                     ProcessFormView):
     """A combined create and update view for Speakers"""
     # Taken from http://stackoverflow.com/a/30948175
     model = Speaker
@@ -74,3 +123,8 @@ class SpeakerCreateUpdateView(LoginRequiredMixin,
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super(SpeakerCreateUpdateView, self).post(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(SpeakerCreateUpdateView, self).get_context_data(*kwargs)
+        context['schedule'] = Schedule.objects.get(slug='workshop')
+        return context

@@ -1,9 +1,11 @@
 from django.views.generic import DetailView
 
+from conference.views import ScheduleMixin
+
 from .models import FAQPage
 
 
-class FAQPageView(DetailView):
+class FAQPageView(ScheduleMixin, DetailView):
     model = FAQPage
     context_object_name = 'page'
 

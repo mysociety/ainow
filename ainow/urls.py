@@ -36,8 +36,8 @@ urlpatterns = [
     url(r'^workshop$', WorkshopHomeView.as_view(), name='workshop_home'),
     url(r'^rsvp$', RSVPView.as_view(), name='rsvp'),
 
-    url(r"^faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
-    url(r"^page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
+    url(r"^schedule/(?P<schedule_slug>[-\w]+)/faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
+    url(r"^schedule/(?P<schedule_slug>[-\w]+)/page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),
 

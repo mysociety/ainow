@@ -1,9 +1,11 @@
 from django.views.generic import DetailView
 
+from conference.views import ScheduleMixin
+
 from .models import Page
 
 
-class PageView(DetailView):
+class PageView(ScheduleMixin, DetailView):
     model = Page
     context_object_name = 'page'
 

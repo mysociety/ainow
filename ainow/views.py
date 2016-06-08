@@ -7,17 +7,10 @@ from django.http import Http404
 import account.forms
 import account.views
 
+from conference.models import Schedule
 from blocks.models import Block
 
 from forms import SignupForm
-
-
-class WorkshopMixin(object):
-
-    def get_context_data(self, **kwargs):
-        context = super(WorkshopMixin, self).get_context_data(**kwargs)
-        context['workshop'] = True
-        return context
 
 
 class HomeView(TemplateView):
@@ -27,16 +20,18 @@ class HomeView(TemplateView):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        context['schedule'] = Schedule.objects.get(slug='conference')
         return context
 
 
-class WorkshopHomeView(WorkshopMixin, TemplateView):
+class WorkshopHomeView(TemplateView):
     template_name = 'ainow/workshop_index.html'
 
     def get_context_data(self, **kwargs):
         context = super(WorkshopHomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        context['schedule'] = Schedule.objects.get(slug='workshop')
         return context
 
 
