@@ -17,7 +17,7 @@
               {% if slot.presentation %}
                 {% with presentation=slot.presentation %}
                   <h2>
-                    <a href="{% url 'presentation' presentation.slug %}">
+                    <a href="{% url 'presentation' presentation.slot.schedule.slug presentation.slug %}">
                       {{ presentation.title }}
                     </a>
                   </h2>

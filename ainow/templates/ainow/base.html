@@ -34,27 +34,23 @@
     <header class="site-header" role="banner">
       <div class="container">
         <h1 class="site-header__title">
-        {% if workshop %}
+        {% if schedule.slug == 'workshop' %}
           <a href="{% url 'workshop_home' %}">
         {% else %}
           <a href="{% url 'home' %}">
         {% endif %}
-            <img src="{% static 'img/ainow-header-logo.png' %}" 
-                 srcset="{% static 'img/ainow-header-logo.svg' %} 1x" 
-                 alt="Artificial Intelligence Now" 
+            <img src="{% static 'img/ainow-header-logo.png' %}"
+                 srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
+                 alt="Artificial Intelligence Now"
                  height="21" width="69">
           </a>
         </h1>
-        {% if workshop %}
-          {% include 'ainow/_workshop_nav.html' %}
-        {% else %}
-          {% include 'ainow/_nav.html' %}
-        {% endif %}
+        {% include 'ainow/_nav.html' %}
         <p class="site-header__details">July 7th, Skirball Center for the Performing Arts, New York City</p>
       </div>
     </header>
 
-    {% if workshop %}
+    {% if schedule.slug == 'workshop' %}
     <header class="sub-header">
       {% if messages %}
         <div class="container">
@@ -80,7 +76,9 @@
       <div class="container">
           <div class="site-footer__utility-links">
             <ul class="utility-links__list">
-              <li><a href="{% url 'page' 'privacy' %}">Privacy</a></li>
+            {% with schedule.slug|add:"-resources" as privacy_slug %}
+            <li><a href="{% url 'page' schedule.slug privacy_slug %}">Privacy</a></li>
+            {% endwith %}
               <!--<li><a href="mailto:">Contact</a></li>
               <li><a href="mailto:">Twitter</a></li>
               <li><a href="mailto:">Facebook</a></li>-->

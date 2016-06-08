@@ -1,9 +1,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="{% url 'speakers' %}">Speakers</a>
+<a href="{% url 'speakers' schedule.slug %}">Speakers</a>
 &nbsp;&nbsp;
-<a href="{% url 'schedule' 'conference' %}">Schedule</a>
+<a href="{% url 'schedule' schedule.slug %}">Schedule</a>
+{% if schedule.slug == 'workshop' %}
 &nbsp;&nbsp;
+<a href="{% url 'attendees' schedule.slug %}">Attendees</a>
+{% endif %}
 &nbsp;&nbsp;
-<a href="{% url 'faq' 'conference'%}">FAQ</a>
+<a href="{% url 'faq'  schedule.slug schedule.slug %}">FAQ</a>
 &nbsp;&nbsp;
-<a href="{% url 'page' 'conference-resources'%}">Resources</a>
+{% with schedule.slug|add:"-resources" as resources_slug %}
+<a href="{% url 'page' schedule.slug resources_slug %}">Resources</a>
+{% endwith %}

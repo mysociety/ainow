@@ -14,7 +14,7 @@
             <h1>{{ page.title }}</h1>
             {% if parent_page %}
             <p>
-              <a href="{% url 'page' parent_page.slug %}">
+              <a href="{% url 'page' schedule.slug parent_page.slug %}">
                 Back to {{ parent_page.title }}
               </a>
             </p>
@@ -28,7 +28,7 @@
             <ul>
             {% for sub_page in sub_pages %}
               <li>
-                <a href="{% url 'page' sub_page.slug %}">
+                <a href="{% url 'page' schedule.slug sub_page.slug %}">
                   {{ sub_page.title }}
                 </a>
               </li>
