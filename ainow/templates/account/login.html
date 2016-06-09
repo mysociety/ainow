@@ -11,7 +11,8 @@
     {% csrf_token %}
     {% include 'account/_form_fields.html' %}
     <div class="account-form__field account-form__field--submit form-group">
-      <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button> <a href="{% url "account_password_reset" %}" class="account-form__field__not-a-btn">{% trans "Forgotten your password?" %}</a>
+      <button type="submit" class="btn btn-primary btn-block btn-lg">{% trans "Log in" %}</button>
+      <a href="{% url "account_password_reset" %}" class="btn btn-block btn-link">{% trans "Forgotten your password?" %}</a>
     </div>
 
   </form>

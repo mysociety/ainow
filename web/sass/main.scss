@@ -26,6 +26,11 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 
+
+label {
+  font-weight: normal;
+}
+
 .btn-default {
   font-weight: normal;
 }
@@ -92,6 +97,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 3em;
   padding-top: 0.5em;
   padding-bottom: 1em;
+  border: 1px solid $gray-lighter;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
 
 }
 
