@@ -1,0 +1,17 @@
+{% extends 'account/base.html' %}
+{% block content %}
+  <div class="container standard-layout">
+    <div class="row">
+      <div class="standard-layout__primary-column">
+        <div class="form form--account-form">
+          {% block account_content %}{% endblock %}
+        </div>
+      </div>
+      <div class="standard-layout__secondary-column">
+        <ul class="nav nav-stacked">
+          {% include 'account/_logged_in_nav.html' %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

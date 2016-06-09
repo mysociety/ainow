@@ -1,19 +1,19 @@
-{% extends "account/base.html" %}
+{% extends "account/account-form.html" %}
 
 {% load i18n %}
 
 {% block title %}{% trans "Account" %}{% endblock %}
 
 {% block account_content %}
-{% include 'account/_logged_in_nav.html' %}
-<section class="account-form">
+
+<div class="account-form">
   <h2>{% trans "Account" %}</h2>
   <form method="POST" action="{% url "account_settings" %}">
     {% csrf_token %}
     {% include 'account/_form_fields.html' %}
-    <div class="account-form__field account-form__field--submit">
-      <button class="btn btn-primary" type="submit">{% trans "Save" %}</button>
+    <div class="account-form__field account-form__field--submit form-group">
+      <button class="btn btn-primary" type="submit">{% trans "Save" %}</button> <a href="{% url "account_password_reset" %}" class="account-form__field__not-a-btn">{% trans "Cancel" %}</a>
     </div>
   </form>
-</section>
+</div>
 {% endblock %}

@@ -1,11 +1,10 @@
-{% extends "account/base.html" %}
+{% extends "account/account-form.html" %}
 
 {% load i18n %}
 
 {% block title %}{% trans "Delete Account" %}{% endblock %}
 
 {% block account_content %}
-{% include 'account/_logged_in_nav.html' %}
 <section class="account-form">
   <h2>{% trans "Delete Account" %}</h2>
 
@@ -13,8 +12,8 @@
 
   <form method="post" action="{% url "account_delete" %}" autocapitalize="off">
     {% csrf_token %}
-    <div class="account-form__field account-form__field--submit">
-      <button type="submit" class="btn">{% trans "Delete My Account" %}</button>
+    <div class="account-form__field account-form__field--submit" form-group>
+      <button type="submit" class="btn btn-primary">{% trans "Delete My Account" %}</button>
     </div>
   </form>
 </section>
