@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 
+.btn-default {
+  font-weight: normal;
+}
+
 /*
  * Layouts
  */
@@ -54,6 +58,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .form {
   // Standard layout for forms
+  textarea {
+    border: 1px solid $gray-light;
+    width: 100%;
+    border-radius: $border-radius-base;
+    padding: 0.66667em;
+    color: $gray;
+  }
 }
 
 .form--account-form {
@@ -103,4 +114,29 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 1em;
   font-size: 0.875em;
   text-decoration: underline;
+}
+
+.account-form__photo {
+  margin: 1em 0 2em;
+}
+
+.account-form__photo__thumbnail {
+  border-radius: 100%;
+  max-width: 100%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+}
+
+.account-form__photo-display-column {
+  @include make-xs-column($columns: 3);
+  @include make-sm-column($columns: 2);
+}
+
+.account-form__photo-controls-column {
+  @include make-xs-column($columns: 9);
+  @include make-sm-column($columns: 10);
+
+  .btn {
+    display: inline-block;
+    margin: 1em 1em 1em 0;
+  }
 }

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'account/account-form.html' %}'
 {% load staticfiles %}
 {% load thumbnail %}
 {% load account_tags %}
@@ -7,11 +7,9 @@
 
 {% block bodyclasses %}standard-page{% endblock %}
 
-{% block content %}
-<div class="general-content">
-  <div class="container">
-    <div class="general-content__page">
-      {% include 'account/_logged_in_nav.html' %}
+{% block account_content %}
+
+    <div class="form form--account account-form">
       <h1>Your Account - Profile</h1>
       <h2>About you</h2>
       <form action="" method="post" enctype="multipart/form-data">
@@ -23,26 +21,34 @@
         {% endif %}
         {# Purposely not including the user here because we force it to #}
         {# request.user in the view #}
+        <div class="account-form__field account-form__photo form-group">
+          <div class="row">
+            <div class="account-form__photo-display-column">
+            {% thumbnail speaker.photo "250x250" crop="center" as im %}
+                <img src="{{ im.url }}" class="account-form__photo__thumbnail">
+            {% endthumbnail %}
+            </div>
+
+            <div class="account-form__photo-controls-column">
+              <!--<div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>-->
+              <a href="#change-photo" class="btn btn-primary">Change photo</a> <a href="#change-photo" class="btn btn-default">Delete</a>
+            </div>
+          </div>
+          {% if form.photo.errors %}
+            <div class="account-form__errors">{{ form.photo.errors }}</div>
+          {% endif %}
+
+        </div>
         {% include 'account/_form_field.html' with field=form.name %}
         {% include 'account/_form_field.html' with field=form.biography %}
-        <div class="account-form__field">
-        <div class="account-form__label">{{ form.photo.label_tag }}</div>
-        {% thumbnail speaker.photo "250x250" crop="center" as im %}
-            <img src="{{ im.url }}">
-        {% endthumbnail %}
-        <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %}">{{ form.photo }}</div>
-        {% if form.photo.errors %}
-          <div class="account-form__errors">{{ form.photo.errors }}</div>
-        {% endif %}
-      </div>
+
         {% include 'account/_form_field.html' with field=form.twitter_username %}
         {% include 'account/_form_field.html' with field=form.website %}
         {% include 'account/_form_field.html' with field=form.facebook %}
         <div class="account-form__field account-form__field--submit">
-          <button type="submit" class="btn">Save</button>
+          <button type="submit" class="btn btn-primary">Save changes</button> <a href="{% url "account_password_reset" %}" class="account-form__field__not-a-btn">Cancel</a>
         </div>
       </form>
     </div>
-  </div>
-</div>
+
 {% endblock %}
