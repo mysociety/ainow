@@ -327,6 +327,7 @@ BLEACH_ALLOWED_ATTRIBUTES = {
 
 
 # Django user accounts settings
+ACCOUNT_OPEN_SIGNUP = False  # You have to be invited
 ACCOUNT_EMAIL_UNIQUE = True
 ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
 CONTACT_EMAIL = config.get('CONTACT_EMAIL', '')
