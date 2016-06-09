@@ -2,12 +2,11 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Account" %}{% endblock %}
-
+{% block title %}{% trans "Change email" %}{% endblock %}
+{% block page_title %}{% trans "Change email" %}{% endblock %}
 {% block account_content %}
 
 <div class="account-form">
-  <h2>{% trans "Account" %}</h2>
   <form method="POST" action="{% url "account_settings" %}">
     {% csrf_token %}
     {% include 'account/_form_fields.html' %}

@@ -4,13 +4,13 @@
 {% load account_tags %}
 
 {% block title %}Your Account - Profile{% endblock %}
+{% block page_title %}Profile{% endblock %}
 
 {% block bodyclasses %}standard-page{% endblock %}
 
 {% block account_content %}
 
     <div class="form form--account account-form">
-      <h1>Your Account - Profile</h1>
       <h2>About you</h2>
       <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}

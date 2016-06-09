@@ -40,20 +40,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .standard-layout__primary-column {
   @include make-xs-column($columns: 12);
-  @include make-md-column($columns: 8, $gutter: 54px);
+  @include make-md-column($columns: 9, $gutter: 54px);
 
 }
 
 .standard-layout__secondary-column {
   @include make-xs-column($columns: 12);
   @include make-md-column($columns: 3);
-  @include make-md-column-push($columns: 1);
+
 
 }
 
 .site-header {
   // built with Bootstrap's navbar component
   border: 0;
+}
+
+.page-header {
+  @include make-xs-column($columns: 12);
 }
 
 .form {

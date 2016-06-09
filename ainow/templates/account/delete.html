@@ -3,11 +3,10 @@
 {% load i18n %}
 
 {% block title %}{% trans "Delete Account" %}{% endblock %}
+{% block page_title %}Delete account{% endblock %}
 
 {% block account_content %}
 <section class="account-form">
-  <h2>{% trans "Delete Account" %}</h2>
-
   <p>{% blocktrans %}If you go ahead and delete your account, your information will be <b>expunged within {{ ACCOUNT_DELETION_EXPUNGE_HOURS }} hours</b>.{% endblocktrans %}</p>
 
   <form method="post" action="{% url "account_delete" %}" autocapitalize="off">
