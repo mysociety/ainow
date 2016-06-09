@@ -32,11 +32,16 @@ class Page(TimestampedModel):
         null=True
     )
     order = models.PositiveIntegerField(default=0)
-    schedule = models.ForeignKey(
+    schedules = models.ManyToManyField(
         'conference.Schedule',
         blank=True,
-        null=True,
-        help_text="Which schedule is this related to? If the schedule is private, this page will be kept private too."
+        help_text="Which schedules is this related to?"
+                         " If a schedule is private, this page will be kept private too, but"
+                         " only when viewing it in that context.<br><br>"
+                         " You probably only want to select multiple schedules if this is a"
+                         " public page that's shared between all schedules (like the privacy page).<br><br>"
+                         "You can't set this individually on child pages, set it once on the top"
+                         " level page and it will be applied to all the children automatically.<br><br>"
     )
 
     class Meta:
@@ -45,3 +50,22 @@ class Page(TimestampedModel):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        """
+        Overridden save to ensure that all sub_pages are in the same
+        schedules as their parent.
+        """
+
+        # Don't allow sub pages to be in different schedules to their parent
+        if self.parent_page:
+            self.schedules.set(self.parent_page.schedules.all())
+
+        super(Page, self).save(*args, **kwargs)
+
+        # Cascade any changes to a parent down to it's children
+        if bool(self.sub_pages.all()):
+            for sub_page in self.sub_pages.all():
+                sub_page.schedules.set(self.schedules.all())
+                # Set doesn't call save hooks, so trigger it manually
+                # to trigger this cascading down any hierarchy
+                sub_page.save()

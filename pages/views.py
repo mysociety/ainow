@@ -14,3 +14,10 @@ class PageView(ScheduleMixin, DetailView):
         context['sub_pages'] = context['page'].sub_pages.all()
         context['parent_page'] = context['page'].parent_page
         return context
+
+    def get_queryset(self):
+        """
+        Pages can have multiple schedules so we have to alter the
+        queryset a little bit from ScheduleMixin.
+        """
+        return super(ScheduleMixin, self).get_queryset().filter(schedules=self.schedule)
