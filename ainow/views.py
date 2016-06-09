@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 
 import account.forms
@@ -24,7 +25,7 @@ class HomeView(TemplateView):
         return context
 
 
-class WorkshopHomeView(TemplateView):
+class WorkshopHomeView(LoginRequiredMixin, TemplateView):
     template_name = 'ainow/workshop_index.html'
 
     def get_context_data(self, **kwargs):

@@ -2,6 +2,8 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
 from django.shortcuts import get_object_or_404, redirect
+from django.conf import settings
+from django.core.urlresolvers import reverse
 
 from account.mixins import LoginRequiredMixin
 
@@ -29,7 +31,8 @@ class ScheduleMixin(object):
             Schedule,
             slug=kwargs.get(self.schedule_slug_kwarg)
         )
-        self.check_schedule_access()
+        if self.schedule.private and not request.user.is_authenticated():
+            return redirect('%s?next=%s' % (reverse('account_login'), request.path))
         return super(ScheduleMixin, self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
@@ -44,14 +47,23 @@ class ScheduleMixin(object):
         context['schedule'] = self.schedule
         return context
 
-    def check_schedule_access(self):
-        if self.schedule.private and not request.user.is_authenticated():
-            return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
-
 
 class ScheduleView(DetailView):
     model = Schedule
     context_object_name = 'schedule'
+
+    def get(self, request, *args, **kwargs):
+        """
+        Overridden get from BaseDetailView in order to check the
+        schedule access before rendering the view.
+        """
+        self.object = self.get_object()
+
+        if self.object.private and not request.user.is_authenticated():
+            return redirect('%s?next=%s' % (reverse('account_login'), request.path))
+
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
 
     def get_context_data(self, **kwargs):
         context = super(ScheduleView, self).get_context_data(**kwargs)
