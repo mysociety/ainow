@@ -223,11 +223,19 @@ LOGGING = {
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
         }
     },
     'handlers': {
         'console': {
             'level': 'WARN',
+            'class': 'logging.StreamHandler',
+        },
+        'debug_console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
         },
         'mail_admins': {
@@ -242,6 +250,13 @@ LOGGING = {
             'level': 'WARN',
             'propagate': True,
         },
+        # To see all of the database statements being executed in your terminal
+        # uncomment the following (DEBUG must be True too)
+        # 'django.db.backends': {
+        #     'handlers': ['debug_console'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
     }
 }
 
