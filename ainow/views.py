@@ -43,6 +43,7 @@ class RSVPView(TemplateView):
         context = super(RSVPView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='rsvp-introduction').content
         context['privacy_block'] = Block.objects.get(slug='rsvp-privacy').content
+        context['schedule'] = Schedule.objects.get(slug='workshop')
         return context
 
 
