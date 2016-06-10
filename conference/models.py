@@ -34,7 +34,6 @@ class Person(TimestampedModel):
     photo = ImageField(upload_to=person_photo_upload_to, blank=True)
     twitter_username = models.CharField(max_length=15, blank=True)
     website = models.URLField(max_length=1024, blank=True)
-    facebook = models.URLField(max_length=1024, blank=True)
 
     class Meta:
         abstract = True

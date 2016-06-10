@@ -37,8 +37,7 @@ class AttendeeProfileTest(TestCase):
                     'biography': 'This is a **test** _biography_',
                     'photo': attendee_photo,
                     'twitter_username': 'test',
-                    'website': 'http://www.example.com',
-                    'facebook': 'http://facebook.com/test_attendee'
+                    'website': 'http://www.example.com'
                 }
             )
             self.assertRedirects(response, reverse('profile'))
@@ -48,7 +47,6 @@ class AttendeeProfileTest(TestCase):
         self.assertNotEqual(profile.photo, None)
         self.assertEqual(profile.twitter_username, 'test')
         self.assertEqual(profile.website, 'http://www.example.com')
-        self.assertEqual(profile.facebook, 'http://facebook.com/test_attendee')
 
     def test_updating_profile(self):
         with open(self.filename) as attendee_photo:
@@ -59,8 +57,7 @@ class AttendeeProfileTest(TestCase):
                 biography='This is a **test** _biography_',
                 photo=wrapped_attendee_photo,
                 twitter_username='test',
-                website='http://www.example.com',
-                facebook='http://facebook.com/test_attendee'
+                website='http://www.example.com'
             )
         response = self.client.get(reverse('profile'))
         self.assertEqual(response.status_code, 200)
@@ -76,8 +73,7 @@ class AttendeeProfileTest(TestCase):
                     'biography': 'This is a **test** _biography_ updated',
                     'photo': attendee_photo2,
                     'twitter_username': 'test_updated',
-                    'website': 'http://www.example.com/updated',
-                    'facebook': 'http://facebook.com/test_attendee_updated'
+                    'website': 'http://www.example.com/updated'
                 }
             )
         self.assertRedirects(response, reverse('profile'))
@@ -87,4 +83,3 @@ class AttendeeProfileTest(TestCase):
         self.assertNotEqual(profile.photo.path, original_photo_path)
         self.assertEqual(profile.twitter_username, 'test_updated')
         self.assertEqual(profile.website, 'http://www.example.com/updated')
-        self.assertEqual(profile.facebook, 'http://facebook.com/test_attendee_updated')

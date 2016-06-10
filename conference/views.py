@@ -107,7 +107,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     model = Attendee
     context_object_name = 'attendee'
     template_name = 'conference/attendee_profile_form.html'
-    fields = ['user', 'name', 'biography', 'photo', 'twitter_username', 'website', 'facebook', 'schedule']
+    fields = ['user', 'name', 'biography', 'photo', 'twitter_username', 'website', 'schedule']
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
