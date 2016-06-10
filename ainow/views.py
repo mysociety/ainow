@@ -36,17 +36,6 @@ class WorkshopHomeView(LoginRequiredMixin, TemplateView):
         return context
 
 
-class RSVPView(TemplateView):
-    template_name = 'ainow/rsvp.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(RSVPView, self).get_context_data(**kwargs)
-        context['intro_block'] = Block.objects.get(slug='rsvp-introduction').content
-        context['privacy_block'] = Block.objects.get(slug='rsvp-privacy').content
-        context['schedule'] = Schedule.objects.get(slug='workshop')
-        return context
-
-
 class LoginView(account.views.LoginView):
     """ Override account.views.LoginView to use the email-only version """
     form_class = account.forms.LoginEmailForm
