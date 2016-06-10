@@ -2,33 +2,37 @@ from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 
 import account.forms
 import account.views
 
+from conference.models import Schedule
 from blocks.models import Block
 
 from forms import SignupForm
 
 
 class HomeView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'ainow/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        context['schedule'] = Schedule.objects.get(slug='conference')
         return context
 
 
-class RSVPView(TemplateView):
-    template_name = 'rsvp.html'
+class WorkshopHomeView(LoginRequiredMixin, TemplateView):
+    template_name = 'ainow/workshop_index.html'
 
     def get_context_data(self, **kwargs):
-        context = super(RSVPView, self).get_context_data(**kwargs)
-        context['intro_block'] = Block.objects.get(slug='rsvp-introduction').content
-        context['privacy_block'] = Block.objects.get(slug='rsvp-privacy').content
+        context = super(WorkshopHomeView, self).get_context_data(**kwargs)
+        context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
+        context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        context['schedule'] = Schedule.objects.get(slug='workshop')
         return context
 
 

@@ -1,9 +1,11 @@
 from django.views.generic import DetailView
 
+from conference.views import ScheduleMixin
+
 from .models import Page
 
 
-class PageView(DetailView):
+class PageView(ScheduleMixin, DetailView):
     model = Page
     context_object_name = 'page'
 
@@ -12,3 +14,10 @@ class PageView(DetailView):
         context['sub_pages'] = context['page'].sub_pages.all()
         context['parent_page'] = context['page'].parent_page
         return context
+
+    def get_queryset(self):
+        """
+        Pages can have multiple schedules so we have to alter the
+        queryset a little bit from ScheduleMixin.
+        """
+        return super(ScheduleMixin, self).get_queryset().filter(schedules=self.schedule)

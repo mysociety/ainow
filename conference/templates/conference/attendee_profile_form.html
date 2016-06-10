@@ -37,7 +37,7 @@
                 <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
                 <a href="#change-photo-collapse" data-toggle="collapse" data-target="#change-photo-collapse" aria-expanded="false" aria-controls="#change-photo-collapse" class="account-form__field__not-a-btn">Cancel</a>
               </div>
-              
+
               <div class="delete-photo-collapse collapse well" id="delete-photo-collapse">
                 <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
                 <a href="#delete-photo-collapse" data-toggle="collapse" data-target="#delete-photo-collapse" aria-expanded="false" aria-controls="#delete-photo-collapse" class="account-form__field__not-a-btn">Cancel</a>
@@ -55,7 +55,6 @@
 
         {% include 'account/_form_field.html' with field=form.twitter_username %}
         {% include 'account/_form_field.html' with field=form.website %}
-        {% include 'account/_form_field.html' with field=form.facebook %}
         <div class="account-form__field account-form__field--submit">
           <button type="submit" class="btn btn-primary">Save changes</button> <a href="#" onclick="history.back(-1)" class="account-form__field__not-a-btn">Cancel</a>
         </div>

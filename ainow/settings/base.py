@@ -93,6 +93,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'account.context_processors.account',
                 'ainow.context_processors.add_settings',
+                'ainow.context_processors.add_schedule',
             ],
             'debug': DEBUG,
         },
@@ -223,11 +224,19 @@ LOGGING = {
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
         }
     },
     'handlers': {
         'console': {
             'level': 'WARN',
+            'class': 'logging.StreamHandler',
+        },
+        'debug_console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
         },
         'mail_admins': {
@@ -242,6 +251,13 @@ LOGGING = {
             'level': 'WARN',
             'propagate': True,
         },
+        # To see all of the database statements being executed in your terminal
+        # uncomment the following (DEBUG must be True too)
+        # 'django.db.backends': {
+        #     'handlers': ['debug_console'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
     }
 }
 
@@ -312,12 +328,14 @@ BLEACH_ALLOWED_ATTRIBUTES = {
 
 
 # Django user accounts settings
+ACCOUNT_OPEN_SIGNUP = False  # You have to be invited
 ACCOUNT_EMAIL_UNIQUE = True
 ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
 CONTACT_EMAIL = config.get('CONTACT_EMAIL', '')
 DEFAULT_FROM_EMAIL = CONTACT_EMAIL
 ACCOUNT_USER_DISPLAY = lambda user: user.email
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = 'account_login'
 
 
 # mySociety-specific settings

@@ -20,17 +20,10 @@ from django.contrib import admin
 
 from .views import (
     HomeView,
-    RSVPView,
+    WorkshopHomeView,
     SignupView,
     LoginView,
     ConfirmEmailView
-)
-from conference.views import (
-    ScheduleView,
-    SpeakerListView,
-    PresentationView,
-    AttendeeListView,
-    SpeakerCreateUpdateView
 )
 from faq.views import FAQPageView
 from pages.views import PageView
@@ -39,16 +32,15 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^rsvp$', RSVPView.as_view(), name='rsvp'),
-    url(r'^schedule/(?P<slug>[-\w]+)$', ScheduleView.as_view(), name='schedule'),
-    url(r'^presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
-    url(r'^speakers$', SpeakerListView.as_view(), name='speakers'),
-    url(r'^attendees$', AttendeeListView.as_view(), name='attendees'),
-    url(r"^profile/$", SpeakerCreateUpdateView.as_view(), name="profile"),
-    url(r"^faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
-    url(r"^page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
+    url(r'^workshop$', WorkshopHomeView.as_view(), name='workshop_home'),
+
+    url(r"^schedule/(?P<schedule_slug>[-\w]+)/faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
+    url(r"^schedule/(?P<schedule_slug>[-\w]+)/page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),
+
+    url(r'^', include('conference.urls')),
+
     # Override the login and signup views from the account app, so we can use
     # our versions which use an email address instead of a username.
     url(r"^account/signup/$", SignupView.as_view(), name="account_signup"),

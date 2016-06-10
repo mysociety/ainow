@@ -1,0 +1,13 @@
+<li><a href="{% url 'speakers' schedule.slug %}">Speakers</a></li>
+
+<li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
+
+{% if schedule.slug == 'workshop' %}
+<li><a href="{% url 'attendees' schedule.slug %}">Attendees</a></li>
+{% endif %}
+
+<li><a href="{% url 'faq'  schedule.slug schedule.slug %}">FAQ</a></li>
+
+{% with schedule.slug|add:"-resources" as resources_slug %}
+<li><a href="{% url 'page' schedule.slug resources_slug %}">Resources</a></li>
+{% endwith %}

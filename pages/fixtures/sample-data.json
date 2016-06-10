@@ -4,14 +4,17 @@
     "pk": 3,
     "fields": {
         "created": "2016-06-06T15:34:21.654Z",
-        "updated": "2016-06-06T15:34:21.654Z",
+        "updated": "2016-06-09T11:09:47.835Z",
         "name": "Conference sub page",
         "title": "A Sub-Page",
         "slug": "sub-page",
         "content": "This could be content about something specific.",
         "parent_page": 2,
         "order": 1,
-        "_content_rendered": "<p>This could be content about something specific.</p>"
+        "_content_rendered": "<p>This could be content about something specific.</p>",
+        "schedules": [
+            1
+        ]
     }
 },
 {
@@ -19,14 +22,17 @@
     "pk": 4,
     "fields": {
         "created": "2016-06-06T15:35:51.683Z",
-        "updated": "2016-06-06T15:35:51.683Z",
+        "updated": "2016-06-09T11:10:28.378Z",
         "name": "Private sub page",
         "title": "A Private Sub-Page",
         "slug": "private-sub-page",
         "content": "This is also some content, but it's under the private workshop resources section.",
         "parent_page": 1,
         "order": 1,
-        "_content_rendered": "<p>This is also some content, but it's under the private workshop resources section.</p>"
+        "_content_rendered": "<p>This is also some content, but it's under the private workshop resources section.</p>",
+        "schedules": [
+            2
+        ]
     }
 },
 {
@@ -34,14 +40,17 @@
     "pk": 5,
     "fields": {
         "created": "2016-06-06T15:35:51.696Z",
-        "updated": "2016-06-06T15:35:51.696Z",
+        "updated": "2016-06-09T11:10:28.394Z",
         "name": "Second private sub page",
         "title": "A Second Private Sub-page",
         "slug": "private-sub-page-2",
         "content": "Some more private content.",
         "parent_page": 1,
         "order": 2,
-        "_content_rendered": "<p>Some more private content.</p>"
+        "_content_rendered": "<p>Some more private content.</p>",
+        "schedules": [
+            2
+        ]
     }
 }
 ]

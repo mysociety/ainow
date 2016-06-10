@@ -34,7 +34,6 @@ class Person(TimestampedModel):
     photo = ImageField(upload_to=person_photo_upload_to, blank=True)
     twitter_username = models.CharField(max_length=15, blank=True)
     website = models.URLField(max_length=1024, blank=True)
-    facebook = models.URLField(max_length=1024, blank=True)
 
     class Meta:
         abstract = True
@@ -49,7 +48,7 @@ class Speaker(Person):
 
 
 class Attendee(Person):
-    pass
+    schedule = models.ForeignKey('Schedule', blank=True, null=True)
 
 
 class Schedule(TimestampedModel):
@@ -61,6 +60,12 @@ class Schedule(TimestampedModel):
         populate_from='name',
         help_text="Used to make a nice url for the page that displays this schedule."
     )
+    private = models.BooleanField(
+        default=False,
+        help_text="Is this schedule for a private event?"
+                  "<br>If this box is checked, this schedule and"
+                  " anything connected to it will force you to log"
+                  " in to view it.")
 
     def __str__(self):
         return self.name
