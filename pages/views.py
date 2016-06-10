@@ -20,4 +20,4 @@ class PageView(ScheduleMixin, DetailView):
         Pages can have multiple schedules so we have to alter the
         queryset a little bit from ScheduleMixin.
         """
-        return super(ScheduleMixin, self).get_queryset().filter(schedules=self.schedule)
+        return Page.objects.filter(schedules=self.schedule)
