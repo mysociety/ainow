@@ -8,31 +8,35 @@
       <div class="container">
         <p class="homepage-hero__details">July 7th, Skirball Center for the Performing Arts, New York City</p>
         <h2 class="homepage-hero__title">
-          <img src="{% static 'img/ainow-hero-logo.png' %}" 
-               srcset="{% static 'img/ainow-hero-logo.svg' %} 1x" 
-               alt="Artificial Intelligence Now" 
+          <img src="{% static 'img/ainow-hero-logo.png' %}"
+               srcset="{% static 'img/ainow-hero-logo.svg' %} 1x"
+               alt="Artificial Intelligence Now"
                height="35" width="115">
         </h2>
         <p class="homepage-hero__subtitle">The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term</p>
-        <p class="homepage-hero__tickets"><strong>Free admission</strong>, tickets available shortly</p>
+        <a href="http://nyuskirball.org/calendar/ainow" class="btn btn-primary btn-lg btn--tickets">Book your ticket<span class="button--tickets__sub">Free admission</span></a></p>
       </div>
     </div>
     <div class="homepage-description">
         <div class="container">
-          <div class="homepage-description__partners">
-            <div class="homepage-description__partners__column homepage-description__partners__column--one">
-              <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
-            </div><div class="homepage-description__partners__column homepage-description__partners__column--two">
-              <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili.png' %}" alt="New York University, Information Law Institute" class="partner-logo partner-logo--nyu"/></a>
+          <div class="row">
+            <div class="homepage-description__partners">
+              <div class="homepage-description__partners__column homepage-description__partners__column--one">
+                <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
+              </div><div class="homepage-description__partners__column homepage-description__partners__column--two">
+                <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili.png' %}" alt="New York University, Information Law Institute" class="partner-logo partner-logo--nyu"/></a>
+              </div>
             </div>
-          </div>
-          <div class="homepage-description__content two-columns-of-text">
-            {{ intro_block }}
-          </div>
-          <div class="callout-box">
-            {{ tickets_block }}
-          </div>
+            <div class="homepage-description__content">
+              <div class="two-columns-of-text">
+                {{ intro_block }}
+              </div>
+              <div class="callout-box">
+                {{ tickets_block }}
+              </div>
+            </div>
 
+          </div>
         </div>
     </div>
     <div class="homepage-people">

@@ -40,6 +40,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $heading_typeface_bold;
   text-rendering: optimizeLegibility;
 }
+h1 {
+  font-size: 3.375em;
+}
+h2 {
+  font-size: 2.625em;
+}
 
 
 label {
@@ -72,7 +78,7 @@ label {
   // built with Bootstrap's navbar component
   border: 0;
   border-bottom: 1px solid $gray-lighter;
-
+  margin-bottom: 0;
 }
 
 .site-footer {
@@ -258,3 +264,228 @@ label {
     margin: 1em 1em 1em 0;
   }
 }
+
+/*
+ * Homepage
+ */
+
+ .homepage-hero {
+   background-color: $brand-primary;
+   background-image: url('../img/hero-background.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   padding: 2em 0;
+   color: $color_white;
+   @media (min-width: $screen-sm-min) {
+     padding: 4.5em 0;
+   }
+ }
+
+ .homepage-hero__details {
+   text-transform: uppercase;
+   font-weight: bold;
+   border-bottom: 2px solid $color_white;
+   padding-bottom: 0.5em;
+   @media (min-width:$screen-sm-min) {
+     max-width: 35em;
+   }
+ }
+
+ .homepage-hero__title {
+   font-size: 1em;
+   margin-top: 2em;
+   background-color: $color_orange;
+   display: inline-block;
+   padding: 0.4em 0.35em 0.2em;
+   @media (min-width:$screen-sm-min) {
+     margin-top: 1em;
+     margin-bottom: 0.75em;
+   }
+ }
+
+ .homepage-hero__subtitle {
+   font-size:  1.777777778em;
+   line-height: 1.333em;
+   font-weight: bold;
+   @media (min-width:$screen-sm-min) {
+     font-size: 2.333333333em;
+     max-width: 18em;
+   }
+   @media (min-width:$screen-md-min) {
+     font-size: 2.666666667em;
+     margin-bottom: 0.5em;
+   }
+ }
+
+ .homepage-hero__tickets {
+   margin-top: 2em;
+ }
+
+ .btn--tickets {
+   font-size: 1.235294118em;
+   width: 100%;
+   padding: 0.75em 1em;
+   padding-right: 1.5em;
+   float: left;
+   text-align: left;
+   @media (min-width:$screen-sm-min) {
+     width: auto;
+   }
+   span {
+     display: block;
+     font-weight: normal;
+     font-size: 0.7em;
+     line-height: 1.428em;
+   }
+ }
+
+ .homepage-description {
+   background-color: $color_white;
+   padding-top: 3em;
+   padding-bottom: 3em;
+   @include clearfix;
+ }
+
+ .two-columns-of-text {
+   @media (min-width:$screen-sm-min) {
+     @include content-columns(2);
+   }
+
+ }
+
+ .homepage-description__content {
+   @include make-md-column($columns: 9);
+   @include make-md-column-pull($columns: 3);
+ }
+
+ .homepage-description__partners {
+   @include make-md-column($columns: 3);
+   @include make-md-column-push($columns: 9);
+
+   margin-bottom: 2em;
+
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   flex-flow: row wrap;
+
+   align-items: center;
+
+   @media (min-width:$screen-md-min) {
+     margin-bottom: 1em;
+   }
+   img {
+     max-width: 100%;
+   }
+ }
+
+ .homepage-description__partners__column {
+   display: inline-block;
+   @media (min-width:$screen-md-min) {
+     text-align: center;
+   }
+ }
+
+ .homepage-description__partners__column--one {
+   width: 30%;
+   margin-right: 3%;
+   @media (min-width:$screen-md-min) {
+     margin-bottom: 1em;
+     margin-top: -1em;
+     margin-right: 0;
+     width: 100%;
+   }
+ }
+
+ .homepage-description__partners__column--two {
+   width: 67%;
+   @media (min-width:$screen-md-min) {
+     width: 100%;
+   }
+ }
+
+ .callout-box {
+   background-color: $brand-primary;
+   color: $color_white;
+   padding: 2em;
+   margin-top: 1em;
+   float: left;
+   a {
+     color: $color_white;
+     text-decoration: underline;
+     font-weight: $body_typeface_bold;
+   }
+   @media (min-width:$screen-md-min) {
+     font-size: 1.166666667em;
+   }
+   p:last-child {
+     margin-bottom: 0;
+   }
+ }
+
+ .homepage-people {
+   padding-top: 3em;
+   border-top: 1px solid $gray-lighter;
+   background-color: $color_white;
+   h3 {
+     font-size: 1.277777778em;
+   }
+ }
+
+ .collection-of-people {
+   margin: 1.5em -1em 0 -1em;
+   @media (min-width:$screen-sm-min) {
+     margin-bottom: 2em;
+     display: -webkit-box;
+     display: -moz-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+     flex-flow: row wrap;
+   }
+ }
+
+ .collection-of-people__person {
+   @include clearfix;
+   margin-bottom: 1.5em;
+   padding: 0 1em;
+   @media (min-width:$screen-sm-min) {
+     width: 11.5em;
+   }
+ }
+
+ .person__photo {
+   width: 20%;
+   float: left;
+   padding-right: 1em;
+   @media (min-width:$screen-sm-min) {
+     float: none;
+     padding: 0;
+     width: 100%;
+   }
+ }
+
+ .person__name {
+   font-weight: bold;
+   margin-bottom: 0;
+   margin-left: 20%;
+   margin-top: 0.4em;
+   @media (min-width:$screen-sm-min) {
+     margin-left: 0;
+     font-size: 1.25em;
+     margin-bottom: 0.25em;
+   }
+ }
+
+ .person__job-title {
+   font-size: 0.875em;
+   line-height: 1.428em;
+   margin: 0 0 0 $grid-gutter-width;
+   color: $gray;
+   @media (min-width:$screen-sm-min) {
+     margin-left: 0;
+   }
+ }
