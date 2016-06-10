@@ -57,7 +57,8 @@ $link-color: darken($brand-primary, 20%);
 /*
  * Buttons
  */
- $btn-font-weight: $body_typeface_bold;
+$btn-font-weight: $body_typeface_bold;
+$btn-primary-bg: darken($brand-primary, 10%);
 
 /*
  * Forms
@@ -74,6 +75,10 @@ $link-color: darken($brand-primary, 20%);
 /*
  * Navbar
  */
-
 $navbar-border-radius: 0;
 $navbar-default-bg: $color-white;
+
+/*
+ * Wells
+ */
+$well-bg: lighten($body-bg, 5%);

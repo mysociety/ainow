@@ -11,7 +11,7 @@
     {% csrf_token %}
     {% include 'account/_form_fields.html' %}
     <div class="account-form__field account-form__field--submit form-group">
-      <button class="btn btn-primary" type="submit">{% trans "Save" %}</button> <a href="{% url "account_password_reset" %}" class="account-form__field__not-a-btn">{% trans "Cancel" %}</a>
+      <button class="btn btn-primary" type="submit">{% trans "Save" %}</button> <a href="#" onclick="history.back(-1)" class="account-form__field__not-a-btn">{% trans "Cancel" %}</a>
     </div>
   </form>
 </div>

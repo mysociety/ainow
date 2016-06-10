@@ -11,7 +11,7 @@
     {% csrf_token %}
     <p>{% trans "Are you sure you want to log out?" %}</p>
     <div class="account-form__field account-form__field--submit form-group">
-      <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button> <a href="{% url "account_password_reset" %}" class="account-form__field__not-a-btn">Cancel</a>
+      <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button> <a href="#" onclick="history.back(-1)" class="account-form__field__not-a-btn">{% trans "Cancel" %}</a>
     </div>
   </form>
 </div>

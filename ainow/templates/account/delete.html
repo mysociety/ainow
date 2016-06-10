@@ -12,7 +12,7 @@
   <form method="post" action="{% url "account_delete" %}" autocapitalize="off">
     {% csrf_token %}
     <div class="account-form__field account-form__field--submit" form-group>
-      <button type="submit" class="btn btn-primary">{% trans "Delete My Account" %}</button>
+      <button type="submit" class="btn btn-primary">{% trans "Delete My Account" %}</button><a href="#" onclick="history.back(-1)" class="account-form__field__not-a-btn">{% trans "Cancel" %}</a>
     </div>
   </form>
 </section>

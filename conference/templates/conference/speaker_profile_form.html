@@ -30,8 +30,19 @@
             </div>
 
             <div class="account-form__photo-controls-column">
-              <!--<div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>-->
-              <a href="#change-photo" class="btn btn-primary">Change photo</a> <a href="#change-photo" class="btn btn-default">Delete</a>
+
+              <a href="#change-photo-collapse" class="btn btn-primary" data-toggle="collapse" href="#change-photo-collapse" aria-expanded="false" aria-controls="change-photo-collapse">Change photo</a>
+              <a href="#delete-photo-collapse" class="btn btn-default" data-toggle="collapse" href="#delete-photo-collapse" aria-expanded="false" aria-controls="delete-photo-collapse">Delete</a>
+              <div class="change-photo-collapse collapse well" id="change-photo-collapse">
+                <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
+                <a href="#change-photo-collapse" data-toggle="collapse" data-target="#change-photo-collapse" aria-expanded="false" aria-controls="#change-photo-collapse" class="account-form__field__not-a-btn">Cancel</a>
+              </div>
+              
+              <div class="delete-photo-collapse collapse well" id="delete-photo-collapse">
+                <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
+                <a href="#delete-photo-collapse" data-toggle="collapse" data-target="#delete-photo-collapse" aria-expanded="false" aria-controls="#delete-photo-collapse" class="account-form__field__not-a-btn">Cancel</a>
+              </div>
+
             </div>
           </div>
           {% if form.photo.errors %}
@@ -46,7 +57,7 @@
         {% include 'account/_form_field.html' with field=form.website %}
         {% include 'account/_form_field.html' with field=form.facebook %}
         <div class="account-form__field account-form__field--submit">
-          <button type="submit" class="btn btn-primary">Save changes</button> <a href="{% url "account_password_reset" %}" class="account-form__field__not-a-btn">Cancel</a>
+          <button type="submit" class="btn btn-primary">Save changes</button> <a href="#" onclick="history.back(-1)" class="account-form__field__not-a-btn">Cancel</a>
         </div>
       </form>
     </div>

@@ -142,6 +142,32 @@ label {
 
 .page-header {
   @include make-xs-column($columns: 12);
+  border-bottom: 0;
+  margin-top: 1em;
+  h1 {
+    border-bottom: 3px solid $gray-lighter;
+    padding-bottom: 0.5em;
+  }
+}
+
+.section-nav {
+  border: 1px solid $gray-lighter;
+  border-bottom: 0;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+  border-radius: $border-radius-base;
+  margin-bottom: 2em;
+  li {
+    margin: 0 !important; //argh bootstrap and its bad specificity
+  }
+  a {
+    display: block;
+    border-bottom: 1px solid $gray-lighter;
+    color: $gray-dark;
+  }
+}
+
+.page-header__parent {
+    color: $gray-light;
 }
 
 .form {
@@ -160,7 +186,7 @@ label {
 }
 
 .form--simple-form {
-  // a layout for a single form centred on the screen. Log in uses this
+  // a layout for a single form centred on the screen. Log in/sign up uses this
 }
 
 .form--simple-form__form {
@@ -224,7 +250,9 @@ label {
 .account-form__photo-controls-column {
   @include make-xs-column($columns: 9);
   @include make-sm-column($columns: 10);
-
+  .account-form__field__not-a-btn {
+      margin-left: 0;
+  }
   .btn {
     display: inline-block;
     margin: 1em 1em 1em 0;

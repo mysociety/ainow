@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="page-header">
-        <h1>Your account &ndash; {% block page_title %}{% endblock %}</h1>
+        <h1><span class="page-header__parent">Your account &ndash;</span> {% block page_title %}{% endblock %}</h1>
       </div>
     </div>
   </div>
@@ -11,7 +11,7 @@
   <div class="container standard-layout">
     <div class="row">
       <div class="standard-layout__secondary-column">
-        <ul class="nav nav-stacked">
+        <ul class="nav nav-stacked section-nav">
           {% include 'account/_logged_in_nav.html' %}
         </ul>
       </div>
