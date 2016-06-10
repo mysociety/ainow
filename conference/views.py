@@ -144,6 +144,6 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
         return super(AttendeeCreateUpdateView, self).post(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        context = super(AttendeeCreateUpdateView, self).get_context_data(*kwargs)
+        context = super(AttendeeCreateUpdateView, self).get_context_data(**kwargs)
         context['schedule'] = self.schedule
         return context
