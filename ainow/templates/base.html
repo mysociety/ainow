@@ -31,6 +31,7 @@
 
   </head>
   <body class="{% block bodyclasses %}{% endblock %}">
+    <div class="site-bg">
     <nav class="site-header navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -88,9 +89,11 @@
 
     {% block content %}
     {% endblock %}
-
+    </div> <!-- site-bg -->
     <footer class="site-footer" role="footer">
       <div class="container">
+        <div class="row">
+
           <div class="site-footer__utility-links">
             <ul class="utility-links__list">
               <li><a href="{% url 'page' 'privacy' %}">Privacy</a></li>
@@ -99,14 +102,17 @@
               <li><a href="mailto:">Facebook</a></li>-->
             </ul>
           </div>
+
           <div class="site-footer__partner-logos">
-            <div class="site-footer__partner-logos__logoset">
+            <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--a">
               <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
             </div>
-            <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--wide">
+            <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--b">
               <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili.png' %}" alt="New York University, Information Law Institute" class="partner-logo"/></a>
             </div>
+
           </div>
+        </div>
       </div>
     </footer>
   </body>

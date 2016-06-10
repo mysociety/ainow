@@ -33,7 +33,7 @@ $brand-info: $color_blue;
 $brand-warning: $color_orange;
 $brand-danger: $color_pink;
 
-$body-bg: $color_white;
+$body-bg: $gray-lighter;
 $text-color: $gray-darker;
 $link-color: darken($brand-primary, 20%);
 
@@ -76,4 +76,4 @@ $link-color: darken($brand-primary, 20%);
  */
 
 $navbar-border-radius: 0;
-$navbar-default-bg: $color_off_white;
+$navbar-default-bg: $color-white;
