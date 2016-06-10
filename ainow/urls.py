@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^markitup/', include('markitup.urls')),
 
     url(r'^', include('conference.urls')),
+    url(r'^', include('themes.urls')),
 
     # Override the login and signup views from the account app, so we can use
     # our versions which use an email address instead of a username.

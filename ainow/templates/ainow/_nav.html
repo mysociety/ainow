@@ -7,8 +7,12 @@
 <a href="{% url 'attendees' schedule.slug %}">Attendees</a>
 {% endif %}
 &nbsp;&nbsp;
-<a href="{% url 'faq'  schedule.slug schedule.slug %}">FAQ</a>
+<a href="{% url 'faq' schedule.slug schedule.slug %}">FAQ</a>
 &nbsp;&nbsp;
 {% with schedule.slug|add:"-resources" as resources_slug %}
 <a href="{% url 'page' schedule.slug resources_slug %}">Resources</a>
 {% endwith %}
+{% if schedule.slug == 'workshop' %}
+&nbsp;&nbsp;
+<a href="{% url 'themes' schedule.slug %}">Themes</a>
+{% endif %}
