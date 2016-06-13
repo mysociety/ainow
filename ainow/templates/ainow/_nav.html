@@ -1,13 +1,18 @@
-<li><a href="{% url 'speakers' schedule.slug %}">Speakers</a></li>
-
-<li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
-
 {% if schedule.slug == 'workshop' %}
-<li><a href="{% url 'attendees' schedule.slug %}">Attendees</a></li>
+  {# when a user is in the workshop section, the top nav becomes the way to get back to the conference pages #}
+  <li><a href="#">Workshop</a></li>
+  <li><a href="#">Conference</a></li>
+{% else %}
+{% if request.user.is_authenticated %}
+  {# Workshop only appears in the top nav when you're logged in #}
+  <li><a href="#">Workshop</a></li>
 {% endif %}
+  {# Everyone can see this navigation #}
+  <li><a href="{% url 'speakers' schedule.slug %}">Speakers</a></li>
 
-<li><a href="{% url 'faq'  schedule.slug schedule.slug %}">FAQ</a></li>
+  <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
 
-{% with schedule.slug|add:"-resources" as resources_slug %}
-<li><a href="{% url 'page' schedule.slug resources_slug %}">Resources</a></li>
-{% endwith %}
+  <li><a href="{% url 'attendees' schedule.slug %}">Attendees</a></li>
+
+  <li><a href="{% url 'faq'  schedule.slug schedule.slug %}">FAQ</a></li>
+{% endif %}
