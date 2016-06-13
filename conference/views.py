@@ -2,7 +2,7 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
 from django.shortcuts import get_object_or_404, redirect
-from django.conf import settings
+from django.utils.http import is_safe_url
 from django.core.urlresolvers import reverse
 
 from account.mixins import LoginRequiredMixin
@@ -146,4 +146,9 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     def get_context_data(self, **kwargs):
         context = super(AttendeeCreateUpdateView, self).get_context_data(**kwargs)
         context['schedule'] = self.schedule
+        back_url = reverse('home')
+        user_supplied_back_url = self.request.GET.get('back')
+        if user_supplied_back_url and is_safe_url(user_supplied_back_url):
+            back_url = user_supplied_back_url
+        context['back_url'] = back_url
         return context
