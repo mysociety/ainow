@@ -11,3 +11,5 @@
 {% with schedule.slug|add:"-resources" as resources_slug %}
 <li><a href="{% url 'page' schedule.slug resources_slug %}">Resources</a></li>
 {% endwith %}
+
+<li><a href="{% url 'themes' schedule.slug %}">Themes</a></li>

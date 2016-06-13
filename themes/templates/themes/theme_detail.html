@@ -1,0 +1,34 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ theme.title }}{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+      <div class="layout layout--thirds">
+        <div class="column column--primary">
+          <div class="general-content__page">
+            <h1>{{ theme.title }}</h1>
+            {{ theme.content }}
+            {% if documents %}
+              <h2>Documents</h2>
+              {% for document in documents %}
+                <h3>
+                  <a href="{{ document.file.url }}">{{ document.title }}</a>
+                </h3>
+                {{ document.description }}
+                <a href="{{ document.file.url }}">Download</a>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        <div class="column column--secondary">
+          <!--<h2 class="quarternary-heading">Related Talks (TODO)</h2>-->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
