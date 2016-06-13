@@ -8,31 +8,31 @@
 {% block content %}
 <div class="general-content">
   <div class="container">
-    <div class="general-content__page">
+    <div class="general-content__page schedule">
       <h1>{{ schedule.name }} Schedule</h1>
-      <ul>
+      <ul class="schedule__list">
         {% for slot in slots %}
-          <li>
+          <li class="schedule__list__item schedule-entry">
+            <time class="schedule-entry__time">{{ slot.start }} - {{ slot.end }}</time>
             {% if slot.is_presentation_slot %}
               {% if slot.presentation %}
                 {% with presentation=slot.presentation %}
-                  <h2>
+                  <p class="schedule-entry__speaker">{{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}</p>
+                  <h2 class="schedule-entry__title">
                     <a href="{% url 'presentation' presentation.slot.schedule.slug presentation.slug %}">
                       {{ presentation.title }}
                     </a>
                   </h2>
-                  {{ presentation.short_description }}
-                  <p>by {{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
-                  </p>
+                  <p class="schedule-entry__description--short">{{ presentation.short_description }}</p>
                 {% endwith %}
               {% else %}
-                <h2>{{ slot.get_kind_display }}: TBC</h2>
+                <h2 class="schedule-entry__title">{{ slot.get_kind_display }}: TBC</h2>
               {% endif %}
             {% else %}
-              <h2>{{ slot.get_kind_display }}</h2>
+              <h2 class="schedule-entry__title">{{ slot.get_kind_display }}</h2>
             {% endif %}
-            <p>{{ slot.start }} - {{ slot.end }}</p>
-            <p>{{ slot.room.name }}</p>
+
+            <p class="schedule-entry__location">{{ slot.room.name }}</p>
           </li>
         {% empty %}
           <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>

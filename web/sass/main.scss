@@ -64,6 +64,12 @@ label {
   font-weight: normal;
 }
 
+.general-content__page {
+  h1 {
+    margin: 1em 0 0.5em;
+  }
+}
+
 /*
  * Layouts
  */
@@ -523,3 +529,47 @@ label {
      margin-left: 0;
    }
  }
+
+ /*
+  * Schedule
+  */
+
+
+.schedule__list {
+  @extend .list-unstyled;
+}
+
+.schedule-entry__time {
+  display: block;
+  background-color: $gray-lighter;
+
+  padding: 0.66667em 0.5em 0.5em;
+  font-size: 1.0625em; //~17px
+  margin-bottom: 1em;
+}
+
+.schedule-entry__speaker {
+  font-size: 1.0625em; //~17px
+  color: $gray;
+  margin: 0 0 0.35em;
+}
+
+.schedule-entry__title {
+  font-size: 1.3125em; //~21px
+  margin: 0 0 0.35em;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.schedule-entry__description--short {
+  font-size: 0.9375em; //~15px
+  margin: 0;
+}
+
+.schedule-entry__location {
+  font-size: 0.9375em; //~15px
+  color: $gray;
+  margin-top: 0.66667em;
+  margin-bottom: 1em;
+}
