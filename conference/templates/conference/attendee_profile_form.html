@@ -24,7 +24,7 @@
         <div class="account-form__field account-form__photo form-group">
           <div class="row">
             <div class="account-form__photo-display-column">
-            {% thumbnail speaker.photo "250x250" crop="center" as im %}
+            {% thumbnail attendee.photo "250x250" crop="center" as im %}
                 <img src="{{ im.url }}" class="account-form__photo__thumbnail">
             {% endthumbnail %}
             </div>
