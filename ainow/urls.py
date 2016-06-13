@@ -21,6 +21,7 @@ from django.contrib import admin
 from .views import (
     HomeView,
     WorkshopHomeView,
+    WorkshopVenueView,
     SignupView,
     LoginView,
     ConfirmEmailView
@@ -33,6 +34,7 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^workshop$', WorkshopHomeView.as_view(), name='workshop_home'),
+    url(r'^workshop/venue$', WorkshopVenueView.as_view(), name='workshop_venue'),
 
     url(r"^schedule/(?P<schedule_slug>[-\w]+)/faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
     url(r"^schedule/(?P<schedule_slug>[-\w]+)/page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
