@@ -1,13 +1,12 @@
-<li><a href="{% url 'speakers' schedule.slug %}">Attendees</a></li>
+<li><a href="{% url 'attendees' schedule.slug %}">Attendees</a></li>
 
-<li><a href="{% url 'schedule' schedule.slug %}">Workshop leaders</a></li>
+<li><a href="{% url 'speakers' schedule.slug %}">Workshop leaders</a></li>
 
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
 
-<li><a href="{% url 'schedule' schedule.slug %}">Venue</a></li>
+<li><a href="{% url 'workshop_venue' %}">Venue</a></li>
 
-<li><a href="{% url 'schedule' schedule.slug %}">FAQ</a></li>
-
+<li><a href="{% url 'faq' schedule.slug schedule.slug %}">FAQ</a></li>
 
 {% with schedule.slug|add:"-resources" as resources_slug %}
 <li><a href="{% url 'page' schedule.slug resources_slug %}">Resources</a></li>

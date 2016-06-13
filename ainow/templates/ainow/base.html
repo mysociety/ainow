@@ -81,6 +81,7 @@
         </div>
     </nav>
 
+    {% if schedule.slug == 'workshop' %}
     <nav class="workshop-navbar navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -93,7 +94,6 @@
           <a class="navbar-brand"  href="{% url 'workshop_home' %}">Workshop</a>
         </div>
         <!-- navbar-header -->
-
         <div class="collapse navbar-collapse" id="workshop-header-nav">
           <ul class="nav navbar-nav" role="navigation">
             {% include 'ainow/_workshop-nav.html' %}
@@ -101,6 +101,7 @@
         </div>
       </div>
     </nav>
+    {% endif %}
 
     {% if schedule.slug == 'workshop' %}
     <header class="sub-header">
