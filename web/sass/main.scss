@@ -706,3 +706,13 @@ iframe {
 .attendee__twitter {
     font-size: .8125em;
   }
+
+/*
+ * FAQs
+ */
+
+ .faq__question {
+   > h2 {
+     font-size: 1.4375em;
+   }
+ }
