@@ -41,15 +41,6 @@
 },
 {
     "model": "faq.faqquestionpage",
-    "pk": 1,
-    "fields": {
-        "faqpage": 1,
-        "faqquestion": 1,
-        "order": 0
-    }
-},
-{
-    "model": "faq.faqquestionpage",
     "pk": 2,
     "fields": {
         "faqpage": 2,
