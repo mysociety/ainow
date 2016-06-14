@@ -1,0 +1,68 @@
+{% load thumbnail %}
+<div class="account-form__field account-form__photo form-group">
+  <div class="row">
+    <div class="account-form__photo-display-column">
+    {% thumbnail attendee.photo "250x250" crop="center" as im %}
+      <img src="{{ im.url }}" class="account-form__photo__thumbnail">
+    {% endthumbnail %}
+    </div>
+
+    <div class="account-form__photo-controls-column">
+
+      <a href="#change-photo-collapse"
+         class="btn btn-primary account-form__photo__change-button"
+         data-toggle="collapse"
+         href="#change-photo-collapse"
+         aria-expanded="false"
+         aria-controls="change-photo-collapse">
+        {% if attendee.photo %}
+        Change photo
+        {% else %}
+        Add photo
+        {% endif %}
+       </a>
+
+      {% if attendee.photo %}
+      <a href="#delete-photo-collapse"
+         class="btn btn-default account-form__photo__delete-button"
+         data-toggle="collapse"
+         href="#delete-photo-collapse"
+         aria-expanded="false"
+         aria-controls="delete-photo-collapse">Delete</a>
+      {% endif %}
+
+      <div class="change-photo-collapse well" id="change-photo-collapse">
+        <label for='id_photo'>Choose photo:</label>
+        <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
+        <a href="#change-photo-collapse"
+           data-toggle="collapse"
+           data-target="#change-photo-collapse"
+           aria-expanded="false"
+           aria-controls="#change-photo-collapse"
+           class="account-form__field__not-a-btn account-form__photo__cancel-button">
+          Cancel
+        </a>
+      </div>
+
+      {% if attendee.photo %}
+      <div class="delete-photo-collapse collapse well" id="delete-photo-collapse">
+        <p>Are you sure you want to delete this photo?</p>
+        <a href="#delete-photo" id="delete-photo" class="btn btn-default">Yes, delete it</a>
+        <a href="#change-photo-collapse"
+           data-toggle="collapse"
+           data-target="#delete-photo-collapse"
+           aria-expanded="false"
+           aria-controls="#delete-photo-collapse"
+           class="account-form__field__not-a-btn account-form__photo__cancel-button">
+          Cancel
+        </a>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+  {% if form.photo.errors %}
+    <div class="account-form__errors">{{ form.photo.errors }}</div>
+  {% endif %}
+
+</div>

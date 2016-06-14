@@ -188,6 +188,8 @@ PIPELINE = {
             'source_filenames': (
                 'javascripts/jquery.js',
                 'javascripts/bootstrap.js',
+                'javascripts/js.cookie.js',
+                'conference/javascripts/profile-photo.js',
             ),
             'output_filename': 'javascripts/scripts.js',
         },

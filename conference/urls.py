@@ -13,15 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf import settings
-from django.conf.urls import url, include
+from django.conf.urls import url
 
 from .views import (
     ScheduleView,
     SpeakerListView,
     PresentationView,
     AttendeeListView,
-    AttendeeCreateUpdateView
+    AttendeeCreateUpdateView,
+    delete_photo
 )
 
 urlpatterns = [
@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/speakers$', SpeakerListView.as_view(), name='speakers'),
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendees$', AttendeeListView.as_view(), name='attendees'),
     url(r"^profile/$", AttendeeCreateUpdateView.as_view(), name="profile"),
+    url(r"^profile/delete-photo$", delete_photo, name="profile_delete_photo"),
 ]

@@ -4,6 +4,13 @@ from django.views.generic.edit import ModelFormMixin, ProcessFormView
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.http import is_safe_url
 from django.core.urlresolvers import reverse
+from django import forms
+from django.template.loader import render_to_string
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.contrib.auth.decorators import login_required
+from django.forms import modelform_factory
+
+import sorl
 
 from account.mixins import LoginRequiredMixin
 
@@ -99,9 +106,9 @@ class AttendeeListView(ScheduleMixin, ListView):
 
 
 class AttendeeCreateUpdateView(LoginRequiredMixin,
-                                                       SingleObjectTemplateResponseMixin,
-                                                       ModelFormMixin,
-                                                       ProcessFormView):
+                               SingleObjectTemplateResponseMixin,
+                               ModelFormMixin,
+                               ProcessFormView):
     """A combined create and update view for Attendees"""
     # Taken from http://stackoverflow.com/a/30948175
     model = Attendee
@@ -135,6 +142,12 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
             kwargs['data']['schedule'] = self.schedule.id
         return kwargs
 
+    def get_form(self, form_class):
+        # Force a simple file field for the photo
+        form = super(AttendeeCreateUpdateView, self).get_form(form_class)
+        form.fields['photo'].widget = forms.FileInput()
+        return form
+
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super(AttendeeCreateUpdateView, self).get(request, *args, **kwargs)
@@ -152,3 +165,32 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
             back_url = user_supplied_back_url
         context['back_url'] = back_url
         return context
+
+
+@login_required
+def delete_photo(request):
+    """
+    A view specifically for deleting the photo attached to a profile so that
+    we can do that via ajax and a nicer UI, rather than using Django's
+    clearable file input (which is a bit clunky).
+    """
+    if request.method == 'POST' and request.is_ajax():
+        # Delete the photo
+        attendee = request.user.conference_attendee_profile
+        sorl.thumbnail.delete(attendee.photo, delete_file=False)
+        attendee.photo.delete()  # Saves the model automatically
+
+        # Build a new form
+        fields = ['user', 'name', 'biography', 'photo', 'twitter_username', 'website', 'schedule']
+        form_class = modelform_factory(Attendee, fields=fields)
+        form = form_class(instance=attendee)
+        form.fields['photo'].widget = forms.FileInput()
+
+        # Render a response with the form and updated attendee
+        html = render_to_string(
+            'conference/_profile_photo.html',
+            {'attendee': attendee, 'form': form}
+        )
+        return HttpResponse(html)
+    else:
+        return HttpResponseBadRequest("This endpoint is only available to AJAX POST requests")
