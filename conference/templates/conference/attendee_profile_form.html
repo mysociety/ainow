@@ -1,6 +1,5 @@
 {% extends 'account/account-form.html' %}'
 {% load staticfiles %}
-{% load thumbnail %}
 {% load account_tags %}
 
 {% block title %}Your Account - Profile{% endblock %}
@@ -21,34 +20,8 @@
         {% endif %}
         {# Purposely not including the user here because we force it to #}
         {# request.user in the view #}
-        <div class="account-form__field account-form__photo form-group">
-          <div class="row">
-            <div class="account-form__photo-display-column">
-            {% thumbnail speaker.photo "250x250" crop="center" as im %}
-                <img src="{{ im.url }}" class="account-form__photo__thumbnail">
-            {% endthumbnail %}
-            </div>
-
-            <div class="account-form__photo-controls-column">
-
-              <a href="#change-photo-collapse" class="btn btn-primary" data-toggle="collapse" href="#change-photo-collapse" aria-expanded="false" aria-controls="change-photo-collapse">Change photo</a>
-              <a href="#delete-photo-collapse" class="btn btn-default" data-toggle="collapse" href="#delete-photo-collapse" aria-expanded="false" aria-controls="delete-photo-collapse">Delete</a>
-              <div class="change-photo-collapse collapse well" id="change-photo-collapse">
-                <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
-                <a href="#change-photo-collapse" data-toggle="collapse" data-target="#change-photo-collapse" aria-expanded="false" aria-controls="#change-photo-collapse" class="account-form__field__not-a-btn">Cancel</a>
-              </div>
-
-              <div class="delete-photo-collapse collapse well" id="delete-photo-collapse">
-                <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
-                <a href="#delete-photo-collapse" data-toggle="collapse" data-target="#delete-photo-collapse" aria-expanded="false" aria-controls="#delete-photo-collapse" class="account-form__field__not-a-btn">Cancel</a>
-              </div>
-
-            </div>
-          </div>
-          {% if form.photo.errors %}
-            <div class="account-form__errors">{{ form.photo.errors }}</div>
-          {% endif %}
-
+        <div class="js-profile-photo">
+          {% include 'conference/_profile_photo.html' with attendee=attendee form=form %}
         </div>
         {% include 'account/_form_field.html' with field=form.name %}
         {% include 'account/_form_field.html' with field=form.biography %}
@@ -56,7 +29,8 @@
         {% include 'account/_form_field.html' with field=form.twitter_username %}
         {% include 'account/_form_field.html' with field=form.website %}
         <div class="account-form__field account-form__field--submit">
-          <button type="submit" class="btn btn-primary">Save changes</button> <a href="#" onclick="history.back(-1)" class="account-form__field__not-a-btn">Cancel</a>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+          <a href="{{ back_url }}" class="account-form__field__not-a-btn">Cancel</a>
         </div>
       </form>
     </div>

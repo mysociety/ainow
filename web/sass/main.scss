@@ -305,6 +305,21 @@ label {
   }
 }
 
+// Photo buttons are hidden when we have no JS because they don't work without
+// it
+.no-js .account-form__photo__delete-button,
+.no-js .account-form__photo__change-button,
+.no-js .account-form__photo__cancel-button {
+  @extend .hidden;
+}
+
+// Change photo form should only be collapsed when we have JS, because it's
+// inaccessible without it.
+.js .change-photo-collapse {
+  @extend .collapse;
+}
+
+
 /*
  * Homepage
  */
