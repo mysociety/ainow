@@ -60,6 +60,10 @@ label {
   font-weight: normal;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 .btn-default {
   font-weight: normal;
 }
@@ -67,6 +71,22 @@ label {
 .general-content__page {
   h1 {
     margin: 1em 0 0.5em;
+  }
+}
+
+.object-container {
+  //use for iframes/objects and other embeds
+  position: relative;
+  padding-bottom: 76.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
