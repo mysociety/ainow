@@ -27,11 +27,11 @@
                 {% endwith %}
               {% else %}
                 <h2 class="schedule-entry__title">{{ slot.name }}</h2>
-                {{ slot.short_description|linebreaksbr }}
+                {{ slot.short_description }}
               {% endif %}
             {% else %}
               <h2 class="schedule-entry__title">{{ slot.name }}</h2>
-              {{ slot.short_description|linebreaksbr }}
+              {{ slot.short_description }}
             {% endif %}
           </li>
         {% empty %}

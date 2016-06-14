@@ -95,7 +95,7 @@ class Slot(TimestampedModel):
                   ' presentation is associated with it instead.',
         blank=True
     )
-    short_description = models.TextField(
+    short_description = MarkupField(
         blank=True,
         help_text='Extra text to display under this slot\'s name in the '
                   ' schedule. Useful if you need a description but don\'t'
