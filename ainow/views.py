@@ -36,6 +36,16 @@ class WorkshopHomeView(LoginRequiredMixin, TemplateView):
         return context
 
 
+class WorkshopVenueView(LoginRequiredMixin, TemplateView):
+    template_name = 'ainow/workshop_venue.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(WorkshopVenueView, self).get_context_data(**kwargs)
+        context['intro_block'] = Block.objects.get(slug='workshop-venue-introduction').content
+        context['schedule'] = Schedule.objects.get(slug='workshop')
+        return context
+
+
 class LoginView(account.views.LoginView):
     """ Override account.views.LoginView to use the email-only version """
     form_class = account.forms.LoginEmailForm

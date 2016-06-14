@@ -1,0 +1,27 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Themes{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Themes</h1>
+      <ul>
+        {% for theme in themes %}
+          <li>
+            <h2><a href="{% url 'theme' schedule.slug theme.slug %}">{{ theme.title }}</a></h2>
+            {{ theme.content }}
+          </li>
+        {% empty %}
+          <li>There aren't any themes yet. Add some in the admin.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

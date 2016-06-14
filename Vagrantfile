@@ -63,7 +63,7 @@ Vagrant.configure(2) do |config|
 
     # Install sample data, we only want this in development, hence why it's
     # not in post_deploy_actions.
-    python manage.py loaddata conference/fixtures/sample-data.json faq/fixtures/sample-data.json loaddata pages/fixtures/sample-data.json
+    python manage.py loaddata conference/fixtures/sample-data.json faq/fixtures/sample-data.json loaddata pages/fixtures/sample-data.json themes/fixtures/sample-data.json
 
   SHELL
 
