@@ -7,11 +7,25 @@
 
 {% block content %}
 <div class="general-content">
-  <div class="container">
-      <div class="layout layout--thirds">
-        <div class="column column--primary">
-          <div class="general-content__page">
-            <h1>{{ page.title }}</h1>
+  <div class="container standard-layout">
+      <div class="general-content__page">
+        <h1>{{ page.title }}</h1>
+        <div class="row">
+          {% if sub_pages %}
+          <div class="standard-layout__secondary-column">  
+              <ul class="nav nav-stacked section-nav">
+              {% for sub_page in sub_pages %}
+                <li>
+                  <a href="{% url 'page' schedule.slug sub_page.slug %}">
+                    {{ sub_page.title }}
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+          </div>
+          {% endif %}
+          <div class="standard-layout__primary-column">
+
             {% if parent_page %}
             <p>
               <a href="{% url 'page' schedule.slug parent_page.slug %}">
@@ -20,24 +34,11 @@
             </p>
             {% endif %}
             {{ page.content }}
+
           </div>
-        </div>
-        <div class="column column--secondary">
-          {% if sub_pages %}
-            <h2 class="quarternary-heading">In this section</h2>
-            <ul>
-            {% for sub_page in sub_pages %}
-              <li>
-                <a href="{% url 'page' schedule.slug sub_page.slug %}">
-                  {{ sub_page.title }}
-                </a>
-              </li>
-            {% endfor %}
-            </ul>
-          {% endif %}
+
         </div>
       </div>
     </div>
   </div>
-</div>
 {% endblock %}
