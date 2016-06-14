@@ -11,16 +11,24 @@
   <div class="container">
     <div class="general-content__page">
       <h1>Attendees</h1>
-      <ul>
+      <ul class="attendee-list">
         {% for attendee in attendees %}
-          <li>
-            <h2>{{ attendee.name }}</h2>
-            {% thumbnail attendee.photo "100x100" crop="center" as im %}
-              <img src="{{ im.url }}">
-            {% endthumbnail %}
+          <li class="attendee-list__attendee">
+            <div class="attendee__secondary-column">
+              {% thumbnail attendee.photo "100x100" crop="center" as im %}
+                <img  class="attendee__thumbnail" src="{{ im.url }}">
+              {% empty %}
+                <img  class="attendee__thumbnail" src="/static/img/no-photo.png" height="100" width="100">
+              {% endthumbnail %}
+            </div>
+              <div class="attendee__primary-column">
+              <h2 class="attendee__name">{{ attendee.name }}</h2>
+              <p class="attendee__org">Organisation</p>
+              <p class="attendee__twitter"><a href="#">@twitter</a></p>
+            </div>
           </li>
         {% empty %}
-          <li>There aren't any attendees yet. Add some in the admin.</li>
+          <li>There aren't any attendees yet</li>
         {% endfor %}
       </ul>
     </div>

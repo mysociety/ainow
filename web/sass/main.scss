@@ -534,7 +534,6 @@ label {
   * Schedule
   */
 
-
 .schedule__list {
   @extend .list-unstyled;
 }
@@ -573,3 +572,57 @@ label {
   margin-top: 0.66667em;
   margin-bottom: 1em;
 }
+
+/*
+ * List of attendees
+ */
+ .attendee-list {
+   @extend .list-unstyled;
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   flex-flow: row wrap;
+   align-items: flex-start;
+   justify-content: flex-start;
+  }
+
+ .attendee-list__attendee {
+   // Layout from Bootstrap's media object
+   @extend .media;
+   margin-bottom: 2em;
+   margin-top: 0;
+   width: 15em;
+   margin-right: $grid-gutter-width;
+ }
+
+ .attendee__secondary-column {
+   @extend .media-left;
+   padding-right: 1em;
+ }
+
+ .attendee__primary-column {
+   @extend .media-body;
+ }
+
+ .attendee__thumbnail {
+   @extend .media-object;
+   width: 5em;
+   height: 5em;
+ }
+
+ .attendee__name {
+   @extend .media-heading;
+   font-size: 1.3125em;
+ }
+
+ .attendee__org {
+   font-size: 0.9375em;
+   color: $gray;
+   margin: 0 0 0.3em 0;
+ }
+
+.attendee__twitter {
+    font-size: .8125em;
+  }
