@@ -2,9 +2,17 @@
 <div class="account-form__field account-form__photo form-group">
   <div class="row">
     <div class="account-form__photo-display-column">
-    {% thumbnail attendee.photo "250x250" crop="center" as im %}
-      <img src="{{ im.url }}" class="account-form__photo__thumbnail">
-    {% endthumbnail %}
+    <a href="#change-photo-collapse"
+    data-toggle="collapse"
+    href="#change-photo-collapse"
+    aria-expanded="false"
+    aria-controls="change-photo-collapse">
+      {% thumbnail attendee.photo "250x250" crop="center" as im %}
+        <img src="{{ im.url }}" class="account-form__photo__thumbnail">
+        {% empty %}
+        <img  class="account-form__photo__thumbnail" src="/static/img/no-photo.png">
+      {% endthumbnail %}
+    </a>
     </div>
 
     <div class="account-form__photo-controls-column">
