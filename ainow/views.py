@@ -30,8 +30,7 @@ class WorkshopHomeView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(WorkshopHomeView, self).get_context_data(**kwargs)
-        context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
-        context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        context['intro_block'] = Block.objects.get(slug='workshop-introduction').content
         context['schedule'] = Schedule.objects.get(slug='workshop')
         return context
 
