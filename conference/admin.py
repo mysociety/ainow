@@ -4,7 +4,7 @@ from conference import models
 from sorl.thumbnail.admin import AdminImageMixin
 
 
-class SlotInline(admin.TabularInline):
+class SlotInline(admin.StackedInline):
     model = models.Slot
     extra = 1
 

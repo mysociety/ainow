@@ -17,22 +17,22 @@
             {% if slot.is_presentation_slot %}
               {% if slot.presentation %}
                 {% with presentation=slot.presentation %}
-                  <p class="schedule-entry__speaker">{{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}</p>
                   <h2 class="schedule-entry__title">
                     <a href="{% url 'presentation' presentation.slot.schedule.slug presentation.slug %}">
                       {{ presentation.title }}
                     </a>
                   </h2>
+                  <p class="schedule-entry__speaker">{{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}</p>
                   <p class="schedule-entry__description--short">{{ presentation.short_description }}</p>
                 {% endwith %}
               {% else %}
-                <h2 class="schedule-entry__title">{{ slot.get_kind_display }}: TBC</h2>
+                <h2 class="schedule-entry__title">{{ slot.name }}</h2>
+                {{ slot.short_description|linebreaksbr }}
               {% endif %}
             {% else %}
-              <h2 class="schedule-entry__title">{{ slot.get_kind_display }}</h2>
+              <h2 class="schedule-entry__title">{{ slot.name }}</h2>
+              {{ slot.short_description|linebreaksbr }}
             {% endif %}
-
-            <p class="schedule-entry__location">{{ slot.room.name }}</p>
           </li>
         {% empty %}
           <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>

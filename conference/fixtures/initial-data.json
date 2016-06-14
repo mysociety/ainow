@@ -1,12 +1,77 @@
 [
 {
+    "model": "conference.speaker",
+    "pk": 42,
+    "fields": {
+        "created": "2016-06-14T08:06:37.083Z",
+        "updated": "2016-06-14T08:06:37.084Z",
+        "user": null,
+        "name": "Kate Crawford",
+        "slug": "kate-crawford",
+        "biography": "",
+        "photo": "",
+        "twitter_username": "",
+        "website": "",
+        "_biography_rendered": ""
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 43,
+    "fields": {
+        "created": "2016-06-14T08:06:52.429Z",
+        "updated": "2016-06-14T08:06:52.429Z",
+        "user": null,
+        "name": "Meredith Whittaker",
+        "slug": "meredith-whittaker",
+        "biography": "",
+        "photo": "",
+        "twitter_username": "",
+        "website": "",
+        "_biography_rendered": ""
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 44,
+    "fields": {
+        "created": "2016-06-14T08:07:08.231Z",
+        "updated": "2016-06-14T08:07:08.231Z",
+        "user": null,
+        "name": "Ed Felten",
+        "slug": "ed-felten",
+        "biography": "",
+        "photo": "",
+        "twitter_username": "",
+        "website": "",
+        "_biography_rendered": ""
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 45,
+    "fields": {
+        "created": "2016-06-14T08:07:30.477Z",
+        "updated": "2016-06-14T08:07:30.477Z",
+        "user": null,
+        "name": "Jason Furman",
+        "slug": "jason-furman",
+        "biography": "",
+        "photo": "",
+        "twitter_username": "",
+        "website": "",
+        "_biography_rendered": ""
+    }
+},
+{
     "model": "conference.schedule",
     "pk": 1,
     "fields": {
         "created": "2016-06-02T15:42:36.837Z",
-        "updated": "2016-06-02T15:42:38.332Z",
+        "updated": "2016-06-14T08:19:55.234Z",
         "name": "Public Conference",
-        "slug": "conference"
+        "slug": "conference",
+        "private": false
     }
 },
 {
@@ -14,9 +79,383 @@
     "pk": 2,
     "fields": {
         "created": "2016-06-02T15:42:36.837Z",
-        "updated": "2016-06-02T15:42:38.332Z",
+        "updated": "2016-06-14T08:10:32.010Z",
         "name": "Workshop",
-        "slug": "workshop"
+        "slug": "workshop",
+        "private": true
+    }
+},
+{
+    "model": "conference.room",
+    "pk": 4,
+    "fields": {
+        "created": "2016-06-14T07:37:01.916Z",
+        "updated": "2016-06-14T07:37:23.863Z",
+        "name": "Grand Hall, NYU Kimmel Center",
+        "location": ""
+    }
+},
+{
+    "model": "conference.room",
+    "pk": 5,
+    "fields": {
+        "created": "2016-06-14T07:37:16.947Z",
+        "updated": "2016-06-14T07:37:16.947Z",
+        "name": "Skirball Center",
+        "location": ""
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 10,
+    "fields": {
+        "created": "2016-06-14T07:59:29.933Z",
+        "updated": "2016-06-14T07:59:29.933Z",
+        "name": "Breakfast and registration",
+        "short_description": "",
+        "start": "08:30:00",
+        "end": "09:00:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 11,
+    "fields": {
+        "created": "2016-06-14T07:59:29.936Z",
+        "updated": "2016-06-14T07:59:29.936Z",
+        "name": "Introductions",
+        "short_description": "",
+        "start": "09:00:00",
+        "end": "09:15:00",
+        "kind": "TALK",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 12,
+    "fields": {
+        "created": "2016-06-14T07:59:29.937Z",
+        "updated": "2016-06-14T07:59:29.937Z",
+        "name": "Introductions",
+        "short_description": "",
+        "start": "09:15:00",
+        "end": "09:25:00",
+        "kind": "TALK",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 13,
+    "fields": {
+        "created": "2016-06-14T07:59:29.937Z",
+        "updated": "2016-06-14T07:59:29.937Z",
+        "name": "Opening Address",
+        "short_description": "",
+        "start": "09:30:00",
+        "end": "10:00:00",
+        "kind": "TALK",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 14,
+    "fields": {
+        "created": "2016-06-14T07:59:29.938Z",
+        "updated": "2016-06-14T08:00:45.683Z",
+        "name": "Lightning Talks -- Inequality and Labour",
+        "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring its current deployments and uses.",
+        "start": "10:00:00",
+        "end": "10:45:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 15,
+    "fields": {
+        "created": "2016-06-14T07:59:29.938Z",
+        "updated": "2016-06-14T07:59:29.938Z",
+        "name": "Coffee & Snack Break",
+        "short_description": "",
+        "start": "10:45:00",
+        "end": "11:00:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 16,
+    "fields": {
+        "created": "2016-06-14T07:59:29.939Z",
+        "updated": "2016-06-14T08:00:45.685Z",
+        "name": "Lightning Talks -- Health and Ethics",
+        "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring its current deployments and uses.",
+        "start": "11:00:00",
+        "end": "12:00:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 17,
+    "fields": {
+        "created": "2016-06-14T07:59:29.940Z",
+        "updated": "2016-06-14T07:59:29.940Z",
+        "name": "Lunch",
+        "short_description": "",
+        "start": "12:00:00",
+        "end": "13:00:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 18,
+    "fields": {
+        "created": "2016-06-14T07:59:29.940Z",
+        "updated": "2016-06-14T08:10:32.014Z",
+        "name": "Discussion",
+        "short_description": "Moderators: Kate Crawford & Meredith Whittaker",
+        "start": "13:00:00",
+        "end": "14:00:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 19,
+    "fields": {
+        "created": "2016-06-14T07:59:29.941Z",
+        "updated": "2016-06-14T08:03:55.108Z",
+        "name": "Coffee & Snack Break",
+        "short_description": "",
+        "start": "14:00:00",
+        "end": "14:30:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 20,
+    "fields": {
+        "created": "2016-06-14T07:59:29.941Z",
+        "updated": "2016-06-14T08:03:55.110Z",
+        "name": "Workshops",
+        "short_description": "Attendees will be assigned to one of five topic area based on expertise. The workshop sessions will be carefully structured to address previously specified questions, challenges, and opportunities, as well as providing time for generative discussion. \r\n\r\nThe topic areas that will comprise the workshop focuses include: \r\n- Health\r\n- Labor\r\n- Ethics\r\n- Inequality",
+        "start": "14:30:00",
+        "end": "16:15:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 21,
+    "fields": {
+        "created": "2016-06-14T07:59:29.942Z",
+        "updated": "2016-06-14T08:03:55.111Z",
+        "name": "Final Summary",
+        "short_description": "",
+        "start": "16:15:00",
+        "end": "16:30:00",
+        "kind": "TALK",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 22,
+    "fields": {
+        "created": "2016-06-14T07:59:29.943Z",
+        "updated": "2016-06-14T08:03:55.112Z",
+        "name": "Public Symposium - Doors Open",
+        "short_description": "",
+        "start": "16:30:00",
+        "end": "20:00:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 23,
+    "fields": {
+        "created": "2016-06-14T08:19:55.237Z",
+        "updated": "2016-06-14T08:19:55.237Z",
+        "name": "Brief welcome and introduction",
+        "short_description": "",
+        "start": "17:30:00",
+        "end": "17:40:00",
+        "kind": "OTHER",
+        "schedule": 1,
+        "room": 5
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 24,
+    "fields": {
+        "created": "2016-06-14T08:19:55.238Z",
+        "updated": "2016-06-14T08:19:55.238Z",
+        "name": "Automation, Civil Rights and Labour -- a present and historical survey",
+        "short_description": "",
+        "start": "17:40:00",
+        "end": "18:15:00",
+        "kind": "TALK",
+        "schedule": 1,
+        "room": 5
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 25,
+    "fields": {
+        "created": "2016-06-14T08:19:55.239Z",
+        "updated": "2016-06-14T08:19:55.239Z",
+        "name": "3 Questions for 3 Leaders -- the industry perspective",
+        "short_description": "",
+        "start": "18:15:00",
+        "end": "18:40:00",
+        "kind": "TALK",
+        "schedule": 1,
+        "room": 5
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 26,
+    "fields": {
+        "created": "2016-06-14T08:19:55.239Z",
+        "updated": "2016-06-14T08:19:55.239Z",
+        "name": "Expert Panel -- AI & health, inequality, labor and ethics",
+        "short_description": "",
+        "start": "18:40:00",
+        "end": "19:30:00",
+        "kind": "TALK",
+        "schedule": 1,
+        "room": 5
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 27,
+    "fields": {
+        "created": "2016-06-14T08:19:55.240Z",
+        "updated": "2016-06-14T08:19:55.240Z",
+        "name": "Public Q&A with all speakers",
+        "short_description": "",
+        "start": "19:30:00",
+        "end": "20:00:00",
+        "kind": "OTHER",
+        "schedule": 1,
+        "room": 5
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 28,
+    "fields": {
+        "created": "2016-06-14T08:19:55.241Z",
+        "updated": "2016-06-14T08:19:55.241Z",
+        "name": "Cocktail reception",
+        "short_description": "Event to be followed by cocktail reception at Grand Hall in the Kimmel Center.",
+        "start": "20:00:00",
+        "end": "23:00:00",
+        "kind": "OTHER",
+        "schedule": 1,
+        "room": 4
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 3,
+    "fields": {
+        "created": "2016-06-14T08:08:38.176Z",
+        "updated": "2016-06-14T08:08:38.176Z",
+        "title": "Introductions",
+        "slug": "introductions-kate-meredith",
+        "primary_speaker": 42,
+        "long_description": "Introductions by Kate Crawford and Meredith Whittaker.",
+        "short_description": "Introductions by Kate Crawford and Meredith Whittaker.",
+        "slot": 11,
+        "_long_description_rendered": "<p>Introductions by Kate Crawford and Meredith Whittaker.</p>",
+        "additional_speakers": [
+            43
+        ]
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 4,
+    "fields": {
+        "created": "2016-06-14T08:09:29.536Z",
+        "updated": "2016-06-14T08:09:29.536Z",
+        "title": "Introductions",
+        "slug": "introductions-ed-felten",
+        "primary_speaker": 44,
+        "long_description": "Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.",
+        "short_description": "Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.",
+        "slot": 12,
+        "_long_description_rendered": "<p>Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.</p>",
+        "additional_speakers": []
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 5,
+    "fields": {
+        "created": "2016-06-14T08:10:07.843Z",
+        "updated": "2016-06-14T08:10:07.843Z",
+        "title": "Opening Address",
+        "slug": "opening-address",
+        "primary_speaker": 45,
+        "long_description": "Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.",
+        "short_description": "Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.",
+        "slot": 13,
+        "_long_description_rendered": "<p>Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.</p>",
+        "additional_speakers": []
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 6,
+    "fields": {
+        "created": "2016-06-14T08:13:31.868Z",
+        "updated": "2016-06-14T08:13:31.868Z",
+        "title": "Final Summary",
+        "slug": "final-summary",
+        "primary_speaker": 42,
+        "long_description": "Final summary by Kate Crawford and Meredith Whittaker.",
+        "short_description": "Final summary by Kate Crawford and Meredith Whittaker.",
+        "slot": 21,
+        "_long_description_rendered": "<p>Final summary by Kate Crawford and Meredith Whittaker.</p>",
+        "additional_speakers": [
+            43
+        ]
     }
 }
 ]

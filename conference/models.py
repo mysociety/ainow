@@ -80,26 +80,26 @@ class Room(TimestampedModel):
 
 
 class Slot(TimestampedModel):
-    COFFEE_BREAK = 'COFFEE'
-    LUNCH_BREAK = 'LUNCH'
-    KEYNOTE = 'KEYNOTE'
-    WORKSHOP = 'WORKSHOP'
     TALK = 'TALK'
+    OTHER = 'OTHER'
     KIND_CHOICES = (
-        (COFFEE_BREAK, 'Coffee break'),
-        (LUNCH_BREAK, 'Lunch break'),
-        (KEYNOTE, 'Keynote'),
-        (WORKSHOP, 'Workshop'),
         (TALK, 'Talk'),
+        (OTHER, 'Other'),
     )
     # Slot kinds that can have presentations attached
-    PRESENTATION_KINDS = (KEYNOTE, WORKSHOP, TALK)
+    PRESENTATION_KINDS = (TALK,)
 
     name = models.CharField(
         max_length=1024,
-        help_text='Only shown to admins, something to help you identify this '
-                  'slot in other forms.',
+        help_text='Text that will be shown to the user for this slot if no'
+                  ' presentation is associated with it instead.',
         blank=True
+    )
+    short_description = models.TextField(
+        blank=True,
+        help_text='Extra text to display under this slot\'s name in the '
+                  ' schedule. Useful if you need a description but don\'t'
+                  ' want to associate a whole presentation with it.'
     )
     start = models.TimeField()
     end = models.TimeField()
