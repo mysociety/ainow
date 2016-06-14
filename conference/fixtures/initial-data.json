@@ -68,10 +68,12 @@
     "pk": 1,
     "fields": {
         "created": "2016-06-02T15:42:36.837Z",
-        "updated": "2016-06-14T08:19:55.234Z",
+        "updated": "2016-06-14T16:51:28.320Z",
         "name": "Public Conference",
         "slug": "conference",
-        "private": false
+        "private": false,
+        "introduction": "Free public conference at the Skirball Center for the Performing Arts, New York City. 16:30 until 20:00, with cocktail reception after.",
+        "_introduction_rendered": "<p>Free public conference at the Skirball Center for the Performing Arts, New York City. 16:30 until 20:00, with cocktail reception after.</p>"
     }
 },
 {
@@ -79,10 +81,12 @@
     "pk": 2,
     "fields": {
         "created": "2016-06-02T15:42:36.837Z",
-        "updated": "2016-06-14T08:10:32.010Z",
+        "updated": "2016-06-14T16:49:44.614Z",
         "name": "Workshop",
         "slug": "workshop",
-        "private": true
+        "private": true,
+        "introduction": "Invite-only workshop in the Grand Hall, NYU Kimmel Center. From 08:30 to 16:30.",
+        "_introduction_rendered": "<p>Invite-only workshop in the Grand Hall, NYU Kimmel Center. From 08:30 to 16:30.</p>"
     }
 },
 {

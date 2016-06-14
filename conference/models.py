@@ -66,6 +66,10 @@ class Schedule(TimestampedModel):
                   "<br>If this box is checked, this schedule and"
                   " anything connected to it will force you to log"
                   " in to view it.")
+    introduction = MarkupField(
+        blank=True,
+        help_text="The text that's shown at the top of the schedule, before the slots."
+    )
 
     def __str__(self):
         return self.name
