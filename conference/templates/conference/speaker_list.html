@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-{% block title %}Speakers{% endblock %}
+{% block title %}Sessions info{% endblock %}
 
 {% block bodyclasses %}standard-page{% endblock %}
 
@@ -10,7 +10,7 @@
 <div class="general-content">
   <div class="container">
     <div class="general-content__page">
-      <h1>Speakers</h1>
+      <h1>Sessions info</h1>
       <ul>
         {% for speaker in speakers %}
           <li>
@@ -22,7 +22,7 @@
             <p>@{{ speaker.twitter_username }}</p>
           </li>
         {% empty %}
-          <li>There aren't any speakers yet. Add some in the admin.</li>
+          <li>Check back soon for details of the confirmed sessions.</li>
         {% endfor %}
       </ul>
     </div>
