@@ -2,7 +2,7 @@
 {% load pipeline %}
 {% load account_tags %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
 
     <meta charset="utf-8">
@@ -14,6 +14,13 @@
     <meta name="viewport" content="width=device-width">
 
     {% stylesheet 'main' %}
+
+    <!-- Replace the no-js class with js -->
+    <script>
+      (function(H){
+        H.className = H.className.replace(/\bno-js\b/,'js')
+      })(document.documentElement);
+    </script>
 
     <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
