@@ -574,6 +574,51 @@ label {
 }
 
 /*
+ * Presentation detail
+ */
+.presentation-detail__meta{
+   margin: 2em 0 0;
+   font-size: 1.0625em; //~17px
+   color: $gray;
+
+}
+
+.presentation-detail__time {
+   margin-right: 1em;
+   display: inline-block;
+}
+
+.presentation-detail__location {
+   display: inline-block;
+}
+
+.presentation-detail__title {
+  margin-top: 0.25em;
+}
+
+
+.presentation-detail__speaker {
+   font-size: 1.25em; //~17px
+   color: $gray;
+   margin: 0 0 0.35em;
+   a {
+     text-decoration: none;
+     .presentation-detail__speaker-name {
+        text-decoration: underline;
+     }
+   }
+}
+
+.presentation-detail__speaker-thumb {
+  display: inline-block;
+}
+
+ .presentation-detail__description {
+ }
+
+
+
+/*
  * List of attendees
  */
  .attendee-list {

@@ -9,17 +9,31 @@
 {% block content %}
 <div class="general-content">
   <div class="container">
-    <div class="general-content__page">
-      <h1>{{ presentation.title }}</h1>
-      <p>
-        {% thumbnail speaker.photo "250x250" crop="center" as im %}
-          <img src="{{ im.url }}">
-        {% endthumbnail %}
+    <div class="presentation-detail">
+      <p class="presentation-detail__meta"><time class="presentation-detail__time">{{ presentation.slot.start }} - {{ presentation.slot.end }}</time>
+        <span class="presentation-detail__location">{{ presentation.slot.room.name }}</span>
       </p>
-      <p>{{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}</p>
-      <p>{{ presentation.long_description }}</p>
-      <p>{{ presentation.slot.start }} - {{ presentation.slot.end }}</p>
-      <p>{{ presentation.slot.room.name }}</p>
+
+      <h1 class="presentation-detail__title">{{ presentation.title }}</h1>
+
+      <p class="presentation-detail__speaker"><a href="#link-to-speaker-info">
+
+        {% thumbnail speaker.photo "35x35" crop="center" as im %}
+          <img src="{{ im.url }}" class="presentation-detail__speaker-thumb">
+          {% empty %}
+          <img  src="/static/img/no-photo.png" height="35" width="35" class="presentation-detail__speaker-thumb">
+        {% endthumbnail %}
+
+        <a href="#link-to-speaker-details"><span class="presentation-detail__speaker-name">{{ presentation.primary_speaker.name }}</span></a>
+        {% if presentation.additional_speakers %}
+          {% for speaker in presentation.additional_speakers.all %}
+            , <a href="#link-to-speaker-details"><span class="presentation-detail__speaker-name">{{ speaker.name }}</span></a>
+          {% endfor %}
+        {% endif %}
+      </p>
+
+      <p class="presentation-detail__description">{{ presentation.long_description }}</p>
+
     </div>
   </div>
 </div>
