@@ -36,12 +36,12 @@ class Page(TimestampedModel):
         'conference.Schedule',
         blank=True,
         help_text="Which schedules is this related to?"
-                         " If a schedule is private, this page will be kept private too, but"
-                         " only when viewing it in that context.<br><br>"
-                         " You probably only want to select multiple schedules if this is a"
-                         " public page that's shared between all schedules (like the privacy page).<br><br>"
-                         "You can't set this individually on child pages, set it once on the top"
-                         " level page and it will be applied to all the children automatically.<br><br>"
+                  " If a schedule is private, this page will be kept private too, but"
+                  " only when viewing it in that context.<br><br>"
+                  "You probably only want to select multiple schedules if this is a"
+                  " public page that's shared between all schedules (like the privacy page).<br><br>"
+                  "You can't set this individually on child pages, set it once on the top"
+                  " level page and it will be applied to all the children automatically.<br><br>"
     )
 
     class Meta:
