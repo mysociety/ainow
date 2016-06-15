@@ -13,7 +13,7 @@ def person_photo_upload_to(instance, filename):
 
 
 # This is abstract because we have two very similar types of people (speakers
-# and attendees) who we want to use the same set of fields for but keep
+# and attendees) who we want to use a similar set of fields for but keep
 # separate in the database
 class Person(TimestampedModel):
     user = models.OneToOneField(
@@ -30,10 +30,9 @@ class Person(TimestampedModel):
         populate_from='name',
         help_text="Used to make a nice url for the page that displays this person."
     )
-    biography = MarkupField(blank=True)
     photo = ImageField(upload_to=person_photo_upload_to, blank=True)
     twitter_username = models.CharField(max_length=15, blank=True)
-    website = models.URLField(max_length=1024, blank=True)
+    organisation = models.CharField(max_length=1024, blank=True)
 
     class Meta:
         abstract = True
@@ -42,13 +41,23 @@ class Person(TimestampedModel):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        """
+        Overridden save to ensure that twitter_username is stripped of any @.
+        """
+        self.twitter_username = self.twitter_username.lstrip('@')
+        super(Person, self).save(*args, **kwargs)
+
 
 class Speaker(Person):
-    pass
+    # We provide a bit more info about speakers
+    biography = MarkupField(blank=True)
+    website = models.URLField(max_length=1024, blank=True)
 
 
 class Attendee(Person):
     schedule = models.ForeignKey('Schedule', blank=True, null=True)
+    external_id = models.IntegerField(blank=True, null=True)
 
 
 class Schedule(TimestampedModel):
