@@ -105,6 +105,7 @@
     </nav>
     {% endif %}
 
+    {% block messages %}
     {% if schedule.slug == 'workshop' %}
     <header class="sub-header">
       {% if messages %}
@@ -114,6 +115,7 @@
       {% endif %}
     </header>
     {% endif %}
+    {% endblock messages %}
 
     {% block content %}
     {% endblock %}

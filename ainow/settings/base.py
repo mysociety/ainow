@@ -14,6 +14,8 @@ import os
 import yaml
 from .paths import *
 
+from django.contrib.messages import constants as messages
+
 config = yaml.load(open(os.path.join(PROJECT_ROOT, 'conf', 'general.yml')))
 
 DEBUG = bool(int(config.get('STAGING')))
@@ -280,6 +282,13 @@ ALLOWED_HOSTS = config.get('ALLOWED_HOSTS', [])
 SITE_ID = 1
 SITE_BASE_URL = config.get('SITE_BASE_URL', '')
 SITE_NAME = config.get('SITE_NAME', 'MapIt')
+
+
+# Messages
+# Translate the message tags so that they work with bootstrap
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
 
 
 # Use mailcatcher in development?
