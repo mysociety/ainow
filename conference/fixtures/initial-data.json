@@ -130,7 +130,7 @@
     "fields": {
         "created": "2016-06-14T07:59:29.936Z",
         "updated": "2016-06-14T07:59:29.936Z",
-        "name": "Introductions",
+        "name": "Welcome Remarks",
         "short_description": "",
         "start": "09:00:00",
         "end": "09:15:00",
@@ -401,13 +401,13 @@
     "fields": {
         "created": "2016-06-14T08:08:38.176Z",
         "updated": "2016-06-14T08:08:38.176Z",
-        "title": "Introductions",
-        "slug": "introductions-kate-meredith",
+        "title": "Welcome Remarks",
+        "slug": "welcome-kate-meredith",
         "primary_speaker": 42,
-        "long_description": "Introductions by Kate Crawford and Meredith Whittaker.",
-        "short_description": "Introductions by Kate Crawford and Meredith Whittaker.",
+        "long_description": "Welcome remarks by Kate Crawford and Meredith Whittaker.",
+        "short_description": "Welcome remarks by Kate Crawford and Meredith Whittaker.",
         "slot": 11,
-        "_long_description_rendered": "<p>Introductions by Kate Crawford and Meredith Whittaker.</p>",
+        "_long_description_rendered": "<p>Welcome remarks by Kate Crawford and Meredith Whittaker.</p>",
         "additional_speakers": [
             43
         ]
