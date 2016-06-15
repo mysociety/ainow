@@ -1,0 +1,66 @@
+[
+{
+    "model": "themes.theme",
+    "pk": 1,
+    "fields": {
+        "created": "2016-06-10T11:57:55.054Z",
+        "updated": "2016-06-10T11:58:57.024Z",
+        "name": "Health",
+        "title": "Health",
+        "slug": "health",
+        "content": "",
+        "_content_rendered": "",
+        "schedules": [
+            2
+        ]
+    }
+},
+{
+    "model": "themes.theme",
+    "pk": 2,
+    "fields": {
+        "created": "2016-06-10T11:57:55.054Z",
+        "updated": "2016-06-10T11:58:57.024Z",
+        "name": "Labor",
+        "title": "Labor",
+        "slug": "labour",
+        "content": "",
+        "_content_rendered": "",
+        "schedules": [
+            2
+        ]
+    }
+},
+{
+    "model": "themes.theme",
+    "pk": 3,
+    "fields": {
+        "created": "2016-06-10T11:57:55.054Z",
+        "updated": "2016-06-10T11:58:57.024Z",
+        "name": "Ethics",
+        "title": "Ethics",
+        "slug": "ethics",
+        "content": "",
+        "_content_rendered": "",
+        "schedules": [
+            2
+        ]
+    }
+},
+{
+    "model": "themes.theme",
+    "pk": 4,
+    "fields": {
+        "created": "2016-06-10T11:57:55.054Z",
+        "updated": "2016-06-10T11:58:57.024Z",
+        "name": "Inequality",
+        "title": "Inequality",
+        "slug": "inequality",
+        "content": "",
+        "_content_rendered": "",
+        "schedules": [
+            2
+        ]
+    }
+}
+]

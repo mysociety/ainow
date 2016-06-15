@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-{% block title %}Themes{% endblock %}
+{% block title %}Sessions info{% endblock %}
 
 {% block bodyclasses %}standard-page{% endblock %}
 
@@ -10,17 +10,33 @@
 <div class="general-content">
   <div class="container">
     <div class="general-content__page">
-      <h1>Themes</h1>
-      <ul>
-        {% for theme in themes %}
-          <li>
-            <h2><a href="{% url 'theme' schedule.slug theme.slug %}">{{ theme.title }}</a></h2>
+      <h1>Sessions info</h1>
+      <div class="row">
+        <div class="standard-layout__secondary-column">
+          <ul class="nav nav-stacked section-nav">
+            {% for theme in themes %}
+              <li><a href="#{{ theme.slug }}">{{ theme.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="standard-layout__primary-column" id="venue">
+          {% for theme in themes %}
+            <h2 id="{{ theme.slug }}">{{ theme.title }}</h2>
             {{ theme.content }}
-          </li>
-        {% empty %}
-          <li>There aren't any themes yet. Add some in the admin.</li>
-        {% endfor %}
-      </ul>
+            {% if theme.documents.all %}
+              <h3>Primers</h3>
+              {% for document in theme.documents.all %}
+                <h4>
+                  <a href="{{ document.file.url }}">{{ document.title }}</a>
+                </h4>
+                {{ document.description }}
+              {% endfor %}
+            {% endif %}
+          {% empty %}
+            <li>There aren't any themes yet. Add some in the admin.</li>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   </div>
 </div>
