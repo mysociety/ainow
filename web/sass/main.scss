@@ -356,7 +356,7 @@ iframe {
      padding: 4.5em 0;
    }
  }
-
+ 
  .homepage-hero--workshop {
    background-image: url('../img/hero-background2.jpg');
  }
@@ -371,12 +371,27 @@ iframe {
    }
  }
 
+.homepage-hero__pretitle {
+  border: 1px solid $color_orange;
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 0.75em;
+  position: relative;
+  left: -4px;
+  top: 1px;
+}
+
  .homepage-hero__title {
    font-size: 1em;
    margin-top: 2em;
-   background-color: $color_orange;
    display: inline-block;
-   padding: 0.4em 0.35em 0.2em;
+   img {
+       display: inline-block;
+       background-color: $color_orange;
+       padding: 5px;
+       height: 45px;
+   }
    @media (min-width:$screen-sm-min) {
      margin-top: 1em;
      margin-bottom: 0.75em;
