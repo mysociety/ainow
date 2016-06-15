@@ -23,8 +23,16 @@
             </div>
               <div class="attendee__primary-column">
               <h2 class="attendee__name">{{ attendee.name }}</h2>
-              <p class="attendee__org">Organisation</p>
-              <p class="attendee__twitter"><a href="#">@twitter</a></p>
+              {% if attendee.organisation %}
+                <p class="attendee__org">{{ attendee.organisation }}</p>
+              {% endif %}
+              {% if attendee.twitter_username %}
+                <p class="attendee__twitter">
+                  <a href="https://www.twitter.com/{{ attendee.twitter_username }}">
+                    @{{ attendee.twitter_username }}
+                  </a>
+                </p>
+              {% endif %}
             </div>
           </li>
         {% empty %}

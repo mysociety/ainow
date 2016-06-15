@@ -114,7 +114,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     model = Attendee
     context_object_name = 'attendee'
     template_name = 'conference/attendee_profile_form.html'
-    fields = ['user', 'name', 'biography', 'photo', 'twitter_username', 'website', 'schedule']
+    fields = ['user', 'name', 'organisation', 'photo', 'twitter_username', 'schedule']
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
@@ -181,8 +181,7 @@ def delete_photo(request):
         attendee.photo.delete()  # Saves the model automatically
 
         # Build a new form
-        fields = ['user', 'name', 'biography', 'photo', 'twitter_username', 'website', 'schedule']
-        form_class = modelform_factory(Attendee, fields=fields)
+        form_class = modelform_factory(Attendee, fields=['photo'])
         form = form_class(instance=attendee)
         form.fields['photo'].widget = forms.FileInput()
 

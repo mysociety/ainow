@@ -24,10 +24,9 @@
           {% include 'conference/_profile_photo.html' with attendee=attendee form=form %}
         </div>
         {% include 'account/_form_field.html' with field=form.name %}
-        {% include 'account/_form_field.html' with field=form.biography %}
+        {% include 'account/_form_field.html' with field=form.organisation %}
 
         {% include 'account/_form_field.html' with field=form.twitter_username %}
-        {% include 'account/_form_field.html' with field=form.website %}
         <div class="account-form__field account-form__field--submit">
           <button type="submit" class="btn btn-primary">Save changes</button>
           <a href="{{ back_url }}" class="account-form__field__not-a-btn">Cancel</a>
