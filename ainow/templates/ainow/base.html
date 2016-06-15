@@ -50,16 +50,12 @@
             <span class="icon-bar"></span>
           </button>
 
-          {% if schedule.slug == 'workshop' %}
-              <a class="navbar-brand"  href="{% url 'workshop_home' %}">
-          {% else %}
-              <a class="navbar-brand" href="{% url 'home' %}">
-          {% endif %}
-                <img src="{% static 'img/ainow-header-logo.png' %}"
-                   srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
-                   alt="Artificial Intelligence Now"
-                   height="21" width="69">
-               </a>
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'img/ainow-header-logo.png' %}"
+               srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
+               alt="Artificial Intelligence Now"
+               height="21" width="69">
+           </a>
         </div>
         <!-- navbar-header -->
 
