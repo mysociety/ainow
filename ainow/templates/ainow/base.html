@@ -83,7 +83,7 @@
         </div>
     </nav>
 
-    {% if schedule.slug == 'workshop' %}
+    {% if schedule.slug == 'workshop' and request.user.is_authenticated %}
     <nav class="workshop-navbar navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
