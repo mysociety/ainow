@@ -40,7 +40,7 @@
   <body class="{% block bodyclasses %}{% endblock %}">
     <div class="site-bg">
 
-    <nav class="site-header navbar navbar-default">
+    <nav class="site-header navbar navbar-default {% if schedule.slug == 'workshop' %}site-header--gray{% endif %}">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-header-nav" aria-expanded="false">

@@ -113,6 +113,9 @@ iframe {
   border: 0;
   border-bottom: 1px solid $gray-lighter;
   margin-bottom: 0;
+  &.site-header--gray {
+    background-color: $gray-lighter;
+  }
 }
 
 .site-footer {
@@ -122,7 +125,6 @@ iframe {
 
 .workshop-navbar {
   border: 0;
-  background-color: $color_white;
   margin-bottom: 0;
   font-weight: bold;
   min-height: 72px;
