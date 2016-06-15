@@ -81,6 +81,7 @@ iframe {
   padding-top: 35px;
   height: 0;
   overflow: hidden;
+  margin-bottom: 1.5em;
   iframe {
     position: absolute;
     top:0;
@@ -90,12 +91,17 @@ iframe {
   }
 }
 
+.content-block {
+  margin-bottom: 3em;
+}
+
 /*
  * Layouts
  */
 
 .standard-layout {
   // Large primary column with a smaller secondary column
+  // Column order is secondary|primary
 }
 
 .standard-layout__primary-column {
@@ -106,6 +112,42 @@ iframe {
 .standard-layout__secondary-column {
   @include make-xs-column($columns: 12);
   @include make-md-column($columns: 3);
+}
+
+.standard-layout--flipped {
+  // When the column order is reversed to primary|secondary
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 9);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 3, $gutter: 54px);
+  }
+}
+
+.content-grid {
+  //a way to split long lists of content into a grid structure that works nicely with all screen sizes
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  @media (min-width: $screen-lg-min) {
+    justify-content: space-between;
+  }
+}
+
+.content-grid__item {
+  width: 100%;
+  @media (min-width: $screen-sm-min) {
+    width: 18em;
+    margin-right: 2em;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 14em;
+    margin-right: 2em;
+  }
 }
 
 .site-header {
@@ -606,9 +648,21 @@ iframe {
  /*
   * Schedule
   */
-
+.schedule__introduction {
+  font-size: 1.25em;
+  margin-bottom: 1.5em;
+}
 .schedule__list {
   @extend .list-unstyled;
+  border-top: 2px dotted $gray-light;
+}
+
+.schedule-entry {
+  border-bottom: 2px dotted $gray-light;
+  padding: 1.5em 1em 1em;
+  &:nth-child(even) {
+    background-color: lighten($gray-lighter, 5%);
+  }
 }
 
 .schedule-entry__time {
@@ -621,13 +675,12 @@ iframe {
 }
 
 .schedule-entry__speaker {
-  font-size: 1.0625em; //~17px
   color: $gray;
   margin: 0 0 0.35em;
 }
 
 .schedule-entry__title {
-  font-size: 1.3125em; //~21px
+  font-size: 1.0625em; //~17px
   margin: 0 0 0.35em;
   a {
     text-decoration: underline;
@@ -636,7 +689,7 @@ iframe {
 
 .schedule-entry__description--short {
   font-size: 0.9375em; //~15px
-  margin: 0;
+  margin: 0 0 1em;
 }
 
 .schedule-entry__location {
@@ -754,3 +807,16 @@ iframe {
      font-size: 1.4375em;
    }
  }
+
+/*
+ * Location
+ */
+
+.accomodation-item {
+  h3 {
+    font-size: 1.25em;
+  }
+  p {
+    margin-bottom: 0.35em;
+  }
+}
