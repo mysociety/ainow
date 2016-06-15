@@ -116,6 +116,12 @@ iframe {
   &.site-header--gray {
     background-color: $gray-lighter;
   }
+  .navbar-nav > .open > a,
+  .navbar-nav > .open > a:hover,
+  .navbar-nav > .open > a:focus {
+    background-color: $gray-darker;
+    color: $color_white;
+  }
 }
 
 .site-footer {
@@ -134,6 +140,11 @@ iframe {
   .navbar-brand {
     @media (min-width: $screen-md-min) {
       font-size: 2.133333333em;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $brand-primary;
     }
   }
   .navbar-nav {
