@@ -146,6 +146,12 @@ iframe {
   }
 }
 
+.workshop-home {
+  .navbar-collapse {
+    border-bottom: 0;
+  }
+}
+
 .site-footer__utility-links {
   @include make-xs-column($columns: 12);
   @include make-sm-column($columns: 6);
@@ -356,7 +362,7 @@ iframe {
      padding: 4.5em 0;
    }
  }
- 
+
  .homepage-hero--workshop {
    background-image: url('../img/hero-background2.jpg');
  }
