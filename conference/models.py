@@ -57,6 +57,7 @@ class Speaker(Person):
 
 class Attendee(Person):
     schedule = models.ForeignKey('Schedule', blank=True, null=True)
+    external_id = models.IntegerField(blank=True, null=True)
 
 
 class Schedule(TimestampedModel):
