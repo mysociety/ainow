@@ -764,10 +764,13 @@ iframe {
   @extend .media-heading;
   font-size: 1.3125em;
 }
-.attendee__org {
+.attendee__org,
+.attendee__job-title {
   font-size: 0.9375em;
-  color: $gray;
   margin: 0 0 0.3em 0;
+}
+.attendee__org {
+  color: $gray;
 }
 
 .attendee__twitter {
@@ -782,7 +785,8 @@ iframe {
     width: 12em;
     height: 12em;
   }
-  .attendee__org {
+  .attendee__org,
+  .attendee__job-title {
     @extend .media-heading;
     font-size: 1.3125em;
   }

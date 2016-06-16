@@ -26,9 +26,12 @@
               <div class="attendee__primary-column">
               <h2 class="attendee__name">
                 <a href="{% url 'attendee' schedule.slug attendee.slug %}">
-                  {% if attendee.title %}{{ attendee.title }} {% endif %}{{ attendee.name }}
+                  {{ attendee.name }}
                 </a>
               </h2>
+              {% if attendee.title %}
+                <p class="attendee__job-title">{{ attendee.title }}</p>
+              {% endif %}
               {% if attendee.organisation %}
                 <p class="attendee__org">{{ attendee.organisation }}</p>
               {% endif %}
