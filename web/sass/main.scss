@@ -316,6 +316,12 @@ iframe {
   }
 }
 
+.errorlist {
+  @extend  .list-unstyled;
+  margin-top: 0.4em;
+  color: $brand-danger;
+}
+
 .form--account-form {
   // a form that sits within the account management screens
 }
@@ -365,6 +371,13 @@ iframe {
   margin-left: 1em;
   font-size: 0.875em;
   text-decoration: underline;
+}
+
+.account-form__input--error {
+  input {
+    background-color: mix($brand-danger, $color_white, 10);
+    border-color: $brand-danger;
+  }
 }
 
 .account-form__photo {
