@@ -591,8 +591,6 @@ iframe {
   margin-top: 1em;
   float: left;
   a {
-    color: $color_white;
-    text-decoration: underline;
     font-weight: $body_typeface_bold;
   }
   @media (min-width:$screen-md-min) {
