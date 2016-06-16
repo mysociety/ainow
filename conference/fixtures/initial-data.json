@@ -69,7 +69,7 @@
     "fields": {
         "created": "2016-06-02T15:42:36.837Z",
         "updated": "2016-06-14T16:51:28.320Z",
-        "name": "Public Conference",
+        "name": "Conference",
         "slug": "conference",
         "private": false,
         "introduction": "AI Now: The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term, a free public conference at the Skirball Center for the Performing Arts in New York City on July 7th from 4:30pm until 8:00pm.",
@@ -121,7 +121,8 @@
         "end": "09:00:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -136,7 +137,8 @@
         "end": "09:15:00",
         "kind": "TALK",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -151,7 +153,8 @@
         "end": "09:25:00",
         "kind": "TALK",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -166,7 +169,8 @@
         "end": "10:00:00",
         "kind": "TALK",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -175,13 +179,14 @@
     "fields": {
         "created": "2016-06-14T07:59:29.938Z",
         "updated": "2016-06-14T08:00:45.683Z",
-        "name": "Lightning Talks -- Inequality and Labour",
-        "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring its current deployments and uses.",
+        "name": "Lightning Talks - Inequality and Labor",
+        "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring AI\u2019s current deployments and uses.",
         "start": "10:00:00",
         "end": "10:45:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": "<p>Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring AI\u2019s current deployments and uses.</p>"
     }
 },
 {
@@ -196,7 +201,8 @@
         "end": "11:00:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -205,13 +211,14 @@
     "fields": {
         "created": "2016-06-14T07:59:29.939Z",
         "updated": "2016-06-14T08:00:45.685Z",
-        "name": "Lightning Talks -- Health and Ethics",
-        "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring its current deployments and uses.",
+        "name": "Lightning Talks - Health and Ethics",
+        "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring AI\u2019s current deployments and uses.",
         "start": "11:00:00",
         "end": "12:00:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": "<p>Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring AI\u2019s current deployments and uses.</p>"
     }
 },
 {
@@ -226,7 +233,8 @@
         "end": "13:00:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -236,12 +244,13 @@
         "created": "2016-06-14T07:59:29.940Z",
         "updated": "2016-06-14T08:10:32.014Z",
         "name": "Discussion",
-        "short_description": "Moderators: Kate Crawford & Meredith Whittaker",
+        "short_description": "",
         "start": "13:00:00",
         "end": "14:00:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -256,7 +265,8 @@
         "end": "14:30:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -266,13 +276,13 @@
         "created": "2016-06-14T07:59:29.941Z",
         "updated": "2016-06-15T15:51:25.754Z",
         "name": "Workshops",
-        "short_description": "Attendees will be assigned to one of five topic area based on expertise. The workshop sessions will be carefully structured to address previously specified questions, challenges, and opportunities, as well as providing time for generative discussion. \r\n\r\nThe topic areas that will comprise the workshop focuses include: \r\n\r\n* Health\r\n* Labor\r\n* Ethics\r\n* Inequality",
+        "short_description": "Attendees will be assigned to one of five topic areas based on expertise. The workshop sessions will be carefully structured to address previously specified questions, challenges, and opportunities, as well as providing time for generative discussion. \r\n\r\nThe topic areas for the workshop include: \r\n\r\n* Health\r\n* Labor\r\n* Ethics\r\n* Inequality",
         "start": "14:30:00",
         "end": "16:15:00",
         "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": "<p>Attendees will be assigned to one of five topic area based on expertise. The workshop sessions will be carefully structured to address previously specified questions, challenges, and opportunities, as well as providing time for generative discussion. </p>\n<p>The topic areas that will comprise the workshop focuses include: </p>\n<ul>\n<li>Health</li>\n<li>Labor</li>\n<li>Ethics</li>\n<li>Inequality</li>\n</ul>"
+        "_short_description_rendered": "<p>Attendees will be assigned to one of five topic areas based on expertise. The workshop sessions will be carefully structured to address previously specified questions, challenges, and opportunities, as well as providing time for generative discussion. </p>\n<p>The topic areas for the workshop include: </p>\n<ul>\n<li>Health</li>\n<li>Labor</li>\n<li>Ethics</li>\n<li>Inequality</li>\n</ul>"
     }
 },
 {
@@ -287,7 +297,8 @@
         "end": "16:30:00",
         "kind": "TALK",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -296,13 +307,14 @@
     "fields": {
         "created": "2016-06-14T07:59:29.943Z",
         "updated": "2016-06-14T08:03:55.112Z",
-        "name": "Public Symposium - Doors Open",
+        "name": "Public Conference - Doors Open",
         "short_description": "",
         "start": "16:30:00",
         "end": "20:00:00",
         "kind": "OTHER",
         "schedule": 2,
-        "room": 4
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -311,13 +323,14 @@
     "fields": {
         "created": "2016-06-14T08:19:55.237Z",
         "updated": "2016-06-14T08:19:55.237Z",
-        "name": "Brief welcome and introduction",
+        "name": "Welcome and Introductions",
         "short_description": "",
         "start": "17:30:00",
         "end": "17:40:00",
         "kind": "OTHER",
         "schedule": 1,
-        "room": 5
+        "room": 5,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -326,13 +339,14 @@
     "fields": {
         "created": "2016-06-14T08:19:55.238Z",
         "updated": "2016-06-14T08:19:55.238Z",
-        "name": "Automation, Civil Rights and Labour -- a present and historical survey",
+        "name": "Automation, Civil Rights and Labor - A Present and Historical Survey",
         "short_description": "",
         "start": "17:40:00",
         "end": "18:15:00",
         "kind": "TALK",
         "schedule": 1,
-        "room": 5
+        "room": 5,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -341,13 +355,14 @@
     "fields": {
         "created": "2016-06-14T08:19:55.239Z",
         "updated": "2016-06-14T08:19:55.239Z",
-        "name": "3 Questions for 3 Leaders -- the industry perspective",
+        "name": "3 Questions for 3 Leaders - The Industry Perspective",
         "short_description": "",
         "start": "18:15:00",
         "end": "18:40:00",
         "kind": "TALK",
         "schedule": 1,
-        "room": 5
+        "room": 5,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -356,13 +371,14 @@
     "fields": {
         "created": "2016-06-14T08:19:55.239Z",
         "updated": "2016-06-14T08:19:55.239Z",
-        "name": "Expert Panel -- AI & health, inequality, labor and ethics",
+        "name": "Expert Panel - AI & Health, Inequality, Labor and Ethics",
         "short_description": "",
         "start": "18:40:00",
         "end": "19:30:00",
         "kind": "TALK",
         "schedule": 1,
-        "room": 5
+        "room": 5,
+        "_short_description_rendered": ""
     }
 },
 {
@@ -371,28 +387,30 @@
     "fields": {
         "created": "2016-06-14T08:19:55.240Z",
         "updated": "2016-06-14T08:19:55.240Z",
-        "name": "Public Q&A with all speakers",
+        "name": "Public Q&A with All Speakers",
         "short_description": "",
         "start": "19:30:00",
         "end": "20:00:00",
         "kind": "OTHER",
         "schedule": 1,
-        "room": 5
+        "room": 5,
+        "_short_description_rendered": ""
     }
 },
 {
     "model": "conference.slot",
     "pk": 28,
     "fields": {
-        "created": "2016-06-14T08:19:55.241Z",
-        "updated": "2016-06-14T08:19:55.241Z",
-        "name": "Cocktail reception",
-        "short_description": "Event to be followed by cocktail reception at Grand Hall in the Kimmel Center.",
+        "created": "2016-06-14T07:59:29.943Z",
+        "updated": "2016-06-14T08:03:55.112Z",
+        "name": "Cocktail Reception at Grand Hall following Public Conference",
+        "short_description": "",
         "start": "20:00:00",
         "end": "23:00:00",
         "kind": "OTHER",
-        "schedule": 1,
-        "room": 4
+        "schedule": 2,
+        "room": 4,
+        "_short_description_rendered": ""
     }
 },
 {
