@@ -368,7 +368,7 @@ iframe {
 }
 
 .account-form__photo {
-  margin: 1em 0 2em;
+  margin: 1em 0 3em;
 }
 
 .account-form__photo__thumbnail {
@@ -385,6 +385,7 @@ iframe {
 .account-form__photo-controls-column {
   @include make-xs-column($columns: 9);
   @include make-sm-column($columns: 10);
+  position: relative;
   .account-form__field__not-a-btn {
       margin-left: 0;
   }
@@ -392,6 +393,15 @@ iframe {
     display: inline-block;
     margin: 1em 1em 1em 0;
   }
+}
+
+.change-photo-collapse {
+  // obscure the 'add photo' button with positioning
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 // Photo buttons are hidden when we have no JS because they don't work without
@@ -413,32 +423,32 @@ iframe {
  * Homepage
  */
 
- .homepage-hero {
-   background-color: $brand-primary;
-   background-image: url('../img/hero-background.jpg');
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
-   padding: 2em 0;
-   color: $color_white;
-   @media (min-width: $screen-sm-min) {
-     padding: 4.5em 0;
-   }
- }
+.homepage-hero {
+  background-color: $brand-primary;
+  background-image: url('../img/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em 0;
+  color: $color_white;
+  @media (min-width: $screen-sm-min) {
+    padding: 4.5em 0;
+  }
+}
 
- .homepage-hero--workshop {
-   background-image: url('../img/hero-background2.jpg');
- }
+.homepage-hero--workshop {
+  background-image: url('../img/hero-background2.jpg');
+}
 
- .homepage-hero__details {
-   text-transform: uppercase;
-   font-weight: bold;
-   border-bottom: 2px solid $color_white;
-   padding-bottom: 0.5em;
-   @media (min-width:$screen-sm-min) {
-     max-width: 35em;
-   }
- }
+.homepage-hero__details {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px solid $color_white;
+  padding-bottom: 0.5em;
+  @media (min-width:$screen-sm-min) {
+    max-width: 35em;
+  }
+}
 
 .homepage-hero__pretitle {
   border: 1px solid $color_orange;
@@ -451,202 +461,201 @@ iframe {
   top: 1px;
 }
 
- .homepage-hero__title {
-   font-size: 1em;
-   margin-top: 2em;
-   display: inline-block;
+.homepage-hero__title {
+  font-size: 1em;
+  margin-top: 2em;
+  display: inline-block;
 
-   img {
-       display: inline-block;
-       background-color: $color_orange;
-       padding: 5px;
-       height: 45px;
-   }
-   @media (min-width:$screen-sm-min) {
-     margin-top: 1em;
-     margin-bottom: 0.75em;
-   }
- }
+  img {
+    display: inline-block;
+    background-color: $color_orange;
+    padding: 5px;
+    height: 45px;
+  }
+  @media (min-width:$screen-sm-min) {
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+  }
+}
 
- .homepage-hero__subtitle {
-   font-size:  1.777777778em;
-   line-height: 1.333em;
-   font-weight: bold;
-      text-shadow: 0 2px 1px rgba(0,0,0,0.3);
-   @media (min-width:$screen-sm-min) {
-     font-size: 2.333333333em;
-     max-width: 18em;
-   }
-   @media (min-width:$screen-md-min) {
-     font-size: 2.666666667em;
-     margin-bottom: 0.5em;
-   }
- }
+.homepage-hero__subtitle {
+  font-size:  1.777777778em;
+  line-height: 1.333em;
+  font-weight: bold;
+  text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+  @media (min-width:$screen-sm-min) {
+    font-size: 2.333333333em;
+    max-width: 18em;
+  }
+  @media (min-width:$screen-md-min) {
+    font-size: 2.666666667em;
+    margin-bottom: 0.5em;
+  }
+}
 
- .homepage-hero__tickets {
-   margin-top: 2em;
- }
+.homepage-hero__tickets {
+  margin-top: 2em;
+}
 
- .btn--tickets {
-   font-size: 1.235294118em;
-   width: 100%;
-   padding: 0.75em 1em;
-   padding-right: 1.5em;
-   float: left;
-   text-align: left;
-   border: 0;
-   border-radius: 3px;
-   box-shadow: 0 3px 2px 0 rgba(0,0,0,0.2);
-   @media (min-width:$screen-sm-min) {
-     width: auto;
-   }
-   span {
-     display: block;
-     font-weight: normal;
-     font-size: 0.8125em;
-     line-height: 1.428em;
-   }
- }
+.btn--tickets {
+  font-size: 1.235294118em;
+  width: 100%;
+  padding: 0.75em 1em;
+  padding-right: 1.5em;
+  float: left;
+  text-align: left;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 3px 2px 0 rgba(0,0,0,0.2);
+  @media (min-width:$screen-sm-min) {
+    width: auto;
+  }
+  span {
+    display: block;
+    font-weight: normal;
+    font-size: 0.8125em;
+    line-height: 1.428em;
+  }
+}
 
- .homepage-description {
-   background-color: $color_white;
-   padding-top: 3em;
-   padding-bottom: 3em;
-   @include clearfix;
-   font-size: 1.0625em;
- }
+.homepage-description {
+  background-color: $color_white;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  @include clearfix;
+  font-size: 1.0625em;
+}
 
- .two-columns-of-text {
-   @media (min-width:$screen-sm-min) {
-     @include content-columns(2);
-   }
+.two-columns-of-text {
+  @media (min-width:$screen-sm-min) {
+    @include content-columns(2);
+  }
+}
 
- }
+.homepage-description__content {
+  @include make-md-column($columns: 9);
+  @include make-md-column-pull($columns: 3);
+}
 
- .homepage-description__content {
-   @include make-md-column($columns: 9);
-   @include make-md-column-pull($columns: 3);
- }
+.homepage-description__partners {
+  @include make-md-column($columns: 3);
+  @include make-md-column-push($columns: 9);
 
- .homepage-description__partners {
-   @include make-md-column($columns: 3);
-   @include make-md-column-push($columns: 9);
+  margin-bottom: 2em;
 
-   margin-bottom: 2em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
 
-   display: -webkit-box;
-   display: -moz-box;
-   display: -ms-flexbox;
-   display: -webkit-flex;
-   display: flex;
-   flex-flow: row wrap;
+  align-items: center;
 
-   align-items: center;
+  @media (min-width:$screen-md-min) {
+    margin-bottom: 1em;
+  }
+  img {
+    max-width: 100%;
+  }
+}
 
-   @media (min-width:$screen-md-min) {
-     margin-bottom: 1em;
-   }
-   img {
-     max-width: 100%;
-   }
- }
+.homepage-description__partners__column {
+  display: inline-block;
+  @media (min-width:$screen-md-min) {
+    text-align: center;
+  }
+}
 
- .homepage-description__partners__column {
-   display: inline-block;
-   @media (min-width:$screen-md-min) {
-     text-align: center;
-   }
- }
+.homepage-description__partners__column--one {
+  width: 30%;
+  margin-right: 3%;
+  @media (min-width:$screen-md-min) {
+    margin-bottom: 1em;
+    margin-top: -1em;
+    margin-right: 0;
+    width: 100%;
+  }
+}
 
- .homepage-description__partners__column--one {
-   width: 30%;
-   margin-right: 3%;
-   @media (min-width:$screen-md-min) {
-     margin-bottom: 1em;
-     margin-top: -1em;
-     margin-right: 0;
-     width: 100%;
-   }
- }
+.homepage-description__partners__column--two {
+  width: 67%;
+  @media (min-width:$screen-md-min) {
+    width: 100%;
+  }
+}
 
- .homepage-description__partners__column--two {
-   width: 67%;
-   @media (min-width:$screen-md-min) {
-     width: 100%;
-   }
- }
+.callout-box {
+  background-color: $gray-lighter;
+  padding: 2em;
+  margin-top: 1em;
+  float: left;
+  a {
+    color: $color_white;
+    text-decoration: underline;
+    font-weight: $body_typeface_bold;
+  }
+  @media (min-width:$screen-md-min) {
+    font-size: 1.166666667em;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
 
- .callout-box {
-   background-color: $gray-lighter;
-   padding: 2em;
-   margin-top: 1em;
-   float: left;
-   a {
-     color: $color_white;
-     text-decoration: underline;
-     font-weight: $body_typeface_bold;
-   }
-   @media (min-width:$screen-md-min) {
-     font-size: 1.166666667em;
-   }
-   p:last-child {
-     margin-bottom: 0;
-   }
- }
+.homepage-people {
+  padding-top: 3em;
+  border-top: 1px solid $gray-lighter;
+  background-color: $color_white;
+  h3 {
+    font-size: 1.277777778em;
+  }
+}
 
- .homepage-people {
-   padding-top: 3em;
-   border-top: 1px solid $gray-lighter;
-   background-color: $color_white;
-   h3 {
-     font-size: 1.277777778em;
-   }
- }
+.collection-of-people {
+  margin: 1.5em -1em 0 -1em;
+  @media (min-width:$screen-sm-min) {
+    margin-bottom: 2em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
 
- .collection-of-people {
-   margin: 1.5em -1em 0 -1em;
-   @media (min-width:$screen-sm-min) {
-     margin-bottom: 2em;
-     display: -webkit-box;
-     display: -moz-box;
-     display: -ms-flexbox;
-     display: -webkit-flex;
-     display: flex;
-     flex-flow: row wrap;
-   }
- }
+.collection-of-people__person {
+  @include clearfix;
+  margin-bottom: 1.5em;
+  padding: 0 1em;
+  @media (min-width:$screen-sm-min) {
+    width: 11.5em;
+  }
+}
 
- .collection-of-people__person {
-   @include clearfix;
-   margin-bottom: 1.5em;
-   padding: 0 1em;
-   @media (min-width:$screen-sm-min) {
-     width: 11.5em;
-   }
- }
+.person__photo {
+  width: 20%;
+  float: left;
+  padding-right: 1em;
+  @media (min-width:$screen-sm-min) {
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+}
 
- .person__photo {
-   width: 20%;
-   float: left;
-   padding-right: 1em;
-   @media (min-width:$screen-sm-min) {
-     float: none;
-     padding: 0;
-     width: 100%;
-   }
- }
-
- .person__name {
-   font-weight: bold;
-   margin-bottom: 0;
-   margin-left: 20%;
-   margin-top: 0.4em;
-   @media (min-width:$screen-sm-min) {
-     margin-left: 0;
-     font-size: 1.25em;
-     margin-bottom: 0.25em;
-   }
- }
+.person__name {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 20%;
+  margin-top: 0.4em;
+  @media (min-width:$screen-sm-min) {
+    margin-left: 0;
+    font-size: 1.25em;
+    margin-bottom: 0.25em;
+  }
+}
 
  .person__job-title {
    font-size: 0.875em;
@@ -752,74 +761,74 @@ iframe {
   display: inline-block;
 }
 
- .presentation-detail__description {
- }
+.presentation-detail__description {
+}
 
 
 
 /*
  * List of attendees
  */
- .attendee-list {
-   @extend .list-unstyled;
-   display: -webkit-box;
-   display: -moz-box;
-   display: -ms-flexbox;
-   display: -webkit-flex;
-   display: flex;
-   flex-flow: row wrap;
-   align-items: flex-start;
-   justify-content: flex-start;
-  }
+.attendee-list {
+  @extend .list-unstyled;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 
- .attendee-list__attendee {
-   // Layout from Bootstrap's media object
-   @extend .media;
-   margin-bottom: 2em;
-   margin-top: 0;
-   width: 15em;
-   margin-right: $grid-gutter-width;
- }
+.attendee-list__attendee {
+  // Layout from Bootstrap's media object
+  @extend .media;
+  margin-bottom: 2em;
+  margin-top: 0;
+  width: 15em;
+  margin-right: $grid-gutter-width;
+}
 
- .attendee__secondary-column {
-   @extend .media-left;
-   padding-right: 1em;
- }
+.attendee__secondary-column {
+  @extend .media-left;
+  padding-right: 1em;
+}
 
- .attendee__primary-column {
-   @extend .media-body;
- }
+.attendee__primary-column {
+  @extend .media-body;
+}
 
- .attendee__thumbnail {
-   @extend .media-object;
-   width: 5em;
-   height: 5em;
- }
+.attendee__thumbnail {
+  @extend .media-object;
+  width: 5em;
+  height: 5em;
+}
 
- .attendee__name {
-   @extend .media-heading;
-   font-size: 1.3125em;
- }
+.attendee__name {
+  @extend .media-heading;
+  font-size: 1.3125em;
+}
 
- .attendee__org {
+.attendee__org {
    font-size: 0.9375em;
    color: $gray;
    margin: 0 0 0.3em 0;
- }
+}
 
 .attendee__twitter {
-    font-size: .8125em;
-  }
+  font-size: .8125em;
+}
 
 /*
  * FAQs
  */
 
- .faq__question {
-   > h2 {
-     font-size: 1.4375em;
-   }
- }
+.faq__question {
+  > h2 {
+    font-size: 1.4375em;
+  }
+}
 
 /*
  * Location
@@ -832,4 +841,12 @@ iframe {
   p {
     margin-bottom: 0.35em;
   }
+}
+
+/*
+ * Alerts/Messages shown after account actions
+ */
+
+.alerts {
+  margin-top: 2em;
 }
