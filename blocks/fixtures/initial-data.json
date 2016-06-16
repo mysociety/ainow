@@ -31,8 +31,8 @@
         "updated": "2016-06-13T14:06:44.393Z",
         "name": "Workshop venue introduction",
         "slug": "workshop-venue-introduction",
-        "content": "Some text for the venue page.\r\n\r\nProbably wants to include [a link](http://nyuskirball.org/page/visit) to the NYU Skirball visit page.",
-        "_content_rendered": "<p>Some text for the venue page.</p>\n<p>Probably wants to include <a href=\"http://nyuskirball.org/page/visit\">a link</a> to the NYU Skirball visit page.</p>"
+        "content": "We’ll be meeting at the Grand Hall of New York University’s Kimmel Center. Use the dedicated entrance at 238 Thompson Street. Please bring ID.",
+        "_content_rendered": "<p>We’ll be meeting at the Grand Hall of New York University’s Kimmel Center. Use the dedicated entrance at 238 Thompson Street. Please bring ID.</p>"
     }
 },
 {
