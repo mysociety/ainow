@@ -149,6 +149,8 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
         # Force a simple file field for the photo
         form = super(AttendeeCreateUpdateView, self).get_form(form_class)
         form.fields['photo'].widget = forms.FileInput()
+        # Hackily force some localisation for the organisation field
+        form.fields['organisation'].label = 'Organization:'
         return form
 
     def get(self, request, *args, **kwargs):
