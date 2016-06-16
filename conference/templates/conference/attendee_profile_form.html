@@ -23,8 +23,10 @@
         <div class="js-profile-photo">
           {% include 'conference/_profile_photo.html' with attendee=attendee form=form %}
         </div>
+        {% include 'account/_form_field.html' with field=form.title %}
         {% include 'account/_form_field.html' with field=form.name %}
         {% include 'account/_form_field.html' with field=form.organisation %}
+        {% include 'account/_form_field.html' with field=form.biography %}
 
         {% include 'account/_form_field.html' with field=form.twitter_username %}
         <div class="account-form__field account-form__field--submit">
