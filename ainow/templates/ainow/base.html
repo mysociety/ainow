@@ -40,6 +40,7 @@
   <body class="{% block bodyclasses %}{% endblock %}">
     <div class="site-bg">
 
+
     <nav class="site-header navbar navbar-default {% if schedule.slug == 'workshop' %}site-header--inverted{% endif %}">
       <div class="container">
         <div class="navbar-header">
@@ -51,6 +52,7 @@
           </button>
 
           <a class="navbar-brand" href="{% url 'home' %}">
+
             {% if schedule.slug == 'workshop' %}
             <img src="{% static 'img/ainow-header-logo-white.png' %}"
                srcset="{% static 'img/ainow-header-logo-white.svg' %} 1x"
@@ -62,6 +64,7 @@
                alt="Artificial Intelligence Now"
                height="21" width="69">
             {% endif %}
+
            </a>
         </div>
         <!-- navbar-header -->
@@ -90,7 +93,7 @@
         </div>
     </nav>
 
-    {% if schedule.slug == 'workshop' %}
+    {% if schedule.slug == 'workshop' and request.user.is_authenticated %}
     <nav class="workshop-navbar navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -112,6 +115,7 @@
     </nav>
     {% endif %}
 
+    {% block messages %}
     {% if schedule.slug == 'workshop' %}
     <header class="sub-header">
       {% if messages %}
@@ -121,6 +125,7 @@
       {% endif %}
     </header>
     {% endif %}
+    {% endblock messages %}
 
     {% block content %}
     {% endblock %}
@@ -131,10 +136,8 @@
 
           <div class="site-footer__utility-links">
             <ul class="utility-links__list">
-            <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
-              <!--<li><a href="mailto:">Contact</a></li>
-              <li><a href="mailto:">Twitter</a></li>
-              <li><a href="mailto:">Facebook</a></li>-->
+              <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
+              <li>For information and questions: <a href="mailto:info@artificialintelligencenow.com">info@artificialintelligencenow.com</a></li>
             </ul>
           </div>
 
