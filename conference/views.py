@@ -108,6 +108,11 @@ class AttendeeListView(ScheduleMixin, ListView):
     context_object_name = 'attendees'
 
 
+class AttendeeView(ScheduleMixin, DetailView):
+    model = Attendee
+    context_object_name = 'attendee'
+
+
 class AttendeeCreateUpdateView(LoginRequiredMixin,
                                SingleObjectTemplateResponseMixin,
                                ModelFormMixin,
@@ -117,7 +122,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     model = Attendee
     context_object_name = 'attendee'
     template_name = 'conference/attendee_profile_form.html'
-    fields = ['user', 'name', 'organisation', 'photo', 'twitter_username', 'schedule']
+    fields = ['user', 'title', 'name', 'organisation', 'biography', 'photo', 'twitter_username', 'schedule']
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
@@ -151,6 +156,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
         form.fields['photo'].widget = forms.FileInput()
         # Hackily force some localisation for the organisation field
         form.fields['organisation'].label = 'Organization:'
+        form.fields['biography'].label = 'Bio:'
         return form
 
     def get(self, request, *args, **kwargs):

@@ -775,6 +775,23 @@ iframe {
 }
 
 /*
+ * Individual attendee page
+ */
+.attendee-page {
+  .attendee__thumbnail {
+    width: 12em;
+    height: 12em;
+  }
+  .attendee__org {
+    @extend .media-heading;
+    font-size: 1.3125em;
+  }
+  .attendee__twitter {
+    font-size: 1em;
+  }
+}
+
+/*
  * FAQs
  */
 
