@@ -155,14 +155,22 @@ iframe {
   border: 0;
   border-bottom: 1px solid $gray-lighter;
   margin-bottom: 0;
-  &.site-header--gray {
-    background-color: $gray-lighter;
-  }
   .navbar-nav > .open > a,
   .navbar-nav > .open > a:hover,
   .navbar-nav > .open > a:focus {
     background-color: $gray-darker;
     color: $color_white;
+  }
+  &.site-header--inverted {
+    background-color: $brand-primary;
+    .navbar-nav > li > a {
+      color: $color_white;
+      &:hover,
+      &:active,
+      &:focus {
+        color: mix($color_white, $brand-primary, 70);
+      }
+    }
   }
 }
 
@@ -447,6 +455,7 @@ iframe {
    font-size: 1em;
    margin-top: 2em;
    display: inline-block;
+
    img {
        display: inline-block;
        background-color: $color_orange;
@@ -463,6 +472,7 @@ iframe {
    font-size:  1.777777778em;
    line-height: 1.333em;
    font-weight: bold;
+      text-shadow: 0 2px 1px rgba(0,0,0,0.3);
    @media (min-width:$screen-sm-min) {
      font-size: 2.333333333em;
      max-width: 18em;
@@ -484,13 +494,16 @@ iframe {
    padding-right: 1.5em;
    float: left;
    text-align: left;
+   border: 0;
+   border-radius: 3px;
+   box-shadow: 0 3px 2px 0 rgba(0,0,0,0.2);
    @media (min-width:$screen-sm-min) {
      width: auto;
    }
    span {
      display: block;
      font-weight: normal;
-     font-size: 0.7em;
+     font-size: 0.8125em;
      line-height: 1.428em;
    }
  }
@@ -500,6 +513,7 @@ iframe {
    padding-top: 3em;
    padding-bottom: 3em;
    @include clearfix;
+   font-size: 1.0625em;
  }
 
  .two-columns-of-text {
@@ -563,8 +577,7 @@ iframe {
  }
 
  .callout-box {
-   background-color: $brand-primary;
-   color: $color_white;
+   background-color: $gray-lighter;
    padding: 2em;
    margin-top: 1em;
    float: left;

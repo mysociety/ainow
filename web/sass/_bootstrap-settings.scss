@@ -6,10 +6,10 @@
  * Colors
  */
 
-$color_mint: #4CCDA7;
-$color_dark_mint: #4C907C;
-$color_orange: #EB9C6E;
-$color_dark_orange: #B57550;
+$color_teal: #64B9BD;
+$color_dark_teal: darken($color_teal, 10%);
+$color_orange: #ED8A35;
+$color_dark_orange: darken($color_orange, 10%);
 $color_pink: #EB6E93;
 $color_blue: #49AECC;
 $color_off_white: #E9EAE1;
@@ -27,15 +27,15 @@ $gray: $color_mid_gray;
 $gray-light: $color_light_gray;
 $gray-lighter: $color_off_white;
 
-$brand-primary: $color_mint;
-$brand-success: $color_mint;
+$brand-primary: $color_orange;
+$brand-success: $color_teal;
 $brand-info: $color_blue;
 $brand-warning: $color_orange;
 $brand-danger: $color_pink;
 
 $body-bg: $gray-lighter;
 $text-color: $gray-darker;
-$link-color: darken($brand-primary, 20%);
+$link-color: darken($brand-primary, 10%);
 
 /*
  * Typography
@@ -58,7 +58,7 @@ $link-color: darken($brand-primary, 20%);
  * Buttons
  */
 $btn-font-weight: $body_typeface_bold;
-$btn-primary-bg: darken($brand-primary, 10%);
+$btn-primary-bg: $color_dark_teal;
 
 /*
  * Forms
