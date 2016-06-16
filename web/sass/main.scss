@@ -124,6 +124,15 @@ iframe {
   }
 }
 
+.standard-layout--narrow {
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 10);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 2);
+  }
+}
+
 .content-grid {
   //a way to split long lists of content into a grid structure that works nicely with all screen sizes
   display: -webkit-box;
@@ -890,4 +899,23 @@ iframe {
 
 .alerts {
   margin-top: 2em;
+}
+
+/*
+ * Attendee detail
+ */
+.attendee-detail {
+  h1 {
+    margin-bottom: 0.25em;
+  }
+  .attendee__thumbnail {
+    margin-top: 3.375em;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .attendee__bio {
+    max-width: 34em;
+  }
+
 }

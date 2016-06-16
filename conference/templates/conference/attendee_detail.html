@@ -8,19 +8,21 @@
 
 {% block content %}
 <div class="general-content">
-  <div class="container">
+  <div class="container standard-layout standard-layout--narrow attendee-detail">
     <div class="general-content__page">
-      <h1>{% if attendee.title %}{{ attendee.title }} {% endif %}{{ attendee.name }}</h1>
-      <div class="attendee__secondary-column">
-        <a href="{% url 'attendee' schedule.slug attendee.slug %}">
-          {% thumbnail attendee.photo "200x200" crop="center" as im %}
-            <img class="attendee__thumbnail" src="{{ im.url }}">
-          {% empty %}
-            <img class="attendee__thumbnail" src="{% static 'img/no-photo.png' %}" height="200" width="200">
-          {% endthumbnail %}
-        </a>
-      </div>
-        <div class="attendee__primary-column">
+
+      <div class="row">
+        <div class="standard-layout__secondary-column">
+
+        {% thumbnail attendee.photo "200x200" crop="center" as im %}
+          <img class="attendee__thumbnail" src="{{ im.url }}">
+        {% empty %}
+          <img class="attendee__thumbnail" src="{% static 'img/no-photo.png' %}" height="200" width="200">
+        {% endthumbnail %}
+
+        </div>
+        <div class="standard-layout__primary-column">
+          <h1>{% if attendee.title %}{{ attendee.title }} {% endif %}{{ attendee.name }}</h1>
           {% if attendee.organisation %}
             <p class="attendee__org">{{ attendee.organisation }}</p>
           {% endif %}
@@ -31,7 +33,12 @@
               </a>
             </p>
           {% endif %}
-          {{ attendee.biography }}
+          <div class="attendee__bio">
+            <p>
+            {{ attendee.biography }}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
