@@ -171,6 +171,16 @@ iframe {
         color: mix($color_white, $brand-primary, 70);
       }
     }
+    .navbar-toggle {
+      border-color: transparentize($color_white, 0.7);
+      &:hover,
+      &:focus {
+        background-color: mix($color_black, $brand-primary, 15);
+      }
+      .icon-bar {
+        background-color: mix($color_white, $brand-primary, 30);
+      }
+    }
   }
 }
 
@@ -464,14 +474,18 @@ iframe {
 }
 
 .homepage-hero__pretitle {
-  border: 1px solid $color_orange;
-  display: inline-block;
+  display: block;
   height: 45px;
   line-height: 45px;
-  padding: 0 0.75em;
-  position: relative;
-  left: -4px;
-  top: 1px;
+  @media (min-width:$screen-sm-min) {
+    display: inline-block;
+    padding: 0 0.75em;
+    border: 1px solid $color_orange;
+    position: relative;
+    left: -4px;
+    top: 1px;
+    width: auto;
+  }
 }
 
 .homepage-hero__title {
