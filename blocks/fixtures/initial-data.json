@@ -46,5 +46,29 @@
         "content": "We are delighted to invite you to a workshop of leaders and thinkers for \u201cAI Now: The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term\u201d.  Experts and researchers from across industry, civil society, academia and the White House will gather for a frank and productive day of discussion focusing on the challenges posed by artificial intelligence technologies in the next 5-10 years.\r\n\r\nConversation will focus specifically on four key themes: social inequality, ethics, labor, and healthcare.\r\n\r\nThe event aims to amplify the voices of those with significant insight and experience across the four areas, with the goal of building new bridges across different communities. Together, we will consider the potential benefits and challenges of AI technologies, and analyze how to ensure AI is built for equality of opportunity.\r\n\r\nFollowing the workshop, attendees will be invited as honored guests to a major public symposium addressing these topics, co-hosted by The White House and New York University\u2019s Information Law Institute.\r\n\r\nWe think your work is important to this emerging set of debates, and we want to add your voice and perspective. Explore further details on the site, and send along any questions you might have.",
         "_content_rendered": "<p>We are delighted to invite you to a workshop of leaders and thinkers for \u201cAI Now: The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term\u201d.  Experts and researchers from across industry, civil society, academia and the White House will gather for a frank and productive day of discussion focusing on the challenges posed by artificial intelligence technologies in the next 5-10 years.</p>\n<p>Conversation will focus specifically on four key themes: social inequality, ethics, labor, and healthcare.</p>\n<p>The event aims to amplify the voices of those with significant insight and experience across the four areas, with the goal of building new bridges across different communities. Together, we will consider the potential benefits and challenges of AI technologies, and analyze how to ensure AI is built for equality of opportunity.</p>\n<p>Following the workshop, attendees will be invited as honored guests to a major public symposium addressing these topics, co-hosted by The White House and New York University\u2019s Information Law Institute.</p>\n<p>We think your work is important to this emerging set of debates, and we want to add your voice and perspective. Explore further details on the site, and send along any questions you might have.</p>"
     }
+},
+{
+    "model": "blocks.block",
+    "pk": 5,
+    "fields": {
+        "created": "2016-06-14T07:32:34.682Z",
+        "updated": "2016-06-14T07:32:34.682Z",
+        "name": "Workshop sidebar",
+        "slug": "workshop-sidebar",
+        "content": "Schedule subject to change.  We'll confirm the schedule closer to the day of the workshop.",
+        "_content_rendered": "<p>Schedule subject to change.  We'll confirm the schedule closer to the day of the workshop.</p>"
+    }
+},
+{
+    "model": "blocks.block",
+    "pk": 6,
+    "fields": {
+        "created": "2016-06-14T07:32:34.682Z",
+        "updated": "2016-06-14T07:32:34.682Z",
+        "name": "Conference sidebar",
+        "slug": "conference-sidebar",
+        "content": "Schedule subject to change.  We'll confirm the schedule closer to the day of the conference. The event will be live-streamed.",
+        "_content_rendered": "<p>Schedule subject to change.  We'll confirm the schedule closer to the day of the conference. The event will be live-streamed.</p>"
+    }
 }
 ]

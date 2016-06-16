@@ -72,8 +72,8 @@
         "name": "Public Conference",
         "slug": "conference",
         "private": false,
-        "introduction": "Free public conference at the Skirball Center for the Performing Arts, New York City. 16:30 until 20:00, with cocktail reception after.",
-        "_introduction_rendered": "<p>Free public conference at the Skirball Center for the Performing Arts, New York City. 16:30 until 20:00, with cocktail reception after.</p>"
+        "introduction": "AI Now: The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term, a free public conference at the Skirball Center for the Performing Arts in New York City on July 7th from 4:30pm until 8:00pm.",
+        "_introduction_rendered": "<p>AI Now: The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term, a free public conference at the Skirball Center for the Performing Arts in New York City on July 7th from 4:30pm until 8:00pm.</p>"
     }
 },
 {
@@ -85,8 +85,8 @@
         "name": "Workshop",
         "slug": "workshop",
         "private": true,
-        "introduction": "Invite-only workshop in the Grand Hall, NYU Kimmel Center. From 08:30 to 16:30.",
-        "_introduction_rendered": "<p>Invite-only workshop in the Grand Hall, NYU Kimmel Center. From 08:30 to 16:30.</p>"
+        "introduction": "Invite-only workshop in the [Grand Hall, NYU Kimmel Center](/workshop/venue). From 8:30am to 4:30pm.",
+        "_introduction_rendered": "<p>Invite-only workshop in the <a href=\"/workshop/venue\">Grand Hall, NYU Kimmel Center</a>. From 8:30am to 4:30pm.</p>"
     }
 },
 {
