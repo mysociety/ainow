@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-{% block title %}{% if attendee.title %}{{ attendee.title }} {% endif %}{{ attendee.name }}{% endblock %}
+{% block title %}{{ attendee.name }}{% endblock %}
 
 {% block bodyclasses %}attendee-page{% endblock %}
 
@@ -15,25 +15,30 @@
         <div class="standard-layout__secondary-column">
 
         {% thumbnail attendee.photo "200x200" crop="center" as im %}
-          <img class="attendee__thumbnail" src="{{ im.url }}">
+          <img class="attendee-detail__thumbnail" src="{{ im.url }}">
         {% empty %}
-          <img class="attendee__thumbnail" src="{% static 'img/no-photo.png' %}" height="200" width="200">
+          <img class="attendee-detail__thumbnail" src="{% static 'img/no-photo.png' %}" height="200" width="200">
         {% endthumbnail %}
 
         </div>
         <div class="standard-layout__primary-column">
-          <h1>{% if attendee.title %}{{ attendee.title }} {% endif %}{{ attendee.name }}</h1>
+
+          <h1>{{ attendee.name }}</h1>
+
+          {% if attendee.title %}
+            <p class="attendee-detail__job-title">{{ attendee.title }}</p>
+          {% endif %}
           {% if attendee.organisation %}
-            <p class="attendee__org">{{ attendee.organisation }}</p>
+            <p class="attendee-detail__org">{{ attendee.organisation }}</p>
           {% endif %}
           {% if attendee.twitter_username %}
-            <p class="attendee__twitter">
+            <p class="attendee-detail__twitter">
               <a href="https://www.twitter.com/{{ attendee.twitter_username }}">
                 @{{ attendee.twitter_username }}
               </a>
             </p>
           {% endif %}
-          <div class="attendee__bio">
+          <div class="attendee-detail__bio">
             <p>
             {{ attendee.biography }}
             </p>

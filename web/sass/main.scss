@@ -850,10 +850,14 @@ iframe {
   font-size: 1.3125em;
 }
 
+.attendee__org,
+.attendee__job-title {
+  font-size: 0.9375em;
+  margin: 0 0 0.3em 0;
+}
+
 .attendee__org {
-   font-size: 0.9375em;
-   color: $gray;
-   margin: 0 0 0.3em 0;
+  color: $gray;
 }
 
 .attendee__twitter {
@@ -863,20 +867,25 @@ iframe {
 /*
  * Individual attendee page
  */
-.attendee-page {
-  .attendee__thumbnail {
-    width: 12em;
-    height: 12em;
-  }
-  .attendee__org {
-    @extend .media-heading;
-    font-size: 1.3125em;
-  }
-  .attendee__twitter {
-    font-size: 1em;
-  }
+.attendee-detail {}
+
+.attendee-detail__thumbnail {
+  max-width: 100%;
+  margin-top: 3.375em;
 }
 
+.attendee-detail__org,
+.attendee-detail__job-title {
+  font-size: 1.3125em;
+}
+
+.attendee-detail__twitter {
+  font-size: 1em;
+}
+
+.attendee-detail__bio {
+  max-width: 36em;
+}
 /*
  * FAQs
  */
@@ -891,7 +900,9 @@ iframe {
  * Location
  */
 
-.accomodation-item {
+.accomodation-item,
+.coffee-item,
+.food-item {
   h3 {
     font-size: 1.25em;
   }

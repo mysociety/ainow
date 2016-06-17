@@ -3,7 +3,7 @@ AI Now
 
 [![Installability](http://img.shields.io/badge/installability-gold-ffd700.svg)]()
 
-A website for the AI Now Symposium.
+A website for the AI Now Conference.
 
 Local development
 -----------------

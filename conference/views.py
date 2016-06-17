@@ -122,7 +122,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     model = Attendee
     context_object_name = 'attendee'
     template_name = 'conference/attendee_profile_form.html'
-    fields = ['user', 'title', 'name', 'organisation', 'biography', 'photo', 'twitter_username', 'schedule']
+    fields = ['user', 'name', 'title', 'organisation', 'biography', 'photo', 'twitter_username', 'schedule']
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
@@ -157,6 +157,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
         # Hackily force some localisation for the organisation field
         form.fields['organisation'].label = 'Organization:'
         form.fields['biography'].label = 'Bio:'
+        form.fields['title'].label = 'Job Title:'
         return form
 
     def get(self, request, *args, **kwargs):
