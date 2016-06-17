@@ -42,6 +42,9 @@
       <div class="change-photo-collapse well" id="change-photo-collapse">
         <label for='id_photo'>Choose photo:</label>
         <div class="account-form__input{% if field.errors %} account-form__input--error{% endif %} form-group">{{ form.photo }}</div>
+        {% if form.photo.help_text %}
+          <p class="help-block">{{ form.photo.help_text }}</p>
+        {% endif %}
         <a href="#change-photo-collapse"
            data-toggle="collapse"
            data-target="#change-photo-collapse"
@@ -67,10 +70,10 @@
       </div>
       {% endif %}
 
+      {% if form.photo.errors %}
+        <div class="account-form__errors">{{ form.photo.errors }}</div>
+      {% endif %}
+
     </div>
   </div>
-  {% if form.photo.errors %}
-    <div class="account-form__errors">{{ form.photo.errors }}</div>
-  {% endif %}
-
 </div>
