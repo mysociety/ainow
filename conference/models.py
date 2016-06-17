@@ -30,7 +30,11 @@ class Person(TimestampedModel):
         populate_from='name',
         help_text="Used to make a nice url for the page that displays this person."
     )
-    photo = ImageField(upload_to=person_photo_upload_to, blank=True)
+    photo = ImageField(
+        upload_to=person_photo_upload_to,
+        blank=True,
+        help_text="Photos must be at least 500px by 500px."
+        )
     twitter_username = models.CharField(max_length=15, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
 

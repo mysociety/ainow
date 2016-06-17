@@ -132,13 +132,13 @@
         "created": "2016-06-14T07:59:29.936Z",
         "updated": "2016-06-14T07:59:29.936Z",
         "name": "Welcome Remarks",
-        "short_description": "",
+        "short_description": "Kate Crawford and Meredith Whittaker, AINow Co-Chairs",
         "start": "09:00:00",
         "end": "09:15:00",
-        "kind": "TALK",
+        "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": ""
+        "_short_description_rendered": "<p>Kate Crawford and Meredith Whittaker, AINow Co-Chairs</p>"
     }
 },
 {
@@ -148,13 +148,13 @@
         "created": "2016-06-14T07:59:29.937Z",
         "updated": "2016-06-14T07:59:29.937Z",
         "name": "Introductions",
-        "short_description": "",
+        "short_description": "Ed Felten, Deputy U.S. Chief Technology Officer",
         "start": "09:15:00",
         "end": "09:25:00",
-        "kind": "TALK",
+        "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": ""
+        "_short_description_rendered": "<p>Ed Felten, Deputy U.S. Chief Technology Officer</p>"
     }
 },
 {
@@ -164,13 +164,13 @@
         "created": "2016-06-14T07:59:29.937Z",
         "updated": "2016-06-14T07:59:29.937Z",
         "name": "Opening Address",
-        "short_description": "",
+        "short_description": "Jason Furman, Chairman of the Council of Economic Advisers",
         "start": "09:30:00",
         "end": "10:00:00",
-        "kind": "TALK",
+        "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": ""
+        "_short_description_rendered": "<p>Jason Furman, Chairman of the Council of Economic Advisers</p>"
     }
 },
 {
@@ -403,7 +403,7 @@
     "fields": {
         "created": "2016-06-14T07:59:29.943Z",
         "updated": "2016-06-14T08:03:55.112Z",
-        "name": "Cocktail Reception at Grand Hall following Public Conference",
+        "name": "Cocktail Reception at Grand Hall following Public Conference for workshop attendees",
         "short_description": "",
         "start": "20:00:00",
         "end": "23:00:00",
@@ -411,56 +411,6 @@
         "schedule": 2,
         "room": 4,
         "_short_description_rendered": ""
-    }
-},
-{
-    "model": "conference.presentation",
-    "pk": 3,
-    "fields": {
-        "created": "2016-06-14T08:08:38.176Z",
-        "updated": "2016-06-14T08:08:38.176Z",
-        "title": "Welcome Remarks",
-        "slug": "welcome-kate-meredith",
-        "primary_speaker": 42,
-        "long_description": "Welcome remarks by Kate Crawford and Meredith Whittaker.",
-        "short_description": "Welcome remarks by Kate Crawford and Meredith Whittaker.",
-        "slot": 11,
-        "_long_description_rendered": "<p>Welcome remarks by Kate Crawford and Meredith Whittaker.</p>",
-        "additional_speakers": [
-            43
-        ]
-    }
-},
-{
-    "model": "conference.presentation",
-    "pk": 4,
-    "fields": {
-        "created": "2016-06-14T08:09:29.536Z",
-        "updated": "2016-06-14T08:09:29.536Z",
-        "title": "Introductions",
-        "slug": "introductions-ed-felten",
-        "primary_speaker": 44,
-        "long_description": "Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.",
-        "short_description": "Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.",
-        "slot": 12,
-        "_long_description_rendered": "<p>Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.</p>",
-        "additional_speakers": []
-    }
-},
-{
-    "model": "conference.presentation",
-    "pk": 5,
-    "fields": {
-        "created": "2016-06-14T08:10:07.843Z",
-        "updated": "2016-06-14T08:10:07.843Z",
-        "title": "Opening Address",
-        "slug": "opening-address",
-        "primary_speaker": 45,
-        "long_description": "Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.",
-        "short_description": "Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.",
-        "slot": 13,
-        "_long_description_rendered": "<p>Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.</p>",
-        "additional_speakers": []
     }
 },
 {

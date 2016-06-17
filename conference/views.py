@@ -15,6 +15,7 @@ import sorl
 from account.mixins import LoginRequiredMixin
 
 from .models import Schedule, Speaker, Presentation, Attendee
+from .forms import AttendeeForm
 from blocks.models import Block
 
 
@@ -122,7 +123,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     model = Attendee
     context_object_name = 'attendee'
     template_name = 'conference/attendee_profile_form.html'
-    fields = ['user', 'name', 'title', 'organisation', 'biography', 'photo', 'twitter_username', 'schedule']
+    form_class = AttendeeForm
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
@@ -149,16 +150,6 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
             kwargs['data']['user'] = self.request.user.id
             kwargs['data']['schedule'] = self.schedule.id
         return kwargs
-
-    def get_form(self, form_class):
-        # Force a simple file field for the photo
-        form = super(AttendeeCreateUpdateView, self).get_form(form_class)
-        form.fields['photo'].widget = forms.FileInput()
-        # Hackily force some localisation for the organisation field
-        form.fields['organisation'].label = 'Organization:'
-        form.fields['biography'].label = 'Bio:'
-        form.fields['title'].label = 'Job Title:'
-        return form
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
