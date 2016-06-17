@@ -856,16 +856,20 @@ iframe {
 
 .attendee__org,
 .attendee__job-title {
-  font-size: 0.9375em;
   margin: 0 0 0.3em 0;
 }
 
+.attendee__job-title {
+  font-size: 0.9375em;
+}
+
 .attendee__org {
-  color: $gray;
+  color: $gray-dark;
+  font-size: 0.8125em;
 }
 
 .attendee__twitter {
-  font-size: .8125em;
+  font-size: 0.8125em;
 }
 
 /*
