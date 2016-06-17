@@ -170,6 +170,9 @@ iframe {
     background-color: $gray-darker;
     color: $color_white;
   }
+  .navbar-brand {
+    margin-top: -3px;
+  }
   &.site-header--inverted {
     background-color: $brand-primary;
     .navbar-nav > li > a {
