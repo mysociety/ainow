@@ -871,7 +871,13 @@ iframe {
 /*
  * Individual attendee page
  */
-.attendee-detail {}
+
+
+.attendee-detail {
+  h1 {
+    margin-bottom: 0.1em;
+  }
+}
 
 .attendee-detail__thumbnail {
   max-width: 100%;
@@ -879,9 +885,13 @@ iframe {
   height: auto;
 }
 
-.attendee-detail__org,
+
 .attendee-detail__job-title {
   font-size: 1.3125em;
+}
+
+.attendee-detail__org {
+  color: $gray-dark;
 }
 
 .attendee-detail__twitter {
@@ -891,6 +901,7 @@ iframe {
 .attendee-detail__bio {
   max-width: 36em;
 }
+
 /*
  * FAQs
  */
@@ -922,23 +933,4 @@ iframe {
 
 .alerts {
   margin-top: 2em;
-}
-
-/*
- * Attendee detail
- */
-.attendee-detail {
-  h1 {
-    margin-bottom: 0.25em;
-  }
-  .attendee__thumbnail {
-    margin-top: 3.375em;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .attendee__bio {
-    max-width: 34em;
-  }
-
 }
