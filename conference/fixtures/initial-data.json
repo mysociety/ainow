@@ -10,6 +10,7 @@
         "slug": "kate-crawford",
         "photo": "",
         "twitter_username": "",
+        "title": "",
         "organisation": "",
         "biography": "",
         "website": "",
@@ -21,16 +22,17 @@
     "pk": 43,
     "fields": {
         "created": "2016-06-14T08:06:52.429Z",
-        "updated": "2016-06-14T08:06:52.429Z",
+        "updated": "2016-06-21T11:33:17.824Z",
         "user": null,
         "name": "Meredith Whittaker",
         "slug": "meredith-whittaker",
-        "photo": "",
+        "photo": "conference_speaker_photos/meredith-whittaker.jpg",
         "twitter_username": "",
+        "title": "Founder and Lead",
         "organisation": "Google Open Research",
-        "biography": "Meredith Whittaker is the founder of Google's Open Research group, which is dedicated to solving hard collective problems in collaboration with the academic and public interest communities. Her work focuses on open Internet measurement and research, usable privacy and security, shared \"critical infrastructure\" and how to keep it healthy, and the tricky intersections of ethics and networked systems research. In this capacity she founded Measurement Lab, an open research collaborative that currently hosts the world's largest public domain Internet measurement dataset, and Simply Secure, a nonprofit that brings Design and Human Centered Research to security and privacy engineering. She learned most of what she does by doing it.",
+        "biography": "Meredith Whittaker is the founder of Google's Open Research group, which is dedicated to solving hard collective problems in collaboration with the academic and public interest communities. \r\n\r\nHer work focuses on open Internet measurement and research, usable privacy and security, shared \"critical infrastructure\" and how to keep it healthy, and the tricky intersections of ethics and networked systems research. \r\n\r\nIn this capacity she founded Measurement Lab, an open research collaborative that currently hosts the world's largest public domain Internet measurement dataset, and Simply Secure, a nonprofit that brings Design and Human Centered Research to security and privacy engineering. She learned most of what she does by doing it.",
         "website": "",
-        "_biography_rendered": "<p>Meredith Whittaker is the founder of Google's Open Research group, which is dedicated to solving hard collective problems in collaboration with the academic and public interest communities. Her work focuses on open Internet measurement and research, usable privacy and security, shared \"critical infrastructure\" and how to keep it healthy, and the tricky intersections of ethics and networked systems research. In this capacity she founded Measurement Lab, an open research collaborative that currently hosts the world's largest public domain Internet measurement dataset, and Simply Secure, a nonprofit that brings Design and Human Centered Research to security and privacy engineering. She learned most of what she does by doing it.</p>"
+        "_biography_rendered": "<p>Meredith Whittaker is the founder of Google's Open Research group, which is dedicated to solving hard collective problems in collaboration with the academic and public interest communities. </p>\n<p>Her work focuses on open Internet measurement and research, usable privacy and security, shared \"critical infrastructure\" and how to keep it healthy, and the tricky intersections of ethics and networked systems research. </p>\n<p>In this capacity she founded Measurement Lab, an open research collaborative that currently hosts the world's largest public domain Internet measurement dataset, and Simply Secure, a nonprofit that brings Design and Human Centered Research to security and privacy engineering. She learned most of what she does by doing it.</p>"
     }
 },
 {
@@ -44,6 +46,7 @@
         "slug": "ed-felten",
         "photo": "",
         "twitter_username": "",
+        "title": "",
         "organisation": "",
         "biography": "",
         "website": "",
@@ -55,16 +58,17 @@
     "pk": 45,
     "fields": {
         "created": "2016-06-14T08:07:30.477Z",
-        "updated": "2016-06-21T10:55:02.099Z",
+        "updated": "2016-06-21T13:16:08.964Z",
         "user": null,
         "name": "Jason Furman",
         "slug": "jason-furman",
         "photo": "",
         "twitter_username": "",
+        "title": "Chairman of the Council of Economic Advisers",
         "organisation": "",
-        "biography": "Jason Furman was confirmed by the Senate on August 1, 2013 as the 28th Chairman of the Council of Economic Advisers. In this role, he serves as President Obama\u2019s chief economist and a Member of the Cabinet. Furman has served the President since the beginning of the Administration, previously holding the position of Principal Deputy Director of the National Economic Council and Assistant to the President. Immediately prior to the Administration, Furman was Economic Policy Director for the President\u2019s campaign in 2008 and a member of the Presidential Transition Team.\r\n\r\nFurman held a variety of posts in public policy and research before his work with President Obama. In public policy, Furman worked at both the Council of Economic Advisers and National Economic Council during the Clinton administration and also at the World Bank. In research, Furman was a Senior Fellow at the Brookings Institution and the Center on Budget and Policy Priorities and also has served in visiting positions at various universities, including NYU\u2019s Wagner Graduate School of Public Policy. Furman has conducted research in a wide range of areas, such as fiscal policy, tax policy, health economics, Social Security, and domestic and international macroeconomics. In addition to numerous articles in scholarly journals and periodicals, Furman is the editor of two books on economic policy. Furman holds a Ph.D. in economics from Harvard University.",
+        "biography": "Jason Furman was confirmed by the Senate on August 1, 2013 as the 28th Chairman of the Council of Economic Advisers. In this role, he serves as President Obama\u2019s chief economist and a Member of the Cabinet. \r\n\r\nFurman has served the President since the beginning of the Administration, previously holding the position of Principal Deputy Director of the National Economic Council and Assistant to the President. Immediately prior to the Administration, Furman was Economic Policy Director for the President\u2019s campaign in 2008 and a member of the Presidential Transition Team.\r\n\r\nFurman held a variety of posts in public policy and research before his work with President Obama. In public policy, Furman worked at both the Council of Economic Advisers and National Economic Council during the Clinton administration and also at the World Bank. In research, Furman was a Senior Fellow at the Brookings Institution and the Center on Budget and Policy Priorities and also has served in visiting positions at various universities, including NYU\u2019s Wagner Graduate School of Public Policy. \r\n\r\nFurman has conducted research in a wide range of areas, such as fiscal policy, tax policy, health economics, Social Security, and domestic and international macroeconomics. In addition to numerous articles in scholarly journals and periodicals, Furman is the editor of two books on economic policy. Furman holds a Ph.D. in economics from Harvard University.",
         "website": "",
-        "_biography_rendered": "<p>Jason Furman was confirmed by the Senate on August 1, 2013 as the 28th Chairman of the Council of Economic Advisers. In this role, he serves as President Obama\u2019s chief economist and a Member of the Cabinet. Furman has served the President since the beginning of the Administration, previously holding the position of Principal Deputy Director of the National Economic Council and Assistant to the President. Immediately prior to the Administration, Furman was Economic Policy Director for the President\u2019s campaign in 2008 and a member of the Presidential Transition Team.</p>\n<p>Furman held a variety of posts in public policy and research before his work with President Obama. In public policy, Furman worked at both the Council of Economic Advisers and National Economic Council during the Clinton administration and also at the World Bank. In research, Furman was a Senior Fellow at the Brookings Institution and the Center on Budget and Policy Priorities and also has served in visiting positions at various universities, including NYU\u2019s Wagner Graduate School of Public Policy. Furman has conducted research in a wide range of areas, such as fiscal policy, tax policy, health economics, Social Security, and domestic and international macroeconomics. In addition to numerous articles in scholarly journals and periodicals, Furman is the editor of two books on economic policy. Furman holds a Ph.D. in economics from Harvard University.</p>"
+        "_biography_rendered": "<p>Jason Furman was confirmed by the Senate on August 1, 2013 as the 28th Chairman of the Council of Economic Advisers. In this role, he serves as President Obama\u2019s chief economist and a Member of the Cabinet. </p>\n<p>Furman has served the President since the beginning of the Administration, previously holding the position of Principal Deputy Director of the National Economic Council and Assistant to the President. Immediately prior to the Administration, Furman was Economic Policy Director for the President\u2019s campaign in 2008 and a member of the Presidential Transition Team.</p>\n<p>Furman held a variety of posts in public policy and research before his work with President Obama. In public policy, Furman worked at both the Council of Economic Advisers and National Economic Council during the Clinton administration and also at the World Bank. In research, Furman was a Senior Fellow at the Brookings Institution and the Center on Budget and Policy Priorities and also has served in visiting positions at various universities, including NYU\u2019s Wagner Graduate School of Public Policy. </p>\n<p>Furman has conducted research in a wide range of areas, such as fiscal policy, tax policy, health economics, Social Security, and domestic and international macroeconomics. In addition to numerous articles in scholarly journals and periodicals, Furman is the editor of two books on economic policy. Furman holds a Ph.D. in economics from Harvard University.</p>"
     }
 },
 {
@@ -72,16 +76,17 @@
     "pk": 46,
     "fields": {
         "created": "2016-06-21T10:35:19.247Z",
-        "updated": "2016-06-21T10:35:19.247Z",
+        "updated": "2016-06-21T11:41:22.050Z",
         "user": null,
-        "name": "Helen Nissembaum",
-        "slug": "helen-nissembaum",
-        "photo": "",
+        "name": "Helen Nissenbaum",
+        "slug": "helen-nissenbaum",
+        "photo": "conference_speaker_photos/helen-nissenbaum.jpg",
         "twitter_username": "",
+        "title": "Director",
         "organisation": "New York University",
-        "biography": "Helen Nissenbaum is Professor of [Media, Culture, and Communication](http://steinhardt.nyu.edu/dcc), and [Computer Science](http://cs.nyu.edu/csweb/index.html), at New York University, where she is also Director of the [Information Law Institute](http://www.law.nyu.edu/ili/). Her work spans societal, ethical, and political dimensions of information technology and digital media. Prof. Nissenbaum's nine books include [Obfuscation: A User's Guide for Privacy and Protest](https://mitpress.mit.edu/books/obfuscation), with F. Brunton (MIT Press, 2015), [Values at Play in Digital Games](http://valuesatplay.org/vap-the-book), with M. Flanagan (MIT Press, 2014), and [Privacy in Context: Technology, Policy, and the Integrity of Social Life](http://www.sup.org/book.cgi?id=8862) (Stanford, 2010). The National Science Foundation, Air Force Office of Scientific Research, and the U.S. Department of Health and Human Services Office of the National Coordinator have supported her work on privacy, trust online, and security, as well as studies of values embodied in design. Recipient of the 2014 [Barwise Prize](http://www.apaonline.org/?barwise) of the American Philosophical Association, Prof. Nissenbaum has contributed to privacy-enhancing software, including [TrackMeNot](https://cs.nyu.edu/trackmenot/) and [AdNauseam](http://adnauseam.io/). Nissenbaum holds a Ph.D. in philosophy from Stanford University and a B.A. (Hons) from the [University of the Witwatersrand](http://www.wits.ac.za/).",
+        "biography": "Helen Nissenbaum is Professor of [Media, Culture, and Communication](http://steinhardt.nyu.edu/dcc), and [Computer Science](http://cs.nyu.edu/csweb/index.html), at New York University, where she is also Director of the [Information Law Institute](http://www.law.nyu.edu/ili/). Her work spans societal, ethical, and political dimensions of information technology and digital media. \r\n\r\nProf. Nissenbaum's nine books include [Obfuscation: A User's Guide for Privacy and Protest](https://mitpress.mit.edu/books/obfuscation), with F. Brunton (MIT Press, 2015), [Values at Play in Digital Games](http://valuesatplay.org/vap-the-book), with M. Flanagan (MIT Press, 2014), and [Privacy in Context: Technology, Policy, and the Integrity of Social Life](http://www.sup.org/book.cgi?id=8862) (Stanford, 2010). \r\n\r\nThe National Science Foundation, Air Force Office of Scientific Research, and the U.S. Department of Health and Human Services Office of the National Coordinator have supported her work on privacy, trust online, and security, as well as studies of values embodied in design. \r\n\r\nRecipient of the 2014 [Barwise Prize](http://www.apaonline.org/?barwise) of the American Philosophical Association, Prof. Nissenbaum has contributed to privacy-enhancing software, including [TrackMeNot](https://cs.nyu.edu/trackmenot/) and [AdNauseam](http://adnauseam.io/). Nissenbaum holds a Ph.D. in philosophy from Stanford University and a B.A. (Hons) from the [University of the Witwatersrand](http://www.wits.ac.za/).",
         "website": "",
-        "_biography_rendered": "<p>Helen Nissenbaum is Professor of <a href=\"http://steinhardt.nyu.edu/dcc\">Media, Culture, and Communication</a>, and <a href=\"http://cs.nyu.edu/csweb/index.html\">Computer Science</a>, at New York University, where she is also Director of the <a href=\"http://www.law.nyu.edu/ili/\">Information Law Institute</a>. Her work spans societal, ethical, and political dimensions of information technology and digital media. Prof. Nissenbaum's nine books include <a href=\"https://mitpress.mit.edu/books/obfuscation\">Obfuscation: A User's Guide for Privacy and Protest</a>, with F. Brunton (MIT Press, 2015), <a href=\"http://valuesatplay.org/vap-the-book\">Values at Play in Digital Games</a>, with M. Flanagan (MIT Press, 2014), and <a href=\"http://www.sup.org/book.cgi?id=8862\">Privacy in Context: Technology, Policy, and the Integrity of Social Life</a> (Stanford, 2010). The National Science Foundation, Air Force Office of Scientific Research, and the U.S. Department of Health and Human Services Office of the National Coordinator have supported her work on privacy, trust online, and security, as well as studies of values embodied in design. Recipient of the 2014 <a href=\"http://www.apaonline.org/?barwise\">Barwise Prize</a> of the American Philosophical Association, Prof. Nissenbaum has contributed to privacy-enhancing software, including <a href=\"https://cs.nyu.edu/trackmenot/\">TrackMeNot</a> and <a href=\"http://adnauseam.io/\">AdNauseam</a>. Nissenbaum holds a Ph.D. in philosophy from Stanford University and a B.A. (Hons) from the <a href=\"http://www.wits.ac.za/\">University of the Witwatersrand</a>.</p>"
+        "_biography_rendered": "<p>Helen Nissenbaum is Professor of <a href=\"http://steinhardt.nyu.edu/dcc\">Media, Culture, and Communication</a>, and <a href=\"http://cs.nyu.edu/csweb/index.html\">Computer Science</a>, at New York University, where she is also Director of the <a href=\"http://www.law.nyu.edu/ili/\">Information Law Institute</a>. Her work spans societal, ethical, and political dimensions of information technology and digital media. </p>\n<p>Prof. Nissenbaum's nine books include <a href=\"https://mitpress.mit.edu/books/obfuscation\">Obfuscation: A User's Guide for Privacy and Protest</a>, with F. Brunton (MIT Press, 2015), <a href=\"http://valuesatplay.org/vap-the-book\">Values at Play in Digital Games</a>, with M. Flanagan (MIT Press, 2014), and <a href=\"http://www.sup.org/book.cgi?id=8862\">Privacy in Context: Technology, Policy, and the Integrity of Social Life</a> (Stanford, 2010). </p>\n<p>The National Science Foundation, Air Force Office of Scientific Research, and the U.S. Department of Health and Human Services Office of the National Coordinator have supported her work on privacy, trust online, and security, as well as studies of values embodied in design. </p>\n<p>Recipient of the 2014 <a href=\"http://www.apaonline.org/?barwise\">Barwise Prize</a> of the American Philosophical Association, Prof. Nissenbaum has contributed to privacy-enhancing software, including <a href=\"https://cs.nyu.edu/trackmenot/\">TrackMeNot</a> and <a href=\"http://adnauseam.io/\">AdNauseam</a>. Nissenbaum holds a Ph.D. in philosophy from Stanford University and a B.A. (Hons) from the <a href=\"http://www.wits.ac.za/\">University of the Witwatersrand</a>.</p>"
     }
 },
 {
@@ -89,16 +94,17 @@
     "pk": 47,
     "fields": {
         "created": "2016-06-21T10:36:21.542Z",
-        "updated": "2016-06-21T10:36:21.542Z",
+        "updated": "2016-06-21T11:43:52.021Z",
         "user": null,
         "name": "Mustafa Suleyman",
         "slug": "mustafa-suleyman",
-        "photo": "",
+        "photo": "conference_speaker_photos/mustafa-suleyman.jpg",
         "twitter_username": "",
-        "organisation": "DeepMind",
-        "biography": "Mustafa Suleyman is co-founder and Head of Applied AI at DeepMind, where he is responsible for integrating the company\u2019s technology across a wide range of Google products. In February 2016 he launched DeepMind Health, which builds clinician-led technology in the NHS. Mustafa was Chief Product Officer at DeepMind Technologies, before the company was bought in 2014 by Google. At 19, Mustafa dropped out of Oxford University to help set up a telephone counselling service, building it to become one of the largest mental health support services of its kind in the UK, and then worked as policy officer for then Mayor of London, Ken Livingstone. He went on to help start Reos Partners, a consultancy with eight offices across four continents specializing in designing and facilitating large-scale multi-stakeholder \u2018Change Labs\u2019 aimed at navigating complex problems. As a skilled negotiator and facilitator Mustafa has worked all over the world for a wide range of clients such as the UN, the Dutch Government and WWF.",
+        "title": "Co-founder and Head of Applied Artificial Intelligence",
+        "organisation": "Google DeepMind",
+        "biography": "Mustafa Suleyman is co-founder and Head of Applied AI at DeepMind, where he is responsible for integrating the company\u2019s technology across a wide range of Google products. In February 2016 he launched DeepMind Health, which builds clinician-led technology in the NHS. Mustafa was Chief Product Officer at DeepMind Technologies, before the company was bought in 2014 by Google. \r\n\r\nAt 19, Mustafa dropped out of Oxford University to help set up a telephone counselling service, building it to become one of the largest mental health support services of its kind in the UK, and then worked as policy officer for then Mayor of London, Ken Livingstone. He went on to help start Reos Partners, a consultancy with eight offices across four continents specializing in designing and facilitating large-scale multi-stakeholder \u2018Change Labs\u2019 aimed at navigating complex problems. \r\n\r\nAs a skilled negotiator and facilitator Mustafa has worked all over the world for a wide range of clients such as the UN, the Dutch Government and WWF.",
         "website": "",
-        "_biography_rendered": "<p>Mustafa Suleyman is co-founder and Head of Applied AI at DeepMind, where he is responsible for integrating the company\u2019s technology across a wide range of Google products. In February 2016 he launched DeepMind Health, which builds clinician-led technology in the NHS. Mustafa was Chief Product Officer at DeepMind Technologies, before the company was bought in 2014 by Google. At 19, Mustafa dropped out of Oxford University to help set up a telephone counselling service, building it to become one of the largest mental health support services of its kind in the UK, and then worked as policy officer for then Mayor of London, Ken Livingstone. He went on to help start Reos Partners, a consultancy with eight offices across four continents specializing in designing and facilitating large-scale multi-stakeholder \u2018Change Labs\u2019 aimed at navigating complex problems. As a skilled negotiator and facilitator Mustafa has worked all over the world for a wide range of clients such as the UN, the Dutch Government and WWF.</p>"
+        "_biography_rendered": "<p>Mustafa Suleyman is co-founder and Head of Applied AI at DeepMind, where he is responsible for integrating the company\u2019s technology across a wide range of Google products. In February 2016 he launched DeepMind Health, which builds clinician-led technology in the NHS. Mustafa was Chief Product Officer at DeepMind Technologies, before the company was bought in 2014 by Google. </p>\n<p>At 19, Mustafa dropped out of Oxford University to help set up a telephone counselling service, building it to become one of the largest mental health support services of its kind in the UK, and then worked as policy officer for then Mayor of London, Ken Livingstone. He went on to help start Reos Partners, a consultancy with eight offices across four continents specializing in designing and facilitating large-scale multi-stakeholder \u2018Change Labs\u2019 aimed at navigating complex problems. </p>\n<p>As a skilled negotiator and facilitator Mustafa has worked all over the world for a wide range of clients such as the UN, the Dutch Government and WWF.</p>"
     }
 },
 {
@@ -106,16 +112,1241 @@
     "pk": 49,
     "fields": {
         "created": "2016-06-21T10:39:51.809Z",
-        "updated": "2016-06-21T10:39:51.809Z",
+        "updated": "2016-06-21T11:47:40.623Z",
         "user": null,
+        "name": "Nicole Wong",
+        "slug": "nicole-wong",
+        "photo": "conference_speaker_photos/nicole-wong.jpg",
+        "twitter_username": "",
+        "title": "Former White House Deputy Chief Technology Officer",
+        "organisation": "",
+        "biography": "Nicole Wong is the former U.S. Deputy Chief Technology Officer focusing on internet, privacy and innovation policy. Prior to joining the Obama Administration, Nicole served as Twitter\u2019s Legal Director for Products and Google\u2019s Vice President and Deputy General Counsel.  \r\n\r\nShe frequently speaks on issues related to law and technology, including five appearances before the U.S. Congress.  Nicole chairs the board of [Friends of Global Voices](http://friendsofglobalvoices.org/), a non-profit organization dedicated to supporting citizen and online media projects globally, and sits on the board of [WITNESS](https://witness.org/about/board-members/), an organization promoting the use of video to advance human rights. \r\n\r\nShe currently serves as an advisor to the the [School of Information at the University of California, Berkeley](http://www.ischool.berkeley.edu/), [Harvard Business School Digital Initiative](https://digital.hbs.edu/), the [Albright Stonebridge Group](http://www.albrightstonebridge.com/), and to several technology companies on privacy, regulatory strategy and international development.",
+        "website": "",
+        "_biography_rendered": "<p>Nicole Wong is the former U.S. Deputy Chief Technology Officer focusing on internet, privacy and innovation policy. Prior to joining the Obama Administration, Nicole served as Twitter\u2019s Legal Director for Products and Google\u2019s Vice President and Deputy General Counsel.  </p>\n<p>She frequently speaks on issues related to law and technology, including five appearances before the U.S. Congress.  Nicole chairs the board of <a href=\"http://friendsofglobalvoices.org/\">Friends of Global Voices</a>, a non-profit organization dedicated to supporting citizen and online media projects globally, and sits on the board of <a href=\"https://witness.org/about/board-members/\">WITNESS</a>, an organization promoting the use of video to advance human rights. </p>\n<p>She currently serves as an advisor to the the <a href=\"http://www.ischool.berkeley.edu/\">School of Information at the University of California, Berkeley</a>, <a href=\"https://digital.hbs.edu/\">Harvard Business School Digital Initiative</a>, the <a href=\"http://www.albrightstonebridge.com/\">Albright Stonebridge Group</a>, and to several technology companies on privacy, regulatory strategy and international development.</p>"
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 3,
+    "fields": {
+        "created": "2016-06-14T10:02:05.855Z",
+        "updated": "2016-06-17T11:03:31.600Z",
+        "user": 1,
+        "name": "Steven Day",
+        "slug": "steven-day",
+        "photo": "",
+        "twitter_username": "forestorama",
+        "title": "Engineering Manager",
+        "organisation": "mySociety",
+        "schedule": 2,
+        "external_id": null,
+        "biography": "This my bio."
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 213,
+    "fields": {
+        "created": "2016-06-15T11:16:20.584Z",
+        "updated": "2016-06-15T11:16:20.584Z",
+        "user": 242,
+        "name": "Mike Ananny",
+        "slug": "mike-ananny",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "USC annenberg",
+        "schedule": 2,
+        "external_id": 1000,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 214,
+    "fields": {
+        "created": "2016-06-15T11:16:20.719Z",
+        "updated": "2016-06-15T11:16:20.719Z",
+        "user": 243,
+        "name": "Julia Angwin",
+        "slug": "julia-angwin",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Pro Publica",
+        "schedule": 2,
+        "external_id": 1001,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 215,
+    "fields": {
+        "created": "2016-06-15T11:16:20.848Z",
+        "updated": "2016-06-15T11:16:20.848Z",
+        "user": 244,
+        "name": "Ron Arkin",
+        "slug": "ron-arkin",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "GTech",
+        "schedule": 2,
+        "external_id": 1002,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 216,
+    "fields": {
+        "created": "2016-06-15T11:16:20.948Z",
+        "updated": "2016-06-15T11:16:20.948Z",
+        "user": 245,
+        "name": "Peter Asaro",
+        "slug": "peter-asaro",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "New School",
+        "schedule": 2,
+        "external_id": 1003,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 217,
+    "fields": {
+        "created": "2016-06-15T11:16:21.047Z",
+        "updated": "2016-06-15T11:16:21.047Z",
+        "user": 246,
+        "name": "Kareem Ayoub",
+        "slug": "kareem-ayoub",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1004,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 218,
+    "fields": {
+        "created": "2016-06-15T11:16:21.152Z",
+        "updated": "2016-06-15T11:16:21.152Z",
+        "user": 247,
+        "name": "Solon Barocas",
+        "slug": "solon-barocas",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Princeton",
+        "schedule": 2,
+        "external_id": 1005,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 219,
+    "fields": {
+        "created": "2016-06-15T11:16:21.249Z",
+        "updated": "2016-06-15T11:16:21.249Z",
+        "user": 248,
+        "name": "Sunny Bates",
+        "slug": "sunny-bates",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Sunny Bates & Co",
+        "schedule": 2,
+        "external_id": 1006,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 220,
+    "fields": {
+        "created": "2016-06-15T11:16:21.343Z",
+        "updated": "2016-06-15T11:16:21.343Z",
+        "user": 249,
+        "name": "Genevieve Bell",
+        "slug": "genevieve-bell",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Intel",
+        "schedule": 2,
+        "external_id": 1007,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 221,
+    "fields": {
+        "created": "2016-06-15T11:16:21.434Z",
+        "updated": "2016-06-15T11:16:21.434Z",
+        "user": 250,
+        "name": "Geof Bowker",
+        "slug": "geof-bowker",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Irvine",
+        "schedule": 2,
+        "external_id": 1008,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 222,
+    "fields": {
+        "created": "2016-06-15T11:16:21.530Z",
+        "updated": "2016-06-15T11:16:21.530Z",
+        "user": 251,
+        "name": "danah boyd",
+        "slug": "danah-boyd",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Data and Society/MSR",
+        "schedule": 2,
+        "external_id": 1009,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 223,
+    "fields": {
+        "created": "2016-06-15T11:16:21.627Z",
+        "updated": "2016-06-15T11:16:21.627Z",
+        "user": 252,
+        "name": "John Bracken",
+        "slug": "john-bracken",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1010,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 224,
+    "fields": {
+        "created": "2016-06-15T11:16:21.725Z",
+        "updated": "2016-06-15T11:16:21.725Z",
+        "user": 253,
+        "name": "Cynthia Braezeal",
+        "slug": "cynthia-braezeal",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Jibo/MIT",
+        "schedule": 2,
+        "external_id": 1011,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 225,
+    "fields": {
+        "created": "2016-06-15T11:16:21.825Z",
+        "updated": "2016-06-15T11:16:21.825Z",
+        "user": 254,
+        "name": "Julie Brill",
+        "slug": "julie-brill",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Outgoing FTC commish",
+        "schedule": 2,
+        "external_id": 1012,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 226,
+    "fields": {
+        "created": "2016-06-15T11:16:21.919Z",
+        "updated": "2016-06-15T11:16:21.919Z",
+        "user": 255,
+        "name": "Erik Brynjolfsson",
+        "slug": "erik-brynjolfsson",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "MIT",
+        "schedule": 2,
+        "external_id": 1013,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 227,
+    "fields": {
+        "created": "2016-06-15T11:16:22.020Z",
+        "updated": "2016-06-15T11:16:22.020Z",
+        "user": 256,
+        "name": "Ryan Calo",
+        "slug": "ryan-calo",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1014,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 228,
+    "fields": {
+        "created": "2016-06-15T11:16:22.119Z",
+        "updated": "2016-06-15T11:16:22.119Z",
+        "user": 257,
+        "name": "Jennifer Chayes",
+        "slug": "jennifer-chayes",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Microsoft",
+        "schedule": 2,
+        "external_id": 1015,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 229,
+    "fields": {
+        "created": "2016-06-15T11:16:22.210Z",
+        "updated": "2016-06-15T11:16:22.210Z",
+        "user": 258,
+        "name": "Danielle Citron",
+        "slug": "danielle-citron",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Maryland",
+        "schedule": 2,
+        "external_id": 1016,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 230,
+    "fields": {
+        "created": "2016-06-15T11:16:22.305Z",
+        "updated": "2016-06-15T11:16:22.305Z",
+        "user": 259,
+        "name": "Anupam Datta",
+        "slug": "anupam-datta",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "CMU",
+        "schedule": 2,
+        "external_id": 1017,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 231,
+    "fields": {
+        "created": "2016-06-15T11:16:22.401Z",
+        "updated": "2016-06-15T11:16:22.401Z",
+        "user": 260,
+        "name": "Fernando Diaz",
+        "slug": "fernando-diaz",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Microsoft",
+        "schedule": 2,
+        "external_id": 1018,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 232,
+    "fields": {
+        "created": "2016-06-15T11:16:22.497Z",
+        "updated": "2016-06-15T11:16:22.497Z",
+        "user": 261,
+        "name": "Chris DiBona",
+        "slug": "chris-dibona",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Google",
+        "schedule": 2,
+        "external_id": 1019,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 233,
+    "fields": {
+        "created": "2016-06-15T11:16:22.592Z",
+        "updated": "2016-06-15T11:16:22.592Z",
+        "user": 262,
+        "name": "Paul Dourish",
+        "slug": "paul-dourish",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Irvine",
+        "schedule": 2,
+        "external_id": 1020,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 234,
+    "fields": {
+        "created": "2016-06-15T11:16:22.688Z",
+        "updated": "2016-06-15T11:16:22.688Z",
+        "user": 263,
+        "name": "Madeleine Clare Elish",
+        "slug": "madeleine-clare-elish",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Colombia U",
+        "schedule": 2,
+        "external_id": 1021,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 235,
+    "fields": {
+        "created": "2016-06-15T11:16:22.783Z",
+        "updated": "2016-06-15T11:16:22.783Z",
+        "user": 264,
+        "name": "Virginia Eubanks",
+        "slug": "virginia-eubanks",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "NAF",
+        "schedule": 2,
+        "external_id": 1022,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 236,
+    "fields": {
+        "created": "2016-06-15T11:16:22.880Z",
+        "updated": "2016-06-15T11:16:22.880Z",
+        "user": 265,
+        "name": "Kay Firth-Butterfield",
+        "slug": "kay-firth-butterfield",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Lucid AI",
+        "schedule": 2,
+        "external_id": 1023,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 237,
+    "fields": {
+        "created": "2016-06-15T11:16:22.976Z",
+        "updated": "2016-06-15T11:16:22.976Z",
+        "user": 266,
+        "name": "Tarleton Gillespie",
+        "slug": "tarleton-gillespie",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Microsoft/Cornell",
+        "schedule": 2,
+        "external_id": 1024,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 238,
+    "fields": {
+        "created": "2016-06-15T11:16:23.082Z",
+        "updated": "2016-06-15T11:16:23.082Z",
+        "user": 267,
+        "name": "Seth Goldstein",
+        "slug": "seth-goldstein",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "CMU",
+        "schedule": 2,
+        "external_id": 1026,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 239,
+    "fields": {
+        "created": "2016-06-15T11:16:23.181Z",
+        "updated": "2016-06-15T11:16:23.181Z",
+        "user": 268,
+        "name": "Erik Horvitz",
+        "slug": "erik-horvitz",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1027,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 240,
+    "fields": {
+        "created": "2016-06-15T11:16:23.277Z",
+        "updated": "2016-06-15T11:16:23.277Z",
+        "user": 269,
+        "name": "Tim Hwang",
+        "slug": "tim-hwang",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Google",
+        "schedule": 2,
+        "external_id": 1028,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 241,
+    "fields": {
+        "created": "2016-06-15T11:16:23.372Z",
+        "updated": "2016-06-15T11:16:23.372Z",
+        "user": 270,
+        "name": "Lili Irani",
+        "slug": "lili-irani",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "UCSD",
+        "schedule": 2,
+        "external_id": 1029,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 242,
+    "fields": {
+        "created": "2016-06-15T11:16:23.470Z",
+        "updated": "2016-06-15T11:16:23.470Z",
+        "user": 271,
+        "name": "Darius Kazemi",
+        "slug": "darius-kazemi",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Art",
+        "schedule": 2,
+        "external_id": 1030,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 243,
+    "fields": {
+        "created": "2016-06-15T11:16:23.570Z",
+        "updated": "2016-06-15T11:16:23.570Z",
+        "user": 272,
+        "name": "Ian Kerr",
+        "slug": "ian-kerr",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "University of Ottawa",
+        "schedule": 2,
+        "external_id": 1031,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 244,
+    "fields": {
+        "created": "2016-06-15T11:16:23.672Z",
+        "updated": "2016-06-15T11:16:23.672Z",
+        "user": 273,
+        "name": "Jon Kleinberg",
+        "slug": "jon-kleinberg",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Cornell",
+        "schedule": 2,
+        "external_id": 1032,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 245,
+    "fields": {
+        "created": "2016-06-15T11:16:23.775Z",
+        "updated": "2016-06-15T11:16:23.775Z",
+        "user": 274,
+        "name": "Ben Laurie",
+        "slug": "ben-laurie",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Google",
+        "schedule": 2,
+        "external_id": 1034,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 246,
+    "fields": {
+        "created": "2016-06-15T11:16:23.874Z",
+        "updated": "2016-06-15T11:16:23.874Z",
+        "user": 275,
+        "name": "Yann LeCunn",
+        "slug": "yann-lecunn",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Facebook",
+        "schedule": 2,
+        "external_id": 1035,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 247,
+    "fields": {
+        "created": "2016-06-15T11:16:23.971Z",
+        "updated": "2016-06-15T11:16:23.971Z",
+        "user": 276,
+        "name": "Sean Legassic",
+        "slug": "sean-legassic",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Google DeepMind",
+        "schedule": 2,
+        "external_id": 1036,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 248,
+    "fields": {
+        "created": "2016-06-15T11:16:24.064Z",
+        "updated": "2016-06-15T11:16:24.064Z",
+        "user": 277,
+        "name": "Karen Levy",
+        "slug": "karen-levy",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Data and Society/NYU",
+        "schedule": 2,
+        "external_id": 1037,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 249,
+    "fields": {
+        "created": "2016-06-15T11:16:24.161Z",
+        "updated": "2016-06-15T11:16:24.161Z",
+        "user": 278,
+        "name": "Kati London",
+        "slug": "kati-london",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Microsoft",
+        "schedule": 2,
+        "external_id": 1038,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 250,
+    "fields": {
+        "created": "2016-06-15T11:16:24.256Z",
+        "updated": "2016-06-15T11:16:24.256Z",
+        "user": 279,
+        "name": "Terrell McSweeney",
+        "slug": "terrell-mcsweeney",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "FTC Commissioner",
+        "schedule": 2,
+        "external_id": 1039,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 251,
+    "fields": {
+        "created": "2016-06-15T11:16:24.350Z",
+        "updated": "2016-06-15T11:16:24.350Z",
+        "user": 280,
+        "name": "Trevor Morrison",
+        "slug": "trevor-morrison",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Dean, NYU Law",
+        "schedule": 2,
+        "external_id": 1040,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 252,
+    "fields": {
+        "created": "2016-06-15T11:16:24.445Z",
+        "updated": "2016-06-15T11:16:24.445Z",
+        "user": 281,
+        "name": "Dawn Nafus",
+        "slug": "dawn-nafus",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Intel",
+        "schedule": 2,
+        "external_id": 1041,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 253,
+    "fields": {
+        "created": "2016-06-15T11:16:24.537Z",
+        "updated": "2016-06-15T11:16:24.537Z",
+        "user": 282,
+        "name": "Arvind Narayanan",
+        "slug": "arvind-narayanan",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Princeton",
+        "schedule": 2,
+        "external_id": 1042,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 254,
+    "fields": {
+        "created": "2016-06-15T11:16:24.635Z",
+        "updated": "2016-06-15T11:16:24.635Z",
+        "user": 283,
+        "name": "Alondra Nelson",
+        "slug": "alondra-nelson",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1043,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 255,
+    "fields": {
+        "created": "2016-06-15T11:16:24.731Z",
+        "updated": "2016-06-15T11:16:24.731Z",
+        "user": 284,
+        "name": "Carolyn Nguyen",
+        "slug": "carolyn-nguyen",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Microsoft",
+        "schedule": 2,
+        "external_id": 1044,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 256,
+    "fields": {
+        "created": "2016-06-15T11:16:24.827Z",
+        "updated": "2016-06-15T11:16:24.827Z",
+        "user": 285,
+        "name": "Helen Nissenbaum",
+        "slug": "helen-nissenbaum",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "NYU",
+        "schedule": 2,
+        "external_id": 1045,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 257,
+    "fields": {
+        "created": "2016-06-15T11:16:24.924Z",
+        "updated": "2016-06-15T11:16:24.924Z",
+        "user": 286,
+        "name": "Safiya Noble",
+        "slug": "safiya-noble",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "UCLA",
+        "schedule": 2,
+        "external_id": 1046,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 258,
+    "fields": {
+        "created": "2016-06-15T11:16:25.021Z",
+        "updated": "2016-06-15T11:16:25.021Z",
+        "user": 287,
+        "name": "Cathy O'Neill",
+        "slug": "cathy-oneill",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Mathbabe",
+        "schedule": 2,
+        "external_id": 1047,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 259,
+    "fields": {
+        "created": "2016-06-15T11:16:25.122Z",
+        "updated": "2016-06-15T11:16:25.122Z",
+        "user": 288,
+        "name": "Trevor Paglen",
+        "slug": "trevor-paglen",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Art",
+        "schedule": 2,
+        "external_id": 1048,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 260,
+    "fields": {
+        "created": "2016-06-15T11:16:25.218Z",
+        "updated": "2016-06-15T11:16:25.219Z",
+        "user": 289,
+        "name": "Frank Pasquale",
+        "slug": "frank-pasquale",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "University of Maryland",
+        "schedule": 2,
+        "external_id": 1049,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 261,
+    "fields": {
+        "created": "2016-06-15T11:16:25.315Z",
+        "updated": "2016-06-15T11:16:25.315Z",
+        "user": 290,
+        "name": "Grant Passmore",
+        "slug": "grant-passmore",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Cambridge",
+        "schedule": 2,
+        "external_id": 1050,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 262,
+    "fields": {
+        "created": "2016-06-15T11:16:25.409Z",
+        "updated": "2016-06-15T11:16:25.409Z",
+        "user": 291,
+        "name": "Claudia Perlich",
+        "slug": "claudia-perlich",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "NYU",
+        "schedule": 2,
+        "external_id": 1051,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 263,
+    "fields": {
+        "created": "2016-06-15T11:16:25.506Z",
+        "updated": "2016-06-15T11:16:25.506Z",
+        "user": 292,
+        "name": "David Robinson",
+        "slug": "david-robinson",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Upturn",
+        "schedule": 2,
+        "external_id": 1052,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 264,
+    "fields": {
+        "created": "2016-06-15T11:16:25.602Z",
+        "updated": "2016-06-15T11:16:25.602Z",
+        "user": 293,
+        "name": "Heather Roff",
+        "slug": "heather-roff",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "University of Arizona/NAF",
+        "schedule": 2,
+        "external_id": 1053,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 265,
+    "fields": {
+        "created": "2016-06-15T11:16:25.712Z",
+        "updated": "2016-06-15T11:16:25.712Z",
+        "user": 294,
+        "name": "Julie Samuels",
+        "slug": "julie-samuels",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Tech NYC",
+        "schedule": 2,
+        "external_id": 1054,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 266,
+    "fields": {
+        "created": "2016-06-15T11:16:25.833Z",
+        "updated": "2016-06-15T11:16:25.833Z",
+        "user": 295,
+        "name": "Eric Sears",
+        "slug": "eric-sears",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1055,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 267,
+    "fields": {
+        "created": "2016-06-15T11:16:25.927Z",
+        "updated": "2016-06-15T11:16:25.927Z",
+        "user": 296,
+        "name": "Nick Srnicek",
+        "slug": "nick-srnicek",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1057,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 268,
+    "fields": {
+        "created": "2016-06-15T11:16:26.029Z",
+        "updated": "2016-06-15T11:16:26.029Z",
+        "user": 297,
+        "name": "Lucy Suchman",
+        "slug": "lucy-suchman",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Lancaster University",
+        "schedule": 2,
+        "external_id": 1058,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 269,
+    "fields": {
+        "created": "2016-06-15T11:16:26.123Z",
+        "updated": "2016-06-15T11:16:26.123Z",
+        "user": 298,
+        "name": "Mustafa Suleyman",
+        "slug": "mustafa-suleyman",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Google DeepMind",
+        "schedule": 2,
+        "external_id": 1059,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 270,
+    "fields": {
+        "created": "2016-06-15T11:16:26.219Z",
+        "updated": "2016-06-15T11:16:26.219Z",
+        "user": 299,
+        "name": "Latanya Sweeney",
+        "slug": "latanya-sweeney",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Harvard",
+        "schedule": 2,
+        "external_id": 1060,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 271,
+    "fields": {
+        "created": "2016-06-15T11:16:26.316Z",
+        "updated": "2016-06-15T11:16:26.316Z",
+        "user": 300,
+        "name": "Astra Taylor",
+        "slug": "astra-taylor",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "",
+        "schedule": 2,
+        "external_id": 1061,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 272,
+    "fields": {
+        "created": "2016-06-15T11:16:26.411Z",
+        "updated": "2016-06-15T11:16:26.411Z",
+        "user": 301,
+        "name": "Jer Thorpe",
+        "slug": "jer-thorpe",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "OCR",
+        "schedule": 2,
+        "external_id": 1062,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 273,
+    "fields": {
+        "created": "2016-06-15T11:16:26.509Z",
+        "updated": "2016-06-15T11:16:26.509Z",
+        "user": 302,
+        "name": "Manuela Veloso",
+        "slug": "manuela-veloso",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "CMU",
+        "schedule": 2,
+        "external_id": 1063,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 274,
+    "fields": {
+        "created": "2016-06-15T11:16:26.604Z",
+        "updated": "2016-06-15T11:16:26.604Z",
+        "user": 303,
+        "name": "Suresh Venkatasubramanian",
+        "slug": "suresh-venkatasubramanian",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "University of Utah",
+        "schedule": 2,
+        "external_id": 1064,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 275,
+    "fields": {
+        "created": "2016-06-15T11:16:26.702Z",
+        "updated": "2016-06-15T11:16:26.702Z",
+        "user": 304,
+        "name": "Hanna Wallach",
+        "slug": "hanna-wallach",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Microsoft/UMass",
+        "schedule": 2,
+        "external_id": 1065,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 276,
+    "fields": {
+        "created": "2016-06-15T11:16:26.801Z",
+        "updated": "2016-06-15T11:16:26.801Z",
+        "user": 305,
+        "name": "Clarence Wardell",
+        "slug": "clarence-wardell",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "US Digital Service",
+        "schedule": 2,
+        "external_id": 1066,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 277,
+    "fields": {
+        "created": "2016-06-15T11:16:26.895Z",
+        "updated": "2016-06-15T11:16:26.895Z",
+        "user": 306,
+        "name": "John Wilbanks",
+        "slug": "john-wilbanks",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Sage Bionetworks",
+        "schedule": 2,
+        "external_id": 1070,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 278,
+    "fields": {
+        "created": "2016-06-15T11:16:26.988Z",
+        "updated": "2016-06-15T11:16:26.988Z",
+        "user": 307,
         "name": "Nicole Wong",
         "slug": "nicole-wong",
         "photo": "",
         "twitter_username": "",
-        "organisation": "",
-        "biography": "Nicole Wong is the former U.S. Deputy Chief Technology Officer focusing on internet, privacy and innovation policy.  Prior to joining the Obama Administration, Nicole served as Twitter\u2019s Legal Director for Products and Google\u2019s Vice President and Deputy General Counsel.  She frequently speaks on issues related to law and technology, including five appearances before the U.S. Congress.  Nicole chairs the board of [Friends of Global Voices](http://friendsofglobalvoices.org/), a non-profit organization dedicated to supporting citizen and online media projects globally, and sits on the board of [WITNESS](https://witness.org/about/board-members/), an organization promoting the use of video to advance human rights. She currently serves as an advisor to the the [School of Information at the University of California, Berkeley](http://www.ischool.berkeley.edu/), [Harvard Business School Digital Initiative](https://digital.hbs.edu/), the [Albright Stonebridge Group](http://www.albrightstonebridge.com/), and to several technology companies on privacy, regulatory strategy and international development.",
-        "website": "",
-        "_biography_rendered": "<p>Nicole Wong is the former U.S. Deputy Chief Technology Officer focusing on internet, privacy and innovation policy.  Prior to joining the Obama Administration, Nicole served as Twitter\u2019s Legal Director for Products and Google\u2019s Vice President and Deputy General Counsel.  She frequently speaks on issues related to law and technology, including five appearances before the U.S. Congress.  Nicole chairs the board of <a href=\"http://friendsofglobalvoices.org/\">Friends of Global Voices</a>, a non-profit organization dedicated to supporting citizen and online media projects globally, and sits on the board of <a href=\"https://witness.org/about/board-members/\">WITNESS</a>, an organization promoting the use of video to advance human rights. She currently serves as an advisor to the the <a href=\"http://www.ischool.berkeley.edu/\">School of Information at the University of California, Berkeley</a>, <a href=\"https://digital.hbs.edu/\">Harvard Business School Digital Initiative</a>, the <a href=\"http://www.albrightstonebridge.com/\">Albright Stonebridge Group</a>, and to several technology companies on privacy, regulatory strategy and international development.</p>"
+        "title": "",
+        "organisation": "Former gov't",
+        "schedule": 2,
+        "external_id": 1071,
+        "biography": ""
+    }
+},
+{
+    "model": "conference.attendee",
+    "pk": 279,
+    "fields": {
+        "created": "2016-06-15T11:16:27.085Z",
+        "updated": "2016-06-15T11:16:27.085Z",
+        "user": 308,
+        "name": "Michael Zimmer",
+        "slug": "michael-zimmer",
+        "photo": "",
+        "twitter_username": "",
+        "title": "",
+        "organisation": "Wisconsin-Milwaukee",
+        "schedule": 2,
+        "external_id": 1072,
+        "biography": ""
     }
 },
 {
@@ -185,15 +1416,15 @@
     "pk": 11,
     "fields": {
         "created": "2016-06-14T07:59:29.936Z",
-        "updated": "2016-06-14T07:59:29.936Z",
+        "updated": "2016-06-21T13:12:28.775Z",
         "name": "Welcome Remarks",
-        "short_description": "Kate Crawford and Meredith Whittaker, AINow Co-Chairs",
+        "short_description": "Kate Crawford and [Meredith Whittaker](/schedule/workshop/speaker/meredith-whittaker), AINow Co-Chairs",
         "start": "09:00:00",
         "end": "09:15:00",
         "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": "<p>Kate Crawford and Meredith Whittaker, AINow Co-Chairs</p>"
+        "_short_description_rendered": "<p>Kate Crawford and <a href=\"/schedule/workshop/speaker/meredith-whittaker\">Meredith Whittaker</a>, AINow Co-Chairs</p>"
     }
 },
 {
@@ -217,15 +1448,15 @@
     "pk": 13,
     "fields": {
         "created": "2016-06-14T07:59:29.937Z",
-        "updated": "2016-06-14T07:59:29.937Z",
+        "updated": "2016-06-21T13:13:19.824Z",
         "name": "Opening Address",
-        "short_description": "Jason Furman, Chairman of the Council of Economic Advisers",
+        "short_description": "[Jason Furman](/schedule/workshop/speaker/jason-furman), Chairman of the Council of Economic Advisers",
         "start": "09:30:00",
         "end": "10:00:00",
         "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": "<p>Jason Furman, Chairman of the Council of Economic Advisers</p>"
+        "_short_description_rendered": "<p><a href=\"/schedule/workshop/speaker/jason-furman\">Jason Furman</a>, Chairman of the Council of Economic Advisers</p>"
     }
 },
 {
@@ -345,15 +1576,15 @@
     "pk": 21,
     "fields": {
         "created": "2016-06-14T07:59:29.942Z",
-        "updated": "2016-06-14T08:03:55.111Z",
+        "updated": "2016-06-21T13:14:05.108Z",
         "name": "Final Summary",
-        "short_description": "",
+        "short_description": "Kate Crawford and [Meredith Whittaker](/schedule/workshop/speaker/meredith-whittaker), AINow Co-Chairs",
         "start": "16:15:00",
         "end": "16:30:00",
-        "kind": "TALK",
+        "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": ""
+        "_short_description_rendered": "<p>Kate Crawford and <a href=\"/schedule/workshop/speaker/meredith-whittaker\">Meredith Whittaker</a>, AINow Co-Chairs</p>"
     }
 },
 {
@@ -470,6 +1701,56 @@
 },
 {
     "model": "conference.presentation",
+    "pk": 3,
+    "fields": {
+        "created": "2016-06-14T08:08:38.176Z",
+        "updated": "2016-06-21T11:11:55.448Z",
+        "title": "Welcome Remarks",
+        "slug": "welcome-kate-meredith",
+        "primary_speaker": 42,
+        "long_description": "Welcome remarks by Kate Crawford and Meredith Whittaker.",
+        "short_description": "Welcome remarks by Kate Crawford and Meredith Whittaker.",
+        "slot": 11,
+        "_long_description_rendered": "<p>Welcome remarks by Kate Crawford and Meredith Whittaker.</p>",
+        "additional_speakers": [
+            43
+        ]
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 4,
+    "fields": {
+        "created": "2016-06-14T08:09:29.536Z",
+        "updated": "2016-06-14T08:09:29.536Z",
+        "title": "Introductions",
+        "slug": "introductions-ed-felten",
+        "primary_speaker": 44,
+        "long_description": "Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.",
+        "short_description": "Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.",
+        "slot": 12,
+        "_long_description_rendered": "<p>Introductions by Ed Felten, Chief Technologist, Federal Trade Commission.</p>",
+        "additional_speakers": []
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 5,
+    "fields": {
+        "created": "2016-06-14T08:10:07.843Z",
+        "updated": "2016-06-14T08:10:07.843Z",
+        "title": "Opening Address",
+        "slug": "opening-address",
+        "primary_speaker": 45,
+        "long_description": "Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.",
+        "short_description": "Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.",
+        "slot": 13,
+        "_long_description_rendered": "<p>Opening Address by Jason Furman, Chairman of the Council of Economic Advisors.</p>",
+        "additional_speakers": []
+    }
+},
+{
+    "model": "conference.presentation",
     "pk": 6,
     "fields": {
         "created": "2016-06-14T08:13:31.868Z",
@@ -483,6 +1764,27 @@
         "_long_description_rendered": "<p>Final summary by Kate Crawford and Meredith Whittaker.</p>",
         "additional_speakers": [
             43
+        ]
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 8,
+    "fields": {
+        "created": "2016-06-21T11:25:00.398Z",
+        "updated": "2016-06-21T11:28:17.319Z",
+        "title": "Placeholder for Experts Q&A in the Conference",
+        "slug": "placeholder-qanda-conference",
+        "primary_speaker": 43,
+        "long_description": "A placeholder so that we can associate all the experts with the Conference Schedule, without having to give them individual presentation records.",
+        "short_description": "A placeholder so that we can associate all the experts with the Conference Schedule.",
+        "slot": 27,
+        "_long_description_rendered": "<p>A placeholder so that we can associate all the experts with the Conference Schedule, without having to give them individual presentation records.</p>",
+        "additional_speakers": [
+            46,
+            42,
+            47,
+            49
         ]
     }
 }

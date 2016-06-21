@@ -36,6 +36,7 @@ class Person(TimestampedModel):
         help_text="Photos must be at least 500px by 500px."
         )
     twitter_username = models.CharField(max_length=15, blank=True)
+    title = models.CharField(max_length=1024, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
 
     class Meta:
@@ -62,7 +63,6 @@ class Speaker(Person):
 class Attendee(Person):
     schedule = models.ForeignKey('Schedule', blank=True, null=True)
     external_id = models.IntegerField(blank=True, null=True)
-    title = models.CharField(max_length=1024, blank=True)
     biography = models.TextField(
         max_length=1500,
         blank=True,

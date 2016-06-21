@@ -9,6 +9,7 @@ from django.template.loader import render_to_string
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.contrib.auth.decorators import login_required
 from django.forms import modelform_factory
+from django.db.models import Q
 
 import sorl
 
@@ -88,9 +89,27 @@ class SpeakerListView(ScheduleMixin, ListView):
 
     def get_queryset(self):
         """
-        Speakers are linked to a schedule by their presentation's slot.
+        Speakers are linked to a schedule by their presentation(s) slot(s).
         """
-        return Speaker.objects.filter(presentations__slot__schedule=self.schedule)
+
+        return Speaker.objects.filter(
+            Q(presentations__slot__schedule=self.schedule) |
+            Q(additional_presentations__slot__schedule=self.schedule)
+        ).distinct()
+
+
+class SpeakerView(ScheduleMixin, DetailView):
+    model = Speaker
+    context_object_name = 'speaker'
+
+    def get_queryset(self):
+        """
+        Speakers are linked to a schedule by their presentation(s) slot(s).
+        """
+        return Speaker.objects.filter(
+            Q(presentations__slot__schedule=self.schedule) |
+            Q(additional_presentations__slot__schedule=self.schedule)
+        ).distinct()
 
 
 class PresentationView(ScheduleMixin, DetailView):

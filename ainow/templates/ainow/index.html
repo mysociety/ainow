@@ -45,45 +45,61 @@
          <h3>AI Now Co-Chairs</h3>
          <div class="collection-of-people">
             <div class="collection-of-people__person">
-                <img src="{% static 'img/kate-crawford.jpg' %}" alt="" class="person__photo"/>
+                <img src="{% static 'img/kate-crawford.jpg' %}" alt="Kate Crawford" class="person__photo"/>
                 <p class="person__name">Kate Crawford</p>
                 <p class="person__job-title">Principal Researcher, Microsoft Research; Senior Research Fellow, New York University Information Law Institute</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/meredith-whittaker.jpg' %}" alt="" class="person__photo"/>
-                <p class="person__name">Meredith Whittaker</p>
+                <a href="{% url 'speaker' 'conference' 'meredith-whittaker' %}">
+                  <img src="{% static 'img/meredith-whittaker.jpg' %}" alt="Meredith Whittaker" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'meredith-whittaker' %}">Meredith Whittaker</a>
+                </p>
                 <p class="person__job-title">Founder and Lead, Google Open Research</p>
             </div>
          </div>
          <h3>AI Now Program Committee</h3>
          <div class="collection-of-people">
             <div class="collection-of-people__person">
-                <img src="{% static 'img/eric-horvitz.jpg' %}" alt="" class="person__photo"/>
+                <img src="{% static 'img/eric-horvitz.jpg' %}" alt="Eric Horvitz" class="person__photo"/>
                 <p class="person__name">Eric Horvitz</p>
                 <p class="person__job-title">Technical Fellow &amp; Managing Director, Microsoft Research</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/helen-nissenbaum.jpg' %}" alt="" class="person__photo"/>
-                <p class="person__name">Helen Nissenbaum</p>
-                  <p class="person__job-title">Director, New York University Information Law Institute</p>
+                <a href="{% url 'speaker' 'conference' 'helen-nissenbaum' %}">
+                  <img src="{% static 'img/helen-nissenbaum.jpg' %}" alt="Helen Nissenbaum" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'helen-nissenbaum' %}">Helen Nissenbaum</a>
+                </p>
+                <p class="person__job-title">Director, New York University Information Law Institute</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/latanya-sweeney.jpg' %}" alt="" class="person__photo"/>
+                <img src="{% static 'img/latanya-sweeney.jpg' %}" alt="Latanya Sweeney" class="person__photo"/>
                 <p class="person__name">Latanya Sweeney</p>
                 <p class="person__job-title">Professor of Government and Technology in Residence at Harvard University, former Federal Trade Commission Chief Technology Officer</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/mustafa-suleyman.jpg' %}" alt="" class="person__photo"/>
-                <p class="person__name">Mustafa Suleyman</p>
+                <a href="{% url 'speaker' 'conference' 'mustafa-suleyman' %}">
+                  <img src="{% static 'img/mustafa-suleyman.jpg' %}" alt="Mustafa Suleyman" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'mustafa-suleyman' %}">Mustafa Suleyman</a>
+                </p>
                 <p class="person__job-title">Co-founder and Head of Applied Artificial Intelligence, Google DeepMind</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/nicole-wong.jpg' %}" alt="" class="person__photo"/>
-                <p class="person__name">Nicole Wong</p>
+                <a href="{% url 'speaker' 'conference' 'nicole-wong' %}">
+                  <img src="{% static 'img/nicole-wong.jpg' %}" alt="Nicole Wong" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'nicole-wong' %}">Nicole Wong</a>
+                </p>
                 <p class="person__job-title">Former White House Deputy Chief Technology Officer</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/ryan-calo.jpg' %}" alt="" class="person__photo"/>
+                <img src="{% static 'img/ryan-calo.jpg' %}" alt="Ryan Calo" class="person__photo"/>
                 <p class="person__name">Ryan Calo</p>
                 <p class="person__job-title">Co-founder, University of Washington Tech Policy Lab, Assistant Professor, University of Washington School of Law</p>
             </div>
