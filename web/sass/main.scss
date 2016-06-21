@@ -581,6 +581,10 @@ iframe {
   @include make-md-column($columns: 9);
   @include make-md-column-pull($columns: 3);
 }
+  // Workshop homepage doesn't have any right hand column
+  .workshop-home .homepage-description__content {
+    @include make-md-column-pull($columns: 0);
+  }
 
 .homepage-description__partners {
   @include make-md-column($columns: 3);
