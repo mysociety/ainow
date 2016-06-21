@@ -8,9 +8,10 @@
         "user": null,
         "name": "Kate Crawford",
         "slug": "kate-crawford",
-        "biography": "",
         "photo": "",
         "twitter_username": "",
+        "organisation": "",
+        "biography": "",
         "website": "",
         "_biography_rendered": ""
     }
@@ -24,11 +25,12 @@
         "user": null,
         "name": "Meredith Whittaker",
         "slug": "meredith-whittaker",
-        "biography": "",
         "photo": "",
         "twitter_username": "",
+        "organisation": "Google Open Research",
+        "biography": "Meredith Whittaker is the founder of Google's Open Research group, which is dedicated to solving hard collective problems in collaboration with the academic and public interest communities. Her work focuses on open Internet measurement and research, usable privacy and security, shared \"critical infrastructure\" and how to keep it healthy, and the tricky intersections of ethics and networked systems research. In this capacity she founded Measurement Lab, an open research collaborative that currently hosts the world's largest public domain Internet measurement dataset, and Simply Secure, a nonprofit that brings Design and Human Centered Research to security and privacy engineering. She learned most of what she does by doing it.",
         "website": "",
-        "_biography_rendered": ""
+        "_biography_rendered": "<p>Meredith Whittaker is the founder of Google's Open Research group, which is dedicated to solving hard collective problems in collaboration with the academic and public interest communities. Her work focuses on open Internet measurement and research, usable privacy and security, shared \"critical infrastructure\" and how to keep it healthy, and the tricky intersections of ethics and networked systems research. In this capacity she founded Measurement Lab, an open research collaborative that currently hosts the world's largest public domain Internet measurement dataset, and Simply Secure, a nonprofit that brings Design and Human Centered Research to security and privacy engineering. She learned most of what she does by doing it.</p>"
     }
 },
 {
@@ -40,9 +42,10 @@
         "user": null,
         "name": "Ed Felten",
         "slug": "ed-felten",
-        "biography": "",
         "photo": "",
         "twitter_username": "",
+        "organisation": "",
+        "biography": "",
         "website": "",
         "_biography_rendered": ""
     }
@@ -52,15 +55,67 @@
     "pk": 45,
     "fields": {
         "created": "2016-06-14T08:07:30.477Z",
-        "updated": "2016-06-14T08:07:30.477Z",
+        "updated": "2016-06-21T10:55:02.099Z",
         "user": null,
         "name": "Jason Furman",
         "slug": "jason-furman",
-        "biography": "",
         "photo": "",
         "twitter_username": "",
+        "organisation": "",
+        "biography": "Jason Furman was confirmed by the Senate on August 1, 2013 as the 28th Chairman of the Council of Economic Advisers. In this role, he serves as President Obama\u2019s chief economist and a Member of the Cabinet. Furman has served the President since the beginning of the Administration, previously holding the position of Principal Deputy Director of the National Economic Council and Assistant to the President. Immediately prior to the Administration, Furman was Economic Policy Director for the President\u2019s campaign in 2008 and a member of the Presidential Transition Team.\r\n\r\nFurman held a variety of posts in public policy and research before his work with President Obama. In public policy, Furman worked at both the Council of Economic Advisers and National Economic Council during the Clinton administration and also at the World Bank. In research, Furman was a Senior Fellow at the Brookings Institution and the Center on Budget and Policy Priorities and also has served in visiting positions at various universities, including NYU\u2019s Wagner Graduate School of Public Policy. Furman has conducted research in a wide range of areas, such as fiscal policy, tax policy, health economics, Social Security, and domestic and international macroeconomics. In addition to numerous articles in scholarly journals and periodicals, Furman is the editor of two books on economic policy. Furman holds a Ph.D. in economics from Harvard University.",
         "website": "",
-        "_biography_rendered": ""
+        "_biography_rendered": "<p>Jason Furman was confirmed by the Senate on August 1, 2013 as the 28th Chairman of the Council of Economic Advisers. In this role, he serves as President Obama\u2019s chief economist and a Member of the Cabinet. Furman has served the President since the beginning of the Administration, previously holding the position of Principal Deputy Director of the National Economic Council and Assistant to the President. Immediately prior to the Administration, Furman was Economic Policy Director for the President\u2019s campaign in 2008 and a member of the Presidential Transition Team.</p>\n<p>Furman held a variety of posts in public policy and research before his work with President Obama. In public policy, Furman worked at both the Council of Economic Advisers and National Economic Council during the Clinton administration and also at the World Bank. In research, Furman was a Senior Fellow at the Brookings Institution and the Center on Budget and Policy Priorities and also has served in visiting positions at various universities, including NYU\u2019s Wagner Graduate School of Public Policy. Furman has conducted research in a wide range of areas, such as fiscal policy, tax policy, health economics, Social Security, and domestic and international macroeconomics. In addition to numerous articles in scholarly journals and periodicals, Furman is the editor of two books on economic policy. Furman holds a Ph.D. in economics from Harvard University.</p>"
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 46,
+    "fields": {
+        "created": "2016-06-21T10:35:19.247Z",
+        "updated": "2016-06-21T10:35:19.247Z",
+        "user": null,
+        "name": "Helen Nissembaum",
+        "slug": "helen-nissembaum",
+        "photo": "",
+        "twitter_username": "",
+        "organisation": "New York University",
+        "biography": "Helen Nissenbaum is Professor of [Media, Culture, and Communication](http://steinhardt.nyu.edu/dcc), and [Computer Science](http://cs.nyu.edu/csweb/index.html), at New York University, where she is also Director of the [Information Law Institute](http://www.law.nyu.edu/ili/). Her work spans societal, ethical, and political dimensions of information technology and digital media. Prof. Nissenbaum's nine books include [Obfuscation: A User's Guide for Privacy and Protest](https://mitpress.mit.edu/books/obfuscation), with F. Brunton (MIT Press, 2015), [Values at Play in Digital Games](http://valuesatplay.org/vap-the-book), with M. Flanagan (MIT Press, 2014), and [Privacy in Context: Technology, Policy, and the Integrity of Social Life](http://www.sup.org/book.cgi?id=8862) (Stanford, 2010). The National Science Foundation, Air Force Office of Scientific Research, and the U.S. Department of Health and Human Services Office of the National Coordinator have supported her work on privacy, trust online, and security, as well as studies of values embodied in design. Recipient of the 2014 [Barwise Prize](http://www.apaonline.org/?barwise) of the American Philosophical Association, Prof. Nissenbaum has contributed to privacy-enhancing software, including [TrackMeNot](https://cs.nyu.edu/trackmenot/) and [AdNauseam](http://adnauseam.io/). Nissenbaum holds a Ph.D. in philosophy from Stanford University and a B.A. (Hons) from the [University of the Witwatersrand](http://www.wits.ac.za/).",
+        "website": "",
+        "_biography_rendered": "<p>Helen Nissenbaum is Professor of <a href=\"http://steinhardt.nyu.edu/dcc\">Media, Culture, and Communication</a>, and <a href=\"http://cs.nyu.edu/csweb/index.html\">Computer Science</a>, at New York University, where she is also Director of the <a href=\"http://www.law.nyu.edu/ili/\">Information Law Institute</a>. Her work spans societal, ethical, and political dimensions of information technology and digital media. Prof. Nissenbaum's nine books include <a href=\"https://mitpress.mit.edu/books/obfuscation\">Obfuscation: A User's Guide for Privacy and Protest</a>, with F. Brunton (MIT Press, 2015), <a href=\"http://valuesatplay.org/vap-the-book\">Values at Play in Digital Games</a>, with M. Flanagan (MIT Press, 2014), and <a href=\"http://www.sup.org/book.cgi?id=8862\">Privacy in Context: Technology, Policy, and the Integrity of Social Life</a> (Stanford, 2010). The National Science Foundation, Air Force Office of Scientific Research, and the U.S. Department of Health and Human Services Office of the National Coordinator have supported her work on privacy, trust online, and security, as well as studies of values embodied in design. Recipient of the 2014 <a href=\"http://www.apaonline.org/?barwise\">Barwise Prize</a> of the American Philosophical Association, Prof. Nissenbaum has contributed to privacy-enhancing software, including <a href=\"https://cs.nyu.edu/trackmenot/\">TrackMeNot</a> and <a href=\"http://adnauseam.io/\">AdNauseam</a>. Nissenbaum holds a Ph.D. in philosophy from Stanford University and a B.A. (Hons) from the <a href=\"http://www.wits.ac.za/\">University of the Witwatersrand</a>.</p>"
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 47,
+    "fields": {
+        "created": "2016-06-21T10:36:21.542Z",
+        "updated": "2016-06-21T10:36:21.542Z",
+        "user": null,
+        "name": "Mustafa Suleyman",
+        "slug": "mustafa-suleyman",
+        "photo": "",
+        "twitter_username": "",
+        "organisation": "DeepMind",
+        "biography": "Mustafa Suleyman is co-founder and Head of Applied AI at DeepMind, where he is responsible for integrating the company\u2019s technology across a wide range of Google products. In February 2016 he launched DeepMind Health, which builds clinician-led technology in the NHS. Mustafa was Chief Product Officer at DeepMind Technologies, before the company was bought in 2014 by Google. At 19, Mustafa dropped out of Oxford University to help set up a telephone counselling service, building it to become one of the largest mental health support services of its kind in the UK, and then worked as policy officer for then Mayor of London, Ken Livingstone. He went on to help start Reos Partners, a consultancy with eight offices across four continents specializing in designing and facilitating large-scale multi-stakeholder \u2018Change Labs\u2019 aimed at navigating complex problems. As a skilled negotiator and facilitator Mustafa has worked all over the world for a wide range of clients such as the UN, the Dutch Government and WWF.",
+        "website": "",
+        "_biography_rendered": "<p>Mustafa Suleyman is co-founder and Head of Applied AI at DeepMind, where he is responsible for integrating the company\u2019s technology across a wide range of Google products. In February 2016 he launched DeepMind Health, which builds clinician-led technology in the NHS. Mustafa was Chief Product Officer at DeepMind Technologies, before the company was bought in 2014 by Google. At 19, Mustafa dropped out of Oxford University to help set up a telephone counselling service, building it to become one of the largest mental health support services of its kind in the UK, and then worked as policy officer for then Mayor of London, Ken Livingstone. He went on to help start Reos Partners, a consultancy with eight offices across four continents specializing in designing and facilitating large-scale multi-stakeholder \u2018Change Labs\u2019 aimed at navigating complex problems. As a skilled negotiator and facilitator Mustafa has worked all over the world for a wide range of clients such as the UN, the Dutch Government and WWF.</p>"
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 49,
+    "fields": {
+        "created": "2016-06-21T10:39:51.809Z",
+        "updated": "2016-06-21T10:39:51.809Z",
+        "user": null,
+        "name": "Nicole Wong",
+        "slug": "nicole-wong",
+        "photo": "",
+        "twitter_username": "",
+        "organisation": "",
+        "biography": "Nicole Wong is the former U.S. Deputy Chief Technology Officer focusing on internet, privacy and innovation policy.  Prior to joining the Obama Administration, Nicole served as Twitter\u2019s Legal Director for Products and Google\u2019s Vice President and Deputy General Counsel.  She frequently speaks on issues related to law and technology, including five appearances before the U.S. Congress.  Nicole chairs the board of [Friends of Global Voices](http://friendsofglobalvoices.org/), a non-profit organization dedicated to supporting citizen and online media projects globally, and sits on the board of [WITNESS](https://witness.org/about/board-members/), an organization promoting the use of video to advance human rights. She currently serves as an advisor to the the [School of Information at the University of California, Berkeley](http://www.ischool.berkeley.edu/), [Harvard Business School Digital Initiative](https://digital.hbs.edu/), the [Albright Stonebridge Group](http://www.albrightstonebridge.com/), and to several technology companies on privacy, regulatory strategy and international development.",
+        "website": "",
+        "_biography_rendered": "<p>Nicole Wong is the former U.S. Deputy Chief Technology Officer focusing on internet, privacy and innovation policy.  Prior to joining the Obama Administration, Nicole served as Twitter\u2019s Legal Director for Products and Google\u2019s Vice President and Deputy General Counsel.  She frequently speaks on issues related to law and technology, including five appearances before the U.S. Congress.  Nicole chairs the board of <a href=\"http://friendsofglobalvoices.org/\">Friends of Global Voices</a>, a non-profit organization dedicated to supporting citizen and online media projects globally, and sits on the board of <a href=\"https://witness.org/about/board-members/\">WITNESS</a>, an organization promoting the use of video to advance human rights. She currently serves as an advisor to the the <a href=\"http://www.ischool.berkeley.edu/\">School of Information at the University of California, Berkeley</a>, <a href=\"https://digital.hbs.edu/\">Harvard Business School Digital Initiative</a>, the <a href=\"http://www.albrightstonebridge.com/\">Albright Stonebridge Group</a>, and to several technology companies on privacy, regulatory strategy and international development.</p>"
     }
 },
 {
