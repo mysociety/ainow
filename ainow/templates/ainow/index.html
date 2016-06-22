@@ -1,0 +1,117 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="homepage-hero">
+      <div class="container">
+        <p class="homepage-hero__details">July 7th, Skirball Center for the Performing Arts, New York City</p>
+        <h2 class="homepage-hero__title">
+          <img src="{% static 'img/ainow-hero-logo.png' %}"
+               srcset="{% static 'img/ainow-hero-logo.svg' %} 1x"
+               alt="Artificial Intelligence Now"
+               height="35" width="115">
+        </h2>
+        <p class="homepage-hero__subtitle">The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term</p>
+        <a href="http://nyuskirball.org/calendar/ainow" class="btn btn-primary btn-lg btn--tickets">Book your ticket <i class="glyphicon glyphicon-new-window"></i><span class="button--tickets__sub">Sold Out - Check back soon for more info</span></a></p>
+      </div>
+    </div>
+    <div class="homepage-description">
+        <div class="container">
+          <div class="row">
+            <div class="homepage-description__partners">
+              <div class="homepage-description__partners__column homepage-description__partners__column--one">
+                <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
+              </div><div class="homepage-description__partners__column homepage-description__partners__column--two">
+                <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili.png' %}" alt="New York University, Information Law Institute" class="partner-logo partner-logo--nyu"/></a>
+              </div>
+            </div>
+            <div class="homepage-description__content">
+              <div class="two-columns-of-text">
+                {{ intro_block }}
+              </div>
+              <div class="callout-box">
+                {{ tickets_block }}
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    <div class="homepage-people">
+      <div class="container">
+         <h2>People</h2>
+         <h3>AI Now Co-Chairs</h3>
+         <div class="collection-of-people">
+            <div class="collection-of-people__person">
+                <a href="{% url 'speaker' 'conference' 'kate-crawford' %}">
+                  <img src="{% static 'img/kate-crawford.jpg' %}" alt="Kate Crawford" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'kate-crawford' %}">Kate Crawford</a>
+                </p>
+                <p class="person__job-title">Principal Researcher, Microsoft Research; Senior Research Fellow, New York University Information Law Institute</p>
+            </div>
+            <div class="collection-of-people__person">
+                <a href="{% url 'speaker' 'conference' 'meredith-whittaker' %}">
+                  <img src="{% static 'img/meredith-whittaker.jpg' %}" alt="Meredith Whittaker" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'meredith-whittaker' %}">Meredith Whittaker</a>
+                </p>
+                <p class="person__job-title">Founder and Lead, Google Open Research</p>
+            </div>
+         </div>
+         <h3>AI Now Program Committee</h3>
+         <div class="collection-of-people">
+            <div class="collection-of-people__person">
+                <img src="{% static 'img/eric-horvitz.jpg' %}" alt="Eric Horvitz" class="person__photo"/>
+                <p class="person__name">Eric Horvitz</p>
+                <p class="person__job-title">Technical Fellow &amp; Managing Director, Microsoft Research</p>
+            </div>
+            <div class="collection-of-people__person">
+                <a href="{% url 'speaker' 'conference' 'helen-nissenbaum' %}">
+                  <img src="{% static 'img/helen-nissenbaum.jpg' %}" alt="Helen Nissenbaum" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'helen-nissenbaum' %}">Helen Nissenbaum</a>
+                </p>
+                <p class="person__job-title">Director, New York University Information Law Institute</p>
+            </div>
+            <div class="collection-of-people__person">
+                <img src="{% static 'img/latanya-sweeney.jpg' %}" alt="Latanya Sweeney" class="person__photo"/>
+                <p class="person__name">Latanya Sweeney</p>
+                <p class="person__job-title">Professor of Government and Technology in Residence at Harvard University, former Federal Trade Commission Chief Technology Officer</p>
+            </div>
+            <div class="collection-of-people__person">
+                <a href="{% url 'speaker' 'conference' 'mustafa-suleyman' %}">
+                  <img src="{% static 'img/mustafa-suleyman.jpg' %}" alt="Mustafa Suleyman" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'mustafa-suleyman' %}">Mustafa Suleyman</a>
+                </p>
+                <p class="person__job-title">Co-founder and Head of Applied Artificial Intelligence, Google DeepMind</p>
+            </div>
+            <div class="collection-of-people__person">
+                <a href="{% url 'speaker' 'conference' 'nicole-wong' %}">
+                  <img src="{% static 'img/nicole-wong.jpg' %}" alt="Nicole Wong" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'nicole-wong' %}">Nicole Wong</a>
+                </p>
+                <p class="person__job-title">Former White House Deputy Chief Technology Officer</p>
+            </div>
+            <div class="collection-of-people__person">
+                <a href="{% url 'speaker' 'conference' 'ryan-calo' %}">
+                  <img src="{% static 'img/ryan-calo.jpg' %}" alt="Ryan Calo" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'ryan-calo' %}">Ryan Calo</a>
+                </p>
+                <p class="person__job-title">Co-founder, University of Washington Tech Policy Lab, Assistant Professor, University of Washington School of Law</p>
+            </div>
+         </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,944 @@
+@charset "utf-8";
+
+@import 'bootstrap-settings';
+@import 'bootstrap';
+
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: $body-bg;
+  font-family: $body_typeface;
+}
+
+.site-bg {
+  // gives the site its white background and means the footer's color extends to
+  // the end of the window
+  background-color: $color_white;
+  padding-bottom: 4em;
+}
+
+.photo-bg {
+  .site-bg {
+    background-image: url('../img/hero-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading_typeface;
+  font-weight: $heading_typeface_bold;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2.5em;
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.375em;
+  }
+}
+
+h2 {
+  font-size: 1.875em;
+  @media (min-width: $screen-sm-min) {
+    font-size: 2.625em;
+  }
+}
+
+
+label {
+  font-weight: normal;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.btn-default {
+  font-weight: normal;
+}
+
+.general-content__page {
+  h1 {
+    margin: 1em 0 0.5em;
+  }
+}
+
+.object-container {
+  //use for iframes/objects and other embeds
+  position: relative;
+  padding-bottom: 76.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.content-block {
+  margin-bottom: 3em;
+}
+
+/*
+ * Layouts
+ */
+
+.standard-layout {
+  // Large primary column with a smaller secondary column
+  // Column order is secondary|primary
+}
+
+.standard-layout__primary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 9, $gutter: 54px);
+}
+
+.standard-layout__secondary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 3);
+}
+
+.standard-layout--flipped {
+  // When the column order is reversed to primary|secondary
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 9);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 3, $gutter: 54px);
+  }
+}
+
+.standard-layout--narrow {
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 10);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 2);
+  }
+}
+
+.content-grid {
+  //a way to split long lists of content into a grid structure that works nicely with all screen sizes
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  @media (min-width: $screen-lg-min) {
+    justify-content: space-between;
+  }
+}
+
+.content-grid__item {
+  width: 100%;
+  @media (min-width: $screen-sm-min) {
+    width: 18em;
+    margin-right: 2em;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 14em;
+    margin-right: 2em;
+  }
+}
+
+.site-header {
+  // built with Bootstrap's navbar component
+  border: 0;
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 0;
+  .navbar-nav > .open > a,
+  .navbar-nav > .open > a:hover,
+  .navbar-nav > .open > a:focus {
+    background-color: $gray-darker;
+    color: $color_white;
+  }
+  .navbar-brand {
+    margin-top: -3px;
+  }
+  &.site-header--inverted {
+    background-color: $brand-primary;
+    .navbar-nav > li > a {
+      color: $color_white;
+      &:hover,
+      &:active,
+      &:focus {
+        color: mix($color_white, $brand-primary, 70);
+      }
+    }
+    .navbar-toggle {
+      border-color: transparentize($color_white, 0.7);
+      &:hover,
+      &:focus {
+        background-color: mix($color_black, $brand-primary, 15);
+      }
+      .icon-bar {
+        background-color: mix($color_white, $brand-primary, 30);
+      }
+    }
+  }
+}
+
+.site-footer {
+  background-color: $body-bg;
+  padding-top: 3em;
+}
+
+.workshop-navbar {
+  border: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  min-height: 72px;
+  .navbar-collapse {
+    border-bottom: 3px solid $gray-lighter;
+  }
+  .navbar-brand {
+    @media (min-width: $screen-md-min) {
+      font-size: 2.133333333em;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $brand-primary;
+    }
+  }
+  .navbar-nav {
+    padding: 1em 0 0.5em;
+  }
+  .navbar-header {
+    @media (min-width: $screen-md-min) {
+      position: relative;
+      top: 0.8em;
+    }
+
+  }
+}
+
+.workshop-home {
+  .navbar-collapse {
+    border-bottom: 0;
+  }
+}
+
+.site-footer__utility-links {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+}
+
+.utility-links__list {
+  @extend .list-inline;
+}
+
+.site-footer__partner-logos {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  @media (min-width: $screen-sm-min) {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  @media (min-width: $screen-md-min) {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  .partner-logo {
+    margin-bottom: 1em;
+  }
+
+}
+
+.site-footer__partner-logos__logoset {
+
+  @include make-xs-column($columns: 6);
+
+  text-align: center;
+  @media (min-width: $screen-sm-min) {
+    width: 8em;
+    margin-left: 1em;
+    text-align: right;
+  }
+  img {
+    max-height: 4.5em;
+    max-width: 100%;
+  }
+}
+
+.site-footer__partner-logos__logoset--b {
+  @media (min-width: $screen-sm-min) {
+    width: 10em;
+  }
+}
+
+
+.page-header {
+  @include make-xs-column($columns: 12);
+  border-bottom: 0;
+  margin-top: 1em;
+  h1 {
+    border-bottom: 3px solid $gray-lighter;
+    padding-bottom: 0.5em;
+  }
+}
+
+.section-nav {
+  border: 1px solid $gray-lighter;
+  border-bottom: 0;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+  border-radius: $border-radius-base;
+  margin-bottom: 2em;
+  li {
+    margin: 0 !important; //argh bootstrap and its bad specificity
+  }
+  a {
+    display: block;
+    border-bottom: 1px solid $gray-lighter;
+    color: $gray-dark;
+  }
+}
+
+.page-header__parent {
+    color: $gray-light;
+}
+
+.form {
+  // Standard layout for forms
+  textarea {
+    border: 1px solid $gray-light;
+    width: 100%;
+    border-radius: $border-radius-base;
+    padding: 0.66667em;
+    color: $gray;
+  }
+}
+
+.errorlist {
+  @extend  .list-unstyled;
+  margin-top: 0.4em;
+  color: $brand-danger;
+}
+
+.form--account-form {
+  // a form that sits within the account management screens
+}
+
+.form--simple-form {
+  // a layout for a single form centred on the screen. Log in/sign up uses this
+}
+
+.form--simple-form__form {
+
+  @include make-xs-column($columns: 10);
+  @include make-xs-column-push($columns: 1);
+  @include make-sm-column($columns: 6);
+  @include make-sm-column-push($columns: 3);
+  @include make-md-column($columns: 4, $gutter: 54px);
+  @include make-md-column-push($columns: 4);
+
+  background: $color_white;
+  margin-top: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  border: 1px solid $gray-lighter;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
+
+}
+
+.form--simple-form__form__heading {
+  text-align: center;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+
+.account-form__field {
+  input {
+    @extend .form-control;
+  }
+}
+
+.account-form__field--submit {
+  margin-top: 2em;
+}
+
+.account-form__field__not-a-btn {
+  color: $gray-dark;
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 0.875em;
+  text-decoration: underline;
+}
+
+.account-form__input--error {
+  input {
+    background-color: mix($brand-danger, $color_white, 10);
+    border-color: $brand-danger;
+  }
+}
+
+.account-form__photo {
+  margin: 1em 0 3em;
+}
+
+.account-form__photo__thumbnail {
+  border-radius: 100%;
+  max-width: 100%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+}
+
+.account-form__photo-display-column {
+  @include make-xs-column($columns: 3);
+  @include make-sm-column($columns: 2);
+}
+
+.account-form__photo-controls-column {
+  @include make-xs-column($columns: 9);
+  @include make-sm-column($columns: 10);
+  position: relative;
+  .account-form__field__not-a-btn {
+      margin-left: 0;
+  }
+  .btn {
+    display: inline-block;
+    margin: 1em 1em 1em 0;
+  }
+}
+
+.change-photo-collapse {
+  // obscure the 'add photo' button with positioning
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+// Photo buttons are hidden when we have no JS because they don't work without
+// it
+.no-js .account-form__photo__delete-button,
+.no-js .account-form__photo__change-button,
+.no-js .account-form__photo__cancel-button {
+  @extend .hidden;
+}
+
+// Change photo form should only be collapsed when we have JS, because it's
+// inaccessible without it.
+.js .change-photo-collapse {
+  @extend .collapse;
+}
+
+
+/*
+ * Homepage
+ */
+
+.homepage-hero {
+  background-color: $brand-primary;
+  background-image: url('../img/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em 0;
+  color: $color_white;
+  @media (min-width: $screen-sm-min) {
+    padding: 4.5em 0;
+  }
+}
+
+.homepage-hero--workshop {
+  background-image: url('../img/hero-background2.jpg');
+}
+
+.homepage-hero__details {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px solid $color_white;
+  padding-bottom: 0.5em;
+  @media (min-width:$screen-sm-min) {
+    max-width: 35em;
+  }
+}
+
+.homepage-hero__pretitle {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  @media (min-width:$screen-sm-min) {
+    display: inline-block;
+    padding: 0 0.75em;
+    border: 1px solid $color_orange;
+    position: relative;
+    left: -4px;
+    top: 1px;
+    width: auto;
+  }
+}
+
+.homepage-hero__title {
+  font-size: 1em;
+  margin-top: 2em;
+  display: inline-block;
+
+  img {
+    display: inline-block;
+    background-color: $color_orange;
+    padding: 5px;
+    height: 45px;
+  }
+  @media (min-width:$screen-sm-min) {
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+  }
+}
+
+.homepage-hero__subtitle {
+  font-size:  1.777777778em;
+  line-height: 1.333em;
+  font-weight: bold;
+  text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+  @media (min-width:$screen-sm-min) {
+    font-size: 2.333333333em;
+    max-width: 18em;
+  }
+  @media (min-width:$screen-md-min) {
+    font-size: 2.666666667em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.homepage-hero__tickets {
+  margin-top: 2em;
+}
+
+.btn--tickets {
+  font-size: 1.235294118em;
+  width: 100%;
+  padding: 0.75em 1em;
+  padding-right: 1.5em;
+  float: left;
+  text-align: left;
+  border: 0;
+  border-radius: 3px;
+  @media (min-width:$screen-sm-min) {
+    width: auto;
+  }
+  span {
+    display: block;
+    font-weight: normal;
+    font-size: 0.8125em;
+    line-height: 1.428em;
+  }
+  .glyphicon {
+    font-size: 0.75em;
+    margin-left: 0.45em;
+    opacity: 0.75;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.homepage-description {
+  background-color: $color_white;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  @include clearfix;
+  font-size: 1.0625em;
+}
+
+.two-columns-of-text {
+  @media (min-width:$screen-sm-min) {
+    @include content-columns(2);
+  }
+}
+
+.homepage-description__content {
+  @include make-md-column($columns: 9);
+  @include make-md-column-pull($columns: 3);
+}
+  // Workshop homepage doesn't have any right hand column
+  .workshop-home .homepage-description__content {
+    @include make-md-column-pull($columns: 0);
+  }
+
+.homepage-description__partners {
+  @include make-md-column($columns: 3);
+  @include make-md-column-push($columns: 9);
+
+  margin-bottom: 2em;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+
+  align-items: center;
+
+  @media (min-width:$screen-md-min) {
+    margin-bottom: 1em;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.homepage-description__partners__column {
+  display: inline-block;
+  @media (min-width:$screen-md-min) {
+    text-align: center;
+  }
+}
+
+.homepage-description__partners__column--one {
+  width: 30%;
+  margin-right: 3%;
+  @media (min-width:$screen-md-min) {
+    margin-bottom: 1em;
+    margin-top: -1em;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+.homepage-description__partners__column--two {
+  width: 67%;
+  @media (min-width:$screen-md-min) {
+    width: 100%;
+  }
+}
+
+.callout-box {
+  background-color: $gray-lighter;
+  padding: 2em;
+  margin-top: 1em;
+  float: left;
+  a {
+    font-weight: $body_typeface_bold;
+  }
+  @media (min-width:$screen-md-min) {
+    font-size: 1.166666667em;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.homepage-people {
+  padding-top: 3em;
+  border-top: 1px solid $gray-lighter;
+  background-color: $color_white;
+  h3 {
+    font-size: 1.277777778em;
+  }
+}
+
+.collection-of-people {
+  margin: 1.5em -1em 0 -1em;
+  @media (min-width:$screen-sm-min) {
+    margin-bottom: 2em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.collection-of-people__person {
+  @include clearfix;
+  margin-bottom: 1.5em;
+  padding: 0 1em;
+  @media (min-width:$screen-sm-min) {
+    width: 11.5em;
+  }
+}
+
+.person__photo {
+  width: 20%;
+  float: left;
+  padding-right: 1em;
+  @media (min-width:$screen-sm-min) {
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.person__name {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 20%;
+  margin-top: 0.4em;
+  @media (min-width:$screen-sm-min) {
+    margin-left: 0;
+    font-size: 1.25em;
+    margin-bottom: 0.25em;
+  }
+}
+
+ .person__job-title {
+   font-size: 0.875em;
+   line-height: 1.428em;
+   margin: 0 0 0 $grid-gutter-width;
+   color: $gray;
+   @media (min-width:$screen-sm-min) {
+     margin-left: 0;
+   }
+ }
+
+ /*
+  * Schedule
+  */
+.schedule__introduction {
+  font-size: 1.25em;
+  margin-bottom: 1.5em;
+}
+.schedule__list {
+  @extend .list-unstyled;
+  border-top: 2px dotted $gray-light;
+}
+
+.schedule-entry {
+  border-bottom: 2px dotted $gray-light;
+  padding: 1.5em 1em 1em;
+  &:nth-child(even) {
+    background-color: lighten($gray-lighter, 5%);
+  }
+}
+
+.schedule-entry__time {
+  display: block;
+  background-color: $gray-lighter;
+
+  padding: 0.66667em 0.5em 0.5em;
+  font-size: 1.0625em; //~17px
+  margin: 1.5em 0;
+}
+
+.schedule-entry__speaker,
+.schedule-entry__description {
+  color: $gray;
+  margin: 0 0 0.35em;
+}
+
+.schedule-entry__title {
+  font-size: 1.0625em; //~17px
+  margin: 0 0 0.35em;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.schedule-entry__description--short {
+  font-size: 0.9375em; //~15px
+  margin: 0 0 1em;
+}
+
+.schedule-entry__location {
+  font-size: 0.9375em; //~15px
+  color: $gray;
+  margin-top: 0.66667em;
+  margin-bottom: 1em;
+}
+
+/*
+ * Presentation detail
+ */
+.presentation-detail__meta{
+   margin: 2em 0 0;
+   font-size: 1.0625em; //~17px
+   color: $gray;
+
+}
+
+.presentation-detail__time {
+   margin-right: 1em;
+   display: inline-block;
+}
+
+.presentation-detail__location {
+   display: inline-block;
+}
+
+.presentation-detail__title {
+  margin-top: 0.25em;
+}
+
+
+.presentation-detail__speaker {
+   font-size: 1.25em; //~17px
+   color: $gray;
+   margin: 0 0 0.35em;
+   a {
+     text-decoration: none;
+     .presentation-detail__speaker-name {
+        text-decoration: underline;
+     }
+   }
+}
+
+.presentation-detail__speaker-thumb {
+  display: inline-block;
+}
+
+.presentation-detail__description {
+}
+
+
+
+/*
+ * List of attendees
+ */
+.attendee-list {
+  @extend .list-unstyled;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.attendee-list__attendee {
+  // Layout from Bootstrap's media object
+  @extend .media;
+  margin-bottom: 2em;
+  margin-top: 0;
+  width: 15em;
+  margin-right: $grid-gutter-width;
+}
+
+.attendee__secondary-column {
+  @extend .media-left;
+  padding-right: 1em;
+}
+
+.attendee__primary-column {
+  @extend .media-body;
+}
+
+.attendee__thumbnail {
+  @extend .media-object;
+  width: 5em;
+  height: 5em;
+}
+
+.attendee__name {
+  @extend .media-heading;
+  font-size: 1.3125em;
+}
+
+.attendee__org,
+.attendee__job-title {
+  margin: 0 0 0.3em 0;
+}
+
+.attendee__job-title {
+  font-size: 0.9375em;
+}
+
+.attendee__org {
+  color: $gray-dark;
+  font-size: 0.8125em;
+}
+
+.attendee__twitter {
+  font-size: 0.8125em;
+}
+
+/*
+ * Individual attendee page
+ */
+
+
+.attendee-detail {
+  h1 {
+    margin-bottom: 0.1em;
+  }
+}
+
+.attendee-detail__thumbnail {
+  max-width: 100%;
+  margin-top: 3.375em;
+  height: auto;
+}
+
+
+.attendee-detail__job-title {
+  font-size: 1.3125em;
+}
+
+.attendee-detail__org {
+  color: $gray-dark;
+}
+
+.attendee-detail__twitter {
+  font-size: 1em;
+}
+
+.attendee-detail__bio {
+  max-width: 36em;
+}
+
+/*
+ * FAQs
+ */
+
+.faq__question {
+  > h2 {
+    font-size: 1.4375em;
+  }
+}
+
+/*
+ * Location
+ */
+
+.accomodation-item,
+.coffee-item,
+.food-item {
+  h3 {
+    font-size: 1.25em;
+  }
+  p {
+    margin-bottom: 0.35em;
+  }
+}
+
+/*
+ * Alerts/Messages shown after account actions
+ */
+
+.alerts {
+  margin-top: 2em;
+}

@@ -1,0 +1,18 @@
+{% extends "account/simple-form.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Confirm Email" %}{% endblock %}
+
+{% block account_content %}
+<div class="account-form form--simple-form__form">
+  <h2 class="form--simple-form__form__heading">{% trans "Confirm Email" %}</h2>
+  <form method="post" action="{% url "account_confirm_email" key=confirmation.key %}">
+    {% csrf_token %}
+    <p>{% blocktrans with email=confirmation.email_address.email %}Confirm email address <b>{{ email }}</b>?{% endblocktrans %}</p>
+    <div class="account-form__field form-group">
+      <button type="submit" class="btn btn-primary btn-block btn-lg">{% trans "Confirm" %}</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

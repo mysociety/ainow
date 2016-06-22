@@ -1,0 +1,18 @@
+{% extends "account/account-form.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Change email" %}{% endblock %}
+{% block page_title %}{% trans "Change email" %}{% endblock %}
+{% block account_content %}
+
+<div class="account-form">
+  <form method="POST" action="{% url "account_settings" %}">
+    {% csrf_token %}
+    {% include 'account/_form_fields.html' %}
+    <div class="account-form__field account-form__field--submit form-group">
+      <button class="btn btn-primary" type="submit">{% trans "Save" %}</button> <a href="#" onclick="history.back(-1)" class="account-form__field__not-a-btn">{% trans "Cancel" %}</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

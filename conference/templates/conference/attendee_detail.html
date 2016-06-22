@@ -1,0 +1,51 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}{{ attendee.name }}{% endblock %}
+
+{% block bodyclasses %}attendee-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container standard-layout standard-layout--narrow attendee-detail">
+    <div class="general-content__page">
+
+      <div class="row">
+        <div class="standard-layout__secondary-column">
+
+        {% thumbnail attendee.photo "200x200" crop="center" as im %}
+          <img class="attendee-detail__thumbnail" src="{{ im.url }}">
+        {% empty %}
+          <img class="attendee-detail__thumbnail" src="{% static 'img/no-photo.png' %}" height="200" width="200">
+        {% endthumbnail %}
+
+        </div>
+        <div class="standard-layout__primary-column">
+
+          <h1>{{ attendee.name }}</h1>
+
+          {% if attendee.title %}
+            <p class="attendee-detail__job-title">{{ attendee.title }}</p>
+          {% endif %}
+          {% if attendee.organisation %}
+            <p class="attendee-detail__org">{{ attendee.organisation }}</p>
+          {% endif %}
+          {% if attendee.twitter_username %}
+            <p class="attendee-detail__twitter">
+              <a href="https://www.twitter.com/{{ attendee.twitter_username }}">
+                @{{ attendee.twitter_username }}
+              </a>
+            </p>
+          {% endif %}
+          <div class="attendee-detail__bio">
+            <p>
+            {{ attendee.biography|linebreaks }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

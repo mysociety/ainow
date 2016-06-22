@@ -1,0 +1,233 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Location{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container standard-layout">
+    <div class="general-content__page">
+      <h1>Location</h1>
+      <div class="row">
+        <div class="standard-layout__secondary-column">
+          <ul class="nav nav-stacked section-nav">
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#accommodation">Suggested Accommodation</a></li>
+            <li><a href="#coffee">Nearby Coffee</a></li>
+            <li><a href="#places-to-eat">Places to Eat</a></li>
+          </ul>
+        </div>
+        <div class="standard-layout__primary-column" id="venue">
+
+          <div class="content-block">
+            {{ intro_block }}
+          </div>
+
+          <div class="content-block">
+            <h2>Map</h2>
+            <div class="object-container" id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.461349928227!2d-74.00043118486758!3d40.7298728793299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25991a91649b3%3A0x900beb64e42cf49e!2s238+Thompson+St%2C+New+York%2C+NY+10012%2C+USA!5e0!3m2!1sen!2suk!4v1466077928845" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="content-block" id="accommodation">
+            <h2>Places to stay</h2>
+            <p>Here are a selection of hotels near the venue:</p>
+            <div class="content-grid">
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://www.acehotel.com/newyork">Ace Hotel</a></h3>
+                <p><strong>Starting price (excl taxes and fees)</strong>: $230. </p>
+                <p><strong>Address</strong>: 20 W 29th St, New York, NY 10001 (1.3 miles away). </p>
+                <p><strong>Best transportation to NYU</strong>: N,R from 28th street (3 stops) and walk (15 min).</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://hamptoninn3.hilton.com/en/hotels/new-york/hampton-inn-manhattan-soho-NYCMHHX/index.html">Hampton Inn Manhattan-Soho</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $230</p>
+                <p><strong>Address</strong>: 54 Watts St, New York, NY 10013 (0.6 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: Walk (13min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://unionsquare.hyatt.com/en/hotel/home.html">Hyatt Union Square</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $245</p>
+                <p><strong>Address</strong>: 134 Fourth Avenue, New York, NY 10003 (0.7 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: Walk (13min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://www.thelondonnyc.com/?gclid=CPDczar5p80CFc6dGQodCZEEig&amp;gclsrc=ds">The London, NYC</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $330</p>
+                <p><strong>Address</strong>: 151 W 54th St, New York, NY 10019 (3.2 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: B,D,E to W4th (17 min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://marltonhotel.com/">The Marlton Hotel</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $265</p>
+                <p><strong>Address</strong>: 5 W 8th Street, New York, NY 10011 (0.2 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: Walk (5min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://www.mercerhotel.com/">The Mercer</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $470</p>
+                <p><strong>Address</strong>: 147 Mercer St, New York, NY 10012 (0.5 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: Walk (10min) or Bus: M5 (15min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://www.standardhotels.com/new-york/properties/east-village">The Standard: East Village</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $290</p>
+                <p><strong>Address</strong>: 25 Cooper Square, New York, NY 10003 (0.5 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: Walk (10min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://www.standardhotels.com/new-york/properties/high-line">The Standard: High Line</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $313</p>
+                <p><strong>Address</strong>: 848 Washington Street, New York, NY 10014 (1.3 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: A, from 14th and 8th (1 stop) to W4th and walk (17min total)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://www.wnewyorkunionsquare.com/">W Union Square</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $300</p>
+                <p><strong>Address</strong>: 201 Park Avenue South, New York, NY 100003 (0.7 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: The N,R (2 stops) and walk (13min total)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://www.walkerhotel.com/en">Walker Hotel: Greenwich Village</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $285</p>
+                <p><strong>Address</strong>: 52 West 13th Street, New York, NY, 10011 (0.6 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: Walk (12min) or Bus: M1,M2,M3,M5 and walk (11min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="http://washingtonsquarehotel.com/">Washington Square Hotel</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $185</p>
+                <p><strong>Address</strong>: 103 Waverly Pl, New York, NY, 10011 (0.2 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: Walk (4 min)</p>
+              </div>
+              <div class="content-grid__item accomodation-item">
+                <h3><a href="https://www.thenomadhotel.com/">The Nomad Hotel</a></h3>
+                <p><strong>Starting price (excl. taxes and fees)</strong>: $365</p>
+                <p><strong>Address</strong>: 1170 Broadway, New York, NY 10001 (1.3 miles)</p>
+                <p><strong>Best transportation to NYU</strong>: N,R from 28th street (3 stops) and walk (15 min)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-block" id='coffee'>
+            <h2>Nearby Coffee</h2>
+            <p>A few recommended places nearby to get coffee.</p>
+            <div class="content-grid">
+              <div class="content-grid__item coffee-item">
+                <h3>Stumptown</h3>
+                <p><strong>Address:</strong> 30 W 8th Street. New York, NY 10011</p>
+                <p><strong>Hours:</strong><br>Mon-Sun: 7am-8pm</p>
+              </div>
+              <div class="content-grid__item coffee-item">
+                <h3>V Bar & Cafe</h3>
+                <p><strong>Address:</strong> 22 Sullivan Street. New York, NY 10012</p>
+                <p>
+                  <strong>Hours:</strong><br>Mon-Thur: 9am-2am<br>Fri: 9am-4am<br>Sat: 10am-4am<br>Sun: 10am-2am<br>
+                </p>
+              </div>
+              <div class="content-grid__item coffee-item">
+                <h3>Third Rail Coffee</h3>
+                <p><strong>Address:</strong> 240 Sullivan Street. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon-Fri: 7am-8pm<br>Sat-Sun: 8am-8pm</p>
+              </div>
+              <div class="content-grid__item coffee-item">
+                <h3>Starbucks</h3>
+                <p><strong>Address:</strong> 378 6th Ave. New York, NY 10011</p>
+                <p>
+                  <strong>Hours:</strong><br>Mon-Thur: 5:30pm-11pm<br>Fri: 5:30am-12am<br>Sat: 6am-12am<br>Sun: 6:30am-11pm
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-block" id='places-to-eat'>
+            <h2>Places to Eat</h2>
+            <p>A few recommended places nearby to eat.</p>
+            <div class="content-grid">
+              <div class="content-grid__item food-item">
+                <h3>Joe's Pizza</h3>
+                <p><strong>Cuisine:</strong> Great Pizza</p>
+                <p><strong>Address:</strong> 7 Carmine Street. New York, NY 10014</p>
+                <p>
+                  <strong>Hours:</strong><br>Mon-Thurs, Sun: 10am-4am<br>Fri-Sat: 10am - 5am
+                </p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Le Pain Quotidien</h3>
+                <p><strong>Cuisine:</strong> Café</p>
+                <p><strong>Address:</strong> 10 5th Ave. New York, NY 10011</p>
+                <p><strong>Hours:</strong><br>Mon-Fri: 7am-7:30pm<br>Sat-Sun: 8am-7:30pm</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Maison Kayser</h3>
+                <p><strong>Cuisine:</strong> Café</p>
+                <p><strong>Address:</strong> 326 Bleecker St. New York, NY 10014</p>
+                <p><strong>Hours:</strong><br>Mon-Sun: 7am-10pm</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Saigon Shack</h3>
+                <p><strong>Cuisine:</strong> Vietnamese</p>
+                <p><strong>Address:</strong> 114 Macgougal St. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon-Wed, Sun: 11am-11pm<br>Thurs-Sat: 11am-1pm</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Mamoun's Falafel</h3>
+                <p><strong>Cuisine:</strong> Middle Eastern Falafel</p>
+                <p><strong>Address:</strong> 119 Macdougal St. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon-Wed: 11am-2am<br>Thurs: 11am-3am<br>Fri-Sat: 11am-5am<br>Sun: 11am-1am</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>By Chloe</h3>
+                <p><strong>Cuisine:</strong> Vegetarian, Vegan</p>
+                <p><strong>Address:</strong> 185 Bleecker St. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon-Fri: 11am-11pm<br>Sat: 10am-11pm<br>Sun: 10am-10pm</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Bareburger</h3>
+                <p><strong>Cuisine:</strong> American, Burgers</p>
+                <p><strong>Address:</strong> 535 Laguardua Pl. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon-Thurs, Sun: 11:30am-10:30pm<br>Fri-Sat: 11am-11pm</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Amélie</h3>
+                <p><strong>Cuisine:</strong> French, Wine Bar</p>
+                <p><strong>Address:</strong> 22 W 8th St. New York, NY 10011</p>
+                <p><strong>Hours:</strong><br>Mon: 5pm-12am<br>Tue-Thurs: 11:30am-12am<br>Fri-Sat: 11:30am-2am<br>Sun: 11am-12am</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Mermaid Oyster Bar</h3>
+                <p><strong>Cuisine:</strong> Seafood</p>
+                <p><strong>Address:</strong> 79 Macdougal St. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon: 5pm-10pm<br>Tue-Fri: 5pm-10:30pm<br>Sat: 4pm-10:30pm<br>Sun: 4pm-10pm</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Minetta Tavern</h3>
+                <p><strong>Cuisine:</strong> American, French, Breakfast/Brunch</p>
+                <p><strong>Address:</strong> 113 Macdougal Street. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon-Tue: 5:30pm-12am<br>Wed: 12pm-3pm/5:30pm-12am<br>Thurs-Fri: 12pm-3pm/5:30pm-1am<br>Sat: 11am-3pm/5:30pm-1am<br>Sun: 11am-3pm/5:30pm-12am</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Jack's Wif Freda</h3>
+                <p><strong>Cuisine:</strong> American</p>
+                <p><strong>Address:</strong> 50 Carmine St. New York, NY 10014</p>
+                <p><strong>Hours:</strong><br>Mon-Sat: 8:30am-12am<br>Sun: 8:30am-10pm</p>
+              </div>
+              <div class="content-grid__item food-item">
+                <h3>Kopi Ramen</h3>
+                <p><strong>Cuisine:</strong> Ramen</p>
+                <p><strong>Address:</strong> 68 W 3rd St. New York, NY 10012</p>
+                <p><strong>Hours:</strong><br>Mon-Sun: 12pm-10pm</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

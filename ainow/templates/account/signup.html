@@ -1,0 +1,19 @@
+{% extends "account/simple-form.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Sign up" %}{% endblock %}
+
+{% block account_content %}
+<div class="account-form form--simple-form__form">
+  <h2 class="form--simple-form__form__heading">{% trans "Sign up" %}</h2>
+  <form id="signup_form" method="post" action="{% url "account_signup" %}" autocapitalize="off" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+    {% csrf_token %}
+    {% include 'account/_form_fields.html' %}
+    <div class="account-form__field account-form__field--submit form-group">
+      <button type="submit" class="btn btn-primary btn-block btn-lg">{% trans "Sign up" %}</button>
+    </div>
+
+  </form>
+</div>
+{% endblock %}

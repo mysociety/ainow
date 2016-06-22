@@ -1,0 +1,240 @@
+[
+{
+    "model": "conference.speaker",
+    "pk": 1,
+    "fields": {
+        "created": "2016-06-02T15:42:39.829Z",
+        "updated": "2016-06-02T15:42:41.651Z",
+        "user": null,
+        "name": "Steve Day",
+        "slug": "steve-day",
+        "biography": "Steve is a developer at mySociety",
+        "photo": "",
+        "twitter_username": "forestorama",
+        "website": "",
+        "_biography_rendered": ""
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 2,
+    "fields": {
+        "created": "2016-06-02T15:42:39.829Z",
+        "updated": "2016-06-02T15:42:41.651Z",
+        "user": null,
+        "name": "Ben Nickolls",
+        "slug": "ben-nickolls",
+        "biography": "Ben is head of services at mySociety.",
+        "photo": "",
+        "twitter_username": "benjam",
+        "website": "",
+        "_biography_rendered": ""
+    }
+},
+{
+    "model": "conference.speaker",
+    "pk": 3,
+    "fields": {
+        "created": "2016-06-02T15:42:39.829Z",
+        "updated": "2016-06-02T15:42:41.651Z",
+        "user": null,
+        "name": "Martin Wright",
+        "slug": "martin-wright",
+        "biography": "Martin is a designer at mySociety.",
+        "photo": "",
+        "twitter_username": "wrightmartin",
+        "website": "",
+        "_biography_rendered": ""
+    }
+},
+{
+    "model": "conference.room",
+    "pk": 1,
+    "fields": {
+        "created": "2016-05-27T10:49:52.179Z",
+        "updated": "2016-05-27T10:49:52.179Z",
+        "name": "Big Room",
+        "location": "This is just an example."
+    }
+},
+{
+    "model": "conference.room",
+    "pk": 2,
+    "fields": {
+        "created": "2016-05-27T10:50:06.652Z",
+        "updated": "2016-05-27T10:50:06.652Z",
+        "name": "Small Room",
+        "location": "This is just an example."
+    }
+},
+{
+    "model": "conference.room",
+    "pk": 3,
+    "fields": {
+        "created": "2016-05-27T10:50:10.808Z",
+        "updated": "2016-05-27T10:50:10.808Z",
+        "name": "Main Auditorium",
+        "location": "This is just an example."
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 1,
+    "fields": {
+        "created": "2016-05-27T10:49:36.332Z",
+        "updated": "2016-05-27T10:50:23.662Z",
+        "name": "Morning Keynote",
+        "start": "09:00:00",
+        "end": "10:00:00",
+        "kind": "KEYNOTE",
+        "schedule": 1,
+        "room": 3
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 2,
+    "fields": {
+        "created": "2016-05-27T10:50:54.196Z",
+        "updated": "2016-05-27T10:50:54.196Z",
+        "name": "Morning coffee break",
+        "start": "10:00:00",
+        "end": "10:15:00",
+        "kind": "COFFEE",
+        "schedule": 1,
+        "room": null
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 3,
+    "fields": {
+        "created": "2016-05-27T10:51:19.331Z",
+        "updated": "2016-05-27T10:51:19.331Z",
+        "name": "First morning talk",
+        "start": "10:30:00",
+        "end": "11:30:00",
+        "kind": "TALK",
+        "schedule": 1,
+        "room": 3
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 4,
+    "fields": {
+        "created": "2016-05-27T10:51:38.275Z",
+        "updated": "2016-05-27T10:51:38.275Z",
+        "name": "Second morning talk",
+        "start": "11:30:00",
+        "end": "13:00:00",
+        "kind": "TALK",
+        "schedule": 1,
+        "room": 3
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 5,
+    "fields": {
+        "created": "2016-05-27T10:51:57.766Z",
+        "updated": "2016-05-27T10:51:57.766Z",
+        "name": "Conference Lunch",
+        "start": "13:00:00",
+        "end": "14:00:00",
+        "kind": "LUNCH",
+        "schedule": 1,
+        "room": null
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 6,
+    "fields": {
+        "created": "2016-05-27T10:52:22.946Z",
+        "updated": "2016-05-27T10:52:22.946Z",
+        "name": "First afternoon talk",
+        "start": "14:00:00",
+        "end": "15:00:00",
+        "kind": "TALK",
+        "schedule": 1,
+        "room": 3
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 7,
+    "fields": {
+        "created": "2016-05-27T10:52:41.712Z",
+        "updated": "2016-05-27T10:59:37.260Z",
+        "name": "Afternoon coffee break",
+        "start": "15:00:00",
+        "end": "15:30:00",
+        "kind": "COFFEE",
+        "schedule": 1,
+        "room": null
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 8,
+    "fields": {
+        "created": "2016-05-27T10:53:00.708Z",
+        "updated": "2016-05-27T10:53:00.711Z",
+        "name": "Second afternoon talk",
+        "start": "15:30:00",
+        "end": "16:30:00",
+        "kind": "TALK",
+        "schedule": 1,
+        "room": 3
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 9,
+    "fields": {
+        "created": "2016-05-27T10:53:38.388Z",
+        "updated": "2016-05-27T10:53:38.388Z",
+        "name": "Closing keynote",
+        "start": "16:30:00",
+        "end": "17:30:00",
+        "kind": "KEYNOTE",
+        "schedule": 1,
+        "room": 3
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 1,
+    "fields": {
+        "created": "2016-06-02T15:42:33.532Z",
+        "updated": "2016-06-02T15:42:35.261Z",
+        "title": "Introductory Keynote",
+        "slug": "intro-keynote",
+        "primary_speaker": 1,
+        "long_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nThis field **has some markdown in it too**, _so you can format it_.",
+        "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+        "slot": 1,
+        "_long_description_rendered": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n<p>This field <strong>has some markdown in it too</strong>, <em>so you can format it</em>.</p>",
+        "additional_speakers": []
+    }
+},
+{
+    "model": "conference.presentation",
+    "pk": 2,
+    "fields": {
+        "created": "2016-06-02T15:42:33.532Z",
+        "updated": "2016-06-02T15:42:35.261Z",
+        "title": "A Really Interesting Talk",
+        "slug": "really-interesting-talk",
+        "primary_speaker": 2,
+        "long_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "slot": 3,
+        "_long_description_rendered": "",
+        "additional_speakers": [
+            3
+        ]
+    }
+}
+]

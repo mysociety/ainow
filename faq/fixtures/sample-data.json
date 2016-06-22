@@ -1,0 +1,74 @@
+[
+{
+    "model": "faq.faqquestion",
+    "pk": 1,
+    "fields": {
+        "created": "2016-06-02T15:44:22.716Z",
+        "updated": "2016-06-02T15:44:24.508Z",
+        "question": "A shared question",
+        "slug": "shared",
+        "answer": "The answer is shared between both FAQ pages.",
+        "_answer_rendered": "<p>The answer is shared between both FAQ pages.</p>"
+    }
+},
+{
+    "model": "faq.faqquestion",
+    "pk": 2,
+    "fields": {
+        "created": "2016-06-02T15:44:22.716Z",
+        "updated": "2016-06-02T15:44:24.508Z",
+        "question": "A public FAQ question",
+        "slug": "public",
+        "answer": "The answer is only on the public far page",
+        "_answer_rendered": "<p>The answer is only on the public far page</p>"
+    }
+},
+{
+    "model": "faq.faqquestion",
+    "pk": 3,
+    "fields": {
+        "created": "2016-06-02T15:44:22.716Z",
+        "updated": "2016-06-02T15:44:24.508Z",
+        "question": "A private FAQ question",
+        "slug": "private",
+        "answer": "This is only on the Workshop FAQ page",
+        "_answer_rendered": "<p>This is only on the Workshop FAQ page</p>"
+    }
+},
+{
+    "model": "faq.faqquestionpage",
+    "pk": 1,
+    "fields": {
+        "faqpage": 1,
+        "faqquestion": 1,
+        "order": 0
+    }
+},
+{
+    "model": "faq.faqquestionpage",
+    "pk": 2,
+    "fields": {
+        "faqpage": 2,
+        "faqquestion": 1,
+        "order": 2
+    }
+},
+{
+    "model": "faq.faqquestionpage",
+    "pk": 3,
+    "fields": {
+        "faqpage": 1,
+        "faqquestion": 2,
+        "order": 0
+    }
+},
+{
+    "model": "faq.faqquestionpage",
+    "pk": 4,
+    "fields": {
+        "faqpage": 2,
+        "faqquestion": 3,
+        "order": 1
+    }
+}
+]

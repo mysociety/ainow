@@ -1,0 +1,50 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ schedule.name }}{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container standard-layout standard-layout--flipped">
+    <div class="general-content__page schedule">
+      <h1>{{ schedule.name }} Schedule</h1>
+      <div class="schedule__introduction">{{ schedule.introduction }}</div>
+      <div class="row">
+        <div class="standard-layout__primary-column">
+          <ul class="schedule__list">
+            {% for slot in slots %}
+              <li class="schedule__list__item schedule-entry">
+                {% if slot.is_presentation_slot %}
+                  {% if slot.presentation %}
+                    {% with presentation=slot.presentation %}
+                      <h2 class="schedule-entry__title">{{ presentation.title }}</h2>
+                      <p class="schedule-entry__speaker">{{ presentation.primary_speaker.name }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}</p>
+                    {% endwith %}
+                  {% else %}
+                    <h2 class="schedule-entry__title">{{ slot.name }}</h2>
+                    <div class="schedule-entry__description">
+                      {{ slot.short_description }}
+                    </div>
+                  {% endif %}
+                {% else %}
+                  <h2 class="schedule-entry__title">{{ slot.name }}</h2>
+                  <div class="schedule-entry__description">
+                    {{ slot.short_description }}
+                  </div>
+                {% endif %}
+              </li>
+            {% empty %}
+              <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="standard-layout__secondary-column">
+          {{ sidebar_block }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

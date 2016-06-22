@@ -1,0 +1,57 @@
+[
+{
+    "model": "pages.page",
+    "pk": 1,
+    "fields": {
+        "created": "2016-06-06T15:32:53.090Z",
+        "updated": "2016-06-09T11:10:28.309Z",
+        "name": "Workshop resources",
+        "title": "Resources",
+        "slug": "workshop-resources",
+        "content": "This is some content, it might be a table of contents or an introduction.",
+        "parent_page": null,
+        "order": 0,
+        "_content_rendered": "<p>This is some content, it might be a table of contents or an introduction.</p>",
+        "schedules": [
+            2
+        ]
+    }
+},
+{
+    "model": "pages.page",
+    "pk": 2,
+    "fields": {
+        "created": "2016-06-06T15:33:29.581Z",
+        "updated": "2016-06-09T11:09:47.546Z",
+        "name": "Conference resources",
+        "title": "Resources",
+        "slug": "conference-resources",
+        "content": "This could be an intro or a Table of Contents.",
+        "parent_page": null,
+        "order": 0,
+        "_content_rendered": "<p>This could be an intro or a Table of Contents.</p>",
+        "schedules": [
+            1
+        ]
+    }
+},
+{
+    "model": "pages.page",
+    "pk": 6,
+    "fields": {
+        "created": "2016-06-07T10:31:12.732Z",
+        "updated": "2016-06-09T11:04:14.406Z",
+        "name": "Privacy page",
+        "title": "Privacy",
+        "slug": "privacy",
+        "content": "The Chairs, Program Committee, and host organizations of AI Now are committed to the highest ethical standards in all of our operations. We are dedicated to protecting the privacy of everyone we interact with. We don\u2019t sell, barter, give away, rent, or permit anyone outside our direct collaborators to use or access your contact information or email content.\r\n\r\n## Google Analytics\r\n\r\nWhen you visit the AI Now site, we gather basic demographic information using Google Analytics cookies. For more information about Google Analytics and how Google uses data in providing this service, please see [this site](https://www.google.com/policies/privacy/partners/); see [here](https://support.google.com/analytics/answer/181881?hl=en) for one option to opt-out of Google Analytics data collection.",
+        "parent_page": null,
+        "order": 0,
+        "_content_rendered": "<p>The Chairs, Program Committee, and host organizations of AI Now are committed to the highest ethical standards in all of our operations. We are dedicated to protecting the privacy of everyone we interact with. We don\u2019t sell, barter, give away, rent, or permit anyone outside our direct collaborators to use or access your contact information or email content.</p>\n<h2>Google Analytics</h2>\n<p>When you visit the AI Now site, we gather basic demographic information using Google Analytics cookies. For more information about Google Analytics and how Google uses data in providing this service, please see <a href=\"https://www.google.com/policies/privacy/partners/\">this site</a>; see <a href=\"https://support.google.com/analytics/answer/181881?hl=en\">here</a> for one option to opt-out of Google Analytics data collection.</p>",
+        "schedules": [
+            1,
+            2
+        ]
+    }
+}
+]

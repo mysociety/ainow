@@ -1,0 +1,86 @@
+/*
+ * All of our Bootstrap customisations are here
+ */
+
+/*
+ * Colors
+ */
+
+$color_teal: #64B9BD;
+$color_dark_teal: darken($color_teal, 10%);
+$color_orange: #ED8A35;
+$color_dark_orange: darken($color_orange, 10%);
+$color_pink: #EB6E93;
+$color_blue: #49AECC;
+$color_off_white: #E9EAE1;
+$color_light_gray: #C3C4B9;
+$color_gray: #9B9C90;
+$color_mid_gray: #707168;
+$color_dark_gray: #6A6A69;
+$color_black: #484846;
+$color_white: #ffffff;
+
+// $gray-base: use Bootstrap's default
+$gray-darker: $color_black;
+$gray-dark: $color_dark_gray;
+$gray: $color_mid_gray;
+$gray-light: $color_light_gray;
+$gray-lighter: $color_off_white;
+
+$brand-primary: $color_orange;
+$brand-success: $color_teal;
+$brand-info: $color_blue;
+$brand-warning: $color_orange;
+$brand-danger: $color_pink;
+
+$body-bg: $gray-lighter;
+$text-color: $gray-darker;
+$link-color: darken($brand-primary, 10%);
+
+/*
+ * Typography
+ */
+ $fira: "fira-sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+ $body_typeface: $fira;
+ $body_typeface_semibold: 500;
+ $body_typeface_bold: 700;
+ $heading_typeface: $fira;
+ $heading_typeface_bold: 700;
+
+ $font-size-base: 16px;
+
+/*
+ * Components
+ */
+
+/*
+ * Buttons
+ */
+$btn-font-weight: $body_typeface_bold;
+$btn-primary-bg: $color_dark_teal;
+
+/*
+ * Forms
+ */
+
+/*
+ * Dropdowns
+ */
+
+/*
+ * Breakpoints
+ */
+
+/*
+ * Navbar
+ */
+$navbar-border-radius: 0;
+$navbar-default-bg: $color_white;
+$navbar-default-link-color: $gray-darker;
+$navbar-default-link-hover-color: $gray;
+
+/*
+ * Wells
+ */
+$well-bg: lighten($body-bg, 5%);
