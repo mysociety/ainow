@@ -45,8 +45,12 @@
          <h3>AI Now Co-Chairs</h3>
          <div class="collection-of-people">
             <div class="collection-of-people__person">
-                <img src="{% static 'img/kate-crawford.jpg' %}" alt="Kate Crawford" class="person__photo"/>
-                <p class="person__name">Kate Crawford</p>
+                <a href="{% url 'speaker' 'conference' 'kate-crawford' %}">
+                  <img src="{% static 'img/kate-crawford.jpg' %}" alt="Kate Crawford" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'kate-crawford' %}">Kate Crawford</a>
+                </p>
                 <p class="person__job-title">Principal Researcher, Microsoft Research; Senior Research Fellow, New York University Information Law Institute</p>
             </div>
             <div class="collection-of-people__person">
@@ -99,8 +103,12 @@
                 <p class="person__job-title">Former White House Deputy Chief Technology Officer</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/ryan-calo.jpg' %}" alt="Ryan Calo" class="person__photo"/>
-                <p class="person__name">Ryan Calo</p>
+                <a href="{% url 'speaker' 'conference' 'ryan-calo' %}">
+                  <img src="{% static 'img/ryan-calo.jpg' %}" alt="Ryan Calo" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'ryan-calo' %}">Ryan Calo</a>
+                </p>
                 <p class="person__job-title">Co-founder, University of Washington Tech Policy Lab, Assistant Professor, University of Washington School of Law</p>
             </div>
          </div>

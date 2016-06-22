@@ -4,17 +4,17 @@
     "pk": 42,
     "fields": {
         "created": "2016-06-14T08:06:37.083Z",
-        "updated": "2016-06-14T08:06:37.084Z",
+        "updated": "2016-06-22T08:18:04.226Z",
         "user": null,
         "name": "Kate Crawford",
         "slug": "kate-crawford",
-        "photo": "",
-        "twitter_username": "",
-        "title": "",
-        "organisation": "",
-        "biography": "",
+        "photo": "conference_speaker_photos/kate-crawford.jpg",
+        "twitter_username": "katecrawford",
+        "title": "Principal Researcher",
+        "organisation": "Microsoft Research NYC",
+        "biography": "Kate Crawford is Principal Researcher, Microsoft Research NYC, a Visiting Professor at MIT's Center for Civic Media, and a Senior Fellow with NYU's Information Law Institute and an Honorary Professor at UNSW. Her research focuses on the social and ethical implications of machine learning and AI, with recent publications addressing data discrimination, workplace health data, automation and algorithmic accountability, and the history of ethics review. \r\n\r\nHer research has been published in New Media & Society, Information, Communication & Society, International Journal of Communication, Big Data & Society, and Science, Technology and Human Values.  She has also been published in The New York Times, Harvard Business Review and New Inquiry. She is a co-founder of the Society, Ethics & AI at Microsoft (SEA) and a co-PI of the NSF\u2019s Council for Big Data, Ethics, and Society. \r\n\r\nShe is a member of the World Economic Forum's Global Agenda Council on Data for Development, and the UN's Thematic Network on Data for Sustainable Development. She is currently completing a book on data, ethics and power for Yale University Press.",
         "website": "",
-        "_biography_rendered": ""
+        "_biography_rendered": "<p>Kate Crawford is Principal Researcher, Microsoft Research NYC, a Visiting Professor at MIT's Center for Civic Media, and a Senior Fellow with NYU's Information Law Institute and an Honorary Professor at UNSW. Her research focuses on the social and ethical implications of machine learning and AI, with recent publications addressing data discrimination, workplace health data, automation and algorithmic accountability, and the history of ethics review. </p>\n<p>Her research has been published in New Media &amp; Society, Information, Communication &amp; Society, International Journal of Communication, Big Data &amp; Society, and Science, Technology and Human Values.  She has also been published in The New York Times, Harvard Business Review and New Inquiry. She is a co-founder of the Society, Ethics &amp; AI at Microsoft (SEA) and a co-PI of the NSF\u2019s Council for Big Data, Ethics, and Society. </p>\n<p>She is a member of the World Economic Forum's Global Agenda Council on Data for Development, and the UN's Thematic Network on Data for Sustainable Development. She is currently completing a book on data, ethics and power for Yale University Press.</p>"
     }
 },
 {
@@ -126,6 +126,24 @@
     }
 },
 {
+    "model": "conference.speaker",
+    "pk": 50,
+    "fields": {
+        "created": "2016-06-22T08:25:18.777Z",
+        "updated": "2016-06-22T08:25:18.777Z",
+        "user": null,
+        "name": "Ryan Calo",
+        "slug": "ryan-calo",
+        "photo": "conference_speaker_photos/ryan-calo.jpg",
+        "twitter_username": "",
+        "title": "Co-Founder",
+        "organisation": "University of Washington Tech Policy Lab",
+        "biography": "Ryan Calo is an assistant professor at the University of Washington School of Law. He is a faculty co-director (with Batya Friedman and Tadayoshi Kohno) of the University of Washington Tech Policy Lab, a unique, interdisciplinary research unit that spans the School of Law, Information School, and Department of Computer Science and Engineering. Professor Calo holds courtesy appointments at the University of Washington Information School and the Oregon State University School of Mechanical, Industrial, and Manufacturing Engineering.\r\n\r\nProfessor Calo's research on law and emerging technology appears or is forthcoming in leading law reviews (California Law Review, University of Chicago Law Review, Stanford Law Review Online, University of Pennsylvania Law Review Online) and technical publications (MIT Press, IEEE, Science, Artificial Intelligence), and is frequently referenced by the mainstream media (NPR, New York Times, Wall Street Journal). \r\n\r\nProfessor Calo has testified before the full Judiciary Committee of the United States Senate and spoken at the Aspen Ideas Festival and NPR's Weekend in Washington. In 2014, he was named one of the most important people in robotics by Business Insider.",
+        "website": "",
+        "_biography_rendered": "<p>Ryan Calo is an assistant professor at the University of Washington School of Law. He is a faculty co-director (with Batya Friedman and Tadayoshi Kohno) of the University of Washington Tech Policy Lab, a unique, interdisciplinary research unit that spans the School of Law, Information School, and Department of Computer Science and Engineering. Professor Calo holds courtesy appointments at the University of Washington Information School and the Oregon State University School of Mechanical, Industrial, and Manufacturing Engineering.</p>\n<p>Professor Calo's research on law and emerging technology appears or is forthcoming in leading law reviews (California Law Review, University of Chicago Law Review, Stanford Law Review Online, University of Pennsylvania Law Review Online) and technical publications (MIT Press, IEEE, Science, Artificial Intelligence), and is frequently referenced by the mainstream media (NPR, New York Times, Wall Street Journal). </p>\n<p>Professor Calo has testified before the full Judiciary Committee of the United States Senate and spoken at the Aspen Ideas Festival and NPR's Weekend in Washington. In 2014, he was named one of the most important people in robotics by Business Insider.</p>"
+    }
+},
+{
     "model": "conference.schedule",
     "pk": 1,
     "fields": {
@@ -176,7 +194,7 @@
     "pk": 10,
     "fields": {
         "created": "2016-06-14T07:59:29.933Z",
-        "updated": "2016-06-14T07:59:29.933Z",
+        "updated": "2016-06-22T08:33:58.646Z",
         "name": "Breakfast and registration",
         "short_description": "",
         "start": "08:30:00",
@@ -192,15 +210,31 @@
     "pk": 11,
     "fields": {
         "created": "2016-06-14T07:59:29.936Z",
-        "updated": "2016-06-21T13:35:07.377Z",
+        "updated": "2016-06-22T08:33:58.665Z",
         "name": "Welcome Remarks",
-        "short_description": "Kate Crawford and [Meredith Whittaker](/schedule/workshop/speaker/meredith-whittaker), AI Now Co-Chairs",
+        "short_description": "[Kate Crawford](/schedule/workshop/speaker/kate-crawford) and [Meredith Whittaker](/schedule/workshop/speaker/meredith-whittaker), AI Now Co-Chairs",
         "start": "09:00:00",
         "end": "09:15:00",
         "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": "<p>Kate Crawford and <a href=\"/schedule/workshop/speaker/meredith-whittaker\">Meredith Whittaker</a>, AI Now Co-Chairs</p>"
+        "_short_description_rendered": "<p><a href=\"/schedule/workshop/speaker/kate-crawford\">Kate Crawford</a> and <a href=\"/schedule/workshop/speaker/meredith-whittaker\">Meredith Whittaker</a>, AI Now Co-Chairs</p>"
+    }
+},
+{
+    "model": "conference.slot",
+    "pk": 12,
+    "fields": {
+        "created": "2016-06-14T07:59:29.937Z",
+        "updated": "2016-06-22T08:33:58.670Z",
+        "name": "Introductions",
+        "short_description": "Ed Felten, Deputy U.S. Chief Technology Officer",
+        "start": "09:15:00",
+        "end": "09:25:00",
+        "kind": "OTHER",
+        "schedule": 2,
+        "room": 4,
+        "_short_description_rendered": "<p>Ed Felten, Deputy U.S. Chief Technology Officer</p>"
     }
 },
 {
@@ -208,7 +242,7 @@
     "pk": 13,
     "fields": {
         "created": "2016-06-14T07:59:29.937Z",
-        "updated": "2016-06-21T13:13:19.824Z",
+        "updated": "2016-06-22T08:33:58.675Z",
         "name": "Opening Address",
         "short_description": "[Jason Furman](/schedule/workshop/speaker/jason-furman), Chairman of the Council of Economic Advisers",
         "start": "09:30:00",
@@ -224,7 +258,7 @@
     "pk": 14,
     "fields": {
         "created": "2016-06-14T07:59:29.938Z",
-        "updated": "2016-06-14T08:00:45.683Z",
+        "updated": "2016-06-22T08:33:58.679Z",
         "name": "Lightning Talks - Inequality and Labor",
         "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring AI\u2019s current deployments and uses.",
         "start": "10:00:00",
@@ -240,7 +274,7 @@
     "pk": 15,
     "fields": {
         "created": "2016-06-14T07:59:29.938Z",
-        "updated": "2016-06-14T07:59:29.938Z",
+        "updated": "2016-06-22T08:33:58.682Z",
         "name": "Coffee & Snack Break",
         "short_description": "",
         "start": "10:45:00",
@@ -256,7 +290,7 @@
     "pk": 16,
     "fields": {
         "created": "2016-06-14T07:59:29.939Z",
-        "updated": "2016-06-14T08:00:45.685Z",
+        "updated": "2016-06-22T08:33:58.684Z",
         "name": "Lightning Talks - Health and Ethics",
         "short_description": "Six short thought-starters, focusing both on critical analysis of AI\u2019s impacts, and exploring AI\u2019s current deployments and uses.",
         "start": "11:00:00",
@@ -272,7 +306,7 @@
     "pk": 17,
     "fields": {
         "created": "2016-06-14T07:59:29.940Z",
-        "updated": "2016-06-21T13:36:17.116Z",
+        "updated": "2016-06-22T08:33:58.688Z",
         "name": "Lunch",
         "short_description": "Brief Lunch Address by Ed Felten, Deputy U.S. Chief Technology Officer",
         "start": "12:00:00",
@@ -288,7 +322,7 @@
     "pk": 18,
     "fields": {
         "created": "2016-06-14T07:59:29.940Z",
-        "updated": "2016-06-21T13:37:00.944Z",
+        "updated": "2016-06-22T08:33:58.695Z",
         "name": "Questions and Discussion",
         "short_description": "",
         "start": "13:00:00",
@@ -304,7 +338,7 @@
     "pk": 19,
     "fields": {
         "created": "2016-06-14T07:59:29.941Z",
-        "updated": "2016-06-14T08:03:55.108Z",
+        "updated": "2016-06-22T08:33:58.698Z",
         "name": "Coffee & Snack Break",
         "short_description": "",
         "start": "14:00:00",
@@ -320,7 +354,7 @@
     "pk": 20,
     "fields": {
         "created": "2016-06-14T07:59:29.941Z",
-        "updated": "2016-06-15T15:51:25.754Z",
+        "updated": "2016-06-22T08:33:58.702Z",
         "name": "Workshops",
         "short_description": "Attendees will be assigned to one of five topic areas based on expertise. The workshop sessions will be carefully structured to address previously specified questions, challenges, and opportunities, as well as providing time for generative discussion. \r\n\r\nThe topic areas for the workshop include: \r\n\r\n* Health\r\n* Labor\r\n* Ethics\r\n* Inequality",
         "start": "14:30:00",
@@ -336,15 +370,15 @@
     "pk": 21,
     "fields": {
         "created": "2016-06-14T07:59:29.942Z",
-        "updated": "2016-06-21T13:14:05.108Z",
+        "updated": "2016-06-22T08:33:58.712Z",
         "name": "Final Summary",
-        "short_description": "Kate Crawford and [Meredith Whittaker](/schedule/workshop/speaker/meredith-whittaker), AINow Co-Chairs",
+        "short_description": "[Kate Crawford](/schedule/workshop/speaker/kate-crawford) and [Meredith Whittaker](/schedule/workshop/speaker/meredith-whittaker), AINow Co-Chairs",
         "start": "16:15:00",
         "end": "16:30:00",
         "kind": "OTHER",
         "schedule": 2,
         "room": 4,
-        "_short_description_rendered": "<p>Kate Crawford and <a href=\"/schedule/workshop/speaker/meredith-whittaker\">Meredith Whittaker</a>, AINow Co-Chairs</p>"
+        "_short_description_rendered": "<p><a href=\"/schedule/workshop/speaker/kate-crawford\">Kate Crawford</a> and <a href=\"/schedule/workshop/speaker/meredith-whittaker\">Meredith Whittaker</a>, AINow Co-Chairs</p>"
     }
 },
 {
@@ -352,7 +386,7 @@
     "pk": 22,
     "fields": {
         "created": "2016-06-14T07:59:29.943Z",
-        "updated": "2016-06-14T08:03:55.112Z",
+        "updated": "2016-06-22T08:33:58.718Z",
         "name": "Public Conference - Doors Open",
         "short_description": "",
         "start": "16:30:00",
@@ -448,7 +482,7 @@
     "pk": 28,
     "fields": {
         "created": "2016-06-14T07:59:29.943Z",
-        "updated": "2016-06-14T08:03:55.112Z",
+        "updated": "2016-06-22T08:33:58.723Z",
         "name": "Cocktail Reception at Grand Hall following Public Conference for workshop attendees",
         "short_description": "",
         "start": "20:00:00",
@@ -464,7 +498,7 @@
     "pk": 29,
     "fields": {
         "created": "2016-06-21T13:38:37.830Z",
-        "updated": "2016-06-21T13:41:26.184Z",
+        "updated": "2016-06-22T08:33:58.726Z",
         "name": "5.30 - 6.00: Brief Welcome and Introductions",
         "short_description": "Address from Ed Felten, Deputy U.S. Chief Technology Officer.",
         "start": "17:30:00",
@@ -480,7 +514,7 @@
     "pk": 30,
     "fields": {
         "created": "2016-06-21T13:40:47.604Z",
-        "updated": "2016-06-21T13:40:47.604Z",
+        "updated": "2016-06-22T08:33:58.734Z",
         "name": "6.00 - 6.30: Automation, Social Justice, and Equality - a discussion of present, past and near future",
         "short_description": "Roy L Austin in conversation with [Nicole Wong](/schedule/conference/speaker/nicole-wong).",
         "start": "18:00:00",
@@ -488,7 +522,7 @@
         "kind": "OTHER",
         "schedule": 2,
         "room": 5,
-        "_short_description_rendered": "<p>Roy L Austin in conversation with <a href=\"/schedule/conference/speakers/nicole-wong\">Nicole Wong</a>.</p>"
+        "_short_description_rendered": "<p>Roy L Austin in conversation with <a href=\"/schedule/conference/speaker/nicole-wong\">Nicole Wong</a>.</p>"
     }
 },
 {
@@ -496,7 +530,7 @@
     "pk": 31,
     "fields": {
         "created": "2016-06-21T13:42:07.905Z",
-        "updated": "2016-06-21T13:42:07.905Z",
+        "updated": "2016-06-22T08:33:58.744Z",
         "name": "6:35 - 7:05: 3 Big Questions for 3 Tech Leaders, chaired by Julia Angwin (ProPublica) with:",
         "short_description": "* Genevieve Bell (Intel) \r\n* Cynthia Breazeal (Jibo) \r\n* Yann LeCun (Facebook)",
         "start": "18:35:00",
@@ -512,7 +546,7 @@
     "pk": 32,
     "fields": {
         "created": "2016-06-21T13:44:02.033Z",
-        "updated": "2016-06-21T13:44:17.385Z",
+        "updated": "2016-06-22T08:33:58.755Z",
         "name": "7:10 - 8.00: Panel, moderated by Alondra Nelson (Columbia University) with:",
         "short_description": "* [Mustafa Suleyman](/schedule/conference/speaker/mustafa-suleyman) - Co-founder of Google\u2019s DeepMind, Director of DeepMind Health. \r\n* Latanya Sweeney - Professor of Government and Technology, Harvard. \r\n* David Edelman - Special Assistant to the President for Economic and Technology Policy",
         "start": "19:10:00",
