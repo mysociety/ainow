@@ -348,6 +348,14 @@ DEFAULT_FROM_EMAIL = CONTACT_EMAIL
 ACCOUNT_USER_DISPLAY = lambda user: user.email
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = 'profile'
+# Django user accounts' setting for this seems to override the default Django
+# one, but set both just in case
+ACCOUNT_LOGIN_REDIRECT_URL = 'profile'
+# Set so that it runs right up to the conference date, because we're sending
+# reset links to people as a kind of invite link, and they might be slack
+# at opening their emails.
+PASSWORD_RESET_TIMEOUT_DAYS = 15
 
 
 # mySociety-specific settings

@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
+from django.conf import settings
 
 import account.forms
 import account.views
@@ -88,7 +89,7 @@ class ConfirmEmailView(account.views.ConfirmEmailView):
                     "email": confirmation.email_address.email
                 })
             )
-        return redirect('profile')
+        return redirect(settings.LOGIN_REDIRECT_URL)
 
     def login_user(self, user):
         """
