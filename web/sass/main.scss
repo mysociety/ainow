@@ -539,8 +539,7 @@ iframe {
 .btn--tickets {
   font-size: 1.235294118em;
   width: 100%;
-  padding: 0.75em 1em;
-  padding-right: 1.5em;
+  padding: 0.75em 1.5em 0.75em 1em;
   float: left;
   text-align: left;
   border: 0;
@@ -548,11 +547,12 @@ iframe {
   @media (min-width:$screen-sm-min) {
     width: auto;
   }
-  span {
+  p {
     display: block;
     font-weight: normal;
     font-size: 0.8125em;
     line-height: 1.428em;
+    margin-bottom: 0;
   }
   .glyphicon {
     font-size: 0.75em;
