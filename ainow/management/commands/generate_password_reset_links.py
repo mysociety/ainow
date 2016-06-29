@@ -16,12 +16,20 @@ class Command(BaseCommand):
 
     help = "Generate password reset links for every active Attendee as a CSV."
 
+    def add_arguments(self, parser):
+        parser.add_argument('--pks', nargs='+', required=False, type=int)
+
     def handle(self, *args, **options):
         protocol = getattr(settings, "DEFAULT_HTTP_PROTOCOL", "http")
         current_site = get_current_site(1)
 
         self.stdout.write("ID Number,Email,Reset Link")
-        for attendee in Attendee.objects.all():
+
+        if options['pks']:
+            attendees = Attendee.objects.filter(id__in=options['pks'])
+        else:
+            attendees = Attendee.objects.all()
+        for attendee in attendees.order_by('external_id'):
             user = attendee.user
             if user and user.is_active and not user.is_staff:
                 # Most of this is just lifted/adapted from django-user-accounts' PasswordResetView
