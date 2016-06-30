@@ -43,6 +43,8 @@ class WorkshopVenueView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(WorkshopVenueView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='workshop-venue-introduction').content
+        context['harassment_block'] = Block.objects.get(slug='harassment-policy').content
+        context['chatham_block'] = Block.objects.get(slug='chatham-house-rule').content
         context['schedule'] = Schedule.objects.get(slug='workshop')
         return context
 
