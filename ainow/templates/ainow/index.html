@@ -74,8 +74,14 @@
          <h3>AI Now Program Committee</h3>
          <div class="collection-of-people">
             <div class="collection-of-people__person">
-                <img src="{% static 'img/eric-horvitz.jpg' %}" alt="Eric Horvitz" class="person__photo"/>
-                <p class="person__name">Eric Horvitz</p>
+                <a href="{% url 'speaker' 'conference' 'eric-horvitz' %}">
+                  <img src="{% static 'img/eric-horvitz.jpg' %}" alt="Eric Horvitz" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'eric-horvitz' %}">
+                    Eric Horvitz
+                  </a>
+                </p>
                 <p class="person__job-title">Technical Fellow &amp; Managing Director, Microsoft Research</p>
             </div>
             <div class="collection-of-people__person">
@@ -88,8 +94,14 @@
                 <p class="person__job-title">Director, New York University Information Law Institute</p>
             </div>
             <div class="collection-of-people__person">
-                <img src="{% static 'img/latanya-sweeney.jpg' %}" alt="Latanya Sweeney" class="person__photo"/>
-                <p class="person__name">Latanya Sweeney</p>
+                <a href="{% url 'speaker' 'conference' 'latanya-sweeney' %}">
+                  <img src="{% static 'img/latanya-sweeney.jpg' %}" alt="Latanya Sweeney" class="person__photo"/>
+                </a>
+                <p class="person__name">
+                  <a href="{% url 'speaker' 'conference' 'latanya-sweeney' %}">
+                    Latanya Sweeney
+                  </a>
+                </p>
                 <p class="person__job-title">Professor of Government and Technology in Residence at Harvard University, former Federal Trade Commission Chief Technology Officer</p>
             </div>
             <div class="collection-of-people__person">
