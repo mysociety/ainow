@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-{% block title %}Attendees{% endblock %}
+{% block title %}Attendees &amp; Speakers{% endblock %}
 
 {% block bodyclasses %}standard-page{% endblock %}
 
@@ -10,8 +10,8 @@
 <div class="general-content">
   <div class="container">
     <div class="general-content__page">
-      <h1>Attendees</h1>
-      <p>Attendees confirmed to date.</p>
+      <h1>Attendees &amp; Speakers</h1>
+      <p>Attendees &amp; Speakers confirmed to date.</p>
       <ul class="attendee-list">
         {% for attendee in attendees %}
           <li class="attendee-list__attendee">
