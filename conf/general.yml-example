@@ -34,3 +34,7 @@ CONTACT_EMAIL: 'info@artificialintelligencenow.com'
 
 # Use MAILCATCHER (requires different SMTP settings)
 USE_MAILCATCHER: True
+
+# When is the conference starting?
+# Used to know when to turn the livestreams on - dd/mm/yyyy
+CONFERENCE_DATE: '07/07/2016'

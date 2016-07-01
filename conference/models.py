@@ -149,6 +149,9 @@ class Slot(TimestampedModel):
     def is_presentation_slot(self):
         return self.kind in self.PRESENTATION_KINDS
 
+    class Meta:
+        ordering = ['start']
+
 
 class Presentation(TimestampedModel):
     title = models.CharField(max_length=1024)
@@ -183,3 +186,38 @@ class Presentation(TimestampedModel):
 
     def slug_field(self):
         return 'title'
+
+
+class LiveStream(TimestampedModel):
+    name = models.CharField(
+        max_length=1024,
+        help_text='An internal name for this stream, to help you recognise it'
+    )
+    youtube_link = models.URLField(
+        max_length=1024,
+        help_text='The url for the live stream\'s page on YouTube.<br>'
+                  'We can extract everything we need to embed it from that.'
+    )
+    live = models.BooleanField(
+        default=False,
+        help_text='Is this stream live now?<br>'
+                  'Tick the box to make it appear on the homepage.<br>'
+                  'Note: this will replace any stream that\'s currently live.'
+    )
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def video_id(self):
+        return self.youtube_link.split("?v=")[1]
+
+    def save(self, *args, **kwargs):
+        """
+        Overridden save to ensure that only one stream is live.
+        """
+        if self.live:
+            LiveStream.objects.filter(
+                live=True
+            ).exclude(id=self.id).update(live=False)
+        super(LiveStream, self).save(*args, **kwargs)

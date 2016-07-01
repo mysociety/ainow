@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import yaml
+from datetime import datetime
+
 from .paths import *
 
 from django.contrib.messages import constants as messages
@@ -360,3 +362,5 @@ PASSWORD_RESET_TIMEOUT_DAYS = 15
 
 # mySociety-specific settings
 GOOGLE_ANALYTICS_ACCOUNT = config.get('GOOGLE_ANALYTICS_ACCOUNT')
+
+CONFERENCE_DATE = datetime.strptime(config.get('CONFERENCE_DATE'), "%d/%m/%Y").date()

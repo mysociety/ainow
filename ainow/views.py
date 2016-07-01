@@ -5,11 +5,12 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 from django.conf import settings
+from django.utils import timezone
 
 import account.forms
 import account.views
 
-from conference.models import Schedule
+from conference.models import Schedule, LiveStream
 from blocks.models import Block
 
 from forms import SignupForm
@@ -24,6 +25,13 @@ class HomeView(TemplateView):
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
         context['schedule'] = Schedule.objects.get(slug='conference')
+
+        context['show_livestream'] = False
+        print timezone.now().date()
+        print settings.CONFERENCE_DATE
+        if timezone.now().date() == settings.CONFERENCE_DATE:
+            context['show_livestream'] = True
+            context['livestream'] = LiveStream.objects.get(live=True)
         return context
 
 

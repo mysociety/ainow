@@ -4,10 +4,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="homepage-hero homepage-hero--streaming">
+<div class="homepage-hero{% if show_livestream %} homepage-hero--streaming{% endif %}">
       <div class="container">
-        {# {% include 'ainow/_tickets-hero.html' %} #}
-        {% include 'ainow/_livestream-hero.html' %}
+        {% if show_livestream %}
+          {% include 'ainow/_livestream-hero.html' with livestream=livestream %}
+        {% else %}
+          {% include 'ainow/_tickets-hero.html' %}
+        {% endif %}
       </div>
     </div>
     <div class="homepage-description">

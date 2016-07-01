@@ -54,3 +54,5 @@ admin.site.register(
     prepopulated_fields = {"slug": ("title",)},
     ordering=("slot__start",)
 )
+
+admin.site.register(models.LiveStream)
