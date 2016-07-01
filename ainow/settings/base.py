@@ -302,7 +302,7 @@ if USE_MAILCATCHER:
 
 # MarkItUp settings
 MARKITUP_FILTER = ('conference.utils.bleached_markdown', {})
-MARKITUP_SET = 'markitup/sets/markdown/'
+MARKITUP_SET = '/static/markitup/sets/markdown/'
 
 
 # Bleach settings (used by conference.utils.bleached_markdown)

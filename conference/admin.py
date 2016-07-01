@@ -4,9 +4,15 @@ from conference import models
 from sorl.thumbnail.admin import AdminImageMixin
 
 
-class SlotInline(admin.StackedInline):
+class SlotInline(admin.TabularInline):
     model = models.Slot
     extra = 1
+    ordering = ['start']
+
+    class Media:
+        css = {
+            'all': ('sass/admin_overrides.css',)
+        }
 
 
 admin.site.register(
