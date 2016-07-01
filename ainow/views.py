@@ -31,7 +31,10 @@ class HomeView(TemplateView):
         print settings.CONFERENCE_DATE
         if timezone.now().date() == settings.CONFERENCE_DATE:
             context['show_livestream'] = True
-            context['livestream'] = LiveStream.objects.get(live=True)
+            try:
+                context['livestream'] = LiveStream.objects.get(live=True)
+            except LiveStream.DoesNotExist:
+                context['livestream'] = None
         return context
 
 

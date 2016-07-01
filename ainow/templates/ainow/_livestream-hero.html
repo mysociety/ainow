@@ -17,13 +17,17 @@
 </div>
 <div class="homepage-hero--streaming__live-stream-container">
   <div class="live-stream-container__stream">
-    <iframe
-      width="800"
-      height="450"
-      src="https://www.youtube.com/embed/{{ livestream.video_id }}"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
+    {% if livestream %}
+      <iframe
+        width="800"
+        height="450"
+        src="https://www.youtube.com/embed/{{ livestream.video_id }}"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    {% else %}
+      <p>TODO: Show a placeholder 'coming soon' image</p>
+    {% endif %}
   </div>
 </div>
 <div class="homepage-hero--streaming__live-stream-schedule">
