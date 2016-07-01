@@ -598,6 +598,7 @@ iframe {
   max-width: 43.75em;
   width: 100%;
   margin: 2em auto 1em;
+  background-color: $gray-darker;
   box-shadow: 0 0 12px 2px rgba(0,0,0,0.5);
 }
 
@@ -607,6 +608,10 @@ iframe {
   padding-top: 35px;
   height: 0;
   overflow: hidden;
+  background-color: $gray-darker;
+  background-image: url('../img/clock.png');
+  background-repeat: no-repeat;
+  background-position: center center;
   iframe {
     position: absolute;
     top:0;
