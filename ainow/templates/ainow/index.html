@@ -4,25 +4,36 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="homepage-hero">
+<div class="homepage-hero homepage-hero--streaming">
       <div class="container">
-        <p class="homepage-hero__details">July 7th, Skirball Center for the Performing Arts, New York City</p>
-        <h2 class="homepage-hero__title">
-          <img src="{% static 'img/ainow-hero-logo.png' %}"
-               srcset="{% static 'img/ainow-hero-logo.svg' %} 1x"
-               alt="Artificial Intelligence Now"
-               height="35" width="115">
-        </h2>
-        <p class="homepage-hero__subtitle">
-          The Social and Economic Implications of Artificial Intelligence
-          Technologies in the Near-Term
-        </p>
-        <a href="http://nyuskirball.org/calendar/ainow"
-           class="btn btn-primary btn-lg btn--tickets">
-          Book your ticket
-          <i class="glyphicon glyphicon-new-window"></i>
-          {{ tickets_button_tagline }}
-        </a>
+        <div class="row">
+          <div class="homepage-hero--streaming__title-container">
+            <h2 class="homepage-hero__title">
+              <img src="{% static 'img/ainow-hero-logo.png' %}"
+                   srcset="{% static 'img/ainow-hero-logo.svg' %} 1x"
+                   alt="Artificial Intelligence Now"
+                   height="35" width="115">
+            </h2>
+          </div>
+          <div class="homepage-hero--streaming__subtitle-container">
+            <p class="homepage-hero__subtitle">
+              The Social and Economic Implications of Artificial Intelligence
+              Technologies in the Near-Term
+            </p>
+          </div>
+        </div>
+        <div class="homepage-hero--streaming__live-stream-container">
+          <div class="live-stream-container__stream">
+            <iframe width="800" height="450" src="https://www.youtube.com/embed/XXOZhY80EUc" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+          <div class="homepage-hero--streaming__live-stream-schedule">
+            <ol>
+                <li><strong>10:00am – 4:00pm EST</strong> – Daytime Workshop</li>
+                <li><strong>10:00am – 4:00pm EST</strong> – Public Symposium</li>
+            </ol>
+
+          </div>
       </div>
     </div>
     <div class="homepage-description">
