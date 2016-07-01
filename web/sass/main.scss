@@ -621,6 +621,19 @@ iframe {
   }
 }
 
+.list-stream-container__stream__message {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  width: 100%;
+  text-align: center;
+  margin-top: -1em;
+  font-size: 1.125em;
+  font-weight: bold;
+  color: $gray-light;
+  z-index: 0;
+}
+
 .homepage-hero--streaming__live-stream-schedule {
   ol {
     margin-top: 1em;
