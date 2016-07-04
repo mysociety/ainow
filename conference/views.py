@@ -80,6 +80,11 @@ class ScheduleView(DetailView):
         context['slots'] = context['schedule'].slots.order_by('start')
         sidebar_block = Block.objects.get(slug="{}-sidebar".format(context['schedule'].slug))
         context['sidebar_block'] = sidebar_block.content
+        try:
+            footer_block = Block.objects.get(slug="{}-footer".format(context['schedule'].slug))
+            context['footer_block'] = footer_block.content
+        except Block.DoesNotExist:
+            context['footer_block'] = None
         return context
 
 

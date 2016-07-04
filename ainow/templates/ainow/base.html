@@ -144,6 +144,7 @@
             <ul class="utility-links__list">
               <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
               {% if schedule.slug == 'workshop' %}
+              <li><a href="{% url 'page' schedule.slug 'production-credits' %}">Production Team and Credits</a></li>
               <li>For information and questions: <a href="mailto:team@artificialintelligencenow.com">team@artificialintelligencenow.com</a></li>
               {% else %}
               <li>For information and questions: <a href="mailto:info@artificialintelligencenow.com">info@artificialintelligencenow.com</a></li>
