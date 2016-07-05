@@ -59,12 +59,15 @@ class Command(BaseCommand):
 
                 # Create a basic Attendee profile for them too
                 organisation = row.get('Affiliation', '').strip()
+                external_id = row.get('ID Number', '').strip()
+                if (not external_id):
+                    external_id = None
                 Attendee.objects.create(
                     user=user,
                     name=user.get_full_name(),
                     organisation=organisation,
                     schedule=Schedule.objects.get(slug='workshop'),
-                    external_id=row.get('ID Number')
+                    external_id=external_id
                 )
             else:
                 name = "{0} {1}".format(row.get('First Name'), row.get('Last Name'))

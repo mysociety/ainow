@@ -475,16 +475,6 @@ iframe {
   background-image: url('../img/hero-background2.jpg');
 }
 
-.homepage-hero__details {
-  text-transform: uppercase;
-  font-weight: bold;
-  border-bottom: 2px solid $color_white;
-  padding-bottom: 0.5em;
-  @media (min-width:$screen-sm-min) {
-    max-width: 35em;
-  }
-}
-
 .homepage-hero__pretitle {
   display: block;
   height: 45px;
@@ -495,7 +485,7 @@ iframe {
     border: 1px solid $color_orange;
     position: relative;
     left: -4px;
-    top: 1px;
+    top: 2px;
     width: auto;
   }
 }
@@ -539,8 +529,7 @@ iframe {
 .btn--tickets {
   font-size: 1.235294118em;
   width: 100%;
-  padding: 0.75em 1em;
-  padding-right: 1.5em;
+  padding: 0.75em 1.5em 0.75em 1em;
   float: left;
   text-align: left;
   border: 0;
@@ -548,18 +537,115 @@ iframe {
   @media (min-width:$screen-sm-min) {
     width: auto;
   }
-  span {
+  p {
     display: block;
     font-weight: normal;
     font-size: 0.8125em;
     line-height: 1.428em;
+    margin-bottom: 0;
   }
   .glyphicon {
     font-size: 0.75em;
     margin-left: 0.45em;
     opacity: 0.75;
+  }
+}
+
+.two-columns-of-text {
+  @media (min-width:$screen-sm-min) {
+    @include content-columns(2);
+  }
+}
+
+.homepage-videos {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  .container {
     position: relative;
-    top: -1px;
+  }
+}
+
+.homepage-hero--streaming {
+
+}
+
+.homepage-hero--streaming__title-container {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 2);
+  @include make-md-column-push($columns: 1);
+  img {
+    max-width: 10em;
+    width: 100%;
+    height:  auto;
+  }
+}
+
+.homepage-hero--streaming__subtitle-container {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 10);
+  @include make-md-column($columns: 9);
+  @include make-md-column-push($columns: 1);
+  .homepage-hero__subtitle {
+    @media (min-width:$screen-sm-min) {
+      font-size: 1.8em;
+      max-width: none;
+    }
+    @media (min-width:$screen-md-min) {
+      font-size: 2.125em;
+    }
+  }
+}
+
+.homepage-hero--streaming__live-stream-container {
+  max-width: 43.75em;
+  width: 100%;
+  margin: 2em auto 1em;
+  background-color: $gray-darker;
+  box-shadow: 0 0 12px 2px rgba(0,0,0,0.5);
+}
+
+.live-stream-container__stream {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  background-color: $gray-darker;
+  background-image: url('../img/clock.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.list-stream-container__stream__message {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  width: 100%;
+  text-align: center;
+  margin-top: -1em;
+  font-size: 1.125em;
+  font-weight: bold;
+  color: $gray-light;
+  z-index: 0;
+}
+
+.homepage-hero--streaming__live-stream-schedule {
+  ol {
+    margin-top: 1em;
+    @extend .list-unstyled;
+    text-align: center;
+    font-size: 1.4375em;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+  }
+  li {
+    margin-bottom: 0.3em;
   }
 }
 
@@ -571,82 +657,92 @@ iframe {
   font-size: 1.0625em;
 }
 
-.two-columns-of-text {
-  @media (min-width:$screen-sm-min) {
-    @include content-columns(2);
-  }
+.homepage-videos__all-talks {
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+    font-size: 0.875em;
 }
 
-.homepage-description__content {
-  @include make-md-column($columns: 9);
-  @include make-md-column-pull($columns: 3);
+.homepage-videos__list-of-talks {
+  @extend .list-unstyled;
+  margin-top: 2em;
 }
-  // Workshop homepage doesn't have any right hand column
-  .workshop-home .homepage-description__content {
-    @include make-md-column-pull($columns: 0);
-  }
 
-.homepage-description__partners {
+.list-of-talks__item {
+
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
   @include make-md-column($columns: 3);
-  @include make-md-column-push($columns: 9);
-
-  margin-bottom: 2em;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row wrap;
-
-  align-items: center;
-
-  @media (min-width:$screen-md-min) {
-    margin-bottom: 1em;
-  }
-  img {
-    max-width: 100%;
-  }
 }
 
-.homepage-description__partners__column {
-  display: inline-block;
-  @media (min-width:$screen-md-min) {
-    text-align: center;
-  }
-}
-
-.homepage-description__partners__column--one {
-  width: 30%;
-  margin-right: 3%;
-  @media (min-width:$screen-md-min) {
-    margin-bottom: 1em;
-    margin-top: -1em;
-    margin-right: 0;
-    width: 100%;
-  }
-}
-
-.homepage-description__partners__column--two {
-  width: 67%;
-  @media (min-width:$screen-md-min) {
-    width: 100%;
-  }
-}
-
-.callout-box {
+.talk-teaser {
+  position: relative;
   background-color: $gray-lighter;
-  padding: 2em;
-  margin-top: 1em;
-  float: left;
-  a {
-    font-weight: $body_typeface_bold;
-  }
-  @media (min-width:$screen-md-min) {
-    font-size: 1.166666667em;
-  }
-  p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 2em;
+}
+
+.talk-teaser__details {
+  padding: 0 1em 1em;
+}
+
+.talk-teaser__duration {
+  display: inline-block;
+  position: absolute;
+  top: 0.75em;
+  right: 0.75em;
+
+  background-color: $brand-primary;
+  color: $color_white;
+  font-weight: bold;
+  font-size: 0.875em;
+  padding: 0.25em 0.5em;
+}
+
+.talk-teaser__thumbnail {
+  max-width: 100%;
+  width: 100%;
+}
+
+.talk-teaser__title {
+  font-size: 1.125em;
+}
+
+.talk-teaser__speaker {
+  font-size: 0.875em;
+  margin-bottom: 0.3em;
+}
+
+.talk-teaser__themes {
+  font-size: 0.75em;
+  color: $gray-dark;
+}
+
+.homepage-themes {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-top: 1px solid $gray-lighter;
+}
+
+.homepage-themes__list-of-themes {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  margin-top: 2em;
+}
+
+.list-of-themes__link {
+  @extend .btn;
+  @extend .btn-default;
+  font-size: 1.3125em;
+  padding: 0.5em 1em;
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+  color: $link-color;
+  display: inline-block;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $gray-lighter;
   }
 }
 

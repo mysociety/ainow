@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -5,11 +7,12 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 from django.conf import settings
+from django.utils import timezone
 
 import account.forms
 import account.views
 
-from conference.models import Schedule
+from conference.models import Schedule, LiveStream
 from blocks.models import Block
 
 from forms import SignupForm
@@ -22,7 +25,25 @@ class HomeView(TemplateView):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
         context['schedule'] = Schedule.objects.get(slug='conference')
+
+        # Get the current datetime in CONFERENCE_TIMEZONE
+        with timezone.override(settings.CONFERENCE_TIMEZONE):
+            now = timezone.localtime(timezone.now())
+        if now.date() < settings.CONFERENCE_START.date():
+            # Before the day of the conference we don't want to show any livestream stuff
+            context['pre_conference'] = True
+        elif now.date() >= settings.CONFERENCE_START.date() and now < settings.CONFERENCE_END:
+            # Whilst the conference is running, show the livestream
+            context['show_livestream'] = True
+            try:
+                context['livestream'] = LiveStream.objects.get(live=True)
+            except LiveStream.DoesNotExist:
+                context['livestream'] = None
+        else:
+            # Conference has finished, so immediately hide livestream and other pre-conference bits (e.g. ticket links)
+            context['post_conference'] = True
         return context
 
 
@@ -42,6 +63,8 @@ class WorkshopVenueView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(WorkshopVenueView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='workshop-venue-introduction').content
+        context['harassment_block'] = Block.objects.get(slug='harassment-policy').content
+        context['chatham_block'] = Block.objects.get(slug='chatham-house-rule').content
         context['schedule'] = Schedule.objects.get(slug='workshop')
         return context
 

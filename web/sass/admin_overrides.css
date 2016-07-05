@@ -1,0 +1,9 @@
+/* Make the inline forms for Slots in a schedule a little bit nicer */
+#slots-group .markItUp {
+  width: 265px;
+}
+
+#slots-group .markItUpEditor {
+  width: 265px;
+  height: 100px;
+}

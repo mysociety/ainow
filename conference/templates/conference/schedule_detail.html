@@ -39,6 +39,11 @@
               <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>
             {% endfor %}
           </ul>
+          {% if footer_block %}
+            <div class="schedule__footer">
+              {{ footer_block }}
+            </div>
+          {% endif %}
         </div>
         <div class="standard-layout__secondary-column">
           {{ sidebar_block }}

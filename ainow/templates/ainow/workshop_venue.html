@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-{% block title %}Location{% endblock %}
+{% block title %}Resources{% endblock %}
 
 {% block bodyclasses %}standard-page{% endblock %}
 
@@ -10,12 +10,14 @@
 <div class="general-content">
   <div class="container standard-layout">
     <div class="general-content__page">
-      <h1>Location</h1>
+      <h1>Resources</h1>
       <div class="row">
         <div class="standard-layout__secondary-column">
           <ul class="nav nav-stacked section-nav">
             <li><a href="#venue">Venue</a></li>
             <li><a href="#map">Map</a></li>
+            <li><a href="#harassment">Harassment Policy</a></li>
+            <li><a href="#chatham">Chatham House Rule</a></li>
             <li><a href="#accommodation">Suggested Accommodation</a></li>
             <li><a href="#coffee">Nearby Coffee</a></li>
             <li><a href="#places-to-eat">Places to Eat</a></li>
@@ -32,6 +34,16 @@
             <div class="object-container" id="map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.461349928227!2d-74.00043118486758!3d40.7298728793299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25991a91649b3%3A0x900beb64e42cf49e!2s238+Thompson+St%2C+New+York%2C+NY+10012%2C+USA!5e0!3m2!1sen!2suk!4v1466077928845" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
+          </div>
+
+          <div class="content-block" id="harassment">
+            <h2>Harassment Policy</h2>
+            {{ harassment_block }}
+          </div>
+
+          <div class="content-block" id="chatham">
+            <h2>Chatham House Rule</h2>
+            {{ chatham_block }}
           </div>
 
           <div class="content-block" id="accommodation">

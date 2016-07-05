@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<div class="row">
+  <div class="homepage-hero--streaming__title-container">
+    <h2 class="homepage-hero__title">
+      <img src="{% static 'img/ainow-hero-logo.png' %}"
+           srcset="{% static 'img/ainow-hero-logo.svg' %} 1x"
+           alt="Artificial Intelligence Now"
+           height="35" width="115">
+    </h2>
+  </div>
+  <div class="homepage-hero--streaming__subtitle-container">
+    <p class="homepage-hero__subtitle">
+      The Social and Economic Implications of Artificial Intelligence
+      Technologies in the Near-Term
+    </p>
+  </div>
+</div>
+<div class="homepage-hero--streaming__live-stream-container">
+  <div class="live-stream-container__stream">
+    {% if livestream %}
+      <iframe
+        width="800"
+        height="450"
+        src="https://www.youtube.com/embed/{{ livestream.video_id }}"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    {% else %}
+      <p class="list-stream-container__stream__message">
+        Our live stream will be starting shortly
+      </p>
+    {% endif %}
+  </div>
+</div>
+<div class="homepage-hero--streaming__live-stream-schedule">
+  <ol>
+      <li><strong>9:00am &ndash; 4:30pm EDT</strong> – Daytime Workshop</li>
+      <li><strong>5:30pm &ndash; 8:00pm EDT</strong> – Public Symposium</li>
+  </ol>
+
+</div>
