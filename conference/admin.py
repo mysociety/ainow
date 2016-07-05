@@ -55,4 +55,8 @@ admin.site.register(
     ordering=("slot__start",)
 )
 
-admin.site.register(models.LiveStream)
+admin.site.register(
+    models.LiveStream,
+    list_display=("name", "youtube_link", "live"),
+    list_editable=("youtube_link", "live"),
+)
