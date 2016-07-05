@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -26,15 +28,22 @@ class HomeView(TemplateView):
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
         context['schedule'] = Schedule.objects.get(slug='conference')
 
-        context['show_livestream'] = False
-        print timezone.now().date()
-        print settings.CONFERENCE_DATE
-        if timezone.now().date() == settings.CONFERENCE_DATE:
+        # Get the current datetime in CONFERENCE_TIMEZONE
+        with timezone.override(settings.CONFERENCE_TIMEZONE):
+            now = timezone.localtime(timezone.now())
+        if now.date() < settings.CONFERENCE_START.date():
+            # Before the day of the conference we don't want to show any livestream stuff
+            context['pre_conference'] = True
+        elif now.date() >= settings.CONFERENCE_START.date() and now < settings.CONFERENCE_END:
+            # Whilst the conference is running, show the livestream
             context['show_livestream'] = True
             try:
                 context['livestream'] = LiveStream.objects.get(live=True)
             except LiveStream.DoesNotExist:
                 context['livestream'] = None
+        else:
+            # Conference has finished, so immediately hide livestream and other pre-conference bits (e.g. ticket links)
+            context['post_conference'] = True
         return context
 
 

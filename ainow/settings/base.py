@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import yaml
+import pytz
 from datetime import datetime
 
 from .paths import *
@@ -363,4 +364,6 @@ PASSWORD_RESET_TIMEOUT_DAYS = 15
 # mySociety-specific settings
 GOOGLE_ANALYTICS_ACCOUNT = config.get('GOOGLE_ANALYTICS_ACCOUNT')
 
-CONFERENCE_DATE = datetime.strptime(config.get('CONFERENCE_DATE'), "%d/%m/%Y").date()
+CONFERENCE_TIMEZONE = pytz.timezone(config.get('CONFERENCE_TIMEZONE'))
+CONFERENCE_START = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_START'), "%d/%m/%Y %H:%M"))
+CONFERENCE_END = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_END'), "%d/%m/%Y %H:%M"))

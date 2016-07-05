@@ -6,10 +6,12 @@
 {% block content %}
 <div class="homepage-hero{% if show_livestream %} homepage-hero--streaming{% endif %}">
       <div class="container">
-        {% if show_livestream %}
-          {% include 'ainow/_livestream-hero.html' with livestream=livestream %}
-        {% else %}
+        {% if pre_conference %}
           {% include 'ainow/_tickets-hero.html' %}
+        {% elif show_livestream %}
+          {% include 'ainow/_livestream-hero.html' %}
+        {% else %}
+          Event is finished.
         {% endif %}
       </div>
     </div>
