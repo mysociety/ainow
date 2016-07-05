@@ -13,30 +13,96 @@
         {% endif %}
       </div>
     </div>
-    <div class="homepage-description">
-        <div class="container">
-          <div class="row">
-            <div class="homepage-description__partners">
-              <div class="homepage-description__partners__column homepage-description__partners__column--one">
-                <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
-              </div><div class="homepage-description__partners__column homepage-description__partners__column--two">
-                <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili.png' %}" alt="New York University, Information Law Institute" class="partner-logo partner-logo--nyu"/></a>
+
+    <div class="homepage-videos">
+      <div class="container">
+        <h2>Talks</h2>
+        <a href="#" class="btn btn-default homepage-videos__all-talks">All talks</a>
+        <ul class="homepage-videos__list-of-talks row">
+          <li class="list-of-talks__item">
+            <div class="talk-teaser">
+              <p class="talk-teaser__duration">9:32</p>
+              <a href="#">
+                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
+              </a>
+              <div class="talk-teaser__details">
+                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
+                <p class="talk-teaser__speaker">Speaker name</p>
+                <p class="talk-teaser__themes">Social inequality, ethics</p>
               </div>
             </div>
-            <div class="homepage-description__content">
-              <div class="two-columns-of-text">
-                {{ intro_block }}
+          </li>
+          <li class="list-of-talks__item">
+            <div class="talk-teaser">
+              <p class="talk-teaser__duration">9:32</p>
+              <a href="#">
+                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
+              </a>
+              <div class="talk-teaser__details">
+                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
+                <p class="talk-teaser__speaker">Speaker name</p>
+                <p class="talk-teaser__themes">Social inequality, ethics</p>
               </div>
+<<<<<<< 91f563f45cb6b2cb9faa4a22cbf401aceed1fcde
               {% if not post_conference %}
                 <div class="callout-box">
                   {{ tickets_block }}
                 </div>
               {% endif %}
+=======
             </div>
-
-          </div>
-        </div>
+          </li>
+          <li class="list-of-talks__item">
+            <div class="talk-teaser">
+              <p class="talk-teaser__duration">9:32</p>
+              <a href="#">
+                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
+              </a>
+              <div class="talk-teaser__details">
+                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
+                <p class="talk-teaser__speaker">Speaker name</p>
+                <p class="talk-teaser__themes">Social inequality, ethics</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-of-talks__item">
+            <div class="talk-teaser">
+              <p class="talk-teaser__duration">9:32</p>
+              <a href="#">
+                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
+              </a>
+              <div class="talk-teaser__details">
+                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
+                <p class="talk-teaser__speaker">Speaker name</p>
+                <p class="talk-teaser__themes">Social inequality, ethics</p>
+              </div>
+>>>>>>> HTML stub of post-launch homepage
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <div class="homepage-themes">
+      <div class="container">
+        <h2>Themes</h2>
+        <ul class="homepage-themes__list-of-themes">
+            <li class="list-of-themes__item">
+              <a href="#" class="list-of-themes__link">Social inequality</a>
+            </li>
+            <li class="list-of-themes__item">
+              <a href="#" class="list-of-themes__link">Labor</a>
+            </li>
+            <li class="list-of-themes__item">
+              <a href="#" class="list-of-themes__link">Healthcare</a>
+            </li>
+            <li class="list-of-themes__item">
+              <a href="#" class="list-of-themes__link">Ethics</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="homepage-people">
       <div class="container">
          <h2>People</h2>
