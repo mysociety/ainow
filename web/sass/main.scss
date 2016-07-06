@@ -634,6 +634,13 @@ iframe {
   z-index: 0;
 }
 
+.list-stream-container__stream__message--over {
+  top: 30%;
+  width: 80%;
+  left: 10%;
+  color: $color_white;
+}
+
 .homepage-hero--streaming__live-stream-schedule {
   ol {
     margin-top: 1em;

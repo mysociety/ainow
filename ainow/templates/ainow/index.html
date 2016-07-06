@@ -8,10 +8,8 @@
       <div class="container">
         {% if pre_conference %}
           {% include 'ainow/_tickets-hero.html' %}
-        {% elif show_livestream %}
+        {% elif show_livestream or post_conference %}
           {% include 'ainow/_livestream-hero.html' %}
-        {% else %}
-          Event is finished.
         {% endif %}
       </div>
     </div>

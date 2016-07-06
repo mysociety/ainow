@@ -17,18 +17,28 @@
 </div>
 <div class="homepage-hero--streaming__live-stream-container">
   <div class="live-stream-container__stream">
-    {% if livestream %}
-      <iframe
-        width="800"
-        height="450"
-        src="https://www.youtube.com/embed/{{ livestream.video_id }}"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    {% else %}
+    {% if show_livestream %}
+      {% if livestream %}
+        <iframe
+          width="800"
+          height="450"
+          src="https://www.youtube.com/embed/{{ livestream.video_id }}"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      {% else %}
       <p class="list-stream-container__stream__message">
         Our live stream will be starting shortly
       </p>
+      {% endif %}
+    {% elif post_conference %}
+      {# 3rd case here is if the event is over... #}
+      <div class="list-stream-container__stream__message list-stream-container__stream__message--over">
+        <h3>The event is over</h3>
+        <p>Thank you to the many individuals on our production team who made this event possible.</p>
+        <p>Come back shortly to find videos, write-ups and other materials on this website</p>
+        <p><a href="#" class="btn btn-primary">Watch our event streams</a>  </p>
+      </div>
     {% endif %}
   </div>
 </div>
