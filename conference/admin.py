@@ -24,14 +24,16 @@ admin.site.register(
 
 
 class SpeakerAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ("name", "twitter_username")
+    list_display = ("name", "twitter_username", "title", "organisation")
+    list_editable = ("twitter_username", "title", "organisation")
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(models.Speaker, SpeakerAdmin)
 
 
 class AttendeeAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ("name", "twitter_username")
+    list_display = ("name", "twitter_username", "title", "organisation")
+    list_editable = ("twitter_username", "title", "organisation")
     prepopulated_fields = {"slug": ("name",)}
 
 
