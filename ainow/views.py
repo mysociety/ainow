@@ -44,6 +44,7 @@ class HomeView(TemplateView):
         else:
             # Conference has finished, so immediately hide livestream and other pre-conference bits (e.g. ticket links)
             context['post_conference'] = True
+            context['post_conference_block'] = Block.objects.get(slug='homepage-post-stream').content
         return context
 
 
