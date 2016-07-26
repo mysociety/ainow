@@ -669,23 +669,58 @@ iframe {
   font-size: 1.0625em;
 }
 
+.homepage-videos__symposium,
+.homepage-videos__workshop {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+  > h3 {
+    font-size: 1em;
+    margin: 1em 0 0;
+    font-weight: normal;
+  }
+}
+
+.homepage-videos__workshop {
+  @media (min-width:$screen-sm-min) {
+    position: relative;
+    padding-right: 2em;
+  }
+
+  .homepage-videos__all-talks--small {
+    @media (min-width:$screen-sm-min) {
+      right: 2.571428571em;  //~32px
+    }
+  }
+}
+
+.homepage-videos__symposium {
+  @media (min-width:$screen-sm-min) {
+    padding-left: 2em;
+  }
+}
+
 .homepage-videos__all-talks {
-    position: absolute;
-    top: 1.5em;
-    right: 1em;
-    font-size: 0.875em;
+  position: absolute;
+  top: 1.5em;
+  right: 1em;
+  font-size: 0.875em;
+}
+
+.homepage-videos__all-talks--small {
+  font-size: 0.75em;
+  top: auto;
+  right: 1rem;
+  bottom: 1em;
 }
 
 .homepage-videos__list-of-talks {
   @extend .list-unstyled;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .list-of-talks__item {
-
   @include make-xs-column($columns: 12);
   @include make-sm-column($columns: 6);
-  @include make-md-column($columns: 3);
 }
 
 .talk-teaser {
