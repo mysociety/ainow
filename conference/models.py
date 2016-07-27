@@ -172,13 +172,19 @@ class Presentation(TimestampedModel):
         blank=True
     )
     long_description = MarkupField()
-    short_description = models.TextField()
+    short_description = MarkupField()
     slot = models.OneToOneField(
         'Slot',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
         related_name='presentation'
+    )
+    youtube_link = models.URLField(
+        blank=True,
+        max_length=1024,
+        help_text='The url for the presentation\'s video on YouTube.<br>'
+                  'We can extract everything we need to embed it from that.'
     )
 
     def __str__(self):
