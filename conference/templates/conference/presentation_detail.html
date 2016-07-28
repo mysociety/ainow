@@ -10,13 +10,6 @@
 <div class="general-content">
   <div class="container">
     <div class="presentation-detail">
-      {% if presentation.slot %}
-        <p class="presentation-detail__meta">
-          <time class="presentation-detail__time">{{ presentation.slot.start }} - {{ presentation.slot.end }}</time>
-          <span class="presentation-detail__location">{{ presentation.slot.room.name }}</span>
-        </p>
-      {% endif %}
-
       <h1 class="presentation-detail__title">{{ presentation.title }}</h1>
 
       <p class="presentation-detail__speaker">
