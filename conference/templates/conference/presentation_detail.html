@@ -19,18 +19,27 @@
 
       <h1 class="presentation-detail__title">{{ presentation.title }}</h1>
 
-      <p class="presentation-detail__speaker"><a href="#link-to-speaker-info">
-
-        {% thumbnail speaker.photo "35x35" crop="center" as im %}
-          <img src="{{ im.url }}" class="presentation-detail__speaker-thumb">
+      <p class="presentation-detail__speaker">
+        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">
+          {% thumbnail presentation.primary_speaker.photo "35x35" crop="center" as im %}
+            <img src="{{ im.url }}" class="presentation-detail__speaker-thumb">
           {% empty %}
-          <img  src="/static/img/no-photo.png" height="35" width="35" class="presentation-detail__speaker-thumb">
-        {% endthumbnail %}
+            <img  src="/static/img/no-photo.png" height="35" width="35" class="presentation-detail__speaker-thumb">
+          {% endthumbnail %}
+        </a>
 
-        <a href="#link-to-speaker-details"><span class="presentation-detail__speaker-name">{{ presentation.primary_speaker.name }}</span></a>
+        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">
+          <span class="presentation-detail__speaker-name">
+            {{ presentation.primary_speaker.name }}
+          </span>
+        </a>
         {% if presentation.additional_speakers %}
           {% for speaker in presentation.additional_speakers.all %}
-            , <a href="#link-to-speaker-details"><span class="presentation-detail__speaker-name">{{ speaker.name }}</span></a>
+            , <a href="{% url 'speaker' schedule.slug speaker.slug}">
+                <span class="presentation-detail__speaker-name">
+                  {{ speaker.name }}
+                </span>
+              </a>
           {% endfor %}
         {% endif %}
       </p>
