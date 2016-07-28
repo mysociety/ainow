@@ -1,16 +1,3 @@
-{% if schedule.slug == 'workshop' %}
-  {# when a user is in the workshop section, the top nav becomes the way to get back to the conference pages #}
-  <li><a href="{% url 'workshop_home' %}">Workshop</a></li>
-  <li><a href="{% url 'home' %}">Symposium</a></li>
-{% else %}
-{% if request.user.is_authenticated %}
-  {# Workshop only appears in the top nav when you're logged in #}
-  <li><a href="{% url 'workshop_home' %}">Workshop</a></li>
-{% endif %}
-  {# Everyone can see this navigation #}
-
-  <li><a href="{% url 'schedule' 'conference' %}">Schedule</a></li>
-  <li><a href="{% url 'presentations' 'conference' %}">Videos</a></li>
-
-  <!--<li><a href="{% url 'faq' 'conference' 'conference' %}">FAQ</a></li>-->
-{% endif %}
+<li><a href="{% url 'schedule' 'conference' %}">Schedule</a></li>
+<li><a href="{% url 'presentations' 'conference' %}">Videos</a></li>
+<li><a href="{% url 'attendees' 'workshop' %}">Attendees &amp; Speakers</a></li>
