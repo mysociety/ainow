@@ -186,6 +186,14 @@ class Presentation(TimestampedModel):
         help_text='The url for the presentation\'s video on YouTube.<br>'
                   'We can extract everything we need to embed it from that.'
     )
+    schedule = models.ForeignKey(
+        'Schedule',
+        blank=True,
+        null=True,
+        help_text='If this presentation isn\'t associated with a slot in a '
+                  'schedule directly, but needs to be visible in that '
+                  'schedule, e.g. a lightning talk, set the schedule here'
+    )
 
     def __str__(self):
         return self.title

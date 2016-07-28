@@ -112,6 +112,8 @@ class SpeakerView(ScheduleMixin, DetailView):
         Speakers are linked to a schedule by their presentation(s) slot(s).
         """
         return Speaker.objects.filter(
+            Q(presentations__schedule=self.schedule) |
+            Q(additional_presentations__schedule=self.schedule) |
             Q(presentations__slot__schedule=self.schedule) |
             Q(additional_presentations__slot__schedule=self.schedule)
         ).distinct()
@@ -125,7 +127,10 @@ class PresentationView(ScheduleMixin, DetailView):
         """
         Presentations are linked to a schedule by their slot.
         """
-        return Presentation.objects.filter(slot__schedule=self.schedule)
+        return Presentation.objects.filter(
+            Q(schedule=self.schedule) |
+            Q(slot__schedule=self.schedule)
+        ).distinct()
 
 
 class AttendeeListView(ScheduleMixin, ListView):
