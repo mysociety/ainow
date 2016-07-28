@@ -46,6 +46,16 @@
 
       <p class="presentation-detail__description">{{ presentation.long_description }}</p>
 
+      {% if presentation.youtube_link %}
+        <iframe
+          width="800"
+          height="450"
+          src="https://www.youtube.com/embed/{{ presentation.video_id }}"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      {% endif %}
+
     </div>
   </div>
 </div>
