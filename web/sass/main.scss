@@ -913,6 +913,31 @@ iframe {
 }
 
 /*
+ * Presentation List
+ */
+.talk-list {
+  @extend .list-unstyled;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 2em;
+}
+
+.talk-list__talk {
+  // Layout from Bootstrap's media object
+  @extend .media;
+  margin-bottom: 2em;
+  margin-top: 0;
+  width: 15em;
+  margin-right: $grid-gutter-width;
+}
+
+/*
  * Presentation detail
  */
 .presentation-detail__meta{

@@ -199,6 +199,10 @@ class Presentation(TimestampedModel):
     def video_id(self):
         return self.youtube_link.split("?v=")[1]
 
+    @property
+    def video_thumbnail_url(self):
+        return "http://img.youtube.com/vi/{0}/0.jpg".format(self.video_id)
+
     def __str__(self):
         return self.title
 

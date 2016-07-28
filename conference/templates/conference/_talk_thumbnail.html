@@ -1,0 +1,19 @@
+{% load thumbnail %}
+{% load staticfiles %}
+<div class="talk-teaser">
+  <!-- <p class="talk-teaser__duration">9:32</p> -->
+  <a href="#">
+    {% thumbnail talk.video_thumbnail_url "255x143" as im %}
+      <img class="talk-teaser__thumbnail" src="{{ im.url }}" />
+    {% empty %}
+      <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
+    {% endthumbnail %}
+  </a>
+  <div class="talk-teaser__details">
+    <h3 class="talk-teaser__title"><a href="#">{{ talk.title }}</a></h3>
+    <p class="talk-teaser__speaker">
+      {{ talk.primary_speaker }}{% if talk.additional_speakers %}{% for speaker in talk.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
+    </p>
+    <!-- <p class="talk-teaser__themes">Social inequality, ethics</p> -->
+  </div>
+</div>

@@ -19,6 +19,7 @@ from .views import (
     ScheduleView,
     SpeakerListView,
     SpeakerView,
+    PresentationListView,
     PresentationView,
     AttendeeListView,
     AttendeeView,
@@ -28,6 +29,7 @@ from .views import (
 
 urlpatterns = [
     url(r'^schedule/(?P<slug>[-\w]+)$', ScheduleView.as_view(), name='schedule'),
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/presentations$', PresentationListView.as_view(), name='presentations'),
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/speakers$', SpeakerListView.as_view(), name='speakers'),
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/speaker/(?P<slug>[-\w]+)$', SpeakerView.as_view(), name='speaker'),
