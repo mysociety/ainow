@@ -10,7 +10,9 @@
     {% endthumbnail %}
   </a>
   <div class="talk-teaser__details">
-    <h3 class="talk-teaser__title"><a href="#">{{ talk.title }}</a></h3>
+    <h3 class="talk-teaser__title">
+      <a href="{% url 'presentation' schedule.slug talk.slug %}">{{ talk.title }}</a>
+    </h3>
     <p class="talk-teaser__speaker">
       {{ talk.primary_speaker }}{% if talk.additional_speakers %}{% for speaker in talk.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
     </p>
