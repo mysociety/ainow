@@ -143,7 +143,7 @@ class Slot(TimestampedModel):
     )
 
     def __str__(self):
-        return "{} slot ({} - {}) in {}".format(self.name, self.start, self.end, self.room)
+        return "{}: {} slot ({} - {}) in {}".format(self.schedule.name, self.name, self.start, self.end, self.room)
 
     @property
     def is_presentation_slot(self):
@@ -194,6 +194,10 @@ class Presentation(TimestampedModel):
                   'schedule directly, but needs to be visible in that '
                   'schedule, e.g. a lightning talk, set the schedule here'
     )
+
+    @property
+    def video_id(self):
+        return self.youtube_link.split("?v=")[1]
 
     def __str__(self):
         return self.title
