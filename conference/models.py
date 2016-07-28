@@ -201,7 +201,7 @@ class Presentation(TimestampedModel):
 
     @property
     def video_thumbnail_url(self):
-        return "http://img.youtube.com/vi/{0}/0.jpg".format(self.video_id)
+        return "https://img.youtube.com/vi/{0}/0.jpg".format(self.video_id)
 
     def __str__(self):
         return self.title

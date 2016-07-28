@@ -3,11 +3,7 @@
 <div class="talk-teaser">
   <!-- <p class="talk-teaser__duration">9:32</p> -->
   <a href="{% url 'presentation' schedule.slug talk.slug %}">
-    {% thumbnail talk.video_thumbnail_url "255x143" as im %}
-      <img class="talk-teaser__thumbnail" src="{{ im.url }}" />
-    {% empty %}
-      <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
-    {% endthumbnail %}
+    <img class="talk-teaser__thumbnail" src="{{ talk.video_thumbnail_url }}" />
   </a>
   <div class="talk-teaser__details">
     <h3 class="talk-teaser__title">
