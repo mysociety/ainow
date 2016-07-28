@@ -19,71 +19,31 @@
 <div class="homepage-videos">
   <div class="container">
     <h2>Talks</h2>
-    <a href="#" class="btn btn-default homepage-videos__all-talks">All talks</a>
+    <a href="{% url 'presentations' 'conference' %}" class="btn btn-default homepage-videos__all-talks">All talks</a>
     <div class="row">
       <div class="homepage-videos__workshop">
         <h3>Experts workshop</h3>
         <ul class="homepage-videos__list-of-talks row">
           <li class="list-of-talks__item">
-            <div class="talk-teaser">
-              <p class="talk-teaser__duration">9:32</p>
-              <a href="#">
-                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
-              </a>
-              <div class="talk-teaser__details">
-                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
-                <p class="talk-teaser__speaker">Speaker name</p>
-                <p class="talk-teaser__themes">Social inequality, ethics</p>
-              </div>
-            </div>
+            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_1 %}
           </li>
           <li class="list-of-talks__item">
-            <div class="talk-teaser">
-              <p class="talk-teaser__duration">9:32</p>
-              <a href="#">
-                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
-              </a>
-              <div class="talk-teaser__details">
-                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
-                <p class="talk-teaser__speaker">Speaker name</p>
-                <p class="talk-teaser__themes">Social inequality, ethics</p>
-              </div>
-            </div>
+            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_2 %}
           </li>
         </ul>
-        <a href="#" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (8)</a>
+        <a href="{% url 'presentations' 'conference' %}#workshop" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (15)</a>
       </div>
       <div class="homepage-videos__symposium">
         <h3>Public symposium</h3>
         <ul class="homepage-videos__list-of-talks row">
           <li class="list-of-talks__item">
-            <div class="talk-teaser">
-              <p class="talk-teaser__duration">9:32</p>
-              <a href="#">
-                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
-              </a>
-              <div class="talk-teaser__details">
-                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
-                <p class="talk-teaser__speaker">Speaker name</p>
-                <p class="talk-teaser__themes">Social inequality, ethics</p>
-              </div>
-            </div>
+            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_1 %}
           </li>
           <li class="list-of-talks__item">
-            <div class="talk-teaser">
-              <p class="talk-teaser__duration">9:32</p>
-              <a href="#">
-                <img class="talk-teaser__thumbnail" src="{% static 'img/video-no-thumbnail.png' %}" />
-              </a>
-              <div class="talk-teaser__details">
-                <h3 class="talk-teaser__title"><a href="#">This is the talk title</a></h3>
-                <p class="talk-teaser__speaker">Speaker name</p>
-                <p class="talk-teaser__themes">Social inequality, ethics</p>
-              </div>
-            </div>
+            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_2 %}
           </li>
         </ul>
-        <a href="#" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (5)</a>
+        <a href="{% url 'presentations' 'conference' %}#symposium" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (5)</a>
       </div>
     </div>
   </div>

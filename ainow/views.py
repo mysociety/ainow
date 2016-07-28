@@ -1,5 +1,3 @@
-from datetime import timedelta
-
 from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -12,7 +10,7 @@ from django.utils import timezone
 import account.forms
 import account.views
 
-from conference.models import Schedule, LiveStream
+from conference.models import Schedule, LiveStream, Presentation
 from blocks.models import Block
 
 from forms import SignupForm
@@ -45,6 +43,11 @@ class HomeView(TemplateView):
             # Conference has finished, so immediately hide livestream and other pre-conference bits (e.g. ticket links)
             context['post_conference'] = True
             context['post_conference_block'] = Block.objects.get(slug='homepage-post-stream').content
+            # Show the videos
+            context['workshop_talk_1'] = Presentation.objects.get(slug='ai-now-overview-and-introduction')
+            context['workshop_talk_2'] = Presentation.objects.get(slug='time-different-opportunities-and-challenges-artifi')
+            context['symposium_talk_1'] = Presentation.objects.get(slug='welcome-ai-now')
+            context['symposium_talk_2'] = Presentation.objects.get(slug='introductions-ed-felten')
         return context
 
 
