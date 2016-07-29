@@ -47,7 +47,7 @@
     <div class="site-bg">
 
 
-    <nav class="site-header navbar navbar-default {% if schedule.slug == 'workshop' %}site-header--inverted{% endif %}">
+    <nav class="site-header navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-header-nav" aria-expanded="false">
@@ -58,19 +58,10 @@
           </button>
 
           <a class="navbar-brand" href="{% url 'home' %}">
-
-            {% if schedule.slug == 'workshop' %}
-            <img src="{% static 'img/ainow-header-logo-white.png' %}"
-               srcset="{% static 'img/ainow-header-logo-white.svg' %} 1x"
-               alt="Artificial Intelligence Now"
-               height="27" width="88">
-            {% else %}
             <img src="{% static 'img/ainow-header-logo.png' %}"
                srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
                alt="Artificial Intelligence Now"
                height="27" width="88">
-            {% endif %}
-
            </a>
         </div>
         <!-- navbar-header -->

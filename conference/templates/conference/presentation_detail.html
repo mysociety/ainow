@@ -21,18 +21,10 @@
           {% endthumbnail %}
         </a>
 
-        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">
-          <span class="presentation-detail__speaker-name">
-            {{ presentation.primary_speaker.name }}
-          </span>
-        </a>
+        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}"><span class="presentation-detail__speaker-name">{{ presentation.primary_speaker.name }}</span></a>
         {% if presentation.additional_speakers %}
           {% for speaker in presentation.additional_speakers.all %}
-            , <a href="{% url 'speaker' schedule.slug speaker.slug}">
-                <span class="presentation-detail__speaker-name">
-                  {{ speaker.name }}
-                </span>
-              </a>
+            , <a href="{% url 'speaker' schedule.slug speaker.slug}"><span class="presentation-detail__speaker-name">{{ speaker.name }}</span></a>
           {% endfor %}
         {% endif %}
       </p>
@@ -45,7 +37,7 @@
           height="450"
           src="https://www.youtube.com/embed/{{ presentation.video_id }}"
           frameborder="0"
-          allowfullscreen>
+          allowfullscreen class="presentation-detail__video">
         </iframe>
       {% endif %}
 

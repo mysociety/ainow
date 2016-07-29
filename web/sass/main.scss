@@ -972,27 +972,34 @@ iframe {
 }
 
 .presentation-detail__title {
-  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+
 }
 
 
 .presentation-detail__speaker {
    font-size: 1.25em; //~17px
    color: $gray;
-   margin: 0 0 0.35em;
+   margin: 0 0 2em;
+   padding-bottom: 1em;
+   border-bottom: 1px solid $gray-lighter;
    a {
      text-decoration: none;
-     .presentation-detail__speaker-name {
-        text-decoration: underline;
-     }
+     margin-right: -0.2em; //cheat way to hide a space django inserts
    }
 }
 
 .presentation-detail__speaker-thumb {
   display: inline-block;
+  margin-right: 1em;
 }
 
 .presentation-detail__description {
+}
+
+.presentation-detail__video {
+  margin-top: 2em;
 }
 
 
