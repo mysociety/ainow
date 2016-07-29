@@ -932,7 +932,8 @@ iframe {
   display: -webkit-flex;
   display: flex;
   flex-flow: row wrap;
-  align-items: flex-start;
+  align-items: stretch;
+  align-content: stretch;
   justify-content: flex-start;
   margin-top: 2em;
 }
@@ -944,6 +945,11 @@ iframe {
   margin-top: 0;
   width: 15em;
   margin-right: $grid-gutter-width;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 /*
