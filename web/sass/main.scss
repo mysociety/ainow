@@ -671,8 +671,8 @@ iframe {
 
 .homepage-videos__symposium,
 .homepage-videos__workshop {
-  @include make-xs-column($columns: 12);
-  @include make-sm-column($columns: 6);
+  @include make-sm-column($columns: 12);
+  @include make-md-column($columns: 6);
   > h3 {
     font-size: 1em;
     margin: 1em 0 0;
@@ -716,17 +716,25 @@ iframe {
 .homepage-videos__list-of-talks {
   @extend .list-unstyled;
   margin-top: 1em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .list-of-talks__item {
   @include make-xs-column($columns: 12);
   @include make-sm-column($columns: 6);
+  display: flex;
 }
 
 .talk-teaser {
   position: relative;
   background-color: $gray-lighter;
   margin-bottom: 2em;
+  width: 100%;
 }
 
 .talk-teaser__details {
@@ -753,6 +761,7 @@ iframe {
 
 .talk-teaser__title {
   font-size: 1.125em;
+  line-height: 1.3em;
 }
 
 .talk-teaser__speaker {
