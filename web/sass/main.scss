@@ -809,6 +809,16 @@ iframe {
   h3 {
     font-size: 1.277777778em;
   }
+  .container {
+    position: relative;
+  }
+}
+
+.homepage-people__full-link {
+  position: absolute;
+  top: 1.5em;
+  right: 1em;
+  font-size: 0.875em;
 }
 
 .collection-of-people {
