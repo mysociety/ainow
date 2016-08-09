@@ -829,7 +829,7 @@ iframe {
   margin-bottom: 1.5em;
   padding: 0 1em;
   @media (min-width:$screen-sm-min) {
-    width: 11.5em;
+    width: 9em;
   }
 }
 
@@ -851,13 +851,20 @@ iframe {
   margin-top: 0.4em;
   @media (min-width:$screen-sm-min) {
     margin-left: 0;
-    font-size: 1.25em;
     margin-bottom: 0.25em;
   }
 }
 
+.person__role {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+}
+
  .person__job-title {
-   font-size: 0.875em;
+   font-size: 0.6em;
    line-height: 1.428em;
    margin: 0 0 0 $grid-gutter-width;
    color: $gray;
