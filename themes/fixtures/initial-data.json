@@ -8,11 +8,6 @@
         "name": "Health",
         "title": "Health",
         "slug": "health",
-        "content": "",
-        "_content_rendered": "",
-        "schedules": [
-            2
-        ]
     }
 },
 {
@@ -24,11 +19,6 @@
         "name": "Labor",
         "title": "Labor",
         "slug": "labour",
-        "content": "",
-        "_content_rendered": "",
-        "schedules": [
-            2
-        ]
     }
 },
 {
@@ -40,11 +30,6 @@
         "name": "Ethics",
         "title": "Ethics",
         "slug": "ethics",
-        "content": "",
-        "_content_rendered": "",
-        "schedules": [
-            2
-        ]
     }
 },
 {
@@ -56,11 +41,6 @@
         "name": "Inequality",
         "title": "Inequality",
         "slug": "inequality",
-        "content": "",
-        "_content_rendered": "",
-        "schedules": [
-            2
-        ]
     }
 }
 ]

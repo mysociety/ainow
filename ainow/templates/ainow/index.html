@@ -16,6 +16,29 @@
   </div>
 </div>
 
+{% if themes %}
+  <div class="homepage-themes">
+    <div class="container">
+      <h2>Topic Primers</h2>
+      <p>
+        These primers were distributed to attendees of the AI Now Expert
+        Workshop before the event. They were created to provide thorough
+        overviews of the opportunities and issues posed by the introduction of
+        AI across AI Now's four focus areas
+      </p>
+      <ul class="homepage-themes__list-of-themes">
+          {% for theme in themes %}
+            <li class="list-of-themes__item">
+                <a href="{{ theme.primer.url }}" class="list-of-themes__link">
+                   {{ theme.primer_title|default_if_none:theme.title }}
+                </a>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}
+
 <div class="homepage-videos">
   <div class="container">
     <h2>Talks</h2>
@@ -48,28 +71,6 @@
     </div>
   </div>
 </div>
-
-<!--
-<div class="homepage-themes">
-  <div class="container">
-    <h2>Themes</h2>
-    <ul class="homepage-themes__list-of-themes">
-        <li class="list-of-themes__item">
-          <a href="#" class="list-of-themes__link">Social inequality</a>
-        </li>
-        <li class="list-of-themes__item">
-          <a href="#" class="list-of-themes__link">Labor</a>
-        </li>
-        <li class="list-of-themes__item">
-          <a href="#" class="list-of-themes__link">Healthcare</a>
-        </li>
-        <li class="list-of-themes__item">
-          <a href="#" class="list-of-themes__link">Ethics</a>
-        </li>
-    </ul>
-  </div>
-</div>
--->
 
 <div class="homepage-people">
   <div class="container">

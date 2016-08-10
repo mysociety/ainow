@@ -1,16 +1,8 @@
 from django.contrib import admin
-from themes.models import Theme, Document
-
-class DocumentInline(admin.StackedInline):
-    model = Document
-    extra = 1
-
+from themes.models import Theme
 
 admin.site.register(
     Theme,
     prepopulated_fields={"slug": ("title",)},
-    list_display=("name",),
-    inlines = [DocumentInline, ]
+    list_display=("name",)
 )
-
-admin.site.register(Document)

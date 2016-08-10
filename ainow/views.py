@@ -12,6 +12,7 @@ import account.views
 
 from conference.models import Schedule, LiveStream, Presentation
 from blocks.models import Block
+from themes.models import Theme
 
 from forms import SignupForm
 
@@ -25,6 +26,7 @@ class HomeView(TemplateView):
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
         context['schedule'] = Schedule.objects.get(slug='conference')
+        context['themes'] = Theme.objects.exclude(primer='')
 
         # Get the current datetime in CONFERENCE_TIMEZONE
         with timezone.override(settings.CONFERENCE_TIMEZONE):

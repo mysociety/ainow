@@ -8,11 +8,6 @@
         "name": "Privacy",
         "title": "Privacy",
         "slug": "privacy",
-        "content": "This a research theme about ensuring user privacy in deep-learning and other AI contexts.\r\n\r\nI just made this up to give us an example.",
-        "_content_rendered": "<p>This a research theme about ensuring user privacy in deep-learning and other AI contexts.</p>\n<p>I just made this up to give us an example.</p>",
-        "schedules": [
-            2
-        ]
     }
 }
 ]
