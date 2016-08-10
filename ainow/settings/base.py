@@ -66,7 +66,8 @@ INSTALLED_APPS = [
     'faq',
     'pages',
     'blocks',
-    'themes'
+    'themes',
+    'resources'
 ]
 
 MIDDLEWARE_CLASSES = [

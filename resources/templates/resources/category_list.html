@@ -1,0 +1,46 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Resources{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Resources</h1>
+      <div class="row">
+        {% if categories %}
+          <div class="standard-layout__secondary-column">
+            <ul class="nav nav-stacked section-nav">
+              {% for category in categories %}
+                <li><a href="#{{ category.slug }}">{{ category.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="standard-layout__primary-column">
+            {% for category in categories %}
+              <h2 id="{{ category.slug }}">{{ category.title }}</h2>
+              {{ category.introduction }}
+              {% for document in category.documents.all %}
+                <h4>
+                  <a href="{{ document.file.url }}">{{ document.title }}</a>
+                </h4>
+                {{ document.description }}
+              {% empty %}
+              <p>We'll be adding some resources here in the coming weeks, check back soon.</p>
+              {% endfor %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="col-xs-12">
+            <p>We'll be adding some resources here in the coming weeks, check back soon.</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
