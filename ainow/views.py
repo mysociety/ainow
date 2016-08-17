@@ -46,10 +46,14 @@ class HomeView(TemplateView):
             context['post_conference'] = True
             context['post_conference_block'] = Block.objects.get(slug='homepage-post-stream').content
             # Show the videos
-            context['workshop_talk_1'] = Presentation.objects.get(slug='ai-now-overview-and-introduction')
-            context['workshop_talk_2'] = Presentation.objects.get(slug='time-different-opportunities-and-challenges-artifi')
-            context['symposium_talk_1'] = Presentation.objects.get(slug='welcome-ai-now')
-            context['symposium_talk_2'] = Presentation.objects.get(slug='introductions-ed-felten')
+            context['workshop_talk_1'] = Presentation.objects.get(slug='time-different-opportunities-and-challenges-artifi')
+            context['workshop_talk_2'] = Presentation.objects.get(slug='uncovering-machine-bias')
+            context['workshop_talk_3'] = Presentation.objects.get(slug='bending-gig-economy-toward-equity')
+            context['workshop_talk_4'] = Presentation.objects.get(slug='symbiotic-human-robot-interaction')
+            context['symposium_talk_1'] = Presentation.objects.get(slug='introductions-ed-felten')
+            context['symposium_talk_2'] = Presentation.objects.get(slug='conversation-white-house-past-and-present')
+            context['symposium_talk_3'] = Presentation.objects.get(slug='three-questions-three-tech-leaders')
+            context['symposium_talk_4'] = Presentation.objects.get(slug='plenary-panel-inequality-labor-health-and-ethics-a')
         return context
 
 

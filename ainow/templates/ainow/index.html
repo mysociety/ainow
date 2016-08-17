@@ -53,9 +53,17 @@
           <li class="list-of-talks__item">
             {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_2 %}
           </li>
+          <li class="list-of-talks__item">
+            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_3 %}
+          </li>
+          <li class="list-of-talks__item">
+            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_4 %}
+          </li>
         </ul>
         <a href="{% url 'presentations' 'conference' %}#workshop" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (15)</a>
       </div>
+    </div>
+    <div class="row">
       <div class="homepage-videos__symposium">
         <h3>Public symposium</h3>
         <ul class="homepage-videos__list-of-talks row">
@@ -64,6 +72,12 @@
           </li>
           <li class="list-of-talks__item">
             {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_2 %}
+          </li>
+          <li class="list-of-talks__item">
+            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_3 %}
+          </li>
+          <li class="list-of-talks__item">
+            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_4 %}
           </li>
         </ul>
         <a href="{% url 'presentations' 'conference' %}#symposium" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (5)</a>
