@@ -4,17 +4,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="homepage-hero{% if show_livestream %} homepage-hero--streaming{% endif %}">
+<div class="homepage-hero">
   <div class="container">
-    {% if pre_conference %}
-      {% include 'ainow/_tickets-hero.html' %}
-    {% elif show_livestream %}
-      {% include 'ainow/_livestream-hero.html' %}
-    {% elif post_conference %}
-      {% include 'ainow/_post-event-hero.html' %}
-    {% endif %}
-  </div>
-</div>
 
 {% if summary_document %}
 <div class="homepage-summary">
@@ -223,4 +214,9 @@
      <a href="{% url 'attendees' 'workshop' %}" class="btn btn-default homepage-people__full-link">All attendees and speakers</a>
   </div>
 </div>
+
+
+  </div>
+</div>
+
 {% endblock %}
