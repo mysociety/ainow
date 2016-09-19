@@ -771,6 +771,18 @@ iframe {
   color: $gray-dark;
 }
 
+.homepage-summary {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.homepage-summary__pdf {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  margin-top: 2em;
+}
+
 .homepage-themes {
   padding-top: 2em;
   padding-bottom: 2em;

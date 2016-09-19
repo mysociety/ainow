@@ -16,6 +16,27 @@
   </div>
 </div>
 
+{% if summary_document %}
+<div class="homepage-summary">
+    <div class="container">
+      <h2>Summary Report and Recommendations</h2>
+      <p>
+        Here we offer a summary of AI Now, reviewing its core themes and key
+        insights, and offering high-level recommendations for stakeholders
+        engaged in the production, use, governance, and assessment of AI in
+        the near-term.
+      </p>
+      <ul class="homepage-summary__pdf">
+        <li class="list-of-themes__item">
+          <a href="{{ summary_document.file.url }}" class="list-of-themes__link">
+             Summary Report and Recommendations
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endif %}
+
 {% if themes %}
   <div class="homepage-themes">
     <div class="container">

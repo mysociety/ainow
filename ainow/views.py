@@ -13,6 +13,7 @@ import account.views
 from conference.models import Schedule, LiveStream, Presentation
 from blocks.models import Block
 from themes.models import Theme
+from resources.models import Document
 
 from forms import SignupForm
 
@@ -27,6 +28,10 @@ class HomeView(TemplateView):
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
         context['schedule'] = Schedule.objects.get(slug='conference')
         context['themes'] = Theme.objects.exclude(primer='')
+        try:
+            context['summary_document'] = Document.objects.get(name='Summary Report and Recommendations')
+        except Document.DoesNotExist:
+            pass
 
         # Get the current datetime in CONFERENCE_TIMEZONE
         with timezone.override(settings.CONFERENCE_TIMEZONE):
