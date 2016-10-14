@@ -23,10 +23,15 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
+        context['is_homepage'] = True
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
-        context['schedule'] = Schedule.objects.get(slug='conference')
+
+        # We have to pass a schedule in for the footer links to use
+        # TODO: Stop the madness.
+        context['schedule'] = Schedule.objects.get(slug='2016')
+
         context['themes'] = Theme.objects.exclude(primer='')
         try:
             context['summary_document'] = Document.objects.get(name='Summary Report and Recommendations')
@@ -68,7 +73,7 @@ class WorkshopHomeView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(WorkshopHomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='workshop-introduction').content
-        context['schedule'] = Schedule.objects.get(slug='workshop')
+        context['schedule'] = Schedule.objects.get(slug='2016')
         return context
 
 
@@ -80,7 +85,7 @@ class WorkshopVenueView(LoginRequiredMixin, TemplateView):
         context['intro_block'] = Block.objects.get(slug='workshop-venue-introduction').content
         context['harassment_block'] = Block.objects.get(slug='harassment-policy').content
         context['chatham_block'] = Block.objects.get(slug='chatham-house-rule').content
-        context['schedule'] = Schedule.objects.get(slug='workshop')
+        context['schedule'] = Schedule.objects.get(slug='2016')
         return context
 
 

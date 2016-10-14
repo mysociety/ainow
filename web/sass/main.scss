@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 @import 'bootstrap-settings';
+@import 'fatml/bootstrap-settings';
+
 @import 'bootstrap';
 
 
@@ -106,7 +108,21 @@ iframe {
 
 .standard-layout__primary-column {
   @include make-xs-column($columns: 12);
-  @include make-md-column($columns: 9, $gutter: 54px);
+  @include make-md-column($columns: 9);
+
+  @media (min-width: $screen-md-min) {
+    & > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  li + li {
+    margin-top: 0.5em;
+  }
+
+  .schedule__list__item {
+    margin-top: 0;
+  }
 }
 
 .standard-layout__secondary-column {
@@ -120,7 +136,7 @@ iframe {
     @include make-md-column($columns: 9);
   }
   .standard-layout__secondary-column {
-    @include make-md-column($columns: 3, $gutter: 54px);
+    @include make-md-column($columns: 3);
   }
 }
 
@@ -1042,7 +1058,7 @@ iframe {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .attendee-list__attendee {
@@ -1051,7 +1067,6 @@ iframe {
   margin-bottom: 2em;
   margin-top: 0;
   width: 15em;
-  margin-right: $grid-gutter-width;
 }
 
 .attendee__secondary-column {
@@ -1075,7 +1090,9 @@ iframe {
 }
 
 .attendee__org,
-.attendee__job-title {
+.attendee__job-title,
+.attendee__url,
+.attendee__twitter {
   margin: 0 0 0.3em 0;
 }
 
@@ -1088,6 +1105,7 @@ iframe {
   font-size: 0.8125em;
 }
 
+.attendee__url,
 .attendee__twitter {
   font-size: 0.8125em;
 }
@@ -1158,3 +1176,6 @@ iframe {
 .alerts {
   margin-top: 2em;
 }
+
+
+@import 'fatml/main';

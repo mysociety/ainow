@@ -213,7 +213,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
-        self.schedule = Schedule.objects.get(slug='workshop')
+        self.schedule = Schedule.objects.get(slug='2016')
         return super(AttendeeCreateUpdateView, self).dispatch(request, *args, **kwargs)
 
     def get_object(self, queryset=None):
