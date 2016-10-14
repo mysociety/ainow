@@ -1,0 +1,27 @@
+$ui_typeface: Roboto, Helvetica, Arial, sans-serif;
+
+.site-header {
+  font-family: $ui_typeface;
+  background-color: $color_fatml_grey;
+  border-bottom: none;
+
+  .navbar-brand {
+    margin-top: 0; // remove AINow -3px margin
+  }
+}
+
+.homepage-hero {
+  font-family: $ui_typeface;
+  background-color: #293338;
+  background-image: url('../img/fatml-hero-background.jpg');
+  background-position: center top;
+}
+
+.homepage-hero__subtitle {
+  font-family: $heading_typeface;
+}
+
+.site-footer {
+  background-color: $color_fatml_grey;
+  color: #fff;
+}
