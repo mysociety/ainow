@@ -17,8 +17,30 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   background-position: center top;
 }
 
+.homepage-hero__title {
+  margin-bottom: 1em;
+
+  img {
+    padding: 0;
+    background: transparent;
+    height: auto;
+  }
+}
+
 .homepage-hero__subtitle {
   font-family: $heading_typeface;
+  font-size:  2em;
+  line-height: 1em;
+  margin-bottom: 1em;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.4em;
+    max-width: 11em;
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin-bottom: 0.5em;
+  }
 }
 
 .site-footer {
