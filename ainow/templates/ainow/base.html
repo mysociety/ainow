@@ -17,9 +17,11 @@
     <link rel="apple-touch-icon-precomposed" href="{% static 'img/apple-touch-icon.png' %}">
     <link rel="icon" sizes="192x192" href="{% static 'img/touch-icon-192x192.png' %}">
 
-    <title>{% block fulltitle %}{% block title %}{% endblock %} :: AI Now{% endblock %}</title>
+    <title>{% block fulltitle %}{% block title %}{% endblock %} :: FAT ML{% endblock %}</title>
 
     <meta name="viewport" content="width=device-width">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto+Condensed:400,700|Roboto:400,700" rel="stylesheet">
 
     {% stylesheet 'main' %}
 
@@ -58,10 +60,10 @@
           </button>
 
           <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'img/ainow-header-logo.png' %}"
-               srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
-               alt="Artificial Intelligence Now"
-               height="27" width="88">
+            <img src="{% static 'img/fatml-header-logo.png' %}"
+               srcset="{% static 'img/fatml-header-logo.svg' %} 1x"
+               alt="FAT ML 2016"
+               height="20" width="165">
            </a>
         </div>
         <!-- navbar-header -->
@@ -136,9 +138,9 @@
               <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
               <li><a href="{% url 'page' schedule.slug 'production-credits' %}">Production Team and Credits</a></li>
               {% if schedule.slug == 'workshop' %}
-              <li>For information and questions: <a href="mailto:team@artificialintelligencenow.com">team@artificialintelligencenow.com</a></li>
+              <li>For information and questions: <a href="mailto:team@fatml.org">team@fatml.org</a></li>
               {% else %}
-              <li>For information and questions: <a href="mailto:info@artificialintelligencenow.com">info@artificialintelligencenow.com</a></li>
+              <li>For information and questions: <a href="mailto:info@fatml.org">info@fatml.org</a></li>
               {% endif %}
             </ul>
           </div>

@@ -4,7 +4,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="homepage-hero{% if show_livestream %} homepage-hero--streaming{% endif %}">
+<div class="homepage-hero">
   <div class="container">
     {% if pre_conference %}
       {% include 'ainow/_tickets-hero.html' %}
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-{% if summary_document %}
+{% if false and summary_document %}
 <div class="homepage-summary">
     <div class="container">
       <h2>Summary Report and Recommendations</h2>
@@ -37,7 +37,7 @@
   </div>
 {% endif %}
 
-{% if themes %}
+{% if false and themes %}
   <div class="homepage-themes">
     <div class="container">
       <h2>Topic Primers</h2>
@@ -59,53 +59,6 @@
     </div>
   </div>
 {% endif %}
-
-<div class="homepage-videos">
-  <div class="container">
-    <h2>Talks</h2>
-    <a href="{% url 'presentations' 'conference' %}" class="btn btn-default homepage-videos__all-talks">All talks</a>
-    <div class="row">
-      <div class="homepage-videos__workshop">
-        <h3>Experts workshop</h3>
-        <ul class="homepage-videos__list-of-talks row">
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_1 %}
-          </li>
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_2 %}
-          </li>
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_3 %}
-          </li>
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=workshop_talk_4 %}
-          </li>
-        </ul>
-        <a href="{% url 'presentations' 'conference' %}#workshop" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (15)</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="homepage-videos__symposium">
-        <h3>Public symposium</h3>
-        <ul class="homepage-videos__list-of-talks row">
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_1 %}
-          </li>
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_2 %}
-          </li>
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_3 %}
-          </li>
-          <li class="list-of-talks__item">
-            {% include 'conference/_talk_thumbnail.html' with talk=symposium_talk_4 %}
-          </li>
-        </ul>
-        <a href="{% url 'presentations' 'conference' %}#symposium" class="homepage-videos__all-talks homepage-videos__all-talks--small">View all (5)</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="homepage-people">
   <div class="container">
