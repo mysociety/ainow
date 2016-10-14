@@ -1,0 +1,31 @@
+$color_fatml_teal: #4DCFB6;
+$color_fatml_orange: #FFC45F;
+$color_fatml_pink: #F95C72;
+$color_fatml_grey: #333333; // for body text
+$color_fatml_blue: #007ca3; // for links, WCAG AA Pass on #fff background
+
+$brand-primary: $color_fatml_teal;
+$body-bg: $color_fatml_grey;
+$text-color: $color_fatml_grey;
+$link-color: $color_fatml_blue;
+
+$navbar-default-color: #fff;
+$navbar-default-bg: $color_fatml_grey;
+$navbar-default-border: none;
+
+$navbar-default-link-color: #fff;
+$navbar-default-link-hover-color: $link-color;
+
+// FYI: It looks like the templates don't use these classes.
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-active-bg: mix(#fff, $color_fatml_grey, 10%);
+$navbar-default-link-disabled-color: mix(#fff, $color_fatml_grey, 90%);
+
+$navbar-default-toggle-hover-bg: mix(#fff, $color_fatml_grey, 10%);
+$navbar-default-toggle-icon-bar-bg: #fff;
+$navbar-default-toggle-border-color: mix(#fff, $color_fatml_grey, 10%);
+
+$btn-primary-bg: $brand-primary;
+
+$body_typeface: "PT Serif", Georgia, Times, serif;
+$heading_typeface: "Roboto Condensed", Impact, Haettenschweiler, sans-serif;

@@ -1,0 +1,95 @@
+$ui_typeface: Roboto, Helvetica, Arial, sans-serif;
+
+.site-header {
+  font-family: $ui_typeface;
+  background-color: $color_fatml_grey;
+  border-bottom: none;
+
+  .navbar-brand {
+    margin-top: 0; // remove AINow -3px margin
+  }
+
+  .navbar-nav > li > a {
+    &:hover, &:focus {
+      color: $brand-primary;
+    }
+  }
+}
+
+.homepage-hero {
+  font-family: $ui_typeface;
+  background-color: #293338;
+  background-image: url('../img/fatml-hero-background.jpg');
+  background-position: center top;
+}
+
+.homepage-hero__title {
+  margin-bottom: 1em;
+
+  img {
+    padding: 0;
+    background: transparent;
+    height: auto;
+  }
+}
+
+.homepage-hero__subtitle {
+  font-family: $heading_typeface;
+  font-size:  2em;
+  line-height: 1em;
+  margin-bottom: 1em;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.4em;
+    max-width: 11em;
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin-bottom: 0.5em;
+  }
+}
+
+.homepage-description {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.btn--tickets {
+  background-color: darken($color_fatml_orange, 10%);
+
+  &:hover,
+  &:focus {
+    background-color: darken($color_fatml_orange, 20%);
+  }
+}
+
+.schedule__list {
+  border-top: 1px solid $color_fatml_teal;
+}
+
+.schedule-entry {
+  border-bottom: 1px solid $color_fatml_teal;
+
+  &:nth-child(even) {
+    background-color: #f3f9f9;
+  }
+}
+
+.schedule-entry__title {
+  font-size: 1.2em;
+}
+
+.site-footer {
+  background-color: $color_fatml_grey;
+  color: #fff;
+  padding-bottom: 3em;
+
+  a {
+    color: $brand-primary;
+
+    &:hover, &:focus {
+      color: darken($brand-primary, 10%);
+    }
+  }
+}

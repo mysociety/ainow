@@ -4,22 +4,19 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-
-    <script src="https://use.typekit.net/uta4wcq.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="google-site-verification" content="52xRZ6pqi798OgvV-LbwGLfaZiFDYCD0j5fl_WME7T0" />
 
     <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}" />
     <link rel="icon" sizes="64x64"type="image/png" href="{% static 'img/favicon-64.png' %}" />
     <link rel="apple-touch-icon-precomposed" href="{% static 'img/apple-touch-icon.png' %}">
     <link rel="icon" sizes="192x192" href="{% static 'img/touch-icon-192x192.png' %}">
 
-    <title>{% block fulltitle %}{% block title %}{% endblock %} :: AI Now{% endblock %}</title>
+    <title>{% block fulltitle %}{% block title %}{% endblock %} :: FAT ML{% endblock %}</title>
 
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto+Condensed:400,700|Roboto:400,700" rel="stylesheet">
 
     {% stylesheet 'main' %}
 
@@ -46,7 +43,6 @@
   <body class="{% block bodyclasses %}{% endblock %}">
     <div class="site-bg">
 
-
     <nav class="site-header navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -58,10 +54,10 @@
           </button>
 
           <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'img/ainow-header-logo.png' %}"
-               srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
-               alt="Artificial Intelligence Now"
-               height="27" width="88">
+            <img src="{% static 'img/fatml-header-logo.png' %}"
+               srcset="{% static 'img/fatml-header-logo.svg' %} 1x"
+               alt="FAT ML 2016"
+               height="20" width="165">
            </a>
         </div>
         <!-- navbar-header -->
@@ -135,23 +131,11 @@
             <ul class="utility-links__list">
               <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
               <li><a href="{% url 'page' schedule.slug 'production-credits' %}">Production Team and Credits</a></li>
-              {% if schedule.slug == 'workshop' %}
-              <li>For information and questions: <a href="mailto:team@artificialintelligencenow.com">team@artificialintelligencenow.com</a></li>
-              {% else %}
-              <li>For information and questions: <a href="mailto:info@artificialintelligencenow.com">info@artificialintelligencenow.com</a></li>
-              {% endif %}
+              <li>For information and questions: <a href="mailto:team@fatml.org">team@fatml.org</a></li>
             </ul>
           </div>
 
           <div class="site-footer__partner-logos">
-            {% if schedule.slug == 'conference' %}
-            <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--a">
-              <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
-            </div>
-            <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--b">
-              <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili.png' %}" alt="New York University, Information Law Institute" class="partner-logo"/></a>
-            </div>
-            {% endif %}
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 @import 'bootstrap-settings';
+@import 'fatml/bootstrap-settings';
+
 @import 'bootstrap';
 
 
@@ -1158,3 +1160,6 @@ iframe {
 .alerts {
   margin-top: 2em;
 }
+
+
+@import 'fatml/main';
