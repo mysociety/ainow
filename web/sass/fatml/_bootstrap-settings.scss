@@ -16,14 +16,24 @@ $navbar-default-border: none;
 $navbar-default-link-color: #fff;
 $navbar-default-link-hover-color: $link-color;
 
-// FYI: It looks like the templates don't use these classes.
-$navbar-default-link-active-color: #fff;
-$navbar-default-link-active-bg: mix(#fff, $color_fatml_grey, 10%);
-$navbar-default-link-disabled-color: mix(#fff, $color_fatml_grey, 90%);
-
 $navbar-default-toggle-hover-bg: mix(#fff, $color_fatml_grey, 10%);
 $navbar-default-toggle-icon-bar-bg: #fff;
-$navbar-default-toggle-border-color: mix(#fff, $color_fatml_grey, 10%);
+$navbar-default-toggle-border-color: mix(#fff, $color_fatml_grey, 30%);
+
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-active-bg: mix(#fff, $color_fatml_grey, 20%);
+$navbar-default-link-disabled-color: mix(#fff, $color_fatml_grey, 90%);
+
+$navbar-inverse-color: #fff;
+$navbar-inverse-bg: $color_fatml_teal;
+$navbar-inverse-border: none;
+
+$navbar-inverse-link-color: #fff;
+$navbar-inverse-link-hover-color: mix(#fff, $color_fatml_teal, 70%);
+
+$navbar-inverse-toggle-hover-bg: mix(#fff, $color_fatml_teal, 10%);
+$navbar-inverse-toggle-icon-bar-bg: #fff;
+$navbar-inverse-toggle-border-color: mix(#fff, $color_fatml_teal, 50%);
 
 $btn-primary-bg: $brand-primary;
 

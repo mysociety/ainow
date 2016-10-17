@@ -16,6 +16,37 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   }
 }
 
+.workshop-navbar {
+  font-family: $ui_typeface;
+  min-height: 0;
+  font-weight: normal;
+  text-shadow: 0 1px 5px darken($navbar-inverse-bg, 12%);
+
+  .navbar-header {
+    position: static;
+    top: 0;
+  }
+
+  .navbar-brand {
+    font-size: 1em;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      color: $navbar-inverse-link-hover-color;
+    }
+  }
+
+  .navbar-collapse {
+    border-bottom: none;
+  }
+
+  // Reset margin back to bootstrap default
+  .navbar-nav {
+    padding: 0;
+  }
+}
+
 .homepage-hero {
   font-family: $ui_typeface;
   background-color: #293338;
