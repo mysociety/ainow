@@ -23,6 +23,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
+        context['is_homepage'] = True
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content

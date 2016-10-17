@@ -20,9 +20,8 @@ $navbar-default-toggle-hover-bg: mix(#fff, $color_fatml_grey, 10%);
 $navbar-default-toggle-icon-bar-bg: #fff;
 $navbar-default-toggle-border-color: mix(#fff, $color_fatml_grey, 30%);
 
-// FYI: It looks like the templates don't use these classes.
 $navbar-default-link-active-color: #fff;
-$navbar-default-link-active-bg: mix(#fff, $color_fatml_grey, 10%);
+$navbar-default-link-active-bg: mix(#fff, $color_fatml_grey, 20%);
 $navbar-default-link-disabled-color: mix(#fff, $color_fatml_grey, 90%);
 
 $navbar-inverse-color: #fff;
