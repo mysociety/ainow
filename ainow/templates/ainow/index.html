@@ -16,164 +16,18 @@
   </div>
 </div>
 
-{% if false and summary_document %}
-<div class="homepage-summary">
-    <div class="container">
-      <h2>Summary Report and Recommendations</h2>
-      <p>
-        Here we offer a summary of AI Now, reviewing its core themes and key
-        insights, and offering high-level recommendations for stakeholders
-        engaged in the production, use, governance, and assessment of AI in
-        the near-term.
-      </p>
-      <ul class="homepage-summary__pdf">
-        <li class="list-of-themes__item">
-          <a href="{{ summary_document.file.url }}" class="list-of-themes__link">
-             Summary Report and Recommendations
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-{% endif %}
-
-{% if false and themes %}
-  <div class="homepage-themes">
-    <div class="container">
-      <h2>Topic Primers</h2>
-      <p>
-        These primers were distributed to attendees of the AI Now Expert
-        Workshop before the event. They were created to provide thorough
-        overviews of the opportunities and issues posed by the introduction of
-        AI across AI Now's four focus areas
-      </p>
-      <ul class="homepage-themes__list-of-themes">
-          {% for theme in themes %}
-            <li class="list-of-themes__item">
-                <a href="{{ theme.primer.url }}" class="list-of-themes__link">
-                   {{ theme.primer_title|default_if_none:theme.title }}
-                </a>
-            </li>
-          {% endfor %}
-      </ul>
-    </div>
-  </div>
-{% endif %}
-
-<div class="homepage-people">
+<div class="homepage-description">
   <div class="container">
-     <h2>People</h2>
-     <div class="collection-of-people">
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'kate-crawford' %}">
-              <img src="{% static 'img/kate-crawford.jpg' %}" alt="Kate Crawford" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'kate-crawford' %}">Kate Crawford</a>
-            </p>
-            <p class="person__role">Co-Chair</p>
-            <p class="person__job-title">Principal Researcher, Microsoft Research; Senior Research Fellow, New York University Information Law Institute</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'meredith-whittaker' %}">
-              <img src="{% static 'img/meredith-whittaker.jpg' %}" alt="Meredith Whittaker" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'meredith-whittaker' %}">Meredith Whittaker</a>
-            </p>
-            <p class="person__role">Co-Chair</p>
-            <p class="person__job-title">Founder and Lead, Google Open Research</p>
-        </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>This heading will describe the scope and motivation</h2>
       </div>
-      <div class="collection-of-people">
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'eric-horvitz' %}">
-              <img src="{% static 'img/eric-horvitz.jpg' %}" alt="Eric Horvitz" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'eric-horvitz' %}">
-                Eric Horvitz
-              </a>
-            </p>
-            <p class="person__role">Program Committee </p>
-            <p class="person__job-title">Technical Fellow &amp; Managing Director, Microsoft Research</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'helen-nissenbaum' %}">
-              <img src="{% static 'img/helen-nissenbaum.jpg' %}" alt="Helen Nissenbaum" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'helen-nissenbaum' %}">Helen Nissenbaum</a>
-            </p>
-            <p class="person__role">Program Committee</p>
-            <p class="person__job-title">Director, New York University Information Law Institute</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'latanya-sweeney' %}">
-              <img src="{% static 'img/latanya-sweeney.jpg' %}" alt="Latanya Sweeney" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'latanya-sweeney' %}">
-                Latanya Sweeney
-              </a>
-            </p>
-            <p class="person__role">Program Committee</p>
-            <p class="person__job-title">Professor of Government and Technology in Residence at Harvard University, former Federal Trade Commission Chief Technology Officer</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'mustafa-suleyman' %}">
-              <img src="{% static 'img/mustafa-suleyman.jpg' %}" alt="Mustafa Suleyman" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'mustafa-suleyman' %}">Mustafa Suleyman</a>
-            </p>
-            <p class="person__role">Program Committee</p>
-            <p class="person__job-title">Co-founder and Head of Applied Artificial Intelligence, Google DeepMind</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'nicole-wong' %}">
-              <img src="{% static 'img/nicole-wong.jpg' %}" alt="Nicole Wong" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'nicole-wong' %}">Nicole Wong</a>
-            </p>
-            <p class="person__role">Program Committee</p>
-            <p class="person__job-title">Former White House Deputy Chief Technology Officer</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'ryan-calo' %}">
-              <img src="{% static 'img/ryan-calo.jpg' %}" alt="Ryan Calo" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'ryan-calo' %}">Ryan Calo</a>
-            </p>
-            <p class="person__role">Program Committee</p>
-            <p class="person__job-title">Co-founder, University of Washington Tech Policy Lab, Assistant Professor, University of Washington School of Law</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'ed-felten' %}">
-              <img src="{% static 'img/ed-felten.jpg' %}" alt="Ed Felten" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'eric-horvitz' %}">
-                Ed Felten
-              </a>
-            </p>
-            <p class="person__role">Deputy U.S. Chief Technology Officer</p>
-            <p class="person__job-title">White House Office of Science and Technology Policy</p>
-        </div>
-        <div class="collection-of-people__person">
-            <a href="{% url 'speaker' 'conference' 'terah-lyons' %}">
-              <img src="{% static 'img/terah-lyons.jpg' %}" alt="Terah Lyons" class="person__photo"/>
-            </a>
-            <p class="person__name">
-              <a href="{% url 'speaker' 'conference' 'terah-lyons' %}">Terah Lyons</a>
-            </p>
-            <p class="person__role">Policy Advisor to the U.S. Chief Technology Officer</p>
-            <p class="person__job-title">White House Office of Science and Technology Policy</p>
-        </div>
-     </div>
-     <a href="{% url 'attendees' 'workshop' %}" class="btn btn-default homepage-people__full-link">All attendees and speakers</a>
+      <div class="col-sm-7 col-sm-offset-1">
+        <p>This text will go into a bit more detail about why this conference is being held, and why people should attend. This text will go into a bit more detail about why this conference is being held, and why people should attend.</p>
+        <p>This text will go into a bit more detail about why this conference is being held. This text will go into a bit more detail about why this conference is being held, and why people should attend. This text will go into a bit more detail about why people should attend.</p>
+      </div>
+    </div>
   </div>
 </div>
+
 {% endblock %}
