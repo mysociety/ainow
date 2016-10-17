@@ -1,12 +1,13 @@
 $color_fatml_teal: #4DCFB6;
 $color_fatml_orange: #FFC45F;
 $color_fatml_pink: #F95C72;
-$color_fatml_grey: #333333;
+$color_fatml_grey: #333333; // for body text
+$color_fatml_blue: #007ca3; // for links, WCAG AA Pass on #fff background
 
 $brand-primary: $color_fatml_teal;
 $body-bg: $color_fatml_grey;
 $text-color: $color_fatml_grey;
-$link-color: $brand-primary;
+$link-color: $color_fatml_blue;
 
 $navbar-default-color: #fff;
 $navbar-default-bg: $color_fatml_grey;
