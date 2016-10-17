@@ -43,6 +43,21 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   }
 }
 
+.homepage-description {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.btn--tickets {
+  background-color: darken($color_fatml_orange, 10%);
+
+  &:hover,
+  &:focus {
+    background-color: darken($color_fatml_orange, 20%);
+  }
+}
+
 .site-footer {
   background-color: $color_fatml_grey;
   color: #fff;
