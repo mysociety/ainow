@@ -137,11 +137,7 @@
             <ul class="utility-links__list">
               <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
               <li><a href="{% url 'page' schedule.slug 'production-credits' %}">Production Team and Credits</a></li>
-              {% if schedule.slug == 'workshop' %}
               <li>For information and questions: <a href="mailto:team@fatml.org">team@fatml.org</a></li>
-              {% else %}
-              <li>For information and questions: <a href="mailto:info@fatml.org">info@fatml.org</a></li>
-              {% endif %}
             </ul>
           </div>
 
