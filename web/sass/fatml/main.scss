@@ -1,12 +1,21 @@
 $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
 
+.navbar-default {
+  .navbar-nav {
+    > .active > a {
+      font-weight: bold;
+      text-shadow: 0 1px 1px darken($navbar-inverse-bg, 15%);
+    }
+  }
+}
+
 .site-header {
-  font-family: $ui_typeface;
   background-color: $color_fatml_grey;
   border-bottom: none;
 
   .navbar-brand {
-    margin-top: 0; // remove AINow -3px margin
+    margin-top: 1px; // centre 20px high image, in 22px line-height
+    margin-bottom: -1px;
   }
 
   .navbar-nav > li > a {
@@ -17,10 +26,8 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
 }
 
 .workshop-navbar {
-  font-family: $ui_typeface;
   min-height: 0;
-  font-weight: normal;
-  text-shadow: 0 1px 5px darken($navbar-inverse-bg, 12%);
+  text-shadow: 0 1px 1px darken($navbar-inverse-bg, 15%);
 
   .navbar-header {
     position: static;
@@ -29,11 +36,14 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
 
   .navbar-brand {
     font-size: 1em;
-    font-weight: bold;
 
     &:hover,
     &:focus {
       color: $navbar-inverse-link-hover-color;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      display: none;
     }
   }
 
@@ -44,6 +54,10 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   // Reset margin back to bootstrap default
   .navbar-nav {
     padding: 0;
+
+    @media (min-width: $grid-float-breakpoint) {
+      margin-left: $navbar-padding-horizontal * -2;
+    }
   }
 }
 
@@ -54,30 +68,30 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   background-position: center top;
 }
 
-.homepage-hero__title {
-  margin-bottom: 1em;
+.homepage-hero__details {
+  font-weight: bold;
+}
 
-  img {
-    padding: 0;
-    background: transparent;
-    height: auto;
-  }
+.homepage-hero__details__divider {
+  color: $color_fatml_teal;
+  margin: 0 0.1em;
 }
 
 .homepage-hero__subtitle {
   font-family: $heading_typeface;
   font-size:  2em;
-  line-height: 1em;
+  line-height: 1.1em;
   margin-bottom: 1em;
 
   @media (min-width: $screen-sm-min) {
     font-size: 3.4em;
-    max-width: 11em;
+    max-width: 13em;
   }
+}
 
-  @media (min-width: $screen-md-min) {
-    margin-bottom: 0.5em;
-  }
+.homepage-hero__subtitle__theme {
+  display: block;
+  color: $color_fatml_teal;
 }
 
 .homepage-description {
@@ -87,11 +101,13 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
 }
 
 .btn--tickets {
-  background-color: darken($color_fatml_orange, 10%);
+  background-color: $color_fatml_yellow;
+  color: $color_fatml_grey;
 
   &:hover,
   &:focus {
-    background-color: darken($color_fatml_orange, 20%);
+    background-color: darken($color_fatml_yellow, 10%);
+    color: $color_fatml_grey;
   }
 }
 
