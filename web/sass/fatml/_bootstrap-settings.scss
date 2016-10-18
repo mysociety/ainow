@@ -1,8 +1,8 @@
 $color_fatml_teal: #4DCFB6;
-$color_fatml_orange: #FFC45F;
+$color_fatml_yellow: #FFDD29;
 $color_fatml_pink: #F95C72;
 $color_fatml_grey: #333333; // for body text
-$color_fatml_blue: #007ca3; // for links, WCAG AA Pass on #fff background
+$color_fatml_blue: #0073EB; // for links, WCAG AA Pass on #fff background
 
 $brand-primary: $color_fatml_teal;
 $body-bg: $color_fatml_grey;
@@ -21,7 +21,7 @@ $navbar-default-toggle-icon-bar-bg: #fff;
 $navbar-default-toggle-border-color: mix(#fff, $color_fatml_grey, 30%);
 
 $navbar-default-link-active-color: #fff;
-$navbar-default-link-active-bg: mix(#fff, $color_fatml_grey, 20%);
+$navbar-default-link-active-bg: $color_fatml_teal;
 $navbar-default-link-disabled-color: mix(#fff, $color_fatml_grey, 90%);
 
 $navbar-inverse-color: #fff;
@@ -37,5 +37,5 @@ $navbar-inverse-toggle-border-color: mix(#fff, $color_fatml_teal, 50%);
 
 $btn-primary-bg: $brand-primary;
 
-$body_typeface: "PT Serif", Georgia, Times, serif;
-$heading_typeface: "Roboto Condensed", Impact, Haettenschweiler, sans-serif;
+$body_typeface: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+$heading_typeface: "Roboto Slab", Helvetica, Arial, serif;
