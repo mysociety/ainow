@@ -108,7 +108,7 @@ iframe {
 
 .standard-layout__primary-column {
   @include make-xs-column($columns: 12);
-  @include make-md-column($columns: 9, $gutter: 54px);
+  @include make-md-column($columns: 9);
 }
 
 .standard-layout__secondary-column {
@@ -122,7 +122,7 @@ iframe {
     @include make-md-column($columns: 9);
   }
   .standard-layout__secondary-column {
-    @include make-md-column($columns: 3, $gutter: 54px);
+    @include make-md-column($columns: 3);
   }
 }
 
