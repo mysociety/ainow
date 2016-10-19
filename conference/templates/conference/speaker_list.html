@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-{% block title %}Sessions info{% endblock %}
+{% block title %}Speakers{% endblock %}
 
 {% block bodyclasses %}standard-page{% endblock %}
 
@@ -10,7 +10,7 @@
 <div class="general-content">
   <div class="container">
     <div class="general-content__page">
-      <h1>Sessions info</h1>
+      <h1>Speakers</h1>
       <ul>
         {% for speaker in speakers %}
           <li>
@@ -19,7 +19,13 @@
               <img src="{{ im.url }}">
             {% endthumbnail %}
             <p>{{ speaker.biography }}</p>
-            <p>@{{ speaker.twitter_username }}</p>
+          {% if speaker.twitter_username %}
+            <p class="attendee__twitter">
+              <a href="https://www.twitter.com/{{ speaker.twitter_username }}">
+                @{{ speaker.twitter_username }}
+              </a>
+            </p>
+          {% endif %}
           </li>
         {% empty %}
           <li>Check back soon for details of the confirmed sessions.</li>
