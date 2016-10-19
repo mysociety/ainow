@@ -115,6 +115,10 @@ iframe {
       margin-top: 0;
     }
   }
+
+  li + li {
+    margin-top: 0.5em;
+  }
 }
 
 .standard-layout__secondary-column {
