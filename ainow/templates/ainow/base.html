@@ -84,17 +84,33 @@
         </div>
     </nav>
 
-    {% block subnav %}
-    {% endblock %}
+    {% if schedule.slug == '2016' and not is_homepage %}
+    <nav class="workshop-navbar navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#workshop-header-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"  href="{% url 'schedule' schedule.slug %}">{{ schedule.name }}</a>
+        </div>
+        <div class="collapse navbar-collapse" id="workshop-header-nav">
+          <ul class="nav navbar-nav" role="navigation">
+            {% include 'ainow/_workshop-nav.html' %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endif %}
 
     {% block messages %}
-    {% if schedule.slug == 'workshop' %}
+    {% if messages %}
     <header class="sub-header">
-      {% if messages %}
         <div class="container">
           {% include 'theme/_messages.html' %}
         </div>
-      {% endif %}
     </header>
     {% endif %}
     {% endblock messages %}
