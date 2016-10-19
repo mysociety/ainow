@@ -11,5 +11,5 @@ class CategoryListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CategoryListView, self).get_context_data(**kwargs)
-        context["schedule"] = Schedule.objects.get(slug="conference")
+        context["schedule"] = Schedule.objects.get(slug="2016")
         return context
