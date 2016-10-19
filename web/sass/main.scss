@@ -109,6 +109,16 @@ iframe {
 .standard-layout__primary-column {
   @include make-xs-column($columns: 12);
   @include make-md-column($columns: 9);
+
+  @media (min-width: $screen-md-min) {
+    & > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  li + li {
+    margin-top: 0.5em;
+  }
 }
 
 .standard-layout__secondary-column {
