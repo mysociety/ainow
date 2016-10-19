@@ -14,10 +14,7 @@
     </div>
     <div class="collapse navbar-collapse" id="workshop-header-nav">
       <ul class="nav navbar-nav" role="navigation">
-        <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
-        <li><a href="{% url 'attendees' schedule.slug %}">Attendees &amp; Speakers</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Sponsors</a></li>
+        {% include 'ainow/_workshop-nav.html' %}
       </ul>
     </div>
   </div>

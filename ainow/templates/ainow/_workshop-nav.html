@@ -1,9 +1,5 @@
-<li><a href="{% url 'attendees' schedule.slug %}">Attendees &amp; Speakers</a></li>
-
-<!--<li><a href="{# url 'themes' schedule.slug #}">Sessions info</a></li>-->
-
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
-
-<li><a href="{% url 'workshop_venue' %}">Resources</a></li>
-
-<!--<li><a href="{% url 'faq' schedule.slug schedule.slug %}">FAQ</a></li>-->
+<li><a href="{% url 'attendees' schedule.slug %}">Attendees &amp; Speakers</a></li>
+<li><a href="{% url 'page' schedule.slug 'venue' %}">Venue</a></li>
+<li><a href="{% url 'page' schedule.slug 'papers' %}">Papers</a></li>
+<li><a href="{% url 'page' schedule.slug 'sponsors' %}">Sponsors</a></li>
