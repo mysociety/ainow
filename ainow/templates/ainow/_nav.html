@@ -1,5 +1,6 @@
-<li {% if schedule.slug == 'conference' and not is_homepage %}class="active"{% endif %}><a href="{% url 'schedule' 'conference' %}">2016 Workshop</a></li>
-<li {% if schedule.slug == 'workshop' %}class="active"{% endif %}><a href="{% url 'schedule' 'workshop' %}">2015 Workshop</a></li>
+<li {% if schedule.slug == '2016' and not is_homepage %}class="active"{% endif %}><a href="{% url 'schedule' '2016' %}">2016</a></li>
+<!--
 <li><a href="#">Organizers</a></li>
 <li><a href="#">Blog</a></li>
-<!-- <li><a href="{% url 'attendees' 'workshop' %}">Attendees &amp; Speakers</a></li> -->
+<li><a href="{% url 'attendees' 'workshop' %}">Attendees &amp; Speakers</a></li>
+-->
