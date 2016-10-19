@@ -68,7 +68,7 @@ class Command(BaseCommand):
                     name=user.get_full_name(),
                     organisation=organisation,
                     title=title,
-                    schedule=Schedule.objects.get(slug='workshop'),
+                    schedule=Schedule.objects.get(slug='2016'),
                     external_id=external_id
                 )
             else:
