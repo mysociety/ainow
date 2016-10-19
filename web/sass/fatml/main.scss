@@ -65,7 +65,8 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   font-family: $ui_typeface;
   background-color: #293338;
   background-image: url('../img/fatml-hero-background.jpg');
-  background-position: center top;
+  background-position: center 80%;
+  text-align: center;
 }
 
 .homepage-hero__details {
@@ -81,11 +82,12 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   font-family: $heading_typeface;
   font-size:  2em;
   line-height: 1.1em;
-  margin-bottom: 1em;
+  margin: 0 0 1em 0;
 
   @media (min-width: $screen-sm-min) {
     font-size: 3.4em;
     max-width: 13em;
+    margin: 0 auto 1em auto;
   }
 }
 
@@ -103,6 +105,7 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
 .btn--tickets {
   background-color: $color_fatml_yellow;
   color: $color_fatml_grey;
+  float: none;
 
   &:hover,
   &:focus {
