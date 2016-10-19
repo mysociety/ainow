@@ -27,7 +27,7 @@ class HomeView(TemplateView):
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
-        context['schedule'] = Schedule.objects.get(slug='conference')
+        # context['schedule'] = Schedule.objects.get(slug='conference')
         context['themes'] = Theme.objects.exclude(primer='')
         try:
             context['summary_document'] = Document.objects.get(name='Summary Report and Recommendations')
