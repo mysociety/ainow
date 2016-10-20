@@ -1091,7 +1091,9 @@ iframe {
 }
 
 .attendee__org,
-.attendee__job-title {
+.attendee__job-title,
+.attendee__url,
+.attendee__twitter {
   margin: 0 0 0.3em 0;
 }
 
@@ -1104,6 +1106,7 @@ iframe {
   font-size: 0.8125em;
 }
 
+.attendee__url,
 .attendee__twitter {
   font-size: 0.8125em;
 }

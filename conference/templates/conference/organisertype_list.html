@@ -13,22 +13,25 @@
       <h1>Organizers</h1>
         {% for organiser_type in organiser_types %}
           <h2>{{ organiser_type.name }}</h2>
-          <ul>
+          <ul style="padding-left:0">
             {% for organiser in organiser_type.organiser_set.all %}
-            <li>
-              <h3>{{ organiser.name }}</h3>
+            <li class="media">
               {% thumbnail organiser.photo "250x250" crop="center" as im %}
-                <img src="{{ im.url }}">
+                <div class="media-left">
+                  <img src="{{ im.url }}">
+                </div>
               {% endthumbnail %}
+              <div class="media-body">
+                <h3 class="media-heading">{{ organiser.name }}</h3>
               {% if organiser.organisation %}
-              <p class="attendee__org">{{ organiser.organisation }}</p>
+                <p class="attendee__org">{{ organiser.organisation }}</p>
               {% endif %}
               {% if organiser.website %}
-              <p class="attendee__url">
-                <a href="{{ organiser.website }}">
-                  {{ organiser.website }}
-                </a>
-              </p>
+                <p class="attendee__url">
+                  <a href="{{ organiser.website }}">
+                    {{ organiser.website }}
+                  </a>
+                </p>
               {% endif %}
               {% if organiser.twitter_username %}
                 <p class="attendee__twitter">
@@ -37,6 +40,7 @@
                   </a>
                 </p>
               {% endif %}
+              </div>
             </li>
             {% endfor %}
           </ul>
