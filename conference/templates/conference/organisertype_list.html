@@ -1,0 +1,47 @@
+{% extends 'theme/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Organizers{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Organizers</h1>
+        {% for organiser_type in organiser_types %}
+          <h2>{{ organiser_type.name }}</h2>
+          <ul>
+            {% for organiser in organiser_type.organiser_set.all %}
+            <li>
+              <h3>{{ organiser.name }}</h3>
+              {% thumbnail organiser.photo "250x250" crop="center" as im %}
+                <img src="{{ im.url }}">
+              {% endthumbnail %}
+              {% if organiser.organisation %}
+              <p class="attendee__org">{{ organiser.organisation }}</p>
+              {% endif %}
+              {% if organiser.website %}
+              <p class="attendee__url">
+                <a href="{{ organiser.website }}">
+                  {{ organiser.website }}
+                </a>
+              </p>
+              {% endif %}
+              {% if organiser.twitter_username %}
+                <p class="attendee__twitter">
+                  <a href="https://www.twitter.com/{{ organiser.twitter_username }}">
+                    @{{ organiser.twitter_username }}
+                  </a>
+                </p>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
