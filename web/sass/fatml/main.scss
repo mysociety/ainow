@@ -135,6 +135,15 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
 }
 
+// TODO: Remove this once speakers have all been set in the DB.
+.presentation-detail__speaker {
+  padding-bottom: 0;
+
+  a {
+    display: none;
+  }
+}
+
 .fatml-sponsors {
   margin-top: 4em;
 
