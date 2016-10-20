@@ -135,6 +135,31 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
 }
 
+.fatml-sponsors {
+  margin-top: 4em;
+
+  h3 {
+    margin: 0;
+  }
+
+  a {
+    display: inline-block;
+    margin-right: 2em;
+    margin-top: 2em;
+    font-size: 0.8em;
+    vertical-align: middle;
+
+    &.text-only {
+      max-width: 11em;
+    }
+  }
+
+  img {
+    height: 34px;
+    width: auto;
+  }
+}
+
 .site-footer {
   background-color: $color_fatml_grey;
   color: #fff;
