@@ -1,4 +1,4 @@
 <li {% if schedule.slug == '2016' and not is_homepage %}class="active"{% endif %}><a href="{% url 'schedule' '2016' %}">2016</a></li>
-<li><a href="#">Organization</a></li>
+<li><a href="{% url 'organizers' '2016' %}">Organization</a></li>
 <li><a href="{% url 'resources' %}">Resources</a></li>
 <li><a href="https://lists.princeton.edu/cgi-bin/wa?SUBED1=fatml&A=1">Mailing list</a></li>
