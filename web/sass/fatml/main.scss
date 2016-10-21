@@ -168,3 +168,17 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
     width: auto;
   }
 }
+
+.attendee-list__attendee {
+  width: 100%;
+
+  @media (min-width: $screen-sm-min) {
+    width: 45%;
+    margin-top: 2em !important;
+    margin-bottom: 1em;
+  }
+
+  @media (min-width: $screen-md-min) {
+    width: 30%;
+  }
+}

@@ -1058,7 +1058,7 @@ iframe {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .attendee-list__attendee {
@@ -1067,7 +1067,6 @@ iframe {
   margin-bottom: 2em;
   margin-top: 0;
   width: 15em;
-  margin-right: $grid-gutter-width;
 }
 
 .attendee__secondary-column {
