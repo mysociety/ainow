@@ -71,6 +71,12 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
 
 .homepage-hero__details {
   font-weight: bold;
+  max-width: 30em;
+  margin: 0 auto 0.5em auto;
+
+  a {
+    color: $color_fatml_teal;
+  }
 }
 
 .homepage-hero__details__divider {
@@ -82,12 +88,11 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   font-family: $heading_typeface;
   font-size:  2em;
   line-height: 1.1em;
-  margin: 0 0 1em 0;
+  margin: 0 auto 0.5em auto;
 
   @media (min-width: $screen-sm-min) {
     font-size: 3.4em;
     max-width: 13em;
-    margin: 0 auto 1em auto;
   }
 }
 
@@ -111,6 +116,7 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   background-color: $color_fatml_yellow;
   color: $color_fatml_grey;
   float: none;
+  margin-top: 1.5em;
 
   &:hover,
   &:focus {
@@ -148,29 +154,30 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   }
 }
 
-.fatml-sponsors {
-  margin-top: 4em;
-
-  h3 {
-    margin: 0;
-  }
-
-  a {
-    display: inline-block;
-    margin-right: 2em;
-    margin-top: 2em;
-    font-size: 0.8em;
-    vertical-align: middle;
-
-    &.text-only {
-      max-width: 11em;
-    }
-  }
-
+.sponsors-primary {
   img {
-    height: 34px;
+    height: 64px;
     width: auto;
   }
+}
+
+.sponsors-secondary {
+  img {
+    height: 32px;
+    width: auto;
+  }
+}
+
+.sponsor {
+  display: inline-block;
+  margin-right: 2em;
+  margin-top: 2em;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+.sponsor--text-only {
+  max-width: 11em;
 }
 
 .attendee-list__attendee {
