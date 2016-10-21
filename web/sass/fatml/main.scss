@@ -135,6 +135,10 @@ $ui_typeface: Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
 }
 
+.schedule-entry__time {
+  margin-right: 0.5em;
+}
+
 // TODO: Remove this once speakers have all been set in the DB.
 .presentation-detail__speaker {
   padding-bottom: 0;
