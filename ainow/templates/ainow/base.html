@@ -76,9 +76,9 @@
                 </ul>
               </li>
             {% else %}
-              <li>
+              <!-- <li>
                 {% include 'account/_signup_nav.html' %}
-              </li>
+              </li> -->
             {% endif %}
           </ul>
         </div>
@@ -118,22 +118,6 @@
     {% block content %}
     {% endblock %}
     </div> <!-- site-bg -->
-    <footer class="site-footer" role="footer">
-      <div class="container">
-        <div class="row">
-
-          <div class="site-footer__utility-links">
-            <ul class="utility-links__list">
-              <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
-              <li><a href="{% url 'page' schedule.slug 'production-credits' %}">Production Team and Credits</a></li>
-            </ul>
-          </div>
-
-          <div class="site-footer__partner-logos">
-          </div>
-        </div>
-      </div>
-    </footer>
 
     {% javascript 'app' %}
   </body>
