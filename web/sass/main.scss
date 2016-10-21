@@ -928,15 +928,6 @@ iframe {
   }
 }
 
-.schedule-entry__time {
-  display: block;
-  background-color: $gray-lighter;
-
-  padding: 0.66667em 0.5em 0.5em;
-  font-size: 1.0625em; //~17px
-  margin: 1.5em 0;
-}
-
 .schedule-entry__speaker,
 .schedule-entry__description {
   color: $gray;
