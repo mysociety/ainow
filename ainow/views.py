@@ -22,16 +22,16 @@ class HomeView(TemplateView):
     template_name = 'ainow/index.html'
 
     def get_context_data(self, **kwargs):
+
         context = super(HomeView, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
+
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
-        context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
-        context['schedule'] = Schedule.objects.get(slug='conference')
-        context['themes'] = Theme.objects.exclude(primer='')
-        try:
-            context['summary_document'] = Document.objects.get(name='Summary Report and Recommendations')
-        except Document.DoesNotExist:
-            pass
+        context['call_block'] = Block.objects.get(slug='homepage-call-for-papers').content
+        context['florence_block'] = Block.objects.get(slug='homepage-about-florence').content
+        context['inspired_block'] = Block.objects.get(slug='homepage-get-inspired').content
 
         # Get the current datetime in CONFERENCE_TIMEZONE
         with timezone.override(settings.CONFERENCE_TIMEZONE):
@@ -39,48 +39,9 @@ class HomeView(TemplateView):
         if now.date() < settings.CONFERENCE_START.date():
             # Before the day of the conference we don't want to show any livestream stuff
             context['pre_conference'] = True
-        elif now.date() >= settings.CONFERENCE_START.date() and now < settings.CONFERENCE_END:
-            # Whilst the conference is running, show the livestream
-            context['show_livestream'] = True
-            try:
-                context['livestream'] = LiveStream.objects.get(live=True)
-            except LiveStream.DoesNotExist:
-                context['livestream'] = None
         else:
             # Conference has finished, so immediately hide livestream and other pre-conference bits (e.g. ticket links)
             context['post_conference'] = True
-            context['post_conference_block'] = Block.objects.get(slug='homepage-post-stream').content
-            # Show the videos
-            context['workshop_talk_1'] = Presentation.objects.get(slug='time-different-opportunities-and-challenges-artifi')
-            context['workshop_talk_2'] = Presentation.objects.get(slug='uncovering-machine-bias')
-            context['workshop_talk_3'] = Presentation.objects.get(slug='bending-gig-economy-toward-equity')
-            context['workshop_talk_4'] = Presentation.objects.get(slug='symbiotic-human-robot-interaction')
-            context['symposium_talk_1'] = Presentation.objects.get(slug='introductions-ed-felten')
-            context['symposium_talk_2'] = Presentation.objects.get(slug='conversation-white-house-past-and-present')
-            context['symposium_talk_3'] = Presentation.objects.get(slug='three-questions-three-tech-leaders')
-            context['symposium_talk_4'] = Presentation.objects.get(slug='plenary-panel-inequality-labor-health-and-ethics-a')
-        return context
-
-
-class WorkshopHomeView(LoginRequiredMixin, TemplateView):
-    template_name = 'ainow/workshop_index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(WorkshopHomeView, self).get_context_data(**kwargs)
-        context['intro_block'] = Block.objects.get(slug='workshop-introduction').content
-        context['schedule'] = Schedule.objects.get(slug='workshop')
-        return context
-
-
-class WorkshopVenueView(LoginRequiredMixin, TemplateView):
-    template_name = 'ainow/workshop_venue.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(WorkshopVenueView, self).get_context_data(**kwargs)
-        context['intro_block'] = Block.objects.get(slug='workshop-venue-introduction').content
-        context['harassment_block'] = Block.objects.get(slug='harassment-policy').content
-        context['chatham_block'] = Block.objects.get(slug='chatham-house-rule').content
-        context['schedule'] = Schedule.objects.get(slug='workshop')
         return context
 
 

@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon-precomposed" href="{% static 'img/apple-touch-icon.png' %}">
     <link rel="icon" sizes="192x192" href="{% static 'img/touch-icon-192x192.png' %}">
 
-    <title>{% block fulltitle %}{% block title %}{% endblock %} :: AI Now{% endblock %}</title>
+    <title>{% block fulltitle %}{% block title %}{% endblock %} :: TICTeC{% endblock %}</title>
 
     <meta name="viewport" content="width=device-width">
 
@@ -80,7 +80,7 @@
                   {% include 'account/_logged_in_nav_short.html' %}
                 </ul>
               </li>
-            {% else %}
+            {% elif False %}
               <li>
                 {% include 'account/_signup_nav.html' %}
               </li>
@@ -89,7 +89,7 @@
         </div>
     </nav>
 
-    {% if schedule.slug == 'workshop' and request.user.is_authenticated %}
+    {% if schedule.slug == '2017' and request.user.is_authenticated and False %}
     <nav class="workshop-navbar navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -99,29 +99,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand"  href="{% url 'workshop_home' %}">Workshop</a>
         </div>
         <!-- navbar-header -->
         <div class="collapse navbar-collapse" id="workshop-header-nav">
           <ul class="nav navbar-nav" role="navigation">
-            {% include 'ainow/_workshop-nav.html' %}
+            {% include 'ainow/_schedule-nav.html' %}
           </ul>
         </div>
       </div>
     </nav>
     {% endif %}
-
-    {% block messages %}
-    {% if schedule.slug == 'workshop' %}
-    <header class="sub-header">
-      {% if messages %}
-        <div class="container">
-          {% include 'ainow/_messages.html' %}
-        </div>
-      {% endif %}
-    </header>
-    {% endif %}
-    {% endblock messages %}
 
     {% block content %}
     {% endblock %}

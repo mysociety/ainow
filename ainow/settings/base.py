@@ -335,7 +335,7 @@ BLEACH_ALLOWED_TAGS = [
 ]
 
 BLEACH_ALLOWED_ATTRIBUTES = {
-    u'a': [u'href', u'title'],
+    u'a': [u'href', u'title', u'class', u'target'],
     u'acronym': [u'title'],
     u'abbr': [u'title'],
     # We've added these:
@@ -368,3 +368,5 @@ GOOGLE_ANALYTICS_ACCOUNT = config.get('GOOGLE_ANALYTICS_ACCOUNT')
 CONFERENCE_TIMEZONE = pytz.timezone(config.get('CONFERENCE_TIMEZONE'))
 CONFERENCE_START = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_START'), "%d/%m/%Y %H:%M"))
 CONFERENCE_END = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_END'), "%d/%m/%Y %H:%M"))
+
+CONFERENCE_DEFAULT_SCHEDULE = config.get('CONFERENCE_DEFAULT_SCHEDULE')
