@@ -186,6 +186,16 @@ $high-dpi-screen: '-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi
   }
 }
 
+.mysoc-footer__org__logo--google {
+  height: 56px;
+  width: 140px;
+  background: transparent url('#{$mysoc-footer-image-path}logo-google.png') 0 0 no-repeat;
+  background-size: 140px 56px;
+  @media ($high-dpi-screen) {
+    background-image: url('#{$mysoc-footer-image-path}logo-google@2.png');
+  }
+}
+
 .mysoc-footer__legal {
   font-size: 0.8em;
   line-height: 1.5em;
