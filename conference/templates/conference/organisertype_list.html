@@ -24,19 +24,16 @@
                 {% endthumbnail %}
               </div>
               <div class="attendee__primary-column">
+              {% if organiser.website %}
+                <h2 class="attendee__name"><a href="{{ organiser.website }}">{{ organiser.name }}</a></h2>
+              {% else %}
                 <h2 class="attendee__name">{{ organiser.name }}</h2>
+              {% endif %}
               {% if organiser.title %}
                 <p class="attendee__job-title">{{ organiser.title }}</p>
               {% endif %}
               {% if organiser.organisation %}
                 <p class="attendee__org">{{ organiser.organisation }}</p>
-              {% endif %}
-              {% if organiser.website %}
-                <p class="attendee__url">
-                  <a href="{{ organiser.website }}">
-                    {{ organiser.website }}
-                  </a>
-                </p>
               {% endif %}
               {% if organiser.twitter_username %}
                 <p class="attendee__twitter">
