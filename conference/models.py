@@ -38,10 +38,15 @@ class Person(TimestampedModel):
     twitter_username = models.CharField(max_length=15, blank=True)
     title = models.CharField(max_length=1024, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
+    sort_order = models.IntegerField(
+        default=0,
+        blank=True,
+        help_text="Order in which the person will appear in a list."
+    )
 
     class Meta:
         abstract = True
-        ordering = ['name']
+        ordering = ['sort_order','name']
 
     def __str__(self):
         return self.name
