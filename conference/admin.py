@@ -2,6 +2,7 @@ from django.contrib import admin
 from conference import models
 
 from sorl.thumbnail.admin import AdminImageMixin
+from adminsortable2.admin import SortableAdminMixin
 
 
 class SlotInline(admin.TabularInline):
@@ -23,7 +24,7 @@ admin.site.register(
 )
 
 
-class SpeakerAdmin(AdminImageMixin, admin.ModelAdmin):
+class SpeakerAdmin(SortableAdminMixin, AdminImageMixin, admin.ModelAdmin):
     list_display = ("name", "twitter_username", "title", "organisation")
     list_editable = ("twitter_username", "title", "organisation")
     prepopulated_fields = {"slug": ("name",)}
@@ -31,14 +32,14 @@ class SpeakerAdmin(AdminImageMixin, admin.ModelAdmin):
 admin.site.register(models.Speaker, SpeakerAdmin)
 
 
-class OrganiserAdmin(AdminImageMixin, admin.ModelAdmin):
+class OrganiserAdmin(SortableAdminMixin, AdminImageMixin, admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(models.OrganiserType)
 admin.site.register(models.Organiser, OrganiserAdmin)
 
 
-class AttendeeAdmin(AdminImageMixin, admin.ModelAdmin):
+class AttendeeAdmin(SortableAdminMixin, AdminImageMixin, admin.ModelAdmin):
     list_display = ("name", "twitter_username", "title", "organisation")
     list_editable = ("twitter_username", "title", "organisation")
     prepopulated_fields = {"slug": ("name",)}
