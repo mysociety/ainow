@@ -1,4 +1,6 @@
-<li {% if schedule.slug == '2016' and not is_homepage and not request.resolver_match.url_name == 'resources' %}class="active"{% endif %}><a href="{% url 'schedule' '2016' %}">2016</a></li>
+{% for nav_schedule in schedules %}
+<li {% if nav_schedule.slug == schedule.slug and not is_homepage and not request.resolver_match.url_name == 'resources' %}class="active"{% endif %}><a href="{% url 'schedule' nav_schedule.slug %}">{{ nav_schedule.name }}</a></li>
+{% endfor %}
 <li {% if request.resolver_match.url_name == 'organisation' %}class="active"{% endif %}><a href="{% url 'organisation' %}">Organization</a></li>
 <li {% if request.resolver_match.url_name == 'resources' %}class="active"{% endif %}><a href="{% url 'resources' %}">Resources</a></li>
 <li><a href="https://lists.princeton.edu/cgi-bin/wa?SUBED1=fatml&A=1">Mailing list</a></li>
