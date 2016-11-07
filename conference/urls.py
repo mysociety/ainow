@@ -20,6 +20,7 @@ from .views import (
     SpeakerListView,
     SpeakerView,
     OrganiserTypeListView,
+    OverallOrganiserTypeListView,
     PresentationListView,
     PresentationView,
     AttendeeListView,
@@ -40,4 +41,5 @@ urlpatterns = [
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', AttendeeView.as_view(), name='attendee'),
     url(r"^profile/$", AttendeeCreateUpdateView.as_view(), name="profile"),
     url(r"^profile/delete-photo$", delete_photo, name="profile_delete_photo"),
+    url(r'^organizers$', OverallOrganiserTypeListView.as_view(), name='overall-organisers'),
 ]
