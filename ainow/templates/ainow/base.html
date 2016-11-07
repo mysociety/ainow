@@ -84,7 +84,7 @@
         </div>
     </nav>
 
-    {% if schedule.slug == '2016' and not is_homepage %}
+    {% if schedule.slug == '2016' and not is_homepage and not request.resolver_match.url_name == 'resources' %}
     <nav class="workshop-navbar navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
