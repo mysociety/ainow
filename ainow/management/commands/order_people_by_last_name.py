@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from conference.models import Attendee, Speaker, Organiser
+from conference.models import Attendee, Speaker, Organiser, StandingCommittee
 
 
 class Command(BaseCommand):
@@ -15,6 +15,7 @@ class Command(BaseCommand):
         parser.add_argument('--organisers', action='store_true', default=False)
         parser.add_argument('--speakers', action='store_true', default=False)
         parser.add_argument('--attendees', action='store_true', default=False)
+        parser.add_argument('--standing', action='store_true', default=False)
         parser.add_argument('--all', action='store_true', default=False)
 
     @transaction.atomic
@@ -27,6 +28,9 @@ class Command(BaseCommand):
             self.sort_people(people)
         if options['attendees'] or options['all']:
             people = Attendee.objects.all()
+            self.sort_people(people)
+        if options['standing'] or options['all']:
+            people = StandingCommittee.objects.all()
             self.sort_people(people)
 
     def sort_people(self, people):
