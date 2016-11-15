@@ -119,7 +119,7 @@ class SpeakerView(ScheduleMixin, DetailView):
         ).distinct()
 
 
-class OverallOrganiserTypeListView(ListView):
+class OrganiserTypeListView(ScheduleMixin, ListView):
     model = OrganiserType
     context_object_name = 'organiser_types'
 
@@ -128,16 +128,6 @@ class OverallOrganiserTypeListView(ListView):
         Speakers are linked to a schedule by their presentation(s) slot(s).
         """
 
-        return OrganiserType.objects.all()
-
-
-class OrganiserTypeListView(ScheduleMixin, OverallOrganiserTypeListView):
-    def get_queryset(self):
-        """
-        Exactly the same code as OverallOrganiserTypeListView but we can't
-        do super as it then inherits from the Mixin which looks for a schedule
-        which isn't something that's set on organiser_types
-        """
         return OrganiserType.objects.all()
 
 
