@@ -15,7 +15,7 @@ import sorl
 
 from account.mixins import LoginRequiredMixin
 
-from .models import Schedule, Speaker, OrganiserType, Presentation, Attendee
+from .models import Schedule, Speaker, OrganiserType, Presentation, Attendee, StandingCommittee
 from .forms import AttendeeForm
 from blocks.models import Block
 
@@ -129,6 +129,11 @@ class OrganiserTypeListView(ScheduleMixin, ListView):
         """
 
         return OrganiserType.objects.all()
+
+
+class StandingCommitteeListView(ListView):
+    model = StandingCommittee
+    context_object_name = 'standing_committee'
 
 
 class PresentationView(ScheduleMixin, DetailView):
