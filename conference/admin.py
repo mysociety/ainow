@@ -77,3 +77,12 @@ admin.site.register(
     list_display=("name", "youtube_link", "live"),
     list_editable=("youtube_link", "live"),
 )
+
+
+class StandingCommitteeAdmin(SortableAdminMixin, AdminImageMixin, admin.ModelAdmin):
+    list_display = ("name", "twitter_username", "title", "organisation")
+    list_editable = ("twitter_username", "title", "organisation")
+    prepopulated_fields = {"slug": ("name",)}
+
+
+admin.site.register(models.StandingCommittee, StandingCommitteeAdmin)
