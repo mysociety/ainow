@@ -1,15 +1,15 @@
 {% if schedule.slug == '2016' %}
 <li><a href="{% url 'page' schedule.slug 'call-for-papers' %}">Call for Papers</a></li>
 <li><a href="{% url 'page' schedule.slug 'attend' %}">Attend</a></li>
-<li><a href="{% url 'speakers' schedule.slug %}">Speakers</a></li>
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
+<li><a href="{% url 'speakers' schedule.slug %}">Speakers</a></li>
 <li><a href="{% url 'page' schedule.slug 'papers' %}">Papers</a></li>
 <li><a href="{% url 'organisers' schedule.slug %}">Organizers</a></li>
 {% else %}
 <li><a href="{% url 'page' schedule.slug 'call-for-papers' %}-{{ schedule.slug}}">Call for Papers</a></li>
 <li><a href="{% url 'page' schedule.slug 'attend' %}-{{ schedule.slug}}">Attend</a></li>
-<li><a href="{% url 'speakers' schedule.slug %}">Speakers</a></li>
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
+<li><a href="{% url 'speakers' schedule.slug %}">Speakers</a></li>
 <li><a href="{% url 'page' schedule.slug 'papers' %}-{{ schedule.slug}}">Papers</a></li>
 {% endif %}
 <!-- <li><a href="{% url 'attendees' schedule.slug %}">Attendees</a></li>
