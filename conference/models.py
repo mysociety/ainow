@@ -76,6 +76,11 @@ class OrganiserType(TimestampedModel):
 class Organiser(Person):
     # Organisers are people too, but they have an OrganiserType
     organiser_type = models.ManyToManyField('OrganiserType')
+    organiser_schedule_type = models.ManyToManyField(
+        'OrganiserType',
+        related_name="organiser_schedule_type",
+        through='OrganiserScheduleType',
+    )
     website = models.URLField(max_length=1024, blank=True)
 
 
@@ -115,6 +120,12 @@ class Schedule(TimestampedModel):
 
     def __str__(self):
         return self.name
+
+
+class OrganiserScheduleType(TimestampedModel):
+    organiser_type = models.ForeignKey(OrganiserType)
+    organiser = models.ForeignKey(Organiser)
+    schedule = models.ForeignKey(Schedule, blank=True)
 
 
 class Room(TimestampedModel):
