@@ -15,7 +15,7 @@ import sorl
 
 from account.mixins import LoginRequiredMixin
 
-from .models import Schedule, Speaker, OrganiserType, Presentation, Attendee, StandingCommittee
+from .models import Schedule, Speaker, OrganiserType, Presentation, Attendee, StandingCommittee, OrganiserScheduleType
 from .forms import AttendeeForm
 from blocks.models import Block
 
@@ -124,11 +124,7 @@ class OrganiserTypeListView(ScheduleMixin, ListView):
     context_object_name = 'organiser_types'
 
     def get_queryset(self):
-        """
-        Speakers are linked to a schedule by their presentation(s) slot(s).
-        """
-
-        return OrganiserType.objects.all()
+        return OrganiserType.objects.filter(organiserscheduletype__schedule=self.schedule).distinct()
 
 
 class StandingCommitteeListView(ListView):

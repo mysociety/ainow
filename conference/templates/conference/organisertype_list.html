@@ -14,7 +14,7 @@
         {% for organiser_type in organiser_types %}
           <h2>{{ organiser_type.name }}</h2>
           <ul class="attendee-list">
-            {% for organiser in organiser_type.organiser_set.all %}
+            {% for organiser in organiser_type.organiser_schedule_type.all %}
             <li class="attendee-list__attendee">
               <div class="attendee__secondary-column">
                 {% thumbnail organiser.photo "100x100" crop="center" as im %}
