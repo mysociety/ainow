@@ -70,7 +70,6 @@ class OrganiserType(TimestampedModel):
 
 class Organiser(Person):
     # Organisers are people too, but they have an OrganiserType
-    organiser_type = models.ManyToManyField('OrganiserType')
     organiser_schedule_type = models.ManyToManyField(
         'OrganiserType',
         related_name="organiser_schedule_type",
