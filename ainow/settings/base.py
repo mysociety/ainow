@@ -68,7 +68,6 @@ INSTALLED_APPS = [
     'blocks',
     'themes',
     'resources',
-    'micawber.contrib.mcdjango',
     config.get('CONFERENCE_THEME'),
 ]
 
