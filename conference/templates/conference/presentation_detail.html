@@ -1,6 +1,7 @@
 {% extends 'theme/base.html' %}
 {% load staticfiles %}
 {% load thumbnail %}
+{% load micawber_tags %}
 
 {% block title %}{{ presentation.title }}{% endblock %}
 
@@ -42,6 +43,13 @@
           allowfullscreen class="presentation-detail__video">
         </iframe>
       {% endif %}
+
+      {% if presentation.slide_link %}
+      <h3>Slides</h3>
+
+      {{ presentation.slide_link|oembed:"600x600" }}
+      {% endif %}
+
 
     </div>
   </div>
