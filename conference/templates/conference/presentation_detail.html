@@ -1,6 +1,7 @@
 {% extends 'ainow/base.html' %}
 {% load staticfiles %}
 {% load thumbnail %}
+{% load micawber_tags %}
 
 {% block title %}{{ presentation.title }}{% endblock %}
 
@@ -43,6 +44,11 @@
         </iframe>
       {% endif %}
 
+      {% if presentation.slide_link %}
+      <h3>Slides</h3>
+
+      {{ presentation.slide_link|oembed:"600x600" }}
+      {% endif %}
     </div>
   </div>
 </div>
