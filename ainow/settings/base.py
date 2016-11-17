@@ -68,7 +68,8 @@ INSTALLED_APPS = [
     'blocks',
     'themes',
     'resources',
-    config.get('CONFERENCE_THEME')
+    'micawber.contrib.mcdjango',
+    config.get('CONFERENCE_THEME'),
 ]
 
 MIDDLEWARE_CLASSES = [

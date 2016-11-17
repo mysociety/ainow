@@ -22,3 +22,4 @@ slimit==0.8.1
 sorl-thumbnail==12.4a1
 unicodecsv==0.14.1
 wsgiref==0.1.2
+micawber
