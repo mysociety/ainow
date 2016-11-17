@@ -22,11 +22,13 @@
         </a>
 
         <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}"><span class="presentation-detail__speaker-name">{{ presentation.primary_speaker.name }}</span></a>
+        <!--
         {% if presentation.additional_speakers %}
           {% for speaker in presentation.additional_speakers.all %}
             , <a href="{% url 'speaker' schedule.slug speaker.slug}"><span class="presentation-detail__speaker-name">{{ speaker.name }}</span></a>
           {% endfor %}
         {% endif %}
+        -->
       </p>
 
       <p class="presentation-detail__description">{{ presentation.long_description }}</p>
