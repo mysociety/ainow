@@ -1,6 +1,7 @@
 {% extends 'theme/base.html' %}
 {% load staticfiles %}
 {% load thumbnail %}
+{% load organiser_filters %}
 
 {% block title %}Organizers{% endblock %}
 
@@ -14,7 +15,7 @@
         {% for organiser_type in organiser_types %}
           <h2>{{ organiser_type.name }}</h2>
           <ul class="attendee-list">
-            {% for organiser in organiser_type.organiser_schedule_type.all %}
+            {% for organiser in organiser_type.organiser_schedule_type.all|organisers_by_schedule:schedule %}
             <li class="attendee-list__attendee">
               <div class="attendee__secondary-column">
                 {% thumbnail organiser.photo "100x100" crop="center" as im %}
