@@ -1,5 +1,6 @@
 {% load staticfiles %}
 
+{% if schedule.slug == '2016' %}
 <div class="sponsors-primary">
   <a class="sponsor" href="http://www.google.com">
     <img src="{% static 'img/logo-google.png' %}" alt="Google">
@@ -22,3 +23,10 @@
     NYU Technology Law and Policy Clinic
   </a>
 </div>
+{% elif schedule.slug == '2015' %}
+<div class="sponsors">
+  <a class="sponsor" href="https://citp.princeton.edu/">
+    <img src="{% static 'img/logo-citp.png' %}" alt="Center for Information Technology Policy" width="465">
+  </a>
+</div>
+{% endif %}
