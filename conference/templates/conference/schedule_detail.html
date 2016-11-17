@@ -58,8 +58,10 @@
             </div>
           {% endif %}
 
+          {% if schedule.slug == '2016' or schedule.slug == '2015' %}
           <h3 style="margin: 3em 0 0 0">Sponsors</h3>
           {% include 'ainow/_sponsors.html' %}
+          {% endif %}
 
         </div>
         <div class="standard-layout__secondary-column">
