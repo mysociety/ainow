@@ -48,7 +48,7 @@ class Person(TimestampedModel):
         abstract = True
         ordering = ['sort_order','name']
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def save(self, *args, **kwargs):
