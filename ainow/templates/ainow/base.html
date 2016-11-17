@@ -84,7 +84,7 @@
         </div>
     </nav>
 
-    {% if schedule.slug and not is_homepage and not request.resolver_match.url_name == 'resources' %}
+    {% if schedule.slug and not is_homepage and not is_resources and not request.get_full_path == '/schedule/2016/page/principles-and-best-practices' %}
     <nav class="workshop-navbar navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
@@ -99,6 +99,27 @@
         <div class="collapse navbar-collapse" id="workshop-header-nav">
           <ul class="nav navbar-nav" role="navigation">
             {% include 'ainow/_workshop-nav.html' %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endif %}
+
+    {% if is_resources or request.get_full_path == '/schedule/2016/page/principles-and-best-practices' %}
+    <nav class="workshop-navbar navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#workshop-header-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"  href="{% url 'resources' %}">Resources</a>
+        </div>
+        <div class="collapse navbar-collapse" id="workshop-header-nav">
+          <ul class="nav navbar-nav" role="navigation">
+            {% include 'resources/_resources-nav.html' %}
           </ul>
         </div>
       </div>
