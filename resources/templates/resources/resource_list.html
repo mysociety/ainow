@@ -1,0 +1,33 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Resources{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Resources</h1>
+      <div class="row">
+          {% if resources %}
+          <div class="standard-layout__primary-column">
+              {% for document in resources.all %}
+                <h4>
+                  <a href="{{ document.file.url }}">{{ document.title }}</a>
+                </h4>
+                {{ document.description }}
+              {% endfor %}
+          </div>
+        {% else %}
+          <div class="col-xs-12">
+            <p>We'll be adding some resources here in the coming weeks, check back soon.</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
