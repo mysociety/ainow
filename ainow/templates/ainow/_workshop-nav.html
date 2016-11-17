@@ -16,6 +16,7 @@
 {% if schedule.slug != '2014' %}
 <li><a href="{% url 'page' schedule.slug 'papers' %}-{{ schedule.slug}}">Papers</a></li>
 {% endif %}
+<li><a href="{% url 'organisers' schedule.slug %}">Organizers</a></li>
 <li><a href="{% url 'page' schedule.slug 'updates' %}-{{ schedule.slug}}">Updates</a></li>
 {% endif %}
 <!-- <li><a href="{% url 'attendees' schedule.slug %}">Attendees</a></li>
