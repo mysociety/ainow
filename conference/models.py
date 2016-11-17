@@ -225,6 +225,12 @@ class Presentation(TimestampedModel):
         help_text='The URL for the presentation\'s slides.<br>'
                   'If it can be embded then we will otherwise a link will be displayed'
     )
+    audio_link = models.URLField(
+        blank=True,
+        max_length=1024,
+        help_text='The URL for an audio recording of the presentation.<br>'
+                  'If it can be embded then we will otherwise a link will be displayed'
+    )
     schedule = models.ForeignKey(
         'Schedule',
         blank=True,
