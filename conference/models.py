@@ -219,6 +219,12 @@ class Presentation(TimestampedModel):
         help_text='The url for the presentation\'s video on YouTube.<br>'
                   'We can extract everything we need to embed it from that.'
     )
+    slide_link = models.URLField(
+        blank=True,
+        max_length=1024,
+        help_text='The URL for the presentation\'s slides.<br>'
+                  'If it can be embded then we will otherwise a link will be displayed'
+    )
     schedule = models.ForeignKey(
         'Schedule',
         blank=True,

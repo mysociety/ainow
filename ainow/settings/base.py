@@ -67,7 +67,8 @@ INSTALLED_APPS = [
     'pages',
     'blocks',
     'themes',
-    'resources'
+    'resources',
+    'micawber.contrib.mcdjango'
 ]
 
 MIDDLEWARE_CLASSES = [
