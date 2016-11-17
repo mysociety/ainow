@@ -50,6 +50,12 @@
       {{ presentation.slide_link|oembed:"600x600" }}
       {% endif %}
 
+      {% if presentation.audio_link %}
+      <h3>Recording</h3>
+
+      {{ presentation.audio_link|oembed }}
+      {% endif %}
+
     </div>
   </div>
 </div>
