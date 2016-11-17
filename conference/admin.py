@@ -32,10 +32,17 @@ class SpeakerAdmin(SortableAdminMixin, AdminImageMixin, admin.ModelAdmin):
 admin.site.register(models.Speaker, SpeakerAdmin)
 
 
+class OrganiserScheduleTypeInline(admin.TabularInline):
+    model = models.Organiser.organiser_schedule_type.through
+
+
 class OrganiserAdmin(SortableAdminMixin, AdminImageMixin, admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
+    inlines = [OrganiserScheduleTypeInline,]
 
-admin.site.register(models.OrganiserType)
+admin.site.register(
+    models.OrganiserType,
+)
 admin.site.register(models.Organiser, OrganiserAdmin)
 
 
