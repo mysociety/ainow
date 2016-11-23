@@ -12,40 +12,40 @@
   </div>
 </div>
 
-<div id="about" class="homepage-summary">
+<div id="about" class="homepage-section">
   <div class="container">
     {{ intro_block }}
   </div>
 </div>
 
-<div id="call" class="homepage-call">
+<div id="call" class="homepage-section">
   <div class="container">
     {{ call_block }}
   </div>
 </div>
 
-<div id="registration" class="homepage-tickets">
+<div id="registration" class="homepage-section">
   <div class="container">
     {{ tickets_block }}
   </div>
 </div>
 
-<div id="accessibility" class="homepage-accessibility">
-  <div class="container">
-    {{ accessibility_block }}
-  </div>
-</div>
-
-<div id="florence" class="homepage-florence">
+<div id="florence" class="homepage-section">
   <div class="container">
     {{ florence_block }}
   </div>
 </div>
 
-<div id="inspired" class="homepage-inspired">
+<img src="/static/img/pisa-airport.jpg" style="width: 100%; height: auto;">
+
+<div id="inspired" class="homepage-section">
   <div class="container">
     {{ inspired_block }}
   </div>
 </div>
 
+{% endblock %}
+
+{% block footerlegal %}
+<p><a href="https://www.flickr.com/photos/125351778@N02/25936224591">Pisa airport panorama</a> by <a href="https://www.flickr.com/photos/125351778@N02/">Martin Beck</a>.</p>
 {% endblock %}

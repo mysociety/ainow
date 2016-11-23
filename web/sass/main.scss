@@ -395,20 +395,24 @@ iframe {
  * Homepage
  */
 
+$florence_image: url('../img/florence.jpg');
+$florence_average_color: #58413c;
+$florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 87, 61) 38%, rgb(35, 12, 4) 92%, rgb(20, 2, 2) 100%);;
+
 .homepage-hero {
-  background-color: $color_red;
-  background-image: url('../img/repeating-tictec-bg.png');
-  background-size: 118.5px 211px;
+  background-color: $florence_average_color;
+  background-image: $florence_image;
+  background-image: $florence_image, $florence_gradient;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   padding: 2em 0;
   color: $color_white;
+
   @media (min-width: $screen-sm-min) {
     padding: 4.5em 0;
   }
-}
-
-.homepage-hero--workshop {
-  background-color: $color_green;
-  background-image: url('../img/repeating-tictec-bg.png');
 }
 
 .homepage-hero__pretitle {
@@ -707,44 +711,67 @@ iframe {
   color: $gray-dark;
 }
 
-.homepage-summary {
+.homepage-section {
   padding-top: 2em;
   padding-bottom: 2em;
   border-bottom: 1px solid $gray-lighter;
-}
 
-.homepage-summary__pdf {
-  @extend .list-unstyled;
-  @extend .list-inline;
-  margin-top: 2em;
-}
-
-.homepage-themes {
-  padding-top: 2em;
-  padding-bottom: 2em;
-  border-bottom: 1px solid $gray-lighter;
-}
-
-.homepage-themes__list-of-themes {
-  @extend .list-unstyled;
-  @extend .list-inline;
-  margin-top: 2em;
-}
-
-.list-of-themes__link {
-  @extend .btn;
-  @extend .btn-default;
-  font-size: 1.3125em;
-  padding: 0.5em 1em;
-  margin-right: 0.5em;
-  margin-bottom: 1em;
-  color: $link-color;
-  display: inline-block;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $gray-lighter;
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
   }
+
+  & > .container > h2 {
+    margin-top: 0;
+  }
+
+  &#about {
+    h3 {
+      max-width: 30em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.pricing-options {
+  margin: 2em 0;
+
+  @media (min-width: $screen-sm-min) {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+}
+
+.pricing-options__option {
+  text-align: center;
+  border: 1px solid $gray-lighter;
+  padding: 1.5em 1em;
+
+  @media (min-width: $screen-sm-min) {
+    display: table-cell;
+    width: 50%;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    margin: 0.2em 0;
+  }
+}
+
+.pricing-options__option--primary {
+  background-color: #fff;
+}
+
+.pricing-options__option--disabled {
+  color: $gray;
 }
 
 .homepage-people {
