@@ -32,6 +32,8 @@ from pages.views import PageView
 admin.autodiscover()
 
 urlpatterns = [
+    # theme goes first so we can override views if we want
+    url(r'^', include(settings.CONFERENCE_THEME + '.urls')),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^workshop$', WorkshopHomeView.as_view(), name='workshop_home'),
     url(r'^workshop/venue$', WorkshopVenueView.as_view(), name='workshop_venue'),
