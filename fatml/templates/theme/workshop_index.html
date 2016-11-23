@@ -1,0 +1,22 @@
+{% extends 'theme/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock %}
+
+{% block bodyclasses %}workshop-home{% endblock %}
+
+{% block content %}
+<div class="homepage-hero homepage-hero--workshop">
+  <div class="container">
+    <h2 class="homepage-hero__title">
+      <img src="{% static 'img/ainow-hero-logo.png' %}"
+           srcset="{% static 'img/ainow-hero-logo.svg' %} 1x"
+           alt="Artificial Intelligence Now"
+           height="35" width="115">
+        <span class="homepage-hero__pretitle">Invite-Only Workshop</span>
+    </h2>
+
+    <p class="homepage-hero__subtitle">The Social and Economic Implications of Artificial Intelligence Technologies in the Near-Term</p>
+  </div>
+</div>
+{% endblock %}

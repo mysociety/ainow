@@ -1,0 +1,145 @@
+{% load staticfiles %}
+{% load pipeline %}
+{% load account_tags %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" />
+    <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+
+    <title>{% block fulltitle %}{% block title %}{% endblock %} :: FAT ML{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto+Slab:400,700" rel="stylesheet">
+
+    {% stylesheet 'main' %}
+
+    <!-- Replace the no-js class with js -->
+    <script>
+      (function(H){
+        H.className = H.className.replace(/\bno-js\b/,'js')
+      })(document.documentElement);
+    </script>
+
+    {% if settings.GOOGLE_ANALYTICS_ACCOUNT %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ settings.GOOGLE_ANALYTICS_ACCOUNT }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+
+  </head>
+  <body class="{% block bodyclasses %}{% endblock %}">
+    <div class="site-bg">
+
+    <nav class="site-header navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-header-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'img/fatml-header-logo.png' %}"
+               srcset="{% static 'img/fatml-header-logo.svg' %} 1x"
+               alt="FAT ML 2016"
+               height="20" width="90">
+           </a>
+        </div>
+        <!-- navbar-header -->
+
+        <div class="collapse navbar-collapse" id="site-header-nav">
+          <ul class="nav navbar-nav" role="navigation">
+            {% include 'ainow/_nav.html' %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+              <li class="dropdown">
+                <a class="dropdown-toggle" id="profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button">
+                  {% user_display request.user %}
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="profile-dropdown">
+                  {% include 'account/_logged_in_nav_short.html' %}
+                </ul>
+              </li>
+            {% else %}
+              <!-- <li>
+                {% include 'account/_signup_nav.html' %}
+              </li> -->
+            {% endif %}
+          </ul>
+        </div>
+    </nav>
+
+    {% if schedule.slug and not is_homepage and not is_resources and not request.get_full_path == '/schedule/2016/page/principles-and-best-practices' %}
+    <nav class="workshop-navbar navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#workshop-header-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"  href="{% url 'schedule' schedule.slug %}">{{ schedule.name }}</a>
+        </div>
+        <div class="collapse navbar-collapse" id="workshop-header-nav">
+          <ul class="nav navbar-nav" role="navigation">
+            {% include 'ainow/_workshop-nav.html' %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endif %}
+
+    {% if is_resources or request.get_full_path == '/schedule/2016/page/principles-and-best-practices' %}
+    <nav class="workshop-navbar navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#workshop-header-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"  href="{% url 'resources' %}">Resources</a>
+        </div>
+        <div class="collapse navbar-collapse" id="workshop-header-nav">
+          <ul class="nav navbar-nav" role="navigation">
+            {% include 'resources/_resources-nav.html' %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endif %}
+
+    {% block messages %}
+    {% if messages %}
+    <header class="sub-header">
+        <div class="container">
+          {% include 'ainow/_messages.html' %}
+        </div>
+    </header>
+    {% endif %}
+    {% endblock messages %}
+
+    {% block content %}
+    {% endblock %}
+    </div> <!-- site-bg -->
+
+    {% javascript 'app' %}
+  </body>
+</html>

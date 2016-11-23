@@ -1,0 +1,1172 @@
+@charset "utf-8";
+
+@import 'bootstrap-settings';
+@import 'fatml/bootstrap-settings';
+
+@import 'bootstrap';
+
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: $body-bg;
+  font-family: $body_typeface;
+}
+
+.site-bg {
+  // gives the site its white background and means the footer's color extends to
+  // the end of the window
+  background-color: white;
+  padding-bottom: 4em;
+}
+
+.photo-bg {
+  .site-bg {
+    background-image: url('../img/hero-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading_typeface;
+  font-weight: $heading_typeface_bold;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2.5em;
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.375em;
+  }
+}
+
+h2 {
+  font-size: 1.875em;
+  @media (min-width: $screen-sm-min) {
+    font-size: 2.625em;
+  }
+}
+
+
+label {
+  font-weight: normal;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.btn-default {
+  font-weight: normal;
+}
+
+.general-content__page {
+  h1 {
+    margin: 1em 0 0.5em;
+  }
+}
+
+.object-container {
+  //use for iframes/objects and other embeds
+  position: relative;
+  padding-bottom: 76.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.content-block {
+  margin-bottom: 3em;
+}
+
+/*
+ * Layouts
+ */
+
+.standard-layout {
+  // Large primary column with a smaller secondary column
+  // Column order is secondary|primary
+}
+
+.standard-layout__primary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 9);
+
+  @media (min-width: $screen-md-min) {
+    & > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  li + li {
+    margin-top: 0.5em;
+  }
+
+  .schedule__list__item {
+    margin-top: 0;
+  }
+}
+
+.standard-layout__secondary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 3);
+}
+
+.standard-layout--flipped {
+  // When the column order is reversed to primary|secondary
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 9);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 3);
+  }
+}
+
+.standard-layout--narrow {
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 10);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 2);
+  }
+}
+
+.content-grid {
+  //a way to split long lists of content into a grid structure that works nicely with all screen sizes
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  @media (min-width: $screen-lg-min) {
+    justify-content: space-between;
+  }
+}
+
+.content-grid__item {
+  width: 100%;
+  @media (min-width: $screen-sm-min) {
+    width: 18em;
+    margin-right: 2em;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 14em;
+    margin-right: 2em;
+  }
+}
+
+.site-header {
+  // built with Bootstrap's navbar component
+  border: 0;
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 0;
+  .navbar-nav > .open > a,
+  .navbar-nav > .open > a:hover,
+  .navbar-nav > .open > a:focus {
+    background-color: $gray-darker;
+    color: $color_white;
+  }
+  .navbar-brand {
+    margin-top: -3px;
+  }
+  &.site-header--inverted {
+    background-color: blue;
+    .navbar-nav > li > a {
+      color: $color_white;
+      &:hover,
+      &:active,
+      &:focus {
+        color: mix($color_white, $brand-primary, 70);
+      }
+    }
+    .navbar-toggle {
+      border-color: transparentize($color_white, 0.7);
+      &:hover,
+      &:focus {
+        background-color: mix($color_black, $brand-primary, 15);
+      }
+      .icon-bar {
+        background-color: mix($color_white, $brand-primary, 30);
+      }
+    }
+  }
+}
+
+.site-footer {
+  background-color: $body-bg;
+  padding-top: 3em;
+}
+
+.workshop-navbar {
+  border: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  min-height: 72px;
+  .navbar-collapse {
+    border-bottom: 3px solid $gray-lighter;
+  }
+  .navbar-brand {
+    @media (min-width: $screen-md-min) {
+      font-size: 2.133333333em;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $brand-primary;
+    }
+  }
+  .navbar-nav {
+    padding: 1em 0 0.5em;
+  }
+  .navbar-header {
+    @media (min-width: $screen-md-min) {
+      position: relative;
+      top: 0.8em;
+    }
+
+  }
+}
+
+.workshop-home {
+  .navbar-collapse {
+    border-bottom: 0;
+  }
+}
+
+.site-footer__utility-links {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+}
+
+.utility-links__list {
+  @extend .list-inline;
+}
+
+.site-footer__partner-logos {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  @media (min-width: $screen-sm-min) {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  @media (min-width: $screen-md-min) {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  .partner-logo {
+    margin-bottom: 1em;
+  }
+
+}
+
+.site-footer__partner-logos__logoset {
+
+  @include make-xs-column($columns: 6);
+
+  text-align: center;
+  @media (min-width: $screen-sm-min) {
+    width: 8em;
+    margin-left: 1em;
+    text-align: right;
+  }
+  img {
+    max-height: 4.5em;
+    max-width: 100%;
+  }
+}
+
+.site-footer__partner-logos__logoset--b {
+  @media (min-width: $screen-sm-min) {
+    width: 10em;
+  }
+}
+
+
+.page-header {
+  @include make-xs-column($columns: 12);
+  border-bottom: 0;
+  margin-top: 1em;
+  h1 {
+    border-bottom: 3px solid $gray-lighter;
+    padding-bottom: 0.5em;
+  }
+}
+
+.section-nav {
+  border: 1px solid $gray-lighter;
+  border-bottom: 0;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+  border-radius: $border-radius-base;
+  margin-bottom: 2em;
+  li {
+    margin: 0 !important; //argh bootstrap and its bad specificity
+  }
+  a {
+    display: block;
+    border-bottom: 1px solid $gray-lighter;
+    color: $gray-dark;
+  }
+}
+
+.page-header__parent {
+    color: $gray-light;
+}
+
+.form {
+  // Standard layout for forms
+  textarea {
+    border: 1px solid $gray-light;
+    width: 100%;
+    border-radius: $border-radius-base;
+    padding: 0.66667em;
+    color: $gray;
+  }
+}
+
+.errorlist {
+  @extend  .list-unstyled;
+  margin-top: 0.4em;
+  color: $brand-danger;
+}
+
+.form--account-form {
+  // a form that sits within the account management screens
+}
+
+.form--simple-form {
+  // a layout for a single form centred on the screen. Log in/sign up uses this
+}
+
+.form--simple-form__form {
+
+  @include make-xs-column($columns: 10);
+  @include make-xs-column-push($columns: 1);
+  @include make-sm-column($columns: 6);
+  @include make-sm-column-push($columns: 3);
+  @include make-md-column($columns: 4, $gutter: 54px);
+  @include make-md-column-push($columns: 4);
+
+  background: $color_white;
+  margin-top: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  border: 1px solid $gray-lighter;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
+
+}
+
+.form--simple-form__form__heading {
+  text-align: center;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+
+.account-form__field {
+  input {
+    @extend .form-control;
+  }
+}
+
+.account-form__field--submit {
+  margin-top: 2em;
+}
+
+.account-form__field__not-a-btn {
+  color: $gray-dark;
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 0.875em;
+  text-decoration: underline;
+}
+
+.account-form__input--error {
+  input {
+    background-color: mix($brand-danger, $color_white, 10);
+    border-color: $brand-danger;
+  }
+}
+
+.account-form__photo {
+  margin: 1em 0 3em;
+}
+
+.account-form__photo__thumbnail {
+  border-radius: 100%;
+  max-width: 100%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+}
+
+.account-form__photo-display-column {
+  @include make-xs-column($columns: 3);
+  @include make-sm-column($columns: 2);
+}
+
+.account-form__photo-controls-column {
+  @include make-xs-column($columns: 9);
+  @include make-sm-column($columns: 10);
+  position: relative;
+  .account-form__field__not-a-btn {
+      margin-left: 0;
+  }
+  .btn {
+    display: inline-block;
+    margin: 1em 1em 1em 0;
+  }
+}
+
+.change-photo-collapse {
+  // obscure the 'add photo' button with positioning
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+// Photo buttons are hidden when we have no JS because they don't work without
+// it
+.no-js .account-form__photo__delete-button,
+.no-js .account-form__photo__change-button,
+.no-js .account-form__photo__cancel-button {
+  @extend .hidden;
+}
+
+// Change photo form should only be collapsed when we have JS, because it's
+// inaccessible without it.
+.js .change-photo-collapse {
+  @extend .collapse;
+}
+
+
+/*
+ * Homepage
+ */
+
+.homepage-hero {
+  background-color: $brand-primary;
+  background-image: url('../img/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em 0;
+  color: $color_white;
+  @media (min-width: $screen-sm-min) {
+    padding: 4.5em 0;
+  }
+}
+
+.homepage-hero--workshop {
+  background-image: url('../img/hero-background2.jpg');
+}
+
+.homepage-hero__pretitle {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  @media (min-width:$screen-sm-min) {
+    display: inline-block;
+    padding: 0 0.75em;
+    border: 1px solid $color_orange;
+    position: relative;
+    left: -4px;
+    top: 2px;
+    width: auto;
+  }
+}
+
+.homepage-hero__title {
+  font-size: 1em;
+  margin-top: 2em;
+  display: inline-block;
+
+  img {
+    display: inline-block;
+    background-color: $color_orange;
+    padding: 5px;
+    height: 45px;
+  }
+  @media (min-width:$screen-sm-min) {
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+  }
+}
+
+.homepage-hero__subtitle {
+  font-size:  1.777777778em;
+  line-height: 1.333em;
+  font-weight: bold;
+  text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+  @media (min-width:$screen-sm-min) {
+    font-size: 2.333333333em;
+    max-width: 18em;
+  }
+  @media (min-width:$screen-md-min) {
+    font-size: 2.666666667em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.homepage-hero__tickets {
+  margin-top: 2em;
+}
+
+.btn--tickets {
+  font-size: 1.235294118em;
+  width: 100%;
+  padding: 0.75em 1.5em 0.75em 1em;
+  float: left;
+  text-align: left;
+  border: 0;
+  border-radius: 3px;
+  @media (min-width:$screen-sm-min) {
+    width: auto;
+  }
+  p {
+    display: block;
+    font-weight: normal;
+    font-size: 0.8125em;
+    line-height: 1.428em;
+    margin-bottom: 0;
+  }
+  .glyphicon {
+    font-size: 0.75em;
+    margin-left: 0.45em;
+    opacity: 0.75;
+  }
+}
+
+.two-columns-of-text {
+  @media (min-width:$screen-sm-min) {
+    @include content-columns(2);
+  }
+}
+
+.homepage-videos {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  .container {
+    position: relative;
+  }
+}
+
+.homepage-hero--streaming {
+
+}
+
+.homepage-hero--streaming__title-container {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 2);
+  @include make-md-column-push($columns: 1);
+  img {
+    max-width: 10em;
+    width: 100%;
+    height:  auto;
+  }
+}
+
+.homepage-hero--streaming__subtitle-container {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 10);
+  @include make-md-column($columns: 9);
+  @include make-md-column-push($columns: 1);
+  .homepage-hero__subtitle {
+    @media (min-width:$screen-sm-min) {
+      font-size: 1.8em;
+      max-width: none;
+    }
+    @media (min-width:$screen-md-min) {
+      font-size: 2.125em;
+    }
+  }
+}
+
+.homepage-hero--streaming__live-stream-container {
+  max-width: 43.75em;
+  width: 100%;
+  margin: 2em auto 1em;
+  background-color: $gray-darker;
+  box-shadow: 0 0 12px 2px rgba(0,0,0,0.5);
+}
+
+.live-stream-container__stream {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  background-color: $gray-darker;
+  background-image: url('../img/clock.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.list-stream-container__stream__message {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  width: 100%;
+  text-align: center;
+  margin-top: -1em;
+  font-size: 1.125em;
+  font-weight: bold;
+  color: $gray-light;
+  z-index: 0;
+}
+
+.list-stream-container__stream__message--over {
+  top: 30%;
+  width: 80%;
+  left: 10%;
+  color: $color_white;
+
+  p:last-of-type a {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+}
+
+.homepage-hero--streaming__live-stream-schedule {
+  ol {
+    margin-top: 1em;
+    @extend .list-unstyled;
+    text-align: center;
+    font-size: 1.4375em;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+  }
+  li {
+    margin-bottom: 0.3em;
+  }
+}
+
+.homepage-description {
+  background-color: $color_white;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  @include clearfix;
+  font-size: 1.0625em;
+}
+
+.homepage-videos__symposium,
+.homepage-videos__workshop {
+  @include make-sm-column($columns: 12);
+  > h3 {
+    font-size: 1.5em;
+    margin: 1em 0 0;
+    font-weight: normal;
+  }
+}
+
+.homepage-videos__workshop {
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.homepage-videos__all-talks {
+  position: absolute;
+  top: 1.5em;
+  right: 1em;
+  font-size: 0.875em;
+}
+
+.homepage-videos__all-talks--small {
+  font-size: 0.85em;
+  top: auto;
+  right: 1rem;
+  bottom: 1em;
+}
+
+.homepage-videos__workshop {
+  .homepage-videos__all-talks--small {
+    @media (min-width:$screen-sm-min) {
+      right: 2.571428571em;  //~32px
+    }
+  }
+}
+
+.homepage-videos__list-of-talks {
+  @extend .list-unstyled;
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.list-of-talks__item {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+  display: flex;
+}
+
+.homepage-videos__list-of-talks .list-of-talks__item {
+  @include make-xs-column($columns: 6);
+  @include make-sm-column($columns: 3);
+}
+
+.talk-teaser {
+  position: relative;
+  background-color: $gray-lighter;
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+.talk-teaser__details {
+  padding: 0 1em 1em;
+}
+
+.talk-teaser__duration {
+  display: inline-block;
+  position: absolute;
+  top: 0.75em;
+  right: 0.75em;
+
+  background-color: $brand-primary;
+  color: $color_white;
+  font-weight: bold;
+  font-size: 0.875em;
+  padding: 0.25em 0.5em;
+}
+
+.talk-teaser__thumbnail {
+  max-width: 100%;
+  width: 100%;
+}
+
+.talk-teaser__title {
+  font-size: 1.125em;
+  line-height: 1.3em;
+}
+
+.talk-teaser__speaker {
+  font-size: 0.875em;
+  margin-bottom: 0.3em;
+}
+
+.talk-teaser__themes {
+  font-size: 0.75em;
+  color: $gray-dark;
+}
+
+.homepage-summary {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.homepage-summary__pdf {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  margin-top: 2em;
+}
+
+.homepage-themes {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.homepage-themes__list-of-themes {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  margin-top: 2em;
+}
+
+.list-of-themes__link {
+  @extend .btn;
+  @extend .btn-default;
+  font-size: 1.3125em;
+  padding: 0.5em 1em;
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+  color: $link-color;
+  display: inline-block;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $gray-lighter;
+  }
+}
+
+.homepage-people {
+  padding-top: 3em;
+  border-top: 1px solid $gray-lighter;
+  background-color: $color_white;
+  h3 {
+    font-size: 1.277777778em;
+  }
+  .container {
+    position: relative;
+  }
+}
+
+.homepage-people__full-link {
+  position: absolute;
+  top: 1.5em;
+  right: 1em;
+  font-size: 0.875em;
+}
+
+.collection-of-people {
+  margin: 1.5em -1em 0 -1em;
+  @media (min-width:$screen-sm-min) {
+    margin-bottom: 2em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.collection-of-people__person {
+  @include clearfix;
+  margin-bottom: 1.5em;
+  padding: 0 1em;
+  @media (min-width:$screen-sm-min) {
+    width: 9em;
+  }
+}
+
+.person__photo {
+  width: 20%;
+  float: left;
+  padding-right: 1em;
+  @media (min-width:$screen-sm-min) {
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.person__name {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 20%;
+  margin-top: 0.4em;
+  @media (min-width:$screen-sm-min) {
+    margin-left: 0;
+    margin-bottom: 0.25em;
+  }
+}
+
+.person__role {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+}
+
+ .person__job-title {
+   font-size: 0.6em;
+   line-height: 1.428em;
+   margin: 0 0 0 $grid-gutter-width;
+   color: $gray;
+   @media (min-width:$screen-sm-min) {
+     margin-left: 0;
+   }
+ }
+
+ /*
+  * Schedule
+  */
+.schedule__introduction {
+  font-size: 1.25em;
+  margin-bottom: 1.5em;
+}
+.schedule__list {
+  @extend .list-unstyled;
+  border-top: 2px dotted $gray-light;
+}
+
+.schedule-entry {
+  border-bottom: 2px dotted $gray-light;
+  padding: 1.5em 1em 1em;
+  &:nth-child(even) {
+    background-color: lighten($gray-lighter, 5%);
+  }
+}
+
+.schedule-entry__speaker,
+.schedule-entry__description {
+  color: $gray;
+  margin: 0 0 0.35em;
+}
+
+.schedule-entry__title {
+  font-size: 1.0625em; //~17px
+  margin: 0 0 0.35em;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.schedule-entry__description--short {
+  font-size: 0.9375em; //~15px
+  margin: 0 0 1em;
+}
+
+.schedule-entry__location {
+  font-size: 0.9375em; //~15px
+  color: $gray;
+  margin-top: 0.66667em;
+  margin-bottom: 1em;
+}
+
+/*
+ * Presentation List
+ */
+.talk-list {
+  @extend .list-unstyled;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  margin-top: 2em;
+}
+
+.talk-list__talk {
+  // Layout from Bootstrap's media object
+  @extend .media;
+  margin-bottom: 2em;
+  margin-top: 0;
+  width: 15em;
+  margin-right: $grid-gutter-width;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/*
+ * Presentation detail
+ */
+.presentation-detail__meta{
+   margin: 2em 0 0;
+   font-size: 1.0625em; //~17px
+   color: $gray;
+
+}
+
+.presentation-detail__time {
+   margin-right: 1em;
+   display: inline-block;
+}
+
+.presentation-detail__location {
+   display: inline-block;
+}
+
+.presentation-detail__title {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+
+}
+
+
+.presentation-detail__speaker {
+   font-size: 1.25em; //~17px
+   color: $gray;
+   margin: 0 0 2em;
+   padding-bottom: 1em;
+   border-bottom: 1px solid $gray-lighter;
+   a {
+     text-decoration: none;
+     margin-right: -0.2em; //cheat way to hide a space django inserts
+   }
+}
+
+.presentation-detail__speaker-thumb {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.presentation-detail__description {
+}
+
+.presentation-detail__video {
+  margin-top: 2em;
+}
+
+
+
+/*
+ * List of attendees
+ */
+.attendee-list {
+  @extend .list-unstyled;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.attendee-list__attendee {
+  // Layout from Bootstrap's media object
+  @extend .media;
+  margin-bottom: 2em;
+  margin-top: 0;
+  width: 15em;
+}
+
+.attendee__secondary-column {
+  @extend .media-left;
+  padding-right: 1em;
+}
+
+.attendee__primary-column {
+  @extend .media-body;
+}
+
+.attendee__thumbnail {
+  @extend .media-object;
+  width: 5em;
+  height: 5em;
+}
+
+.attendee__name {
+  @extend .media-heading;
+  font-size: 1.3125em;
+}
+
+.attendee__org,
+.attendee__job-title,
+.attendee__url,
+.attendee__twitter {
+  margin: 0 0 0.3em 0;
+}
+
+.attendee__job-title {
+  font-size: 0.9375em;
+}
+
+.attendee__org {
+  color: $gray-dark;
+  font-size: 0.8125em;
+}
+
+.attendee__url,
+.attendee__twitter {
+  font-size: 0.8125em;
+}
+
+/*
+ * Individual attendee page
+ */
+
+
+.attendee-detail {
+  h1 {
+    margin-bottom: 0.1em;
+  }
+}
+
+.attendee-detail__thumbnail {
+  max-width: 100%;
+  margin-top: 3.375em;
+  height: auto;
+}
+
+
+.attendee-detail__job-title {
+  font-size: 1.3125em;
+}
+
+.attendee-detail__org {
+  color: $gray-dark;
+}
+
+.attendee-detail__twitter {
+  font-size: 1em;
+}
+
+.attendee-detail__bio {
+  max-width: 36em;
+}
+
+/*
+ * FAQs
+ */
+
+.faq__question {
+  > h2 {
+    font-size: 1.4375em;
+  }
+}
+
+/*
+ * Location
+ */
+
+.accomodation-item,
+.coffee-item,
+.food-item {
+  h3 {
+    font-size: 1.25em;
+  }
+  p {
+    margin-bottom: 0.35em;
+  }
+}
+
+/*
+ * Alerts/Messages shown after account actions
+ */
+
+.alerts {
+  margin-top: 2em;
+}
+
+
+@import 'fatml/main';

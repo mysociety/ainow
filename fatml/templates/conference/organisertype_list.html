@@ -1,0 +1,54 @@
+{% extends 'theme/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load organiser_filters %}
+
+{% block title %}Organizers{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Organizers</h1>
+        {% for organiser_type in organiser_types %}
+          <h2>{{ organiser_type.name }}</h2>
+          <ul class="attendee-list">
+            {% for organiser in organiser_type.organiser_schedule_type.all|organisers_by_schedule:schedule %}
+            <li class="attendee-list__attendee">
+              <div class="attendee__secondary-column">
+                {% thumbnail organiser.photo "100x100" crop="center" as im %}
+                  <img class="attendee__thumbnail" src="{{ im.url }}">
+                {% empty %}
+                  <img class="attendee__thumbnail" src="{% static 'img/no-photo.png' %}" height="100" width="100">
+                {% endthumbnail %}
+              </div>
+              <div class="attendee__primary-column">
+              {% if organiser.website %}
+                <h2 class="attendee__name"><a href="{{ organiser.website }}">{{ organiser.name }}</a></h2>
+              {% else %}
+                <h2 class="attendee__name">{{ organiser.name }}</h2>
+              {% endif %}
+              {% if organiser.title %}
+                <p class="attendee__job-title">{{ organiser.title }}</p>
+              {% endif %}
+              {% if organiser.organisation %}
+                <p class="attendee__org">{{ organiser.organisation }}</p>
+              {% endif %}
+              {% if organiser.twitter_username %}
+                <p class="attendee__twitter">
+                  <a href="https://www.twitter.com/{{ organiser.twitter_username }}">
+                    @{{ organiser.twitter_username }}
+                  </a>
+                </p>
+              {% endif %}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

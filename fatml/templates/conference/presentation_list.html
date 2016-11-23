@@ -1,0 +1,32 @@
+{% extends 'theme/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Talks{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>All Talks</h1>
+      <h2 id="workshop">Experts Workshop</h2>
+      <ul class="talk-list">
+      {% for talk in workshop_presentations %}
+        <li class="talk-list__talk list-of-talks__item--full-width">
+          {% include 'conference/_talk_thumbnail.html' with talk=talk %}
+        </li>
+      {% endfor %}
+      </ul>
+      <h2 id="symposium">Public Symposium</h2>
+      <ul class="talk-list">
+        {% for talk in symposium_presentations %}
+        <li class="talk-list__talk list-of-talks__item--full-width">
+          {% include 'conference/_talk_thumbnail.html' with talk=talk %}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock %}
