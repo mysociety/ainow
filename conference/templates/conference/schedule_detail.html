@@ -20,7 +20,6 @@
                   {% if slot.presentation %}
                     {% with presentation=slot.presentation %}
                       <h2 class="schedule-entry__title">
-                        <span class="schedule-entry__time">{{ slot.start|time:"H:i" }}</span>
                         <a href="{% url 'presentation' schedule.slug presentation.slug %}">
                           {{ presentation.title }}
                         </a>
@@ -30,19 +29,13 @@
                       </div>
                     {% endwith %}
                   {% else %}
-                    <h2 class="schedule-entry__title">
-                      <span class="schedule-entry__time">{{ slot.start|time:"H:i" }}</span>
-                      {{ slot.name }}
-                    </h2>
+                    <h2 class="schedule-entry__title">{{ slot.name }}</h2>
                     <div class="schedule-entry__description">
                       {{ slot.short_description }}
                     </div>
                   {% endif %}
                 {% else %}
-                  <h2 class="schedule-entry__title">
-                    <span class="schedule-entry__time">{{ slot.start|time:"H:i" }}</span>
-                    {{ slot.name }}
-                  </h2>
+                  <h2 class="schedule-entry__title">{{ slot.name }}</h2>
                   <div class="schedule-entry__description">
                     {{ slot.short_description }}
                   </div>
@@ -57,12 +50,6 @@
               {{ footer_block }}
             </div>
           {% endif %}
-
-          {% if schedule.slug == '2016' or schedule.slug == '2014' %}
-          <h3 style="margin: 3em 0 0 0">Sponsors</h3>
-          {% include 'ainow/_sponsors.html' %}
-          {% endif %}
-
         </div>
         <div class="standard-layout__secondary-column">
           {{ sidebar_block }}

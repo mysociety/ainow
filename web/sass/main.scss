@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 @import 'bootstrap-settings';
-@import 'fatml/bootstrap-settings';
-
 @import 'bootstrap';
 
 
@@ -108,21 +106,7 @@ iframe {
 
 .standard-layout__primary-column {
   @include make-xs-column($columns: 12);
-  @include make-md-column($columns: 9);
-
-  @media (min-width: $screen-md-min) {
-    & > :first-child {
-      margin-top: 0;
-    }
-  }
-
-  li + li {
-    margin-top: 0.5em;
-  }
-
-  .schedule__list__item {
-    margin-top: 0;
-  }
+  @include make-md-column($columns: 9, $gutter: 54px);
 }
 
 .standard-layout__secondary-column {
@@ -136,7 +120,7 @@ iframe {
     @include make-md-column($columns: 9);
   }
   .standard-layout__secondary-column {
-    @include make-md-column($columns: 3);
+    @include make-md-column($columns: 3, $gutter: 54px);
   }
 }
 
@@ -928,6 +912,15 @@ iframe {
   }
 }
 
+.schedule-entry__time {
+  display: block;
+  background-color: $gray-lighter;
+
+  padding: 0.66667em 0.5em 0.5em;
+  font-size: 1.0625em; //~17px
+  margin: 1.5em 0;
+}
+
 .schedule-entry__speaker,
 .schedule-entry__description {
   color: $gray;
@@ -1049,7 +1042,7 @@ iframe {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .attendee-list__attendee {
@@ -1058,6 +1051,7 @@ iframe {
   margin-bottom: 2em;
   margin-top: 0;
   width: 15em;
+  margin-right: $grid-gutter-width;
 }
 
 .attendee__secondary-column {
@@ -1081,9 +1075,7 @@ iframe {
 }
 
 .attendee__org,
-.attendee__job-title,
-.attendee__url,
-.attendee__twitter {
+.attendee__job-title {
   margin: 0 0 0.3em 0;
 }
 
@@ -1096,7 +1088,6 @@ iframe {
   font-size: 0.8125em;
 }
 
-.attendee__url,
 .attendee__twitter {
   font-size: 0.8125em;
 }
@@ -1167,6 +1158,3 @@ iframe {
 .alerts {
   margin-top: 2em;
 }
-
-
-@import 'fatml/main';

@@ -23,7 +23,6 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context['is_homepage'] = True
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
@@ -52,14 +51,14 @@ class HomeView(TemplateView):
             context['post_conference'] = True
             context['post_conference_block'] = Block.objects.get(slug='homepage-post-stream').content
             # Show the videos
-            # context['workshop_talk_1'] = Presentation.objects.get(slug='time-different-opportunities-and-challenges-artifi')
-            # context['workshop_talk_2'] = Presentation.objects.get(slug='uncovering-machine-bias')
-            # context['workshop_talk_3'] = Presentation.objects.get(slug='bending-gig-economy-toward-equity')
-            # context['workshop_talk_4'] = Presentation.objects.get(slug='symbiotic-human-robot-interaction')
-            # context['symposium_talk_1'] = Presentation.objects.get(slug='introductions-ed-felten')
-            # context['symposium_talk_2'] = Presentation.objects.get(slug='conversation-white-house-past-and-present')
-            # context['symposium_talk_3'] = Presentation.objects.get(slug='three-questions-three-tech-leaders')
-            # context['symposium_talk_4'] = Presentation.objects.get(slug='plenary-panel-inequality-labor-health-and-ethics-a')
+            context['workshop_talk_1'] = Presentation.objects.get(slug='time-different-opportunities-and-challenges-artifi')
+            context['workshop_talk_2'] = Presentation.objects.get(slug='uncovering-machine-bias')
+            context['workshop_talk_3'] = Presentation.objects.get(slug='bending-gig-economy-toward-equity')
+            context['workshop_talk_4'] = Presentation.objects.get(slug='symbiotic-human-robot-interaction')
+            context['symposium_talk_1'] = Presentation.objects.get(slug='introductions-ed-felten')
+            context['symposium_talk_2'] = Presentation.objects.get(slug='conversation-white-house-past-and-present')
+            context['symposium_talk_3'] = Presentation.objects.get(slug='three-questions-three-tech-leaders')
+            context['symposium_talk_4'] = Presentation.objects.get(slug='plenary-panel-inequality-labor-health-and-ethics-a')
         return context
 
 
