@@ -1,36 +1,33 @@
 // Standard mySociety Footer v1.0.4
 // https://github.com/mysociety/standard-footer
 
-$mysoc-footer-background-color: #333;
-$mysoc-footer-text-color: #acacac;
-$mysoc-footer-site-name-text-color: #fff;
+$mysoc-footer-background-color: #fff !default;
+$mysoc-footer-text-color: #333 !default;
+$mysoc-footer-site-name-text-color: $mysoc-footer-text-color !default;
 
-$mysoc-footer-link-text-color: #fff;
-$mysoc-footer-link-hover-text-color: #fff;
-
-$mysoc-footer-divider-color: #4b4b4b;
-
-$mysoc-footer-donate-background-color: #434343;
-$mysoc-footer-donate-text-color: #fff;
-$mysoc-footer-donate-button-background-color: #a94ca6;
-
-$mysoc-footer-legal-text-color: #9a9a9a;
+$mysoc-footer-link-text-color: #4FADED !default;
+$mysoc-footer-link-hover-text-color: darken($mysoc-footer-link-text-color, 10%) !default;
 
 $mysoc-footer-site-name-font-size: 1.5em !default;
 $mysoc-footer-site-name-margin-bottom: 0.5em !default;
 $mysoc-footer-site-name-line-height: 1em !default;
 
 $mysoc-footer-border-top: none !default;
+$mysoc-footer-divider-color: #E2DFD9 !default;
 
+$mysoc-footer-donate-background-color: #F3F1EB !default;
+$mysoc-footer-donate-text-color: $mysoc-footer-text-color !default;
+$mysoc-footer-donate-button-background-color: #999 !default;
 $mysoc-footer-donate-button-text-color: #fff !default;
 $mysoc-footer-donate-button-hover-background-color: darken($mysoc-footer-donate-button-background-color, 5%) !default;
 $mysoc-footer-donate-button-hover-text-color: $mysoc-footer-donate-button-text-color !default;
+
+$mysoc-footer-legal-text-color: #6C6B68 !default;
 
 $mysoc-footer-image-path: '../img/mysoc-footer/' !default;
 $mysoc-footer-breakpoint-sm: 768px !default;
 
 $high-dpi-screen: '-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi' !default;
-
 
 .mysoc-footer {
   -webkit-box-sizing: border-box;

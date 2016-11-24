@@ -27,6 +27,8 @@ $color_dark_gray: #6A6A69;
 $color_black: #333333;
 $color_white: #ffffff;
 
+$color_tictec_green: #9FDB50;
+
 //todo: remove/replace these they are from ainow
 $color_teal: $color_blue;
 $color_dark_teal: darken($color_teal, 10%);
@@ -39,7 +41,7 @@ $gray: $color_mid_gray;
 $gray-light: $color_light_gray;
 $gray-lighter: $color_off_white;
 
-$brand-primary: $color_blue;
+$brand-primary: $color_tictec_green;
 $brand-success: $color_green;
 $brand-info: $color_blue;
 $brand-warning: $color_orange;
@@ -47,31 +49,41 @@ $brand-danger: $color_red;
 
 $body-bg: $color_black;
 $text-color: $gray-darker;
-$link-color: darken($brand-primary, 10%);
+$link-color: darken($brand-primary, 20%);
 
 /*
  * Typography
  */
 
- $body_typeface: $source;
- $body_typeface_semibold: 600;
- $body_typeface_bold: 800;
- $heading_typeface: $source;
- $heading_typeface_semibold: 600;
- $heading_typeface_bold: 800;
+$body_typeface: $source;
+$body_typeface_semibold: 600;
+$body_typeface_bold: 700;
+$heading_typeface: $source;
+$heading_typeface_semibold: 600;
+$heading_typeface_bold: 800;
 
- $font-size-base: 18px;
+$font-size-base: 18px;
 
 /*
  * Components
  */
 
+$padding-base-horizontal:   16px !default;
+$padding-large-horizontal:  21px !default;
+$padding-small-horizontal:  10px !default;
+$padding-xs-horizontal:     5px !default;
+
+$border-radius-base: 2px;
+
 /*
  * Buttons
  */
 $btn-font-weight: $body_typeface_bold;
-$btn-primary-bg: $color_dark_teal;
-$btn-default-border: $gray-lighter;
+
+$btn-default-bg: lighten($brand-primary, 30%);
+$btn-default-border: darken($btn-default-bg, 10%);
+
+$btn-primary-color: $body-bg;
 
 /*
  * Forms

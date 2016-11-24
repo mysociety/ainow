@@ -8,7 +8,7 @@
   <div class="container">
     <h1>The Impacts of Civic Technology Conference 2017</h1>
     <p class="lead">Come and join us in Florence. 25 and 26 April 2017.</p>
-    <p><a href="https://www.eventbrite.co.uk/e/the-impacts-of-civic-technology-conference-2017-tictec2017-tickets-28255338478" target="_blank" class="btn btn-primary btn-large">Register now</a></p>
+    <p><a href="https://www.eventbrite.co.uk/e/the-impacts-of-civic-technology-conference-2017-tictec2017-tickets-28255338478" target="_blank" class="btn btn-primary btn-lg">Register now</a></p>
   </div>
 </div>
 
@@ -30,13 +30,21 @@
   </div>
 </div>
 
+<a href="http://www.firenzefiera.it/en/our-venues/palazzo-dei-congressi/" style="display: block;">
+<img src="/static/img/villa-vittoria-florence.jpg" style="width: 100%; height: auto;">
+</a>
+
+<div id="venue" class="homepage-section">
+  <div class="container">
+    {{ venue_block }}
+  </div>
+</div>
+
 <div id="florence" class="homepage-section">
   <div class="container">
     {{ florence_block }}
   </div>
 </div>
-
-<img src="/static/img/pisa-airport.jpg" style="width: 100%; height: auto;">
 
 <div id="inspired" class="homepage-section">
   <div class="container">
@@ -44,8 +52,4 @@
   </div>
 </div>
 
-{% endblock %}
-
-{% block footerlegal %}
-<p><a href="https://www.flickr.com/photos/125351778@N02/25936224591">Pisa airport panorama</a> by <a href="https://www.flickr.com/photos/125351778@N02/">Martin Beck</a>.</p>
 {% endblock %}

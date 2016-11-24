@@ -66,6 +66,12 @@ iframe {
   font-weight: normal;
 }
 
+// Useful for elements you don't want to wrap onto multiple lines
+// like telephone numbers with spaces inside.
+.no-break {
+  white-space: nowrap;
+}
+
 .general-content__page {
   h1 {
     margin: 1em 0 0.5em;
@@ -1121,5 +1127,21 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 .alerts {
   margin-top: 2em;
 }
+
+$mysoc-footer-background-color: #333;
+$mysoc-footer-text-color: #acacac;
+$mysoc-footer-site-name-text-color: #fff;
+
+$mysoc-footer-link-text-color: #fff;
+$mysoc-footer-link-hover-text-color: #fff;
+
+$mysoc-footer-divider-color: #4b4b4b;
+
+$mysoc-footer-donate-background-color: #434343;
+$mysoc-footer-donate-text-color: #fff;
+$mysoc-footer-donate-button-background-color: $btn-primary-bg;
+$mysoc-footer-donate-button-text-color: $btn-primary-color;
+
+$mysoc-footer-legal-text-color: #9a9a9a;
 
 @import 'mysoc-footer';
