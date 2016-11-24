@@ -7,11 +7,11 @@
 <div class="homepage-hero{% if show_livestream %} homepage-hero--streaming{% endif %}">
   <div class="container">
     {% if pre_conference %}
-      {% include 'ainow/_tickets-hero.html' %}
+      {% include 'theme/_tickets-hero.html' %}
     {% elif show_livestream %}
-      {% include 'ainow/_livestream-hero.html' %}
+      {% include 'theme/_livestream-hero.html' %}
     {% elif post_conference %}
-      {% include 'ainow/_post-event-hero.html' %}
+      {% include 'theme/_post-event-hero.html' %}
     {% endif %}
   </div>
 </div>

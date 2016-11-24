@@ -19,7 +19,7 @@ from forms import SignupForm
 
 
 class HomeView(TemplateView):
-    template_name = 'ainow/index.html'
+    template_name = 'theme/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
@@ -63,7 +63,7 @@ class HomeView(TemplateView):
 
 
 class WorkshopHomeView(LoginRequiredMixin, TemplateView):
-    template_name = 'ainow/workshop_index.html'
+    template_name = 'theme/workshop_index.html'
 
     def get_context_data(self, **kwargs):
         context = super(WorkshopHomeView, self).get_context_data(**kwargs)
@@ -73,7 +73,7 @@ class WorkshopHomeView(LoginRequiredMixin, TemplateView):
 
 
 class WorkshopVenueView(LoginRequiredMixin, TemplateView):
-    template_name = 'ainow/workshop_venue.html'
+    template_name = 'theme/workshop_venue.html'
 
     def get_context_data(self, **kwargs):
         context = super(WorkshopVenueView, self).get_context_data(**kwargs)
