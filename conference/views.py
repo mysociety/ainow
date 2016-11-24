@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.views.generic import DetailView, ListView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
@@ -15,7 +16,7 @@ import sorl
 
 from account.mixins import LoginRequiredMixin
 
-from .models import Schedule, Speaker, Presentation, Attendee
+from .models import Schedule, Speaker, Presentation, Attendee, Year
 from .forms import AttendeeForm
 from blocks.models import Block
 
@@ -37,9 +38,14 @@ class ScheduleMixin(object):
         Overridden dispatch so that self.schedule is available
         throughout the whole method chain of any view.
         """
+        self.year = get_object_or_404(
+            Year,
+            year=kwargs.get('year', settings.CONFERENCE_DEFAULT_YEAR)
+        )
         self.schedule = get_object_or_404(
             Schedule,
-            slug=kwargs.get(self.schedule_slug_kwarg)
+            slug=kwargs.get(self.schedule_slug_kwarg),
+            year=self.year
         )
         if self.schedule.private and not request.user.is_authenticated():
             return redirect('%s?next=%s' % (reverse('account_login'), request.path))
@@ -61,6 +67,14 @@ class ScheduleMixin(object):
 class ScheduleView(DetailView):
     model = Schedule
     context_object_name = 'schedule'
+
+    def get_queryset(self):
+        qs = super(ScheduleView, self).get_queryset()
+        year = get_object_or_404(
+            Year,
+            year=self.kwargs.get('year', settings.CONFERENCE_DEFAULT_YEAR)
+        )
+        return qs.filter(year=year)
 
     def get(self, request, *args, **kwargs):
         """

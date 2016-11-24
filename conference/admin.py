@@ -22,6 +22,8 @@ admin.site.register(
     inlines = [SlotInline, ]
 )
 
+admin.site.register(models.Year, list_display=("year",))
+
 
 class SpeakerAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ("name", "twitter_username", "title", "organisation")

@@ -70,11 +70,19 @@ class Attendee(Person):
     )
 
 
+class Year(TimestampedModel):
+    year = models.IntegerField()
+
+    def __str__(self):
+        return str(self.year)
+
+
 class Schedule(TimestampedModel):
     name = models.CharField(max_length=1024)
+    year = models.ForeignKey('Year', blank=True, null=True)
     slug = AutoSlugField(
         db_index=True,
-        unique=True,
+        unique=False,
         editable=True,
         populate_from='name',
         help_text="Used to make a nice url for the page that displays this schedule."
@@ -89,6 +97,9 @@ class Schedule(TimestampedModel):
         blank=True,
         help_text="The text that's shown at the top of the schedule, before the slots."
     )
+
+    class Meta:
+        unique_together = ('slug', 'year',)
 
     def __str__(self):
         return self.name
