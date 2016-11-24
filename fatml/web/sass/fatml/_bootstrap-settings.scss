@@ -1,0 +1,41 @@
+$color_fatml_teal: #4DCFB6;
+$color_fatml_yellow: #FFDD29;
+$color_fatml_pink: #F95C72;
+$color_fatml_grey: #333333; // for body text
+$color_fatml_blue: #006ec1; // for links, WCAG AA Pass on #fff background
+
+$brand-primary: $color_fatml_teal;
+$body-bg: $color_fatml_grey;
+$text-color: $color_fatml_grey;
+$link-color: $color_fatml_blue;
+
+$navbar-default-color: #fff;
+$navbar-default-bg: $color_fatml_grey;
+$navbar-default-border: none;
+
+$navbar-default-link-color: #fff;
+$navbar-default-link-hover-color: $link-color;
+
+$navbar-default-toggle-hover-bg: mix(#fff, $color_fatml_grey, 10%);
+$navbar-default-toggle-icon-bar-bg: #fff;
+$navbar-default-toggle-border-color: mix(#fff, $color_fatml_grey, 30%);
+
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-active-bg: $color_fatml_teal;
+$navbar-default-link-disabled-color: mix(#fff, $color_fatml_grey, 90%);
+
+$navbar-inverse-color: #fff;
+$navbar-inverse-bg: $color_fatml_teal;
+$navbar-inverse-border: none;
+
+$navbar-inverse-link-color: #fff;
+$navbar-inverse-link-hover-color: mix(#fff, $color_fatml_teal, 70%);
+
+$navbar-inverse-toggle-hover-bg: mix(#fff, $color_fatml_teal, 10%);
+$navbar-inverse-toggle-icon-bar-bg: #fff;
+$navbar-inverse-toggle-border-color: mix(#fff, $color_fatml_teal, 50%);
+
+$btn-primary-bg: $brand-primary;
+
+$body_typeface: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+$heading_typeface: "Roboto Slab", Helvetica, Arial, serif;

@@ -9,15 +9,25 @@ Local development
 -----------------
 
 This project includes a Vagrantfile to make local development easy.
-Simply run:
+Make sure the `ainow` repo is inside a directory that Vagrant can
+mount as an NFS share, eg:
+
+    $ cd ~/Work/AINow
+    $ git clone […]
+    $ cd ~/Work/AINow/ainow
+
+Then start the VM:
 
     $ vagrant up
 
-To get a fully configured vagrant development environment. The code is
-installed into `/vagrant/ainow` inside the VM, and you can run
-the Django dev server with:
+SSH into the vagrant VM and activate the virtualenv:
 
-    $ source virtualenv-ainow/bin/activate
-    $ python manage.py runserver 0.0.0.0:8000
+    $ vagrant ssh
+    vagrant@vagrant~$ cd /vagrant/ainow
+    vagrant@vagrant~$ source ../virtualenv-ainow/bin/activate
+
+Then run the Django dev server with:
+
+    vagrant@vagrant~$ python manage.py runserver 0.0.0.0:8000
 
 The website will then be running at http://localhost:8000

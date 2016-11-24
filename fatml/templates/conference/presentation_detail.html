@@ -1,0 +1,62 @@
+{% extends 'theme/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load micawber_tags %}
+
+{% block title %}{{ presentation.title }}{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="presentation-detail">
+      <h1 class="presentation-detail__title">{{ presentation.title }}</h1>
+
+      <p class="presentation-detail__speaker">
+        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">
+          {% thumbnail presentation.primary_speaker.photo "35x35" crop="center" as im %}
+            <img src="{{ im.url }}" class="presentation-detail__speaker-thumb">
+          {% empty %}
+            <img  src="/static/img/no-photo.png" height="35" width="35" class="presentation-detail__speaker-thumb">
+          {% endthumbnail %}
+        </a>
+
+        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}"><span class="presentation-detail__speaker-name">{{ presentation.primary_speaker.name }}</span></a>
+        <!--
+        {% if presentation.additional_speakers %}
+          {% for speaker in presentation.additional_speakers.all %}
+            , <a href="{% url 'speaker' schedule.slug speaker.slug}"><span class="presentation-detail__speaker-name">{{ speaker.name }}</span></a>
+          {% endfor %}
+        {% endif %}
+        -->
+      </p>
+
+      <p class="presentation-detail__description">{{ presentation.long_description }}</p>
+
+      {% if presentation.youtube_link %}
+        <iframe
+          width="800"
+          height="450"
+          src="https://www.youtube.com/embed/{{ presentation.video_id }}"
+          frameborder="0"
+          allowfullscreen class="presentation-detail__video">
+        </iframe>
+      {% endif %}
+
+      {% if presentation.slide_link %}
+      <h3>Slides</h3>
+
+      {{ presentation.slide_link|oembed:"600x600" }}
+      {% endif %}
+
+      {% if presentation.audio_link %}
+      <h3>Recording</h3>
+
+      {{ presentation.audio_link|oembed }}
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

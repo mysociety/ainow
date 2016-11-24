@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from conference.models import Schedule
 
@@ -11,5 +11,16 @@ class CategoryListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CategoryListView, self).get_context_data(**kwargs)
-        context["schedule"] = Schedule.objects.get(slug="conference")
+        context["schedule"] = Schedule.objects.get(slug="2016")
+        context["is_resources"] = True
+        return context
+
+
+class CategoryView(DetailView):
+    model = Category
+    context_object_name = 'category'
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryView, self).get_context_data(**kwargs)
+        context["is_resources"] = True
         return context

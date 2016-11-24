@@ -1,0 +1,196 @@
+$ui_typeface: Roboto, Helvetica, Arial, sans-serif;
+
+.navbar-default {
+  .navbar-nav {
+    > .active > a {
+      font-weight: bold;
+      text-shadow: 0 1px 1px darken($navbar-inverse-bg, 15%);
+    }
+  }
+}
+
+.site-header {
+  background-color: $color_fatml_grey;
+  border-bottom: none;
+
+  .navbar-brand {
+    margin-top: 1px; // centre 20px high image, in 22px line-height
+    margin-bottom: -1px;
+  }
+
+  .navbar-nav > li > a {
+    &:hover, &:focus {
+      color: $brand-primary;
+    }
+  }
+}
+
+.workshop-navbar {
+  min-height: 0;
+  text-shadow: 0 1px 1px darken($navbar-inverse-bg, 15%);
+
+  .navbar-header {
+    position: static;
+    top: 0;
+  }
+
+  .navbar-brand {
+    font-size: 1em;
+
+    &:hover,
+    &:focus {
+      color: $navbar-inverse-link-hover-color;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      display: none;
+    }
+  }
+
+  .navbar-collapse {
+    border-bottom: none;
+  }
+
+  // Reset margin back to bootstrap default
+  .navbar-nav {
+    padding: 0;
+
+    @media (min-width: $grid-float-breakpoint) {
+      margin-left: $navbar-padding-horizontal * -2;
+    }
+  }
+}
+
+.homepage-hero {
+  font-family: $ui_typeface;
+  background-color: #293338;
+  background-image: url('../img/fatml-hero-background.jpg');
+  background-position: center 80%;
+  text-align: center;
+}
+
+.homepage-hero__details {
+  font-weight: bold;
+  max-width: 30em;
+  margin: 0 auto 0.5em auto;
+
+  a {
+    color: $color_fatml_teal;
+  }
+}
+
+.homepage-hero__details__divider {
+  color: $color_fatml_teal;
+  margin: 0 0.1em;
+}
+
+.homepage-hero__subtitle {
+  font-family: $heading_typeface;
+  font-size:  2em;
+  line-height: 1.1em;
+  margin: 0 auto 0.5em auto;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.4em;
+    max-width: 13em;
+  }
+}
+
+.homepage-hero__subtitle__theme {
+  display: block;
+  color: $color_fatml_teal;
+}
+
+.homepage-description {
+  h2 {
+    margin-top: 0;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+}
+
+.btn--tickets {
+  background-color: $color_fatml_yellow;
+  color: $color_fatml_grey;
+  float: none;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color_fatml_yellow, 10%);
+    color: $color_fatml_grey;
+  }
+}
+
+.schedule__list {
+  border-top: 1px solid $color_fatml_teal;
+}
+
+.schedule-entry {
+  border-bottom: 1px solid $color_fatml_teal;
+
+  &:nth-child(even) {
+    background-color: #f3f9f9;
+  }
+}
+
+.schedule-entry__title {
+  font-size: 1.2em;
+}
+
+.schedule-entry__time {
+  margin-right: 0.5em;
+}
+
+// TODO: Remove this once speakers have all been set in the DB.
+.presentation-detail__speaker {
+  padding-bottom: 0;
+
+  a {
+    display: none;
+  }
+}
+
+.sponsors-primary {
+  img {
+    height: 64px;
+    width: auto;
+  }
+}
+
+.sponsors-secondary {
+  img {
+    height: 32px;
+    width: auto;
+  }
+}
+
+.sponsor {
+  display: inline-block;
+  margin-right: 2em;
+  margin-top: 2em;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+.sponsor--text-only {
+  max-width: 11em;
+}
+
+.attendee-list__attendee {
+  width: 100%;
+
+  @media (min-width: $screen-sm-min) {
+    width: 45%;
+    margin-top: 2em !important;
+    margin-bottom: 1em;
+  }
+
+  @media (min-width: $screen-md-min) {
+    width: 30%;
+  }
+}

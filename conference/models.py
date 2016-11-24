@@ -38,12 +38,17 @@ class Person(TimestampedModel):
     twitter_username = models.CharField(max_length=15, blank=True)
     title = models.CharField(max_length=1024, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
+    sort_order = models.IntegerField(
+        default=0,
+        blank=True,
+        help_text="Order in which the person will appear in a list."
+    )
 
     class Meta:
         abstract = True
-        ordering = ['name']
+        ordering = ['sort_order','name']
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def save(self, *args, **kwargs):
@@ -60,6 +65,24 @@ class Speaker(Person):
     website = models.URLField(max_length=1024, blank=True)
 
 
+class OrganiserType(TimestampedModel):
+    # Organisers can come in many flavours
+    name = models.CharField(max_length=1024)
+
+    def __str__(self):
+        return self.name
+
+
+class Organiser(Person):
+    # Organisers are people too, but they have an OrganiserType
+    organiser_schedule_type = models.ManyToManyField(
+        'OrganiserType',
+        related_name="organiser_schedule_type",
+        through='OrganiserScheduleType',
+    )
+    website = models.URLField(max_length=1024, blank=True)
+
+
 class Attendee(Person):
     schedule = models.ForeignKey('Schedule', blank=True, null=True)
     external_id = models.IntegerField(blank=True, null=True)
@@ -68,6 +91,10 @@ class Attendee(Person):
         blank=True,
         help_text="Maximum 250 words."
     )
+
+
+class StandingCommittee(Person):
+    website = models.URLField(max_length=1024, blank=True)
 
 
 class Schedule(TimestampedModel):
@@ -92,6 +119,12 @@ class Schedule(TimestampedModel):
 
     def __str__(self):
         return self.name
+
+
+class OrganiserScheduleType(TimestampedModel):
+    organiser_type = models.ForeignKey(OrganiserType)
+    organiser = models.ForeignKey(Organiser)
+    schedule = models.ForeignKey(Schedule, blank=True)
 
 
 class Room(TimestampedModel):
@@ -185,6 +218,18 @@ class Presentation(TimestampedModel):
         max_length=1024,
         help_text='The url for the presentation\'s video on YouTube.<br>'
                   'We can extract everything we need to embed it from that.'
+    )
+    slide_link = models.URLField(
+        blank=True,
+        max_length=1024,
+        help_text='The URL for the presentation\'s slides.<br>'
+                  'If it can be embded then we will otherwise a link will be displayed'
+    )
+    audio_link = models.URLField(
+        blank=True,
+        max_length=1024,
+        help_text='The URL for an audio recording of the presentation.<br>'
+                  'If it can be embded then we will otherwise a link will be displayed'
     )
     schedule = models.ForeignKey(
         'Schedule',

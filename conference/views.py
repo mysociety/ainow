@@ -15,7 +15,7 @@ import sorl
 
 from account.mixins import LoginRequiredMixin
 
-from .models import Schedule, Speaker, Presentation, Attendee
+from .models import Schedule, Speaker, OrganiserType, Presentation, Attendee, StandingCommittee, OrganiserScheduleType
 from .forms import AttendeeForm
 from blocks.models import Block
 
@@ -119,6 +119,19 @@ class SpeakerView(ScheduleMixin, DetailView):
         ).distinct()
 
 
+class OrganiserTypeListView(ScheduleMixin, ListView):
+    model = OrganiserType
+    context_object_name = 'organiser_types'
+
+    def get_queryset(self):
+        return OrganiserType.objects.filter(organiserscheduletype__schedule=self.schedule).distinct()
+
+
+class StandingCommitteeListView(ListView):
+    model = StandingCommittee
+    context_object_name = 'standing_committee'
+
+
 class PresentationView(ScheduleMixin, DetailView):
     model = Presentation
     context_object_name = 'presentation'
@@ -200,7 +213,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
-        self.schedule = Schedule.objects.get(slug='workshop')
+        self.schedule = Schedule.objects.get(slug='2016')
         return super(AttendeeCreateUpdateView, self).dispatch(request, *args, **kwargs)
 
     def get_object(self, queryset=None):

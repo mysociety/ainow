@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+{% if schedule.slug == '2016' %}
+<div class="sponsors-primary">
+  <a class="sponsor" href="http://www.google.com">
+    <img src="{% static 'img/logo-google.png' %}" alt="Google">
+  </a>
+</div>
+<div class="sponsors-secondary">
+  <a class="sponsor" href="http://www.microsoft.com">
+    <img src="{% static 'img/logo-microsoft.png' %}" alt="Microsoft">
+  </a>
+  <a class="sponsor" href="https://www.nsf.gov/">
+    <img src="{% static 'img/logo-nsf.jpg' %}" alt="National Science Foundation">
+  </a>
+  <a class="sponsor" href="http://www.datatransparencylab.org/">
+    <img src="{% static 'img/logo-data-transparency-lab.png' %}" alt="Data Transparency Lab">
+  </a>
+  <a class="sponsor" href="http://www.law.nyu.edu/centers/ili">
+    <img src="{% static 'img/logo-ili.png' %}" alt="New York University Information Law Institute">
+  </a>
+  <a class="sponsor sponsor--text-only" href="http://www.law.nyu.edu/academics/clinics/semester/technologylawandpolicy">
+    NYU Technology Law and Policy Clinic
+  </a>
+</div>
+{% elif schedule.slug == '2014' %}
+<div class="sponsors">
+  <a class="sponsor" href="https://citp.princeton.edu/">
+    <img src="{% static 'img/logo-citp.png' %}" alt="Center for Information Technology Policy" width="465">
+  </a>
+</div>
+{% endif %}

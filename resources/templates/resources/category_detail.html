@@ -1,0 +1,22 @@
+{% extends 'theme/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}{{ category.title }}{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>{{ category.title }}</h1>
+      <div class="row">
+          <div class="standard-layout__primary-column">
+              {{ category.introduction }}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

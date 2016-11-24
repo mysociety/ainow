@@ -1,0 +1,55 @@
+{% extends 'theme/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Speakers{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Speakers</h1>
+        <ul class="attendee-list">
+          {% for speaker in speakers %}
+          <li class="attendee-list__attendee">
+            <div class="attendee__secondary-column">
+              {% thumbnail speaker.photo "100x100" crop="center" as im %}
+                <img class="attendee__thumbnail" src="{{ im.url }}">
+              {% empty %}
+                <img class="attendee__thumbnail" src="{% static 'img/no-photo.png' %}" height="100" width="100">
+              {% endthumbnail %}
+            </div>
+            <div class="attendee__primary-column">
+            {% if speaker.website %}
+              <h2 class="attendee__name"><a href="{{ speaker.website }}">{{ speaker.name }}</a></h2>
+            {% else %}
+              <h2 class="attendee__name">{{ speaker.name }}</h2>
+            {% endif %}
+            {% if speaker.title %}
+              <p class="attendee__job-title">{{ speaker.title }}</p>
+            {% endif %}
+            {% if speaker.organisation %}
+              <p class="attendee__org">{{ speaker.organisation }}</p>
+            {% endif %}
+            {% if speaker.twitter_username %}
+              <p class="attendee__twitter">
+                <a href="https://www.twitter.com/{{ speaker.twitter_username }}">
+                  @{{ speaker.twitter_username }}
+                </a>
+              </p>
+            {% endif %}
+            {% if speaker.biography %}
+              <p>{{ speaker.biography }}</p>
+            {% endif %}
+            </div>
+          </li>
+          {% empty %}
+            <li>Check back soon for details of the confirmed sessions.</li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
