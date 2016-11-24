@@ -352,6 +352,14 @@ BLEACH_ALLOWED_ATTRIBUTES = {
     u'i': [u'class'],
 }
 
+BLEACH_ALLOWED_PROTOCOLS = [
+    u'http',
+    u'https',
+    u'mailto',
+    # We've added these:
+    u'tel',
+]
+
 
 # Django user accounts settings
 ACCOUNT_OPEN_SIGNUP = False  # You have to be invited
