@@ -68,10 +68,12 @@ $font-size-base: 18px;
  * Components
  */
 
-$padding-base-horizontal:   16px !default;
-$padding-large-horizontal:  21px !default;
-$padding-small-horizontal:  10px !default;
-$padding-xs-horizontal:     5px !default;
+$grid-gutter-width: 40px;
+
+$padding-base-horizontal: 16px;
+$padding-large-horizontal: 21px;
+$padding-small-horizontal: 10px;
+$padding-xs-horizontal: 5px;
 
 $border-radius-base: 2px;
 

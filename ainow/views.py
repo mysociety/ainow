@@ -29,6 +29,7 @@ class HomeView(TemplateView):
 
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
+        context['testimonials_block'] = Block.objects.get(slug='homepage-testimonials').content
         context['call_block'] = Block.objects.get(slug='homepage-call-for-papers').content
         context['venue_block'] = Block.objects.get(slug='homepage-venue').content
         context['florence_block'] = Block.objects.get(slug='homepage-about-florence').content

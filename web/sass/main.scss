@@ -727,8 +727,16 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
     padding-bottom: 0;
   }
 
-  & > .container > h2 {
+  & > .container > :first-child {
     margin-top: 0;
+  }
+
+  h2 {
+    margin-bottom: 0.5em;
+  }
+
+  h3 {
+    margin-bottom: 0.7em;
   }
 
   &#about {
@@ -736,6 +744,30 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
       max-width: 30em;
       margin-bottom: 1em;
     }
+  }
+}
+
+.homepage-section--secondary {
+  background-color: mix($brand-primary, #fff, 10%);
+}
+
+.homepage-introduction-pullout {
+  background: $brand-primary;
+  padding: 1.5em;
+  margin: 2em 0;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: -5em;
+  }
+
+  @media (min-width: $screen-md-min) {
+    float: right;
+    width: 16em;
+    margin: -5em 0 2em 2em;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
   }
 }
 
