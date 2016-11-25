@@ -15,7 +15,7 @@ import sorl
 
 from account.mixins import LoginRequiredMixin
 
-from .models import Schedule, Speaker, Presentation, Attendee
+from .models import Schedule, Speaker, OrganiserType, Presentation, Attendee
 from .forms import AttendeeForm
 from blocks.models import Block
 
@@ -117,6 +117,14 @@ class SpeakerView(ScheduleMixin, DetailView):
             Q(presentations__slot__schedule=self.schedule) |
             Q(additional_presentations__slot__schedule=self.schedule)
         ).distinct()
+
+
+class OrganiserTypeListView(ScheduleMixin, ListView):
+    model = OrganiserType
+    context_object_name = 'organiser_types'
+
+    def get_queryset(self):
+        return OrganiserType.objects.all()
 
 
 class PresentationView(ScheduleMixin, DetailView):

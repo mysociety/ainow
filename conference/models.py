@@ -60,6 +60,20 @@ class Speaker(Person):
     website = models.URLField(max_length=1024, blank=True)
 
 
+class OrganiserType(TimestampedModel):
+    # Organisers can come in many flavours
+    name = models.CharField(max_length=1024)
+
+    def __str__(self):
+        return self.name
+
+
+class Organiser(Person):
+    # Organisers are people too, but they have an OrganiserType
+    organiser_type = models.ManyToManyField('OrganiserType')
+    website = models.URLField(max_length=1024, blank=True)
+
+
 class Attendee(Person):
     schedule = models.ForeignKey('Schedule', blank=True, null=True)
     external_id = models.IntegerField(blank=True, null=True)
