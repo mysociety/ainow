@@ -327,19 +327,29 @@ BLEACH_ALLOWED_TAGS = [
     u'p',
     u'img',
     u'pre',
+    u'h1',
     u'h2',
     u'h3',
     u'h4',
     u'h5',
     u'h6',
+    u'br',
+    u'hr',
+    u's',
+    u'del',
+    u'ins',
+    u'strike',
+    u'div',
 ]
 
 BLEACH_ALLOWED_ATTRIBUTES = {
-    u'a': [u'href', u'title'],
+    u'a': [u'href', u'title', u'class', u'name'],
     u'acronym': [u'title'],
     u'abbr': [u'title'],
     # We've added these:
-    u'img':  [u'src', u'alt', u'title'],
+    u'img':  [u'src', u'alt', u'title', u'class'],
+    u'div': [u'class'],
+    u'i': [u'class'],
 }
 
 
