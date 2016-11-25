@@ -89,6 +89,10 @@ class Attendee(Person):
     )
 
 
+class StandingCommittee(Person):
+    website = models.URLField(max_length=1024, blank=True)
+
+
 class Schedule(TimestampedModel):
     name = models.CharField(max_length=1024)
     slug = AutoSlugField(
