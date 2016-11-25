@@ -1,0 +1,52 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Organization{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Organization</h1>
+          <ul class="attendee-list">
+          {% for member in standing_committee %}
+          <li class="attendee-list__attendee">
+            <div class="attendee__secondary-column">
+              {% thumbnail member.photo "100x100" crop="center" as im %}
+                <img class="attendee__thumbnail" src="{{ im.url }}">
+              {% empty %}
+                <img class="attendee__thumbnail" src="{% static 'img/no-photo.png' %}" height="100" width="100">
+              {% endthumbnail %}
+            </div>
+            <div class="attendee__primary-column">
+            {% if member.website %}
+              <h2 class="attendee__name"><a href="{{ member.website }}">{{ member.name }}</a></h2>
+            {% else %}
+              <h2 class="attendee__name">{{ member.name }}</h2>
+            {% endif %}
+            {% if member.title %}
+              <p class="attendee__job-title">{{ member.title }}</p>
+            {% endif %}
+            {% if member.organisation %}
+              <p class="attendee__org">{{ member.organisation }}</p>
+            {% endif %}
+            {% if member.twitter_username %}
+              <p class="attendee__twitter">
+                <a href="https://www.twitter.com/{{ member.twitter_username }}">
+                  @{{ member.twitter_username }}
+                </a>
+              </p>
+            {% endif %}
+            </div>
+          </li>
+          {% empty %}
+          <li>Check back soon for details of the organisation.</li>
+          {% endfor %}
+          </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
