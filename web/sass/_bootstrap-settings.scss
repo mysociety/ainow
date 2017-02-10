@@ -6,19 +6,31 @@
  * Colors
  */
 
-$color_teal: #64B9BD;
-$color_dark_teal: darken($color_teal, 10%);
-$color_orange: #ED8A35;
-$color_dark_orange: darken($color_orange, 10%);
+
+$source: "Source Sans Pro", "Helvetica Neue", Arial, Helvetica, serif;
+
 $color_pink: #EB6E93;
 $color_blue: #49AECC;
-$color_off_white: #E9EAE1;
-$color_light_gray: #C3C4B9;
-$color_gray: #9B9C90;
-$color_mid_gray: #707168;
+$color_orange: #f4a140;
+$color_blue: #4faded;
+$color_green: #62b356;
+$color_yellow: #ffd836;
+$color_red: #e04b4b;
+$color_violet: #a94ca6;
+$color_purple: #5c377f;
+
+$color_off_white: #f3f1eb;
+$color_light_gray: #e2dfd9;
+$color_gray: #e2dfd9;
+$color_mid_gray: #959287;
 $color_dark_gray: #6A6A69;
-$color_black: #484846;
+$color_black: #333333;
 $color_white: #ffffff;
+
+//todo: remove/replace these they are from ainow
+$color_teal: $color_blue;
+$color_dark_teal: darken($color_teal, 10%);
+$color_dark_orange: darken($color_orange, 10%);
 
 // $gray-base: use Bootstrap's default
 $gray-darker: $color_black;
@@ -27,28 +39,28 @@ $gray: $color_mid_gray;
 $gray-light: $color_light_gray;
 $gray-lighter: $color_off_white;
 
-$brand-primary: $color_orange;
-$brand-success: $color_teal;
+$brand-primary: $color_blue;
+$brand-success: $color_green;
 $brand-info: $color_blue;
 $brand-warning: $color_orange;
-$brand-danger: $color_pink;
+$brand-danger: $color_red;
 
-$body-bg: $gray-lighter;
+$body-bg: $color_black;
 $text-color: $gray-darker;
 $link-color: darken($brand-primary, 10%);
 
 /*
  * Typography
  */
- $fira: "fira-sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
 
- $body_typeface: $fira;
- $body_typeface_semibold: 500;
- $body_typeface_bold: 700;
- $heading_typeface: $fira;
- $heading_typeface_bold: 700;
+ $body_typeface: $source;
+ $body_typeface_semibold: 600;
+ $body_typeface_bold: 800;
+ $heading_typeface: $source;
+ $heading_typeface_semibold: 600;
+ $heading_typeface_bold: 800;
 
- $font-size-base: 16px;
+ $font-size-base: 18px;
 
 /*
  * Components

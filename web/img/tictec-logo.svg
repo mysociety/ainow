@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="586px" height="663px" viewBox="0 0 586 663" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>tictec-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(15.000000, 16.000000)">
+            <path d="M16,146.8076 L262.219,4.6526 C271.811,-0.8844 283.628,-0.8844 293.219,4.6526 L539.439,146.8076 C549.03,152.3456 554.939,162.5796 554.939,173.6546 L554.939,457.9636 C554.939,469.0396 549.03,479.2736 539.439,484.8106 L293.219,626.9656 C283.628,632.5036 271.811,632.5036 262.219,626.9656 L16,484.8106 C6.409,479.2736 0.5,469.0396 0.5,457.9636 L0.5,173.6546 C0.5,162.5796 6.409,152.3456 16,146.8076 L16,146.8076 Z" id="Stroke-1" stroke="#1D1D1B" stroke-width="31" stroke-linecap="round" stroke-linejoin="round"></path>
+            <text id="T" font-family="Montserrat-Bold, Montserrat" font-size="209" font-weight="bold" fill="#1D1D1B">
+                <tspan x="89.8306" y="481.535536">T</tspan>
+            </text>
+            <text id="e" font-family="Montserrat-Bold, Montserrat" font-size="209" font-weight="bold" fill="#1D1D1B">
+                <tspan x="187.6426" y="481.535536">e</tspan>
+            </text>
+            <text id="C" font-family="Montserrat-Bold, Montserrat" font-size="209" font-weight="bold" fill="#1D1D1B">
+                <tspan x="312.6246" y="481.535536">C</tspan>
+            </text>
+            <text id="T" font-family="Montserrat-Bold, Montserrat" font-size="209" font-weight="bold" fill="#1D1D1B">
+                <tspan x="109.6856" y="285.284536">T</tspan>
+            </text>
+            <text id="I" font-family="Montserrat-Bold, Montserrat" font-size="209" font-weight="bold" fill="#1D1D1B">
+                <tspan x="232.5776" y="285.284536">I</tspan>
+            </text>
+            <text id="C" font-family="Montserrat-Bold, Montserrat" font-size="209" font-weight="bold" fill="#1D1D1B">
+                <tspan x="292.7696" y="285.284536">C</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
