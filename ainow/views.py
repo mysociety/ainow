@@ -34,6 +34,7 @@ class HomeView(TemplateView):
         context['venue_block'] = Block.objects.get(slug='homepage-venue').content
         context['florence_block'] = Block.objects.get(slug='homepage-about-florence').content
         context['inspired_block'] = Block.objects.get(slug='homepage-get-inspired').content
+        context['conduct_block'] = Block.objects.get(slug='homepage-code-of-conduct').content
 
         # Get the current datetime in CONFERENCE_TIMEZONE
         with timezone.override(settings.CONFERENCE_TIMEZONE):
