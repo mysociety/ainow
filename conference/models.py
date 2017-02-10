@@ -1,3 +1,6 @@
+from __future__ import unicode_literals
+from django.utils.encoding import python_2_unicode_compatible
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -15,6 +18,7 @@ def person_photo_upload_to(instance, filename):
 # This is abstract because we have two very similar types of people (speakers
 # and attendees) who we want to use a similar set of fields for but keep
 # separate in the database
+@python_2_unicode_compatible
 class Person(TimestampedModel):
     user = models.OneToOneField(
         User,
