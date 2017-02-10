@@ -41,3 +41,7 @@ CONFERENCE_START: "07/07/2016 09:00"
 CONFERENCE_END: "07/07/2016 20:00"
 # What timezone is the conference happening in?
 CONFERENCE_TIMEZONE: "America/New_York"
+# app with the conference theme
+CONFERENCE_THEME: "default"
+CONFERENCE_DEFAULT_SCHEDULE: "conference"
+CONFERENCE_WORKSHOP_SCHEDULE: "workshop"

@@ -67,7 +67,8 @@ INSTALLED_APPS = [
     'pages',
     'blocks',
     'themes',
-    'resources'
+    'resources',
+    config.get('CONFERENCE_THEME')
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -89,6 +90,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            os.path.join(
+                PROJECT_ROOT,
+                config.get('CONFERENCE_THEME'),
+                'templates'
+            ),
             os.path.join(PROJECT_DIR, 'templates'),
         ],
         'APP_DIRS': True,
@@ -368,3 +374,6 @@ GOOGLE_ANALYTICS_ACCOUNT = config.get('GOOGLE_ANALYTICS_ACCOUNT')
 CONFERENCE_TIMEZONE = pytz.timezone(config.get('CONFERENCE_TIMEZONE'))
 CONFERENCE_START = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_START'), "%d/%m/%Y %H:%M"))
 CONFERENCE_END = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_END'), "%d/%m/%Y %H:%M"))
+CONFERENCE_THEME = config.get('CONFERENCE_THEME')
+CONFERENCE_DEFAULT_SCHEDULE = config.get('CONFERENCE_DEFAULT_SCHEDULE')
+CONFERENCE_WORKSHOP_SCHEDULE = config.get('CONFERENCE_WORKSHOP_SCHEDULE')

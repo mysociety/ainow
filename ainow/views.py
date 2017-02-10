@@ -19,14 +19,14 @@ from forms import SignupForm
 
 
 class HomeView(TemplateView):
-    template_name = 'ainow/index.html'
+    template_name = 'theme/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
         context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
         context['tickets_button_tagline'] = Block.objects.get(slug='homepage-tickets-button-tagline').content
-        context['schedule'] = Schedule.objects.get(slug='conference')
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
         context['themes'] = Theme.objects.exclude(primer='')
         try:
             context['summary_document'] = Document.objects.get(name='Summary Report and Recommendations')
@@ -63,24 +63,24 @@ class HomeView(TemplateView):
 
 
 class WorkshopHomeView(LoginRequiredMixin, TemplateView):
-    template_name = 'ainow/workshop_index.html'
+    template_name = 'theme/workshop_index.html'
 
     def get_context_data(self, **kwargs):
         context = super(WorkshopHomeView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='workshop-introduction').content
-        context['schedule'] = Schedule.objects.get(slug='workshop')
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_WORKSHOP_SCHEDULE)
         return context
 
 
 class WorkshopVenueView(LoginRequiredMixin, TemplateView):
-    template_name = 'ainow/workshop_venue.html'
+    template_name = 'theme/workshop_venue.html'
 
     def get_context_data(self, **kwargs):
         context = super(WorkshopVenueView, self).get_context_data(**kwargs)
         context['intro_block'] = Block.objects.get(slug='workshop-venue-introduction').content
         context['harassment_block'] = Block.objects.get(slug='harassment-policy').content
         context['chatham_block'] = Block.objects.get(slug='chatham-house-rule').content
-        context['schedule'] = Schedule.objects.get(slug='workshop')
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_WORKSHOP_SCHEDULE)
         return context
 
 

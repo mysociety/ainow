@@ -68,7 +68,7 @@
 
         <div class="collapse navbar-collapse" id="site-header-nav">
           <ul class="nav navbar-nav" role="navigation">
-            {% include 'ainow/_nav.html' %}
+            {% include 'theme/_nav.html' %}
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
@@ -105,7 +105,7 @@
         <!-- navbar-header -->
         <div class="collapse navbar-collapse" id="workshop-header-nav">
           <ul class="nav navbar-nav" role="navigation">
-            {% include 'ainow/_workshop-nav.html' %}
+            {% include 'theme/_workshop-nav.html' %}
           </ul>
         </div>
       </div>
@@ -117,7 +117,7 @@
     <header class="sub-header">
       {% if messages %}
         <div class="container">
-          {% include 'ainow/_messages.html' %}
+          {% include 'theme/_messages.html' %}
         </div>
       {% endif %}
     </header>
