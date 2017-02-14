@@ -18,6 +18,10 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from wagtail.wagtailadmin import urls as wagtailadmin_urls
+from wagtail.wagtaildocs import urls as wagtaildocs_urls
+from wagtail.wagtailcore import urls as wagtail_urls
+
 from .views import (
     HomeView,
     WorkshopHomeView,
@@ -52,4 +56,10 @@ urlpatterns = [
     # people in immediately after they confirm.
     url(r"^account/confirm_email/(?P<key>\w+)/$", ConfirmEmailView.as_view(), name="account_confirm_email"),
     url(r"^account/", include("account.urls")),
+
+    # Wagtail specific stuff
+    url(r'^cms/', include(wagtailadmin_urls)),
+    url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^pages/', include(wagtail_urls)), # This can be changed to r'' eventually
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

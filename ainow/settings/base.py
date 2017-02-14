@@ -19,6 +19,8 @@ from .paths import *
 
 from django.contrib.messages import constants as messages
 
+WAGTAIL_SITE_NAME = 'My Example Site'
+
 config = yaml.load(open(os.path.join(PROJECT_ROOT, 'conf', 'general.yml')))
 
 DEBUG = bool(int(config.get('STAGING')))
@@ -67,7 +69,21 @@ INSTALLED_APPS = [
     'pages',
     'blocks',
     'themes',
-    'resources'
+    'resources',
+    'wagtail.wagtailforms',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailusers',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtaildocs',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+
+    'modelcluster',
+    'taggit'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -80,7 +96,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'account.middleware.LocaleMiddleware',
-    'account.middleware.TimezoneMiddleware'
+    'account.middleware.TimezoneMiddleware',
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware'
 ]
 
 ROOT_URLCONF = 'ainow.urls'
