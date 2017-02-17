@@ -1,0 +1,45 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block bodyclasses %}attendee-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container standard-layout standard-layout--narrow attendee-detail">
+    <div class="general-content__page">
+
+      <div class="row">
+        <div class="standard-layout__secondary-column">
+            {% image page.image fill-200x200 class="attendee-detail__thumbnail" %}
+        </div>
+        <div class="standard-layout__primary-column">
+
+          <h1>{{ page.title }}</h1>
+
+          {% if page.position %}
+            <p class="attendee-detail__job-title">{{ page.position }}</p>
+          {% endif %}
+          {% if page.organisation %}
+            <p class="attendee-detail__org">{{ page.organisation }}</p>
+          {% endif %}
+          {% if page.twitter %}
+            <p class="attendee-detail__twitter">
+              <a href="https://www.twitter.com/{{ page.twitter }}">
+                @{{ page.twitter }}
+              </a>
+            </p>
+          {% endif %}
+          <div class="attendee-detail__bio">
+            <p>
+            {{ page.body|richtext }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

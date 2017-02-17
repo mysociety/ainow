@@ -1,0 +1,34 @@
+{% extends 'ainow/base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}Research{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Research</h1>
+      <ul>
+        {% for research in page.get_children %}
+          {% with research=research.specific %}
+            <li>
+              {% with research.image as image %}
+                {% image research.image fill-200x200 %}
+              {% endwith %}
+              <h2>
+                <a href="{% pageurl research %}">
+                  {{ research.title }}
+                </a>
+              </h2>
+                {{ research.excerpt | richtext }}
+              </div>
+            </li>
+          {% endwith %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

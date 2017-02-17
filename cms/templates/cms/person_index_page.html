@@ -1,0 +1,51 @@
+{% extends 'ainow/base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}People{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>People</h1>
+      <ul class="attendee-list">
+        {% for person in page.get_children %}
+          {% with person=person.specific %}
+            <li class="attendee-list__attendee">
+              <div class="attendee__secondary-column">
+                <a href="{% pageurl person %}">
+                  {% with post.image as image %}
+                    {% image person.image fill-100x100 class="attendee__thumbnail" %}
+                  {% endwith %}
+                </a>
+              </div>
+              <div class="attendee__primary-column">
+                <h2 class="attendee__name">
+                  <a href="{% pageurl person %}">
+                    {{ person.title }}
+                  </a>
+                </h2>
+                {% if person.position %}
+                  <p class="attendee__job-title">{{ person.position }}</p>
+                {% endif %}
+                {% if person.organisation %}
+                  <p class="attendee__org">{{ person.organisation }}</p>
+                {% endif %}
+                {% if person.twitter %}
+                  <p class="attendee__twitter">
+                    <a href="https://www.twitter.com/{{ person.twitter }}">
+                      @{{ person.twitter }}
+                    </a>
+                  </p>
+                {% endif %}
+              </div>
+            </li>
+          {% endwith %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
