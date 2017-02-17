@@ -70,6 +70,8 @@ INSTALLED_APPS = [
     'blocks',
     'themes',
     'resources',
+    'cms',
+    
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
     'wagtail.wagtailembeds',
