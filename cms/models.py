@@ -94,6 +94,8 @@ class ResearchIndexPage(Page):
     parent_page_types = []
 
 class Research(Page):
+    parent_page_types = ['cms.ResearchIndexPage']
+
     excerpt = RichTextField(blank=True)
     intro = RichTextField(blank=True)
     research_file = models.ForeignKey(
