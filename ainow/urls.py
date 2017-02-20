@@ -23,7 +23,6 @@ from wagtail.wagtaildocs import urls as wagtaildocs_urls
 from wagtail.wagtailcore import urls as wagtail_urls
 
 from .views import (
-    HomeView,
     WorkshopHomeView,
     WorkshopVenueView,
     SignupView,
@@ -36,7 +35,6 @@ from pages.views import PageView
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^workshop$', WorkshopHomeView.as_view(), name='workshop_home'),
     url(r'^workshop/venue$', WorkshopVenueView.as_view(), name='workshop_venue'),
 
@@ -60,6 +58,6 @@ urlpatterns = [
     # Wagtail specific stuff
     url(r'^cms/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
-    url(r'^pages/', include(wagtail_urls)), # This can be changed to r'' eventually
+    url(r'', include(wagtail_urls)), # This can be changed to r'' eventually
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
