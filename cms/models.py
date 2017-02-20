@@ -1,11 +1,14 @@
 from __future__ import unicode_literals
 
+import datetime
+
 from django.db import models
+from conference.models import Schedule
 
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel, BaseChooserPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailsearch import index
@@ -116,4 +119,36 @@ class Research(Page):
         ImageChooserPanel('image'),
         DocumentChooserPanel('research_file'),
         FieldPanel('external_link')
+    ]
+
+class EventsIndexPage(Page):
+    parent_page_types = []
+
+    def get_context(self, request):
+        context = super(EventsIndexPage, self).get_context(request)
+        context['upcoming_events'] = Events.objects.filter(start__gte=datetime.datetime.now())
+        context['previous_events'] = Events.objects.filter(start__lte=datetime.datetime.now())
+        return context
+
+class Events(Page):
+    parent_page_types = ['cms.EventsIndexPage']
+
+    body = RichTextField()
+    start = models.DateTimeField("Start date/time")
+    end = models.DateTimeField("End date/time")
+    location = models.CharField(max_length=1024, blank=True)
+    schedule = models.ForeignKey(
+        'conference.Schedule',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+        FieldPanel('start'),
+        FieldPanel('end'),
+        FieldPanel('location'),
+        FieldPanel('schedule')
     ]

@@ -1,0 +1,35 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block bodyclasses %}attendee-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>{{ page.title }}</h1>
+      <div class="row">
+        {% if page.schedule %}
+        <div class="standard-layout__secondary-column">
+          <ul class="nav nav-stacked section-nav">
+            <li>
+              <a href="/schedule/{{ page.schedule.slug }}">Schedule</a>
+            </li>
+          </ul>
+        </div>
+        <div class="standard-layout__primary-column">
+          <p><strong>{{ page.location }}</strong><br /><i>{{ page.start }} - {{ page.end }}</i></p>
+          {{ page.body | richtext }}
+        </div>
+        {% else %}
+          <p><strong>{{ page.location }}</strong><br /><i>{{ page.start }} - {{ page.end }}</i></p>
+          {{ page.body | richtext }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
