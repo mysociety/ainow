@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand, CommandError
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.models import Site
-from cms.models import HomePage
+from cms.models import *
 
 class Command(BaseCommand):
     help = 'Sets up a brand new Wagtail CMS site'
@@ -33,5 +33,28 @@ class Command(BaseCommand):
 
         # Delete the default Wagtail Homepage
         Page.objects.filter(title='Welcome to your new Wagtail site!').delete()
+
+        # Setup skeleton site structure
+        pages = [
+            SimplePage(
+                title='About',
+                show_in_menus=True
+            ),
+            PersonIndexPage(
+                title='People',
+                show_in_menus=True,
+            ),
+            ResearchIndexPage(
+                title='Research',
+                show_in_menus=True,
+            ),
+            EventsIndexPage(
+                title='Events',
+                show_in_menus=True,
+            ),
+        ]
+
+        for p in pages:
+            page.add_child(instance=p)
 
         self.stdout.write(self.style.SUCCESS('Site %s created!' % site_name))
