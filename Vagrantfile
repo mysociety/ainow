@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
     # Install the packages from conf/packages
     xargs sudo apt-get install -qq -y < conf/packages
     # Install some of the other things we need that are just for dev
-    sudo apt-get install -qq -y git ruby-dev libsqlite3-dev build-essential
+    sudo apt-get install -qq -y git ruby-dev libsqlite3-dev build-essential postgresql
 
     # Create a postgresql user
     sudo -u postgres psql -c "CREATE USER ainow SUPERUSER CREATEDB PASSWORD 'ainow'"
@@ -63,6 +63,7 @@ Vagrant.configure(2) do |config|
 
     # Install sample data, we only want this in development, hence why it's
     # not in post_deploy_actions.
+    source ../virtualenv-ainow/bin/activate
     python manage.py loaddata conference/fixtures/sample-data.json faq/fixtures/sample-data.json loaddata pages/fixtures/sample-data.json themes/fixtures/sample-data.json
 
   SHELL
