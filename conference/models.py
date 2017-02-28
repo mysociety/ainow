@@ -147,8 +147,8 @@ class Slot(TimestampedModel):
                   ' schedule. Useful if you need a description but don\'t'
                   ' want to associate a whole presentation with it.'
     )
-    start = models.TimeField()
-    end = models.TimeField()
+    start = models.DateTimeField()
+    end = models.DateTimeField()
     kind = models.CharField(max_length=100, choices=KIND_CHOICES)
     schedule = models.ForeignKey(
         'Schedule',
