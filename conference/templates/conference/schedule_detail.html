@@ -16,6 +16,12 @@
           <ul class="schedule__list">
             {% for slot in slots %}
               <li class="schedule__list__item schedule-entry">
+                <p class="schedule-entry__room">
+                  {{ slot.start|date:'H:i' }}
+                  {% if slot.room %}
+                    &middot; {{ slot.room }}
+                  {% endif %}
+                </p>
                 {% if slot.is_presentation_slot %}
                   {% if slot.presentation %}
                     {% with presentation=slot.presentation %}
@@ -24,6 +30,9 @@
                           {{ presentation.title }}
                         </a>
                       </h2>
+                      <p class="schedule-entry__speaker">
+                        {{ presentation.primary_speaker }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
+                      </p>
                       <div class="schedule-entry__description">
                         {{ presentation.short_description }}
                       </div>
