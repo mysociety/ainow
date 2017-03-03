@@ -66,6 +66,10 @@ Vagrant.configure(2) do |config|
     source ../virtualenv-ainow/bin/activate
     python manage.py loaddata conference/fixtures/sample-data.json faq/fixtures/sample-data.json loaddata pages/fixtures/sample-data.json themes/fixtures/sample-data.json
 
+    # Set up Wagtail
+    python manage.py createsite
+    python manage.py migratedata
+
   SHELL
 
   # Start mailcatcher every time we start the VM

@@ -22,3 +22,5 @@ the Django dev server with:
     $ python manage.py runserver 0.0.0.0:8000
 
 The website will then be running at http://localhost:8000
+
+The Wagtail admin pages are at http://localhost:8000/cms
