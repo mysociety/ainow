@@ -1,0 +1,15 @@
+{% load wagtailcore_tags %}
+
+<div class="homepage-features">
+    <div class="container">
+      {% for column in self %}
+        <div class="homepage-feature">
+            <h3>{{ column.heading }}</h3>
+            {{ column.text | richtext }}
+            {% for link in column.links %}
+              {{ link }}
+            {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+</div>

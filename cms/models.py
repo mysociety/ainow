@@ -17,46 +17,58 @@ from wagtail.wagtailimages.blocks import ImageChooserBlock
 class HomePage(Page):
     parent_page_types = []
 
-    mission = RichTextField(blank=True)
-    features = StreamField([
-        ('feature', blocks.StructBlock(
-            [
-                ('heading', blocks.CharBlock(required=True)),
-                ('text', blocks.RichTextBlock()),
-                ('links', blocks.ListBlock(
-                    blocks.StructBlock(
-                        [
-                            ('text', blocks.CharBlock(required=True)),
-                            ('page', blocks.PageChooserBlock()),
-                        ],
-                        template='cms/blocks/link.html',
-                    )
-                ))
-            ],
-            template='cms/blocks/feature.html',
-            icon='doc-full'
-        ))
-    ])
-    themes = StreamField(
+    content = StreamField(
         [
+            ('mission', blocks.RichTextBlock(
+                template='cms/blocks/mission.html',
+                icon='edit'
+            )),
             ('heading', blocks.CharBlock(
+                template='cms/blocks/heading.html',
                 icon='title'
             )),
-            ('theme', blocks.StructBlock(
-                [
-                    ('heading', blocks.CharBlock(required=True)),
-                    ('text', blocks.RichTextBlock()),
-                ],
-                icon='doc-full'
-            ))
+            ('divider', blocks.StaticBlock(
+                admin_text="---- A divider! ----",
+                template='cms/blocks/divider.html',
+                icon='horizontalrule'
+            )),
+            ('features', blocks.ListBlock(
+                blocks.StructBlock(
+                    [
+                        ('heading', blocks.CharBlock(required=True)),
+                        ('text', blocks.RichTextBlock()),
+                        ('links', blocks.ListBlock(
+                            blocks.StructBlock(
+                                [
+                                    ('text', blocks.CharBlock(required=True)),
+                                    ('page', blocks.PageChooserBlock()),
+                                ],
+                                template='cms/blocks/link.html',
+                            )
+                        ))
+                    ],
+                    icon='doc-full'
+                ),
+                template='cms/blocks/features.html',
+                icon='list-ul',
+            )),
+            ('columns', blocks.ListBlock(
+                blocks.StructBlock(
+                    [
+                        ('heading', blocks.CharBlock(required=True)),
+                        ('text', blocks.RichTextBlock())
+                    ],
+                    icon='doc-full'
+                ),
+                template='cms/blocks/columns.html',
+                icon='list-ul'
+            )),
         ],
-        default=[],
+        default=[]
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel('mission', classname="full"),
-        StreamFieldPanel('features'),
-        StreamFieldPanel('themes'),
+        StreamFieldPanel('content'),
     ]
 
     def get_context(self, request):

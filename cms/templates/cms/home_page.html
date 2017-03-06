@@ -6,29 +6,8 @@
 
 {% block content %}
 
-  {% if page.mission %}
-    <div class="homepage-mission">
-        <div class="container">
-          {{ page.mission | richtext }}
-        </div>
-    </div>
-  {% endif %}
-
-  {% include_block page.features %}
-
-    <div class="container">
-        <div class="row">
-          {% for block in page.themes %}
-              {% if block.block_type == 'heading' %}
-                <h2 class="col-sm-12">{{ block.value }}</h2>
-              {% else %}
-                <div class="col-sm-6 col-md-3 homepage-theme">
-                    <h3>{{ block.value.heading }}</h3>
-                    {{ block.value.text | richtext }}
-                </div>
-              {% endif %}
-          {% endfor %}
-        </div>
-    </div>
+  {% for block in page.content %}
+    {% include_block block %}
+  {% endfor %}
 
 {% endblock %}
