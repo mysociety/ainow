@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 import datetime
 
 from django.db import models
+from django.utils import html
 from conference.models import Schedule
 
 from wagtail.wagtailcore import blocks
@@ -28,7 +29,7 @@ class HomePage(Page):
                 icon='title'
             )),
             ('divider', blocks.StaticBlock(
-                admin_text="---- A divider! ----",
+                admin_text=html.mark_safe("<hr>"),
                 template='cms/blocks/divider.html',
                 icon='horizontalrule'
             )),
