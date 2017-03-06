@@ -1,0 +1,53 @@
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading_typeface;
+  font-weight: $heading_typeface_bold;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2.5em;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.375em;
+  }
+
+  .general-content__page & {
+    margin: 1em 0 0.5em;
+  }
+}
+
+h2 {
+  font-size: 1.875em;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 2.625em;
+  }
+
+  .faq__question > & {
+    font-size: 1.4375em;
+  }
+}
+
+.accomodation-item,
+.coffee-item,
+.food-item {
+  h3 {
+    font-size: 1.25em;
+  }
+
+  p {
+    margin-bottom: 0.35em;
+  }
+}
+
+label {
+  font-weight: normal;
+}
+
+iframe {
+  max-width: 100%;
+}

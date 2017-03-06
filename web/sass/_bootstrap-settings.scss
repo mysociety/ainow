@@ -1,11 +1,6 @@
-/*
- * All of our Bootstrap customisations are here
- */
+// All of our Bootstrap customisations are here
 
-/*
- * Colors
- */
-
+// Colors
 $color_teal: #64B9BD;
 $color_dark_teal: darken($color_teal, 10%);
 $color_orange: #ED8A35;
@@ -37,51 +32,34 @@ $body-bg: $gray-lighter;
 $text-color: $gray-darker;
 $link-color: darken($brand-primary, 10%);
 
-/*
- * Typography
- */
- $fira: "fira-sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+// Typography
+$fira: "fira-sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+$body_typeface: $fira;
+$body_typeface_semibold: 500;
+$body_typeface_bold: 700;
+$heading_typeface: $fira;
+$heading_typeface_bold: 700;
 
- $body_typeface: $fira;
- $body_typeface_semibold: 500;
- $body_typeface_bold: 700;
- $heading_typeface: $fira;
- $heading_typeface_bold: 700;
+$font-size-base: 16px;
 
- $font-size-base: 16px;
+// Components
 
-/*
- * Components
- */
-
-/*
- * Buttons
- */
+// Buttons
 $btn-font-weight: $body_typeface_bold;
 $btn-primary-bg: $color_dark_teal;
 $btn-default-border: $gray-lighter;
 
-/*
- * Forms
- */
+// Forms
 
-/*
- * Dropdowns
- */
+// Dropdowns
 
-/*
- * Breakpoints
- */
+// Breakpoints
 
-/*
- * Navbar
- */
+// Navbar
 $navbar-border-radius: 0;
 $navbar-default-bg: $color_white;
 $navbar-default-link-color: $gray-darker;
 $navbar-default-link-hover-color: $gray;
 
-/*
- * Wells
- */
+// Wells
 $well-bg: lighten($body-bg, 5%);

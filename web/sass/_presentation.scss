@@ -1,0 +1,43 @@
+.presentation-detail__meta {
+   margin: 2em 0 0;
+   font-size: 1.0625em; //~17px
+   color: $gray;
+}
+
+.presentation-detail__time {
+   margin-right: 1em;
+   display: inline-block;
+}
+
+.presentation-detail__location {
+   display: inline-block;
+}
+
+.presentation-detail__title {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+.presentation-detail__speaker {
+   font-size: 1.25em; //~17px
+   color: $gray;
+   margin: 0 0 2em;
+   padding-bottom: 1em;
+   border-bottom: 1px solid $gray-lighter;
+   a {
+     text-decoration: none;
+     margin-right: -0.2em; //cheat way to hide a space django inserts
+   }
+}
+
+.presentation-detail__speaker-thumb {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.presentation-detail__description {
+}
+
+.presentation-detail__video {
+  margin-top: 2em;
+}

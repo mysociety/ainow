@@ -1,0 +1,74 @@
+body {
+  background: $body-bg;
+  font-family: $body_typeface;
+}
+
+.site-bg {
+  // gives the site its white background and means the footer's color extends to
+  // the end of the window
+  background-color: $color_white;
+  padding-bottom: 4em;
+}
+
+.site-footer {
+  background-color: $body-bg;
+  padding-top: 3em;
+}
+
+.site-footer__utility-links {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+}
+
+.utility-links__list {
+  @extend .list-inline;
+}
+
+.site-footer__partner-logos {
+  @include make-xs-column($columns: 12);
+  @include make-sm-column($columns: 6);
+
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  @media (min-width: $screen-sm-min) {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  @media (min-width: $screen-md-min) {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  .partner-logo {
+    margin-bottom: 1em;
+  }
+}
+
+.site-footer__partner-logos__logoset {
+
+  @include make-xs-column($columns: 6);
+
+  text-align: center;
+  @media (min-width: $screen-sm-min) {
+    width: 8em;
+    margin-left: 1em;
+    text-align: right;
+  }
+  img {
+    max-height: 4.5em;
+    max-width: 100%;
+  }
+}
+
+.site-footer__partner-logos__logoset--b {
+  @media (min-width: $screen-sm-min) {
+    width: 10em;
+  }
+}

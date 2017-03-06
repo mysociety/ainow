@@ -1,0 +1,108 @@
+// Header and navigation
+
+.site-header {
+  // built with Bootstrap's navbar component
+  border: 0;
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 0;
+  .navbar-nav > .open > a,
+  .navbar-nav > .open > a:hover,
+  .navbar-nav > .open > a:focus {
+    background-color: $gray-darker;
+    color: $color_white;
+  }
+  .navbar-brand {
+    margin-top: -3px;
+  }
+  &.site-header--inverted {
+    background-color: $brand-primary;
+    .navbar-nav > li > a {
+      color: $color_white;
+      &:hover,
+      &:active,
+      &:focus {
+        color: mix($color_white, $brand-primary, 70);
+      }
+    }
+    .navbar-toggle {
+      border-color: transparentize($color_white, 0.7);
+      &:hover,
+      &:focus {
+        background-color: mix($color_black, $brand-primary, 15);
+      }
+      .icon-bar {
+        background-color: mix($color_white, $brand-primary, 30);
+      }
+    }
+  }
+}
+
+.workshop-navbar {
+  border: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  min-height: 72px;
+
+  .navbar-collapse {
+    border-bottom: 3px solid $gray-lighter;
+  }
+
+  .navbar-brand {
+    @media (min-width: $screen-md-min) {
+      font-size: 2.133333333em;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $brand-primary;
+    }
+  }
+
+  .navbar-nav {
+    padding: 1em 0 0.5em;
+  }
+
+  .navbar-header {
+    @media (min-width: $screen-md-min) {
+      position: relative;
+      top: 0.8em;
+    }
+  }
+}
+
+.workshop-home {
+  .navbar-collapse {
+    border-bottom: 0;
+  }
+}
+
+
+.page-header {
+  @include make-xs-column($columns: 12);
+  border-bottom: 0;
+  margin-top: 1em;
+  h1 {
+    border-bottom: 3px solid $gray-lighter;
+    padding-bottom: 0.5em;
+  }
+}
+
+.section-nav {
+  border: 1px solid $gray-lighter;
+  border-bottom: 0;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+  border-radius: $border-radius-base;
+  margin-bottom: 2em;
+  li {
+    margin: 0 !important; //argh bootstrap and its bad specificity
+  }
+  a {
+    display: block;
+    border-bottom: 1px solid $gray-lighter;
+    color: $gray-dark;
+  }
+}
+
+.page-header__parent {
+    color: $gray-light;
+}

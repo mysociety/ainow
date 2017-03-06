@@ -1,0 +1,125 @@
+
+.form {
+  // Standard layout for forms
+  textarea {
+    border: 1px solid $gray-light;
+    width: 100%;
+    border-radius: $border-radius-base;
+    padding: 0.66667em;
+    color: $gray;
+  }
+}
+
+.errorlist {
+  @extend  .list-unstyled;
+  margin-top: 0.4em;
+  color: $brand-danger;
+}
+
+.form--account-form {
+  // a form that sits within the account management screens
+}
+
+.form--simple-form {
+  // a layout for a single form centred on the screen. Log in/sign up uses this
+}
+
+.form--simple-form__form {
+  @include make-xs-column($columns: 10);
+  @include make-xs-column-push($columns: 1);
+  @include make-sm-column($columns: 6);
+  @include make-sm-column-push($columns: 3);
+  @include make-md-column($columns: 4, $gutter: 54px);
+  @include make-md-column-push($columns: 4);
+
+  background: $color_white;
+  margin-top: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  border: 1px solid $gray-lighter;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
+
+}
+
+.form--simple-form__form__heading {
+  text-align: center;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+
+.account-form__field {
+  input {
+    @extend .form-control;
+  }
+}
+
+.account-form__field--submit {
+  margin-top: 2em;
+}
+
+.account-form__field__not-a-btn {
+  color: $gray-dark;
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 0.875em;
+  text-decoration: underline;
+}
+
+.account-form__input--error {
+  input {
+    background-color: mix($brand-danger, $color_white, 10);
+    border-color: $brand-danger;
+  }
+}
+
+.account-form__photo {
+  margin: 1em 0 3em;
+}
+
+.account-form__photo__thumbnail {
+  border-radius: 100%;
+  max-width: 100%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+}
+
+.account-form__photo-display-column {
+  @include make-xs-column($columns: 3);
+  @include make-sm-column($columns: 2);
+}
+
+.account-form__photo-controls-column {
+  @include make-xs-column($columns: 9);
+  @include make-sm-column($columns: 10);
+  position: relative;
+  .account-form__field__not-a-btn {
+      margin-left: 0;
+  }
+  .btn {
+    display: inline-block;
+    margin: 1em 1em 1em 0;
+  }
+}
+
+.change-photo-collapse {
+  // obscure the 'add photo' button with positioning
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+// Photo buttons are hidden when we have no JS because they don't work without
+// it
+.no-js .account-form__photo__delete-button,
+.no-js .account-form__photo__change-button,
+.no-js .account-form__photo__cancel-button {
+  @extend .hidden;
+}
+
+// Change photo form should only be collapsed when we have JS, because it's
+// inaccessible without it.
+.js .change-photo-collapse {
+  @extend .collapse;
+}

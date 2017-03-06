@@ -1,0 +1,74 @@
+.standard-layout {
+  // Large primary column with a smaller secondary column
+  // Column order is secondary|primary
+}
+
+.standard-layout__primary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 9, $gutter: 54px);
+}
+
+.standard-layout__secondary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 3);
+}
+
+.standard-layout--flipped {
+  // When the column order is reversed to primary|secondary
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 9);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 3, $gutter: 54px);
+  }
+}
+
+.standard-layout--narrow {
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 10);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 2);
+  }
+}
+
+.content-grid {
+  //a way to split long lists of content into a grid structure that works nicely with all screen sizes
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  @media (min-width: $screen-lg-min) {
+    justify-content: space-between;
+  }
+}
+
+.content-grid__item {
+  width: 100%;
+  @media (min-width: $screen-sm-min) {
+    width: 18em;
+    margin-right: 2em;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 14em;
+    margin-right: 2em;
+  }
+}
+
+
+
+.photo-bg {
+  .site-bg {
+    background-image: url('../img/hero-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.content-block {
+  margin-bottom: 3em;
+}
