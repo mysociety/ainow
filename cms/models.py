@@ -18,6 +18,7 @@ class HomePage(Page):
     parent_page_types = []
 
     body = RichTextField(blank=True)
+    mission = RichTextField(blank=True)
     features = StreamField([
         ('feature', blocks.StructBlock(
             [
@@ -39,6 +40,7 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
+        FieldPanel('mission', classname="full"),
         StreamFieldPanel('features'),
     ]
 

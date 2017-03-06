@@ -5,6 +5,15 @@
 {% block title %}{{ page.title }}{% endblock %}
 
 {% block content %}
+
+  {% if page.mission %}
+    <div class="homepage-mission">
+        <div class="container">
+          {{ page.mission | richtext }}
+        </div>
+    </div>
+  {% endif %}
+
   <div class="homepage-hero">
     <div class="container">
     <h2 class="homepage-hero__title">
