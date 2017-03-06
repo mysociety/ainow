@@ -21,10 +21,11 @@
 }
 
 .homepage-features {
-  margin: 2em 0;
+  @include clearfix();
+  margin: 1em 0;
 
   @media (min-width: $screen-sm-min) {
-    margin: 4em 0;
+    margin: 3em 0;
   }
 }
 
@@ -32,10 +33,28 @@
   padding: 2em;
   border: 1px solid $gray-lighter;
   border-radius: 3px;
-  margin-bottom: 2em;
+  margin: 1em 0;
 
-  &:last-child {
-    margin-bottom: 0;
+  @media (min-width: $screen-sm-min) {
+    float: right;
+    clear: right;
+    width: 35%;
+  }
+
+  &:first-child {
+    background-color: $brand-primary;
+    color: #fff;
+    border: none;
+
+    @media (min-width: $screen-sm-min) {
+      float: left;
+      width: 60%;
+    }
+
+    @media (min-width: $screen-md-min) {
+      float: left;
+      width: 62%;
+    }
   }
 
   h3 {
