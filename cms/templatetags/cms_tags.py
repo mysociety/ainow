@@ -26,3 +26,14 @@ def top_menu(context, parent, calling_page=None):
         # required by the pageurl tag that we want to use within this template
         'request': context['request'],
     }
+
+@register.inclusion_tag('cms/tags/top_menu_children.html', takes_context=True)
+def top_menu_children(context, parent):
+    menuitems_children = parent.get_children()
+    menuitems_children = menuitems_children.live().in_menu()
+    return {
+        'parent': parent,
+        'menuitems_children': menuitems_children,
+        # required by the pageurl tag that we want to use within this template
+        'request': context['request'],
+    }
