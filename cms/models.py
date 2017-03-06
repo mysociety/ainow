@@ -17,7 +17,6 @@ from wagtail.wagtailimages.blocks import ImageChooserBlock
 class HomePage(Page):
     parent_page_types = []
 
-    body = RichTextField(blank=True)
     mission = RichTextField(blank=True)
     features = StreamField([
         ('feature', blocks.StructBlock(
@@ -35,13 +34,29 @@ class HomePage(Page):
                 ))
             ],
             template='cms/blocks/feature.html',
+            icon='doc-full'
         ))
     ])
+    themes = StreamField(
+        [
+            ('heading', blocks.CharBlock(
+                icon='title'
+            )),
+            ('theme', blocks.StructBlock(
+                [
+                    ('heading', blocks.CharBlock(required=True)),
+                    ('text', blocks.RichTextBlock()),
+                ],
+                icon='doc-full'
+            ))
+        ],
+        default=[],
+    )
 
     content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
         FieldPanel('mission', classname="full"),
         StreamFieldPanel('features'),
+        StreamFieldPanel('themes'),
     ]
 
     def get_context(self, request):

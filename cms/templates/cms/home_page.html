@@ -14,30 +14,21 @@
     </div>
   {% endif %}
 
-  <div class="homepage-hero">
-    <div class="container">
-    <h2 class="homepage-hero__title">
-    <img src="/static/img/ainow-hero-logo.b6b0f9e87c7c.png"
-         srcset="/static/img/ainow-hero-logo.b08ebbdb7c7f.svg 1x"
-         alt="Artificial Intelligence Now"
-         height="35" width="115">
-    </h2>
-    <p class="homepage-hero__subtitle">
-      {{ page.title }}
-    </p>
-
-    </div>
-  </div>
   {% include_block page.features %}
-  <div class="homepage-themes">
+
     <div class="container">
-      <h2>Latest Research</h2>
-      <h3>
-        <a href="{{ latest_research.url }}">
-          {{ latest_research.title }}
-        </a>
-      </h3>
-      {{ latest_research.excerpt | richtext }}
+        <div class="row">
+          {% for block in page.themes %}
+              {% if block.block_type == 'heading' %}
+                <h2 class="col-sm-12">{{ block.value }}</h2>
+              {% else %}
+                <div class="col-sm-6 col-md-3 homepage-theme">
+                    <h3>{{ block.value.heading }}</h3>
+                    {{ block.value.text | richtext }}
+                </div>
+              {% endif %}
+          {% endfor %}
+        </div>
     </div>
-  </div>
+
 {% endblock %}

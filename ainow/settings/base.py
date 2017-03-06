@@ -71,7 +71,7 @@ INSTALLED_APPS = [
     'themes',
     'resources',
     'cms',
-    
+
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
     'wagtail.wagtailembeds',
@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     'wagtail.wagtailsearch',
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
+    'wagtail.contrib.wagtailstyleguide',
 
     'modelcluster',
     'taggit'
