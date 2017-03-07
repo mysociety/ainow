@@ -24,6 +24,7 @@ class HomePage(Page):
             ('mission', cms.blocks.MissionBlock()),
             ('heading', cms.blocks.HeadingBlock()),
             ('divider', cms.blocks.DividerBlock()),
+            ('video', cms.blocks.YouTubeBlock()),
             ('features', blocks.ListBlock(
                 cms.blocks.FeatureBlock(),
                 template='cms/blocks/features.html',

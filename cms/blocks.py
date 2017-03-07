@@ -1,6 +1,7 @@
 from wagtail.wagtailcore import blocks
 from django.utils import html
 from wagtail.wagtailimages.blocks import ImageChooserBlock
+from wagtail.wagtailembeds.blocks import EmbedBlock
 
 class HeadingBlock(blocks.CharBlock):
     class Meta:
@@ -49,3 +50,8 @@ class PersonBlock(blocks.StructBlock):
     image = ImageChooserBlock()
     class Meta:
         icon='user'
+
+class YouTubeBlock(EmbedBlock):
+    class Meta:
+        icon='media'
+        template='cms/blocks/youtube.html'
