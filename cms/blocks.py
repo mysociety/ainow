@@ -30,6 +30,15 @@ class LinkBlock(blocks.StructBlock):
     class Meta:
         template='cms/blocks/link.html'
 
+class FeaturedLinkBlock(blocks.StructBlock):
+    title = HeadingBlock()
+    subtitle = blocks.CharBlock()
+    description = blocks.RichTextBlock()
+    thumbnail = ImageChooserBlock(required=False)
+    page = blocks.PageChooserBlock()
+    class Meta:
+        template='cms/blocks/featured_link.html'
+
 class FeatureBlock(blocks.StructBlock):
     heading = blocks.CharBlock(required=True)
     text =  blocks.RichTextBlock()

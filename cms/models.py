@@ -30,6 +30,11 @@ class HomePage(Page):
                 template='cms/blocks/features.html',
                 icon='list-ul',
             )),
+            ('links', blocks.ListBlock(
+                cms.blocks.FeaturedLinkBlock(),
+                template='cms/blocks/featured_links.html',
+                icon='link',
+            )),
             ('columns', blocks.ListBlock(
                 cms.blocks.ColumnBlock(),
                 template='cms/blocks/columns.html',
