@@ -101,6 +101,10 @@ class ResearchPage(Page):
         default=[]
     )
 
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('content')
+    ]
+
 class Person(Page):
     position = models.CharField(max_length=1024, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
