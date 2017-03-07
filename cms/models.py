@@ -43,11 +43,6 @@ class HomePage(Page):
         StreamFieldPanel('content'),
     ]
 
-    def get_context(self, request):
-        context = super(HomePage, self).get_context(request)
-        context['latest_research'] = Research.objects.live()[0]
-        return context
-
 class PeoplePage(Page):
     parent_page_types = ['cms.HomePage']
 
