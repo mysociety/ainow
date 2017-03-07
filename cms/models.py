@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 import datetime
 
 from django.db import models
-from django.utils import html
 from conference.models import Schedule
 
 from wagtail.wagtailcore import blocks
@@ -15,52 +14,23 @@ from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
+from cms import blocks as cms_blocks
+
 class HomePage(Page):
     parent_page_types = []
 
     content = StreamField(
         [
-            ('mission', blocks.RichTextBlock(
-                template='cms/blocks/mission.html',
-                icon='edit'
-            )),
-            ('heading', blocks.CharBlock(
-                template='cms/blocks/heading.html',
-                icon='title'
-            )),
-            ('divider', blocks.StaticBlock(
-                admin_text=html.mark_safe("<hr>"),
-                template='cms/blocks/divider.html',
-                icon='horizontalrule'
-            )),
+            ('mission', cms_blocks.MissionBlock()),
+            ('heading', cms_blocks.HeadingBlock()),
+            ('divider', cms_blocks.DividerBlock()),
             ('features', blocks.ListBlock(
-                blocks.StructBlock(
-                    [
-                        ('heading', blocks.CharBlock(required=True)),
-                        ('text', blocks.RichTextBlock()),
-                        ('links', blocks.ListBlock(
-                            blocks.StructBlock(
-                                [
-                                    ('text', blocks.CharBlock(required=True)),
-                                    ('page', blocks.PageChooserBlock()),
-                                ],
-                                template='cms/blocks/link.html',
-                            )
-                        ))
-                    ],
-                    icon='doc-full'
-                ),
+                cms_blocks.FeatureBlock(),
                 template='cms/blocks/features.html',
                 icon='list-ul',
             )),
             ('columns', blocks.ListBlock(
-                blocks.StructBlock(
-                    [
-                        ('heading', blocks.CharBlock(required=True)),
-                        ('text', blocks.RichTextBlock())
-                    ],
-                    icon='doc-full'
-                ),
+                cms_blocks.ColumnBlock(),
                 template='cms/blocks/columns.html',
                 icon='list-ul'
             )),
