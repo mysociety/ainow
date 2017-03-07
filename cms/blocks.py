@@ -35,8 +35,8 @@ class FeaturedLinkBlock(blocks.StructBlock):
     subtitle = blocks.CharBlock()
     description = blocks.RichTextBlock()
     thumbnail = ImageChooserBlock(required=False)
-    page = blocks.PageChooserBlock()
-    external_link = blocks.URLBlock()
+    page = blocks.PageChooserBlock(required=False)
+    external_link = blocks.URLBlock(required=False)
     class Meta:
         template='cms/blocks/featured_link.html'
 
