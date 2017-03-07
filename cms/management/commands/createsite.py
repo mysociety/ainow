@@ -40,15 +40,15 @@ class Command(BaseCommand):
                 title='About',
                 show_in_menus=True
             ),
-            PersonIndexPage(
+            PeoplePage(
                 title='People',
                 show_in_menus=True,
             ),
-            ResearchIndexPage(
+            ResearchPage(
                 title='Research',
                 show_in_menus=True,
             ),
-            EventsIndexPage(
+            EventsPage(
                 title='Events',
                 show_in_menus=True,
             ),
