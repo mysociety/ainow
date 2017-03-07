@@ -2,6 +2,7 @@ from wagtail.wagtailcore import blocks
 from django.utils import html
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
+from conference.models import Schedule
 
 class HeadingBlock(blocks.CharBlock):
     class Meta:
@@ -65,3 +66,13 @@ class YouTubeBlock(EmbedBlock):
     class Meta:
         icon='media'
         template='cms/blocks/youtube.html'
+
+class EventBlock(blocks.StructBlock):
+    name = HeadingBlock()
+    start = blocks.DateTimeBlock(label="Start date/time")
+    end = blocks.DateTimeBlock(label="End date/time")
+    location = TextBlock()
+    link = blocks.URLBlock(required=False)
+    schedule = blocks.ChoiceBlock(
+        choices=tuple([(element.slug, element.name) for element in Schedule.objects.all()])
+    )

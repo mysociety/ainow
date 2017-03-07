@@ -149,6 +149,26 @@ class Research(Page):
         FieldPanel('external_link')
     ]
 
+class EventsPage(Page):
+    parent_page_types = ['cms.HomePage']
+
+    content = StreamField(
+        [
+            ('heading', cms.blocks.HeadingBlock()),
+            ('text', cms.blocks.TextBlock()),
+            ('events', blocks.ListBlock(
+                cms.blocks.EventBlock(),
+                template='cms/blocks/events.html',
+            )),
+            ('divider', cms.blocks.DividerBlock())
+        ],
+        default=[]
+    )
+
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('content')
+    ]
+
 class EventsIndexPage(Page):
     parent_page_types = []
 
