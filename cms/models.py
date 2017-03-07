@@ -30,11 +30,6 @@ class HomePage(Page):
                 template='cms/blocks/features.html',
                 icon='list-ul',
             )),
-            ('links', blocks.ListBlock(
-                cms.blocks.FeaturedLinkBlock(),
-                template='cms/blocks/featured_links.html',
-                icon='link',
-            )),
             ('columns', blocks.ListBlock(
                 cms.blocks.ColumnBlock(),
                 template='cms/blocks/columns.html',
@@ -94,6 +89,23 @@ class SimplePage(Page):
         FieldPanel('body', classname="full"),
     ]
 
+class ResearchPage(Page):
+    parent_page_types = ['cms.HomePage']
+
+    content = StreamField(
+        [
+            ('heading', cms.blocks.HeadingBlock()),
+            ('text', cms.blocks.TextBlock()),
+            ('links', blocks.ListBlock(
+                cms.blocks.FeaturedLinkBlock(),
+                template='cms/blocks/featured_links.html',
+                icon='link',
+            )),
+            ('divider', cms.blocks.DividerBlock())
+        ],
+        default=[]
+    )
+
 class Person(Page):
     position = models.CharField(max_length=1024, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
@@ -115,12 +127,7 @@ class Person(Page):
         ImageChooserPanel('image'),
     ]
 
-class ResearchIndexPage(Page):
-    parent_page_types = []
-
 class Research(Page):
-    parent_page_types = ['cms.ResearchIndexPage']
-
     excerpt = RichTextField(blank=True)
     intro = RichTextField(blank=True)
     research_file = models.ForeignKey(
