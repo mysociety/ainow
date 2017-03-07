@@ -1,0 +1,17 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+
+    {% for block in page.content %}
+      {% include_block block %}
+    {% endfor %}
+  </div>
+
+{% endblock %}

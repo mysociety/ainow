@@ -14,23 +14,23 @@ from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
-from cms import blocks as cms_blocks
+import cms.blocks
 
 class HomePage(Page):
     parent_page_types = []
 
     content = StreamField(
         [
-            ('mission', cms_blocks.MissionBlock()),
-            ('heading', cms_blocks.HeadingBlock()),
-            ('divider', cms_blocks.DividerBlock()),
+            ('mission', cms.blocks.MissionBlock()),
+            ('heading', cms.blocks.HeadingBlock()),
+            ('divider', cms.blocks.DividerBlock()),
             ('features', blocks.ListBlock(
-                cms_blocks.FeatureBlock(),
+                cms.blocks.FeatureBlock(),
                 template='cms/blocks/features.html',
                 icon='list-ul',
             )),
             ('columns', blocks.ListBlock(
-                cms_blocks.ColumnBlock(),
+                cms.blocks.ColumnBlock(),
                 template='cms/blocks/columns.html',
                 icon='list-ul'
             )),
@@ -46,6 +46,27 @@ class HomePage(Page):
         context = super(HomePage, self).get_context(request)
         context['latest_research'] = Research.objects.live()[0]
         return context
+
+class PeoplePage(Page):
+    parent_page_types = ['cms.HomePage']
+
+    content = StreamField(
+        [
+            ('heading', cms.blocks.HeadingBlock()),
+            ('text', cms.blocks.TextBlock()),
+            ('people', blocks.ListBlock(
+                cms.blocks.PersonBlock(),
+                template='cms/blocks/people.html',
+                icon='group',
+            )),
+            ('divider', cms.blocks.DividerBlock())
+        ],
+        default=[]
+    )
+
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('content'),
+    ]
 
 class SimplePage(Page):
     parent_page_types = ['cms.HomePage']
@@ -67,12 +88,7 @@ class SimplePage(Page):
         FieldPanel('body', classname="full"),
     ]
 
-class PersonIndexPage(Page):
-    parent_page_types = []
-
 class Person(Page):
-    parent_page_types = ['cms.PersonIndexPage']
-
     position = models.CharField(max_length=1024, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
     twitter = models.CharField(max_length=15, blank=True)

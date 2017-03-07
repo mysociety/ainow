@@ -1,10 +1,16 @@
 from wagtail.wagtailcore import blocks
 from django.utils import html
+from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 class HeadingBlock(blocks.CharBlock):
     class Meta:
         template = 'cms/blocks/heading.html',
         icon = 'title'
+        classname = 'title'
+
+class TextBlock(blocks.RichTextBlock):
+    class Meta:
+        template = 'cms/blocks/text.html'
 
 class MissionBlock(blocks.RichTextBlock):
     class Meta:
@@ -35,3 +41,11 @@ class ColumnBlock(blocks.StructBlock):
     text = blocks.RichTextBlock()
     class Meta:
         icon='doc-full'
+
+class PersonBlock(blocks.StructBlock):
+    name = blocks.CharBlock(required=True)
+    position = blocks.CharBlock()
+    organisation = blocks.CharBlock()
+    image = ImageChooserBlock()
+    class Meta:
+        icon='user'
