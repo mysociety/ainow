@@ -74,5 +74,8 @@ class EventBlock(blocks.StructBlock):
     location = TextBlock()
     link = blocks.URLBlock(required=False)
     schedule = blocks.ChoiceBlock(
+        required=False,
         choices=tuple([(element.slug, element.name) for element in Schedule.objects.all()])
     )
+    class Meta:
+        icon='date'
