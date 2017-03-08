@@ -7,9 +7,11 @@
             <div class="features-block__feature features-block__feature--primary">
                 <h3>{{ feature.heading }}</h3>
                 {{ feature.text | richtext }}
-                {% for link in feature.links %}
-                  {{ link }}
-                {% endfor %}
+                <p class="features-block__feature__links">
+                  {% for link in feature.links %}
+                    {{ link }}
+                  {% endfor %}
+                </p>
             </div>
           {% endwith %}
         </div>
@@ -18,9 +20,11 @@
             <div class="features-block__feature">
                 <h3>{{ feature.heading }}</h3>
                 {{ feature.text | richtext }}
-                {% for link in feature.links %}
-                  {{ link }}
-                {% endfor %}
+                <p class="features-block__feature__links">
+                  {% for link in feature.links %}
+                    {{ link }}
+                  {% endfor %}
+                </p>
             </div>
           {% endfor %}
         </div>

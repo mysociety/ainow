@@ -31,6 +31,14 @@
   background-color: $brand-primary;
   color: #fff;
   border: none;
+
+  .btn-default {
+    border: none;
+  }
+}
+
+.features-block__feature__links {
+  margin: 1em 0 0 0;
 }
 
 // Clever flexbox layout kicks in on small screens
