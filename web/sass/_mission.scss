@@ -1,0 +1,21 @@
+.mission-block {
+  background-color: $gray-lighter;
+  text-align: center;
+  padding: 1em 0;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 2em 0;
+  }
+
+  .rich-text {
+    font-size: 1.2em;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}

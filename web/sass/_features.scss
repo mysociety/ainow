@@ -1,0 +1,79 @@
+.features-block {
+  margin: 1em 0;
+
+  @media (min-width: $screen-sm-min) {
+    margin: 3em 0;
+  }
+}
+
+.features-block__feature {
+  padding: 2em;
+  border: 1px solid $gray-lighter;
+  border-radius: 3px;
+  margin: 1em 0;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .rich-text {
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.features-block__feature--primary {
+  background-color: $brand-primary;
+  color: #fff;
+  border: none;
+}
+
+// Clever flexbox layout kicks in on small screens
+@media (min-width: $screen-sm-min) {
+  .features-block {
+    @include clearfix(); // floating fallback for old browsers
+    @include flexbox();
+  }
+
+  .features-block__primary {
+    @include flexbox();
+    @include flex(1 0 auto);
+    @include flex-direction(column);
+    width: 60%;
+    float: left; // floating fallback for old browsers
+  }
+
+  .features-block__secondary {
+    @include flexbox();
+    @include flex(1 0 auto);
+    @include flex-direction(column);
+    width: 40%;
+    padding-left: 1em;
+    float: right; // floating fallback for old browsers
+  }
+
+  .features-block__feature {
+    @include flex(1 0 auto);
+    margin: 0;
+  }
+
+  .features-block__feature + .features-block__feature {
+    margin-top: 1em;
+  }
+}
+
+// Flexbox gutters get a bit wider on large screens
+@media (min-width: $screen-md-min) {
+  .features-block__secondary {
+    padding-left: 2em;
+  }
+
+  .features-block__feature + .features-block__feature {
+    margin-top: 2em;
+  }
+}

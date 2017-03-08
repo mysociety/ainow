@@ -3,6 +3,8 @@
 @import 'bootstrap-settings';
 @import 'bootstrap';
 
+@import 'mixins';
+
 @import 'type';
 @import 'layout';
 @import 'buttons';
@@ -10,6 +12,9 @@
 @import 'alerts';
 @import 'header';
 @import 'footer';
+
+@import 'features';
+@import 'mission';
 
 @import 'homepage';
 @import 'schedule';
