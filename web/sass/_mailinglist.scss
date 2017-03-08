@@ -1,0 +1,19 @@
+.mailinglist-block {
+  padding: 2em;
+  background-color: $gray-lighter;
+  border-radius: 3px;
+  margin: 1em 0;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .form-inline {
+      label + input,
+      .form-group + .form-group {
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
