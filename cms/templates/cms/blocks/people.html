@@ -1,22 +1,14 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
-<div class="people">
-    <div class="container">
-      <ul class="attendee-list">
+<div class="container">
+    <div class="collection-of-people">
       {% for person in self %}
-        <li class="attendee-list__attendee">
-            <div class="attendee__secondary-column">
-              {% image person.image fill-100x100 class="attendee__thumbnail" %}
-            </div>
-            <div class="attendee__primary-column">
-              <h2 class="attendee__name">
-                {{ person.name }}
-              </h2>
-              <p class="attendee__job-title">{{ person.position }}</p>
-              <p class="attendee__org">{{ person.organisation }}</p>
-            </div>
-        </li>
+        <div class="collection-of-people__person">
+            {% image person.image max-240x240 class="person__photo" %}
+            <p class="person__name">{{ person.name }}</p>
+            <p class="person__role">{{ person.position }}</p>
+            <p class="person__job-title">{{ person.organisation }}</p>
+        </div>
       {% endfor %}
-      </ul>
     </div>
 </div>
