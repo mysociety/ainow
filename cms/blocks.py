@@ -61,6 +61,7 @@ class PersonBlock(blocks.StructBlock):
     position = blocks.CharBlock()
     organisation = blocks.CharBlock()
     image = ImageChooserBlock()
+    page = blocks.PageChooserBlock(required=False)
     class Meta:
         icon='user'
 
