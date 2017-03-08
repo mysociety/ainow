@@ -16,10 +16,13 @@
               {{ link.title }}
             </a>
           </h3>
-          {% if link.thumbnail %}
+          {% if link.subtitle %}
             <p class="talk-teaser__speaker">
               {{ link.subtitle }}
             </p>
+          {% endif %}
+          {% if link.description %}
+            <p>{{ link.description | richtext }}</p>
           {% endif %}
         </div>
       </div>

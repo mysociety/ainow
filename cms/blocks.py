@@ -34,8 +34,8 @@ class LinkBlock(blocks.StructBlock):
 
 class FeaturedLinkBlock(blocks.StructBlock):
     title = HeadingBlock()
-    subtitle = blocks.CharBlock()
-    description = blocks.RichTextBlock()
+    subtitle = blocks.CharBlock(required=False)
+    description = blocks.RichTextBlock(required=False)
     thumbnail = ImageChooserBlock(required=False)
     page = blocks.PageChooserBlock(required=False)
     external_link = blocks.URLBlock(required=False)
