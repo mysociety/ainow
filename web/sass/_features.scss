@@ -36,6 +36,7 @@
 // Clever flexbox layout kicks in on small screens
 @media (min-width: $screen-sm-min) {
   .features-block {
+    @include clearfix(); // floating fallback for old browsers
     @include flexbox();
   }
 
@@ -44,6 +45,7 @@
     @include flex(1 0 auto);
     @include flex-direction(column);
     width: 60%;
+    float: left; // floating fallback for old browsers
   }
 
   .features-block__secondary {
@@ -52,6 +54,7 @@
     @include flex-direction(column);
     width: 40%;
     padding-left: 1em;
+    float: right; // floating fallback for old browsers
   }
 
   .features-block__feature {
