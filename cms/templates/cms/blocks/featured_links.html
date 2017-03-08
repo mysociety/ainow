@@ -1,32 +1,37 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 <div class="container">
-  <ul class="homepage-videos__list-of-talks row">
-    {% for link in self %}
-    <li class="list-of-talks__item">
-      <div class="talk-teaser">
-        {% if link.thumbnail %}
-          <a href="{{ link.page.url }}">
-            {% image link.thumbnail fill-262x196 class="talk-teaser__thumbnail" %}
-          </a>
-        {% endif %}
-        <div class="talk-teaser__details">
-          <h3 class="talk-teaser__title">
-            <a href="{{ link.page.url }}">
-              {{ link.title }}
-            </a>
-          </h3>
-          {% if link.subtitle %}
-            <p class="talk-teaser__speaker">
-              {{ link.subtitle }}
-            </p>
-          {% endif %}
-          {% if link.description %}
-            <p>{{ link.description | richtext }}</p>
-          {% endif %}
+    <div class="row">
+      {% for link in self %}
+        <div class="col-sm-4 col-md-3">
+            <div class="featured-link">
+
+              {% if link.thumbnail %}
+                <a href="{{ link.page.url }}">
+                  {% image link.thumbnail fill-262x196 class="featured-link__thumbnail" %}
+                </a>
+              {% endif %}
+
+                <div class="featured-link__details">
+                    <h3 class="featured-link__title">
+                        <a href="{{ link.page.url }}">
+                          {{ link.title }}
+                        </a>
+                    </h3>
+                  {% if link.subtitle %}
+                    <p class="featured-link__subtitle">
+                      {{ link.subtitle }}
+                    </p>
+                  {% endif %}
+                  {% if link.description %}
+                    <div class="featured-link__description">
+                      {{ link.description | richtext }}
+                    </div>
+                  {% endif %}
+                </div>
+
+            </div>
         </div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </div>
 </div>

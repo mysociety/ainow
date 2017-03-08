@@ -1,0 +1,38 @@
+.featured-link {
+  background-color: $gray-lighter;
+  margin-bottom: 2em;
+
+  .rich-text {
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.featured-link__details {
+  padding: 1em;
+}
+
+.featured-link__thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.featured-link__title {
+  font-size: 1.125em;
+  line-height: 1.3em;
+  margin-top: 0;
+}
+
+.featured-link__subtitle {
+  font-size: 0.875em;
+  margin-top: 0.5em;
+}
+
+.featured-link__description {
+  margin-top: 0.5em;
+}
