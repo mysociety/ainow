@@ -9,6 +9,9 @@ def add_settings(request):
         'settings': {
             'GOOGLE_ANALYTICS_ACCOUNT': settings.GOOGLE_ANALYTICS_ACCOUNT,
             'DEBUG': settings.DEBUG,
+            'MAILCHIMP_URL': settings.MAILCHIMP_URL,
+            'MAILCHIMP_USER_ID': settings.MAILCHIMP_USER_ID,
+            'MAILCHIMP_DEFAULT_LIST_ID': settings.MAILCHIMP_DEFAULT_LIST_ID,
         },
         # For some reason this doesn't work if we put it inside settings
         'CONTACT_EMAIL': settings.CONTACT_EMAIL

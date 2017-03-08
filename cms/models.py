@@ -35,6 +35,7 @@ class HomePage(Page):
                 template='cms/blocks/columns.html',
                 icon='list-ul'
             )),
+            ('mailinglist', cms.blocks.MailChimpBlock()),
         ],
         default=[]
     )

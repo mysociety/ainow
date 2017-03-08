@@ -1,5 +1,6 @@
 from wagtail.wagtailcore import blocks
 from django.utils import html
+from django.conf import settings
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
 from conference.models import Schedule
@@ -79,3 +80,11 @@ class EventBlock(blocks.StructBlock):
     )
     class Meta:
         icon='date'
+
+class MailChimpBlock(blocks.StructBlock):
+    title = HeadingBlock()
+    intro = TextBlock(required=False)
+    list_id = blocks.CharBlock(required=False,help_text='The list ID for your Mailchimp link (default is '+ settings.MAILCHIMP_DEFAULT_LIST_ID +')'  )
+    class Meta:
+        icon='mail'
+        template='cms/blocks/mailchimp.html'
