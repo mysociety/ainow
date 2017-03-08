@@ -1,15 +1,28 @@
 {% load wagtailcore_tags %}
 
-<div class="homepage-features">
-    <div class="container">
-      {% for column in self %}
-        <div class="homepage-feature">
-            <h3>{{ column.heading }}</h3>
-            {{ column.text | richtext }}
-            {% for link in column.links %}
-              {{ link }}
-            {% endfor %}
+<div class="container">
+    <div class="features-block">
+        <div class="features-block__primary">
+          {% with self|first as feature %}
+            <div class="features-block__feature features-block__feature--primary">
+                <h3>{{ feature.heading }}</h3>
+                {{ feature.text | richtext }}
+                {% for link in feature.links %}
+                  {{ link }}
+                {% endfor %}
+            </div>
+          {% endwith %}
         </div>
-      {% endfor %}
+        <div class="features-block__secondary">
+          {% for feature in self|slice:"1:" %}
+            <div class="features-block__feature">
+                <h3>{{ feature.heading }}</h3>
+                {{ feature.text | richtext }}
+                {% for link in feature.links %}
+                  {{ link }}
+                {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
     </div>
 </div>

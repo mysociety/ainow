@@ -20,64 +20,6 @@
   }
 }
 
-.homepage-features {
-  @include clearfix();
-  margin: 1em 0;
-
-  @media (min-width: $screen-sm-min) {
-    margin: 3em 0;
-  }
-}
-
-.homepage-feature {
-  padding: 2em;
-  border: 1px solid $gray-lighter;
-  border-radius: 3px;
-  margin: 1em 0;
-
-  @media (min-width: $screen-sm-min) {
-    float: right;
-    clear: right;
-    width: 35%;
-  }
-
-  &:first-child {
-    background-color: $brand-primary;
-    color: #fff;
-    border: none;
-
-    @media (min-width: $screen-sm-min) {
-      float: left;
-      width: 60%;
-    }
-
-    @media (min-width: $screen-md-min) {
-      float: left;
-      width: 62%;
-    }
-  }
-
-  h3 {
-    margin-top: 0;
-  }
-
-  .rich-text {
-    & > :first-child {
-      margin-top: 0;
-    }
-
-    & > :last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-
-
-
-
-
-
 .homepage-videos {
   padding-top: 2em;
   padding-bottom: 2em;
