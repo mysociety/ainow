@@ -28,7 +28,8 @@ class DividerBlock(blocks.StaticBlock):
 
 class LinkBlock(blocks.StructBlock):
     text = blocks.CharBlock(required=True)
-    page = blocks.PageChooserBlock()
+    page = blocks.PageChooserBlock(required=False)
+    external_link = blocks.URLBlock(required=False)
     class Meta:
         template='cms/blocks/link.html'
 

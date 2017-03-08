@@ -1,5 +1,9 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
-<a href="{{ value.page.specific.url }}" class="btn btn-default">
+{% if value.page %}
+  <a href="{{ value.page.specific.url }}" class="btn btn-default">
+{% else %}
+  <a href="{{ value.external_link }}" class="btn btn-default">
+{% endif %}
    {{ value.text }}
 </a>
