@@ -51,3 +51,12 @@ label {
 iframe {
   max-width: 100%;
 }
+
+
+hr.streamfield-divider {
+  margin: 2em;
+
+  @media (min-width: $screen-md-min) {
+    margin: 3em 0;
+  }
+}

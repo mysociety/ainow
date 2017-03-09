@@ -72,3 +72,26 @@
 .content-block {
   margin-bottom: 3em;
 }
+
+// Most of the Wagtail pages are constructed out of multiple StreamField blocks
+// laid out on top of one another. These blocks look best when the margins on
+// their child elements (eg: headings) are left to extend outside the block,
+// effectively making the blocks totally transparent.
+// Because we want child margins to extend outside the block's bounds, we can't
+// use Bootstrap's clearfixed `.container`, so we make our own:
+.streamfield-block {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  floor(( $grid-gutter-width / 2 ));
+  padding-right: ceil(( $grid-gutter-width / 2 ));
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
