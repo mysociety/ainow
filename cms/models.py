@@ -44,8 +44,38 @@ class HomePage(Page):
         StreamFieldPanel('content'),
     ]
 
+    template = "cms/landing_page.html"
+
+    def get_context(self, request):
+        context = super(HomePage, self).get_context(request)
+        context['hide_title'] = True
+        return context
+
+class AboutPage(Page):
+    parent_page_types = []
+
+    content = StreamField(
+        [
+            ('heading', cms.blocks.HeadingBlock()),
+            ('text', cms.blocks.TextBlock()),
+            ('divider', cms.blocks.DividerBlock()),
+            ('video', cms.blocks.YouTubeBlock()),
+            ('links', blocks.ListBlock(
+                cms.blocks.FeaturedLinkBlock(),
+                template='cms/blocks/featured_links.html',
+                icon='link',
+            )),
+        ]
+    )
+
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('content'),
+    ]
+
+    template = "cms/landing_page.html"
+
 class PeoplePage(Page):
-    parent_page_types = ['cms.HomePage']
+    parent_page_types = []
 
     content = StreamField(
         [
@@ -64,6 +94,53 @@ class PeoplePage(Page):
     content_panels = Page.content_panels + [
         StreamFieldPanel('content'),
     ]
+
+    template = "cms/landing_page.html"
+
+class ResearchPage(Page):
+    parent_page_types = []
+
+    content = StreamField(
+        [
+            ('heading', cms.blocks.HeadingBlock()),
+            ('text', cms.blocks.TextBlock()),
+            ('links', blocks.ListBlock(
+                cms.blocks.FeaturedLinkBlock(),
+                template='cms/blocks/featured_links.html',
+                icon='link',
+            )),
+            ('divider', cms.blocks.DividerBlock())
+        ],
+        default=[]
+    )
+
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('content')
+    ]
+
+    template = "cms/landing_page.html"
+
+class EventsPage(Page):
+    parent_page_types = []
+
+    content = StreamField(
+        [
+            ('heading', cms.blocks.HeadingBlock()),
+            ('text', cms.blocks.TextBlock()),
+            ('events', blocks.ListBlock(
+                cms.blocks.EventBlock(),
+                template='cms/blocks/events.html',
+            )),
+            ('divider', cms.blocks.DividerBlock())
+        ],
+        default=[]
+    )
+
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('content')
+    ]
+
+    template = "cms/landing_page.html"
 
 class SimplePage(Page):
     parent_page_types = ['cms.HomePage']
@@ -85,28 +162,9 @@ class SimplePage(Page):
         FieldPanel('body', classname="full"),
     ]
 
-class ResearchPage(Page):
-    parent_page_types = ['cms.HomePage']
-
-    content = StreamField(
-        [
-            ('heading', cms.blocks.HeadingBlock()),
-            ('text', cms.blocks.TextBlock()),
-            ('links', blocks.ListBlock(
-                cms.blocks.FeaturedLinkBlock(),
-                template='cms/blocks/featured_links.html',
-                icon='link',
-            )),
-            ('divider', cms.blocks.DividerBlock())
-        ],
-        default=[]
-    )
-
-    content_panels = Page.content_panels + [
-        StreamFieldPanel('content')
-    ]
-
 class Person(Page):
+    parent_page_types = ['cms.PeoplePage']
+
     position = models.CharField(max_length=1024, blank=True)
     organisation = models.CharField(max_length=1024, blank=True)
     twitter = models.CharField(max_length=15, blank=True)
@@ -128,6 +186,8 @@ class Person(Page):
     ]
 
 class Research(Page):
+    parent_page_types = ['cms.ResearchPage']
+
     excerpt = RichTextField(blank=True)
     intro = RichTextField(blank=True)
     research_file = models.ForeignKey(
@@ -150,37 +210,8 @@ class Research(Page):
         FieldPanel('external_link')
     ]
 
-class EventsPage(Page):
-    parent_page_types = ['cms.HomePage']
-
-    content = StreamField(
-        [
-            ('heading', cms.blocks.HeadingBlock()),
-            ('text', cms.blocks.TextBlock()),
-            ('events', blocks.ListBlock(
-                cms.blocks.EventBlock(),
-                template='cms/blocks/events.html',
-            )),
-            ('divider', cms.blocks.DividerBlock())
-        ],
-        default=[]
-    )
-
-    content_panels = Page.content_panels + [
-        StreamFieldPanel('content')
-    ]
-
-class EventsIndexPage(Page):
-    parent_page_types = []
-
-    def get_context(self, request):
-        context = super(EventsIndexPage, self).get_context(request)
-        context['upcoming_events'] = Events.objects.filter(start__gte=datetime.datetime.now())
-        context['previous_events'] = Events.objects.filter(start__lte=datetime.datetime.now())
-        return context
-
 class Events(Page):
-    parent_page_types = ['cms.EventsIndexPage']
+    parent_page_types = ['cms.EventsPage']
 
     body = RichTextField()
     start = models.DateTimeField("Start date/time")

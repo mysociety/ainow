@@ -6,7 +6,12 @@
 
 {% block content %}
 
-  <h1>{{ page.title }}</h1>
+
+    {% if hide_title != True %}
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+    </div>
+    {% endif %}
 
     {% for block in page.content %}
       {% include_block block %}

@@ -36,7 +36,7 @@ class Command(BaseCommand):
 
         # Setup skeleton site structure
         pages = [
-            SimplePage(
+            AboutPage(
                 title='About',
                 show_in_menus=True
             ),

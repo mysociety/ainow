@@ -1,9 +1,0 @@
-{% load wagtailcore_tags wagtailimages_tags %}
-{% with event=event.specific %}
-  <li>
-    <h2>
-      <a href="{% pageurl event %}">{{ event.title }}</a>
-    </h2>
-    <p><strong>{{ event.location }}</strong><br /><i>{{ event.start }} - {{ event.end }}</i></p>
-  </li>
-{% endwith %}
