@@ -17,6 +17,7 @@
           <p class="event__date">
             {{ event.start }} - {{ event.end }}
           </p>
+          {{ event.text|richtext }}
         </li>
         {% endwith %}
       {% endfor %}

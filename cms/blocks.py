@@ -75,6 +75,7 @@ class EventBlock(blocks.StructBlock):
     start = blocks.DateTimeBlock(label="Start date/time")
     end = blocks.DateTimeBlock(label="End date/time")
     location = TextBlock()
+    text = blocks.RichTextBlock()
     link = blocks.URLBlock(required=False)
     schedule = blocks.ChoiceBlock(
         required=False,
