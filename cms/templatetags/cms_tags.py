@@ -1,5 +1,6 @@
 from django import template
 from django.conf import settings
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -44,3 +45,19 @@ def get_link_url(link):
         return link['page'].url
     else:
         return link['external_link']
+
+@register.simple_tag
+def event_link(event):
+    if event['schedule']:
+        link = "/schedule/" + event['schedule']
+    elif event['link']:
+        link = event['link']
+    else:
+        link = None
+
+    if link:
+        output = '<a href="%s">%s</a>' % (link, event['name'])
+    else:
+        output = event['name']
+
+    return mark_safe(output)

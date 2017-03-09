@@ -1,14 +1,11 @@
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags cms_tags %}
 
 <div class="streamfield-block">
   <ul class="events-list">
   {% for event in self %}
-    {% with link=event.link|default:"/schedule/"|add:event.schedule %}
     <li class="events-list__event">
       <h2 class="event__name">
-        <a href="{{ link }}">
-          {{ event.name }}
-        </a>
+        {% event_link event %}
       </h2>
       <p class="event__location">
         {{ event.location }}
@@ -18,7 +15,6 @@
       </p>
       {{ event.text|richtext }}
     </li>
-    {% endwith %}
   {% endfor %}
   </ul>
 </div>
