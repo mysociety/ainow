@@ -37,3 +37,10 @@ def top_menu_children(context, parent):
         # required by the pageurl tag that we want to use within this template
         'request': context['request'],
     }
+
+@register.simple_tag
+def get_link_url(link):
+    if link['page']:
+        return link['page'].url
+    else:
+        return link['external_link']
