@@ -32,6 +32,24 @@
   color: #fff;
   border: none;
 
+  h3 {
+    font-size: $font-size-h2;
+    margin-bottom: 0.5em;
+  }
+
+  .rich-text,
+  .features-block__feature__links {
+    font-size: 1.5em; // ~24px
+  }
+
+  .features-block__feature__links {
+    margin-top: 1.1em; // up from 1em
+  }
+
+  .btn {
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
+  }
+
   .btn-default {
     border: none;
   }
