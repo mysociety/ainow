@@ -1,0 +1,27 @@
+.sxsw-homepage-columns {
+  @include make-row();
+
+  & > * {
+    @include make-sm-column(3);
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    & > * {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  h3 {
+    border-top: 8px solid $brand-primary;
+    padding: 20px 0;
+    margin: 1em 0 0 0;
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 4em; // bit of a hack, assumes all headings fit on 2 lines
+    }
+  }
+}

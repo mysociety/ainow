@@ -1,16 +1,15 @@
 .features-block {
-  margin: 1em 0;
+  margin: 2em 0;
 
   @media (min-width: $screen-sm-min) {
-    margin: 3em 0;
+    margin: 4em 0;
   }
 }
 
 .features-block__feature {
-  padding: 2em;
-  border: 1px solid $gray-lighter;
-  border-radius: 3px;
-  margin: 1em 0;
+  padding-top: 1.5em;
+  border-top: 8px solid $gray-light;
+  margin: 2em 0;
 
   h3 {
     margin-top: 0;
@@ -28,12 +27,10 @@
 }
 
 .features-block__feature--primary {
-  background-color: $brand-primary;
-  color: #fff;
-  border: none;
+  border-top-color: $brand-primary;
 
   h3 {
-    font-size: $font-size-h2;
+    font-size: 2.625em;
     margin-bottom: 0.5em;
   }
 
@@ -47,11 +44,8 @@
   }
 
   .btn {
+    @extend .btn-primary;
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
-  }
-
-  .btn-default {
-    border: none;
   }
 }
 
@@ -79,7 +73,7 @@
     @include flex(1 0 auto);
     @include flex-direction(column);
     width: 40%;
-    padding-left: 1em;
+    padding-left: 3em;
     float: right; // floating fallback for old browsers
   }
 
@@ -89,17 +83,17 @@
   }
 
   .features-block__feature + .features-block__feature {
-    margin-top: 1em;
+    margin-top: 2em;
   }
 }
 
 // Flexbox gutters get a bit wider on large screens
 @media (min-width: $screen-md-min) {
   .features-block__secondary {
-    padding-left: 2em;
+    padding-left: 4em;
   }
 
   .features-block__feature + .features-block__feature {
-    margin-top: 2em;
+    margin-top: 3em;
   }
 }

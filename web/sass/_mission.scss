@@ -1,14 +1,33 @@
 .mission-block {
-  background-color: $gray-lighter;
+  background-color: #33383e; // average colour of sxsw-homepage-hero.jpg
+  background-image: url(../img/sxsw-homepage-hero.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+  background-size: cover;
+
+  color: #fff;
   text-align: center;
-  padding: 1em 0;
+  padding: 2em 0;
 
   @media (min-width: $screen-sm-min) {
-    padding: 2em 0;
+    padding: 4em 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 6em 0;
+  }
+
+  img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1em;
   }
 
   .rich-text {
-    font-size: 1.2em;
+    max-width: 30em;
+    margin: 0 auto;
+    font-size: 1.5em;
 
     & > :first-child {
       margin-top: 0;

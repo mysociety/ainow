@@ -12,16 +12,12 @@ body {
 
 .site-footer {
   background-color: $body-bg;
-  padding-top: 3em;
-}
+  padding: 3em 0;
+  color: mix(#fff, $body-bg, 50%);
 
-.site-footer__utility-links {
-  @include make-xs-column($columns: 12);
-  @include make-sm-column($columns: 6);
-}
-
-.utility-links__list {
-  @extend .list-inline;
+  a + a {
+    margin-left: 1em;
+  }
 }
 
 .site-footer__partner-logos {

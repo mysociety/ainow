@@ -131,14 +131,17 @@
       <div class="container">
         <div class="row">
 
-          <div class="site-footer__utility-links">
-            <ul class="utility-links__list">
-              <li><a href="/privacy">Privacy</a></li>
-              <li><a href="/about">Contact</a></li>
-            </ul>
+          <div class="col-sm-6">
+            <p>
+              <a href="/privacy">Privacy</a>
+              <a href="/about">Contact</a>
+            </p>
+            <p>
+              Photo: Trevor Paglen
+            </p>
           </div>
 
-          <div class="site-footer__partner-logos">
+          <div class="col-sm-6 site-footer__partner-logos">
             {% if schedule.slug == 'conference' %}
             <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--a">
               <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
