@@ -138,7 +138,7 @@ class Slot(TimestampedModel):
     )
 
     def __str__(self):
-        return "{} - {}".format(self.start, self.end)
+        return "{} - {}".format(self.start.strftime('%a %d/%m/%Y %H:%M'), self.end.strftime('%a %d/%m/%Y %H:%M'))
 
     class Meta:
         ordering = ['start']
