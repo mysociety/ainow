@@ -157,9 +157,8 @@ class Session(TimestampedModel):
 
     name = models.CharField(
         max_length=1024,
-        help_text='Text that will be shown to the user for this session if no'
+        help_text='This will be shown to the user for this session if no'
                   ' presentations are associated with it instead.',
-        blank=True
     )
     slug = AutoSlugField(
         db_index=True,
@@ -210,17 +209,16 @@ class Presentation(TimestampedModel):
         populate_from='title',
         help_text="Used to make a nice url for the page that displays this presentation."
     )
-    primary_speaker = models.ForeignKey(
+    speakers = models.ManyToManyField(
         'Speaker',
         related_name="presentations"
     )
-    additional_speakers = models.ManyToManyField(
-        'Speaker',
-        related_name="additional_presentations",
+    short_description = MarkupField(
         blank=True
     )
-    long_description = MarkupField()
-    short_description = MarkupField()
+    long_description = MarkupField(
+        blank=True
+    )
     session = models.ForeignKey(
         'Session',
         on_delete=models.SET_NULL,
