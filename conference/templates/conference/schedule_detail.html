@@ -18,39 +18,13 @@
             <h2>{{ date|date:"l jS" }}</h2>
             <ul class="schedule__list">
               {% for slot in day_schedule %}
-                <h3>{{ slot.start|date:'H:i' }}</h3>
-                <li class="schedule__list__item schedule-entry">
-                  {% for session in slot.sessions.all %}
-                    <h2 class="schedule-entry__title">{{ session.name }}</h2>
-                    <p class="schedule-entry__room">
-                      {% if session.room %}
-                        &middot; {{ session.room }}
-                      {% endif %}
-                    </p>
-                    {% for presentation in session.presentations.all %}
-                      <h3 class="schedule-entry__title">
-                        <a href="{% url 'presentation' schedule.slug presentation.slug %}">
-                          {{ presentation.title }}
-                        </a>
-                      </h3>
-                      <p class="schedule-entry__speaker">
-                        {% for speaker in presentation.speakers.all %}, {{ speaker.name }}{% endfor %}
-                      </p>
-                      <div class="schedule-entry__description">
-                        {{ presentation.short_description }}
-                      </div>
-                    {% empty %}
-                      <div class="schedule-entry__description">
-                        {{ session.short_description }}
-                      </div>
-                    {% endfor %}
-                  {% endfor %}
-                </li>
+                {% include 'conference/_schedule_item.html' %}
               {% empty %}
                 <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>
               {% endfor %}
             </ul>
           {% endfor %}
+
           {% if footer_block %}
             <div class="schedule__footer">
               {{ footer_block }}
