@@ -51,6 +51,9 @@ class Person(TimestampedModel):
     def __str__(self):
         return self.name
 
+    def __unicode__(self):
+        return unicode(self.name)
+
     def save(self, *args, **kwargs):
         """
         Overridden save to ensure that twitter_username is stripped of any @.
