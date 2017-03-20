@@ -26,26 +26,24 @@
                         &middot; {{ session.room }}
                       {% endif %}
                     </p>
-                    {% if session.presentations %}
-                      {% for presentation in session.presentations.all %}
-                        <h2 class="schedule-entry__title">
-                          <a href="{% url 'presentation' schedule.slug presentation.slug %}">
-                            {{ presentation.title }}
-                          </a>
-                        </h2>
-                        <p class="schedule-entry__speaker">
-                          {{ presentation.primary_speaker }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
-                        </p>
-                        <div class="schedule-entry__description">
-                          {{ presentation.short_description }}
-                        </div>
-                      {% endfor %}
-                    {% else %}
-                      <h2 class="schedule-entry__title">{{ slot.name }}</h2>
+                    {% for presentation in session.presentations.all %}
+                      <h2 class="schedule-entry__title">
+                        <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                          {{ presentation.title }}
+                        </a>
+                      </h2>
+                      <p class="schedule-entry__speaker">
+                        {{ presentation.primary_speaker }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
+                      </p>
                       <div class="schedule-entry__description">
-                        {{ slot.short_description }}
+                        {{ presentation.short_description }}
                       </div>
-                    {% endif %}
+                    {% empty %}
+                      <h2 class="schedule-entry__title">{{ session.name }}</h2>
+                      <div class="schedule-entry__description">
+                        {{ session.short_description }}
+                      </div>
+                    {% endfor %}
                   {% endfor %}
                 </li>
               {% empty %}
