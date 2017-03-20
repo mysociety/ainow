@@ -78,7 +78,16 @@ class ScheduleView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ScheduleView, self).get_context_data(**kwargs)
-        context['slots'] = context['schedule'].slots.order_by('start')
+
+        context['days'] = {}
+
+        slots = context['schedule'].slots.order_by('start')
+
+        for slot in slots:
+            if slot.start.date() not in context['days']:
+                context['days'][slot.start.date()] = []
+            context['days'][slot.start.date()].append(slot)
+
         sidebar_block = Block.objects.get(slug="{}-sidebar".format(context['schedule'].slug))
         context['sidebar_block'] = sidebar_block.content
         try:

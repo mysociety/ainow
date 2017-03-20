@@ -50,7 +50,7 @@ admin.site.register(models.Attendee, AttendeeAdmin)
 
 admin.site.register(
     models.Slot,
-    list_display=("name", "kind", "start", "end", "room"),
+    list_display=("start", "end"),
     ordering=("start",)
 )
 
@@ -59,10 +59,18 @@ admin.site.register(models.Room)
 
 
 admin.site.register(
-    models.Presentation,
-    list_display=("title", "primary_speaker", "slot"),
-    prepopulated_fields = {"slug": ("title",)},
+    models.Session,
+    list_display=("name", "slot"),
+    prepopulated_fields = {"slug": ("name",)},
     ordering=("slot__start",)
+)
+
+
+admin.site.register(
+    models.Presentation,
+    list_display=("title", "primary_speaker", "session"),
+    prepopulated_fields = {"slug": ("title",)},
+    ordering=("session__slot__start",)
 )
 
 admin.site.register(
