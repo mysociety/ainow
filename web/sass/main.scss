@@ -3,6 +3,8 @@
 @import 'bootstrap-settings';
 @import 'bootstrap';
 
+@import 'mixins';
+
 
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
@@ -900,52 +902,80 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
   font-size: 1.25em;
   margin-bottom: 1.5em;
 }
+
 .schedule__list {
-  @extend .list-unstyled;
-  border-top: 2px dotted $gray-light;
+  @include list-unstyled();
+  margin: 2em -1em;
+}
+
+.schedule__slot {
+  padding: 0 1em;
+
+  @media (min-width: $screen-sm-min) {
+    @include flexbox();
+  }
 }
 
 .schedule-entry {
+  padding: 1em;
   border-bottom: 2px dotted $gray-light;
-  padding: 1.5em 1em 1em;
-  &:nth-child(even) {
-    background-color: lighten($gray-lighter, 5%);
+
+  @media (min-width: $screen-sm-min) {
+    @include flex(1 0 0%);
   }
 }
 
-.schedule-entry__time {
-  display: block;
-  background-color: $gray-lighter;
-
-  padding: 0.66667em 0.5em 0.5em;
-  font-size: 1.0625em; //~17px
-  margin: 1.5em 0;
-}
-
-.schedule-entry__speaker,
-.schedule-entry__description {
-  color: $gray;
-  margin: 0 0 0.35em;
+.schedule-entry--other {
+  background-color: $color_off_white;
 }
 
 .schedule-entry__title {
-  font-size: 1.0625em; //~17px
-  margin: 0 0 0.35em;
+  font-size: 1.2em;
+
   a {
     text-decoration: underline;
   }
+
+  // A title after a description, must be the
+  // second or third "presentation" in a session.
+  .schedule-entry__description + & {
+    margin-top: 1em;
+  }
+}
+
+.schedule-entry__title,
+.schedule-entry__speaker,
+.schedule-entry__description {
+  margin: 0 0 0.35em;
+}
+
+.schedule-entry__speaker {
+  @include list-unstyled();
+
+  li {
+    display: inline-block;
+
+    &:after {
+      content: ",";
+      display: inline;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.schedule-entry__description {
+  font-size: 0.8em;
+  color: $gray;
 }
 
 .schedule-entry__description--short {
   font-size: 0.9375em; //~15px
   margin: 0 0 1em;
-}
-
-.schedule-entry__location {
-  font-size: 0.9375em; //~15px
-  color: $gray;
-  margin-top: 0.66667em;
-  margin-bottom: 1em;
 }
 
 /*
