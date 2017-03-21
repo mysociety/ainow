@@ -997,7 +997,7 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
   line-height: 1.3em;
 
   li {
-    display: inline-block;
+    display: inline;
 
     &:after {
       content: ",";
