@@ -27,7 +27,12 @@
         </h2>
         <ul class="schedule-entry__speaker">
           {% for speaker in presentation.speakers.all %}
-            <li>{{ speaker.name }}</li>
+            <li>
+              {{ speaker.name }}
+              {% if speaker.organisation %}
+                <small class="schedule-entry__speaker__organisation">({{ speaker.organisation }})</small>
+              {% endif %}
+            </li>
           {% endfor %}
         </ul>
 

@@ -994,6 +994,7 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 
 .schedule-entry__speaker {
   @include list-unstyled();
+  line-height: 1.3em;
 
   li {
     display: inline-block;
@@ -1003,12 +1004,23 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
       display: inline;
     }
 
+    &:nth-last-child(2) {
+      &:after {
+        content: " & ";
+      }
+    }
+
     &:last-child {
       &:after {
+        content: "";
         display: none;
       }
     }
   }
+}
+
+.schedule-entry__speaker__organisation {
+  opacity: 0.7;
 }
 
 .schedule-entry__description {
