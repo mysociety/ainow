@@ -939,6 +939,10 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 
 .schedule-entry--other {
   background-color: $color_off_white;
+
+  .schedule-entry__description {
+    color: darken($gray, 15%);
+  }
 }
 
 .schedule-entry--keynote {
