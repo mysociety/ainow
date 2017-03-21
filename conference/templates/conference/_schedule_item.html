@@ -11,9 +11,12 @@
 
       {% if session.presentations.count != 1 %}
         <h2 class="schedule-entry__title">{{ session.name }}</h2>
-        <div class="schedule-entry__description">
-          {{ session.short_description }}
-        </div>
+
+        {% if session.short_description %}
+          <div class="schedule-entry__description">
+            {{ session.short_description }}
+          </div>
+        {% endif %}
       {% endif %}
 
       {% for presentation in session.presentations.all %}
@@ -27,9 +30,12 @@
             <li>{{ speaker.name }}</li>
           {% endfor %}
         </ul>
-        <div class="schedule-entry__description">
-          {{ presentation.short_description }}
-        </div>
+
+        {% if presentation.short_description %}
+          <div class="schedule-entry__description">
+            {{ presentation.short_description }}
+          </div>
+        {% endif %}
       {% endfor %}
 
     </div>

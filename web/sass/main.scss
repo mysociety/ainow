@@ -909,7 +909,8 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 }
 
 .schedule__slot {
-  padding: 0 1em;
+  margin: 0 1em;
+  border-top: 2px dotted $gray-light;
 
   @media (min-width: $screen-sm-min) {
     @include flexbox();
@@ -917,16 +918,52 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 }
 
 .schedule-entry {
-  padding: 1em;
-  border-bottom: 2px dotted $gray-light;
+  padding: 1.3em 1em;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  & + & {
+    border-top: 2px dotted $gray-light;
+  }
 
   @media (min-width: $screen-sm-min) {
     @include flex(1 0 0%);
+
+    & + & {
+      border-top: none;
+    }
   }
 }
 
 .schedule-entry--other {
   background-color: $color_off_white;
+}
+
+.schedule-entry--keynote {
+  background-color: $color_violet;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+
+  .schedule-entry__title {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+  }
+
+  .schedule-entry__speaker {
+    font-size: 1.1em;
+  }
+
+  .schedule-entry__description {
+    color: mix($color_violet, #fff, 20%);
+    font-size: 1em;
+    margin-top: 0.8em;
+  }
 }
 
 .schedule-entry__title {
@@ -941,12 +978,18 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
   .schedule-entry__description + & {
     margin-top: 1em;
   }
+
+  // A title after a title, must be the first
+  // "presentation" of many in a session with a title.
+  .schedule-entry__title + & {
+    margin-top: 1em;
+  }
 }
 
 .schedule-entry__title,
 .schedule-entry__speaker,
 .schedule-entry__description {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.35em 0;
 }
 
 .schedule-entry__speaker {
@@ -971,12 +1014,12 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 .schedule-entry__description {
   font-size: 0.8em;
   color: $gray;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
 }
 
-.schedule-entry__description--short {
-  font-size: 0.9375em; //~15px
-  margin: 0 0 1em;
-}
 
 /*
  * Presentation List
