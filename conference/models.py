@@ -200,7 +200,7 @@ class Session(TimestampedModel):
         return self.kind in self.PRESENTATION_KINDS
 
     class Meta:
-        ordering = ['slot__start']
+        ordering = ['slot__start', 'room__name']
 
 
 class Presentation(TimestampedModel):
@@ -249,6 +249,9 @@ class Presentation(TimestampedModel):
 
     def slug_field(self):
         return 'title'
+
+    class Meta:
+        ordering = ['session__slot__start', 'session__room__name']
 
 
 class LiveStream(TimestampedModel):
