@@ -149,9 +149,11 @@ class Slot(TimestampedModel):
 
 # A Session is when something actually happens.
 class Session(TimestampedModel):
+    KEYNOTE = 'KEYNOTE'
     TALK = 'TALK'
     OTHER = 'OTHER'
     KIND_CHOICES = (
+        (KEYNOTE, 'Keynote'),
         (TALK, 'Talk'),
         (OTHER, 'Other'),
     )
