@@ -912,7 +912,7 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
   margin: 0 1em;
   border-top: 2px dotted $gray-light;
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $screen-sm-min), print {
     @include flexbox();
   }
 }
@@ -928,7 +928,7 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
     border-top: 2px dotted $gray-light;
   }
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $screen-sm-min), print {
     @include flex(1 0 0%);
 
     & + & {
@@ -975,6 +975,16 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 
   a {
     text-decoration: underline;
+  }
+
+  @media print {
+    a {
+      text-decoration: none;
+
+      &:after {
+        display: none;
+      }
+    }
   }
 
   // A title after a description, must be the
