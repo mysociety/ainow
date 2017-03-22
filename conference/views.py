@@ -109,7 +109,7 @@ class SpeakerListView(ScheduleMixin, ListView):
 
         return Speaker.objects.filter(
             Q(presentations__session__slot__schedule=self.schedule)
-        ).distinct()
+        ).order_by('name').distinct()
 
 
 class SpeakerView(ScheduleMixin, DetailView):
