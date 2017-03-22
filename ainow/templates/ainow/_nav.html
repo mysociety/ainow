@@ -1,7 +1,6 @@
-<!--<li><a href="{% url 'home' %}">About</a></li>-->
-<li><a href="#about">TICTeC 2017</a></li>
-<li><a href="#call">Call for Papers</a></li>
-<li><a href="#registration">Registration</a></li>
-<li><a href="#venue">Venue</a></li>
-<li><a href="#florence">Florence</a></li>
-<li><a href="#conduct">Code of Conduct</a></li>
+<li><a href="{% url 'home' %}#about">TICTeC 2017</a></li>
+<li><a href="{% url 'home' %}#registration">Registration</a></li>
+<li><a href="{% url 'home' %}#venue">Venue</a></li>
+<li><a href="{% url 'home' %}#florence">Florence</a></li>
+<li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
+<li><a href="{% url 'speakers' schedule.slug %}">List of Speakers</a></li>
