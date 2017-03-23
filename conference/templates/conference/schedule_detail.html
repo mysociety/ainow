@@ -15,7 +15,7 @@
         <div class="standard-layout__primary-column">
 
           {% for date, day_schedule in days.items %}
-            <h2>{{ date|date:"l jS B" }}</h2>
+            <h2>{{ date|date:"l jS F" }}</h2>
             <ul class="schedule__list">
               {% for slot in day_schedule %}
                 {% include 'conference/_schedule_item.html' %}
