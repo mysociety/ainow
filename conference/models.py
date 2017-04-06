@@ -46,7 +46,7 @@ class Person(TimestampedModel):
 
     class Meta:
         abstract = True
-        ordering = ['sort_order','name']
+        ordering = ['name']
 
     def __str__(self):
         return self.name
