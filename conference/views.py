@@ -46,12 +46,12 @@ class ScheduleMixin(object):
             return redirect('%s?next=%s' % (reverse('account_login'), request.path))
         return super(ScheduleMixin, self).dispatch(request, *args, **kwargs)
 
-    def get_queryset(self):
-        """
-        Overridden get_queryset to filter the models down to those
-        that are related to this schedule.
-        """
-        return super(ScheduleMixin, self).get_queryset().filter(schedule=self.schedule)
+    # def get_queryset(self):
+    #     """
+    #     Overridden get_queryset to filter the models down to those
+    #     that are related to this schedule.
+    #     """
+    #     return super(ScheduleMixin, self).get_queryset().filter(schedule=self.schedule)
 
     def get_context_data(self, **kwargs):
         context = super(ScheduleMixin, self).get_context_data(**kwargs)
@@ -78,7 +78,16 @@ class ScheduleView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ScheduleView, self).get_context_data(**kwargs)
-        context['slots'] = context['schedule'].slots.order_by('start')
+
+        context['days'] = {}
+
+        slots = context['schedule'].slots.order_by('start')
+
+        for slot in slots:
+            if slot.start.date() not in context['days']:
+                context['days'][slot.start.date()] = []
+            context['days'][slot.start.date()].append(slot)
+
         sidebar_block = Block.objects.get(slug="{}-sidebar".format(context['schedule'].slug))
         context['sidebar_block'] = sidebar_block.content
         try:
@@ -99,9 +108,8 @@ class SpeakerListView(ScheduleMixin, ListView):
         """
 
         return Speaker.objects.filter(
-            Q(presentations__slot__schedule=self.schedule) |
-            Q(additional_presentations__slot__schedule=self.schedule)
-        ).distinct()
+            Q(presentations__session__slot__schedule=self.schedule)
+        ).order_by('name').distinct()
 
 
 class SpeakerView(ScheduleMixin, DetailView):
@@ -113,10 +121,7 @@ class SpeakerView(ScheduleMixin, DetailView):
         Speakers are linked to a schedule by their presentation(s) slot(s).
         """
         return Speaker.objects.filter(
-            Q(presentations__schedule=self.schedule) |
-            Q(additional_presentations__schedule=self.schedule) |
-            Q(presentations__slot__schedule=self.schedule) |
-            Q(additional_presentations__slot__schedule=self.schedule)
+            Q(presentations__session__slot__schedule=self.schedule)
         ).distinct()
 
 
@@ -137,14 +142,14 @@ class PresentationView(ScheduleMixin, DetailView):
     model = Presentation
     context_object_name = 'presentation'
 
-    def get_queryset(self):
-        """
-        Presentations are linked to a schedule by their slot.
-        """
-        return Presentation.objects.filter(
-            Q(schedule=self.schedule) |
-            Q(slot__schedule=self.schedule)
-        ).distinct()
+    # def get_queryset(self):
+    #     """
+    #     Presentations are linked to a schedule by their slot.
+    #     """
+    #     return Presentation.objects.filter(
+    #         Q(schedule=self.schedule) |
+    #         Q(session__slot__schedule=self.schedule)
+    #     ).distinct()
 
 
 class PresentationListView(ListView):
@@ -153,7 +158,7 @@ class PresentationListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PresentationListView, self).get_context_data(**kwargs)
-        context['schedule'] = Schedule.objects.get(slug='conference')
+        context['schedule'] = Schedule.objects.get(slug='2017')
         # This is very hacky, but we want to show both sets of talks, and
         # they're not easily differentiated at this stage
         workshop_slugs = [

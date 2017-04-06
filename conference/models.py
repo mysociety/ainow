@@ -51,6 +51,9 @@ class Person(TimestampedModel):
     def __str__(self):
         return self.name
 
+    def __unicode__(self):
+        return unicode(self.name)
+
     def save(self, *args, **kwargs):
         """
         Overridden save to ensure that twitter_username is stripped of any @.
@@ -125,10 +128,32 @@ class Room(TimestampedModel):
         return self.name
 
 
+# A Slot exists purely to provide a Session with a time in which it happens
 class Slot(TimestampedModel):
+
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    schedule = models.ForeignKey(
+        'Schedule',
+        null=True,
+        blank=True,
+        related_name='slots'
+    )
+
+    def __str__(self):
+        return "{} - {}".format(self.start.strftime('%a %d/%m/%Y %H:%M'), self.end.strftime('%a %d/%m/%Y %H:%M'))
+
+    class Meta:
+        ordering = ['start']
+
+
+# A Session is when something actually happens.
+class Session(TimestampedModel):
+    KEYNOTE = 'KEYNOTE'
     TALK = 'TALK'
     OTHER = 'OTHER'
     KIND_CHOICES = (
+        (KEYNOTE, 'Keynote'),
         (TALK, 'Talk'),
         (OTHER, 'Other'),
     )
@@ -137,43 +162,47 @@ class Slot(TimestampedModel):
 
     name = models.CharField(
         max_length=1024,
-        help_text='Text that will be shown to the user for this slot if no'
-                  ' presentation is associated with it instead.',
-        blank=True
+        help_text='This will be shown to the user for this session if no'
+                  ' presentations are associated with it instead.',
+    )
+    slug = AutoSlugField(
+        db_index=True,
+        unique=True,
+        editable=True,
+        populate_from='name',
+        help_text="Used to make a nice url for the page that displays this session."
     )
     short_description = MarkupField(
         blank=True,
-        help_text='Extra text to display under this slot\'s name in the '
+        help_text='Extra text to display under this session\'s name in the '
                   ' schedule. Useful if you need a description but don\'t'
                   ' want to associate a whole presentation with it.'
     )
-    start = models.DateTimeField()
-    end = models.DateTimeField()
     kind = models.CharField(max_length=100, choices=KIND_CHOICES)
-    schedule = models.ForeignKey(
-        'Schedule',
+    slot = models.ForeignKey(
+        'Slot',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name='slots'
+        related_name='sessions'
     )
     room = models.ForeignKey(
         'Room',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name='slots'
+        related_name='sessions'
     )
 
     def __str__(self):
-        return "{}: {} slot ({} - {}) in {}".format(self.schedule.name, self.name, self.start, self.end, self.room)
+        return "{}: {} ({} in {})".format(self.slot.schedule.name, self.name, self.slot, self.room)
 
     @property
     def is_presentation_slot(self):
         return self.kind in self.PRESENTATION_KINDS
 
     class Meta:
-        ordering = ['start']
+        ordering = ['slot__start', 'room__name']
 
 
 class Presentation(TimestampedModel):
@@ -185,37 +214,28 @@ class Presentation(TimestampedModel):
         populate_from='title',
         help_text="Used to make a nice url for the page that displays this presentation."
     )
-    primary_speaker = models.ForeignKey(
+    speakers = models.ManyToManyField(
         'Speaker',
         related_name="presentations"
     )
-    additional_speakers = models.ManyToManyField(
-        'Speaker',
-        related_name="additional_presentations",
+    short_description = MarkupField(
         blank=True
     )
-    long_description = MarkupField()
-    short_description = MarkupField()
-    slot = models.OneToOneField(
-        'Slot',
+    long_description = MarkupField(
+        blank=True
+    )
+    session = models.ForeignKey(
+        'Session',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name='presentation'
+        related_name='presentations'
     )
     youtube_link = models.URLField(
         blank=True,
         max_length=1024,
         help_text='The url for the presentation\'s video on YouTube.<br>'
                   'We can extract everything we need to embed it from that.'
-    )
-    schedule = models.ForeignKey(
-        'Schedule',
-        blank=True,
-        null=True,
-        help_text='If this presentation isn\'t associated with a slot in a '
-                  'schedule directly, but needs to be visible in that '
-                  'schedule, e.g. a lightning talk, set the schedule here'
     )
 
     @property
@@ -231,6 +251,9 @@ class Presentation(TimestampedModel):
 
     def slug_field(self):
         return 'title'
+
+    class Meta:
+        ordering = ['session__slot__start', 'session__room__name']
 
 
 class LiveStream(TimestampedModel):

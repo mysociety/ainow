@@ -13,47 +13,18 @@
       <div class="schedule__introduction">{{ schedule.introduction }}</div>
       <div class="row">
         <div class="standard-layout__primary-column">
-          <ul class="schedule__list">
-            {% for slot in slots %}
-              <li class="schedule__list__item schedule-entry">
-                <p class="schedule-entry__room">
-                  {{ slot.start|date:'H:i' }}
-                  {% if slot.room %}
-                    &middot; {{ slot.room }}
-                  {% endif %}
-                </p>
-                {% if slot.is_presentation_slot %}
-                  {% if slot.presentation %}
-                    {% with presentation=slot.presentation %}
-                      <h2 class="schedule-entry__title">
-                        <a href="{% url 'presentation' schedule.slug presentation.slug %}">
-                          {{ presentation.title }}
-                        </a>
-                      </h2>
-                      <p class="schedule-entry__speaker">
-                        {{ presentation.primary_speaker }}{% if presentation.additional_speakers %}{% for speaker in presentation.additional_speakers.all %}, {{ speaker.name }}{% endfor %}{% endif %}
-                      </p>
-                      <div class="schedule-entry__description">
-                        {{ presentation.short_description }}
-                      </div>
-                    {% endwith %}
-                  {% else %}
-                    <h2 class="schedule-entry__title">{{ slot.name }}</h2>
-                    <div class="schedule-entry__description">
-                      {{ slot.short_description }}
-                    </div>
-                  {% endif %}
-                {% else %}
-                  <h2 class="schedule-entry__title">{{ slot.name }}</h2>
-                  <div class="schedule-entry__description">
-                    {{ slot.short_description }}
-                  </div>
-                {% endif %}
-              </li>
-            {% empty %}
-              <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>
-            {% endfor %}
-          </ul>
+
+          {% for date, day_schedule in days.items %}
+            <h2>{{ date|date:"l jS F" }}</h2>
+            <ul class="schedule__list">
+              {% for slot in day_schedule %}
+                {% include 'conference/_schedule_item.html' %}
+              {% empty %}
+                <li>This schedule doesn't have anything in it yet. Add some slots in the admin.</li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+
           {% if footer_block %}
             <div class="schedule__footer">
               {{ footer_block }}

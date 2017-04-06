@@ -48,21 +48,38 @@ class AttendeeAdmin(SortableAdminMixin, AdminImageMixin, admin.ModelAdmin):
 admin.site.register(models.Attendee, AttendeeAdmin)
 
 
+class SessionsInline(admin.TabularInline):
+    model = models.Session
+
+
 admin.site.register(
     models.Slot,
-    list_display=("name", "kind", "start", "end", "room"),
-    ordering=("start",)
+    list_display=("start", "end"),
+    ordering=("start",),
+    inlines=[SessionsInline]
 )
 
 
 admin.site.register(models.Room)
 
 
+class PresentationsInline(admin.TabularInline):
+    model = models.Presentation
+
+admin.site.register(
+    models.Session,
+    list_display=("name", "slot"),
+    prepopulated_fields = {"slug": ("name",)},
+    ordering=("slot__start",),
+    inlines=[PresentationsInline]
+)
+
+
 admin.site.register(
     models.Presentation,
-    list_display=("title", "primary_speaker", "slot"),
+    list_display=("title", "session"),
     prepopulated_fields = {"slug": ("title",)},
-    ordering=("slot__start",)
+    ordering=("session__slot__start",)
 )
 
 admin.site.register(

@@ -43,6 +43,32 @@
             {{ speaker.biography }}
             </p>
           </div>
+
+          <h2>Speaking In</h2>
+
+          {% for presentation in speaker.presentations.all %}
+            <h3 class="schedule-entry__title">
+                <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                  {{ presentation.title }}
+                </a>
+            </h3>
+
+            <p class="schedule-entry__meta">
+              {{ presentation.session.slot.start }}
+              {% if presentation.session.room %}
+                &middot; {{ presentation.session.room }}
+              {% endif %}
+            </p>
+
+            {% if presentation.short_description %}
+              <div class="schedule-entry__description">
+                {{ presentation.short_description }}
+              </div>
+            {% endif %}
+          {% endfor %}
+
+
+
         </div>
       </div>
     </div>

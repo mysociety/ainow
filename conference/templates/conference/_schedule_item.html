@@ -1,0 +1,50 @@
+<li class="schedule__slot">
+  {% for session in slot.sessions.all %}
+    <div class="schedule-entry schedule-entry--{{ session.kind|slugify }}">
+
+        <p class="schedule-entry__meta">
+          {{ slot.start|date:'H:i' }}
+          {% if session.room %}
+            &middot; {{ session.room }}
+          {% endif %}
+        </p>
+
+      {% if session.presentations.count != 1 %}
+        <h2 class="schedule-entry__title">{{ session.name }}</h2>
+
+        {% if session.short_description %}
+          <div class="schedule-entry__description">
+            {{ session.short_description }}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {% for presentation in session.presentations.all %}
+        <h2 class="schedule-entry__title">
+            <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+              {{ presentation.title }}
+            </a>
+        </h2>
+        <ul class="schedule-entry__speaker">
+          {% for speaker in presentation.speakers.all %}
+            {% spaceless %}
+              <li>
+                {{ speaker.name }}
+                {% if speaker.organisation %}
+                  <small class="schedule-entry__speaker__organisation">({{ speaker.organisation }})</small>
+                {% endif %}
+              </li>
+            {% endspaceless %}
+          {% endfor %}
+        </ul>
+
+        {% if presentation.short_description %}
+          <div class="schedule-entry__description">
+            {{ presentation.short_description }}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  {% endfor %}
+</li>

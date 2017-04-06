@@ -13,23 +13,33 @@
       <h1 class="presentation-detail__title">{{ presentation.title }}</h1>
 
       <p class="presentation-detail__speaker">
-        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">
-          {% thumbnail presentation.primary_speaker.photo "35x35" crop="center" as im %}
-            <img src="{{ im.url }}" class="presentation-detail__speaker-thumb">
-          {% empty %}
-            <img  src="/static/img/no-photo.png" height="35" width="35" class="presentation-detail__speaker-thumb">
-          {% endthumbnail %}
-        </a>
-
-        <a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}"><span class="presentation-detail__speaker-name">{{ presentation.primary_speaker.name }}</span></a>
-        {% if presentation.additional_speakers %}
-          {% for speaker in presentation.additional_speakers.all %}
-            , <a href="{% url 'speaker' schedule.slug speaker.slug}"><span class="presentation-detail__speaker-name">{{ speaker.name }}</span></a>
+        {% if presentation.speakers %}
+          {% for speaker in presentation.speakers.all %}
+            <a href="{% url 'speaker' schedule.slug speaker.slug %}">
+              {% thumbnail speaker.photo "35x35" crop="center" as im %}
+                <img src="{{ im.url }}" class="presentation-detail__speaker-thumb">
+              {% empty %}
+                <img  src="/static/img/no-photo.png" height="35" width="35" class="presentation-detail__speaker-thumb">
+              {% endthumbnail %}
+              <span class="presentation-detail__speaker-name">{{ speaker.name }}</span>
+            </a><br>
           {% endfor %}
         {% endif %}
       </p>
 
-      <p class="presentation-detail__description">{{ presentation.long_description }}</p>
+      <p class="presentation-detail__location">
+      {{ presentation.session.slot.start }}<br>
+      {{ presentation.session.room.name }}
+      </p>
+
+      <p class="presentation-detail__description">
+        {% if presentation.long_description %}
+          {{ presentation.long_description }}
+        {% elif presentation.short_description %}
+          {{ presentation.short_description }}
+        {% endif %}
+      </p>
+
 
       {% if presentation.youtube_link %}
         <iframe
