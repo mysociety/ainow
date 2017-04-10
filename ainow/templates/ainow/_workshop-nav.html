@@ -1,4 +1,7 @@
-{% if schedule.slug == '2016' %}
+{% if schedule.slug == '2017' %}
+<li><a href="{% url 'page' schedule.slug 'call-for-papers' %}">Call for Papers</a></li>
+<li><a href="{% url 'page' schedule.slug 'attend' %}">Attend</a></li>
+{% elif schedule.slug == '2016' %}
 <li><a href="{% url 'page' schedule.slug 'call-for-papers' %}">Call for Papers</a></li>
 <li><a href="{% url 'page' schedule.slug 'attend' %}">Attend</a></li>
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
