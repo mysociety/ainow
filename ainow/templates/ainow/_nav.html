@@ -1,5 +1,9 @@
 {% for nav_schedule in schedules %}
+{% if nav_schedule.slug == '2017' %}
+<li {% if schedule.slug == '2017' %}class="active"{% endif %}><a href="{% url 'page' nav_schedule.slug 'call-for-papers-2017' %}">{{ nav_schedule.name }}</a></li>
+{% else %}
 <li {% if nav_schedule.slug == schedule.slug and not is_homepage and not is_resources and not request.get_full_path == '/schedule/2016/page/principles-and-best-practices' %}class="active"{% endif %}><a href="{% url 'schedule' nav_schedule.slug %}">{{ nav_schedule.name }}</a></li>
+{% endif %}
 {% endfor %}
 <li {% if request.resolver_match.url_name == 'organisation' %}class="active"{% endif %}><a href="{% url 'organisation' %}">Organization</a></li>
 <li {% if is_resources or request.get_full_path == '/schedule/2016/page/principles-and-best-practices' %}class="active"{% endif %}><a href="{% url 'category' 'relevant-scholarship' %}">Resources</a></li>
