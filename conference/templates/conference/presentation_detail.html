@@ -42,6 +42,8 @@
 
 
       {% if presentation.youtube_link %}
+
+        <h2>Video</h2>
         <iframe
           width="800"
           height="450"
@@ -49,6 +51,17 @@
           frameborder="0"
           allowfullscreen class="presentation-detail__video">
         </iframe>
+      {% endif %}
+
+      {% if presentation.slideshare_link %}
+
+        <h2>Slides</h2>
+
+        {% if presentation.slideshare_embed_html %}
+          {{ presentation.slideshare_embed_html|safe }}
+        {% else %}
+          <p><a href="{{ presentation.slideshare_link }}">View on SlideShare</a></p>
+        {% endif %}
       {% endif %}
 
     </div>

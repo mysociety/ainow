@@ -7,6 +7,9 @@ from autoslug import AutoSlugField
 
 from ainow.models import TimestampedModel
 
+import urllib
+import json
+
 
 def person_photo_upload_to(instance, filename):
     return "conference_{}_photos/{}".format(instance.__class__.__name__.lower(), filename)
@@ -238,6 +241,18 @@ class Presentation(TimestampedModel):
                   'We can extract everything we need to embed it from that.'
     )
 
+    slideshare_link = models.URLField(
+        blank=True,
+        max_length=1024,
+        help_text='The url for the presentation\'s slides on SlideShare.<br>'
+                  'We can extract everything we need to embed it from that.'
+    )
+
+    slideshare_embed_html = models.TextField(
+        blank=True,
+        editable=False
+    )
+
     @property
     def video_id(self):
         return self.youtube_link.split("?v=")[1]
@@ -254,6 +269,20 @@ class Presentation(TimestampedModel):
 
     class Meta:
         ordering = ['session__slot__start', 'session__room__name']
+
+    def save(self, *args, **kwargs):
+
+        if self.slideshare_link:
+
+            url = 'https://www.slideshare.net/api/oembed/2?url={}&format=json&maxwidth=700'.format(self.slideshare_link)
+            response = urllib.urlopen(url)
+            data = json.loads(response.read())
+            self.slideshare_embed_html = data['html']
+
+        else:
+            self.slideshare_embed_html = ''
+
+        super(Presentation, self).save(*args, **kwargs)
 
 
 class LiveStream(TimestampedModel):
