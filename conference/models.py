@@ -241,6 +241,11 @@ class Presentation(TimestampedModel):
                   'We can extract everything we need to embed it from that.'
     )
 
+    youtube_embed_html = models.TextField(
+        blank=True,
+        editable=False
+    )
+
     slideshare_link = models.URLField(
         blank=True,
         max_length=1024,
@@ -271,6 +276,16 @@ class Presentation(TimestampedModel):
         ordering = ['session__slot__start', 'session__room__name']
 
     def save(self, *args, **kwargs):
+
+        if self.youtube_link:
+
+            url = 'https://www.youtube.com/oembed?url={}&format=json&maxwidth=700'.format(self.youtube_link)
+            response = urllib.urlopen(url)
+            data = json.loads(response.read())
+            self.youtube_embed_html = data['html']
+
+        else:
+            self.youtube_embed_html = ''
 
         if self.slideshare_link:
 
