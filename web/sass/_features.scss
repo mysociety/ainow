@@ -44,13 +44,22 @@
   }
 
   .btn {
-    @extend .btn-primary;
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
   }
 }
 
 .features-block__feature__links {
-  margin: 1em 0 0 0;
+  margin: 1em -5px 0 -5px;
+
+  .btn {
+    margin: 0 5px;
+  }
+
+  .features-block__feature--primary & {
+    .btn:first-child {
+      @extend .btn-primary;
+    }
+  }
 }
 
 // Clever flexbox layout kicks in on small screens

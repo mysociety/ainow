@@ -37,4 +37,13 @@
       margin-bottom: 0;
     }
   }
+
+  // If a link appears in the mission block, we assume
+  // it should be styled as a call-to-action button.
+  a {
+    @extend .btn;
+    @extend .btn-primary;
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
+    margin-top: 1em;
+  }
 }
