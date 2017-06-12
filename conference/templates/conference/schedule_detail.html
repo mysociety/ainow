@@ -9,10 +9,11 @@
 <div class="general-content">
   <div class="container standard-layout standard-layout--flipped">
     <div class="general-content__page schedule">
-      <h1>{{ schedule.name }} Schedule</h1>
+      <h1>{{ schedule.name }}</h1>
       <div class="schedule__introduction">{{ schedule.introduction }}</div>
       <div class="row">
         <div class="standard-layout__primary-column">
+          <h3>Schedule</h3>
           <ul class="schedule__list">
             {% for slot in slots %}
               <li class="schedule__list__item schedule-entry">
