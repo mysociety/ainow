@@ -353,6 +353,7 @@ BLEACH_ALLOWED_TAGS = [
     u'h4',
     u'h5',
     u'h6',
+    u'hr',
 ]
 
 BLEACH_ALLOWED_ATTRIBUTES = {
