@@ -358,7 +358,7 @@ BLEACH_ALLOWED_TAGS = [
 ]
 
 BLEACH_ALLOWED_ATTRIBUTES = {
-    u'a': [u'href', u'title'],
+    u'a': [u'href', u'title', u'class', u'name', u'id'],
     u'acronym': [u'title'],
     u'abbr': [u'title'],
     # We've added these:
