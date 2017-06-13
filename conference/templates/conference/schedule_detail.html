@@ -21,9 +21,13 @@
                   {% if slot.presentation %}
                     {% with presentation=slot.presentation %}
                       <h2 class="schedule-entry__title">
-                        <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                        {% if schedule.slug == '2017-symposium' %}
                           {{ presentation.title }}
-                        </a>
+                        {% else %}
+                          <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                            {{ presentation.title }}
+                          </a>
+                        {% endif %}
                       </h2>
                       <div class="schedule-entry__description">
                         {{ presentation.short_description }}
