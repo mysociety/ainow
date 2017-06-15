@@ -34,9 +34,9 @@
                         {{ presentation.short_description }}
                         <p><strong>Speakers:</strong></p>
                         <ul>
-                          <li><a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">{{ presentation.primary_speaker.name }} {{ presentation.primary_speaker.title }}, {{ presentation.primary_speaker.organisation }}</a></li>
+                          <li><a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">{{ presentation.primary_speaker.name }}</a> {{ presentation.primary_speaker.title }}, {{ presentation.primary_speaker.organisation }}</li>
                           {% for speaker in presentation.additional_speakers.all %}
-                            <li><a href="{% url 'speaker' schedule.slug speaker.slug %}">{{ speaker.name }} {{ speaker.title }}, {{ speaker.organisation }}</a></li>
+                            <li><a href="{% url 'speaker' schedule.slug speaker.slug %}">{{ speaker.name }}</a> {{ speaker.title }}, {{ speaker.organisation }}</li>
                           {% endfor %}
                         </ul>
                       </div>
