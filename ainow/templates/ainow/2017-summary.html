@@ -1,0 +1,68 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block title %}TICTeC 2017{% endblock %}
+
+{% block content %}
+<div class="homepage-hero">
+  <div class="container">
+    <h1>TICTeC 2017</h1>
+    <p class="lead">Florence, Italy</p>
+  </div>
+</div>
+
+<div id="next" class="homepage-section homepage-section--secondary">
+  <div class="container">
+
+    <p class="lead">Join us at the next TICTeC.</p>
+    <p><a href="http://eepurl.com/7J2Rf">Sign up for our newsletter</a> and we’ll alert you when earlybird tickets go on sale.</p>
+
+  </div>
+</div>
+
+<div id="resources" class="homepage-section">
+  <div class="container">
+    <h2>Resources from TICTeC 2017</h2>
+
+    <p>Join the <a href="https://groups.google.com/forum/#!forum/tictecbymysociety">TICTeC Google Group</a> for discussion, networking, and to share your Civic Tech research experiences.</p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FmrxgZA0CFU" frameborder="0" allowfullscreen></iframe>
+
+    <div class="row">
+      <div class="col-md-6">
+
+      <h3><a href="{% url 'schedule' 2017 %}">Schedule</a></h3>
+
+      <p>Full details of sessions and speakers. Click through from session titles or speaker names to see further material where available, including abstracts, videos and slides.</p>
+
+      </div>
+      <div class="col-md-6">
+
+      <h3><a href="{% url 'speakers' 2017 %}">Speakers</a></h3>
+
+      <p>See who attended, view bios, and follow links to each speaker’s session to see slides and videos where available.</p>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+
+      <h3><a href="https://www.youtube.com/playlist?list=PLMbWpADzhTC5CzktRe6JBD1WJAdNCrYU0">Videos</a></h3>
+
+      <p>Visit mySociety’s YouTube channel to see all videos from TICTeC 2017, including the keynote presentations, interviews with delegates, and more.</p>
+
+      </div>
+      <div class="col-md-6">
+
+      <h3><a href="https://www.flickr.com/photos/mysociety/albums/72157682595885691">Photos</a></h3>
+
+      <p>Find images from TICTeC 2017 on Flickr. All are available for reuse under a Creative Commons licence.</p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,5 +1,12 @@
-<li><a href="{% url 'home' %}">TICTeC 2017</a></li>
-<li><a href="{% url 'home' %}#venue">Venue</a></li>
-<li><a href="{% url 'home' %}#florence">Florence</a></li>
+{% if schedule.slug == '2017' %}
+
+<li><a href="{% url 'schedule2017summary' %}">TICTeC 2017</a></li>
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
 <li><a href="{% url 'speakers' schedule.slug %}">List of Speakers</a></li>
+
+{% else %}
+
+<li><a href="{% url 'home' %}">TICTeC</a></li>
+<li><a href="{% url 'schedule2017summary' %}">2017</a></li>
+
+{% endif %}

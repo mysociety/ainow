@@ -89,27 +89,6 @@
         </div>
     </nav>
 
-    {% if schedule.slug == '2017' and request.user.is_authenticated and False %}
-    <nav class="workshop-navbar navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#workshop-header-nav" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <!-- navbar-header -->
-        <div class="collapse navbar-collapse" id="workshop-header-nav">
-          <ul class="nav navbar-nav" role="navigation">
-            {% include 'ainow/_schedule-nav.html' %}
-          </ul>
-        </div>
-      </div>
-    </nav>
-    {% endif %}
-
     {% block content %}
     {% endblock %}
     </div> <!-- site-bg -->
@@ -132,6 +111,7 @@
                         <li role="presentation"><a href="https://groups.google.com/forum/?hl=en#%21forum/tictecbymysociety">TICTeC Google Group</a></li>
                     </ul>
                     <ul>
+                        <li role="presentation"><a href="{% url 'schedule2017summary' %}">2017</a></li>
                         <li role="presentation"><a href="https://www.mysociety.org/research/tictec-2016/">2016</a></li>
                         <li role="presentation"><a href="https://www.mysociety.org/research/tictec2015/">2015</a></li>
                     </ul>

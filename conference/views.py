@@ -1,4 +1,4 @@
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
 from django.shortcuts import get_object_or_404, redirect
@@ -95,6 +95,18 @@ class ScheduleView(DetailView):
             context['footer_block'] = footer_block.content
         except Block.DoesNotExist:
             context['footer_block'] = None
+        return context
+
+
+class Schedule2017SummaryView(TemplateView):
+    template_name = 'ainow/2017-summary.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Schedule2017SummaryView, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug='2017')
+
         return context
 
 
