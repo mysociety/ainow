@@ -29,17 +29,43 @@ from .views import (
     delete_photo
 )
 
+from django.views.generic import RedirectView
+
 urlpatterns = [
-    url(r'^schedule/(?P<slug>[-\w]+)$', ScheduleView.as_view(), name='schedule'),
-    url(r'^schedule/(?P<schedule_slug>[-\w]+)/presentations$', PresentationListView.as_view(), name='presentations'),
-    url(r'^schedule/(?P<schedule_slug>[-\w]+)/presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
-    url(r'^schedule/(?P<schedule_slug>[-\w]+)/speakers$', SpeakerListView.as_view(), name='speakers'),
-    url(r'^schedule/(?P<schedule_slug>[-\w]+)/speaker/(?P<slug>[-\w]+)$', SpeakerView.as_view(), name='speaker'),
+
+    # Redirects from legacy URLs
+
+    url(r'^schedule/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='schedule', permanent=True)),
+
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/presentations$', RedirectView.as_view(pattern_name='presentations', permanent=True)),
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/presentation/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='presentation', permanent=True)),
+
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/speakers$', RedirectView.as_view(pattern_name='speakers', permanent=True)),
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/speaker/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='speaker', permanent=True)),
+
     # This is an Americization of "organisers" within the context of the conference.
-    url(r'^schedule/(?P<schedule_slug>[-\w]+)/organizers$', OrganiserTypeListView.as_view(), name='organisers'),
-    url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendees$', AttendeeListView.as_view(), name='attendees'),
-    url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', AttendeeView.as_view(), name='attendee'),
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/organizers$', RedirectView.as_view(pattern_name='organisers', permanent=True)),
+
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendees$', RedirectView.as_view(pattern_name='attendees', permanent=True)),
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='attendee', permanent=True)),
+
+    # URLs for profile management
+
     url(r"^profile/$", AttendeeCreateUpdateView.as_view(), name="profile"),
     url(r"^profile/delete-photo$", delete_photo, name="profile_delete_photo"),
-    url(r'^organization$', StandingCommitteeListView.as_view(), name='organisation'),
+
+    # New-style 'schedule-free' URLs
+
+    url(r'^(?P<slug>[-\w]+)/schedule$', ScheduleView.as_view(), name='schedule'),
+
+    url(r'^(?P<schedule_slug>[-\w]+)/presentations$', PresentationListView.as_view(), name='presentations'),
+    url(r'^(?P<schedule_slug>[-\w]+)/presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
+
+    url(r'^(?P<schedule_slug>[-\w]+)/speakers$', SpeakerListView.as_view(), name='speakers'),
+    url(r'^(?P<schedule_slug>[-\w]+)/speaker/(?P<slug>[-\w]+)$', SpeakerView.as_view(), name='speaker'),
+
+    url(r'^(?P<schedule_slug>[-\w]+)/organisers$', OrganiserTypeListView.as_view(), name='organisers'),
+
+    url(r'^(?P<schedule_slug>[-\w]+)/attendees$', AttendeeListView.as_view(), name='attendees'),
+    url(r'^(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', AttendeeView.as_view(), name='attendee'),
 ]

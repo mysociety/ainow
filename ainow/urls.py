@@ -34,8 +34,6 @@ urlpatterns = [
 
     url(r"^schedule/(?P<schedule_slug>[-\w]+)/faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
     url(r"^schedule/(?P<schedule_slug>[-\w]+)/page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
-    url(r'^admin/', admin.site.urls),
-    url(r'^markitup/', include('markitup.urls')),
 
     url(r'^', include('conference.urls')),
     url(r'^', include('resources.urls')),
@@ -48,4 +46,8 @@ urlpatterns = [
     # people in immediately after they confirm.
     url(r"^account/confirm_email/(?P<key>\w+)/$", ConfirmEmailView.as_view(), name="account_confirm_email"),
     url(r"^account/", include("account.urls")),
+
+    url(r'^admin/', admin.site.urls),
+    url(r'^markitup/', include('markitup.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
