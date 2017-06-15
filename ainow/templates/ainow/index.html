@@ -6,49 +6,78 @@
 {% block content %}
 <div class="homepage-hero">
   <div class="container">
-    <h1>The Impacts of Civic Technology Conference 2017</h1>
-    <p class="lead">Come and join us in Florence. 25 and 26 April 2017.</p>
-    <p><a href="https://www.eventbrite.co.uk/e/the-impacts-of-civic-technology-conference-2017-tictec2017-tickets-28255338478" target="_blank" class="btn btn-primary btn-lg">Register now</a></p>
+    <h1>TICTeC</h1>
+    <p class="lead">The Impacts of Civic Technology Conference<br>
+    From mySociety</p>
   </div>
 </div>
 
-<div id="about" class="homepage-section">
+<div id="blurb" class="homepage-section homepage-section--secondary">
   <div class="container">
-    {{ intro_block }}
+    TICTeC is an annual milestone in the Civic Tech world, bringing together researchers, practitioners, and anyone with an interest in how technology is changing the way we engage with society.
   </div>
 </div>
 
-<div id="testimonials" class="homepage-section homepage-section--secondary">
+<div id="video" class="homepage-section">
   <div class="container">
-    {{ testimonials_block }}
+    <div class="row">
+    <div class="col-sm-7">
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dSW5zb8le00" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="col-sm-5">
+    <p><em>“TICTeC is a crucial milestone in the development of civic tech and open government, because it takes stock of what we know, what works, and how.”</em><br>– Stefaan Verhulst, The GovLab @ New York University</p>
+    </div>
+
+    </div>
   </div>
 </div>
 
-<a href="http://www.firenzefiera.it/en/our-venues/palazzo-dei-congressi/" style="display: block;">
-<img src="/static/img/villa-vittoria-florence.jpg" style="width: 100%; height: auto;">
-</a>
-
-<div id="venue" class="homepage-section">
+<div id="future" class="homepage-section">
   <div class="container">
-    {{ venue_block }}
+
+    <h2>TICTeC in the Future</h2>
+
+    <h3>September 2017</h3>
+
+    <p>Join us this September for a special extra edition of TICTeC in Taipei, as part of the World Congress on Information Technology: <a href="http://civictechfest.org/">civictechfest.org</a>.</p>
+
+    <h3>April 2018</h3>
+
+    <p>Join us in April next year: <a href="http://eepurl.com/7J2Rf">subscribe to our newsletter</a> and we’ll let you know as soon as we’re open for booking.</p>
   </div>
 </div>
 
-<div id="florence" class="homepage-section">
+<div id="past" class="homepage-section">
   <div class="container">
-    {{ florence_block }}
-  </div>
-</div>
 
-<div id="inspired" class="homepage-section">
-  <div class="container">
-    {{ inspired_block }}
-  </div>
-</div>
+    <h2>TICTeC in the Past</h2>
 
-<div id="conduct" class="homepage-section">
-  <div class="container">
-    {{ conduct_block }}
+    <h3><a href="{% url 'schedule2017summary' %}">TICTeC 2017</a></h3>
+
+    <p>Everything from TICTeC 2017, which took place in Florence, Italy.</p>
+
+    <div class="row">
+
+      <div class="col-sm-6">
+
+        <h3><a href="https://www.mysociety.org/research/tictec-2016/">TICTeC 2016</a></h3>
+
+        <p>Access slides, transcripts, videos and more from our Barcelona conference of April 2016.</p>
+
+      </div>
+
+      <div class="col-sm-6">
+
+        <h3><a href="https://www.mysociety.org/research/tictec2015/">TICTeC 2015</a></h3>
+
+        <p>The first TICTeC was a one-day conference in London, UK. See the talks and materials here.</p>
+
+      </div>
+
+    </div>
+
   </div>
 </div>
 
