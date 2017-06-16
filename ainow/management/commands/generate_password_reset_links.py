@@ -17,7 +17,7 @@ class Command(BaseCommand):
     help = "Generate password reset links for every active Attendee as a CSV."
 
     def add_arguments(self, parser):
-        parser.add_argument('--pks', nargs='+', required=False, type=int)
+        parser.add_argument('schedule_id', default=2, type=int)
 
     def handle(self, *args, **options):
         protocol = getattr(settings, "DEFAULT_HTTP_PROTOCOL", "http")
@@ -25,8 +25,8 @@ class Command(BaseCommand):
 
         self.stdout.write("ID Number,Email,Reset Link")
 
-        if options['pks']:
-            attendees = Attendee.objects.filter(id__in=options['pks'])
+        if options['schedule_id']:
+            attendees = Attendee.objects.filter(schedule_id=options['schedule_id'])
         else:
             attendees = Attendee.objects.all()
         for attendee in attendees.order_by('external_id'):
