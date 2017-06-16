@@ -43,6 +43,11 @@ class Person(TimestampedModel):
         blank=True,
         help_text="Order in which the person will appear in a list."
     )
+    three_words = models.CharField(
+        max_length=1024,
+        blank=True,
+        help_text="Three words to describe your work"
+    )
 
     class Meta:
         abstract = True
