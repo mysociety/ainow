@@ -15,6 +15,25 @@
       <div class="row">
         <div class="standard-layout__primary-column">
           <h3>Program</h3>
+
+          {% if schedule.slug == '2017-experts-workshop' %}
+            <h3>July 9, 2017</h3>
+            <ul class="schedule__list">
+              <li class="schedule__list__item schedule-entry">
+                <h2 class="schedule-entry__title">Welcome Reception</h2>
+                <div class="schedule-entry__description">
+                    <p><strong>6:00pm-8:00pm // Optional<br />
+                  Microsoft Research New England // Details Forthcoming</strong></p>
+                </div>
+              </li>
+            </ul>
+          <h3>July 10, 2017</h3>
+
+          <p><strong>9:00am-4:00pm<br />
+          MIT Media Lab // 6th Floor</strong></p>
+
+          <p>Please arrive between 9:00am-9:45am for breakfast and registration. The program will begin promptly at 10:00am.</p>
+          {% endif %}
           <ul class="schedule__list">
             {% for slot in slots %}
               <li class="schedule__list__item schedule-entry">
