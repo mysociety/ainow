@@ -39,9 +39,13 @@
             </p>
           {% endif %}
           <div class="attendee-detail__bio">
-            <p>
-            {{ speaker.biography }}
-            </p>
+            {% if speaker.biography %}
+              <p>
+              {{ speaker.biography }}
+              </p>
+            {% else %}
+              <p>Full profile coming soon...</p>
+            {% endif %}
           </div>
         </div>
       </div>
