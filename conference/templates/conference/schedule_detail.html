@@ -51,7 +51,7 @@
                         <ul>
                           <li><a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">{{ presentation.primary_speaker.name }}</a> {{ presentation.primary_speaker.title }}, {{ presentation.primary_speaker.organisation }}</li>
                           {% for speaker in presentation.additional_speakers.all %}
-                            <li><a href="{% url 'speaker' schedule.slug speaker.slug %}">{{ speaker.name }}</a> {{ speaker.title }}, {{ speaker.organisation }}</li>
+                            <li><a href="{% url 'speaker' schedule.slug speaker.slug %}">{{ speaker.name }}</a> {{ speaker.title }}{% if speaker.organisation %}, {{ speaker.organisation }}{% endif %}</li>
                           {% endfor %}
                         </ul>
                       </div>
