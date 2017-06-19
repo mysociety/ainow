@@ -382,7 +382,7 @@ ACCOUNT_LOGIN_REDIRECT_URL = 'profile'
 # Set so that it runs right up to the conference date, because we're sending
 # reset links to people as a kind of invite link, and they might be slack
 # at opening their emails.
-PASSWORD_RESET_TIMEOUT_DAYS = 15
+PASSWORD_RESET_TIMEOUT_DAYS = 24
 
 
 # mySociety-specific settings
