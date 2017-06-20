@@ -248,7 +248,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     def get_context_data(self, **kwargs):
         context = super(AttendeeCreateUpdateView, self).get_context_data(**kwargs)
         context['schedule'] = self.schedule
-        back_url = reverse('home')
+        back_url = '/'
         user_supplied_back_url = self.request.GET.get('back')
         if user_supplied_back_url and is_safe_url(user_supplied_back_url):
             back_url = user_supplied_back_url
