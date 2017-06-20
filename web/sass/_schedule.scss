@@ -84,6 +84,10 @@
   background: $color_dark_gray url('../img/ainow-schedule-header.jpg') no-repeat 50% 50%;
   background-size: cover;
 
+  &.header-2017-experts-workshop {
+    background: $color_dark_gray url('../img/ainow-experts-workshop-header.jpg') no-repeat center 50%;
+  }
+
   @media (min-width: $screen-sm-min) {
     height: 200px;
   }
