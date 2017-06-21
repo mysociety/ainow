@@ -107,6 +107,21 @@ class SpeakerView(ScheduleMixin, DetailView):
     model = Speaker
     context_object_name = 'speaker'
 
+    def get_context_data(self, **kwargs):
+        context = super(SpeakerView, self).get_context_data(**kwargs)
+        if context['speaker'].attendee:
+            attendee = context['speaker'].attendee
+            context['speaker'].name = attendee.name
+            context['speaker'].title = attendee.title
+            context['speaker'].organisation = attendee.organisation
+            context['speaker'].photo = attendee.photo
+            context['speaker'].twitter_username = attendee.twitter_username
+            context['biography'] = attendee.biography
+        else:
+            context['biography'] = context['speaker'].biography
+
+        return context
+
     def get_queryset(self):
         """
         Speakers are linked to a schedule by their presentation(s) slot(s).
