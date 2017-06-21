@@ -68,6 +68,10 @@ class Speaker(Person):
     # We provide a bit more info about speakers
     biography = MarkupField(blank=True)
     website = models.URLField(max_length=1024, blank=True)
+    attendee = models.ForeignKey(
+        'Attendee',
+        null=True
+    )
 
 
 class OrganiserType(TimestampedModel):
