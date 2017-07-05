@@ -229,7 +229,7 @@ PIPELINE = {
     ),
     # Use the libsass commandline tool (that's bundled with libsass) as our
     # sass compiler, so there's no need to install anything else.
-    'SASS_BINARY': os.path.join(os.environ['VIRTUAL_ENV'], 'bin', 'sassc')
+    'SASS_BINARY': os.path.join(PARENT_DIR, 'virtualenv-ainow', 'bin', 'sassc')
 }
 
 
