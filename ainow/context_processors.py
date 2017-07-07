@@ -21,7 +21,7 @@ def add_settings(request):
 def add_schedule(request):
     """Force the schedule variable to a set value for certain requests"""
     # We can't modify the account views to set this directly, so we set it here instead
-    if request.resolver_match.url_name.startswith("account"):
+    if request.resolver_match and request.resolver_match.url_name.startswith("account"):
         return {'schedule': Schedule.objects.get(slug='workshop')}
     else:
         return {}
