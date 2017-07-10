@@ -46,6 +46,10 @@
   .btn {
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
   }
+
+  .responsive-object {
+      padding-bottom: 0 !important;
+  }
 }
 
 .features-block__feature__links {
