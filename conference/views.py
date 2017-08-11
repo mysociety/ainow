@@ -188,7 +188,6 @@ class PresentationListView(ListView):
             'we-classified'
         ]
         symposium_slugs = [
-            'welcome-ai-now',
             'introductions-ed-felten',
             'conversation-white-house-past-and-present',
             'three-questions-three-tech-leaders',
