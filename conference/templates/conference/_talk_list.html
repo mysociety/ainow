@@ -1,0 +1,9 @@
+<ul class="talk-list">
+  {% for talk in presentations %}
+  {% if talk.youtube_link %}
+    <li class="talk-list__talk list-of-talks__item--full-width">
+        {% include 'conference/_talk_thumbnail.html' with talk=talk %}
+    </li>
+  {% endif %}
+  {% endfor %}
+</ul>
