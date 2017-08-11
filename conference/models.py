@@ -235,6 +235,12 @@ class Presentation(TimestampedModel):
     def video_thumbnail_url(self):
         return "https://img.youtube.com/vi/{0}/0.jpg".format(self.video_id)
 
+    @property
+    def linked_schedule(self):
+        if self.schedule: return self.schedule
+        if self.slot: return self.slot.schedule
+        return None
+
     def __str__(self):
         return self.title
 
