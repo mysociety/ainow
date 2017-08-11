@@ -60,11 +60,22 @@ class AboutPage(Page):
             ('text', cms.blocks.TextBlock()),
             ('divider', cms.blocks.DividerBlock()),
             ('video', cms.blocks.YouTubeBlock()),
+            ('columns', blocks.ListBlock(
+                cms.blocks.ColumnBlock(),
+                template='cms/blocks/columns.html',
+                icon='list-ul'
+            )),
             ('links', blocks.ListBlock(
                 cms.blocks.FeaturedLinkBlock(),
                 template='cms/blocks/featured_links.html',
                 icon='link',
             )),
+            ('people', blocks.ListBlock(
+                cms.blocks.PersonBlock(),
+                template='cms/blocks/people.html',
+                icon='group',
+            )),
+            ('mailinglist', cms.blocks.MailChimpBlock()),
         ]
     )
 
@@ -73,6 +84,11 @@ class AboutPage(Page):
     ]
 
     template = "cms/landing_page.html"
+
+    def get_context(self, request):
+        context = super(AboutPage, self).get_context(request)
+        context['hide_title'] = True
+        return context
 
 class PeoplePage(Page):
     parent_page_types = []
