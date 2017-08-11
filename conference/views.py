@@ -2,6 +2,7 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
 from django.shortcuts import get_object_or_404, redirect
+from django.http import HttpResponseRedirect
 from django.utils.http import is_safe_url
 from django.core.urlresolvers import reverse
 from django import forms
@@ -161,45 +162,32 @@ class PresentationView(ScheduleMixin, DetailView):
         ).distinct()
 
 
-class PresentationListView(ListView):
+class PresentationListView(ScheduleMixin, ListView):
     model = Presentation
     context_object_name = 'presentations'
 
+    def get(self, *args, **kwargs):
+        if self.schedule.slug == 'workshop':
+            return HttpResponseRedirect(reverse('presentations', args=['conference']))
+        elif self.schedule.slug == '2017-experts-workshop':
+            return HttpResponseRedirect(reverse('presentations', args=['2017-symposium']))
+        return super(PresentationListView, self).get(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super(PresentationListView, self).get_context_data(**kwargs)
-        context['schedule'] = Schedule.objects.get(slug='conference')
-        # This is very hacky, but we want to show both sets of talks, and
-        # they're not easily differentiated at this stage
-        workshop_slugs = [
-            'ai-now-overview-and-introduction',
-            'time-different-opportunities-and-challenges-artifi',
-            'great-decoupling',
-            'uncovering-machine-bias',
-            'labor-makes-ai-magic',
-            'time-different-race-labor-and-ai',
-            'symbiotic-human-robot-interaction',
-            'bending-gig-economy-toward-equity',
-            'who-gets-think-about-ai',
-            'machining-ethics',
-            'elevating-human-condition-through-new-partnership',
-            'machine-learning-and-healthcare-risks-and-rewards',
-            'sites-deliberation',
-            'complementary-vs-substitutive-automation-healthcar',
-            'we-classified'
-        ]
-        symposium_slugs = [
-            'introductions-ed-felten',
-            'conversation-white-house-past-and-present',
-            'three-questions-three-tech-leaders',
-            'plenary-panel-inequality-labor-health-and-ethics-a'
-        ]
-        context['workshop_presentations'] = []
-        for slug in workshop_slugs:
-            context['workshop_presentations'].append(Presentation.objects.get(slug=slug))
 
-        context['symposium_presentations'] = []
-        for slug in symposium_slugs:
-            context['symposium_presentations'].append(Presentation.objects.get(slug=slug))
+        context['symposium_presentations'] = Presentation.objects.filter(
+            Q(schedule=self.schedule) |
+            Q(slot__schedule=self.schedule, schedule__isnull=True)
+        )
+
+        workshop = ''
+        if self.schedule.slug == 'conference':
+            workshop = 'workshop'
+        elif self.schedule.slug == '2017-symposium':
+            workshop = '2017-experts-workshop'
+        if workshop:
+            context['workshop_presentations'] = Presentation.objects.filter(schedule__slug=workshop)
 
         return context
 

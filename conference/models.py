@@ -226,6 +226,14 @@ class Presentation(TimestampedModel):
                   'schedule directly, but needs to be visible in that '
                   'schedule, e.g. a lightning talk, set the schedule here'
     )
+    sort_order = models.IntegerField(
+        default=0,
+        blank=True,
+        help_text="Order in which the presentation will appear in a list."
+    )
+
+    class Meta:
+        ordering = ['sort_order', 'id']
 
     @property
     def video_id(self):
