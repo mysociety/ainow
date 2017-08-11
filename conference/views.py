@@ -76,9 +76,21 @@ class ScheduleView(DetailView):
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
 
+    def get_summary_pres_attendees(self, workshop, context):
+        context['presentations_workshop'] = Presentation.objects.filter(schedule__slug=workshop).order_by('?')[:4]
+        context['presentations_symposium'] = Presentation.objects.filter(slot__schedule=self.object).order_by('?')[:4]
+        context['attendees'] = Attendee.objects.filter(schedule__slug=workshop).order_by('?')[:4]
+        context['workshop'] = workshop
+
     def get_context_data(self, **kwargs):
         context = super(ScheduleView, self).get_context_data(**kwargs)
         context['slots'] = context['schedule'].slots.order_by('start')
+
+        if self.object.slug == 'conference':
+            self.get_summary_pres_attendees('workshop', context)
+        elif self.object.slug == '2017-symposium':
+            self.get_summary_pres_attendees('2017-experts-workshop', context)
+
         sidebar_block = Block.objects.get(slug="{}-sidebar".format(context['schedule'].slug))
         context['sidebar_block'] = sidebar_block.content
         try:

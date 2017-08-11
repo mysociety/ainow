@@ -12,6 +12,26 @@
     <div class="general-content__page schedule">
       <h1>{{ schedule.name }}</h1>
       <div class="schedule__introduction">{{ schedule.introduction }}</div>
+     {% if presentations_workshop or presentations_symposium %}
+      <h3>Talks</h3>
+       {% if presentations_workshop %}
+        <h4>Experts Workshop</h4>
+        {% include "conference/_talk_list.html" with presentations=presentations_workshop %}
+        <a href="/schedule/{{ schedule.slug }}/presentations#workshop">View all</a>
+       {% endif %}
+       {% if presentations_symposium %}
+        <h4>Public Symposium</h4>
+        {% include "conference/_talk_list.html" with presentations=presentations_symposium %}
+        <a href="/schedule/{{ schedule.slug }}/presentations#symposium">View all</a>
+       {% endif %}
+     {% endif %}
+
+     {% if attendees %}
+      <h3>Attendees and Speakers</h3>
+        {% include "conference/_attendee_list.html" %}
+        <a href="/schedule/{{ workshop }}/attendees">All attendees and speakers</a>
+     {% endif %}
+
       <div class="row">
         <div class="standard-layout__primary-column">
           <h3>Program</h3>
