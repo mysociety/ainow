@@ -87,13 +87,57 @@
 }
 
 .ainow-schedule-header-photo {
+  position: relative;
   width: 100%;
   height: 150px;
   background: $color_dark_gray url('../img/ainow-schedule-header.jpg') no-repeat 50% 50%;
   background-size: cover;
 
+  &:after {
+    content: "Photograph by Kate Reeder";
+    display: block;
+    position: absolute;
+    bottom: 1em;
+    padding-left:  ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+    right: 50%;
+    text-align: right;
+
+    text-shadow: 0 0 5px #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+      margin-right: $container-sm * -0.5;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+      margin-right: $container-md * -0.5;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: $container-lg;
+      margin-right: $container-lg * -0.5;
+    }
+  }
+
   &.header-2017-experts-workshop {
     background: $color_dark_gray url('../img/ainow-experts-workshop-header.jpg') no-repeat center 50%;
+
+    &:after {
+      content: none;
+    }
+  }
+
+  &.header-2017-symposium {
+    background: $color_dark_gray url('../img/ainow-2017-symposium-header.jpg') no-repeat center 50%;
+
+    &:after {
+      content: "Photograph by Mim Adkins";
+    }
   }
 
   @media (min-width: $screen-sm-min) {
@@ -103,4 +147,6 @@
   @media (min-width: $screen-md-min) {
     height: 250px;
   }
+
+
 }
