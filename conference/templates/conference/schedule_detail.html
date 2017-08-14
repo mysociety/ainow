@@ -17,19 +17,19 @@
        {% if presentations_workshop %}
         <h4>Experts Workshop</h4>
         {% include "conference/_talk_list.html" with presentations=presentations_workshop %}
-        <a href="/schedule/{{ schedule.slug }}/presentations#workshop">View all</a>
+        <a href="/schedule/{{ schedule.slug }}/presentations#workshop" class="schedule__more-link">View all</a>
        {% endif %}
        {% if presentations_symposium %}
         <h4>Public Symposium</h4>
         {% include "conference/_talk_list.html" with presentations=presentations_symposium %}
-        <a href="/schedule/{{ schedule.slug }}/presentations#symposium">View all</a>
+        <a href="/schedule/{{ schedule.slug }}/presentations#symposium" class="schedule__more-link">View all</a>
        {% endif %}
      {% endif %}
 
      {% if attendees %}
       <h3>Attendees and Speakers</h3>
         {% include "conference/_attendee_list.html" %}
-        <a href="/schedule/{{ workshop }}/attendees">All attendees and speakers</a>
+        <a href="/schedule/{{ workshop }}/attendees" class="schedule__more-link">All attendees and speakers</a>
      {% endif %}
 
       <div class="row">

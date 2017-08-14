@@ -173,6 +173,12 @@
   background-color: $gray-lighter;
   margin-bottom: 2em;
   width: 100%;
+
+  // No need for margin-bottom here, because
+  // .talk-list__talk has its own margin-bottom.
+  .talk-list__talk & {
+    margin-bottom: 0;
+  }
 }
 
 .talk-teaser__details {
