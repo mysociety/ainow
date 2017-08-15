@@ -4,10 +4,8 @@ body {
 }
 
 .site-bg {
-  // gives the site its white background and means the footer's color extends to
-  // the end of the window
+  // gives the site its white background
   background-color: $color_white;
-  padding-bottom: 4em;
 }
 
 .site-footer {
