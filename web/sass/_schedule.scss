@@ -2,6 +2,13 @@
   font-size: 1.25em;
   margin-bottom: 1.5em;
 }
+
+.schedule__more-link {
+  @extend .btn;
+  @extend .btn-primary;
+  margin-bottom: 2em;
+}
+
 .schedule__list {
   @extend .list-unstyled;
   border-top: 2px dotted $gray-light;
@@ -62,6 +69,7 @@
   align-content: stretch;
   justify-content: flex-start;
   margin-top: 2em;
+  margin-bottom: 0;
 }
 
 .talk-list__talk {
