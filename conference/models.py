@@ -176,7 +176,8 @@ class Slot(TimestampedModel):
     )
 
     def __str__(self):
-        return "{}: {} slot ({} - {}) in {}".format(self.schedule.name, self.name, self.start, self.end, self.room)
+        schedule_name = self.schedule.name if self.schedule else ""
+        return "{}: {} slot ({} - {}) in {}".format(schedule_name, self.name, self.start, self.end, self.room)
 
     @property
     def is_presentation_slot(self):
