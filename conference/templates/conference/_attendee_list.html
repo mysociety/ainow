@@ -5,7 +5,7 @@
   {% for attendee in attendees %}
     <li class="attendee-list__attendee">
       <div class="attendee__secondary-column">
-        <a href="{% url 'attendee' schedule.slug attendee.slug %}">
+        <a href="{% url 'attendee' attendee.schedule.slug attendee.slug %}">
           {% thumbnail attendee.photo "100x100" crop="center" as im %}
             <img class="attendee__thumbnail" src="{{ im.url }}">
           {% empty %}
@@ -15,7 +15,7 @@
       </div>
         <div class="attendee__primary-column">
         <h2 class="attendee__name">
-          <a href="{% url 'attendee' schedule.slug attendee.slug %}">
+          <a href="{% url 'attendee' attendee.schedule.slug attendee.slug %}">
             {{ attendee.name }}
           </a>
         </h2>
