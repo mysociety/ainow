@@ -373,7 +373,6 @@ ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
 CONTACT_EMAIL = config.get('CONTACT_EMAIL', '')
 DEFAULT_FROM_EMAIL = CONTACT_EMAIL
 ACCOUNT_USER_DISPLAY = lambda user: user.email
-ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'profile'
 # Django user accounts' setting for this seems to override the default Django
