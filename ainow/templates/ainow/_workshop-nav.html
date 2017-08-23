@@ -2,8 +2,10 @@
 
 <!--<li><a href="{# url 'themes' schedule.slug #}">Sessions info</a></li>-->
 
-<li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
+<li><a href="{% url 'schedule' schedule.slug %}">Program</a></li>
 
-<li><a href="{% url 'workshop_venue' %}">Resources</a></li>
+<li><a href="{% url 'schedule' schedule.slug %}/page/prep-guide-experts-workshop">Prep Guide</a></li>
+
+<li><a href="{% url 'schedule' schedule.slug %}/page/draft-report">Draft Report</a></li>
 
 <!--<li><a href="{% url 'faq' schedule.slug schedule.slug %}">FAQ</a></li>-->

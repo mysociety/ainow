@@ -57,7 +57,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="{% url 'home' %}">
+          <a class="navbar-brand" href="/">
             <img src="{% static 'img/ainow-header-logo.png' %}"
                srcset="{% static 'img/ainow-header-logo.svg' %} 1x"
                alt="Artificial Intelligence Now"
@@ -90,7 +90,7 @@
         </div>
     </nav>
 
-    {% if schedule.slug == 'workshop' and request.user.is_authenticated %}
+    {% if schedule.slug == '2017-experts-workshop' and request.user.is_authenticated %}
     <nav class="workshop-navbar navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -100,7 +100,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand"  href="{% url 'workshop_home' %}">Workshop</a>
+          <a class="navbar-brand"  href="/schedule/2017-experts-workshop">Workshop</a>
         </div>
         <!-- navbar-header -->
         <div class="collapse navbar-collapse" id="workshop-header-nav">
@@ -113,7 +113,7 @@
     {% endif %}
 
     {% block messages %}
-    {% if schedule.slug == 'workshop' %}
+    {% if schedule.slug == '2017-experts-workshop' %}
     <header class="sub-header">
       {% if messages %}
         <div class="container">
@@ -131,25 +131,19 @@
       <div class="container">
         <div class="row">
 
-          <div class="site-footer__utility-links">
-            <ul class="utility-links__list">
-              <li><a href="{% url 'page' schedule.slug 'privacy' %}">Privacy</a></li>
-              <li><a href="{% url 'page' schedule.slug 'production-credits' %}">Production Team and Credits</a></li>
-              {% if schedule.slug == 'workshop' %}
-              <li>For information and questions: <a href="mailto:team@artificialintelligencenow.com">team@artificialintelligencenow.com</a></li>
-              {% else %}
-              <li>For information and questions: <a href="mailto:info@artificialintelligencenow.com">info@artificialintelligencenow.com</a></li>
-              {% endif %}
-            </ul>
+          <div class="col-sm-6">
+            <p>
+              <a href="/privacy">Privacy</a>
+            </p>
           </div>
 
-          <div class="site-footer__partner-logos">
+          <div class="col-sm-6 site-footer__partner-logos">
             {% if schedule.slug == 'conference' %}
             <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--a">
               <a href="https://www.whitehouse.gov/administration/eop/ostp"><img src="{% static 'img/potus.png' %}" alt="Executive Office of the President of the United States, Office of Science and Technology Policy" class="partner-logo"/></a>
             </div>
             <div class="site-footer__partner-logos__logoset site-footer__partner-logos__logoset--b">
-              <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili.png' %}" alt="New York University, Information Law Institute" class="partner-logo"/></a>
+              <a href="http://www.law.nyu.edu/centers/ili"><img src="{% static 'img/nyu-ili-reversed.png' %}" alt="New York University, Information Law Institute" class="partner-logo"/></a>
             </div>
             {% endif %}
           </div>
@@ -158,5 +152,8 @@
     </footer>
 
     {% javascript 'app' %}
+
+    <script async src="https://widget.picatic.com/latest/js/embed.min.js" id="picatic-widget-script"></script>
+
   </body>
 </html>

@@ -1,0 +1,106 @@
+.standard-layout {
+  // Large primary column with a smaller secondary column
+  // Column order is secondary|primary
+}
+
+.standard-layout__primary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 9, $gutter: 54px);
+}
+
+.standard-layout__secondary-column {
+  @include make-xs-column($columns: 12);
+  @include make-md-column($columns: 3);
+}
+
+.standard-layout--flipped {
+  // When the column order is reversed to primary|secondary
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 9);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 3, $gutter: 54px);
+  }
+}
+
+.standard-layout--narrow {
+  .standard-layout__primary-column {
+    @include make-md-column($columns: 10);
+  }
+  .standard-layout__secondary-column {
+    @include make-md-column($columns: 2);
+  }
+}
+
+.content-grid {
+  //a way to split long lists of content into a grid structure that works nicely with all screen sizes
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  @media (min-width: $screen-lg-min) {
+    justify-content: space-between;
+  }
+}
+
+.content-grid__item {
+  width: 100%;
+  @media (min-width: $screen-sm-min) {
+    width: 18em;
+    margin-right: 2em;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 14em;
+    margin-right: 2em;
+  }
+}
+
+
+
+.photo-bg {
+  .site-bg {
+    background-image: url('../img/hero-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.content-block {
+  margin-bottom: 3em;
+}
+
+// Most of the Wagtail pages are constructed out of multiple StreamField blocks
+// laid out on top of one another. These blocks look best when the margins on
+// their child elements (eg: headings) are left to extend outside the block,
+// effectively making the blocks totally transparent.
+// Because we want child margins to extend outside the block's bounds, we can't
+// use Bootstrap's clearfixed `.container`, so we make our own:
+.streamfield-block {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  floor(( $grid-gutter-width / 2 ));
+  padding-right: ceil(( $grid-gutter-width / 2 ));
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
+.richtext-image.left {
+    float: left;
+    margin-right: 1em;
+}
+.richtext-image.right {
+    float: right;
+    margin-left: 1em;
+}

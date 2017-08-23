@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+
+<div class="streamfield-block">
+    <div class="row sxsw-homepage-columns">
+      {% for column in self %}
+        <div>
+            <h3>{{ column.heading }}</h3>
+            {{ column.text | richtext }}
+        </div>
+      {% endfor %}
+    </div>
+</div>

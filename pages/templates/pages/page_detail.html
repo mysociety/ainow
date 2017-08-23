@@ -6,13 +6,14 @@
 {% block bodyclasses %}standard-page{% endblock %}
 
 {% block content %}
+<div class="ainow-page-header-photo header-{{ page.slug }}"></div>
 <div class="general-content">
   <div class="container standard-layout">
       <div class="general-content__page">
         <h1>{{ page.title }}</h1>
         <div class="row">
           {% if sub_pages %}
-          <div class="standard-layout__secondary-column">  
+          <div class="standard-layout__secondary-column">
               <ul class="nav nav-stacked section-nav">
               {% for sub_page in sub_pages %}
                 <li>

@@ -6,13 +6,61 @@
 {% block bodyclasses %}standard-page{% endblock %}
 
 {% block content %}
+<div class="ainow-schedule-header-photo header-{{ schedule.slug }}"></div>
 <div class="general-content">
   <div class="container standard-layout standard-layout--flipped">
     <div class="general-content__page schedule">
-      <h1>{{ schedule.name }} Schedule</h1>
+      <h1>{{ schedule.name }}</h1>
       <div class="schedule__introduction">{{ schedule.introduction }}</div>
+     {% if presentations_workshop or presentations_symposium %}
+      <h3>Talks</h3>
+       {% if presentations_workshop %}
+        <h4>Experts Workshop</h4>
+        {% include "conference/_talk_list.html" with presentations=presentations_workshop %}
+        <a href="/schedule/{{ schedule.slug }}/presentations#workshop" class="schedule__more-link">View all</a>
+       {% endif %}
+       {% if presentations_symposium %}
+        <h4>Public Symposium</h4>
+        {% include "conference/_talk_list.html" with presentations=presentations_symposium %}
+        <a href="/schedule/{{ schedule.slug }}/presentations#symposium" class="schedule__more-link">View all</a>
+       {% endif %}
+     {% endif %}
+
+     {% if attendees %}
+      <h3>Attendees and Speakers</h3>
+        {% include "conference/_attendee_list.html" %}
+        <a href="/schedule/{{ workshop }}/attendees" class="schedule__more-link">All attendees and speakers</a>
+     {% endif %}
+
       <div class="row">
         <div class="standard-layout__primary-column">
+          <h3>Program</h3>
+
+          {% if schedule.slug == '2017-experts-workshop' %}
+            <h4>July 9, 2017</h4>
+            <ul class="schedule__list">
+              <li class="schedule__list__item schedule-entry">
+                <h2 class="schedule-entry__title">WELCOME RECEPTION</h2>
+                <div class="schedule-entry__description">
+                    <p><em>6:00pm-8:00pm</em></p>
+                    <p><em>Microsoft Research New England // One Memorial Drive, Cambridge, MA 02142</em></p>
+                    <p><em>Visit the website at: <a href="http://research.microsoft.com/newengland/">http://research.microsoft.com/newengland/</a> for more information, including directions to the lab.</em></p>
+                    <p><em>Upon arrival at One Memorial Drive, proceed to the Building Lobby Reception. Be prepared to show a picture ID and sign the Building Visitor Log. Take the elevator to the 1st floor, which is where the event will be held. </em></p>
+                    <p>Join us for an informal welcome reception, where we can begin to connect and share insights before a full day of talks and discussion on Monday.</p>
+                </div>
+              </li>
+            </ul>
+          <h4>July 10, 2017</h4>
+          <ul class="schedule__list">
+            <li class="schedule__list__item schedule-entry">
+              <h2 class="schedule-entry__title">EXPERTS WORKSHOP</h2>
+              <div class="schedule-entry__description">
+                <p><em>9:00am-4:00pm // MIT Media Lab, 6th Floor</em></p>
+                <p>Please arrive between 9:00am-9:45am for breakfast and registration. The program will begin promptly at 10:00am.</p>
+              </div>
+            </li>
+          </ul>
+          {% endif %}
           <ul class="schedule__list">
             {% for slot in slots %}
               <li class="schedule__list__item schedule-entry">
@@ -20,12 +68,23 @@
                   {% if slot.presentation %}
                     {% with presentation=slot.presentation %}
                       <h2 class="schedule-entry__title">
-                        <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                        {% if schedule.slug == '2017-experts-workshop' %}
                           {{ presentation.title }}
-                        </a>
+                        {% else %}
+                          <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                            {{ presentation.title }}
+                          </a>
+                        {% endif %}
                       </h2>
                       <div class="schedule-entry__description">
                         {{ presentation.short_description }}
+                        <p><strong>Speakers:</strong></p>
+                        <ul>
+                          <li><a href="{% url 'speaker' schedule.slug presentation.primary_speaker.slug %}">{{ presentation.primary_speaker.name }}</a> {{ presentation.primary_speaker.title }}, {{ presentation.primary_speaker.organisation }}</li>
+                          {% for speaker in presentation.additional_speakers.all %}
+                            <li><a href="{% url 'speaker' schedule.slug speaker.slug %}">{{ speaker.name }}</a> {{ speaker.title }}{% if speaker.organisation %}, {{ speaker.organisation }}{% endif %}</li>
+                          {% endfor %}
+                        </ul>
                       </div>
                     {% endwith %}
                   {% else %}

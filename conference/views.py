@@ -2,6 +2,7 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
 from django.shortcuts import get_object_or_404, redirect
+from django.http import HttpResponseRedirect
 from django.utils.http import is_safe_url
 from django.core.urlresolvers import reverse
 from django import forms
@@ -75,9 +76,21 @@ class ScheduleView(DetailView):
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
 
+    def get_summary_pres_attendees(self, workshop, context):
+        context['presentations_workshop'] = Presentation.objects.filter(schedule__slug=workshop).order_by('?')[:4]
+        context['presentations_symposium'] = Presentation.objects.filter(slot__schedule=self.object).order_by('?')[:4]
+        context['attendees'] = Attendee.objects.filter(schedule__slug=workshop).order_by('?')[:4]
+        context['workshop'] = workshop
+
     def get_context_data(self, **kwargs):
         context = super(ScheduleView, self).get_context_data(**kwargs)
         context['slots'] = context['schedule'].slots.order_by('start')
+
+        if self.object.slug == 'conference':
+            self.get_summary_pres_attendees('workshop', context)
+        elif self.object.slug == '2017-symposium':
+            self.get_summary_pres_attendees('2017-experts-workshop', context)
+
         sidebar_block = Block.objects.get(slug="{}-sidebar".format(context['schedule'].slug))
         context['sidebar_block'] = sidebar_block.content
         try:
@@ -106,6 +119,21 @@ class SpeakerListView(ScheduleMixin, ListView):
 class SpeakerView(ScheduleMixin, DetailView):
     model = Speaker
     context_object_name = 'speaker'
+
+    def get_context_data(self, **kwargs):
+        context = super(SpeakerView, self).get_context_data(**kwargs)
+        if context['speaker'].attendee:
+            attendee = context['speaker'].attendee
+            context['speaker'].name = attendee.name
+            context['speaker'].title = attendee.title
+            context['speaker'].organisation = attendee.organisation
+            context['speaker'].photo = attendee.photo
+            context['speaker'].twitter_username = attendee.twitter_username
+            context['biography'] = attendee.biography
+        else:
+            context['biography'] = context['speaker'].biography
+
+        return context
 
     def get_queryset(self):
         """
@@ -146,46 +174,32 @@ class PresentationView(ScheduleMixin, DetailView):
         ).distinct()
 
 
-class PresentationListView(ListView):
+class PresentationListView(ScheduleMixin, ListView):
     model = Presentation
     context_object_name = 'presentations'
 
+    def get(self, *args, **kwargs):
+        if self.schedule.slug == 'workshop':
+            return HttpResponseRedirect(reverse('presentations', args=['conference']))
+        elif self.schedule.slug == '2017-experts-workshop':
+            return HttpResponseRedirect(reverse('presentations', args=['2017-symposium']))
+        return super(PresentationListView, self).get(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super(PresentationListView, self).get_context_data(**kwargs)
-        context['schedule'] = Schedule.objects.get(slug='conference')
-        # This is very hacky, but we want to show both sets of talks, and
-        # they're not easily differentiated at this stage
-        workshop_slugs = [
-            'ai-now-overview-and-introduction',
-            'time-different-opportunities-and-challenges-artifi',
-            'great-decoupling',
-            'uncovering-machine-bias',
-            'labor-makes-ai-magic',
-            'time-different-race-labor-and-ai',
-            'symbiotic-human-robot-interaction',
-            'bending-gig-economy-toward-equity',
-            'who-gets-think-about-ai',
-            'machining-ethics',
-            'elevating-human-condition-through-new-partnership',
-            'machine-learning-and-healthcare-risks-and-rewards',
-            'sites-deliberation',
-            'complementary-vs-substitutive-automation-healthcar',
-            'we-classified'
-        ]
-        symposium_slugs = [
-            'welcome-ai-now',
-            'introductions-ed-felten',
-            'conversation-white-house-past-and-present',
-            'three-questions-three-tech-leaders',
-            'plenary-panel-inequality-labor-health-and-ethics-a'
-        ]
-        context['workshop_presentations'] = []
-        for slug in workshop_slugs:
-            context['workshop_presentations'].append(Presentation.objects.get(slug=slug))
 
-        context['symposium_presentations'] = []
-        for slug in symposium_slugs:
-            context['symposium_presentations'].append(Presentation.objects.get(slug=slug))
+        context['symposium_presentations'] = Presentation.objects.filter(
+            Q(schedule=self.schedule) |
+            Q(slot__schedule=self.schedule, schedule__isnull=True)
+        )
+
+        workshop = ''
+        if self.schedule.slug == 'conference':
+            workshop = 'workshop'
+        elif self.schedule.slug == '2017-symposium':
+            workshop = '2017-experts-workshop'
+        if workshop:
+            context['workshop_presentations'] = Presentation.objects.filter(schedule__slug=workshop)
 
         return context
 
@@ -213,7 +227,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     success_url = '/profile/'  # Come back to this page
 
     def dispatch(self, request, *args, **kwargs):
-        self.schedule = Schedule.objects.get(slug='workshop')
+        self.schedule = Schedule.objects.get(slug='2017-experts-workshop')
         return super(AttendeeCreateUpdateView, self).dispatch(request, *args, **kwargs)
 
     def get_object(self, queryset=None):
@@ -248,7 +262,7 @@ class AttendeeCreateUpdateView(LoginRequiredMixin,
     def get_context_data(self, **kwargs):
         context = super(AttendeeCreateUpdateView, self).get_context_data(**kwargs)
         context['schedule'] = self.schedule
-        back_url = reverse('home')
+        back_url = '/'
         user_supplied_back_url = self.request.GET.get('back')
         if user_supplied_back_url and is_safe_url(user_supplied_back_url):
             back_url = user_supplied_back_url

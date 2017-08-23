@@ -43,12 +43,17 @@ class Person(TimestampedModel):
         blank=True,
         help_text="Order in which the person will appear in a list."
     )
+    three_words = models.CharField(
+        max_length=1024,
+        blank=True,
+        help_text="Three words to describe your work"
+    )
 
     class Meta:
         abstract = True
         ordering = ['sort_order','name']
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def save(self, *args, **kwargs):
@@ -63,6 +68,10 @@ class Speaker(Person):
     # We provide a bit more info about speakers
     biography = MarkupField(blank=True)
     website = models.URLField(max_length=1024, blank=True)
+    attendee = models.ForeignKey(
+        'Attendee',
+        null=True
+    )
 
 
 class OrganiserType(TimestampedModel):
@@ -217,6 +226,14 @@ class Presentation(TimestampedModel):
                   'schedule directly, but needs to be visible in that '
                   'schedule, e.g. a lightning talk, set the schedule here'
     )
+    sort_order = models.IntegerField(
+        default=0,
+        blank=True,
+        help_text="Order in which the presentation will appear in a list."
+    )
+
+    class Meta:
+        ordering = ['sort_order', 'id']
 
     @property
     def video_id(self):
@@ -225,6 +242,12 @@ class Presentation(TimestampedModel):
     @property
     def video_thumbnail_url(self):
         return "https://img.youtube.com/vi/{0}/0.jpg".format(self.video_id)
+
+    @property
+    def linked_schedule(self):
+        if self.schedule: return self.schedule
+        if self.slot: return self.slot.schedule
+        return None
 
     def __str__(self):
         return self.title

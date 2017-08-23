@@ -1,0 +1,67 @@
+// The `collection-of-people` component was present on the old AINow homepage
+// but it's so good, we're reusing it as part of the People block.
+// TODO: Rename it `.people-block` once the old homepage is long gone.
+
+.collection-of-people {
+  margin: 1.5em -1em 0 -1em;
+
+  @media (min-width: $screen-sm-min) {
+    margin-bottom: 2em;
+    @include flexbox();
+    @include flex-wrap(wrap);
+  }
+}
+
+.collection-of-people__person {
+  @include clearfix;
+  margin-top: 1em;
+  padding: 0 1em;
+
+  @media (min-width: $screen-sm-min) {
+    width: 9em;
+  }
+}
+
+.person__photo {
+  width: 20%;
+  height: auto;
+  float: left;
+  padding-right: 1em;
+
+  @media (min-width: $screen-sm-min) {
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.person__name {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 20%;
+  margin-top: 0.4em;
+
+  @media (min-width: $screen-sm-min) {
+    margin-left: 0;
+    margin-bottom: 0.25em;
+  }
+}
+
+.person__role {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+}
+
+.person__job-title {
+  font-size: 0.6em;
+  line-height: 1.428em;
+  margin: 0 0 0 $grid-gutter-width;
+  color: $gray;
+
+  @media (min-width: $screen-sm-min) {
+    margin-left: 0;
+  }
+}

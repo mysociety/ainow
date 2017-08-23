@@ -1,0 +1,22 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="streamfield-block">
+    <div class="collection-of-people">
+      {% for person in self %}
+        <div class="collection-of-people__person">
+            {% image person.image max-240x240 class="person__photo" %}
+            {% if person.page %}
+              <p class="person__name">
+                <a href="{{ person.page.specific.url }}">
+                  {{ person.name }}
+                </a>
+              </p>
+            {% else %}
+              <p class="person__name">{{ person.name }}</p>
+            {% endif %}
+            <p class="person__role">{{ person.position }}</p>
+            <p class="person__job-title">{{ person.organisation }}</p>
+        </div>
+      {% endfor %}
+    </div>
+</div>

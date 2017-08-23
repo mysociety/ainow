@@ -9,6 +9,9 @@ def add_settings(request):
         'settings': {
             'GOOGLE_ANALYTICS_ACCOUNT': settings.GOOGLE_ANALYTICS_ACCOUNT,
             'DEBUG': settings.DEBUG,
+            'MAILCHIMP_URL': settings.MAILCHIMP_URL,
+            'MAILCHIMP_USER_ID': settings.MAILCHIMP_USER_ID,
+            'MAILCHIMP_DEFAULT_LIST_ID': settings.MAILCHIMP_DEFAULT_LIST_ID,
         },
         # For some reason this doesn't work if we put it inside settings
         'CONTACT_EMAIL': settings.CONTACT_EMAIL
@@ -18,7 +21,7 @@ def add_settings(request):
 def add_schedule(request):
     """Force the schedule variable to a set value for certain requests"""
     # We can't modify the account views to set this directly, so we set it here instead
-    if request.resolver_match.url_name.startswith("account"):
+    if request.resolver_match and request.resolver_match.url_name.startswith("account"):
         return {'schedule': Schedule.objects.get(slug='workshop')}
     else:
         return {}

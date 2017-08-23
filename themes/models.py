@@ -24,7 +24,7 @@ class Theme(TimestampedModel):
     )
     primer_title = models.CharField(
         max_length=1024,
-        help_text='The title for the primer document that will be shown to '
+        help_text='The title for the draft report document that will be shown to '
                   'the user.',
         blank=True
     )

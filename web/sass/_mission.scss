@@ -1,0 +1,49 @@
+.mission-block {
+  background-color: #33383e; // average colour of sxsw-homepage-hero.jpg
+  background-image: url(../img/sxsw-homepage-hero.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+  background-size: cover;
+
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 4em 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 6em 0;
+  }
+
+  img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  .rich-text {
+    max-width: 30em;
+    margin: 0 auto;
+    font-size: 1.5em;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // If a link appears in the mission block, we assume
+  // it should be styled as a call-to-action button.
+  a {
+    @extend .btn;
+    @extend .btn-primary;
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
+    margin-top: 1em;
+  }
+}

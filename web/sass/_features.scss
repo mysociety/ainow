@@ -1,0 +1,112 @@
+.features-block {
+  margin: 2em 0;
+
+  @media (min-width: $screen-sm-min) {
+    margin: 4em 0;
+  }
+}
+
+.features-block__feature {
+  padding-top: 1.5em;
+  border-top: 8px solid $gray-light;
+  margin: 2em 0;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .rich-text {
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.features-block__feature--primary {
+  border-top-color: $brand-primary;
+
+  h3 {
+    font-size: 2.625em;
+    margin-bottom: 0.5em;
+  }
+
+  .rich-text,
+  .features-block__feature__links {
+    font-size: 1.5em; // ~24px
+  }
+
+  .features-block__feature__links {
+    margin-top: 1.1em; // up from 1em
+  }
+
+  .btn {
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
+  }
+
+  .responsive-object {
+      padding-bottom: 0 !important;
+  }
+}
+
+.features-block__feature__links {
+  margin: 1em -5px 0 -5px;
+
+  .btn {
+    margin: 0 5px;
+  }
+
+  .features-block__feature--primary & {
+    .btn:first-child {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// Clever flexbox layout kicks in on small screens
+@media (min-width: $screen-sm-min) {
+  .features-block {
+    @include clearfix(); // floating fallback for old browsers
+    @include flexbox();
+  }
+
+  .features-block__primary {
+    @include flexbox();
+    @include flex(1 0 auto);
+    @include flex-direction(column);
+    width: 60%;
+    float: left; // floating fallback for old browsers
+  }
+
+  .features-block__secondary {
+    @include flexbox();
+    @include flex(1 0 auto);
+    @include flex-direction(column);
+    width: 40%;
+    padding-left: 3em;
+    float: right; // floating fallback for old browsers
+  }
+
+  .features-block__feature {
+    @include flex(1 0 auto);
+    margin: 0;
+  }
+
+  .features-block__feature + .features-block__feature {
+    margin-top: 2em;
+  }
+}
+
+// Flexbox gutters get a bit wider on large screens
+@media (min-width: $screen-md-min) {
+  .features-block__secondary {
+    padding-left: 4em;
+  }
+
+  .features-block__feature + .features-block__feature {
+    margin-top: 3em;
+  }
+}

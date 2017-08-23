@@ -1,0 +1,30 @@
+{% load cms_tags wagtailcore_tags %}
+{% get_site_root as site_root %}
+
+{% for menuitem in menuitems %}
+    <li class="{% if menuitem.show_dropdown %}dropdown{% endif %}{% if calling_page.url == menuitem.url %} active{% endif %}">
+      {% if menuitem.show_dropdown %}
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">{{ menuitem.title }} <b class="caret"></b></a>
+        {% top_menu_children parent=menuitem %}
+      {% else %}
+        <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
+      {% endif %}
+    </li>
+{% endfor %}
+
+{# Hardcoded because it's easier #}
+<li class="dropdown">
+	<a data-toggle="dropdown" class="dropdown-toggle" href="#">Research <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		{# <li><a href="">AI Now 2017 Report</a></li> #}
+		<li><a href="https://artificialintelligencenow.com/media/documents/AINowSummaryReport_3_RpmwKHu.pdf">AI Now 2016 Report</a></li>
+	</ul>
+</li>
+
+<li class="dropdown">
+	<a data-toggle="dropdown" class="dropdown-toggle" href="#">Events <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="/schedule/2017-symposium">AI Now 2017 Symposium</a></li>
+		<li><a href="/schedule/conference">AI Now 2016 Symposium</a></li>
+	</ul>
+</li>

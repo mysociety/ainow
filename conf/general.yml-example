@@ -41,3 +41,7 @@ CONFERENCE_START: "07/07/2016 09:00"
 CONFERENCE_END: "07/07/2016 20:00"
 # What timezone is the conference happening in?
 CONFERENCE_TIMEZONE: "America/New_York"
+
+MAILCHIMP_URL: 'artificialintelligencenow.us15.list-manage.com'
+MAILCHIMP_USER_ID: '80bf38b2893dd9bf46ea78f54'
+MAILCHIMP_DEFAULT_LIST_ID: '581a2ce967'

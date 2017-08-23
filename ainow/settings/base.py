@@ -19,6 +19,8 @@ from .paths import *
 
 from django.contrib.messages import constants as messages
 
+WAGTAIL_SITE_NAME = 'My Example Site'
+
 config = yaml.load(open(os.path.join(PROJECT_ROOT, 'conf', 'general.yml')))
 
 DEBUG = bool(int(config.get('STAGING')))
@@ -67,7 +69,24 @@ INSTALLED_APPS = [
     'pages',
     'blocks',
     'themes',
-    'resources'
+    'resources',
+    'cms',
+
+    'wagtail.wagtailforms',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailusers',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtaildocs',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+    'wagtail.contrib.wagtailstyleguide',
+
+    'modelcluster',
+    'taggit'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -80,7 +99,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'account.middleware.LocaleMiddleware',
-    'account.middleware.TimezoneMiddleware'
+    'account.middleware.TimezoneMiddleware',
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware'
 ]
 
 ROOT_URLCONF = 'ainow.urls'
@@ -332,10 +353,12 @@ BLEACH_ALLOWED_TAGS = [
     u'h4',
     u'h5',
     u'h6',
+    u'hr',
+    u'br',
 ]
 
 BLEACH_ALLOWED_ATTRIBUTES = {
-    u'a': [u'href', u'title'],
+    u'a': [u'href', u'title', u'class', u'name', u'id'],
     u'acronym': [u'title'],
     u'abbr': [u'title'],
     # We've added these:
@@ -350,7 +373,6 @@ ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
 CONTACT_EMAIL = config.get('CONTACT_EMAIL', '')
 DEFAULT_FROM_EMAIL = CONTACT_EMAIL
 ACCOUNT_USER_DISPLAY = lambda user: user.email
-ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'profile'
 # Django user accounts' setting for this seems to override the default Django
@@ -359,7 +381,7 @@ ACCOUNT_LOGIN_REDIRECT_URL = 'profile'
 # Set so that it runs right up to the conference date, because we're sending
 # reset links to people as a kind of invite link, and they might be slack
 # at opening their emails.
-PASSWORD_RESET_TIMEOUT_DAYS = 15
+PASSWORD_RESET_TIMEOUT_DAYS = 24
 
 
 # mySociety-specific settings
@@ -368,3 +390,7 @@ GOOGLE_ANALYTICS_ACCOUNT = config.get('GOOGLE_ANALYTICS_ACCOUNT')
 CONFERENCE_TIMEZONE = pytz.timezone(config.get('CONFERENCE_TIMEZONE'))
 CONFERENCE_START = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_START'), "%d/%m/%Y %H:%M"))
 CONFERENCE_END = CONFERENCE_TIMEZONE.localize(datetime.strptime(config.get('CONFERENCE_END'), "%d/%m/%Y %H:%M"))
+
+MAILCHIMP_URL = config.get('MAILCHIMP_URL')
+MAILCHIMP_USER_ID = config.get('MAILCHIMP_USER_ID')
+MAILCHIMP_DEFAULT_LIST_ID = config.get('MAILCHIMP_DEFAULT_LIST_ID')

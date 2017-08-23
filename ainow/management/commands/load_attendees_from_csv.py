@@ -22,6 +22,7 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('csv', type=FileType('r'))
+        parser.add_argument('schedule_slug', default='workshop')
 
     def handle(self, *args, **options):
         User = get_user_model()
@@ -38,18 +39,27 @@ class Command(BaseCommand):
                     username = "{0}_{1}".format(username, n)
                     n = n + 1
                 email = row['Email'].strip()
+                full_name = "{0} {1}".format(row.get('First Name'), row.get('Last Name'))
                 # We never need to know the password, just make it long and random
                 password = uuid.uuid4()
 
                 # Create the user object - this'll trigger creating an Account
                 # and the related EmailAddress object too.
-                user = User.objects.create_user(
-                    username,
-                    email,
-                    password,
-                    first_name=first_name,
-                    last_name=last_name
-                )
+                try:
+                    user = User.objects.get(email=email)
+                except User.DoesNotExist:
+                    user = User.objects.create_user(
+                        username,
+                        email,
+                        password,
+                        first_name=first_name,
+                        last_name=last_name
+                    )
+                    msg = "User {0} does not exist, adding".format(full_name)
+                else:
+                    msg = "User {0} already exists, updating".format(full_name)
+
+                self.stdout.write(msg)
 
                 # Confirm the email address so that they can log into their
                 # account after they reset the password
@@ -63,13 +73,15 @@ class Command(BaseCommand):
                 external_id = row.get('ID Number', '').strip()
                 if (not external_id):
                     external_id = None
-                Attendee.objects.create(
+                Attendee.objects.update_or_create(
                     user=user,
-                    name=user.get_full_name(),
-                    organisation=organisation,
-                    title=title,
-                    schedule=Schedule.objects.get(slug='workshop'),
-                    external_id=external_id
+                    defaults={
+                        'name': user.get_full_name(),
+                        'organisation': organisation,
+                        'title': title,
+                        'schedule': Schedule.objects.get(slug=options['schedule_slug']),
+                        'external_id': external_id
+                    }
                 )
             else:
                 name = "{0} {1}".format(row.get('First Name'), row.get('Last Name'))

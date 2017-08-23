@@ -1,0 +1,25 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block bodyclasses %}attendee-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>{{ page.title }}</h1>
+      {% image page.image fill-300x300 %}
+
+      {{ page.intro | richtext }}
+      {% if page.intro %}
+        <a href="{{ page.research_file.url  }}">Download the paper in full</a>
+      {% else %}
+        <a href="{{ page.link }}">Read more...</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

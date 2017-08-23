@@ -1,0 +1,152 @@
+.schedule__introduction {
+  font-size: 1.25em;
+  margin-bottom: 1.5em;
+}
+
+.schedule__more-link {
+  @extend .btn;
+  @extend .btn-primary;
+  margin-bottom: 2em;
+}
+
+.schedule__list {
+  @extend .list-unstyled;
+  border-top: 2px dotted $gray-light;
+}
+
+.schedule-entry {
+  border-bottom: 2px dotted $gray-light;
+  padding: 1.5em 1em 1em;
+  &:nth-child(even) {
+    background-color: lighten($gray-lighter, 5%);
+  }
+}
+
+.schedule-entry__time {
+  display: block;
+  background-color: $gray-lighter;
+
+  padding: 0.66667em 0.5em 0.5em;
+  font-size: 1.0625em; //~17px
+  margin: 1.5em 0;
+}
+
+.schedule-entry__speaker,
+.schedule-entry__description {
+  color: $gray;
+  margin: 0 0 0.35em;
+}
+
+.schedule-entry__title {
+  font-size: 1.0625em; //~17px
+  margin: 0 0 0.35em;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.schedule-entry__description--short {
+  font-size: 0.9375em; //~15px
+  margin: 0 0 1em;
+}
+
+.schedule-entry__location {
+  font-size: 0.9375em; //~15px
+  color: $gray;
+  margin-top: 0.66667em;
+  margin-bottom: 1em;
+}
+
+.talk-list {
+  @extend .list-unstyled;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: flex-start;
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.talk-list__talk {
+  // Layout from Bootstrap's media object
+  @extend .media;
+  margin-bottom: 2em;
+  margin-top: 0;
+  width: 15em;
+  margin-right: $grid-gutter-width;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.ainow-schedule-header-photo {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background: $color_dark_gray url('../img/ainow-schedule-header.jpg') no-repeat 50% 50%;
+  background-size: cover;
+
+  &:after {
+    content: "Photograph by Kate Reeder";
+    display: block;
+    position: absolute;
+    bottom: 1em;
+    padding-left:  ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+    right: 50%;
+    text-align: right;
+
+    text-shadow: 0 0 5px #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+      margin-right: $container-sm * -0.5;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+      margin-right: $container-md * -0.5;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: $container-lg;
+      margin-right: $container-lg * -0.5;
+    }
+  }
+
+  &.header-2017-experts-workshop {
+    background-image: url('../img/ainow-experts-workshop-header.jpg');
+
+    &:after {
+      content: none;
+    }
+  }
+
+  &.header-2017-symposium {
+    background-image: url('../img/ainow-2017-symposium-header.jpg');
+
+    &:after {
+      content: "Photograph by Mim Adkins";
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    height: 200px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    height: 250px;
+  }
+
+
+}

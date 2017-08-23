@@ -1,0 +1,36 @@
+{% load wagtailcore_tags wagtailimages_tags cms_tags %}
+
+<div class="streamfield-block">
+    <div class="row">
+      {% for link in self %}
+        <div class="col-sm-4 col-md-3">
+            <div class="featured-link">
+              {% if link.thumbnail %}
+                <a href="{% get_link_url link %}">
+                  {% image link.thumbnail fill-262x196 class="featured-link__thumbnail" %}
+                </a>
+              {% endif %}
+
+                <div class="featured-link__details">
+                    <h3 class="featured-link__title">
+                        <a href="{% get_link_url link %}">
+                          {{ link.title }}
+                        </a>
+                    </h3>
+                  {% if link.subtitle %}
+                    <p class="featured-link__subtitle">
+                      {{ link.subtitle }}
+                    </p>
+                  {% endif %}
+                  {% if link.description %}
+                    <div class="featured-link__description">
+                      {{ link.description | richtext }}
+                    </div>
+                  {% endif %}
+                </div>
+
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
