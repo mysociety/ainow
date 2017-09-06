@@ -1,3 +1,5 @@
+<li><a href="{% url 'schedule2018summary' %}">TICTeC 2018</a></li>
+
 {% if schedule.slug == '2017' %}
 
 <li><a href="{% url 'schedule2017summary' %}">TICTeC 2017</a></li>
@@ -6,7 +8,6 @@
 
 {% else %}
 
-<li><a href="{% url 'home' %}">TICTeC</a></li>
-<li><a href="{% url 'schedule2017summary' %}">2017</a></li>
+<li><a href="{% url 'schedule2017summary' %}">TICTeC 2017</a></li>
 
 {% endif %}

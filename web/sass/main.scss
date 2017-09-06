@@ -407,10 +407,12 @@ $florence_image: url('../img/florence.jpg');
 $florence_average_color: #58413c;
 $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 87, 61) 38%, rgb(35, 12, 4) 92%, rgb(20, 2, 2) 100%);;
 
+$lisbon_image: url('../img/lisbon.jpg');
+$lisbon_average_color: #b3ba8b;
+$lisbon_gradient: linear-gradient(to bottom, rgb(111, 146, 180) 0%, rgb(146, 130, 107) 38%, rgb(100, 108, 50) 92%, rgb(183, 155, 136) 100%);;
+
 .homepage-hero {
-  background-color: $florence_average_color;
-  background-image: $florence_image;
-  background-image: $florence_image, $florence_gradient;
+
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -420,6 +422,18 @@ $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 8
 
   @media (min-width: $screen-sm-min) {
     padding: 4.5em 0;
+  }
+
+  &.hero-2017 {
+    background-color: $florence_average_color;
+    background-image: $florence_image;
+    background-image: $florence_image, $florence_gradient;
+  }
+
+  &.hero-2018 {
+    background-color: $lisbon_average_color;
+    background-image: $lisbon_image;
+    background-image: $lisbon_image, $lisbon_gradient;
   }
 }
 

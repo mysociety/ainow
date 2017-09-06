@@ -1,0 +1,39 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block title %}TICTeC 2018{% endblock %}
+
+{% block content %}
+<div class="homepage-hero hero-2018">
+  <div class="container">
+    <h1>TICTeC 2018</h1>
+    <p class="lead">Lisbon, Portugal</p>
+  </div>
+</div>
+
+<div id="next" class="homepage-section homepage-section--secondary">
+  <div class="container">
+
+    <p class="lead">Join us in Lisbon for the fourth edition of mySociety’s The Impacts of Civic Technology Conference on 18 and 19 April 2018.</p>
+    <p><a href="http://eepurl.com/7J2Rf">Sign up for our newsletter</a> and we’ll alert you when earlybird tickets go on sale.</p>
+
+  </div>
+</div>
+
+<div id="resources" class="homepage-section">
+  <div class="container">
+
+    {{ call_block }}
+
+  </div>
+</div>
+
+<div id="resources" class="homepage-section">
+  <div class="container">
+
+    {{ tickets_block }}
+
+  </div>
+</div>
+
+{% endblock %}
