@@ -405,11 +405,15 @@ iframe {
 
 $florence_image: url('../img/florence.jpg');
 $florence_average_color: #58413c;
-$florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 87, 61) 38%, rgb(35, 12, 4) 92%, rgb(20, 2, 2) 100%);;
+$florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 87, 61) 38%, rgb(35, 12, 4) 92%, rgb(20, 2, 2) 100%);
+
+$taipei_image: url('../img/taipei.jpg');
+$taipei_average_color: #7396ce;
+$taipei_gradient: linear-gradient(to bottom, rgb(45, 146, 216) 0%, rgb(131, 156, 235) 43%, rgb(208, 157, 81) 80%, rgb(161, 187, 150) 100%);
 
 $lisbon_image: url('../img/lisbon.jpg');
 $lisbon_average_color: #b3ba8b;
-$lisbon_gradient: linear-gradient(to bottom, rgb(111, 146, 180) 0%, rgb(146, 130, 107) 38%, rgb(100, 108, 50) 92%, rgb(183, 155, 136) 100%);;
+$lisbon_gradient: linear-gradient(to bottom, rgb(111, 146, 180) 0%, rgb(146, 130, 107) 38%, rgb(100, 108, 50) 92%, rgb(183, 155, 136) 100%);
 
 .homepage-hero {
 
@@ -424,10 +428,18 @@ $lisbon_gradient: linear-gradient(to bottom, rgb(111, 146, 180) 0%, rgb(146, 130
     padding: 4.5em 0;
   }
 
+  background-color: #888;
+
   &.hero-2017 {
     background-color: $florence_average_color;
     background-image: $florence_image;
     background-image: $florence_image, $florence_gradient;
+  }
+
+  &.hero-taipei {
+    background-color: $taipei_average_color;
+    background-image: $taipei_image;
+    background-image: $taipei_image, $taipei_gradient;
   }
 
   &.hero-2018 {

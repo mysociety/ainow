@@ -18,6 +18,7 @@ from django.conf.urls import url
 from .views import (
     ScheduleView,
     Schedule2017SummaryView,
+    ScheduleTaipeiSummaryView,
     Schedule2018SummaryView,
     SpeakerListView,
     SpeakerView,
@@ -72,5 +73,6 @@ urlpatterns = [
     url(r'^(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', AttendeeView.as_view(), name='attendee'),
 
     url(r'^2017$', Schedule2017SummaryView.as_view(), name='schedule2017summary'),
+    url(r'^taipei$', ScheduleTaipeiSummaryView.as_view(), name='scheduletaipeisummary'),
     url(r'^2018$', Schedule2018SummaryView.as_view(), name='schedule2018summary'),
 ]
