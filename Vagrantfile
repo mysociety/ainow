@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   # Enable NFS access to the disk
-  config.vm.synced_folder "..", "/vagrant", :nfs => true
+  config.vm.synced_folder "..", "/vagrant"
 
   # Speed up DNS lookups
   config.vm.provider "virtualbox" do |vb|
