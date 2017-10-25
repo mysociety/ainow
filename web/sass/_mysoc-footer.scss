@@ -174,10 +174,10 @@ $high-dpi-screen: '-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi
 }
 
 .mysoc-footer__org__logo--hewlett {
-  height: 56px;
+  height: 30px;
   width: 140px;
   background: transparent url('#{$mysoc-footer-image-path}logo-hewlett.png') 0 0 no-repeat;
-  background-size: 140px 56px;
+  background-size: 140px 30px;
   @media ($high-dpi-screen) {
     background-image: url('#{$mysoc-footer-image-path}logo-hewlett@2.png');
   }
