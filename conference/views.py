@@ -131,8 +131,21 @@ class Schedule2018SummaryView(TemplateView):
 
         context['call_block'] = Block.objects.get(slug='2018-call-for-papers').content
         context['tickets_block'] = Block.objects.get(slug='2018-tickets').content
+        context['sponsorship_block'] = Block.objects.get(slug='2018-sponsorship').content
 
         context['schedule'] = Schedule.objects.get(slug='2018')
+
+        return context
+
+
+class SponsorshipView(TemplateView):
+    template_name = 'ainow/sponsorship.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(SponsorshipView, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
 
         return context
 

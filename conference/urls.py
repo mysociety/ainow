@@ -20,6 +20,7 @@ from .views import (
     Schedule2017SummaryView,
     ScheduleTaipeiSummaryView,
     Schedule2018SummaryView,
+    SponsorshipView,
     SpeakerListView,
     SpeakerView,
     OrganiserTypeListView,
@@ -75,4 +76,6 @@ urlpatterns = [
     url(r'^2017$', Schedule2017SummaryView.as_view(), name='schedule2017summary'),
     url(r'^taipei$', ScheduleTaipeiSummaryView.as_view(), name='scheduletaipeisummary'),
     url(r'^2018$', Schedule2018SummaryView.as_view(), name='schedule2018summary'),
+
+    url(r'^sponsorship$', SponsorshipView.as_view(), name='sponsorship'),
 ]
