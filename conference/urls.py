@@ -35,6 +35,8 @@ from .views import (
 
 from django.views.generic import RedirectView
 
+from pages.views import PageView
+
 urlpatterns = [
 
     # Redirects from legacy URLs
@@ -52,6 +54,8 @@ urlpatterns = [
 
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendees$', RedirectView.as_view(pattern_name='attendees', permanent=True)),
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='attendee', permanent=True)),
+
+    url(r'^schedule/(?P<schedule_slug>[-\w]+)/page/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='staticpage', permanent=True)),
 
     # URLs for profile management
 
@@ -74,8 +78,13 @@ urlpatterns = [
     url(r'^(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', AttendeeView.as_view(), name='attendee'),
 
     url(r'^2017$', Schedule2017SummaryView.as_view(), name='schedule2017summary'),
+
     url(r'^taipei$', ScheduleTaipeiSummaryView.as_view(), name='scheduletaipeisummary'),
+
     url(r'^2018$', Schedule2018SummaryView.as_view(), name='schedule2018summary'),
+
+    # This must come after all other URLs, as a catch-all
+    url(r'^(?P<schedule_slug>[-\w]+)/(?P<slug>[-\w]+)$', PageView.as_view(), name='staticpage'),
 
     url(r'^sponsorship$', SponsorshipView.as_view(), name='sponsorship'),
 ]

@@ -132,6 +132,7 @@ class Schedule2018SummaryView(TemplateView):
         context['call_block'] = Block.objects.get(slug='2018-call-for-papers').content
         context['tickets_block'] = Block.objects.get(slug='2018-tickets').content
         context['sponsorship_block'] = Block.objects.get(slug='2018-sponsorship').content
+        context['conduct_block'] = Block.objects.get(slug='homepage-code-of-conduct').content
 
         context['schedule'] = Schedule.objects.get(slug='2018')
 

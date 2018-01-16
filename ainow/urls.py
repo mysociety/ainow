@@ -25,7 +25,6 @@ from .views import (
     ConfirmEmailView
 )
 from faq.views import FAQPageView
-from pages.views import PageView
 
 admin.autodiscover()
 
@@ -33,7 +32,6 @@ urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
 
     url(r"^schedule/(?P<schedule_slug>[-\w]+)/faq/(?P<slug>[-\w]+)$", FAQPageView.as_view(), name="faq"),
-    url(r"^schedule/(?P<schedule_slug>[-\w]+)/page/(?P<slug>[-\w]+)$", PageView.as_view(), name="page"),
 
     url(r'^', include('conference.urls')),
     url(r'^', include('resources.urls')),
