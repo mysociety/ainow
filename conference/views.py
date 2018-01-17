@@ -165,6 +165,21 @@ class SpeakerListView(ScheduleMixin, ListView):
         ).order_by('name').distinct()
 
 
+class Schedule2018SpeakerListView(SpeakerListView):
+    template_name = 'conference/2018-speaker_list.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Schedule2018SpeakerListView, self).get_context_data(**kwargs)
+
+        context['keynotespeakers'] = [
+            Speaker.objects.filter(slug='martha-lane-fox').get(),
+            Speaker.objects.filter(slug='jonathan-fox').get()
+        ]
+
+        return context
+
+
 class SpeakerView(ScheduleMixin, DetailView):
     model = Speaker
     context_object_name = 'speaker'
