@@ -193,6 +193,16 @@ class SpeakerView(ScheduleMixin, DetailView):
             Q(presentations__session__slot__schedule=self.schedule)
         ).distinct()
 
+    def get_context_data(self, **kwargs):
+
+        context = super(SpeakerView, self).get_context_data(**kwargs)
+
+        context['presentations'] = context['speaker'].presentations.filter(
+            Q(session__slot__schedule=self.schedule)
+        )
+
+        return context
+
 
 class OrganiserTypeListView(ScheduleMixin, ListView):
     model = OrganiserType
