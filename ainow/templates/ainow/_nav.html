@@ -1,5 +1,3 @@
-<li><a href="{% url 'home' %}">About TICTeC</a></li>
-
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
     {% if schedule.slug == '2017' %}
@@ -31,6 +29,7 @@
 
 <li><a href="{% url '2018speakers' %}">Speakers</a></li>
 <li><a href="{% url 'schedule2018summary' %}#register">Register</a></li>
+<li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
 <li><a href="{% url 'staticpage' '2018' 'venue' %}">Venue</a></li>
 <li><a href="{% url 'schedule2018summary' %}#code-of-conduct">Code of Conduct</a></li>
 
