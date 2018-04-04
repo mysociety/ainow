@@ -258,6 +258,11 @@ class Presentation(TimestampedModel):
         editable=False
     )
 
+    order = models.IntegerField(
+        default=0,
+        help_text='Use to override the order in which presentations appear within a slot. Lower numbers appear first.'
+    )
+
     @property
     def video_id(self):
         return self.youtube_link.split("?v=")[1]
@@ -273,7 +278,7 @@ class Presentation(TimestampedModel):
         return 'title'
 
     class Meta:
-        ordering = ['session__slot__start', 'session__room__name']
+        ordering = ['order', 'session__slot__start', 'session__room__name']
 
     def save(self, *args, **kwargs):
 
