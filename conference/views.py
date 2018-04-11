@@ -279,6 +279,14 @@ class AttendeeListView(ScheduleMixin, ListView):
     model = Attendee
     context_object_name = 'attendees'
 
+    def get_queryset(self):
+        """
+        Speakers are linked to a schedule by their presentation(s) slot(s).
+        """
+        return Attendee.objects.filter(
+            Q(schedule=self.schedule)
+        ).distinct()
+
 
 class AttendeeView(ScheduleMixin, DetailView):
     model = Attendee
