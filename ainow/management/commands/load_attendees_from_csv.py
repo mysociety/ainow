@@ -29,7 +29,10 @@ class Command(BaseCommand):
         reader = csv.DictReader(options['csv'])
         for row in reader:
             name = row['Name'].strip()
-            if row['Email address']:
+            email = row['Email address'].strip()
+            self.stdout.write(u"{}".format(name))
+            if email:
+                self.stdout.write(u"Email: {}".format(email))
                 username = slugify(name)
                 username.replace('-', '_')
                 # Just in case there are two people with the same name
@@ -37,7 +40,7 @@ class Command(BaseCommand):
                 while User.objects.filter(username=username).exists():
                     username = "{0}_{1}".format(username, n)
                     n = n + 1
-                email = row['Email address'].strip()
+
                 # We never need to know the password, just make it long and random
                 password = uuid.uuid4()
 
@@ -45,6 +48,7 @@ class Command(BaseCommand):
 
                 try:
                     user = User.objects.get(email=email)
+                    self.stdout.write("Found existing user for email.")
                 except User.DoesNotExist:
                     # Create the user object - this'll trigger creating an Account
                     # and the related EmailAddress object too.
@@ -54,6 +58,8 @@ class Command(BaseCommand):
                         password,
                         first_name=name
                     )
+
+                    self.stdout.write(u"Created new user with slug: {}".format(username))
 
                 # Confirm the email address so that they can log into their
                 # account after they reset the password
@@ -76,6 +82,6 @@ class Command(BaseCommand):
                 attendee.schedules.add(Schedule.objects.get(slug=options['schedule']))
 
                 attendee.save()
+                self.stdout.write("\t Saved")
             else:
-                msg = "Skipping {0} because they don't have an email address".format(name)
-                self.stdout.write(msg)
+                self.stdout.write("\t Skipping because they don't have an email address")
