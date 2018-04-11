@@ -17,7 +17,7 @@ class AttendeeForm(forms.ModelForm):
 
     class Meta:
         model = Attendee
-        fields = ['user', 'name', 'title', 'organisation', 'biography', 'photo', 'twitter_username', 'schedule']
+        fields = ['user', 'name', 'title', 'organisation', 'biography', 'photo', 'twitter_username']
         widgets = {
             'photo': forms.FileInput()
         }

@@ -86,7 +86,7 @@ class Organiser(Person):
 
 
 class Attendee(Person):
-    schedule = models.ForeignKey('Schedule', blank=True, null=True)
+    schedules = models.ManyToManyField('Schedule', blank=True)
     external_id = models.IntegerField(blank=True, null=True)
     biography = models.TextField(
         max_length=1500,

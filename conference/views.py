@@ -284,7 +284,7 @@ class AttendeeListView(ScheduleMixin, ListView):
         Speakers are linked to a schedule by their presentation(s) slot(s).
         """
         return Attendee.objects.filter(
-            Q(schedule=self.schedule)
+            Q(schedules=self.schedule)
         ).distinct()
 
 
