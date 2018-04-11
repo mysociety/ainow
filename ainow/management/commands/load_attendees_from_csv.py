@@ -64,15 +64,18 @@ class Command(BaseCommand):
                 # Create a basic Attendee profile for them too
                 organisation = row.get('Organisation', '').strip()
                 title = row.get('Role', '').strip()
-                Attendee.objects.get_or_create(
+                attendee, created = Attendee.objects.get_or_create(
                     user=user,
-                    schedule=Schedule.objects.get(slug=options['schedule']),
                     defaults={
                         'name': name,
                         'organisation': organisation,
                         'title': title
                     },
                 )
+
+                attendee.schedules.add(Schedule.objects.get(slug=options['schedule']))
+
+                attendee.save()
             else:
                 msg = "Skipping {0} because they don't have an email address".format(name)
                 self.stdout.write(msg)
