@@ -32,7 +32,7 @@ class Command(BaseCommand):
             email = row['Email address'].strip()
             self.stdout.write(u"{}".format(name))
             if email:
-                self.stdout.write(u"Email: {}".format(email))
+                self.stdout.write(u"\tEmail: {}".format(email))
                 username = slugify(name)
                 username.replace('-', '_')
                 # Just in case there are two people with the same name
@@ -48,7 +48,7 @@ class Command(BaseCommand):
 
                 try:
                     user = User.objects.get(email=email)
-                    self.stdout.write("Found existing user for email.")
+                    self.stdout.write("\tFound existing user for email.")
                 except User.DoesNotExist:
                     # Create the user object - this'll trigger creating an Account
                     # and the related EmailAddress object too.
@@ -59,7 +59,7 @@ class Command(BaseCommand):
                         first_name=name
                     )
 
-                    self.stdout.write(u"Created new user with slug: {}".format(username))
+                    self.stdout.write(u"\tCreated new user with slug: {}".format(username))
 
                 # Confirm the email address so that they can log into their
                 # account after they reset the password
@@ -74,14 +74,17 @@ class Command(BaseCommand):
                     user=user,
                     defaults={
                         'name': name,
-                        'organisation': organisation,
-                        'title': title
                     },
                 )
+
+                # We always set these to the contents of the spreadsheet.
+                attendee.name = name
+                attendee.organisation = organisation
+                attendee.title = title
 
                 attendee.schedules.add(Schedule.objects.get(slug=options['schedule']))
 
                 attendee.save()
-                self.stdout.write("\t Saved")
+                self.stdout.write("\tSaved")
             else:
-                self.stdout.write("\t Skipping because they don't have an email address")
+                self.stdout.write("\tSkipping because they don't have an email address")
