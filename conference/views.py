@@ -129,12 +129,6 @@ class Schedule2018SummaryView(TemplateView):
 
         context = super(Schedule2018SummaryView, self).get_context_data(**kwargs)
 
-        context['tickets_block'] = Block.objects.get(slug='2018-tickets').content
-        context['sponsorship_block'] = Block.objects.get(slug='2018-sponsorship').content
-        context['conduct_block'] = Block.objects.get(slug='homepage-code-of-conduct').content
-        context['related_block'] = Block.objects.get(id=20).content
-        context['tap_block'] = Block.objects.get(id=23).content
-
         context['schedule'] = Schedule.objects.get(slug='2018')
 
         return context
