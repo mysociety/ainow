@@ -65,8 +65,17 @@ iframe {
   max-width: 100%;
 }
 
+.btn {
+  border-radius: 0.3em;
+  border: 0;
+}
+
 .btn-default {
   font-weight: normal;
+}
+
+.btn-primary {
+  letter-spacing: 0.015em;
 }
 
 // Useful for elements you don't want to wrap onto multiple lines
@@ -793,7 +802,12 @@ $sponsor_image: url('../img/piggyback.jpg');
 }
 
 .homepage-section--secondary {
-  background-color: mix($brand-primary, #fff, 10%);
+  background-color: $brand-primary;
+  color: #fff;
+}
+
+.homepage-section--tertiary {
+  background-color: $color_off_white;
 }
 
 .homepage-introduction-pullout {
