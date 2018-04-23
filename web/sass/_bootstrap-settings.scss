@@ -29,6 +29,7 @@ $color_white: #ffffff;
 
 $color_tictec_green: #9FDB50;
 
+
 //todo: remove/replace these they are from ainow
 $color_teal: $color_blue;
 $color_dark_teal: darken($color_teal, 10%);
@@ -41,15 +42,15 @@ $gray: $color_mid_gray;
 $gray-light: $color_light_gray;
 $gray-lighter: $color_off_white;
 
-$brand-primary: $color_tictec_green;
+$brand-primary: $color_violet;
 $brand-success: $color_green;
 $brand-info: $color_blue;
 $brand-warning: $color_orange;
 $brand-danger: $color_red;
 
 $body-bg: $color_black;
-$text-color: $gray-darker;
-$link-color: darken($brand-primary, 20%);
+$text-color: $color_black;
+$link-color: $color_blue;
 
 /*
  * Typography
@@ -85,7 +86,7 @@ $btn-font-weight: $body_typeface_bold;
 $btn-default-bg: lighten($brand-primary, 30%);
 $btn-default-border: darken($btn-default-bg, 10%);
 
-$btn-primary-color: $body-bg;
+$btn-primary-color: #fff;
 
 /*
  * Forms
@@ -110,4 +111,4 @@ $navbar-default-link-hover-color: $gray;
 /*
  * Wells
  */
-$well-bg: lighten($body-bg, 5%);
+$well-bg: $color_light_gray;
