@@ -27,11 +27,9 @@
 
 {% elif schedule.slug == '2018' %}
 
-<li><a href="{% url '2018speakers' %}">Speakers</a></li>
-<li><a href="{% url 'schedule2018summary' %}#register">Register</a></li>
+<li><a href="{% url 'schedule2018summary' %}">Summary</a></li>
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
-<li><a href="{% url 'staticpage' '2018' 'venue' %}">Venue</a></li>
-<li><a href="{% url 'schedule2018summary' %}#code-of-conduct">Code of Conduct</a></li>
+<li><a href="{% url 'speakers' schedule.slug %}">List of Speakers</a></li>
 
 {% endif %}
 
