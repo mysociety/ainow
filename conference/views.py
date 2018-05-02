@@ -12,6 +12,8 @@ from django.forms import modelform_factory
 from django.db.models import Q
 from django.conf import settings
 
+from urlparse import urlparse
+
 import sorl
 
 from account.mixins import LoginRequiredMixin
@@ -215,14 +217,13 @@ class PresentationView(ScheduleMixin, DetailView):
     model = Presentation
     context_object_name = 'presentation'
 
-    # def get_queryset(self):
-    #     """
-    #     Presentations are linked to a schedule by their slot.
-    #     """
-    #     return Presentation.objects.filter(
-    #         Q(schedule=self.schedule) |
-    #         Q(session__slot__schedule=self.schedule)
-    #     ).distinct()
+    def get_context_data(self, **kwargs):
+        context = super(PresentationView, self).get_context_data(**kwargs)
+        if context['presentation'].prezi_link:
+
+            parsed = urlparse(context['presentation'].prezi_link)
+            context['prezi_embed_slug'] = parsed.path.split("/")[1]
+        return context
 
 
 class PresentationListView(ListView):

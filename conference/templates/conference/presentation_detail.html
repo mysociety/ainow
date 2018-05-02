@@ -53,15 +53,22 @@
 
       {% endif %}
 
-      {% if presentation.slideshare_link %}
+      {% if presentation.slideshare_link or presentation.prezi_link %}
 
         <h2>Slides</h2>
 
         {% if presentation.slideshare_embed_html %}
           {{ presentation.slideshare_embed_html|safe }}
-        {% else %}
+        {% elif presentation.slideshare_link %}
           <p><a href="{{ presentation.slideshare_link }}">View on SlideShare</a></p>
         {% endif %}
+
+        {% if prezi_embed_slug %}
+          <iframe id="prezi_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="700" height="400" src="https://prezi.com/embed/{{ prezi_embed_slug }}/?bgcolor=ffffff&amp;lock_to_path=1&amp;autoplay=0&amp;autohide_ctrls=1"></iframe>
+        {% elif presentation.prezi_link %}
+          <p><a href="{{ presentation.prezi_link }}">View on Prezi</a></p>
+        {% endif %}
+
       {% endif %}
 
     </div>

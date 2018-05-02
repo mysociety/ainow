@@ -258,6 +258,13 @@ class Presentation(TimestampedModel):
         editable=False
     )
 
+    prezi_link = models.URLField(
+        blank=True,
+        max_length=1024,
+        help_text='The url for the presentation on Prezi.<br>'
+                  'We can extract everything we need to embed it from that.'
+    )
+
     order = models.IntegerField(
         default=0,
         help_text='Use to override the order in which presentations appear within a slot. Lower numbers appear first.'
