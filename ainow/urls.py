@@ -22,7 +22,8 @@ from .views import (
     HomeView,
     SignupView,
     LoginView,
-    ConfirmEmailView
+    ConfirmEmailView,
+    PrivacyView,
 )
 from faq.views import FAQPageView
 
@@ -44,6 +45,8 @@ urlpatterns = [
     # people in immediately after they confirm.
     url(r"^account/confirm_email/(?P<key>\w+)/$", ConfirmEmailView.as_view(), name="account_confirm_email"),
     url(r"^account/", include("account.urls")),
+
+    url(r'^privacy/$', PrivacyView.as_view(), name='privacy'),
 
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),

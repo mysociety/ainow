@@ -122,3 +122,7 @@ class ConfirmEmailView(account.views.ConfirmEmailView):
         if obj.key_expired():
             raise Http404()
         return obj
+
+
+class PrivacyView(TemplateView):
+    template_name = 'ainow/privacy.html'
