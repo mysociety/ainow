@@ -21,6 +21,7 @@ from .views import (
     ScheduleTaipeiSummaryView,
     Schedule2018SummaryView,
     Schedule2018SpeakerListView,
+    Schedule2019SummaryView,
     SponsorshipView,
     SpeakerListView,
     SpeakerView,
@@ -85,6 +86,8 @@ urlpatterns = [
     url(r'^taipei$', ScheduleTaipeiSummaryView.as_view(), name='scheduletaipeisummary'),
 
     url(r'^2018$', Schedule2018SummaryView.as_view(), name='schedule2018summary'),
+
+    url(r'^2019$', Schedule2019SummaryView.as_view(), name='schedule2019summary'),
 
     # This must come after all other URLs, as a catch-all
     url(r'^(?P<schedule_slug>[-\w]+)/(?P<slug>[-\w]+)$', PageView.as_view(), name='staticpage'),

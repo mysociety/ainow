@@ -6,11 +6,14 @@
         TICTeC@Taipei
     {% elif schedule.slug == '2018' %}
         TICTeC 2018: Lisbon
+        {% elif schedule.slug == '2019' %}
+        TICTeC 2019: Paris
     {% else %}
         TICTeC
     {% endif %}
     <span class="caret"></span></a>
   <ul class="dropdown-menu">
+    <li{% if schedule.slug == '2019' %} class="active"{% endif %}><a href="{% url 'schedule2019summary' %}">TICTeC 2019: Paris</a></li>
     <li{% if schedule.slug == '2018' %} class="active"{% endif %}><a href="{% url 'schedule2018summary' %}">TICTeC 2018: Lisbon</a></li>
     <li{% if schedule.slug == 'taipei' %} class="active"{% endif %}><a href="{% url 'scheduletaipeisummary' %}">TICTeC@Taipei</a></li>
     <li{% if schedule.slug == '2017' %} class="active"{% endif %}><a href="{% url 'schedule2017summary' %}">TICTeC 2017: Florence</a></li>
@@ -30,6 +33,12 @@
 <li><a href="{% url 'schedule2018summary' %}">Summary</a></li>
 <li><a href="{% url 'schedule' schedule.slug %}">Schedule</a></li>
 <li><a href="{% url 'speakers' schedule.slug %}">List of Speakers</a></li>
+
+{% elif schedule.slug == '2019' %}
+
+<li><a href="{% url 'schedule2019summary' %}">TICTeC Local UK</a></li>
+<li><a href="{% url 'schedule' schedule.slug %}">Sponsorship</a></li>
+<li><a href="{% url 'speakers' schedule.slug %}">Code of conduct</a></li>
 
 {% endif %}
 

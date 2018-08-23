@@ -135,6 +135,17 @@ class Schedule2018SummaryView(TemplateView):
 
         return context
 
+class Schedule2019SummaryView(TemplateView):
+    template_name = 'ainow/2019-summary.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Schedule2019SummaryView, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug='2019')
+
+        return context
+
 
 class SponsorshipView(TemplateView):
     template_name = 'ainow/sponsorship.html'

@@ -425,6 +425,10 @@ $lisbon_image: url('../img/lisbon.jpg');
 $lisbon_average_color: #b3ba8b;
 $lisbon_gradient: linear-gradient(to bottom, rgb(111, 146, 180) 0%, rgb(146, 130, 107) 38%, rgb(100, 108, 50) 92%, rgb(183, 155, 136) 100%);
 
+$paris_image: url('../img/paris.jpg');
+$paris_average_color: #b3ba8b;
+$paris_gradient: linear-gradient(to bottom, rgb(120, 115, 113) 0%, rgb(168, 150, 114) 38%, rgb(36, 28, 29) 92%, rgb(40, 38, 50) 100%);
+
 $sponsor_image: url('../img/piggyback.jpg');
 
 .homepage-hero {
@@ -458,6 +462,12 @@ $sponsor_image: url('../img/piggyback.jpg');
     background-color: $lisbon_average_color;
     background-image: $lisbon_image;
     background-image: $lisbon_image, $lisbon_gradient;
+  }
+
+  &.hero-2019 {
+    background-color: $paris_average_color;
+    background-image: $paris_image;
+    background-image: $paris_image, $paris_gradient;
   }
 
   &.hero-sponsor {
@@ -804,6 +814,13 @@ $sponsor_image: url('../img/piggyback.jpg');
 .homepage-section--secondary {
   background-color: $brand-primary;
   color: #fff;
+  a {
+    color: #fff;
+  }
+  .btn-primary {
+    background-color: #fff;
+    color: $color_black;
+  }
 }
 
 .homepage-section--tertiary {
