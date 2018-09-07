@@ -23,6 +23,7 @@ from .views import (
     Schedule2018SpeakerListView,
     Schedule2019SummaryView,
     SponsorshipView,
+    LocalView,
     SpeakerListView,
     SpeakerView,
     OrganiserTypeListView,
@@ -93,4 +94,6 @@ urlpatterns = [
     url(r'^(?P<schedule_slug>[-\w]+)/(?P<slug>[-\w]+)$', PageView.as_view(), name='staticpage'),
 
     url(r'^sponsorship$', SponsorshipView.as_view(), name='sponsorship'),
+
+    url(r'^local$', LocalView.as_view(), name='local'),
 ]

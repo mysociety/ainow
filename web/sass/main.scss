@@ -426,8 +426,12 @@ $lisbon_average_color: #b3ba8b;
 $lisbon_gradient: linear-gradient(to bottom, rgb(111, 146, 180) 0%, rgb(146, 130, 107) 38%, rgb(100, 108, 50) 92%, rgb(183, 155, 136) 100%);
 
 $paris_image: url('../img/paris.jpg');
-$paris_average_color: #b3ba8b;
+$paris_average_color: #d0cac6;
 $paris_gradient: linear-gradient(to bottom, rgb(120, 115, 113) 0%, rgb(168, 150, 114) 38%, rgb(36, 28, 29) 92%, rgb(40, 38, 50) 100%);
+
+$local_image: url('../img/local.jpg');
+$local_average_color: #2d2522;
+$local_gradient: linear-gradient(to bottom, rgb(113, 116, 120) 0%, rgb(29, 18, 16) 38%, rgb(65, 36, 61) 92%, rgb(23, 21, 17) 100%);
 
 $sponsor_image: url('../img/piggyback.jpg');
 
@@ -468,6 +472,12 @@ $sponsor_image: url('../img/piggyback.jpg');
     background-color: $paris_average_color;
     background-image: $paris_image;
     background-image: $paris_image, $paris_gradient;
+  }
+
+  &.hero-local {
+    background-color: $local_average_color;
+    background-image: $local_image;
+    background-image: $local_image, $local_gradient;
   }
 
   &.hero-sponsor {

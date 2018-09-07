@@ -1,0 +1,111 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block title %}TICTeC Local{% endblock %}
+
+{% block content %}
+<div class="homepage-hero hero-local">
+  <div class="container">
+    <h1>TICTeC Local</h1>
+    <h2>A conference on Civic Technologies for local government</h2>
+    <p class="lead">6th November 2019, Manchester</p>
+    <p><a href="{% url 'schedule2019summary' %}#register" class="btn btn-large btn-default btn-primary">Register</a></p>
+  </div>
+</div>
+
+<div id="intro" class="homepage-section">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <p>TICTeC, now in its fifth successful year, is recognised globally as the most important conference for the understanding of Civic Technologies.</p>
+          <p>Now TICTeC Local brings the same winning formula to the municipal level.</p>
+          <p>Join us as practitioners from the UK and beyond examine how digital tools can be deployed to improve civic participation, streamline citizen interaction with public bodies, and enable citizen monitoring of public institutions.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="homepage-section homepage-section--tertiary">
+  <div class="container">
+    <h2>What is Civic Tech?</h2>
+    <div class="row">
+      <div class="col-sm-8">
+        <p>The field of Civic Tech is growing across the globe, often at a grassroots level — and yet, to those outside its network, the term can be unfamiliar. You will often see ‘Civic Tech’ mentioned along with sister buzzwords like ‘smart cities’, ‘e-gov’, ‘govtech’, ‘ICT4D’ and ‘Tech For Good’, to name but a few. </p>
+        <p>Civic Tech embraces all digital tools that enable citizens to easily and effectively engage with civic life, whether that is reporting an issue to a local authority, engaging with elected representatives or monitoring the use of community assets.</p>
+        <p>At its most effective, Civic Tech can save lives, protect environments, and mobilise citizen task forces in times of crisis. At a useful if less dramatic level, it can save time and money for governments, improve neighbourhoods and keep residents informed.</p>
+        <p>Civic Tech is often — but not exclusively — built by non-profit organisations working for a better, more representative, democratic or functional society. The result is often open source ‘tech for good’ software that is free or cheap to implement.</p>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-section">
+  <div class="container">
+    <h2>Is TICTeC Local for me?</h2>
+    <div class="row">
+      <div class="col-sm-8">
+        <p>If you work in or around the local authority or local public institution space and have an interest in using digital tools, then yes.</p>
+        <p>TICTeC Local will have a range of speakers covering a wide range of topics relevant to participation, customer service, digital, information services and general governance.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-section homepage-section--tertiary">
+  <div class="container">
+    <h2>What happens at TICTeC Local?</h2>
+    <div class="row">
+      <div class="col-sm-8">
+        <ul>
+          <li>Practitioners, researchers and representatives from local government showcase inspiring Civic Tech tools and projects in the UK and beyond, with discussions on what makes them work and how</li>
+          <li>A chance to take stock of the Civic Tech landscape in the UK and what barriers there are to its progress</li>
+          <li>Panels and discussions around Civic Technology projects: the ethics, finances, and other practicalities of their implementation</li>
+          <li>Practical takeaways that you can take back and implement in your own strategies</li>
+        </ul>
+        <p>Return to this page to see the agenda as it is finalised.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-section homepage-section-y">
+    <div class="container">
+      <h2>What will I get from TICTeC Local?</h2>
+      <div class="row">
+        <div class="col-sm-8">
+          <p><strong>You will not get</strong> sales pitches, technical talk that only experts could understand, or high-concept presentations with no relevance to your own daily work.</p>
+          <p>TICTeC Local aims to build a bridge between the people that make digital tools for the public good, the people that use them and the people that examine their impact.</p>
+          <p>We believe that too often digital tools are built in isolation from the organisations that buy them, and the citizens that use them, and because of this everyone’s experience is the poorer.</p>
+          <p>At TICTeC Local, we’ll change that and bring down some of those barriers to discuss what <em>really</em> works. You will leave inspired by some of our showcased projects, you’ll have a better understanding of the most effective digital tools, and you’ll have met interesting people who are on a similar journey, or who might be able to help you in developing your digital capacity in the future.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="register" class="homepage-section homepage-section--secondary">
+  <div class="container">
+    <h2>Registration</h2>
+    <p><a href="https://www.eventbrite.co.uk/e/tictec-local-tickets-49932889617" class="btn btn-large btn-default btn-primary">Register now</a></p>
+    <div class="row">
+      <div class="col-sm-8">
+        <p>Tickets cost £100. Fee includes lunch and refreshments during the day.</p>
+        <p>Please note that <strong>registration for the conference is essential</strong> in order to attend.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="accessibility" class="homepage-section">
+    <div class="container">
+      <h2>Accessibility Information</h2>
+      <div class="row">
+        <div class="col-sm-8">
+          <p>The conference venue is fully accessible for wheelchair users. If you plan to attend TICTeC with a personal care attendant/assistant, their conference fee will be waived. Please contact Gemma Moulder on +44 (0)20 3239 0725 or via <a href="malto:gemma@mysociety.org">email</a> to arrange the fee waiver/registration.</p>
+          <p>If you need special requirements such as hearing loops, sign language interpreters, handouts in advance and/or in alternative formats such as Braille or large print etc, please contact Gemma Moulder on +44 (0)20 3239 0725 or via <a href="malto:gemma@mysociety.org">email</a> with your request by close of business on 19th October 2018 so that arrangements, where possible, can be made. We will do our best to fulfil your requirements to allow you to fully participate in this event.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
