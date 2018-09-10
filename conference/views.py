@@ -159,6 +159,18 @@ class SponsorshipView(TemplateView):
         return context
 
 
+class LocalView(TemplateView):
+    template_name = 'ainow/local.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(LocalView, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
+
+        return context
+
+
 class SpeakerListView(ScheduleMixin, ListView):
     model = Speaker
     context_object_name = 'speakers'

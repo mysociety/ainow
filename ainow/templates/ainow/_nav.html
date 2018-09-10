@@ -36,10 +36,8 @@
 
 {% elif schedule.slug == '2019' %}
 
-<!--<li><a href="#">TICTeC Local UK</a></li>-->
+<li><a href="{% url 'local' %}">TICTeC local</a></li>
 <li><a href="{% url 'sponsorship' %}">Sponsorship</a></li>
-<li><a href="{% url 'schedule2019summary' %}#call-for-papers">Call for papers</a></li>
-<li><a href="{% url 'schedule2019summary' %}#register">Register</a></li>
 <li><a href="https://www.mysociety.org/code-of-conduct/">Code of conduct</a></li>
 
 {% endif %}
