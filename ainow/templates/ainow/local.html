@@ -1,6 +1,13 @@
 {% extends 'ainow/base.html' %}
 {% load staticfiles %}
 
+{% block headerextra %}
+<meta property="og:title" content="TICTeC Local" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tictec.mysociety.org/local" />
+<meta property="og:image" content="https://tictec.mysociety.org/static/img/local-og.jpg" />
+{% endblock %}
+
 {% block title %}TICTeC Local{% endblock %}
 
 {% block content %}
