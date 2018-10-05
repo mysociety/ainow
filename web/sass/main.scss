@@ -832,15 +832,21 @@ $sponsor_image: url('../img/piggyback.jpg');
   color: #fff;
   a {
     color: #fff;
+    text-decoration: underline;
   }
   .btn-primary {
     background-color: #fff;
     color: $color_black;
+    text-decoration: none;
   }
 }
 
 .homepage-section--tertiary {
   background-color: $color_off_white;
+}
+
+.homepage-speakers {
+  margin-top: 2em;
 }
 
 .homepage-introduction-pullout {
@@ -1233,6 +1239,7 @@ $sponsor_image: url('../img/piggyback.jpg');
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: flex-start;
+
 }
 
 .attendee-list__attendee {
@@ -1242,6 +1249,9 @@ $sponsor_image: url('../img/piggyback.jpg');
   margin-top: 0;
   width: 15em;
   margin-right: $grid-gutter-width;
+  &--wide {
+    width: 18em;
+  }
 }
 
 .attendee__secondary-column {
@@ -1257,11 +1267,19 @@ $sponsor_image: url('../img/piggyback.jpg');
   @extend .media-object;
   width: 5em;
   height: 5em;
+  &--custom-width {
+    width: auto;
+    height: auto;
+    max-width: none;
+  }
 }
 
 .attendee__name {
   @extend .media-heading;
   font-size: 1.3125em;
+  .homepage-speakers & {
+    margin-bottom: 0.3em !important;
+  }
 }
 
 .attendee__org,
@@ -1276,6 +1294,9 @@ $sponsor_image: url('../img/piggyback.jpg');
 .attendee__org {
   color: $gray-dark;
   font-size: 0.8125em;
+  .homepage-section--secondary & {
+    color: rgba(255,255,255,0.8);
+  }
 }
 
 .attendee__twitter {
