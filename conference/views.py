@@ -1,3 +1,6 @@
+# -*- coding: utf8 -*-
+from __future__ import unicode_literals
+
 from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.views.generic.edit import ModelFormMixin, ProcessFormView
@@ -167,6 +170,243 @@ class LocalView(TemplateView):
         context = super(LocalView, self).get_context_data(**kwargs)
 
         context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
+
+        context['sessions'] = [{
+            "kind": "other",
+            "start": "09:30",
+            "name": "Arrival & Coffee",
+        }, {
+            "kind": "talk",
+            "start": "10:00",
+            "presentations": [{
+                "title": "Welcome to TICTeC Local",
+                "speakers": [{
+                    "name": "Mark Cridge",
+                    "role": "Chief Executive",
+                    "organisation": "mySociety",
+                }]
+            }]
+        }, {
+            "kind": "talk",
+            "start": "10:10",
+            "presentations": [{
+                "title": "Civic Tech and Local Gov: the evidence base",
+                "short_description": "The research on Civic Tech at the local level shows us what’s already working — and provides ample inspiration for new initiatives.",
+                "speakers": [{
+                    "name": "Dr Rebecca Rumbul",
+                    "role": "Head of Research",
+                    "organisation": "mySociety",
+                }]
+            }]
+        }, {
+            "kind": "keynote",
+            "start": "10:20",
+            "presentations": [{
+                "title": "Opening keynote: Fixing the plumbing",
+                "short_description": "MHCLG will share how are helping Local Government to ‘fix the plumbing’, by putting the basics in place now — and quickly.",
+                "speakers": [{
+                    "name": "Paul Maltby",
+                    "role": "Chief Digital Officer",
+                    "organisation": "MHCLG",
+                }]
+            }]
+        }, {
+            "kind": "talk",
+            "start": "10:40",
+            "presentations": [{
+                "title": "Introducing Public Square",
+                "short_description": "Citizen participation is often low, but the desire to get things changed is rising. Public Square will explore how to increase democratic engagement beyond elections.",
+                "speakers": [{
+                    "name": "Michelle Brook",
+                    "organisation": "Democratic Society",
+                }, {
+                    "name": "Mel Stevens",
+                    "organisation": "Democratic Society",
+                }]
+            }]
+        }, {
+            "kind": "other",
+            "start": "11:00",
+            "name": "Refreshment break",
+        }, {
+            "kind": "talk",
+            "start": "11:20",
+            "presentations": [{
+                "title": "Where Civic Tech meets Local Government",
+                "short_description": "Inspiring projects that are showing results — across a broad range of policy areas.",
+                "speakers": [{
+                    "name": "Andrea Bowes",
+                    "role": "Data and Information Systems Technical Architect",
+                    "organisation": "Lincolnshire County Council",
+                }, {
+                    "name": "Beatrice Karol Burks",
+                    "role": "Studio Director",
+                    "organisation": "Futuregov",
+                }, {
+                    "name": "Sarah Drummond",
+                    "role": "Co-founder and MD",
+                    "organisation": "Snook",
+                }, {
+                    "name": "Zara Rahman",
+                    "role": "Research, Engagement and Communities Team Lead",
+                    "organisation": "The Engine Room",
+                }, {
+                    "name": "Helen Gerling",
+                    "role": "Director of Consultancy",
+                    "organisation": "Shaping Cloud",
+                }, {
+                    "tbc": True,
+                    "name": "Tayo Medupin",
+                    "role": "Innovation Director",
+                    "organisation": "Shift",
+                }, {
+                    "tbc": True,
+                    "name": "Julian Tait",
+                    "role": "CEO",
+                    "organisation": "Open Data Manchester",
+                }]
+            }]
+        }, {
+            "kind": "other",
+            "start": "12:40",
+            "name": "Lunch",
+        }, {
+            "kind": "talk",
+            "start": "13:40",
+            "presentations": [{
+                "title": "The Consul project for citizen participation",
+                "short_description": "Consul’s participation software is used by 90 governments in 18 different countries, giving citizens a voice in decisions about their own neighbourhoods. Jose highlights experiences within Madrid City Council as well as the global impact of Consul.",
+                "speakers": [{
+                    "name": "Jose Maria Becerra Gonzalez",
+                    "organisation": "Consul Project at Madrid City Council",
+                }]
+            }]
+        }, {
+            "kind": "talk",
+            "start": "14:00",
+            "presentations": [{
+                "title": "Panel discussion: Reaching the furthest first",
+                "short_description": "Decisions made at the local level can have impact on the opportunities, living standards, health and happiness of thousands of people. We hear from panellists who are putting ethical considerations at the forefront.",
+                "speakers": [{
+                    "name": "Eddie Copeland",
+                    "role": "Director of Government Innovation",
+                    "organisation": "Nesta",
+                }, {
+                    "name": "Beatrice Karol Burks",
+                    "role": "Studio Director",
+                    "organisation": "Futuregov",
+                }, {
+                    "name": "María Izquierdo",
+                    "role": "Designer",
+                    "organisation": "IF",
+                }, {
+                    "name": "Nick Stanhope",
+                    "role": "Founder and CEO",
+                    "organisation": "Shift",
+                }, {
+                    "name": "Steve Skelton",
+                    "role": "Strategic Head: Policy & Information Services",
+                    "organisation": "Stockport Council",
+                }]
+            }]
+        }, {
+            "kind": "talk",
+            "start": "14:40",
+            "presentations": [{
+                "title": "The citizen shift",
+                "short_description": "Democracy needs a helping hand. How can we promote the role of the citizen and encourage better participation in society?",
+                "speakers": [{
+                    "name": "Jon Alexander",
+                    "role": "Founding Partner",
+                    "organisation": "New Citizenship Project",
+                }]
+            }]
+        }, {
+            "kind": "other",
+            "start": "15:00",
+            "name": "Refreshment break",
+        }, {
+            "kind": "talk",
+            "start": "15:15",
+            "presentations": [{
+                "title": "Panel discussion: Citizens or customers",
+                "short_description": "The way a council talks about its residents can reveal a lot about their ethos. Can we reshape the government-to-citizen relationship for the good of all?",
+                "speakers": [{
+                    "name": "Louise Howells",
+                    "role": "Delivery Manager",
+                    "organisation": "mySociety",
+                }, {
+                    "name": "Jose Maria Becerra Gonzalez",
+                    "role": "Consul Project",
+                    "organisation": "Madrid City Council",
+                }, {
+                    "name": "Jon Alexander",
+                    "role": "Founding Partner",
+                    "organisation": "New Citizenship Project",
+                }, {
+                    "name": "Carl Whistlecraft",
+                    "role": "Head of Democracy",
+                    "organisation": "Kirklees Council",
+                }, {
+                    "name": "Sarah Drummond",
+                    "role": "Co-founder and MD",
+                    "organisation": "Snook",
+                }]
+            }]
+        }, {
+            "kind": "keynote",
+            "start": "15:55",
+            "presentations": [{
+                "title": "Closing keynote: The Deal",
+                "short_description": "Wigan are trying something new: a contract between residents and the council as both sides strive for a better borough. Alison shares the lessons and impacts so far.",
+                "speakers": [{
+                    "name": "Alison McKenzie-Folan",
+                    "role": "Deputy CEO and Digital Transformation Lead",
+                    "organisation": "Wigan Council"
+                }]
+            }]
+        }, {
+            "kind": "talk",
+            "start": "16:15",
+            "presentations": [{
+                "title": "Panel discussion: View from the top floor",
+                "short_description": "Today’s all about inspiring ideas — but how are we going to get them implemented? Hear from the decision makers about what it’ll take to put things in motion.",
+                "speakers": [{
+                    "name": "Emer Coleman",
+                    "role": "Digital Leader",
+                    "organisation": "The Federation",
+                }, {
+                    "name": "Paul Maltby",
+                    "role": "CDO",
+                    "organisation": "MHCLG",
+                }, {
+                    "name": "Alison McKenzie-Folan",
+                    "role": "Deputy CEO and Digital Transformation Lead",
+                    "organisation": "Wigan Council",
+                }, {
+                    "name": "Theo Blackwell",
+                    "organisation": "Chief Digital Officer for London",
+                }, {
+                    "tbc": True,
+                }]
+            }]
+        }, {
+            "kind": "talk",
+            "start": "16:55",
+            "presentations": [{
+                "title": "Wrap up",
+                "short_description": "Summing up and reflection on the day’s events and what we’ve learned.",
+                "speakers": [{
+                    "name": "Linda O’Halloran",
+                    "role": "Head of Local Digital Collaboration Unit",
+                    "organisation": "MHCLG",
+                }]
+            }]
+        }, {
+            "kind": "other",
+            "start": "17:00",
+            "name": "Finish",
+        }]
 
         return context
 

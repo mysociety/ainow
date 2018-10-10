@@ -429,7 +429,7 @@ $paris_image: url('../img/paris.jpg');
 $paris_average_color: #d0cac6;
 $paris_gradient: linear-gradient(to bottom, rgb(120, 115, 113) 0%, rgb(168, 150, 114) 38%, rgb(36, 28, 29) 92%, rgb(40, 38, 50) 100%);
 
-$local_image: url('../img/local.jpg');
+$local_image: url('../img/local-darker.jpg');
 $local_average_color: #2d2522;
 $local_gradient: linear-gradient(to bottom, rgb(113, 116, 120) 0%, rgb(29, 18, 16) 38%, rgb(65, 36, 61) 92%, rgb(23, 21, 17) 100%);
 
@@ -1139,6 +1139,61 @@ $sponsor_image: url('../img/piggyback.jpg');
 
   & > :last-child {
     margin-bottom: 0;
+  }
+}
+
+.js-schedule-accordion {
+  position: relative;
+}
+
+.js-schedule-accordion button {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 1em;
+  bottom: 0;
+  left: 1em;
+  width: 100%;
+  width: calc(100% - 2em);
+  text-align: center;
+  border: none;
+  background: transparent linear-gradient(to bottom, transparent 50%, #fff) 0 0 no-repeat;
+  border-bottom: 2em solid #fff;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($color_yellow, 0.1);
+    .btn {
+      background-color: darken($btn-primary-bg, 10%);
+      border-color: mix($color_yellow, #fff, 10%);
+    }
+  }
+
+  &:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: -1.2em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    border: 4px solid #fff;
+    border-radius: 4px + 4px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2px dotted $gray-light;
   }
 }
 

@@ -196,6 +196,7 @@ PIPELINE = {
                 'javascripts/bootstrap.js',
                 'javascripts/js.cookie.js',
                 'conference/javascripts/profile-photo.js',
+                'conference/javascripts/schedule-accordion.js',
             ),
             'output_filename': 'javascripts/scripts.js',
         },
