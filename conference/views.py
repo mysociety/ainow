@@ -207,7 +207,7 @@ class LocalView(TemplateView):
                 "speakers": [{
                     "name": "Paul Maltby",
                     "role": "Chief Digital Officer",
-                    "organisation": "MHCLG",
+                    "organisation": "Ministry of Housing, Communities & Local Government",
                 }]
             }]
         }, {
@@ -378,7 +378,7 @@ class LocalView(TemplateView):
                 }, {
                     "name": "Paul Maltby",
                     "role": "CDO",
-                    "organisation": "MHCLG",
+                    "organisation": "Ministry of Housing, Communities & Local Government",
                 }, {
                     "name": "Alison McKenzie-Folan",
                     "role": "Deputy CEO and Digital Transformation Lead",
@@ -399,7 +399,7 @@ class LocalView(TemplateView):
                 "speakers": [{
                     "name": "Linda O’Halloran",
                     "role": "Head of Local Digital Collaboration Unit",
-                    "organisation": "MHCLG",
+                    "organisation": "Ministry of Housing, Communities & Local Government",
                 }]
             }]
         }, {
