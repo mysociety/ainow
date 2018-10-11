@@ -369,7 +369,7 @@ class LocalView(TemplateView):
             "kind": "talk",
             "start": "16:15",
             "presentations": [{
-                "title": "Panel discussion: View from the top floor",
+                "title": "Panel discussion: Making it happen",
                 "short_description": "Today’s all about inspiring ideas — but how are we going to get them implemented? Hear from the decision makers about what it’ll take to put things in motion.",
                 "speakers": [{
                     "name": "Emer Coleman",
