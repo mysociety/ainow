@@ -203,7 +203,7 @@ class LocalView(TemplateView):
             "start": "10:20",
             "presentations": [{
                 "title": "Opening keynote: Fixing the plumbing",
-                "short_description": "MHCLG will share how are helping Local Government to ‘fix the plumbing’, by putting the basics in place now — and quickly.",
+                "short_description": "MHCLG will share how they are helping Local Government to ‘fix the plumbing’, by putting the basics in place now — and quickly.",
                 "speakers": [{
                     "name": "Paul Maltby",
                     "role": "Chief Digital Officer",
@@ -274,11 +274,12 @@ class LocalView(TemplateView):
             "kind": "talk",
             "start": "13:40",
             "presentations": [{
-                "title": "The Consul project for citizen participation",
-                "short_description": "Consul’s participation software is used by 90 governments in 18 different countries, giving citizens a voice in decisions about their own neighbourhoods. Jose highlights experiences within Madrid City Council as well as the global impact of Consul.",
+                "title": "The citizen shift",
+                "short_description": "Democracy needs a helping hand. How can we promote the role of the citizen and encourage better participation in society?",
                 "speakers": [{
-                    "name": "Jose Maria Becerra Gonzalez",
-                    "organisation": "Consul Project at Madrid City Council",
+                    "name": "Jon Alexander",
+                    "role": "Founding Partner",
+                    "organisation": "New Citizenship Project",
                 }]
             }]
         }, {
@@ -313,12 +314,11 @@ class LocalView(TemplateView):
             "kind": "talk",
             "start": "14:40",
             "presentations": [{
-                "title": "The citizen shift",
-                "short_description": "Democracy needs a helping hand. How can we promote the role of the citizen and encourage better participation in society?",
+                "title": "The Consul project for citizen participation",
+                "short_description": "Consul’s participation software is used by 90 governments in 18 different countries, giving citizens a voice in decisions about their own neighbourhoods. Jose highlights experiences within Madrid City Council as well as the global impact of Consul.",
                 "speakers": [{
-                    "name": "Jon Alexander",
-                    "role": "Founding Partner",
-                    "organisation": "New Citizenship Project",
+                    "name": "José María Becerra González",
+                    "organisation": "Consul Project at Madrid City Council",
                 }]
             }]
         }, {
