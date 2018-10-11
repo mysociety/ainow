@@ -173,8 +173,8 @@ class LocalView(TemplateView):
 
         context['sessions'] = [{
             "kind": "other",
-            "start": "09:30",
-            "name": "Arrival & Coffee",
+            "start": "09:00",
+            "name": "Conference registration & refreshments",
         }, {
             "kind": "talk",
             "start": "10:00",
