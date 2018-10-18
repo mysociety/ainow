@@ -239,6 +239,10 @@ class LocalView(TemplateView):
                     "role": "Data and Information Systems Technical Architect",
                     "organisation": "Lincolnshire County Council",
                 }, {
+                    "name": "Zara Rahman",
+                    "role": "Research, Engagement and Communities Team Lead",
+                    "organisation": "The Engine Room",
+                }, {
                     "name": "Beatrice Karol Burks",
                     "role": "Studio Director",
                     "organisation": "Futuregov",
@@ -246,24 +250,18 @@ class LocalView(TemplateView):
                     "name": "Sarah Drummond",
                     "role": "Co-founder and MD",
                     "organisation": "Snook",
-                }, {
-                    "name": "Zara Rahman",
-                    "role": "Research, Engagement and Communities Team Lead",
-                    "organisation": "The Engine Room",
+                }, {                
+                    "name": "Julian Tait",
+                    "role": "CEO",
+                    "organisation": "Open Data Manchester",
                 }, {
                     "name": "Helen Gerling",
                     "role": "Director of Consultancy",
                     "organisation": "Shaping Cloud",
-                }, {
-                    "tbc": True,
+                }, {                 
                     "name": "Tayo Medupin",
                     "role": "Innovation Director",
                     "organisation": "Shift",
-                }, {
-                    "tbc": True,
-                    "name": "Julian Tait",
-                    "role": "CEO",
-                    "organisation": "Open Data Manchester",
                 }]
             }]
         }, {
