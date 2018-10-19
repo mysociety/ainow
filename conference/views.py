@@ -285,7 +285,7 @@ class LocalView(TemplateView):
             "start": "14:00",
             "presentations": [{
                 "title": "Panel discussion: Reaching the furthest first",
-                "short_description": "Decisions made at the local level can have impact on the opportunities, living standards, health and happiness of thousands of people. We hear from panellists who are putting ethical considerations at the forefront.",
+                "short_description": "Decisions made at the local level can have an impact on the opportunities, living standards, health and happiness of thousands of people. We hear from panellists who are putting ethical considerations at the forefront.",
                 "speakers": [{
                     "name": "Eddie Copeland",
                     "role": "Director of Government Innovation",
@@ -295,8 +295,8 @@ class LocalView(TemplateView):
                     "role": "Studio Director",
                     "organisation": "Futuregov",
                 }, {
-                    "name": "María Izquierdo",
-                    "role": "Designer",
+                    "name": "Dr Eloise Elliott-Taysom",
+                    "role": "Product Lead",
                     "organisation": "IF",
                 }, {
                     "name": "Nick Stanhope",
