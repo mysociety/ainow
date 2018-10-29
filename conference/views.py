@@ -250,7 +250,7 @@ class LocalView(TemplateView):
                     "name": "Sarah Drummond",
                     "role": "Co-founder and MD",
                     "organisation": "Snook",
-                }, {                
+                }, {
                     "name": "Julian Tait",
                     "role": "CEO",
                     "organisation": "Open Data Manchester",
@@ -258,7 +258,7 @@ class LocalView(TemplateView):
                     "name": "Helen Gerling",
                     "role": "Director of Consultancy",
                     "organisation": "Shaping Cloud",
-                }, {                 
+                }, {
                     "name": "Tayo Medupin",
                     "role": "Innovation Director",
                     "organisation": "Shift",
@@ -330,9 +330,9 @@ class LocalView(TemplateView):
                 "title": "Panel discussion: Citizens or customers",
                 "short_description": "The way a council talks about its residents can reveal a lot about their ethos. Can we reshape the government-to-citizen relationship for the good of all?",
                 "speakers": [{
-                    "name": "Louise Howells",
-                    "role": "Delivery Manager",
-                    "organisation": "mySociety",
+                    "name": "Miranda Marcus",
+                    "role": "Research and Development Programme Lead",
+                    "organisation": "The Open Data Institute",
                 }, {
                     "name": "Jose Maria Becerra Gonzalez",
                     "role": "Consul Project",
@@ -384,6 +384,10 @@ class LocalView(TemplateView):
                 }, {
                     "name": "Theo Blackwell",
                     "organisation": "Chief Digital Officer for London",
+                }, {
+                    "name": "Phil Swan",
+                    "role": "Chief Information Officer",
+                    "organisation": "Greater Manchester Combined Authority",
                 }, {
                     "tbc": True,
                 }]
