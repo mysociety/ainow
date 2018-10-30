@@ -243,16 +243,14 @@ class LocalView(TemplateView):
                     "role": "Research, Engagement and Communities Team Lead",
                     "organisation": "The Engine Room",
                 }, {
-                    "name": "Beatrice Karol Burks",
-                    "role": "Studio Director",
+                    "name": "Beatrice Karol Burks and Elle Tweedy",
                     "organisation": "Futuregov",
                 }, {
                     "name": "Sarah Drummond",
                     "role": "Co-founder and MD",
                     "organisation": "Snook",
                 }, {
-                    "name": "Julian Tait",
-                    "role": "CEO",
+                    "name": "Julian Tait and Jamie Whyte",
                     "organisation": "Open Data Manchester",
                 }, {
                     "name": "Helen Gerling",
