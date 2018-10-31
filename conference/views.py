@@ -231,32 +231,51 @@ class LocalView(TemplateView):
         }, {
             "kind": "talk",
             "start": "11:20",
+            "name": "Where Civic Tech meets Local Government",
+            "short_description": "Inspiring projects that are showing results — across a broad range of policy areas.",
             "presentations": [{
-                "title": "Where Civic Tech meets Local Government",
-                "short_description": "Inspiring projects that are showing results — across a broad range of policy areas.",
+                "title": "FixMyStreet Pro: Better street reporting for citizens and councils",
                 "speakers": [{
                     "name": "Andrea Bowes",
                     "role": "Data and Information Systems Technical Architect",
                     "organisation": "Lincolnshire County Council",
-                }, {
+                }]
+            }, {
+                "title": "Making Waves: Tech for Water in Sierra Leone",
+                "speakers": [{
                     "name": "Zara Rahman",
                     "role": "Research, Engagement and Communities Team Lead",
                     "organisation": "The Engine Room",
-                }, {
+                }]
+            }, {
+                "title": "Family Story: How technology can better support Children’s Services",
+                "speakers": [{
                     "name": "Beatrice Karol Burks and Elle Tweedy",
                     "organisation": "Futuregov",
-                }, {
+                }]
+            }, {
+                "title": "Council as a platform: Supporting the civics",
+                "speakers": [{
                     "name": "Sarah Drummond",
                     "role": "Co-founder and MD",
                     "organisation": "Snook",
-                }, {
+                }]
+            }, {
+                "title": "Revealing the hidden patterns in local democracy",
+                "speakers": [{
                     "name": "Julian Tait and Jamie Whyte",
                     "organisation": "Open Data Manchester",
-                }, {
+                }]
+            }, {
+                "title": "Cloud - is it just pie in the sky?",
+                "speakers": [{
                     "name": "Helen Gerling",
                     "role": "Director of Consultancy",
                     "organisation": "Shaping Cloud",
-                }, {
+                }]
+            }, {
+                "title": "Using tech and data to provide better support for new parents",
+                "speakers": [{
                     "name": "Tayo Medupin",
                     "role": "Innovation Director",
                     "organisation": "Shift",

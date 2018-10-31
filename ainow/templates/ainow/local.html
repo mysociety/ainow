@@ -8,6 +8,8 @@
 <meta property="og:image" content="https://tictec.mysociety.org/static/img/local-og.jpg" />
 {% endblock %}
 
+{% block bodyclasses %}tictec-local{% endblock %}
+
 {% block title %}TICTeC Local{% endblock %}
 
 {% block content %}
@@ -163,6 +165,16 @@
                     &middot; {{ session.room }}
                   {% endif %}
                 </p>
+
+              {% if session.presentations.count > 1 %}
+                <h2 class="schedule-entry__title">{{ session.name }}</h2>
+
+                {% if session.short_description %}
+                  <div class="schedule-entry__description">
+                    {{ session.short_description }}
+                  </div>
+                {% endif %}
+              {% endif %}
 
               {% for presentation in session.presentations %}
 

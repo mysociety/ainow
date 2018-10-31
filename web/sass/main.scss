@@ -1094,6 +1094,13 @@ $sponsor_image: url('../img/piggyback.jpg');
   .schedule-entry__title + & {
     margin-top: 1em;
   }
+
+  // Special case for the TICTeC Local schedule, where we know the
+  // only entry with multiple titles needs slightly different styling.
+  .tictec-local .schedule-entry__description ~ & {
+    font-size: 1em;
+    margin: 1em 0 0.2em 0;
+  }
 }
 
 .schedule-entry__title,
