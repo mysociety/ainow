@@ -1576,6 +1576,18 @@ $sponsor_image: url('../img/piggyback.jpg');
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 47% 100%, 0% 75%, 0% 25%);
 }
 
+.assoc {
+  border-top: 1px solid $gray-lighter;
+  border-bottom: 1px solid $gray-lighter;
+  img {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  p {
+    font-size: 0.875em;
+  }
+}
+
 $mysoc-footer-background-color: #333;
 $mysoc-footer-text-color: #acacac;
 $mysoc-footer-site-name-text-color: #fff;
