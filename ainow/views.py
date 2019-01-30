@@ -126,3 +126,7 @@ class ConfirmEmailView(account.views.ConfirmEmailView):
 
 class PrivacyView(TemplateView):
     template_name = 'ainow/privacy.html'
+
+
+class PressView(TemplateView):
+    template_name = 'ainow/press.html'

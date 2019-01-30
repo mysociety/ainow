@@ -24,6 +24,7 @@ from .views import (
     LoginView,
     ConfirmEmailView,
     PrivacyView,
+    PressView,
 )
 from faq.views import FAQPageView
 
@@ -47,6 +48,8 @@ urlpatterns = [
     url(r"^account/", include("account.urls")),
 
     url(r'^privacy/$', PrivacyView.as_view(), name='privacy'),
+
+    url(r'^press/$', PressView.as_view(), name='press'),
 
     url(r'^admin/', admin.site.urls),
     url(r'^markitup/', include('markitup.urls')),
