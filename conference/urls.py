@@ -22,6 +22,7 @@ from .views import (
     Schedule2018SummaryView,
     Schedule2018SpeakerListView,
     Schedule2019SummaryView,
+    Schedule2019SpeakerListView,
     SponsorshipView,
     LocalView,
     SpeakerListView,
@@ -73,6 +74,7 @@ urlpatterns = [
     url(r'^(?P<schedule_slug>[-\w]+)/presentation/(?P<slug>[-\w]+)$', PresentationView.as_view(), name='presentation'),
 
     url(r'^2018/speakers$', Schedule2018SpeakerListView.as_view(), {'schedule_slug': '2018'}, name='2018speakers'),
+    url(r'^2019/speakers$', Schedule2019SpeakerListView.as_view(), {'schedule_slug': '2019'}, name='2019speakers'),
 
     url(r'^(?P<schedule_slug>[-\w]+)/speakers$', SpeakerListView.as_view(), name='speakers'),
     url(r'^(?P<schedule_slug>[-\w]+)/speaker/(?P<slug>[-\w]+)$', SpeakerView.as_view(), name='speaker'),

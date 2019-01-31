@@ -445,7 +445,7 @@ class SpeakerListView(ScheduleMixin, ListView):
 
 
 class Schedule2018SpeakerListView(SpeakerListView):
-    template_name = 'conference/2018-speaker_list.html'
+    template_name = 'conference/speaker_list_with_keynotes.html'
 
     def get_context_data(self, **kwargs):
 
@@ -454,6 +454,21 @@ class Schedule2018SpeakerListView(SpeakerListView):
         context['keynotespeakers'] = [
             Speaker.objects.filter(slug='martha-lane-fox').get(),
             Speaker.objects.filter(slug='jonathan-fox').get()
+        ]
+
+        return context
+
+
+class Schedule2019SpeakerListView(SpeakerListView):
+    template_name = 'conference/speaker_list_with_keynotes.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Schedule2019SpeakerListView, self).get_context_data(**kwargs)
+
+        context['keynotespeakers'] = [
+            Speaker.objects.filter(slug='alessandra-orofino').get(),
+            Speaker.objects.filter(slug='james-anderson').get()
         ]
 
         return context
