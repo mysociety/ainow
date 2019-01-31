@@ -16,6 +16,7 @@ from django.db.models import Q
 from django.conf import settings
 
 from urlparse import urlparse
+import collections
 
 import sorl
 
@@ -84,7 +85,7 @@ class ScheduleView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ScheduleView, self).get_context_data(**kwargs)
 
-        context['days'] = {}
+        context['days'] = collections.OrderedDict()
 
         slots = context['schedule'].slots.order_by('start')
 
@@ -100,6 +101,7 @@ class ScheduleView(DetailView):
             context['footer_block'] = footer_block.content
         except Block.DoesNotExist:
             context['footer_block'] = None
+
         return context
 
 
