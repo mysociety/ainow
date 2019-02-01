@@ -126,6 +126,7 @@ class Schedule(TimestampedModel):
 class Room(TimestampedModel):
     name = models.CharField(max_length=1024)
     location = models.TextField(blank=True)
+    order = models.IntegerField(null=True, help_text='Use to override the default (alphabetical) order of rooms.')
 
     def __str__(self):
         return self.name
@@ -205,7 +206,7 @@ class Session(TimestampedModel):
         return self.kind in self.PRESENTATION_KINDS
 
     class Meta:
-        ordering = ['slot__start', 'room__name']
+        ordering = ['slot__start', 'room__order', 'room__name']
 
 
 class Presentation(TimestampedModel):
