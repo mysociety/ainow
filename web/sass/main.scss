@@ -1035,10 +1035,6 @@ $sponsor_image: url('../img/piggyback.jpg');
 
 .schedule-entry--other {
   background-color: $color_off_white;
-
-  .schedule-entry__description {
-    color: darken($gray, 15%);
-  }
 }
 
 .schedule-entry--keynote {
