@@ -1,0 +1,44 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block headerextra %}
+<meta property="og:title" content="TICTeC Local 2019" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tictec.mysociety.org/local/2019" />
+<meta property="og:image" content="https://tictec.mysociety.org/static/img/local-og.jpg" />
+{% endblock %}
+
+{% block bodyclasses %}tictec-local{% endblock %}
+
+{% block title %}TICTeC Local 2019{% endblock %}
+
+{% block content %}
+<div class="homepage-hero hero-local">
+  <div class="container">
+    <h1>TICTeC Local 2019</h1>
+    <h2>Where Civic Tech meets Local Government</h2>
+    <p class="lead">Friday November 1 2019, City Hall, London</p>
+  </div>
+</div>
+
+<div id="intro" class="homepage-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+
+        <p class="lead">TICTeC Local is the annual conference from mySociety that focuses directly on tech for local government.</p>
+
+        <p>What are the digital innovations that are helping to foster citizen engagement, drive efficiency, and combat social problems for authorities across the UK?</p>
+
+        <p><b>Join us in City Hall this November</b>, for a day of inspiring presentations and knowledge-sharing that will help you forge connections, take home new ideas, and bring increased energy to the challenges ahead.</p>
+
+        <p><b><a href="http://eepurl.com/dG4scX">Sign up for updates</a></b> and we’ll let you know when registration opens.</p>
+
+        <p><a href="{% url 'local-2018' %}">See resources from last year’s event</a> to get a taste of TICTeC Local.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

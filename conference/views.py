@@ -173,6 +173,18 @@ class LocalView(TemplateView):
 
         context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
 
+        return context
+
+
+class Local2018View(TemplateView):
+    template_name = 'ainow/local-2018.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Local2018View, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
+
         context['sessions'] = [{
             "kind": "other",
             "start": "09:00",
@@ -428,6 +440,18 @@ class LocalView(TemplateView):
             "start": "17:00",
             "name": "Finish",
         }]
+
+        return context
+
+
+class Local2019View(TemplateView):
+    template_name = 'ainow/local-2019.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Local2019View, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
 
         return context
 

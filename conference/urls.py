@@ -25,6 +25,8 @@ from .views import (
     Schedule2019SpeakerListView,
     SponsorshipView,
     LocalView,
+    Local2018View,
+    Local2019View,
     SpeakerListView,
     SpeakerView,
     OrganiserTypeListView,
@@ -60,6 +62,12 @@ urlpatterns = [
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='attendee', permanent=True)),
 
     url(r'^schedule/(?P<schedule_slug>[-\w]+)/page/(?P<slug>[-\w]+)$', RedirectView.as_view(pattern_name='staticpage', permanent=True)),
+
+    # TICTeC Local
+
+    url(r'^local$', LocalView.as_view(), name='local'),
+    url(r'^local/2018$', Local2018View.as_view(), name='local-2018'),
+    url(r'^local/2019$', Local2019View.as_view(), name='local-2019'),
 
     # URLs for profile management
 
@@ -97,5 +105,4 @@ urlpatterns = [
 
     url(r'^sponsorship$', SponsorshipView.as_view(), name='sponsorship'),
 
-    url(r'^local$', LocalView.as_view(), name='local'),
 ]
