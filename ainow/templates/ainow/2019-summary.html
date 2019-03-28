@@ -7,140 +7,78 @@
 <div class="homepage-hero hero-2019">
   <div class="container">
     <h1>TICTeC 2019</h1>
-    <p class="lead">19th & 20th March 2019, Paris</p>
-    <p><a href="{% url 'schedule2019summary' %}#register" class="btn btn-large btn-default btn-primary">Register</a> <a href="https://tictec.mysociety.org/2019/schedule" class="btn btn-large btn-default">Schedule</a></p>
+    <p class="lead">Paris, France</p>
   </div>
 </div>
 
-<div id="intro" class="homepage-section">
+<div id="resources" class="homepage-section">
   <div class="container">
-      <p class="lead">Returning for a fifth year, TICTeC 2019 will focus on the impact that civic technology and digital democracy are having upon citizens, decision makers and governments around the world. </p>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>Primarily, the goal of TICTeC is to promote and share rigorous and meaningful research into online technologies and digital democracy around the world. The conference facilitates discussion and networking amongst individuals and groups to find real-world solutions through sharing evidence of impact, and (importantly) evidence of what doesn’t work.</p>
-          <p>In association with the <a href="http://www.oecd.org/">OECD</a>, TICTeC 2019 will bring together <a href="http://tictec.mysociety.org/sponsorship#attendees">individuals</a> from academic and applied backgrounds as well as businesses, public authorities, NGOs, funders and education institutions to discuss ideas, present research and build a network of individuals interested in the civic technology landscape. <a href="http://tictec.mysociety.org/sponsorship#attendees">See who’s previously attended TICTeC</a>.</p>
-          <p>See the <a href="https://tictec.mysociety.org/2019/schedule">2019 schedule</a> and our <a href="https://tictec.mysociety.org/2019/speakers">list of TICTeC 2019 speakers</a>.</p>
-        </div>
-        <div class="col-sm-8 col-md-3 col-md-offset-1 assoc">
-          <a href="http://www.oecd.org/"><img src="{% static 'img/oecd-logo.jpg' %}" alt="Organisation for Economic Co-operation and Development" /></a>
-          <p>In association with the Organisation for Economic Co-operation and Development (OECD)</p>
-        </div>
+
+    <p class="lead">In association with the <a href="http://www.oecd.org/">OECD</a>, and with support from <a href="http://www.google.com/">Google</a>, <a href="http://www.luminategroup.com/">Luminate</a> and the <a href="https://www.macfound.org/">MacArthur Foundation</a>, mySociety hosted the fifth TICTeC on 19 and 20 March 2019 in Paris. More than 200 leaders in the Civic Tech field from 29 different countries attended; thank you to everyone who came. Resources from the conference can be viewed below. Carry on the discussions, networking, and sharing of your Civic Tech research experiences over on the <a href="https://groups.google.com/forum/#!forum/tictecbymysociety">TICTeC Google Group</a>.</p>
+
+    <p class="lead"><a href="https://mysociety.us9.list-manage.com/subscribe/post?u=53d0d2026dea615ed488a8834&id=b79b7a551a">Sign up for our newsletter</a> and we’ll alert you when early bird tickets go on sale for our next TICTeC event. In the meantime, consider joining us at <a href="{% url 'local-2019' %}">TICTeC Local</a>.</p>
+
+    <hr>
+
+    <h2>Resources from TICTeC 2019</h2>
+
+    <!--
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FmrxgZA0CFU" frameborder="0" allowfullscreen></iframe>
+
+  -->
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <h3><a href="{% url 'schedule' 2019 %}">Schedule</a></h3>
+
+        <p>Full details of sessions and speakers. Click through from session titles or speaker names to see further material where available, including abstracts, videos and slides.</p>
+
       </div>
+
+      <div class="col-md-6">
+
+        <h3><a href="{% url 'speakers' 2019 %}">Speakers</a> and <a href="{% url 'attendees' 2019 %}">Attendees</a></h3>
+
+        <p>See who attended, view bios, and follow links to each speaker’s session to see slides and videos where available.</p>
+
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-6">
+
+        <h3>Videos</h3>
+
+        <p>Videos from key TICTeC 2019 sessions will be available on <a href="https://www.youtube.com/channel/UCWI1GxC4gNhGP2Xy9WtldWg">mySociety’s YouTube channel</a> soon. The session videos will also be viewable on the <a href="{% url 'schedule' 2019 %}">schedule pages</a>.</p>
+
+      </div>
+
+      <div class="col-md-6">
+
+        <h3>Photos</h3>
+
+        <p>Images from TICTeC 2019 will be available on <a href="https://www.flickr.com/photos/mysociety/">mySociety’s Flickr stream</a> soon. All will be available for reuse under a Creative Commons licence.</p>
+
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-6">
+
+        <h3><a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=tictec&amp;src=spxr">#TICTeC</a></h3>
+
+        <p>Follow the hashtag #TICTeC on social media to read updates from the conference as they happened, as well as pre and post conference thoughts.</p>
+
+      </div>
+
+      </div>
+    </div>
+
   </div>
 </div>
-
-<div id="side-events" class="homepage-section homepage-section--tertiary">
-  <div class="container">
-    <h2>Side Events</h2>
-    <p class="lead">OECD Global Anti-Corruption & Integrity Forum, 20 & 21 March 2019</p>
-    <div class="row">
-      <div class="col-sm-8">
-        <p>As a TICTeC participant you are welcome to also attend the <a href="http://www.oecd.org/corruption/integrity-forum/">OECD Global Anti-Corruption & Integrity Forum</a> taking place at the OECD Conference Centre on 20-21 March. However, please note that your TICTeC badge will only be valid on 19-20 March.</p>
-        <p>Should you wish to participate in the Integrity Forum on 21 March, please register at <a href="https://myevents.oecd.org/EventDetail.aspx?key=89417&action=Register&org=GOV&myevents_key=89417&myevents_action=Register">this link</a>. When asked “Indicate how the Forum is relevant to your work”, please write “TICTeC participant”. If you have any questions, please write to <a href="mailto:integrityforum@oecd.org">integrityforum@oecd.org</a>.</p>
-      </div>
-    </div>
-    <p class="lead">Journée de la civic tech & de l'engagement citoyen, 18 March 2019 (event in French)</p>
-    <div class="row">
-      <div class="col-sm-8">
-        <p>In France over the last few years, local and national governments, companies, NGOs and the civil society have started experimenting with civic technologies. From crowdlaw experiments to participatory budgets, digital tools are used for a variety of objectives, but the results of these initiatives are rarely evaluated. Do they really support transparency, collaboration and participation? Are they inclusive, and under what conditions? To discuss these issues, the NGO Décider ensemble and the CESE (French Economic, Social and Environmental Council) have organised the French civic tech and citizen engagement day, on 18th of March in Paris. Roundtables and workshops will focus on findings from the first civic tech experiments in France, as well as on the first results from the « national debate » which is currently taking place. The event will be in French!</p>
-      <p>For more information and to sign up please visit the <a href="https://www.deciderensemble.com/billetterie/offre/98911-l-journee-de-la-civic-tech-de-l-engagement-citoyen">event's website.</a>
-      </div>
-    </div>
- <p class="lead">Civic tech and citizen engagement: a Parisian Evening</p>
-    <div class="row">
-      <div class="col-sm-8">
-        <p>Between the <a href="https://www.deciderensemble.com/billetterie/offre/98911-l-journee-de-la-civic-tech-de-l-engagement-citoyen">French Civic tech and citizen engagement day</a> and the international TICTeC conference 2019 <a href="https://codefor.fr/">Code for France</a>, the <a href="https://www.liberte.paris/">Liberté Living Lab</a> and <a href="https://www.deciderensemble.com/page/300874-observatoire-civic-tech">Décider ensemble</a> are happy to invite all TICTeC particpants to a civic tech meetup with French and international actors.
-</p>
-      <p>For more information and to sign up please visit the <a href="https://www.eventbrite.fr/e/billets-soiree-de-la-civic-tech-et-de-lengagement-citoyen-57977184319">event's Eventbrite page.</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div id="register" class="homepage-section homepage-section--secondary">
-  <div class="container">
-    <h2>Registration</h2>
-    <p><a href="https://www.eventbrite.co.uk/e/the-impacts-of-civic-technology-conference-2019-tictec-2019-tickets-49046721063" class="btn btn-large btn-default btn-primary">Register now</a></p>
-    <div class="row">
-      <div class="col-sm-8">
-        <p>Early Bird registration is open until <strong>8th February 2019</strong>.</p>
-        <p>Regular registration is open between <strong>8th February and 15th March 2019</strong>.</p>
-        <p>Fee includes conference pass and social program (lunch, coffee, drinks reception etc.) during the conference.</p>
-        <p>Please note that <strong>registration for the conference is essential</strong> in order to attend.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="venue" class="homepage-section">
-    <div class="container">
-      <h2>Venue</h2>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>Thanks to generous support from the <a href="http://www.oecd.org/">OECD</a>, TICTeC 2019 will be held at the OECD Headquarters & Conference Centre, this is how you get there:</p>
-          <p>The entrance is located at:</p>
-          <p>2, rue André Pascal, 75016 Paris</p>
-          <p><strong>TRANSPORT</strong></p>
-          <p><strong>Metro/RER</strong></p>
-          <p>» Line 9, La Muette station (9 minutes by foot)</p>
-          <p>» RER C, Avenue Henri Martin (7 minutes by foot) or Boulainvilliers station (11 minutes by foot)</p>
-          <p><strong>Buses</strong></p>
-          <p>22, 32, 52, 63, PC1<p />
-          <p><strong>Bus stops:</strong></p>
-          <p>» La Muette-Boulainvilliers</p>
-          <p>» Octave feuillet</p>
-          <p>» Porte de La Muette</p>
-          <p>We recommend you book accommodation in Paris sooner rather than later as it can book up quickly. Staying somewhere on the <a href="https://parisbytrain.com/wp-content/uploads/2008/07/map-rer-line_c-2017.pdf">RER Line C train route</a> is recommended for easy access to the conference venue.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div id="carrier" class="homepage-section">
-    <div class="container">
-      <h2>Official carrier</h2>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>Air France KLM is the official carrier for TICTeC 2019. Please use <a href="http://globalmeetings.airfranceklm.com/Search/promoDefault.aspx?vendor=AFR&promocode=34494AF">this link</a> to book your flight, in order to get a discounted price for your trip. The discount code is available for flights between 12th and 27th March 2019. Search for your flight, book the best option and get ready to join us in Paris!</p>
-        </div>
-        <div class="col-sm-8 col-md-3 col-md-offset-1">
-            <a href="http://globalmeetings.airfranceklm.com/Search/promoDefault.aspx?vendor=AFR&promocode=34494AF"><img src="{% static 'img/air-france-klm-logo.png' %}" alt="Organisation for Economic Co-operation and Development" /></a>
-          </div>
-      </div>
-    </div>
-  </div>
-
-<div id="accessibility" class="homepage-section">
-    <div class="container">
-      <h2>Accessibility Information</h2>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>The conference venue is fully accessible for wheelchair users. If you plan to attend TICTeC with a personal care attendant/assistant, their conference fee will be waived. Please contact Gemma Moulder on +44 (0)20 3239 0725 or email tictec@mysociety.org to arrange the fee waiver/registration.</p>
-          <p>If you need special requirements such as hearing loops, sign language interpreters, handouts in advance and/or in alternative formats such as Braille or large print etc, please contact Gemma Moulder on +44 (0)20 3239 0725 or email tictec@mysociety.org with your request by close of business on 1st March 2019 so that arrangements, where possible, can be made. We will do our best to fulfil your requirements to allow you to fully participate in this event.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div id="sponsors" class="homepage-section">
-    <div class="container">
-      <h2>Sponsors</h2>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="sponsor-logos">
-            <a href="http://www.google.com"><img width="250" src="{% static 'img/google-logo-2019.png' %}" alt="Google" /></a>
-            <a href="http://www.luminategroup.com"><img width="300" src="{% static 'img/luminate-logo.png' %}" alt="Luminate, building stronger societies" /></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>mySociety is a charity and relies on sponsorship and ticket sales to make events like TICTeC happen. If you're interested in sponsoring TICTeC 2019 please visit our <a href="https://tictec.mysociety.org/sponsorship">sponsorship page</a> or contact Gemma Moulder on tictec@mysociety.org for more details.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
 {% endblock %}

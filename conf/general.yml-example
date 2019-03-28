@@ -40,7 +40,7 @@ USE_MAILCATCHER: True
 CONFERENCE_START: "07/07/2016 09:00"
 CONFERENCE_END: "07/07/2016 20:00"
 # What timezone is the conference happening in?
-CONFERENCE_TIMEZONE: "America/New_York"
+CONFERENCE_TIMEZONE: "Europe/London"
 
 # What is this conference's default schedule slug?
-CONFERENCE_DEFAULT_SCHEDULE: '2017'
+CONFERENCE_DEFAULT_SCHEDULE: 'local-2019'

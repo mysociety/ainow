@@ -451,7 +451,7 @@ class Local2019View(TemplateView):
 
         context = super(Local2019View, self).get_context_data(**kwargs)
 
-        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
+        context['schedule'] = Schedule.objects.get(slug='local-2019')
 
         return context
 
