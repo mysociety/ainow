@@ -8,6 +8,7 @@ from autoslug import AutoSlugField
 from ainow.models import TimestampedModel
 
 import urllib
+import urlparse
 import json
 
 
@@ -295,7 +296,11 @@ class Presentation(TimestampedModel):
             url = 'https://www.youtube.com/oembed?url={}&format=json&maxwidth=700'.format(self.youtube_link)
             response = urllib.urlopen(url)
             data = json.loads(response.read())
-            self.youtube_embed_html = data['html']
+            html = data['html']
+            qs = urlparse.parse_qs(urlparse.urlparse(self.youtube_link)[4])
+            if 'start' in qs:
+                html = html.replace('feature=oembed', 'feature=oembed&amp;start=' + qs['start'][0])
+            self.youtube_embed_html = html
 
         else:
             self.youtube_embed_html = ''
