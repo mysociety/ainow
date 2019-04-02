@@ -413,6 +413,10 @@ iframe {
  * Homepage
  */
 
+$index_image: url('../img/index-hero.jpg');
+$index_average_color: #515b5f;
+$index_gradient: linear-gradient(to bottom, rgb(81, 91, 95) 0%, rgb(112, 108, 98) 32%, rgb(97, 69, 76) 75%, rgb(134, 128, 123) 100%);
+
 $florence_image: url('../img/florence.jpg');
 $florence_average_color: #58413c;
 $florence_gradient: linear-gradient(to bottom, rgb(124, 123, 119) 0%, rgb(134, 87, 61) 38%, rgb(35, 12, 4) 92%, rgb(20, 2, 2) 100%);
@@ -449,6 +453,12 @@ $sponsor_image: url('../img/piggyback.jpg');
   }
 
   background-color: #888;
+
+  &.hero-index {
+    background-color: $index_average_color;
+    background-image: $index_image;
+    background-image: $index_image, $index_gradient;
+  }
 
   &.hero-2017 {
     background-color: $florence_average_color;
