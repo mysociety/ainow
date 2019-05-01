@@ -1210,6 +1210,26 @@ $sponsor_image: url('../img/piggyback.jpg');
   }
 }
 
+/*
+ * FAQ Answers Accordion
+ */
+
+.js-faq-accordion--header {
+ 	cursor: pointer;
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+.js-faq-accordion--body {
+	display: none;
+
+  @media print {
+    display: block;
+  }
+}
 
 /*
  * Presentation List
