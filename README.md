@@ -64,3 +64,9 @@ Speakers are fundamentally attendees who can be linked to `Presentations`.
 ##### Keynote Speakers
 
 Keynote speakers are specified in the view for the `Schedule`, and not in the database.
+
+### Blocks
+
+Some elements of the site source their content from the `Blocks`, based on slug.
+
+Blocks are parsed as Markdown in most contexts.
