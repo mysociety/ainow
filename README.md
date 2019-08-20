@@ -70,3 +70,13 @@ Keynote speakers are specified in the view for the `Schedule`, and not in the da
 Some elements of the site source their content from the `Blocks`, based on slug.
 
 Blocks are parsed as Markdown in most contexts.
+
+## Important Code Locations
+
+### Schedule Front Pages
+
+Each schedule has its own front page template which lives in the `ainow/templates/ainow` folder, its own view which lives in `conference/views.py`, and a URL which lives in `conference/urls.py`.
+
+### Conference-specific Speaker Pages
+
+Some conferences have a custom speaker page view, for example where they have keynote speakers. These have URLs hardcoded in `conference/urls.py` and a matching view in `conference/views.py.
