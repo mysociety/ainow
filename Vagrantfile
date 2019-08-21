@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "sagepe/stretch"
 
   # Enable NFS access to the disk
-  config.vm.synced_folder "..", "/vagrant"
+  config.vm.synced_folder ".", "/vagrant/ainow"
 
   # Speed up DNS lookups
   config.vm.provider "virtualbox" do |vb|
@@ -60,6 +60,8 @@ Vagrant.configure(2) do |config|
     # Run post-deploy actions script to update the virtualenv, install the
     # python packages we need, migrate the db and generate the sass etc
     conf/post_deploy_actions.bash
+	
+	sudo chmod -R ugo+rwx /vagrant
 
     # Install sample data, we only want this in development, hence why it's
     # not in post_deploy_actions.
