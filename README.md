@@ -13,11 +13,13 @@ To get a fully configured vagrant development environment. The code is
 installed into `/vagrant/ainow` inside the VM, and you can run
 the Django dev server with:
 
-    $ cd /vagrant/ainow
-    $ source ../virtualenv-ainow/bin/activate
-    $ python manage.py runserver 0.0.0.0:8000
+    $ script/server
 
 The website will then be running at http://localhost:8000
+
+The virtualenv can be sourced with:
+
+    $ source ../virtualenv-ainow/bin/activate
 
 ## Administration
 
