@@ -23,6 +23,8 @@ from .views import (
     Schedule2018SpeakerListView,
     Schedule2019SummaryView,
     Schedule2019SpeakerListView,
+    Schedule2020SummaryView,
+    Schedule2020SpeakerListView,
     SponsorshipView,
     LocalView,
     Local2018View,
@@ -83,6 +85,7 @@ urlpatterns = [
 
     url(r'^2018/speakers$', Schedule2018SpeakerListView.as_view(), {'schedule_slug': '2018'}, name='2018speakers'),
     url(r'^2019/speakers$', Schedule2019SpeakerListView.as_view(), {'schedule_slug': '2019'}, name='2019speakers'),
+    url(r'^2020/speakers$', Schedule2020SpeakerListView.as_view(), {'schedule_slug': '2020'}, name='2020speakers'),
 
     url(r'^(?P<schedule_slug>[-\w]+)/speakers$', SpeakerListView.as_view(), name='speakers'),
     url(r'^(?P<schedule_slug>[-\w]+)/speaker/(?P<slug>[-\w]+)$', SpeakerView.as_view(), name='speaker'),
@@ -99,6 +102,8 @@ urlpatterns = [
     url(r'^2018$', Schedule2018SummaryView.as_view(), name='schedule2018summary'),
 
     url(r'^2019$', Schedule2019SummaryView.as_view(), name='schedule2019summary'),
+
+    url(r'^2020$', Schedule2020SummaryView.as_view(), name='schedule2020summary'),
 
     # This must come after all other URLs, as a catch-all
     url(r'^(?P<schedule_slug>[-\w]+)/(?P<slug>[-\w]+)$', PageView.as_view(), name='staticpage'),

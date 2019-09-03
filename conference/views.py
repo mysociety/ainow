@@ -151,6 +151,17 @@ class Schedule2019SummaryView(TemplateView):
 
         return context
 
+class Schedule2020SummaryView(TemplateView):
+    template_name = 'ainow/2020-summary.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Schedule2020SummaryView, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug='2020')
+
+        return context
+
 
 class SponsorshipView(TemplateView):
     template_name = 'ainow/sponsorship.html'
@@ -491,6 +502,20 @@ class Schedule2019SpeakerListView(SpeakerListView):
     def get_context_data(self, **kwargs):
 
         context = super(Schedule2019SpeakerListView, self).get_context_data(**kwargs)
+
+        context['keynotespeakers'] = [
+            Speaker.objects.filter(slug='alessandra-orofino').get(),
+            Speaker.objects.filter(slug='james-anderson').get()
+        ]
+
+        return context
+
+class Schedule2020SpeakerListView(SpeakerListView):
+    template_name = 'conference/speaker_list_with_keynotes.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Schedule2020SpeakerListView, self).get_context_data(**kwargs)
 
         context['keynotespeakers'] = [
             Speaker.objects.filter(slug='alessandra-orofino').get(),
