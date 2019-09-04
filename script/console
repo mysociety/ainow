@@ -1,3 +1,9 @@
+#!/bin/bash
+
+set -e 
+
+cd "$(dirname "$0")/.."
+
 virtualenv_dir='../virtualenv-ainow'
 virtualenv_activate="$virtualenv_dir/bin/activate"
 if [ ! -f "$virtualenv_activate" ]
