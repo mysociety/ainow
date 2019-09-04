@@ -6,3 +6,4 @@ conf/crontab
 .vagrant
 *.pyc
 web/down.html
+tictec.sql

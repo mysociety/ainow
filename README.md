@@ -4,14 +4,24 @@ A website for the TICTeC Conference.
 
 ## Local development
 
-This project includes a Vagrantfile to make local development easier.
-Simply run:
+This project includes a `Vagrantfile` to make local development easier.
+
+This includes a trigger that runs `script/bootstrap-dev` on `vagrant up` 
+which will attempt to download up-to-date test data for the environment.
+Note that triggers require Vagrant >= 2.1.0.
+
+It relies on your having key-based SSH access to git.mysociety.org which
+most people working on Tictec should have.
+
+If it encounters a problem, it will halt and output an error message. 
+
+To start work on your local machine, simply run:
 
     $ vagrant up
 
 To get a fully configured vagrant development environment. The code is
 installed into `/vagrant/ainow` inside the VM, and you can run
-the Django dev server with:
+the Django dev server from within the Vagrant machine with:
 
     $ script/server
 

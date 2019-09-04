@@ -6,6 +6,12 @@ Vagrant.configure(2) do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
+  # Make sure we've downloaded the latest test data.
+  config.trigger.before [:up] do |trigger|
+    trigger.info = "Running script/bootstrap-dev locally..."
+    trigger.run  = { path: "./script/bootstrap-dev" }
+  end
+
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "sagepe/stretch"
@@ -50,6 +56,12 @@ Vagrant.configure(2) do |config|
     sudo -u postgres psql -c "CREATE USER ainow SUPERUSER CREATEDB PASSWORD 'ainow'"
     # Create a database
     sudo -u postgres psql -c "CREATE DATABASE ainow"
+    if [ -e tictec.sql ] ; then
+      cat tictec.sql | sudo -u postgres psql ainow
+    else
+      echo '[ERROR] No SQL dump found to import! Please run script/bootstrap-dev from your machine for instructions.' >&2
+      exit 1
+    fi
 
     # Install mailcatcher to make dev email development easier
     sudo gem install --no-rdoc --no-ri --version "< 3" mime-types

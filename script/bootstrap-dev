@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e 
+
+cd "$(dirname "$0")/.."
+
+echo "==> Updating test data..."
+if ssh -o BatchMode=yes git.mysociety.org ls /srv/test-data/tictec/tictec.sql >/dev/null 2>&1 ; then
+  scp git.mysociety.org:/srv/test-data/tictec/tictec.sql .
+  echo '==> Done!'
+else
+  cat <<EOF >&2
+==> Can't download test data - check you have access to the following:
+==>   ssh://git.mysociety.org:/srv/test-data/tictec/tictec.sql
+==> Then either download it yourself or run this script again.
+EOF
+  exit 1
+fi
