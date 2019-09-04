@@ -36,7 +36,7 @@ Vagrant.configure(2) do |config|
 
   # Provision the vagrant box
   config.vm.provision "shell", path: "conf/provisioner.sh", privileged: false
-  config.vm.provision "shell", inline: <<-SHELL
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
     sudo apt-get update
 
     cd /vagrant/ainow
@@ -58,11 +58,12 @@ Vagrant.configure(2) do |config|
     # Copy the general.yml file in place
     cp conf/general.yml-example conf/general.yml
 
+    # We need write access to this.
+    sudo chown vagrant:vagrant /vagrant
+
     # Run post-deploy actions script to update the virtualenv, install the
     # python packages we need, migrate the db and generate the sass etc
     conf/post_deploy_actions.bash
-	
-	sudo chmod -R ugo+rwx /vagrant
 
   SHELL
 
