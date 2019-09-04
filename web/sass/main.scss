@@ -78,6 +78,17 @@ iframe {
   letter-spacing: 0.015em;
 }
 
+.btn-local {
+  background-color: $color_green;
+  color: #fff;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($color_green, 10%);
+    color: #fff;
+  }
+}
+
 // Useful for elements you don't want to wrap onto multiple lines
 // like telephone numbers with spaces inside.
 .no-break {
