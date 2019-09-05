@@ -10,11 +10,14 @@
         TICTeC 2019: Paris
     {% elif schedule.slug == 'local-2019' %}
         TICTeC Local 2019
+    {% elif schedule.slug == '2020' %}
+        TICTeC 2020: Reykjavik
     {% else %}
         TICTeC
     {% endif %}
     <span class="caret"></span></a>
   <ul class="dropdown-menu">
+    <li{% if schedule.slug == '2020' %} class="active"{% endif %}><a href="{% url 'schedule2020summary' %}">TICTeC 2020: Reykjavik</a></li>
     <li{% if schedule.slug == 'local-2019' %} class="active"{% endif %}><a href="{% url 'local-2019' %}">TICTeC Local 2019</a></li>
     <li{% if schedule.slug == '2019' %} class="active"{% endif %}><a href="{% url 'schedule2019summary' %}">TICTeC 2019: Paris</a></li>
     <li{% if schedule.slug == '2018' %} class="active"{% endif %}><a href="{% url 'schedule2018summary' %}">TICTeC 2018: Lisbon</a></li>
@@ -49,5 +52,12 @@
 <li><a href="{% url 'local-2019' %}">Summary</a></li>
 <li><a href="{% url 'sponsorship' %}">Sponsorship</a></li>
 <li><a href="{% url 'press' %}">Press Enquiries</a></li>
+
+{% elif schedule.slug == '2020' %}
+
+<li><a href="{% url 'schedule2020summary' %}">Summary</a></li>
+<li><a href="{% url 'sponsorship' %}">Sponsorship</a></li>
+<li><a href="{% url 'press' %}">Press Enquiries</a></li>
+<li><a href="https://www.mysociety.org/tag/tictec/">Blog</a></li>
 
 {% endif %}

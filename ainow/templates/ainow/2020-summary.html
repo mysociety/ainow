@@ -1,90 +1,168 @@
 {% extends 'ainow/base.html' %}
 {% load staticfiles %}
 
-{% block title %}TICTeC 2019{% endblock %}
+{% block headerextra %}
+<meta property="og:title" content="TICTeC 2020" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tictec.mysociety.org/2020" />
+<meta property="og:image" content="https://tictec.mysociety.org/static/img/local-og.jpg" />
+{% endblock %}
+
+{% block bodyclasses %}tictec{% endblock %}
+
+{% block title %}TICTeC 2020{% endblock %}
 
 {% block content %}
-<div class="homepage-hero hero-2019">
+<div class="homepage-hero hero-iceland">
   <div class="container">
     <h1>TICTeC 2020</h1>
-    <p class="lead">Iceland</p>
+    <p class="lead">24 & 25 March 2020, Reykjavik, Iceland</p>
+    <ul class="list-inline">
+      <li><a href="#register" class="btn btn-lg btn-primary">Register</a></li>
+      <li><a href="#call-for-proposals" class="btn btn-lg btn-default">Call for papers</a></li>
+    </ul>
   </div>
 </div>
 
-<div id="resources" class="homepage-section">
+<div id="intro" class="homepage-section">
   <div class="container">
-
-    <p class="lead">In association with the <a href="http://www.oecd.org/">OECD</a>, and with support from <a href="http://www.google.com/">Google</a>, <a href="http://www.luminategroup.com/">Luminate</a> and the <a href="https://www.macfound.org/">MacArthur Foundation</a>, mySociety hosted the fifth TICTeC on 19 and 20 March 2019 in Paris. More than 200 leaders in the Civic Tech field from 29 different countries attended; thank you to everyone who came. Resources from the conference can be viewed below. Carry on the discussions, networking, and sharing of your Civic Tech research experiences over on the <a href="https://groups.google.com/forum/#!forum/tictecbymysociety">TICTeC Google Group</a>.</p>
-
-    <p class="lead"><a href="https://mysociety.us9.list-manage.com/subscribe/post?u=53d0d2026dea615ed488a8834&id=b79b7a551a">Sign up for our newsletter</a> and we’ll alert you when early bird tickets go on sale for our next TICTeC event. In the meantime, consider joining us at <a href="{% url 'local-2019' %}">TICTeC Local</a>.</p>
-
-    <hr>
-
-    <h2>Resources from TICTeC 2019</h2>
-
-    <!--
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/FmrxgZA0CFU" frameborder="0" allowfullscreen></iframe>
-
-  -->
-
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-sm-8">
 
-        <h3><a href="{% url 'schedule' 2019 %}">Schedule</a></h3>
+        <p class="lead">Returning for a sixth year, TICTeC 2020 will focus on the impact that civic technology and digital democracy are having upon citizens, decision makers and governments around the world. </p>
 
-        <p>Full details of sessions and speakers. Click through from session titles or speaker names to see further material where available, including abstracts, videos and slides.</p>
+        <p>Primarily, the goal of TICTeC is to promote and share rigorous and meaningful research into online civic technologies and digital democracy around the world. The conference facilitates discussion and networking amongst individuals and groups to find real-world solutions through sharing evidence of impact, and (importantly) evidence of what doesn’t work. Read how attendees have benefited from coming to TICTeC over the years. </p>
+
+        <p>TICTeC 2020 will bring together <a href="http://tictec.mysociety.org/sponsorship#attendees">individuals</a> from academic and applied backgrounds as well as businesses, public authorities, NGOs, funders and education institutions to discuss ideas, present research and build a network of individuals interested in the civic technology landscape. <a href="http://tictec.mysociety.org/sponsorship#attendees">See who’s previously attended TICTeC</a>.</p>
+
+        <p><a href="https://mysociety.us9.list-manage.com/subscribe/post?u=53d0d2026dea615ed488a8834&id=b79b7a551a">Sign up to the mySociety Research mailing list</a> and we’ll let you know when speakers are announced. Speakers and agenda details will be added to this page in the months leading up to the conference.</p>
 
       </div>
+    </div>
+  </div>
+</div>
 
-      <div class="col-md-6">
+<div class="homepage-section homepage-section--secondary">
+  <div class="container">
+    <div class="row">
+  
+      <div class="col-sm-6">
+          <p><em>“The size of TICTeC has always been manageable and lends itself well to deeper conversations than huge global conferences”</em></p>
+          <p>— Nicola Anand, formerly Reboot and The Engine Room</p>
+      </div>
 
-        <h3><a href="{% url 'speakers' 2019 %}">Speakers</a> and <a href="{% url 'attendees' 2019 %}">Attendees</a></h3>
-
-        <p>See who attended, view bios, and follow links to each speaker’s session to see slides and videos where available.</p>
-
+      <div class="col-sm-6">
+          <p><em>“Many ideas and references from these TICTeC sessions have been essential in generating the framework for my current research”</em></p>
+            <p>— Pablo Aragón, Universitat Pompeu Fabra</p>
       </div>
 
     </div>
+  </div>
+</div>
+
+
+<div id="call-for-proposals" class="homepage-section">
+  <div class="container">
+    <h2>Call for proposals</h2>
     <div class="row">
+      <div class="col-sm-8">
 
-      <div class="col-md-6">
+        <p>This 2 day conference provides the opportunity for researchers to present theoretical or empirical work related to the conference theme. We also welcome proposals for individuals to lead workshops or give presentations relating to the conference theme. We encourage submissions to focus on the specific impacts of technologies, rather than showcase new tools that are as yet untested.</p>
 
-        <h3><a href="https://www.youtube.com/playlist?list=PLMbWpADzhTC6WtesKxCapFz6JaIFTayk-">Videos</a></h3>
+        <p>We invite individuals to submit abstracts or workshop / presentation proposals of no more than 300 words by <strong>17th January 2020</strong>.</p>
 
-        <p>Videos from key TICTeC 2019 sessions are available on <a href="https://www.youtube.com/channel/UCWI1GxC4gNhGP2Xy9WtldWg">mySociety’s YouTube channel</a>. These videos are also be viewable from the individual session pages on the <a href="{% url 'schedule' 2019 %}">schedule</a>.</p>
+        <p>We encourage submissions to focus on the specific impacts of technologies, rather than showcase new tools that are as yet untested.</p>
 
+        <p>Those selected for inclusion in the conference programme will be notified no later than <strong>24th January 2020</strong>.</p>
+
+        <p>Presenters will be required to register for the conference by <strong>7th February</strong> in order to confirm their slot (the registration fee will be waived for individuals presenting).</p>
+
+        <p><a href="https://forms.gle/sTb77B1uK64QDuuHA" class="btn btn-primary">Submit a proposal</a></p>
+        <h3>Guaranteed speaking slots</h3>
+        <p>Are you really keen to present at TICTeC 2020 and interested in a guaranteed speaking slot? This year we are offering a limited number of guaranteed 20 minute speaking slots for a fee of $6000. This means you won’t need to compete against the hundreds of other submissions we receive through the open Call for Proposals. <a href="mailto:tictec@mysociety.org">Email us to discuss this option</a>.</p>
+        <p>The fee for guaranteed speaking slots will go towards travel grants for attendees and speakers from the Global South who would not be able to attend TICTeC without financial support. TICTeC is a non-profit conference; the small amount of sponsorship we receive, and the income from ticket and speaking slot sales, is used to host the conference and enable us to provide travel support to attendees from the Global South.</p>
       </div>
-
-      <div class="col-md-6">
-
-        <h3><a href="https://www.flickr.com/photos/mysociety/sets/72157704360046502">Photos</a></h3>
-
-        <p>Find images from TICTeC 2019 on <a href="https://www.flickr.com/photos/mysociety/">mySociety’s Flickr stream</a>. All are available for reuse under a Creative Commons licence.</p>
-
-      </div>
-
     </div>
+  </div>
+</div>
+
+<div class="homepage-section homepage-section--secondary">
+    <div class="container">
+      <div class="row">
+    
+        <div class="col-sm-6">
+            <p><em>“Each year, I can count on TICTeC to expose me to a more global collection of civic tech work than I'd otherwise see and challenge me to rigorously consider the impact of my and my peers' work”</em></p>
+          <p>— Matt Stempeck, Civic Hall</p>
+        </div>
+  
+        <div class="col-sm-6">
+            <p><em>“TICTeC has been a great way for me personally as a relatively new person in the field to get exposure to new ideas, connect with incredibly helpful people, and to generally learn about new trends from around the world.”</em></p>
+              <p>— Eric Reese, Director, GovEx Academy, Centers for Civic Impact | Johns Hopkins University</p>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+<div id="register" class="homepage-section">
+  <div class="container">
+    <h2>Registration</h2>
     <div class="row">
+      <div class="col-sm-8">
 
-      <div class="col-md-6">
+        <p><a href="https://www.eventbrite.co.uk/e/the-impacts-of-civic-technology-conference-tictec-2020-tickets-70012139193" class="btn btn-lg btn-primary">Register now</a></p>
 
-        <h3><a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=tictec&amp;src=spxr">#TICTeC</a></h3>
+        <p>Early Bird registration for civil society organisations, the public sector, students and self-funding individuals is <strong>£150</strong> and is open until <strong>14th February 2020</strong></p>
 
-        <p>Follow the hashtag #TICTeC on social media to read updates from the conference as they happened, as well as pre and post conference thoughts.</p>
+        <p>Early Bird registration for private sector and funding bodies is <strong>£300</strong> and is open until <strong>14th February 2020</strong>.</p>
 
-      </div>
+        <p>Regular registration raises ticket prices by £100 and is open between <strong>14th February</strong> and <strong>20th March 2020</strong></p>
 
-      <div class="col-md-6">
-
-        <h3><a href="https://docs.google.com/document/d/1aA-daIL1gj6pMqeDgNDy0PSbBrdmH7lX-xvt_xO_e1Y">Blog Posts and Media Coverage</a></h3>
-
-        <p>Links to the various blog posts and media coverage about TICTeC 2019.</p>
+        <p>Fee includes conference pass and social program (lunch, refreshments etc.) during the conference. Please note that registration for the conference is essential in order to attend.</p>
 
       </div>
-
     </div>
+  </div>
+</div>
 
+<div id="sponsorship" class="homepage-section homepage-section--secondary">
+    <div class="container">
+      <h2>Sponsorship opportunities</h2>
+      <div class="row">
+        <div class="col-sm-8">
+  
+          <p>mySociety is a charity and relies on sponsorship and ticket sales to make events like TICTeC happen. If you’re interested in sponsoring TICTeC 2020 in Reykjavik please see our <a href="http://tictec.mysociety.org/sponsorship#attendees">sponsorship options</a>. To discuss these and other more bespoke sponsorship opportunities please contact <a href="mailto:gemma@mysociety.org">contact Gemma Moulder</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<div id="accessibility" class="homepage-section">
+  <div class="container">
+    <h2>Accessibility information</h2>
+    <div class="row">
+      <div class="col-sm-8">
+
+        <p>The conference venue is fully accessible for wheelchair users. If you plan to attend TICTeC with a personal care attendant/assistant, their conference fee will be waived. Please contact Gemma Moulder on +44 (0)20 3239 0725 or via <a href="mailto:gemma@mysociety.org">email</a> to arrange the fee waiver/registration.</p>
+
+        <p>If you need special requirements such as hearing loops, sign language interpreters, handouts in advance and/or in alternative formats such as Braille or large print etc, please contact Gemma Moulder on +44 (0)20 3239 0725 or via <a href="mailto:gemma@mysociety.org">email</a> with your request by close of business on 1 October 2019 so that arrangements, where possible, can be made. We will do our best to fulfil your requirements to allow you to fully participate in this event.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="code-of-conduct" class="homepage-section">
+  <div class="container">
+    <h2>Code of conduct</h2>
+    <div class="row">
+      <div class="col-sm-8">
+
+        <p>All attendees, speakers and sponsors at TICTeC conferences are required to agree with our <a href="https://www.mysociety.org/code-of-conduct/">code of conduct</a>, which sets out our anti-harassment policy and tells you where you can report violations. Organisers will enforce this code throughout the event. We expect cooperation from all participants to help ensure a safe environment for everybody. </p>
+
+      </div>
+    </div>
   </div>
 </div>
 
