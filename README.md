@@ -31,6 +31,13 @@ The virtualenv can be sourced with:
 
     $ source ../virtualenv-ainow/bin/activate
 
+### Get a copy of the live data
+
+If you want to mirror the live database to your vagrant dev environment you can
+run `./script/mirror-live-database` from your local machine (_not_ in vagrant!)
+and it will pull down and load the latest version of the data. **Note** This
+will drop your development database and replace it with the live one.
+
 ## Administration
 
 Administration happens through Django's in-built admin interface. For production, this lives at https://tictec.mysociety.org/admin/.

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# Drop database
+sudo -u postgres psql -c "DROP DATABASE IF EXISTS ainow"
+
+# Create a database
+sudo -u postgres psql -c "CREATE DATABASE ainow"
+if [ -e tictec.sql ] ; then
+  cat tictec.sql | sudo -u postgres psql ainow
+else
+  echo '[ERROR] No SQL dump found to import! Please run script/bootstrap-dev from your machine for instructions.' >&2
+  exit 1
+fi

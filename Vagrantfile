@@ -54,14 +54,7 @@ Vagrant.configure(2) do |config|
 
     # Create a postgresql user
     sudo -u postgres psql -c "CREATE USER ainow SUPERUSER CREATEDB PASSWORD 'ainow'"
-    # Create a database
-    sudo -u postgres psql -c "CREATE DATABASE ainow"
-    if [ -e tictec.sql ] ; then
-      cat tictec.sql | sudo -u postgres psql ainow
-    else
-      echo '[ERROR] No SQL dump found to import! Please run script/bootstrap-dev from your machine for instructions.' >&2
-      exit 1
-    fi
+    ./script/setup-dev-database
 
     # Install mailcatcher to make dev email development easier
     sudo gem install --no-rdoc --no-ri --version "< 3" mime-types

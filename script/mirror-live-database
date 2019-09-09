@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+if [[ "$(whoami)" = "vagrant" ]]; then
+  echo "[ERROR] Please run this script from your local machine, not in vagrant." >&2
+  exit 1
+fi
+
+echo '==> Mirroring live database'
+./script/bootstrap-dev
+vagrant ssh --no-tty -c 'cd /vagrant/ainow && ./script/setup-dev-database'
+echo '==> Done! Live database mirroring complete'
