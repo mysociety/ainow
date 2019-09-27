@@ -194,7 +194,7 @@ class Local2018View(TemplateView):
 
         context = super(Local2018View, self).get_context_data(**kwargs)
 
-        context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
+        context['schedule'] = Schedule.objects.get(slug='local-2018')
 
         context['sessions'] = [{
             "kind": "other",
