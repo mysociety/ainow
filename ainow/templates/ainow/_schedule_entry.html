@@ -1,0 +1,61 @@
+<div class="schedule-entry schedule-entry--{{ entry.kind|slugify }}">
+
+    <p class="schedule-entry__meta">
+        {{ entry.start }}
+      {% if entry.room %}
+        &middot; {{ entry.room }}
+      {% endif %}
+    </p>
+
+  {% if entry.presentations.count != 1 %}
+    <h2 class="schedule-entry__title">{{ entry.name }}</h2>
+
+    {% if entry.format %}
+    <p class="schedule-entry__format">
+      {{ entry.format }}
+    </p>
+    {% endif %}
+
+    {% if entry.short_description %}
+    <div class="schedule-entry__description">
+      {{ entry.short_description }}
+    </div>
+    {% endif %}
+  {% endif %}
+
+  {% for presentation in entry.presentations %}
+
+    <h2 class="schedule-entry__title">
+        {{ presentation.title }}
+    </h2>
+
+    {% if presentation.format %}
+    <p class="schedule-entry__format">
+      {{ presentation.format }}
+    </p>
+    {% endif %}
+
+    <ul class="schedule-entry__speaker">
+      {% for speaker in presentation.speakers %}
+      {% spaceless %}
+        {% if not speaker.tbc %}
+          <li>
+              {{ speaker.name }}
+            {% if speaker.role or speaker.organisation %}
+              <small class="schedule-entry__speaker__organisation">({% if speaker.role %}{{ speaker.role}}{% endif %}{% if speaker.role and speaker.organisation %}, {% endif %}{{ speaker.organisation }})</small>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endspaceless %}
+      {% endfor %}
+    </ul>
+
+    {% if presentation.short_description %}
+    <div class="schedule-entry__description">
+        {{ presentation.short_description }}
+    </div>
+    {% endif %}
+
+  {% endfor %}
+
+</div>

@@ -46,7 +46,7 @@
   </div>
 </div>
 
-<div id="register" class="homepage-section">
+<div id="register" class="homepage-section homepage-section--tertiary">
   <div class="container">
     <h2>Registration</h2>
     <div class="row">
@@ -73,6 +73,38 @@
 
         <p>Attendance for public sector staff is <b>free</b>, but <a href="https://www.eventbrite.co.uk/e/tictec-local-2019-tickets-60474204975">registration on Eventbrite</a> is still obligatory.</p>
 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-section" id="agenda">
+  <div class="container schedule">
+    <h2>Agenda</h2>
+    <div class="row">
+      <div class="col-sm-8">
+        <p>
+          London’s Living Room,
+          <a href="https://www.london.gov.uk/about-us/our-building-and-squares/how-find-city-hall">City Hall</a>,
+          London,
+          SE1 2AA.
+        </p>
+        <p>
+          Friday 1st November 2019.
+        </p>
+        <ul class="schedule__list js-schedule-accordion">
+
+          {% for session in sessions %}
+            <li class="schedule__slot">
+              {% for track in session.tracks %}
+                {% include "ainow/_schedule_entry.html" with entry=track %}
+              {% empty %}
+                {% include "ainow/_schedule_entry.html" with entry=session %}
+              {% endfor %}
+            </li>
+          {% endfor %}
+
+        </ul>
       </div>
     </div>
   </div>
