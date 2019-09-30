@@ -229,9 +229,6 @@ Local2018Schedule = [{
             "role": "Deputy CEO and Digital Transformation Lead",
             "organisation": "Wigan Council",
         }, {
-            "name": "Theo Blackwell",
-            "organisation": "Chief Digital Officer for London",
-        }, {
             "name": "Phil Swan",
             "role": "Chief Information Officer",
             "organisation": "Greater Manchester Combined Authority",
@@ -269,9 +266,6 @@ Local2019Schedule = [{
             "name": "Mark Cridge",
             "role": "Chief Executive",
             "organisation": "mySociety",
-        }, {
-            "name": "Theo Blackwell",
-            "role": "Chief Digital Officer for London",
         }]
     }]
 }, {
@@ -462,7 +456,7 @@ Local2019Schedule = [{
     "start": "14:10",
     "room": "Living Room",
     "presentations": [{
-        "title": "TBC",
+        "title": "Giving power to communities",
         "speakers": [{
             "name": "Vidhya Alakeson",
             "role": "CEO",
@@ -477,17 +471,7 @@ Local2019Schedule = [{
         "title": "Climate emergency: how can Civic Tech address the world’s biggest problem?",
         "format": "Panel discussion.",
         "speakers": [{
-            "name": "Ellie Tulloh",
-            "role": "Service Designer",
-            "organisation": "FutureGov",
-        }, {
-            "name": "Ellie ???????",
-            "organisation": "National Lottery Community Fund",
-        }, {
-            "name": "Chris Shaw",
-            "role": "Head, Scrutiny Unit",
-            "organisation": "Committee Office at House of Commons",
-            "tbc": True,
+            "name": "Speakers TBC",
         }]
     }]
 }, {
