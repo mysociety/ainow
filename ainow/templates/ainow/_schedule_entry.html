@@ -1,5 +1,7 @@
 <div class="schedule-entry schedule-entry--{{ entry.kind|slugify }}">
-
+    {% if entry.title %}
+      <h2 class="schedule-entry__title">{{ entry.title }}</h2>
+    {% endif %}
     <p class="schedule-entry__meta">
         {{ entry.start }}
       {% if entry.room %}
@@ -24,10 +26,13 @@
   {% endif %}
 
   {% for presentation in entry.presentations %}
-
-    <h2 class="schedule-entry__title">
-        {{ presentation.title }}
-    </h2>
+  {% if entry.title %}
+    <h3 class="schedule-entry__title">{{ presentation.title }}</h3>
+  {% else %}
+    <h2 class="schedule-entry__title">{{ presentation.title }}</h2>
+  {% endif %}
+       
+    
 
     {% if presentation.format %}
     <p class="schedule-entry__format">
