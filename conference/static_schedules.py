@@ -326,7 +326,7 @@ Local2019Schedule = [{
             "title": "The impact of data-enabled innovation in local public services in the UK",
             "speakers": [{
                 "name": "James Maddison",
-                "organisation": "ODI",
+                "organisation": "Open Data Institute",
             }]
         }, {
             "title": "Beyond open data: how the Housing Data Coalition develops actionable, community-centered services",
@@ -389,13 +389,16 @@ Local2019Schedule = [{
             "title": "How GOV.UK Common Platforms are helping local authorities transform services for their residents",
             "speakers": [{
                 "name": "Robbie Aitken",
-                "organisation": "GDS",
+                "organisation": "Government Digital Service",
             }]
         }, {
             "title": "Creating a cross-local government user research plan",
             "speakers": [{
-                "name": "Mirabi Galati",
+                "name": "Richard Smith",
                 "organisation": "Hackney Council",
+                }, {
+                "name": "Mirabi Galati",
+                "organisation": "Croydon Council",
             }]
         }]
     }]
