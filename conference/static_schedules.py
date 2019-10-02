@@ -285,9 +285,9 @@ Local2019Schedule = [{
     "start": "09:50",
     "room": "Living Room",
     "presentations": [{
-        "title": "How much can digital technologies do for citizen engagement?",
+        "title": "What role can digital technologies play in citizen participation processes?",
         "format": "Panel discussion.",
-        "short_description": "Citizens’ Assemblies are a modern solution — so shouldn’t digital technologies play a key part in their implementation? Speakers take an honest look at what tech can do for citizen engagement processes… and what it can’t.",
+        "short_description": "Citizen participation processes like Citizens’ Assemblies are a modern solution — so shouldn’t digital technologies play a key part in their implementation? Speakers take an honest look at what tech can do for citizen participation… and what it can’t.",
         "speakers": [{
             "name": "Miriam Levin",
             "role": "Head of Community Action and Giving at the Office for Civil Society",
@@ -394,7 +394,7 @@ Local2019Schedule = [{
         }, {
             "title": "Creating a cross-local government user research plan",
             "speakers": [{
-                "name": "Richard Smith",
+                "name": "Mirabi Galati",
                 "organisation": "Hackney Council",
             }]
         }]
@@ -418,7 +418,7 @@ Local2019Schedule = [{
                 "organisation": "NYC Planning Labs",
             }]
         }, {
-            "title": "Creating a live map of empty commercial spaces in London",
+            "title": "Creating a live map of empty commercial spaces in London & findings from ‘Act Local: Empowering London's neighbourhoods' research",
             "speakers": [{
                 "name": "Nicolas Bosetti",
                 "organisation": "Centre for London",
