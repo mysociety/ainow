@@ -397,7 +397,7 @@ Local2019Schedule = [{
                 "name": "Richard Smith",
                 "organisation": "Hackney Council",
                 }, {
-                "name": "Mirabi Galati",
+                "name": "Mirabai Galati",
                 "organisation": "Croydon Council",
             }]
         }]
