@@ -304,7 +304,6 @@ Local2019Schedule = [{
             "name": "Tim Hughes",
             "role": "Director",
             "organisation": "Involve",
-            "tbc": True,
         }, {
             "name": "Moderator: Louise Crow",
             "role": "Head of Development",
@@ -423,7 +422,7 @@ Local2019Schedule = [{
         }, {
             "title": "Creating a live map of empty commercial spaces in London & findings from ‘Act Local: Empowering London's neighbourhoods' research",
             "speakers": [{
-                "name": "Nicolas Bosetti",
+                "name": "Jo Corfield & Joe Wills",
                 "organisation": "Centre for London",
             }]
         }]
@@ -440,15 +439,15 @@ Local2019Schedule = [{
                 "organisation": "Northumbria University",
             }]
         }, {
-            "title": "TBC",
-        # }, {
-        #     "title": "Austin's Televised Town Hall and its impact on the public policymaking process",
-        #     "speakers": [{
-        #         "name": "Dr. Larry Schooler",
-        #         "organisation": "Northwestern University",
-        #         "tbc": True,
-        #     }]
+            "title": "Enabling local people to participate in the design of civic and public life",
+            "speakers": [{
+                "name": "Gail Ramster",
+                "organisation": "Royal College of Art",
+                }, {
+                "name": "Mike Saunders",
+                "organisation": "Commonplace",
         }]
+		}]
     }]
 }, {
     "kind": "other",
