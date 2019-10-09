@@ -256,10 +256,11 @@ Local2019Schedule = [{
     "kind": "other",
     "start": "08:30",
     "name": "Conference registration & refreshments",
+    "short_description": "Please arrive enough time to go through the security check at City Hall. This includes going through a metal detector and having all bags scanned.",
 }, {
     "kind": "talk",
     "start": "09:30",
-    "room": "Living Room",
+    "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "Opening words",
         "speakers": [{
@@ -271,7 +272,7 @@ Local2019Schedule = [{
 }, {
     "kind": "talk",
     "start": "09:40",
-    "room": "Living Room",
+    "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "mySociety research: evidence and impact",
         "speakers": [{
@@ -283,7 +284,7 @@ Local2019Schedule = [{
 }, {
     "kind": "talk",
     "start": "09:50",
-    "room": "Living Room",
+    "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "What role can digital technologies play in citizen participation processes?",
         "format": "Panel discussion.",
@@ -320,7 +321,7 @@ Local2019Schedule = [{
         "start": "10:45",
         "title": "Data changes everything: informed public services",
         "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A.",
-        "room": "Living Room",
+        "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "The impact of data-enabled innovation in local public services in the UK",
             "speakers": [{
@@ -338,7 +339,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "10:45",
         "title": "Click to engage: creating active citizens through digital technologies",
-        "room": "Committee Room 4",
+        "room": "Committee Room 4 (Lower ground floor)",
         "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A.",
         "presentations": [{
             "title": "Civic Tech to empower democracy and increase civic engagement: Local examples from the US",
@@ -364,7 +365,7 @@ Local2019Schedule = [{
         "start": "11:40",
         "title": "Earlier actions & better connections: technology combatting social problems",
         "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A.",
-        "room": "Living Room",
+        "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Using machine learning to identify food bank dependency early",
             "speakers": [{
@@ -382,7 +383,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "11:40",
         "title": "Showing the way: support with the digital transformation process",
-        "room": "Committee Room 4",
+        "room": "Committee Room 4 (Lower ground floor)",
         "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A.",
         "presentations": [{
             "title": "How GOV.UK Common Platforms are helping local authorities transform services for their residents",
@@ -404,7 +405,7 @@ Local2019Schedule = [{
 }, {
     "kind": "other",
     "start": "12:30",
-    "room": "Living Room",
+    "room": "Living Room (9th floor)",
     "name": "Standing buffet lunch",
 }, {
     "tracks": [{
@@ -412,7 +413,7 @@ Local2019Schedule = [{
         "start": "13:10",
         "title": "Better foresight: Civic Tech for the urban planners",
         "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A.",
-        "room": "Living Room",
+        "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Automating environmental impact analyses to improve urban planning in New York City",
             "speakers": [{
@@ -430,7 +431,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "13:10",
         "title": "Bringing the citizens in: Civic Tech for engagement and participation",
-        "room": "Committee Room 4",
+        "room": "Committee Room 4 (Lower ground floor)",
         "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A.",
         "presentations": [{
             "title": "Engaging citizens in urban planning: research from examples in Europe, North America and Australia",
@@ -452,11 +453,11 @@ Local2019Schedule = [{
 }, {
     "kind": "other",
     "start": "14:00",
-    "name": "Time to reconvene in Living Room",
+    "name": "Time to reconvene in Living Room (9th floor)",
 }, {
     "kind": "keynote",
     "start": "14:10",
-    "room": "Living Room",
+    "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "Giving power to communities",
         "speakers": [{
@@ -468,7 +469,7 @@ Local2019Schedule = [{
 }, {
     "kind": "talk",
     "start": "14:30",
-    "room": "Living Room",
+    "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "Climate emergency: how can Civic Tech address the world’s biggest problem?",
         "format": "Panel discussion.",
@@ -479,7 +480,7 @@ Local2019Schedule = [{
 }, {
     "kind": "talk",
     "start": "15:20",
-    "room": "Living Room",
+    "room": "Living Room (9th floor)",
     "name": "Closing remarks",
 }, {
     "kind": "other",
