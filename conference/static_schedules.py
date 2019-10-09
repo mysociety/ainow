@@ -286,7 +286,7 @@ Local2019Schedule = [{
     "start": "09:50",
     "room": "Living Room (9th floor)",
     "presentations": [{
-        "title": "What role can digital technologies play in citizen participation processes?",
+        "title": "What role can digital technologies play in citizen participation?",
         "format": "Panel discussion.",
         "short_description": "Citizen participation processes like Citizens’ Assemblies are a modern solution — so shouldn’t digital technologies play a key part in their implementation? Speakers take an honest look at what tech can do for citizen participation… and what it can’t.",
         "speakers": [{
@@ -315,6 +315,7 @@ Local2019Schedule = [{
     "kind": "other",
     "start": "10:30",
     "name": "Refreshment break"
+    "short_description": "Please allow enough time to get from the Living Room to Committee Room 4 - you will need to take the lift to the lower ground floor and it takes around 10 minutes!.",
 }, {
     "tracks": [{
         "kind": "talk",
@@ -359,6 +360,7 @@ Local2019Schedule = [{
     "kind": "other",
     "start": "11:35",
     "name": "Time to walk between breakout rooms",
+    "short_description": "Please allow enough time to get between the Living Room and Committee Room 4 if you choose to - this takes around 10 minutes!",
 }, {
     "tracks": [{
         "kind": "talk",
