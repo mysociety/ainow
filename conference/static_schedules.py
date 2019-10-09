@@ -256,7 +256,7 @@ Local2019Schedule = [{
     "kind": "other",
     "start": "08:30",
     "name": "Conference registration & refreshments",
-    "short_description": "Please arrive enough time to go through the security check at City Hall. This includes going through a metal detector and having all bags scanned.",
+    "short_description": "Please arrive in enough time to go through the security check at City Hall. This includes going through a metal detector and having all bags scanned.",
 }, {
     "kind": "talk",
     "start": "09:30",
@@ -421,10 +421,10 @@ Local2019Schedule = [{
                 "organisation": "NYC Planning Labs",
             }]
         }, {
-            "title": "Creating a live map of empty commercial spaces in London & findings from ‘Act Local: Empowering London's neighbourhoods' research",
+            "title": "Engaging citizens in urban planning: research from examples in Europe, North America and Australia",
             "speakers": [{
-                "name": "Jo Corfield & Joe Wills",
-                "organisation": "Centre for London",
+                "name": "Ian Babelon",
+                "organisation": "Northumbria University",
             }]
         }]
     }, {
@@ -434,10 +434,10 @@ Local2019Schedule = [{
         "room": "Committee Room 4 (Lower ground floor)",
         "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A.",
         "presentations": [{
-            "title": "Engaging citizens in urban planning: research from examples in Europe, North America and Australia",
+            "title": "Creating a live map of empty commercial spaces in London & findings from ‘Act Local: Empowering London's neighbourhoods' research",
             "speakers": [{
-                "name": "Ian Babelon",
-                "organisation": "Northumbria University",
+                "name": "Jo Corfield & Joe Wills",
+                "organisation": "Centre for London",
             }]
         }, {
             "title": "Enabling local people to participate in the design of civic and public life",
