@@ -461,7 +461,8 @@ Local2019Schedule = [{
     "start": "14:10",
     "room": "Living Room (9th floor)",
     "presentations": [{
-        "title": "Giving power to communities",
+        "title": "Taking Back Control: Why community power matters to our economy and society and what gets in its way",
+	"short_description": "The session will explore the positive economic and social benefits of communities taking power and highlight examples of how this is happening in different communities across England, including community business, resident-led regeneration and community-led health and well being. It will identify a number of barriers to more communities exercising power, from policy to finance to the capacity of communities themselves.",
         "speakers": [{
             "name": "Vidhya Alakeson",
             "role": "CEO",
@@ -476,7 +477,14 @@ Local2019Schedule = [{
         "title": "Climate emergency: how can Civic Tech address the world’s biggest problem?",
         "format": "Panel discussion.",
         "speakers": [{
-            "name": "Speakers TBC",
+                    "speakers": [{
+            "name": "Sian Berry",
+            "role": "Co-leader / Camden Councillor",
+            "organisation": "Green Party",
+        }, {
+            "name": "Emily Tulloh",
+            "role": "Service Designer",
+            "organisation": "FutureGov",
         }]
     }]
 }, {
