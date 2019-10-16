@@ -477,7 +477,6 @@ Local2019Schedule = [{
         "title": "Climate emergency: how can Civic Tech address the world’s biggest problem?",
         "format": "Panel discussion.",
         "speakers": [{
-                    "speakers": [{
             "name": "Sian Berry",
             "role": "Co-leader / Camden Councillor",
             "organisation": "Green Party",
