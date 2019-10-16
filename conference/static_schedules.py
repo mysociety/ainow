@@ -314,7 +314,7 @@ Local2019Schedule = [{
 }, {
     "kind": "other",
     "start": "10:30",
-    "name": "Refreshment break"
+    "name": "Refreshment break",
     "short_description": "Please allow enough time to get from the Living Room to Committee Room 4 - you will need to take the lift to the lower ground floor and it takes around 10 minutes!.",
 }, {
     "tracks": [{
