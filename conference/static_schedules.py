@@ -267,6 +267,9 @@ Local2019Schedule = [{
             "name": "Mark Cridge",
             "role": "Chief Executive",
             "organisation": "mySociety",
+		 }, {
+            "name": "Theo Blackwell",
+            "role": "Chief Digital Officer for London",
         }]
     }]
 }, {
@@ -397,6 +400,9 @@ Local2019Schedule = [{
             "title": "Creating a cross-local government user research plan",
             "speakers": [{
                 "name": "Richard Smith",
+                "organisation": "Hackney Council",
+                }, {
+		"name": "Sam Whitlock",
                 "organisation": "Hackney Council",
                 }, {
                 "name": "Mirabai Galati",
