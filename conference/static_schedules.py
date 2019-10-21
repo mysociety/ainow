@@ -490,6 +490,10 @@ Local2019Schedule = [{
             "name": "Emily Tulloh",
             "role": "Service Designer",
             "organisation": "FutureGov",
+	}, {
+            "name": "Trewin Restorick",
+            "role": "CEO/Founder",
+            "organisation": "Hubbub",
         }]
     }]
 }, {
