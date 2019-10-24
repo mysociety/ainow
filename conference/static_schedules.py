@@ -393,7 +393,7 @@ Local2019Schedule = [{
         "presentations": [{
             "title": "How GOV.UK Common Platforms are helping local authorities transform services for their residents",
             "speakers": [{
-                "name": "Robbie Aitken",
+                "name": "Sacha Zarb",
                 "organisation": "Government Digital Service",
             }]
         }, {
