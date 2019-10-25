@@ -494,6 +494,10 @@ Local2019Schedule = [{
             "name": "Trewin Restorick",
             "role": "CEO/Founder",
             "organisation": "Hubbub",
+	}, {
+            "name": "Alasdair Roxburgh",
+            "role": "Director of Communities and Networks",
+            "organisation": "Friends of the Earth",
         }]
     }]
 }, {
