@@ -480,7 +480,7 @@ Local2019Schedule = [{
     "start": "14:30",
     "room": "Living Room (9th floor)",
     "presentations": [{
-        "title": "Climate emergency: how can Civic Tech address the world’s biggest problem?",
+        "title": "So you've declared a Climate Emergency. Now what?",
         "format": "Panel discussion.",
         "speakers": [{
             "name": "Sian Berry",
