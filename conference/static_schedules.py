@@ -376,6 +376,9 @@ Local2019Schedule = [{
             "speakers": [{
                 "name": "Giselle Cory",
                 "organisation": "DataKind",
+		}, {
+		"name": "Lucy Rimmington",
+                "organisation": "Datakind"
             }]
         }, {
             "title": "Digital tools to connect those facing homelessness with the support they need",
