@@ -378,7 +378,7 @@ Local2019Schedule = [{
                 "organisation": "DataKind",
 		}, {
 		"name": "Lucy Rimmington",
-                "organisation": "Datakind"
+                "organisation": "DataKind"
             }]
         }, {
             "title": "Digital tools to connect those facing homelessness with the support they need",
