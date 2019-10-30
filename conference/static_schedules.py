@@ -282,7 +282,7 @@ Local2019Schedule = [{
             "name": "Dr Rebecca Rumbul",
             "role": "Head of Research",
             "organisation": "mySociety",
-	    "short_description": "<a href="https://etherpad.net/p/SVZepCBxIn">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+	    "short_description": '<a href="https://etherpad.net/p/SVZepCBxIn">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         }]
     }]
 }, {
@@ -292,7 +292,7 @@ Local2019Schedule = [{
     "presentations": [{
         "title": "What role can digital technologies play in citizen participation?",
         "format": "Panel discussion.",
-        "short_description": "Citizen participation processes like Citizens’ Assemblies are a modern solution — so shouldn’t digital technologies play a key part in their implementation? Speakers take an honest look at what tech can do for citizen participation… and what it can’t. "<a href="https://etherpad.net/p/TWnqI9sxWa">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+        "short_description": 'Citizen participation processes like Citizens’ Assemblies are a modern solution — so shouldn’t digital technologies play a key part in their implementation? Speakers take an honest look at what tech can do for citizen participation… and what it can’t.<br><a href="https://etherpad.net/p/TWnqI9sxWa">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Miriam Levin",
             "role": "Head of Community Action and Giving at the Office for Civil Society",
@@ -325,7 +325,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "10:45",
         "title": "Data changes everything: informed public services",
-        "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A. <a href="https://etherpad.net/p/mqgk1nsVOM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/mqgk1nsVOM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "The impact of data-enabled innovation in local public services in the UK",
@@ -345,7 +345,7 @@ Local2019Schedule = [{
         "start": "10:45",
         "title": "Click to engage: creating active citizens through digital technologies",
         "room": "Committee Room 4 (Lower ground floor)",
-        "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A. <a href="https://etherpad.net/p/R9qap3lTgS">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/R9qap3lTgS">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "Civic Tech to empower democracy and increase civic engagement: Local examples from the US",
             "speakers": [{
@@ -370,7 +370,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "11:40",
         "title": "Earlier actions & better connections: technology combatting social problems",
-        "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A. <a href="https://etherpad.net/p/z5QPj7sH88">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/z5QPj7sH88">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Using machine learning to identify food bank dependency early",
@@ -393,7 +393,7 @@ Local2019Schedule = [{
         "start": "11:40",
         "title": "Showing the way: support with the digital transformation process",
         "room": "Committee Room 4 (Lower ground floor)",
-        "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A. <a href="https://etherpad.net/p/BUPgWKuAEY">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/BUPgWKuAEY">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "How GOV.UK Common Platforms are helping local authorities transform services for their residents",
             "speakers": [{
@@ -424,7 +424,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "13:10",
         "title": "Better foresight: Civic Tech for the urban planners",
-        "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A. <a href="https://etherpad.net/p/NDyQBXzGNY">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/NDyQBXzGNY">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Automating environmental impact analyses to improve urban planning in New York City",
@@ -444,7 +444,7 @@ Local2019Schedule = [{
         "start": "13:10",
         "title": "Bringing the citizens in: Civic Tech for engagement and participation",
         "room": "Committee Room 4 (Lower ground floor)",
-        "short_description": "2 × 20 minute presentations, followed by 10 minute Q&A. <a href="https://etherpad.net/p/EuzGRSADdc">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/EuzGRSADdc">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "Creating a live map of empty commercial spaces in London & findings from ‘Act Local: Empowering London's neighbourhoods' research",
             "speakers": [{
@@ -472,7 +472,7 @@ Local2019Schedule = [{
     "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "Taking Back Control: Why community power matters to our economy and society and what gets in its way",
-	"short_description": "The session will explore the positive economic and social benefits of communities taking power and highlight examples of how this is happening in different communities across England, including community business, resident-led regeneration and community-led health and well being. It will identify a number of barriers to more communities exercising power, from policy to finance to the capacity of communities themselves. <a href="https://etherpad.net/p/g21tkIhoUC">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+	"short_description": 'The session will explore the positive economic and social benefits of communities taking power and highlight examples of how this is happening in different communities across England, including community business, resident-led regeneration and community-led health and well being. It will identify a number of barriers to more communities exercising power, from policy to finance to the capacity of communities themselves. <br><a href="https://etherpad.net/p/g21tkIhoUC">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Vidhya Alakeson",
             "role": "CEO",
@@ -486,7 +486,7 @@ Local2019Schedule = [{
     "presentations": [{
         "title": "So you've declared a Climate Emergency. Now what?",
         "format": "Panel discussion.",
-	"short_description": "<a href="https://etherpad.net/p/WauGN2Y6DM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)",
+	"short_description": '<a href="https://etherpad.net/p/WauGN2Y6DM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Sian Berry",
             "role": "Co-leader / Camden Councillor",

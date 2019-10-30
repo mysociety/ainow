@@ -20,7 +20,7 @@
 
     {% if entry.short_description %}
     <div class="schedule-entry__description">
-      {{ entry.short_description }}
+      {{ entry.short_description | safe }}
     </div>
     {% endif %}
   {% endif %}
@@ -57,7 +57,7 @@
 
     {% if presentation.short_description %}
     <div class="schedule-entry__description">
-        {{ presentation.short_description }}
+        {{ presentation.short_description | safe }}
     </div>
     {% endif %}
 
