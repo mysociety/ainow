@@ -397,7 +397,7 @@ Local2019Schedule = [{
         "presentations": [{
             "title": "How GOV.UK Common Platforms are helping local authorities transform services for their residents",
             "speakers": [{
-                "name": "Sacha Zarb",
+                "name": "Laura Payten",
                 "organisation": "Government Digital Service",
             }]
         }, {
