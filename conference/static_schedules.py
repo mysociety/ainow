@@ -267,7 +267,7 @@ Local2019Schedule = [{
             "name": "Mark Cridge",
             "role": "Chief Executive",
             "organisation": "mySociety",
-		 }, {
+        }, {
             "name": "Theo Blackwell",
             "role": "Chief Digital Officer for London",
         }]
@@ -282,7 +282,7 @@ Local2019Schedule = [{
             "name": "Dr Rebecca Rumbul",
             "role": "Head of Research",
             "organisation": "mySociety",
-	    "short_description": '<a href="https://etherpad.net/p/SVZepCBxIn">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+            "short_description": '<a href="https://etherpad.net/p/SVZepCBxIn">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         }]
     }]
 }, {
@@ -377,8 +377,8 @@ Local2019Schedule = [{
             "speakers": [{
                 "name": "Giselle Cory",
                 "organisation": "DataKind",
-		}, {
-		"name": "Lucy Rimmington",
+            }, {
+                "name": "Lucy Rimmington",
                 "organisation": "DataKind"
             }]
         }, {
@@ -405,10 +405,10 @@ Local2019Schedule = [{
             "speakers": [{
                 "name": "Richard Smith",
                 "organisation": "Hackney Council",
-                }, {
-		"name": "Sam Whitlock",
+            }, {
+                "name": "Sam Whitlock",
                 "organisation": "Hackney Council",
-                }, {
+            }, {
                 "name": "Mirabai Galati",
                 "organisation": "Croydon Council",
             }]
@@ -456,11 +456,11 @@ Local2019Schedule = [{
             "speakers": [{
                 "name": "Gail Ramster",
                 "organisation": "Royal College of Art",
-                }, {
+            }, {
                 "name": "Mike Saunders",
                 "organisation": "Commonplace",
+            }]
         }]
-		}]
     }]
 }, {
     "kind": "other",
@@ -472,7 +472,7 @@ Local2019Schedule = [{
     "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "Taking Back Control: Why community power matters to our economy and society and what gets in its way",
-	"short_description": 'The session will explore the positive economic and social benefits of communities taking power and highlight examples of how this is happening in different communities across England, including community business, resident-led regeneration and community-led health and well being. It will identify a number of barriers to more communities exercising power, from policy to finance to the capacity of communities themselves. <br><a href="https://etherpad.net/p/g21tkIhoUC">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": 'The session will explore the positive economic and social benefits of communities taking power and highlight examples of how this is happening in different communities across England, including community business, resident-led regeneration and community-led health and well being. It will identify a number of barriers to more communities exercising power, from policy to finance to the capacity of communities themselves. <br><a href="https://etherpad.net/p/g21tkIhoUC">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Vidhya Alakeson",
             "role": "CEO",
@@ -486,7 +486,7 @@ Local2019Schedule = [{
     "presentations": [{
         "title": "So you've declared a Climate Emergency. Now what?",
         "format": "Panel discussion.",
-	"short_description": '<a href="https://etherpad.net/p/WauGN2Y6DM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '<a href="https://etherpad.net/p/WauGN2Y6DM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Sian Berry",
             "role": "Co-leader / Camden Councillor",
@@ -495,11 +495,11 @@ Local2019Schedule = [{
             "name": "Emily Tulloh",
             "role": "Service Designer",
             "organisation": "FutureGov",
-	}, {
+        }, {
             "name": "Trewin Restorick",
             "role": "CEO/Founder",
             "organisation": "Hubbub",
-	}, {
+        }, {
             "name": "Alasdair Roxburgh",
             "role": "Director of Communities and Networks",
             "organisation": "Friends of the Earth",
