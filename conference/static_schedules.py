@@ -282,8 +282,8 @@ Local2019Schedule = [{
             "name": "Dr Rebecca Rumbul",
             "role": "Head of Research",
             "organisation": "mySociety",
-            "short_description": '<a href="https://etherpad.net/p/SVZepCBxIn">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
-        }]
+        }],
+        "short_description": '<a href="https://etherpad.net/p/SVZepCBxIn">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
     }]
 }, {
     "kind": "talk",
