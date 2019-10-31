@@ -433,10 +433,10 @@ Local2019Schedule = [{
                 "organisation": "NYC Planning Labs",
             }]
         }, {
-            "title": "Engaging citizens in urban planning: research from examples in Europe, North America and Australia",
+            "title": "What user reported problems can and can’t tell us: Exploring FixMyStreet data",
             "speakers": [{
-                "name": "Ian Babelon",
-                "organisation": "Northumbria University",
+                "name": "Alex Parsons",
+                "organisation": "mySociety",
             }]
         }]
     }, {
