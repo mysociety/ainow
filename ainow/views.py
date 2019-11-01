@@ -128,5 +128,9 @@ class PrivacyView(TemplateView):
     template_name = 'ainow/privacy.html'
 
 
+class EnvironmentalPolicyView(TemplateView):
+    template_name = 'ainow/environmental-policy.html'
+
+
 class PressView(TemplateView):
     template_name = 'ainow/press.html'
