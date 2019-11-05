@@ -329,17 +329,17 @@ Local2019Schedule = [{
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "The impact of data-enabled innovation in local public services in the UK",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/the-impact-of-dataenabled-innovation-in-local-public-services-in-the-uk-james-maddison-open-data-institute">Presentation slides</a>',
             "speakers": [{
                 "name": "James Maddison",
                 "organisation": "Open Data Institute",
-                "short_description": '<br><a href="https://www.slideshare.net/mysociety/the-impact-of-dataenabled-innovation-in-local-public-services-in-the-uk-james-maddison-open-data-institute">Presentation slides</a>',
             }]
         }, {
             "title": "Beyond open data: how the Housing Data Coalition develops actionable, community-centered services",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/beyond-open-data-how-the-housing-data-coalition-develops-actionable-communitycentered-services-georges-clement-justfix">Presentation slides</a>',
             "speakers": [{
                 "name": "Georges Clement",
                 "organisation": "JustFix",
-                "short_description": '<br><a href="https://www.slideshare.net/mysociety/beyond-open-data-how-the-housing-data-coalition-develops-actionable-communitycentered-services-georges-clement-justfix">Presentation slides</a>',
             }]
         }]
     }, {
@@ -356,10 +356,10 @@ Local2019Schedule = [{
             }]
         }, {
             "title": "The impacts of Civic Tech for elections in the UK",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/the-impacts-of-civic-tech-for-elections-in-the-uk-joe-mitchell-democracy-club">Presentation slides</a>',
             "speakers": [{
                 "name": "Joe Mitchell",
                 "organisation": "Democracy Club"
-                "short_description": '<br><a href="https://www.slideshare.net/mysociety/the-impacts-of-civic-tech-for-elections-in-the-uk-joe-mitchell-democracy-club">Presentation slides</a>',
             }]
         }]
     }]
@@ -377,13 +377,13 @@ Local2019Schedule = [{
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Using machine learning to identify food bank dependency early",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/using-machine-learning-to-identify-food-bank-dependency-early-giselle-cory-lucy-rimmington-datakind">Presentation slides</a>',
             "speakers": [{
                 "name": "Giselle Cory",
                 "organisation": "DataKind",
             }, {
                 "name": "Lucy Rimmington",
                 "organisation": "DataKind"
-                "short_description": '<br><a href="https://www.slideshare.net/mysociety/using-machine-learning-to-identify-food-bank-dependency-early-giselle-cory-lucy-rimmington-datakind">Presentation slides</a>',
             }]
         }, {
             "title": "Digital tools to connect those facing homelessness with the support they need",
@@ -400,13 +400,14 @@ Local2019Schedule = [{
         "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1i8DSTQKBchg4UOTNtS5RrGY1Pgy3acqSBdvLwhHv6CM/edit#">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "How GOV.UK Common Platforms are helping local authorities transform services for their residents",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/how-govuk-common-platforms-are-helping-local-authorities-transform-services-for-their-residents-laura-payten-government-digital-service">Presentation slides</a>',
             "speakers": [{
                 "name": "Laura Payten",
                 "organisation": "Government Digital Service",
-                "short_description": '<br><a href="https://www.slideshare.net/mysociety/how-govuk-common-platforms-are-helping-local-authorities-transform-services-for-their-residents-laura-payten-government-digital-service">Presentation slides</a>',
             }]
         }, {
             "title": "Creating a cross-local government user research plan",
+            "short_description": '<a href="https://docs.google.com/presentation/d/1InmFKJN2zRM23CpFdC_hkfL-pHsAjf6KVUKnXg5AUiw/edit">Presentation slides</a>',
             "speakers": [{
                 "name": "Richard Smith",
                 "organisation": "Hackney Council",
@@ -416,7 +417,6 @@ Local2019Schedule = [{
             }, {
                 "name": "Mirabai Galati",
                 "organisation": "Croydon Council",
-                "short_description": '<br><a href="https://docs.google.com/presentation/d/1InmFKJN2zRM23CpFdC_hkfL-pHsAjf6KVUKnXg5AUiw/edit">Presentation slides</a>',
             }]
         }]
     }]
@@ -453,10 +453,10 @@ Local2019Schedule = [{
         "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1W1tJHlRN85SYtAqgxo5lhQuJkC06HFYB3qSmZzh8-EE/edit?usp=sharing">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "Creating a live map of empty commercial spaces in London & findings from ‘Act Local: Empowering London's neighbourhoods' research",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/creating-a-live-map-of-empty-commercial-spaces-in-london-findings-from-act-local-empowering-londons-neighbourhoods-research-jo-corfield-joe-wills-centre-for-london">Presentation slides</a>',
             "speakers": [{
                 "name": "Jo Corfield & Joe Wills",
                 "organisation": "Centre for London",
-                "short_description": '<br><a href="https://www.slideshare.net/mysociety/creating-a-live-map-of-empty-commercial-spaces-in-london-findings-from-act-local-empowering-londons-neighbourhoods-research-jo-corfield-joe-wills-centre-for-london">Presentation slides</a>',
             }]
         }, {
             "title": "Enabling local people to participate in the design of civic and public life",
