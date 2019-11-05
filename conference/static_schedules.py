@@ -283,7 +283,7 @@ Local2019Schedule = [{
             "role": "Head of Research",
             "organisation": "mySociety",
         }],
-        "short_description": '<a href="https://etherpad.net/p/SVZepCBxIn">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '<a href="https://docs.google.com/document/d/1AMQhyh3Zl8UsyFycTHZzJgKY0PXyQZIdNFxlLt1rOOI/edit#heading=h.vpih0ez67n1b">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)<br><a href="https://www.slideshare.net/mysociety/mysociety-research-evidence-and-impact-dr-rebecca-rumbul-head-of-research-mysociety">Presentation slides</a>',
     }]
 }, {
     "kind": "talk",
@@ -292,7 +292,7 @@ Local2019Schedule = [{
     "presentations": [{
         "title": "What role can digital technologies play in citizen participation?",
         "format": "Panel discussion.",
-        "short_description": 'Citizen participation processes like Citizens’ Assemblies are a modern solution — so shouldn’t digital technologies play a key part in their implementation? Speakers take an honest look at what tech can do for citizen participation… and what it can’t.<br><a href="https://etherpad.net/p/TWnqI9sxWa">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": 'Citizen participation processes like Citizens’ Assemblies are a modern solution — so shouldn’t digital technologies play a key part in their implementation? Speakers take an honest look at what tech can do for citizen participation… and what it can’t.<br><a href="https://docs.google.com/document/d/1oERDmdQWAWFhS3oMBcEaNNdHCz-dfwQa5nLwJctTldw/edit#heading=h.9qgksyor6ry5">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Miriam Levin",
             "role": "Head of Community Action and Giving at the Office for Civil Society",
@@ -325,19 +325,21 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "10:45",
         "title": "Data changes everything: informed public services",
-        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/mqgk1nsVOM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1jkU_TcpVCgClPx9s3s-AXZY2_Iw8X9DumsgkjKrrVGg/edit#heading=h.mc4qid8uj2q5">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "The impact of data-enabled innovation in local public services in the UK",
             "speakers": [{
                 "name": "James Maddison",
                 "organisation": "Open Data Institute",
+                "short_description": '<br><a href="https://www.slideshare.net/mysociety/the-impact-of-dataenabled-innovation-in-local-public-services-in-the-uk-james-maddison-open-data-institute">Presentation slides</a>',
             }]
         }, {
             "title": "Beyond open data: how the Housing Data Coalition develops actionable, community-centered services",
             "speakers": [{
                 "name": "Georges Clement",
                 "organisation": "JustFix",
+                "short_description": '<br><a href="https://www.slideshare.net/mysociety/beyond-open-data-how-the-housing-data-coalition-develops-actionable-communitycentered-services-georges-clement-justfix">Presentation slides</a>',
             }]
         }]
     }, {
@@ -345,7 +347,7 @@ Local2019Schedule = [{
         "start": "10:45",
         "title": "Click to engage: creating active citizens through digital technologies",
         "room": "Committee Room 4 (Lower ground floor)",
-        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/R9qap3lTgS">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1FZNyb_4tG5rExkTIHPRBln44SBfDV-mXdw_dcTbVnfE/edit#heading=h.vo770gyf5n48">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "Civic Tech to empower democracy and increase civic engagement: Local examples from the US",
             "speakers": [{
@@ -357,6 +359,7 @@ Local2019Schedule = [{
             "speakers": [{
                 "name": "Joe Mitchell",
                 "organisation": "Democracy Club"
+                "short_description": '<br><a href="https://www.slideshare.net/mysociety/the-impacts-of-civic-tech-for-elections-in-the-uk-joe-mitchell-democracy-club">Presentation slides</a>',
             }]
         }]
     }]
@@ -370,7 +373,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "11:40",
         "title": "Earlier actions & better connections: technology combatting social problems",
-        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/z5QPj7sH88">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1hfy1J0Ndrp_BlXNmnvJ5tJXhdo6NRB7NXo6o1auEwjI/edit#heading=h.9me1kubsw8rb">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Using machine learning to identify food bank dependency early",
@@ -380,6 +383,7 @@ Local2019Schedule = [{
             }, {
                 "name": "Lucy Rimmington",
                 "organisation": "DataKind"
+                "short_description": '<br><a href="https://www.slideshare.net/mysociety/using-machine-learning-to-identify-food-bank-dependency-early-giselle-cory-lucy-rimmington-datakind">Presentation slides</a>',
             }]
         }, {
             "title": "Digital tools to connect those facing homelessness with the support they need",
@@ -393,12 +397,13 @@ Local2019Schedule = [{
         "start": "11:40",
         "title": "Showing the way: support with the digital transformation process",
         "room": "Committee Room 4 (Lower ground floor)",
-        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/BUPgWKuAEY">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1i8DSTQKBchg4UOTNtS5RrGY1Pgy3acqSBdvLwhHv6CM/edit#">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "How GOV.UK Common Platforms are helping local authorities transform services for their residents",
             "speakers": [{
                 "name": "Laura Payten",
                 "organisation": "Government Digital Service",
+                "short_description": '<br><a href="https://www.slideshare.net/mysociety/how-govuk-common-platforms-are-helping-local-authorities-transform-services-for-their-residents-laura-payten-government-digital-service">Presentation slides</a>',
             }]
         }, {
             "title": "Creating a cross-local government user research plan",
@@ -411,6 +416,7 @@ Local2019Schedule = [{
             }, {
                 "name": "Mirabai Galati",
                 "organisation": "Croydon Council",
+                "short_description": '<br><a href="https://docs.google.com/presentation/d/1InmFKJN2zRM23CpFdC_hkfL-pHsAjf6KVUKnXg5AUiw/edit">Presentation slides</a>',
             }]
         }]
     }]
@@ -424,7 +430,7 @@ Local2019Schedule = [{
         "kind": "talk",
         "start": "13:10",
         "title": "Better foresight: Civic Tech for the urban planners",
-        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/NDyQBXzGNY">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/19T9dwaQhi0P-51r1pyl7X0nz9hfMvpBHNaJpQRa80jk/edit?usp=sharing">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Automating environmental impact analyses to improve urban planning in New York City",
@@ -444,12 +450,13 @@ Local2019Schedule = [{
         "start": "13:10",
         "title": "Bringing the citizens in: Civic Tech for engagement and participation",
         "room": "Committee Room 4 (Lower ground floor)",
-        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://etherpad.net/p/EuzGRSADdc">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1W1tJHlRN85SYtAqgxo5lhQuJkC06HFYB3qSmZzh8-EE/edit?usp=sharing">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "Creating a live map of empty commercial spaces in London & findings from ‘Act Local: Empowering London's neighbourhoods' research",
             "speakers": [{
                 "name": "Jo Corfield & Joe Wills",
                 "organisation": "Centre for London",
+                "short_description": '<br><a href="https://www.slideshare.net/mysociety/creating-a-live-map-of-empty-commercial-spaces-in-london-findings-from-act-local-empowering-londons-neighbourhoods-research-jo-corfield-joe-wills-centre-for-london">Presentation slides</a>',
             }]
         }, {
             "title": "Enabling local people to participate in the design of civic and public life",
@@ -472,7 +479,7 @@ Local2019Schedule = [{
     "room": "Living Room (9th floor)",
     "presentations": [{
         "title": "Taking Back Control: Why community power matters to our economy and society and what gets in its way",
-        "short_description": 'The session will explore the positive economic and social benefits of communities taking power and highlight examples of how this is happening in different communities across England, including community business, resident-led regeneration and community-led health and well being. It will identify a number of barriers to more communities exercising power, from policy to finance to the capacity of communities themselves. <br><a href="https://etherpad.net/p/g21tkIhoUC">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": 'The session will explore the positive economic and social benefits of communities taking power and highlight examples of how this is happening in different communities across England, including community business, resident-led regeneration and community-led health and well being. It will identify a number of barriers to more communities exercising power, from policy to finance to the capacity of communities themselves. <br><a href="https://docs.google.com/document/d/1f7QBdwlCzjNUwkaVlZ2k_Ol9Z-RqV_Wui7WIomi2N-A/edit?usp=sharing">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Vidhya Alakeson",
             "role": "CEO",
@@ -486,7 +493,7 @@ Local2019Schedule = [{
     "presentations": [{
         "title": "So you've declared a Climate Emergency. Now what?",
         "format": "Panel discussion.",
-        "short_description": '<a href="https://etherpad.net/p/WauGN2Y6DM">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
+        "short_description": '<a href="https://docs.google.com/document/d/1dusHpS8Pl4EOMPp2EcahTwvH8NeoIGqTZFP8hjqh6HE/edit?usp=sharing">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "speakers": [{
             "name": "Sian Berry",
             "role": "Co-leader / Camden Councillor",
