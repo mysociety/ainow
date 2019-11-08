@@ -350,6 +350,7 @@ Local2019Schedule = [{
         "short_description": '2 × 20 minute presentations, followed by 10 minute Q&A. <br><a href="https://docs.google.com/document/d/1FZNyb_4tG5rExkTIHPRBln44SBfDV-mXdw_dcTbVnfE/edit#heading=h.vo770gyf5n48">Collaborative hackpad</a> (please feel free to add your notes of the session to this.)',
         "presentations": [{
             "title": "Civic Tech to empower democracy and increase civic engagement: Local examples from the US",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/civic-tech-to-empower-democracy-and-increase-civic-engagement-local-examples-from-the-us-tammy-esteves-troy-university">Presentation slides</a>',
             "speakers": [{
                 "name": "Tammy Esteves",
                 "organisation": "Troy University",
@@ -434,6 +435,7 @@ Local2019Schedule = [{
         "room": "Living Room (9th floor)",
         "presentations": [{
             "title": "Automating environmental impact analyses to improve urban planning in New York City",
+            "short_description": '<a href="https://www.slideshare.net/mysociety/automating-environmental-impact-analyses-to-improve-urban-planning-in-new-york-city-jonathan-pichot-nyc-planning-labs-191695928">Presentation slides</a>',
             "speakers": [{
                 "name": "Jonathan Pichot",
                 "organisation": "NYC Planning Labs",
