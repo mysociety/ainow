@@ -267,8 +267,7 @@ class Schedule2020SpeakerListView(SpeakerListView):
         context = super(Schedule2020SpeakerListView, self).get_context_data(**kwargs)
 
         context['keynotespeakers'] = [
-            Speaker.objects.filter(slug='alessandra-orofino').get(),
-            Speaker.objects.filter(slug='james-anderson').get()
+            Speaker.objects.filter(slug='nanjala-nyabola').get(),
         ]
 
         return context
