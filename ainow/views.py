@@ -17,6 +17,13 @@ from resources.models import Document
 
 from forms import SignupForm
 
+def required_block(slug):
+    """
+    Populate default blocks for ease of dev
+    """
+    block, created = Block.objects.get_or_create(slug=slug)
+    return block.content
+ 
 
 class HomeView(TemplateView):
     template_name = 'ainow/index.html'
@@ -27,14 +34,14 @@ class HomeView(TemplateView):
 
         context['schedule'] = Schedule.objects.get(slug=settings.CONFERENCE_DEFAULT_SCHEDULE)
 
-        context['intro_block'] = Block.objects.get(slug='homepage-introduction').content
-        context['tickets_block'] = Block.objects.get(slug='homepage-tickets').content
-        context['testimonials_block'] = Block.objects.get(slug='homepage-testimonials').content
-        context['call_block'] = Block.objects.get(slug='homepage-call-for-papers').content
-        context['venue_block'] = Block.objects.get(slug='homepage-venue').content
-        context['florence_block'] = Block.objects.get(slug='homepage-about-florence').content
-        context['inspired_block'] = Block.objects.get(slug='homepage-get-inspired').content
-        context['conduct_block'] = Block.objects.get(slug='homepage-code-of-conduct').content
+        context['intro_block'] = required_block(slug='homepage-introduction')
+        context['tickets_block'] = required_block(slug='homepage-tickets')
+        context['testimonials_block'] = required_block(slug='homepage-testimonials')
+        context['call_block'] = required_block(slug='homepage-call-for-papers')
+        context['venue_block'] = required_block(slug='homepage-venue')
+        context['florence_block'] = required_block(slug='homepage-about-florence')
+        context['inspired_block'] = required_block(slug='homepage-get-inspired')
+        context['conduct_block'] = required_block(slug='homepage-code-of-conduct')
 
         # Get the current datetime in CONFERENCE_TIMEZONE
         with timezone.override(settings.CONFERENCE_TIMEZONE):
