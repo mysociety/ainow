@@ -71,23 +71,6 @@
           <ul class="nav navbar-nav" role="navigation">
             {% include 'ainow/_nav.html' %}
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            {% if request.user.is_authenticated %}
-              <li class="dropdown">
-                <a class="dropdown-toggle" id="profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button">
-                  {% user_display request.user %}
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="profile-dropdown">
-                  {% include 'account/_logged_in_nav_short.html' %}
-                </ul>
-              </li>
-            {% else %}
-              <li>
-                {% include 'account/_signup_nav.html' %}
-              </li>
-            {% endif %}
-          </ul>
         </div>
     </nav>
 
