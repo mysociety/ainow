@@ -268,6 +268,7 @@ class Schedule2020SpeakerListView(SpeakerListView):
 
         context['keynotespeakers'] = [
             Speaker.objects.filter(slug='nanjala-nyabola').get(),
+            Speaker.objects.filter(slug='hollie-russon-gilman').get(),
         ]
 
         return context
