@@ -44,3 +44,6 @@ CONFERENCE_TIMEZONE: "Europe/London"
 
 # What is this conference's default schedule slug?
 CONFERENCE_DEFAULT_SCHEDULE: 'local-2019'
+
+ADMIN_NAME: ''
+ADMIN_EMAIL: ''

@@ -40,6 +40,11 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+if 'ADMIN_NAME' in config:
+    ADMINS = (
+        (config.get('ADMIN_NAME'), config.get('ADMIN_EMAIL')),
+    )
+
 MANAGERS = ADMINS
 
 
