@@ -199,8 +199,8 @@ class Session(TimestampedModel):
         related_name='sessions'
     )
 
-    def __str__(self):
-        return "{}: {} ({} in {})".format(self.slot.schedule.name, self.name, self.slot, self.room)
+    def __unicode__(self):
+        return u"{}: {} ({} in {})".format(self.slot.schedule.name, self.name, self.slot, self.room)
 
     @property
     def is_presentation_slot(self):
