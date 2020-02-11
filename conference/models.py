@@ -52,7 +52,7 @@ class Person(TimestampedModel):
         abstract = True
         ordering = ['name']
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def __unicode__(self):
@@ -76,7 +76,7 @@ class OrganiserType(TimestampedModel):
     # Organisers can come in many flavours
     name = models.CharField(max_length=1024)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 
@@ -120,7 +120,7 @@ class Schedule(TimestampedModel):
         help_text="The text that's shown at the top of the schedule, before the slots."
     )
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 
@@ -129,7 +129,7 @@ class Room(TimestampedModel):
     location = models.TextField(blank=True)
     order = models.IntegerField(null=True, help_text='Use to override the default (alphabetical) order of rooms.')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 
@@ -145,8 +145,8 @@ class Slot(TimestampedModel):
         related_name='slots'
     )
 
-    def __str__(self):
-        return "{} - {}".format(self.start.strftime('%a %d/%m/%Y %H:%M'), self.end.strftime('%a %d/%m/%Y %H:%M'))
+    def __unicode__(self):
+        return u"{} - {}".format(self.start.strftime('%a %d/%m/%Y %H:%M'), self.end.strftime('%a %d/%m/%Y %H:%M'))
 
     class Meta:
         ordering = ['start']
@@ -280,7 +280,7 @@ class Presentation(TimestampedModel):
     def video_thumbnail_url(self):
         return "https://img.youtube.com/vi/{0}/0.jpg".format(self.video_id)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     def slug_field(self):
@@ -335,7 +335,7 @@ class LiveStream(TimestampedModel):
                   'Note: this will replace any stream that\'s currently live.'
     )
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     @property
