@@ -380,6 +380,10 @@ class AttendeeListView(ScheduleMixin, ListView):
         ).distinct()
 
 
+class Schedule2020AttendeeListView(AttendeeListView):
+    template_name = 'conference/schedule_2020_attendee_list.html'
+
+
 class AttendeeView(ScheduleMixin, DetailView):
     model = Attendee
     context_object_name = 'attendee'

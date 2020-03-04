@@ -35,6 +35,7 @@ from .views import (
     PresentationListView,
     PresentationView,
     AttendeeListView,
+    Schedule2020AttendeeListView,
     AttendeeView,
     AttendeeCreateUpdateView,
     StandingCommitteeListView,
@@ -92,6 +93,7 @@ urlpatterns = [
 
     url(r'^(?P<schedule_slug>[-\w]+)/organisers$', OrganiserTypeListView.as_view(), name='organisers'),
 
+    url(r'^2020/attendees$', Schedule2020AttendeeListView.as_view(), {'schedule_slug': '2020'}, name='2020attendees'),
     url(r'^(?P<schedule_slug>[-\w]+)/attendees$', AttendeeListView.as_view(), name='attendees'),
     url(r'^(?P<schedule_slug>[-\w]+)/attendee/(?P<slug>[-\w]+)$', AttendeeView.as_view(), name='attendee'),
 

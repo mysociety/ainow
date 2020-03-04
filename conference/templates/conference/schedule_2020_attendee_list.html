@@ -1,0 +1,37 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}Attendees &amp; Speakers{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="general-content__page">
+      <h1>Attendees &amp; Speakers</h1>
+      <p>Attendees &amp; Speakers confirmed to date.</p>
+      <ul class="attendee-list">
+        {% for attendee in attendees %}
+          <li class="attendee-list__attendee">
+              <div class="attendee__primary-column">
+              <h2 class="attendee__name">
+                {{ attendee.name }}
+              </h2>
+              {% if attendee.title %}
+                <p class="attendee__job-title">{{ attendee.title }}</p>
+              {% endif %}
+              {% if attendee.organisation %}
+                <p class="attendee__org">{{ attendee.organisation }}</p>
+              {% endif %}
+            </div>
+          </li>
+        {% empty %}
+          <li>There aren't any attendees yet</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
