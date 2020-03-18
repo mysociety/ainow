@@ -79,6 +79,9 @@ urlpatterns = [
 
     # New-style 'schedule-free' URLs
 
+    # Redirect 2020 Schedule to Google Doc for online conference
+    url(r'^2020/schedule$', RedirectView.as_view(url='https://docs.google.com/document/d/1_qA3nSgAn6wJX7gtPOBfxGCcHvhHDhoKMilN2NKdUkE'), name='schedule-2020'),
+
     url(r'^(?P<slug>[-\w]+)/schedule$', ScheduleView.as_view(), name='schedule'),
 
     url(r'^(?P<schedule_slug>[-\w]+)/presentations$', PresentationListView.as_view(), name='presentations'),
