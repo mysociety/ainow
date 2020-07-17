@@ -29,6 +29,7 @@ from .views import (
     LocalView,
     Local2018View,
     Local2019View,
+    Seminars2020View,
     SpeakerListView,
     SpeakerView,
     OrganiserTypeListView,
@@ -109,6 +110,8 @@ urlpatterns = [
     url(r'^2019$', Schedule2019SummaryView.as_view(), name='schedule2019summary'),
 
     url(r'^2020$', Schedule2020SummaryView.as_view(), name='schedule2020summary'),
+
+    url(r'^2020-seminars$', Seminars2020View.as_view(), name='seminars-2020'),
 
     # This must come after all other URLs, as a catch-all
     url(r'^(?P<schedule_slug>[-\w]+)/(?P<slug>[-\w]+)$', PageView.as_view(), name='staticpage'),
