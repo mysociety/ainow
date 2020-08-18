@@ -216,6 +216,18 @@ class Local2019View(TemplateView):
         return context
 
 
+class Seminars2020View(TemplateView):
+    template_name = 'ainow/seminars-2020.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super(Seminars2020View, self).get_context_data(**kwargs)
+
+        context['schedule'] = Schedule.objects.get(slug='seminars-2020')
+
+        return context
+
+
 class SpeakerListView(ScheduleMixin, ListView):
     model = Speaker
     context_object_name = 'speakers'

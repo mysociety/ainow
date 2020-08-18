@@ -452,6 +452,10 @@ $iceland_image: url('../img/northern-lights.jpg');
 $iceland_average_color: #244f5f;
 $iceland_gradient: linear-gradient(45deg, rgb(21, 21, 21) 0%, rgb(27, 47, 45) 28%, rgb(36, 79, 95) 100%);
 
+$seminars_2020_image: url('../img/seminars-2020-header.jpg');
+$seminars_2020_average_color: #4a5e5c;
+$seminars_2020_gradient: linear-gradient(to right, #4a5e5c 0%, #9da49c 61%, #c98c60 61%, #ce9067 94%, #828e8a 94%, #4c6967 100%);
+
 $sponsor_image: url('../img/piggyback.jpg');
 
 .homepage-hero {
@@ -510,6 +514,13 @@ $sponsor_image: url('../img/piggyback.jpg');
     background-image: $iceland_image;
     background-image: $iceland_image, $iceland_gradient;
     background-position: 50% 60%;
+  }
+
+  &.hero-seminars-2020 {
+    background-color: $seminars_2020_average_color;
+    background-image: $seminars_2020_image;
+    background-image: $seminars_2020_image, $seminars_2020_gradient;
+    text-shadow: 0 0 2em #000;
   }
 
   &.hero-sponsor {
@@ -1647,6 +1658,75 @@ $sponsor_image: url('../img/piggyback.jpg');
 
     @media (min-width: $screen-md-min) {
       width: 25%;
+    }
+  }
+}
+
+.seminar-detail {
+  p {
+    max-width: 44em;
+  }
+
+  h3 {
+    font-size: 1.3em; // a bit smaller than normal
+  }
+
+  &:nth-child(3n - 2) {
+    --seminar-color: $color_orange;
+    --seminar-color-darker: darken($color_orange, 5%);
+  }
+
+  &:nth-child(3n - 1) {
+    --seminar-color: $color_green;
+    --seminar-color-darker: darken($color_green, 5%);
+  }
+
+  &:nth-child(3n) {
+    --seminar-color: $color_blue;
+    --seminar-color-darker: darken($color_blue, 5%);
+  }
+}
+
+.seminar-detail__header {
+  margin: 0 0 1.5em 0;
+
+  h2 {
+    margin: 0;
+
+    small {
+      color: $color_orange; // fallback
+      color: var(--seminar-color);
+      display: block;
+      text-transform: uppercase;
+      margin-bottom: 0.25em;
+      font-weight: bold;
+      font-size: 0.5em;
+    }
+  }
+
+  p {
+    margin: 0.5em 0 0 0;
+    font-size: 1.1em;
+  }
+}
+
+.seminar-detail__links {
+  margin-bottom: 1.5em;
+
+  .btn-default {
+    color: #fff;
+    background-color: $color_orange;
+    background-color: var(--seminar-color);
+    border-color: $color_orange;
+    border-color: var(--seminar-color);
+
+    &:focus,
+    &:hover {
+      color: #fff;
+      background-color: darken($color_orange, 5%);
+      background-color: var(--seminar-color-darker);
+      border-color: darken($color_orange, 5%);
+      border-color: var(--seminar-color-darker);
     }
   }
 }
