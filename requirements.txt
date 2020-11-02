@@ -1,6 +1,6 @@
 Django==1.11.28
 Markdown==2.6.5
-Pillow==3.4.2
+Pillow==7.1.0
 pyyaml==4.2b1
 argparse==1.2.1
 bleach==1.5
