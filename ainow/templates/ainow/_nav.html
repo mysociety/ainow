@@ -16,11 +16,14 @@
         TICTeC 2020
     {% elif schedule.slug == 'seminars-2020' %}
         TICTeC Seminars 2020
+    {% elif schedule.slug == 'show-and-tells-2021' %}
+        TICTeC Show and Tells 2021
     {% else %}
         TICTeC
     {% endif %}
     <span class="caret"></span></a>
   <ul class="dropdown-menu">
+    <li{% if schedule.slug == 'show-and-tells-2021' %} class="active"{% endif %}><a href="{% url 'show-and-tells-2021' %}">TICTeC Show and Tells 2021</a></li>
     <li{% if schedule.slug == 'seminars-2020' %} class="active"{% endif %}><a href="{% url 'seminars-2020' %}">TICTeC Seminars 2020</a></li>
     <li{% if schedule.slug == '2020' %} class="active"{% endif %}><a href="{% url 'schedule2020summary' %}">TICTeC 2020</a></li>
     <li{% if schedule.slug == 'local-2019' %} class="active"{% endif %}><a href="{% url 'local-2019' %}">TICTeC Local 2019</a></li>
@@ -69,6 +72,13 @@
 {% elif schedule.slug == 'seminars-2020' %}
 
 <li><a href="{% url 'seminars-2020' %}">Seminars</a></li>
+<li><a href="{% url 'sponsorship' %}">Sponsorship</a></li>
+<li><a href="{% url 'press' %}">Press Enquiries</a></li>
+<li><a href="https://www.mysociety.org/tag/tictec/">News</a></li>
+
+{% elif schedule.slug == 'show-and-tells-2021' %}
+
+<li><a href="#call">Call for Proposals</a></li>
 <li><a href="{% url 'sponsorship' %}">Sponsorship</a></li>
 <li><a href="{% url 'press' %}">Press Enquiries</a></li>
 <li><a href="https://www.mysociety.org/tag/tictec/">News</a></li>
