@@ -456,6 +456,10 @@ $seminars_2020_image: url('../img/seminars-2020-header.jpg');
 $seminars_2020_average_color: #4a5e5c;
 $seminars_2020_gradient: linear-gradient(to right, #4a5e5c 0%, #9da49c 61%, #c98c60 61%, #ce9067 94%, #828e8a 94%, #4c6967 100%);
 
+$showandtells_2021_image: url('../img/showandtells-2021-header.jpg');
+$showandtells_2021_average_color: #4a4036;
+$showandtells_2021_gradient: linear-gradient(45deg, #1d2226 0%, #433e3a 50%, #8f7554 100%);
+
 $sponsor_image: url('../img/piggyback.jpg');
 
 .homepage-hero {
@@ -521,6 +525,13 @@ $sponsor_image: url('../img/piggyback.jpg');
     background-image: $seminars_2020_image;
     background-image: $seminars_2020_image, $seminars_2020_gradient;
     text-shadow: 0 0 2em #000;
+  }
+
+  &.hero-showandtells-2021 {
+    background-color: $showandtells_2021_average_color;
+    background-image: $showandtells_2021_image;
+    background-image: $showandtells_2021_image, $showandtells_2021_gradient;
+    text-shadow: 0 0 2em rgba(#000, 0.5);
   }
 
   &.hero-sponsor {
