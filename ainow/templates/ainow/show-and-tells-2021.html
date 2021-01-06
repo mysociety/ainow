@@ -108,6 +108,16 @@
   </div>
 </div>
 
+<script type="text/javascript">
+function checkForGuidanceHash() {
+  if ( window.location.hash === '#guidance' ) {
+    document.querySelector('#guidance details').open = true;
+  }
+}
+window.addEventListener('hashchange', checkForGuidanceHash, false);
+checkForGuidanceHash();
+</script>
+
 <div class="homepage-section" id="sponsorship">
   <div class="container">
     <div class="row">
