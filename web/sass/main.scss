@@ -1747,6 +1747,10 @@ $sponsor_image: url('../img/piggyback.jpg');
     summary {
       cursor: pointer;
 
+      &::-webkit-details-marker {
+        display: none;
+      }
+
       h3 {
         display: flex;
         align-items: center;
