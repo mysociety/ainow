@@ -3,7 +3,7 @@ Markdown==2.6.5
 Pillow==3.4.2
 pyyaml==4.2b1
 argparse==1.2.1
-bleach==1.5
+bleach==3.3.0
 csscompressor==0.9.4
 django-admin-sortable2==0.6.3
 django-appconf==1.0.2
