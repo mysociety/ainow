@@ -98,4 +98,4 @@ Each schedule has its own front page template which lives in the `ainow/template
 
 ### Conference-specific Speaker Pages
 
-Some conferences have a custom speaker page view, for example where they have keynote speakers. These have URLs hardcoded in `conference/urls.py` and a matching view in `conference/views.py.
+Some conferences have a custom speaker page view, for example where they have keynote speakers. These have URLs hardcoded in `conference/urls.py` and a matching view in `conference/views.py`.
