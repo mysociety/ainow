@@ -6,14 +6,14 @@ A website for the TICTeC Conference.
 
 This project includes a `Vagrantfile` to make local development easier.
 
-This includes a trigger that runs `script/bootstrap-dev` on `vagrant up` 
+This includes a trigger that runs `script/bootstrap-dev` on `vagrant up`
 which will attempt to download up-to-date test data for the environment.
 Note that triggers require Vagrant >= 2.1.0.
 
 It relies on your having key-based SSH access to git.mysociety.org which
 most people working on Tictec should have.
 
-If it encounters a problem, it will halt and output an error message. 
+If it encounters a problem, it will halt and output an error message.
 
 To start work on your local machine, simply run:
 
