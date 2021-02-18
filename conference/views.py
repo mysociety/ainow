@@ -237,6 +237,15 @@ class ShowAndTells2021View(TemplateView):
 
         context['schedule'] = Schedule.objects.get(slug='show-and-tells-2021')
         context['sessions'] = [session for slot in context['schedule'].slots.order_by('start') for session in slot.sessions.all()]
+        for session in context['sessions']:
+            if session.slug == 'scrutiny-oversight-data-makes-it-possible':
+                session.registration_url = 'http://example.org/1'
+            elif session.slug == 'hearing-every-voice-lessons-learned-online-deliber':
+                session.registration_url = 'http://example.org/2'
+            elif session.slug == 'geospatial-community-empowerment':
+                session.registration_url = 'http://example.org/3'
+            else:
+                raise Exception("Unknown session slug: {}".format(session.slug))
 
         return context
 
