@@ -1,5 +1,6 @@
 {% extends 'ainow/base.html' %}
 {% load staticfiles %}
+{% load tz %}
 
 {% block bodyclasses %}show-and-tells-2021{% endblock %}
 
@@ -62,11 +63,13 @@
                   {{ session.name }}
                 </h2>
                 <p>
-                  {{ session.slot.start|date:'l jS F' }},
-                  {{ session.slot.start|date:'H:i' }}
-                  &ndash;
-                  {{ session.slot.end|date:'H:i' }}
-                  GMT+1 (UK time)
+                  {% with start=session.slot.start|timezone:'UTC' end=session.slot.end|timezone:'UTC' %}
+                    {{ start|date:'l jS F' }},
+                    {{ start|date:'H:i' }}
+                    &ndash;
+                    {{ end|date:'H:i' }}
+                  {% endwith %}
+                  UTC
                 </p>
               </header>
 
