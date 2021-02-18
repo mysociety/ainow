@@ -236,6 +236,7 @@ class ShowAndTells2021View(TemplateView):
         context = super(ShowAndTells2021View, self).get_context_data(**kwargs)
 
         context['schedule'] = Schedule.objects.get(slug='show-and-tells-2021')
+        context['sessions'] = [session for slot in context['schedule'].slots.order_by('start') for session in slot.sessions.all()]
 
         return context
 

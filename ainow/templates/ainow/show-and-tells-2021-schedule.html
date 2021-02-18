@@ -1,0 +1,147 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+
+{% block bodyclasses %}show-and-tells-2021{% endblock %}
+
+{% block title %}TICTeC Show and Tells 2021{% endblock %}
+
+{% block content %}
+
+<div class="homepage-hero hero-showandtells-2021">
+  <div class="container">
+    <h1>TICTeC Show and Tells 2021</h1>
+    <p class="lead">Online, March—May 2021</p>
+    <ul class="list-inline">
+      <li><a href="#schedule" class="btn btn-primary">Schedule</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="homepage-section" id="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {{ schedule.introduction }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-section homepage-section--tertiary">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+          <p><em>“TICTeC was one of the most diverse conferences I’ve ever attended, not just in terms of gender, but also in terms of representativeness of regions of the world, plus a great variety of professional profiles and backgrounds.”</em></p>
+      </div>
+
+      <div class="col-sm-6">
+          <p><em>“I think TICTeC stands out as an example where it’s about the lessons learnt rather than the activities. The focus on ‘This is the impact we’ve uncovered by doing this project’ sets TICTeC apart.”</em></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="iceland-photo-strip">
+  <img src="{% static 'img/tictec-2019-1.jpg' %}" width="800" height="400" alt="">
+  <img src="{% static 'img/tictec-2019-2.jpg' %}" width="800" height="400" alt="">
+  <img src="{% static 'img/tictec-2019-4.jpg' %}" width="800" height="400" alt="">
+  <img src="{% static 'img/tictec-2019-7.jpg' %}" width="800" height="400" alt="">
+</div>
+
+<div class="homepage-section" id="schedule">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% for session in sessions %}
+          <div class="schedule-entry schedule-entry--{{ session.kind|slugify }}">
+
+            <h2>{{ session.name }}</h2>
+
+            {% if session.short_description %}
+              <div class="schedule-entry__description">
+                {{ session.short_description }}
+              </div>
+            {% endif %}
+
+            <p class="schedule-entry__meta">
+              {{ session.slot.start|date:'l jS F' }}
+              {{ session.slot.start|date:'H:i' }}
+              &ndash;
+              {{ session.slot.end|date:'H:i' }}
+              {% if session.room %}
+                &middot; {{ session.room }}
+              {% endif %}
+            </p>
+
+            {% for presentation in session.presentations.all %}
+              <h2 class="schedule-entry__title">
+                  <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                    {{ presentation.title }}
+                  </a>
+              </h2>
+              <ul class="schedule-entry__speaker">
+                {% for speaker in presentation.speakers.all %}
+                  {% spaceless %}
+                    <li>
+                      {{ speaker.name }}
+                      {% if speaker.organisation %}
+                        <small class="schedule-entry__speaker__organisation">({{ speaker.organisation }})</small>
+                      {% endif %}
+                    </li>
+                  {% endspaceless %}
+                {% endfor %}
+              </ul>
+
+              {% if presentation.short_description %}
+                <div class="schedule-entry__description">
+                  {{ presentation.short_description }}
+                </div>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-section" id="sponsorship">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Sponsorship opportunities</h2>
+        <p style="margin-bottom: 2em">mySociety is a charity and relies on sponsorship to continue with TICTeC events and initiatives. If you’re interested in sponsoring this series of TICTeC Show and Tells please see <a href="{% static 'tictec-2021-sponsorship-pack.pdf' %}">our sponsorship options</a>. To discuss these and other more bespoke sponsorship opportunities please contact Gemma Moulder at <a href="mailto:gemma@mysociety.org">gemma@mysociety.org</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="iceland-photo-strip">
+  <img src="{% static 'img/tictec-2019-6.jpg' %}" width="800" height="400" alt="">
+  <img src="{% static 'img/tictec-2019-3.jpg' %}" width="800" height="400" alt="">
+  <img src="{% static 'img/tictec-2019-8.jpg' %}" width="800" height="400" alt="">
+  <img src="{% static 'img/tictec-2019-5.jpg' %}" width="800" height="400" alt="">
+</div>
+
+<div class="homepage-section homepage-section--tertiary">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+          <p><em>“TICTeC has been a great way for me personally as a relatively new person in the field to get exposure to new ideas, connect with incredibly helpful people, and to generally learn about new trends from around the world.”</em></p>
+      </div>
+
+      <div class="col-sm-6">
+          <p><em>“TICTeC worked well as a virtual event because you felt like everyone involved was 'in the room' and participating. It was the closest I've come to having an online event 'feel' like a real life event.”</em></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="margin-bottom: -4em"></div>
+
+{% endblock %}
