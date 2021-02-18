@@ -50,30 +50,32 @@
   <img src="{% static 'img/tictec-2019-7.jpg' %}" width="800" height="400" alt="">
 </div>
 
-<div class="homepage-section" id="schedule">
+{% for session in sessions %}
+<div class="homepage-section seminar-detail" id="schedule">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        {% for session in sessions %}
           <div class="schedule-entry schedule-entry--{{ session.kind|slugify }}">
+              <header class="seminar-detail__header">
+                <h2>
+                  <small>Show and tell {{ forloop.counter }}</small>
+                  {{ session.name }}
+                </h2>
+                <p>
+                  {{ session.slot.start|date:'l jS F' }},
+                  {{ session.slot.start|date:'H:i' }}
+                  &ndash;
+                  {{ session.slot.end|date:'H:i' }}
+                  GMT+1 (UK time)
+                </p>
+              </header>
 
-            <h2>{{ session.name }}</h2>
 
             {% if session.short_description %}
-              <div class="schedule-entry__description">
+              <div>
                 {{ session.short_description }}
               </div>
             {% endif %}
-
-            <p class="schedule-entry__meta">
-              {{ session.slot.start|date:'l jS F' }}
-              {{ session.slot.start|date:'H:i' }}
-              &ndash;
-              {{ session.slot.end|date:'H:i' }}
-              {% if session.room %}
-                &middot; {{ session.room }}
-              {% endif %}
-            </p>
 
             {% for presentation in session.presentations.all %}
               <h2 class="schedule-entry__title">
@@ -102,11 +104,11 @@
             {% endfor %}
 
           </div>
-        {% endfor %}
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endfor %}
 
 <div class="homepage-section" id="sponsorship">
   <div class="container">
