@@ -50,11 +50,15 @@
                 </p>
               </header>
 
+              {% if session.registration_url %}
               <ul class="seminar-detail__links list-inline">
                 <li>
                   <a href="{{ session.registration_url }}" class="btn btn-default">Register on Eventbrite</a>
                 </li>
               </ul>
+              {% else %}
+              <!-- No session.registration_url found. Check slugs in ShowAndTells2021View. -->
+              {% endif %}
 
 
             {% if session.short_description %}

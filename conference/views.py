@@ -244,8 +244,6 @@ class ShowAndTells2021View(TemplateView):
                 session.registration_url = 'http://example.org/2'
             elif session.slug == 'geospatial-community-empowerment':
                 session.registration_url = 'http://example.org/3'
-            else:
-                raise Exception("Unknown session slug: {}".format(session.slug))
 
         return context
 
