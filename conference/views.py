@@ -240,9 +240,9 @@ class ShowAndTells2021View(TemplateView):
         for session in context['sessions']:
             if session.slug == 'scrutiny-oversight-data-makes-it-possible':
                 session.registration_url = 'http://example.org/1'
-            elif session.slug == 'hearing-every-voice-lessons-learned-online-deliber':
+            elif session.slug == 'hearing-every-voice':
                 session.registration_url = 'http://example.org/2'
-            elif session.slug == 'geospatial-community-empowerment':
+            elif session.slug == 'empowering-communities-geospatial-technology':
                 session.registration_url = 'http://example.org/3'
 
         return context
