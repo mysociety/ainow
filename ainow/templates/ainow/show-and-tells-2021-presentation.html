@@ -1,0 +1,88 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load tz %}
+
+{% block title %}{{ presentation.title }}{% endblock %}
+
+{% block bodyclasses %}standard-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container">
+    <div class="presentation-detail">
+      <h1 class="presentation-detail__title">{{ presentation.title }}</h1>
+
+      <p class="presentation-detail__speaker">
+        {% if presentation.speakers %}
+          {% for speaker in presentation.speakers.all %}
+            <a href="{% url 'speaker' schedule.slug speaker.slug %}">
+              {% thumbnail speaker.photo "35x35" crop="center" as im %}
+                <img src="{{ im.url }}" class="presentation-detail__speaker-thumb">
+              {% empty %}
+                <img  src="/static/img/no-photo.png" height="35" width="35" class="presentation-detail__speaker-thumb">
+              {% endthumbnail %}
+              <span class="presentation-detail__speaker-name">{{ speaker.name }}</span>
+            </a><br>
+          {% endfor %}
+        {% endif %}
+      </p>
+
+
+      <p class="presentation-detail__location">
+        Part of the <b>{{ presentation.session.name }}</b> session of <a href="{% url 'show-and-tells-2021' %}">{{ presentation.session.slot.schedule.name }}</a><br/>
+
+        {% with start=presentation.session.slot.start|timezone:'UTC' end=presentation.session.slot.end|timezone:'UTC' %}
+          {{ start|date:'l jS F' }},
+          {{ start|date:'H:i' }}
+          &ndash;
+          {{ end|date:'H:i' }}
+        {% endwith %}
+        UTC
+        <br>
+        {{ presentation.session.room.name }}
+      </p>
+
+      <p class="presentation-detail__description">
+        {% if presentation.long_description %}
+          {{ presentation.long_description }}
+        {% elif presentation.short_description %}
+          {{ presentation.short_description }}
+        {% endif %}
+      </p>
+
+
+      {% if presentation.youtube_link %}
+
+        <h2>Video</h2>
+
+        {% if presentation.youtube_embed_html %}
+          {{ presentation.youtube_embed_html|safe }}
+        {% else %}
+          <p><a href="{{ presentation.youtube_link }}">View on YouTube</a></p>
+        {% endif %}
+
+      {% endif %}
+
+      {% if presentation.slideshare_link or presentation.prezi_link %}
+
+        <h2>Slides</h2>
+
+        {% if presentation.slideshare_embed_html %}
+          {{ presentation.slideshare_embed_html|safe }}
+        {% elif presentation.slideshare_link %}
+          <p><a href="{{ presentation.slideshare_link }}">View on SlideShare</a></p>
+        {% endif %}
+
+        {% if prezi_embed_slug %}
+          <iframe id="prezi_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="700" height="400" src="https://prezi.com/embed/{{ prezi_embed_slug }}/?bgcolor=ffffff&amp;lock_to_path=1&amp;autoplay=0&amp;autohide_ctrls=1"></iframe>
+        {% elif presentation.prezi_link %}
+          <p><a href="{{ presentation.prezi_link }}">View on Prezi</a></p>
+        {% endif %}
+
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}
