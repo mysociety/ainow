@@ -310,6 +310,12 @@ class SpeakerView(ScheduleMixin, DetailView):
     model = Speaker
     context_object_name = 'speaker'
 
+    def get_template_names(self):
+        if self.schedule.slug == 'show-and-tells-2021':
+            return ['ainow/show-and-tells-2021-speaker.html']
+        else:
+            return super(SpeakerView, self).get_template_names()
+
     def get_queryset(self):
         """
         Speakers are linked to a schedule by their presentation(s) slot(s).
@@ -345,6 +351,12 @@ class StandingCommitteeListView(ListView):
 class PresentationView(ScheduleMixin, DetailView):
     model = Presentation
     context_object_name = 'presentation'
+
+    def get_template_names(self):
+        if self.schedule.slug == 'show-and-tells-2021':
+            return ['ainow/show-and-tells-2021-presentation.html']
+        else:
+            return super(PresentationView, self).get_template_names()
 
     def get_context_data(self, **kwargs):
         context = super(PresentationView, self).get_context_data(**kwargs)

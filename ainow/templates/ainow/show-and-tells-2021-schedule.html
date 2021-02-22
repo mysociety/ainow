@@ -69,7 +69,7 @@
 
             {% for presentation in session.presentations.all %}
               <h2 class="schedule-entry__title">
-                  <a href="{% url 'show-and-tells-2021-presentation' presentation.slug %}">
+                  <a href="{% url 'presentation' schedule.slug presentation.slug %}">
                     {{ presentation.title }}
                   </a>
               </h2>

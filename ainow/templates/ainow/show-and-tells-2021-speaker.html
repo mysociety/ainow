@@ -1,0 +1,84 @@
+{% extends 'ainow/base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load tz %}
+
+{% block title %}{{ speaker.name }}{% endblock %}
+
+{% block bodyclasses %}attendee-page{% endblock %}
+
+{% block content %}
+<div class="general-content">
+  <div class="container standard-layout standard-layout--narrow attendee-detail">
+    <div class="general-content__page">
+
+      <div class="row">
+        <div class="standard-layout__secondary-column">
+
+        {% thumbnail speaker.photo "200x200" crop="center" as im %}
+          <img class="attendee-detail__thumbnail" src="{{ im.url }}">
+        {% empty %}
+          <img class="attendee-detail__thumbnail" src="{% static 'img/no-photo.png' %}" height="200" width="200">
+        {% endthumbnail %}
+
+        </div>
+        <div class="standard-layout__primary-column">
+
+          <h1>{{ speaker.name }}</h1>
+
+          {% if speaker.title %}
+            <p class="attendee-detail__job-title">{{ speaker.title }}</p>
+          {% endif %}
+          {% if speaker.organisation %}
+            <p class="attendee-detail__org">{{ speaker.organisation }}</p>
+          {% endif %}
+          {% if speaker.twitter_username %}
+            <p class="attendee-detail__twitter">
+              <a href="https://www.twitter.com/{{ speaker.twitter_username }}">
+                @{{ speaker.twitter_username }}
+              </a>
+            </p>
+          {% endif %}
+          <div class="attendee-detail__bio">
+            <p>
+            {{ speaker.biography }}
+            </p>
+          </div>
+
+          <h2>Speaking In</h2>
+
+          {% for presentation in presentations %}
+            <h3 class="schedule-entry__title">
+                <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                  {{ presentation.title }}
+                </a>
+            </h3>
+
+            <p class="schedule-entry__meta">
+              {% with start=presentation.session.slot.start|timezone:'UTC' end=presentation.session.slot.end|timezone:'UTC' %}
+                {{ start|date:'l jS F' }},
+                {{ start|date:'H:i' }}
+                &ndash;
+                {{ end|date:'H:i' }}
+                UTC
+              {% endwith %}
+              {% if presentation.session.room %}
+                &middot; {{ presentation.session.room }}
+              {% endif %}
+            </p>
+
+            {% if presentation.short_description %}
+              <div class="schedule-entry__description">
+                {{ presentation.short_description }}
+              </div>
+            {% endif %}
+          {% endfor %}
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
