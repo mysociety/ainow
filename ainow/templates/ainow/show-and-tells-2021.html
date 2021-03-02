@@ -1,5 +1,6 @@
 {% extends 'ainow/base.html' %}
 {% load staticfiles %}
+{% load tz %}
 
 {% block bodyclasses %}show-and-tells-2021{% endblock %}
 
@@ -11,6 +12,9 @@
   <div class="container">
     <h1>TICTeC Show and Tells 2021</h1>
     <p class="lead">Online, March—May 2021</p>
+    <ul class="list-inline">
+      <li><a href="#schedule" class="btn btn-primary">Schedule</a></li>
+    </ul>
   </div>
 </div>
 
@@ -18,46 +22,82 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <p>We would dearly love to be gearing up for our normal two day TICTeC conference, in person, in some beautiful city somewhere, in anticipation of having some great discourse and drinks. Alas, the pandemic means we are not yet in a place to do that. We also recognise that attempting to hold a two day event online is just too much - we are all suffering a bit of screen fatigue at this point, and we understand how difficult it is to concentrate and engage with lengthy online sessions. We will instead be hosting a series of TICTeC ‘Show and Tells’ online in early 2021 which will be short, energetic and to-the-point.</p>
-        <p>These will be hour-long virtual events that will bring together the global community who use, build, research or fund digital technology that empowers citizens. Speakers will share their real and in-depth research and lessons learnt about the impacts of these digital technologies, and whether their intended outcomes were indeed realised. TICTeC is a safe place to honestly examine what works, what doesn’t, what can be improved etc, so, ultimately, better digital tools are developed.</p>
+        {{ schedule.introduction }}
       </div>
     </div>
   </div>
 </div>
 
-<div class="homepage-section homepage-section--tertiary">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-sm-6">
-          <p><em>“TICTeC was one of the most diverse conferences I’ve ever attended, not just in terms of gender, but also in terms of representativeness of regions of the world, plus a great variety of professional profiles and backgrounds.”</em></p>
-      </div>
-
-      <div class="col-sm-6">
-          <p><em>“I think TICTeC stands out as an example where it’s about the lessons learnt rather than the activities. The focus on ‘This is the impact we’ve uncovered by doing this project’ sets TICTeC apart.”</em></p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="iceland-photo-strip">
-  <img src="{% static 'img/tictec-2019-1.jpg' %}" width="800" height="400" alt="">
-  <img src="{% static 'img/tictec-2019-2.jpg' %}" width="800" height="400" alt="">
-  <img src="{% static 'img/tictec-2019-4.jpg' %}" width="800" height="400" alt="">
-  <img src="{% static 'img/tictec-2019-7.jpg' %}" width="800" height="400" alt="">
-</div>
-
-<div class="homepage-section homepage-section--secondary" id="call">
+{% for session in sessions %}
+<div class="homepage-section seminar-detail" id="schedule">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h2>Call for Proposals - now closed</h2>
-        <p>Thank you to everyone who submitted speaking proposals for our TICTeC Show & Tell series, our Call for Proposals is now closed. We're currently putting together the Show & Tell programme and will share the full line-up and registration details on this page in the coming days. To hear about TICTeC announcement first, do <a href="https://research.mysociety.org/newsletter">sign up to our mailing list.</a></p>
+          <div class="schedule-entry schedule-entry--{{ session.kind|slugify }}">
+              <header class="seminar-detail__header">
+                <h2>
+                  <small>Show and tell {{ forloop.counter }}</small>
+                  {{ session.name }}
+                </h2>
+                <p>
+                  {% with start=session.slot.start end=session.slot.end %}
+                    {{ start|date:'l jS F, H:i' }}
+                    &ndash;
+                    {{ end|date:'H:i' }}
+                    {{ start|date:'T' }}
+                  {% endwith %}
+                </p>
+              </header>
+
+              {% if session.registration_url %}
+              <ul class="seminar-detail__links list-inline">
+                <li>
+                  <a href="{{ session.registration_url }}" class="btn btn-default">Register on Eventbrite</a>
+                </li>
+              </ul>
+              {% else %}
+              <!-- No session.registration_url found. Check slugs in ShowAndTells2021View. -->
+              {% endif %}
+
+
+            {% if session.short_description %}
+              <div>
+                {{ session.short_description }}
+              </div>
+            {% endif %}
+
+            {% for presentation in session.presentations.all %}
+              <h2 class="schedule-entry__title">
+                  <a href="{% url 'presentation' schedule.slug presentation.slug %}">
+                    {{ presentation.title }}
+                  </a>
+              </h2>
+              <ul class="schedule-entry__speaker">
+                {% for speaker in presentation.speakers.all %}
+                  {% spaceless %}
+                    <li>
+                      {{ speaker.name }}
+                      {% if speaker.organisation %}
+                        <small class="schedule-entry__speaker__organisation">({{ speaker.organisation }})</small>
+                      {% endif %}
+                    </li>
+                  {% endspaceless %}
+                {% endfor %}
+              </ul>
+
+              {% if presentation.short_description %}
+                <div class="schedule-entry__description">
+                  {{ presentation.short_description }}
+                </div>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endfor %}
 
 <div class="homepage-section" id="sponsorship">
   <div class="container">

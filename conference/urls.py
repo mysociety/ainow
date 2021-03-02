@@ -116,7 +116,6 @@ urlpatterns = [
 
     # Show and tells 2021
     url(r'^showandtells/2021$', ShowAndTells2021View.as_view(), name='show-and-tells-2021'),
-    url(r'^showandtells/2021/schedule$', ShowAndTells2021View.as_view(template_name='ainow/show-and-tells-2021-schedule.html'), name='show-and-tells-2021-schedule'),
 
     # This must come after all other URLs, as a catch-all
     url(r'^(?P<schedule_slug>[-\w]+)/(?P<slug>[-\w]+)$', PageView.as_view(), name='staticpage'),
