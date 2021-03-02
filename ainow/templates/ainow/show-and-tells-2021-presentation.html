@@ -32,13 +32,12 @@
       <p class="presentation-detail__location">
         Part of the <b>{{ presentation.session.name }}</b> session of <a href="{% url 'show-and-tells-2021' %}">{{ presentation.session.slot.schedule.name }}</a><br/>
 
-        {% with start=presentation.session.slot.start|timezone:'UTC' end=presentation.session.slot.end|timezone:'UTC' %}
-          {{ start|date:'l jS F' }},
-          {{ start|date:'H:i' }}
+        {% with start=presentation.session.slot.start end=presentation.session.slot.end %}
+          {{ start|date:'l jS F, H:i' }}
           &ndash;
           {{ end|date:'H:i' }}
+          {{ start|date:'T' }}
         {% endwith %}
-        UTC
         <br>
         {{ presentation.session.room.name }}
       </p>

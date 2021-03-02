@@ -40,13 +40,12 @@
                   {{ session.name }}
                 </h2>
                 <p>
-                  {% with start=session.slot.start|timezone:'UTC' end=session.slot.end|timezone:'UTC' %}
-                    {{ start|date:'l jS F' }},
-                    {{ start|date:'H:i' }}
+                  {% with start=session.slot.start end=session.slot.end %}
+                    {{ start|date:'l jS F, H:i' }}
                     &ndash;
                     {{ end|date:'H:i' }}
+                    {{ start|date:'T' }}
                   {% endwith %}
-                  UTC
                 </p>
               </header>
 

@@ -55,16 +55,12 @@
             </h3>
 
             <p class="schedule-entry__meta">
-              {% with start=presentation.session.slot.start|timezone:'UTC' end=presentation.session.slot.end|timezone:'UTC' %}
-                {{ start|date:'l jS F' }},
-                {{ start|date:'H:i' }}
+              {% with start=presentation.session.slot.start end=presentation.session.slot.end %}
+                {{ start|date:'l jS F, H:i' }}
                 &ndash;
                 {{ end|date:'H:i' }}
-                UTC
+                {{ start|date:'T' }}
               {% endwith %}
-              {% if presentation.session.room %}
-                &middot; {{ presentation.session.room }}
-              {% endif %}
             </p>
 
             {% if presentation.short_description %}
