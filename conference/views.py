@@ -239,11 +239,11 @@ class ShowAndTells2021View(TemplateView):
         context['sessions'] = [session for slot in context['schedule'].slots.order_by('start') for session in slot.sessions.all()]
         for session in context['sessions']:
             if session.slug == 'scrutiny-oversight-data-makes-it-possible':
-                session.registration_url = 'http://example.org/1'
+                session.registration_url = 'https://www.eventbrite.co.uk/e/scrutiny-oversight-the-data-that-makes-it-possible-tickets-142543819401'
             elif session.slug == 'hearing-every-voice':
-                session.registration_url = 'http://example.org/2'
+                session.registration_url = 'https://www.eventbrite.co.uk/e/hearing-every-voice-lessons-learned-from-online-deliberation-projects-tickets-142908317625'
             elif session.slug == 'empowering-communities-geospatial-technology':
-                session.registration_url = 'http://example.org/3'
+                session.registration_url = 'https://www.eventbrite.co.uk/e/empowering-communities-using-geospatial-technology-tickets-142911003659'
 
         return context
 
