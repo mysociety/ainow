@@ -49,14 +49,22 @@
                 </p>
               </header>
 
-              {% if session.registration_url %}
+              {% if session.buttons %}
               <ul class="seminar-detail__links list-inline">
+              {% for button in session.buttons %}
                 <li>
-                  <a href="{{ session.registration_url }}" class="btn btn-default">Register on Eventbrite</a>
+                  <a href="{{ button.url }}" class="btn btn-default">{{ button.text }}</a>
                 </li>
+                {% endfor %}
               </ul>
-              {% else %}
-              <!-- No session.registration_url found. Check slugs in ShowAndTells2021View. -->
+              {% endif %}
+
+              {% if session.has_presentation_links %}
+              <p>
+                Click on the individual presentation pages below to watch the
+                individual presentation recordings, view presentation slides
+                and read speakers’ responses to audience questions.
+              </p>
               {% endif %}
 
 

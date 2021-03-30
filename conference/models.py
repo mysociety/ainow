@@ -206,6 +206,10 @@ class Session(TimestampedModel):
     def is_presentation_slot(self):
         return self.kind in self.PRESENTATION_KINDS
 
+    @property
+    def has_presentation_links(self):
+        return self.presentations.exclude(youtube_link__exact='').count() > 1
+
     class Meta:
         ordering = ['slot__start', 'room__order', 'room__name']
 

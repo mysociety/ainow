@@ -238,12 +238,36 @@ class ShowAndTells2021View(TemplateView):
         context['schedule'] = Schedule.objects.get(slug='show-and-tells-2021')
         context['sessions'] = [session for slot in context['schedule'].slots.order_by('start') for session in slot.sessions.all()]
         for session in context['sessions']:
+            session.buttons = []
             if session.slug == 'scrutiny-oversight-data-makes-it-possible':
-                session.registration_url = 'https://www.eventbrite.co.uk/e/scrutiny-oversight-the-data-that-makes-it-possible-tickets-142543819401'
+                session.buttons = [
+                    {
+                        'text': 'Full recording',
+                        'url': 'https://www.youtube.com/watch?v=ImW4ro6gJmc',
+                    },
+                    {
+                        'text': 'Collaborative notes',
+                        'url': 'https://docs.google.com/document/d/11kPDS_moO_RT4KYGHBLj_UgiXi3F88A7Ai-KkiqN2CU/edit',
+                    },
+                    {
+                        'text': 'Post-event Q&A',
+                        'url': 'https://docs.google.com/document/d/1xN3BGgDGH24DL7Jgoxn5mYCUrb8rkXh_-mMBF5oJyxQ/edit'
+                    },
+                ]
             elif session.slug == 'hearing-every-voice':
-                session.registration_url = 'https://www.eventbrite.co.uk/e/hearing-every-voice-lessons-learned-from-online-deliberation-projects-tickets-142908317625'
+                session.buttons = [
+                    {
+                        'text': 'Register on Eventbrite',
+                        'url': 'https://www.eventbrite.co.uk/e/hearing-every-voice-lessons-learned-from-online-deliberation-projects-tickets-142908317625',
+                    },
+                ]
             elif session.slug == 'empowering-communities-geospatial-technology':
-                session.registration_url = 'https://www.eventbrite.co.uk/e/empowering-communities-using-geospatial-technology-tickets-142911003659'
+                session.buttons = [
+                    {
+                        'text': 'Register on Eventbrite',
+                        'url': 'https://www.eventbrite.co.uk/e/empowering-communities-using-geospatial-technology-tickets-142911003659',
+                    }
+                ]
 
         return context
 
