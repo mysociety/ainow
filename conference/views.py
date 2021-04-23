@@ -257,8 +257,16 @@ class ShowAndTells2021View(TemplateView):
             elif session.slug == 'hearing-every-voice':
                 session.buttons = [
                     {
-                        'text': 'Register on Eventbrite',
-                        'url': 'https://www.eventbrite.co.uk/e/hearing-every-voice-lessons-learned-from-online-deliberation-projects-tickets-142908317625',
+                        'text': 'Full recording',
+                        'url': 'https://youtu.be/3hQiDiRmqUc',
+                    },
+                    {
+                        'text': 'Collaborative notes',
+                        'url': 'https://docs.google.com/document/d/1FAq5dL7dXdmUeTRvVpBst3iqh6cWMy0MVGz0DN9XYQ0/edit',
+                    },
+                    {
+                        'text': 'Post-event Q&A',
+                        'url': 'https://docs.google.com/document/d/1PWBmVY247YrS1Y_Wh41w2Dgm4j-Ybt5FFU9r2QUXLTc/edit'
                     },
                 ]
             elif session.slug == 'empowering-communities-geospatial-technology':
