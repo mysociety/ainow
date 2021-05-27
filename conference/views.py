@@ -272,9 +272,13 @@ class ShowAndTells2021View(TemplateView):
             elif session.slug == 'empowering-communities-geospatial-technology':
                 session.buttons = [
                     {
-                        'text': 'Register on Eventbrite',
-                        'url': 'https://www.eventbrite.co.uk/e/empowering-communities-using-geospatial-technology-tickets-142911003659',
-                    }
+                        'text': 'Full recording',
+                        'url': 'https://www.youtube.com/watch?v=3Ji__Lb5Lr8',
+                    },
+                    {
+                        'text': 'Collaborative notes',
+                        'url': 'https://docs.google.com/document/d/1GFm_7P-2RzZRGD-uqvc4y8ue1MdiwJFRYr8thZ4-gRI/edit',
+                    },
                 ]
 
         return context
